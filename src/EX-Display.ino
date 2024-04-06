@@ -17,8 +17,8 @@
  *  along with CommandStation.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include <MCUFRIEND_kbv.h>
-#include <Adafruit_GFX.h>
+#include "MCUFRIEND_kbv.h"
+#include "Adafruit_GFX.h"
 
 MCUFRIEND_kbv tft;
 
