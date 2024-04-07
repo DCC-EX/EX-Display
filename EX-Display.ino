@@ -22,7 +22,14 @@
 
 MCUFRIEND_kbv tft;
 
-#define RX_PIN 19 // Define the RX pin for Serial1
+#if defined(ARDUINO_AVR_MEGA2560)
+  #define RX_PIN 19 // Define the RX pin for Serial1
+  #elif defined(ARDUINO_AVR_UNO)
+  #define RX_PIN 0
+  #define Serial1 Serial
+  #endif
+
+
 
 #define DISPLAY_WIDTH 320
 #define DISPLAY_HEIGHT 240
