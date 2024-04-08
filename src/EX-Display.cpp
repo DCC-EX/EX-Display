@@ -82,16 +82,10 @@ void TFT_Begin()
 
     TFT_DrawHeader();
 
+    // remove the following for live running.
+    testprint(10);
+    delay(2000);
 
-
-    // tft.setFont(&Arial9pt7b);
-    // tft.setCursor(1,1);
-   testprint(10);
-  delay(2000);
-
-    // tft.setRotation(0);  
-    // tft.fillScreen(BLACK);
-    // testprint(13);
 
 }
 
