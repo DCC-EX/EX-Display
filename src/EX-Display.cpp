@@ -17,10 +17,15 @@
  *  along with CommandStation.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "MCUFRIEND_kbv.h"
-#include "Adafruit_GFX.h"
+#include <Arduino.h>
+#include <MCUFRIEND_kbv.h>
+#include <Adafruit_GFX.h>
+
+#include "EX-Display.h"
 
 MCUFRIEND_kbv tft;
+
+#include "FreeSans12pt7b.h"
 
 #if defined(ARDUINO_AVR_MEGA2560)
   #define RX_PIN 19 // Define the RX pin for Serial1
