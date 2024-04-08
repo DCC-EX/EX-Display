@@ -25,46 +25,111 @@
 
 MCUFRIEND_kbv tft;
 
+#include "Arial9pt7b.h"
 #include "FreeSans12pt7b.h"
 
-#if defined(ARDUINO_AVR_MEGA2560)
-  #define RX_PIN 19 // Define the RX pin for Serial1
-  #elif defined(ARDUINO_AVR_UNO)
-  #define RX_PIN 0
-  #define Serial1 Serial
-  #endif
+// #if defined(ARDUINO_AVR_MEGA2560)
+//   #define RX_PIN 19 // Define the RX pin for Serial1
+//   #elif defined(ARDUINO_AVR_UNO)
+//   #define RX_PIN 0
+//   #define Serial1 Serial
+//   #endif
 
 
-
-#define DISPLAY_WIDTH 320
-#define DISPLAY_HEIGHT 240
-
-#define FONT_SIZE 2.5 // Adjust font size as needed
-#define CHAR_WIDTH (6 * FONT_SIZE) // Width of a single character in pixels
 
 int16_t currentXPos = 0; // Track the current x-position for printing text
 int16_t currentYPos = 0; // Track the current y-position for printing text
 
+
 void setup() {
   Serial.begin(115200); // Start the serial communication
-  Serial1.begin(115200); // Start Serial1 for listening to messages
+  //Serial1.begin(115200); // Start Serial1 for listening to messages
 
-  tft.begin(); // Initialize the display
-  tft.setRotation(3); // Set rotation if needed
+  TFT_Begin(); // Initialize the display
+  //tft.setRotation(3); // Set rotation if needed
 
-  tft.fillScreen(0); // Fill the screen with black color
-  tft.setTextSize(FONT_SIZE);
+  // tft.fillScreen(0); // Fill the screen with black color
+  // tft.setTextSize(FONT_SIZE);
   tft.setTextColor(0xFFFF); // White color
 }
 
 void loop() {
-  if (Serial1.available()) { // Check if data is available on Serial1
-    String message = Serial1.readStringUntil('\n'); // Read the incoming message
-    message.trim(); // Remove leading and trailing whitespaces
-    displayMessage(message); // Display the message
-    currentYPos += FONT_SIZE * 8; // Move to the next line for the next message
-    currentXPos = 0; // Reset X position for the new line
-  }
+  // if (Serial.available()) { // Check if data is available on Serial1
+  //   String message = Serial.readStringUntil('\n'); // Read the incoming message
+  //   message.trim(); // Remove leading and trailing whitespaces
+  //   displayMessage(message); // Display the message
+  //   currentYPos += FONT_SIZE * 8; // Move to the next line for the next message
+  //   currentXPos = 0; // Reset X position for the new line
+  // }
+
+}
+
+
+void TFT_Begin()
+{
+
+    uint16_t ID = tft.readID();
+    Serial.print("TFT ID = 0x");
+    Serial.println(ID, HEX);
+    Serial.println("Calibrate for your Touch Panel");
+    if (ID == 0xD3D3) ID = 0x9486; // write-only shield
+
+    tft.begin(ID);
+  
+    tft.setRotation(1);           
+    tft.setTextColor(0xFFFF); 
+    tft.fillScreen(BLACK);
+
+    TFT_DrawHeader();
+
+
+
+    // tft.setFont(&Arial9pt7b);
+    // tft.setCursor(1,1);
+   testprint(10);
+  delay(2000);
+
+    // tft.setRotation(0);  
+    // tft.fillScreen(BLACK);
+    // testprint(13);
+
+}
+
+void TFT_DrawHeader() {
+
+    char header[HDDR_SIZE] = {""};
+    sprintf(header, "DCC-EX   SCREEN %d", THIS_SCREEN_NUM);
+    showmsgXY(1, 20, 1, YELLOW, header);
+    tft.drawFastHLine(0, 25, tft.width(), WHITE);
+
+}
+
+void showmsgXY(int x, int y, byte sz, char colour, char *msg)
+{
+    tft.setFont();
+    tft.setFont(&Arial9pt7b);
+  
+    tft.setCursor(x, y);
+    tft.setTextColor(colour);
+    tft.setTextSize(sz);
+    tft.print(msg);
+    delay(10);
+}
+
+void testprint(byte lines){
+
+  char message[30];
+  int vpos=0;
+
+  for (byte no=1; no<(lines+1); no++)
+  {
+    vpos = (no * 21) + 22;
+    sprintf(message, "Line : %d Pos %d", no, vpos);
+    
+    showmsgXY(1, vpos, 1, WHITE, message);
+    Serial.println(message);
+    }
+
 }
 
 void displayMessage(String message) {
