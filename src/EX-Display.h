@@ -37,3 +37,4 @@ void showmsgXY(int x, int y, byte sz, char colour, char *msg);
 void TFT_DrawHeader();
 void testprint(byte lines);
 void displayMessage(String message);
+void ParseData(char message);

@@ -22,6 +22,7 @@
 #include <Adafruit_GFX.h>
 
 #include "EX-Display.h"
+#include "DCCEXInbound.h"
 
 MCUFRIEND_kbv tft;
 
@@ -51,16 +52,33 @@ void setup() {
   // tft.fillScreen(0); // Fill the screen with black color
   // tft.setTextSize(FONT_SIZE);
   tft.setTextColor(0xFFFF); // White color
+
+  DCCEXInbound::setup(3);
+
 }
 
 void loop() {
-  // if (Serial.available()) { // Check if data is available on Serial1
-  //   String message = Serial.readStringUntil('\n'); // Read the incoming message
-  //   message.trim(); // Remove leading and trailing whitespaces
-  //   displayMessage(message); // Display the message
-  //   currentYPos += FONT_SIZE * 8; // Move to the next line for the next message
-  //   currentXPos = 0; // Reset X position for the new line
-  // }
+  if (Serial.available()) { // Check if data is available on Serial1
+    String message = Serial.readStringUntil('\n'); // Read the incoming message
+    message.trim(); // Remove leading and trailing whitespaces
+    //displayMessage(message); // Display the message
+    currentYPos += FONT_SIZE * 8; // Move to the next line for the next message
+    currentXPos = 0; // Reset X position for the new line
+    //byte ind1 = message.indexOf('@'); 
+    //if (ind1){
+    String key = message.substring(0,2);
+    if (key == "<@"){
+      Serial.print(message.substring(0,2));
+      Serial.print("  -  ");
+      Serial.println(message);
+      int ssize = message.length();
+      char cmd[ssize];
+      //strcpy(cmd, message);
+      message.toCharArray(cmd, message.length() + 1);
+      Serial.println(cmd);
+      ParseData(*cmd);
+    }
+  }
 
 }
 
@@ -83,8 +101,8 @@ void TFT_Begin()
     TFT_DrawHeader();
 
     // remove the following for live running.
-    testprint(10);
-    delay(2000);
+    //testprint(10);
+    //delay(2000);
 
 
 }
@@ -160,4 +178,19 @@ void displayMessage(String message) {
       currentXPos += CHAR_WIDTH;
     }
   }
+}
+
+void ParseData(char * cmd){
+
+  DCCEXInbound::parse(* cmd);
+  int  screenNo=DCCEXInbound::getNumber(0);
+  int  row=DCCEXInbound::getNumber(1);
+  char msg=DCCEXInbound::getText(2);
+
+  //if (screenNo == 0){
+  byte vpos = (row * 21) + 22;
+    sprintf(msg, "Line : %d Pos %d", screenNo, vpos);
+    
+    showmsgXY(1, vpos, 1, WHITE, msg);
+  //}
 }
