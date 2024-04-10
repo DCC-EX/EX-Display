@@ -1,5 +1,6 @@
 // EX-Display.h
 
+#define DEBUG
 
 #define THIS_SCREEN_NUM 0
 #define DISPLAY_WIDTH 320
@@ -37,4 +38,4 @@ void showmsgXY(int x, int y, byte sz, char colour, char *msg);
 void TFT_DrawHeader();
 void testprint(byte lines);
 void displayMessage(String message);
-void ParseData(char message);
+void ParseData(String message);

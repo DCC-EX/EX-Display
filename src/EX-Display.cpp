@@ -20,9 +20,8 @@
 #include <Arduino.h>
 #include <MCUFRIEND_kbv.h>
 #include <Adafruit_GFX.h>
-
+#include "LibPrintf.h"
 #include "EX-Display.h"
-#include "DCCEXInbound.h"
 
 MCUFRIEND_kbv tft;
 
@@ -38,8 +37,8 @@ MCUFRIEND_kbv tft;
 
 
 
-int16_t currentXPos = 0; // Track the current x-position for printing text
-int16_t currentYPos = 0; // Track the current y-position for printing text
+//int16_t currentXPos = 0; // Track the current x-position for printing text
+//int16_t currentYPos = 0; // Track the current y-position for printing text
 
 
 void setup() {
@@ -47,13 +46,8 @@ void setup() {
   //Serial1.begin(115200); // Start Serial1 for listening to messages
 
   TFT_Begin(); // Initialize the display
-  //tft.setRotation(3); // Set rotation if needed
 
-  // tft.fillScreen(0); // Fill the screen with black color
-  // tft.setTextSize(FONT_SIZE);
   tft.setTextColor(0xFFFF); // White color
-
-  DCCEXInbound::setup(3);
 
 }
 
@@ -61,22 +55,18 @@ void loop() {
   if (Serial.available()) { // Check if data is available on Serial1
     String message = Serial.readStringUntil('\n'); // Read the incoming message
     message.trim(); // Remove leading and trailing whitespaces
-    //displayMessage(message); // Display the message
-    currentYPos += FONT_SIZE * 8; // Move to the next line for the next message
-    currentXPos = 0; // Reset X position for the new line
-    //byte ind1 = message.indexOf('@'); 
-    //if (ind1){
+   
+    //currentYPos += FONT_SIZE * 8; // Move to the next line for the next message
+    //currentXPos = 0; // Reset X position for the new line
+    
     String key = message.substring(0,2);
     if (key == "<@"){
-      Serial.print(message.substring(0,2));
-      Serial.print("  -  ");
-      Serial.println(message);
-      int ssize = message.length();
-      char cmd[ssize];
-      //strcpy(cmd, message);
-      message.toCharArray(cmd, message.length() + 1);
-      Serial.println(cmd);
-      ParseData(*cmd);
+      #ifdef DEBUG
+        Serial.print(message.substring(0,2));
+        Serial.print("  -  ");
+        Serial.println(message);
+      #endif
+      ParseData(message);
     }
   }
 
@@ -89,7 +79,9 @@ void TFT_Begin()
     uint16_t ID = tft.readID();
     Serial.print("TFT ID = 0x");
     Serial.println(ID, HEX);
+    #ifdef DEBUG
     Serial.println("Calibrate for your Touch Panel");
+    #endif
     if (ID == 0xD3D3) ID = 0x9486; // write-only shield
 
     tft.begin(ID);
@@ -99,12 +91,6 @@ void TFT_Begin()
     tft.fillScreen(BLACK);
 
     TFT_DrawHeader();
-
-    // remove the following for live running.
-    //testprint(10);
-    //delay(2000);
-
-
 }
 
 void TFT_DrawHeader() {
@@ -113,7 +99,7 @@ void TFT_DrawHeader() {
     sprintf(header, "DCC-EX   SCREEN %d", THIS_SCREEN_NUM);
     showmsgXY(1, 20, 1, YELLOW, header);
     tft.drawFastHLine(0, 25, tft.width(), WHITE);
-
+    delay(5000);
 }
 
 void showmsgXY(int x, int y, byte sz, char colour, char *msg)
@@ -124,8 +110,11 @@ void showmsgXY(int x, int y, byte sz, char colour, char *msg)
     tft.setCursor(x, y);
     tft.setTextColor(colour);
     tft.setTextSize(sz);
+
+    #ifdef DEBUG
     tft.print(msg);
-    delay(10);
+    #endif
+    
 }
 
 void testprint(byte lines){
@@ -136,61 +125,72 @@ void testprint(byte lines){
   for (byte no=1; no<(lines+1); no++)
   {
     vpos = (no * 21) + 22;
-    sprintf(message, "Line : %d Pos %d", no, vpos);
-    
-    showmsgXY(1, vpos, 1, WHITE, message);
+
+    #ifdef DEBUG
+    printf(message, "Line : %d Pos %d", no, vpos);
     Serial.println(message);
-    }
+    #endif
 
-}
-
-void displayMessage(String message) {
-  // Iterate through each character in the message
-  for (size_t i = 0; i < message.length(); i++) {
-    char character = message.charAt(i); // Get the current character
-
-    // Check if adding the character will exceed the display width
-    if (currentXPos + CHAR_WIDTH > DISPLAY_WIDTH) {
-      // Move to the next line
-      currentXPos = 0;
-      currentYPos += FONT_SIZE * 8; // Move down by one font height
-
-      // Check if adding the character will exceed the display height
-      if (currentYPos + FONT_SIZE * 8 > DISPLAY_HEIGHT) {
-        // Clear the screen if all lines are used
-        tft.fillScreen(0);
-        currentXPos = 0;
-        currentYPos = 0;
-      }
-    }
-
-    // Handle newline character
-    if (character == '\n') {
-      // Move to the next line
-      currentXPos = 0;
-      currentYPos += FONT_SIZE * 8; // Move down by one font height
-    } else {
-      // Print the character at the current position
-      tft.setCursor(currentXPos, currentYPos);
-      tft.write(character);
-
-      // Update x-position for the next character
-      currentXPos += CHAR_WIDTH;
-    }
-  }
-}
-
-void ParseData(char * cmd){
-
-  DCCEXInbound::parse(* cmd);
-  int  screenNo=DCCEXInbound::getNumber(0);
-  int  row=DCCEXInbound::getNumber(1);
-  char msg=DCCEXInbound::getText(2);
-
-  //if (screenNo == 0){
-  byte vpos = (row * 21) + 22;
-    sprintf(msg, "Line : %d Pos %d", screenNo, vpos);
+    showmsgXY(1, vpos, 1, WHITE, message);
     
+    }
+
+}
+
+// void displayMessage(String message) {
+//   // Iterate through each character in the message
+//   for (size_t i = 0; i < message.length(); i++) {
+//     char character = message.charAt(i); // Get the current character
+
+//     // Check if adding the character will exceed the display width
+//     if (currentXPos + CHAR_WIDTH > DISPLAY_WIDTH) {
+//       // Move to the next line
+//       currentXPos = 0;
+//       currentYPos += FONT_SIZE * 8; // Move down by one font height
+
+//       // Check if adding the character will exceed the display height
+//       if (currentYPos + FONT_SIZE * 8 > DISPLAY_HEIGHT) {
+//         // Clear the screen if all lines are used
+//         tft.fillScreen(0);
+//         currentXPos = 0;
+//         currentYPos = 0;
+//       }
+//     }
+
+//     // Handle newline character
+//     if (character == '\n') {
+//       // Move to the next line
+//       currentXPos = 0;
+//       currentYPos += FONT_SIZE * 8; // Move down by one font height
+//     } else {
+//       // Print the character at the current position
+//       tft.setCursor(currentXPos, currentYPos);
+//       tft.write(character);
+
+//       // Update x-position for the next character
+//       currentXPos += CHAR_WIDTH;
+//     }
+//   }
+// }
+
+void ParseData(String message){
+  
+  int pos1 = message.indexOf(' ')+1;  //finds location of first SPACE
+  int pos2 = message.indexOf(' ', pos1);   //finds location of second 
+  int screenNo = (message.substring(pos1, pos2)).toInt();
+  int pos3 = message.indexOf(' ', pos2+1);
+  int screenRow = (message.substring(pos2+1, pos3)).toInt();
+  int pos4 = message.indexOf('"')+1; // finds location of start of desc
+  int lastchar = message.indexOf('"', pos4+1);
+  char msg[35];
+  message.substring(pos4, lastchar).toCharArray(msg, 35);
+  #ifdef DEBUG
+  // printf("pos1 %d Pos2 %d Pos3 %d Pos4 %d Last %d\n", pos1, pos2, pos3, pos4, lastchar);
+  // printf("Screen : %d Row %d - %s\n", screenNo, screenRow, msg);
+  #endif
+  if (screenNo == 0){
+    byte vpos = (screenRow * 21) + 44;
+    tft.fillRect(1,vpos,320, 20, BLACK);
     showmsgXY(1, vpos, 1, WHITE, msg);
-  //}
+  }
 }
