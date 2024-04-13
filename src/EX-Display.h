@@ -6,6 +6,10 @@
 #define DISPLAY_WIDTH 320
 #define DISPLAY_HEIGHT 240
 
+#define MAX_ROWS 10  
+#define MAX_SCREENS 3  
+#define MAX_LINE_LENGTH 30  
+
 #define FONT_SIZE 2.5 // Adjust font size as needed
 #define CHAR_WIDTH (6 * FONT_SIZE) // Width of a single character in pixels
 
@@ -32,10 +36,26 @@ const int TS_LEFT=122,TS_RT=899,TS_TOP=100,TS_BOT=898;
 #define YELLOW  0xFFE0
 #define WHITE   0xFFFF
 
+// A structure to store the screen lines.
+struct DisplayStruct
+{
+  bool inuse;
+  byte row;
+  char text[MAX_LINE_LENGTH];
+} DisplayLines[MAX_SCREENS][MAX_ROWS];
 
-void TFT_Begin();
+// variables to indicate what needs doing to display the screen
+bool ScreenChanged[MAX_SCREENS] = {false,false,false};
+bool PrintInProgress=false;
+byte NextRowToPrint=0;
+byte NextScreenLine=0;
+
+void TFT_Startup();
 void showmsgXY(int x, int y, byte sz, char colour, char *msg);
 void TFT_DrawHeader();
 void testprint(byte lines);
 void displayMessage(String message);
 void ParseData(String message);
+void StartScreenPrint();
+void PrintALine();
+void DisplayScreen();
