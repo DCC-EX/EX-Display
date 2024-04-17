@@ -66,6 +66,7 @@ void setup() {
 
   timestamp = millis();
 
+
 }
 
 void loop() {
@@ -73,6 +74,7 @@ void loop() {
   if (StartupPhase) {
     if ((millis() - timestamp) >= 8000){
             StartupPhase=false;
+            screencount=millis();
     }
   }
 
@@ -115,6 +117,19 @@ void loop() {
           }
       }
     }
+  }
+
+  //Check Page Time
+  if((millis()-screencount) > 15000) {
+
+    if (THIS_SCREEN_NUM == MAX_SCREENS-1) {
+      THIS_SCREEN_NUM=0;
+    }
+    else {
+      THIS_SCREEN_NUM++;
+      StartScreenPrint();
+    }
+  screencount=millis();
   }
 
 }

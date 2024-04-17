@@ -2,7 +2,7 @@
 
 #define DEBUG
 
-#define THIS_SCREEN_NUM 0
+byte THIS_SCREEN_NUM = 0;
 #define DISPLAY_WIDTH 320
 #define DISPLAY_HEIGHT 240
 
@@ -61,6 +61,7 @@ bool PrintInProgress=false;
 byte NextRowToPrint=0;
 byte NextScreenLine=0;
 long timestamp=0;
+long screencount=0;
 bool StartupPhase = true;
 
 void TFT_Startup();
