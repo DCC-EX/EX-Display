@@ -59,6 +59,8 @@ void setup() {
   //Serial1.begin(115200); // Start Serial1 for listening to messages
 
   TFT_Startup(); // Initialize the display
+  //tft.invertDisplay(1);
+  tft.invertDisplay(0);
 
   Serial.println("End of Setup");
 
@@ -148,7 +150,7 @@ void TFT_DrawHeader() {
     
 }
 
-void showmsgXY(int x, int y, byte sz, char colour, char *msg)
+void showmsgXY(int x, int y, byte sz, uint16_t colour, char *msg)
 {
     tft.setFont();
     tft.setFont(&Arial9pt7b);
@@ -175,7 +177,8 @@ void testprint(byte lines){
     Serial.println(message);
     #endif
 
-    showmsgXY(1, vpos, 1, WHITE, message);
+    //showmsgXY(1, vpos, 1, WHITE, message);
+    showmsgXY(1, vpos, 1, static_cast<uint16_t>(WHITE), message);
     
     }
 
@@ -241,7 +244,8 @@ void PrintSingleLine(byte screenNo, byte screenRow) {
     printf("Row found - %d\n", Row);
     //NextRowToPrint=Row;
     byte vpos = (Row * 21) + 44;
-    showmsgXY(1, vpos, 1, WHITE, "                              ");
+    //showmsgXY(1, vpos, 1, WHITE, "                              ");
+    showmsgXY(1, vpos, 1, static_cast<uint16_t>(WHITE), "                              ");
     tft.fillRect(1,(vpos-21),320, 20, BLACK);
     char msg[MAX_LINE_LENGTH];
     strcpy(msg, DisplayLines[THIS_SCREEN_NUM][Row].text);
@@ -257,7 +261,8 @@ void PrintALine() {
     printf("Print row %d screen %d\n", NextScreenLine, THIS_SCREEN_NUM);
     byte vpos = (NextScreenLine * 21) + 44;
     
-    showmsgXY(1, vpos, 1, WHITE, "                              ");
+    //showmsgXY(1, vpos, 1, WHITE, "                              ");
+    showmsgXY(1, vpos, 1, static_cast<uint16_t>(WHITE), "                              ");
     char msg[MAX_LINE_LENGTH];
     strcpy(msg, DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].text);
     showmsgXY(1, vpos, 1, WHITE, msg);
