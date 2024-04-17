@@ -24,7 +24,7 @@
 #include "EX-Display.h"
 //#include "LinkedList.h"
 #ifdef DEBUG
-#include "LibPrintf.h"
+//#include "LibPrintf.h"
 #endif
 
 MCUFRIEND_kbv tft;
