@@ -39,23 +39,27 @@ const int TS_LEFT=122,TS_RT=899,TS_TOP=100,TS_BOT=898;
 // A structure to store the screen lines.
 struct DisplayStruct
 {
-  bool inuse;
-  byte row;
-  char text[MAX_LINE_LENGTH];
+  bool inuse=false;
+  byte row=0;
+  char text[MAX_LINE_LENGTH]=" ";
 } DisplayLines[MAX_SCREENS][MAX_ROWS];
 
 // variables to indicate what needs doing to display the screen
 bool ScreenChanged[MAX_SCREENS] = {false,false,false};
+//bool ScreenDrawn=false;
 bool PrintInProgress=false;
 byte NextRowToPrint=0;
 byte NextScreenLine=0;
+long timestamp=0;
+bool StartupPhase = true;
 
 void TFT_Startup();
 void showmsgXY(int x, int y, byte sz, char colour, char *msg);
 void TFT_DrawHeader();
 void testprint(byte lines);
-void displayMessage(String message);
 void ParseData(String message);
 void StartScreenPrint();
+//void PrintNextLine();
+void PrintSingleLine(byte screenNo, byte screenRow);
 void PrintALine();
 void DisplayScreen();

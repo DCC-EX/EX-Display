@@ -22,7 +22,7 @@
 #include <Adafruit_GFX.h>
 
 #include "EX-Display.h"
-#include "LinkedList.h"
+//#include "LinkedList.h"
 #ifdef DEBUG
 #include "LibPrintf.h"
 #endif
@@ -56,56 +56,57 @@ void setup() {
 
   TFT_Startup(); // Initialize the display
 
-  tft.setTextColor(0xFFFF); // White color
-
-  //Clear the Index array
-  for (byte r=0;r<MAX_ROWS;r++) {
-    for (byte s=0;s<MAX_SCREENS;s++){
-      DisplayLines[s][r].inuse=false;
-      DisplayLines[s][r].row=r;
-      DisplayLines[s][r].text[0]=" ";
-    }
-  }
-
   Serial.println("End of Setup");
+
+  timestamp = millis();
 
 }
 
 void loop() {
 
-  //Serial.print("Loop");
+  if (StartupPhase) {
+    if ((millis() - timestamp) >= 8000){
+            StartupPhase=false;
+    }
+  }
 
   if (Serial.available()) { // Check if data is available on Serial1
     String message = Serial.readStringUntil('\n'); // Read the incoming message
     message.trim(); // Remove leading and trailing whitespaces
-   
-    //currentYPos += FONT_SIZE * 8; // Move to the next line for the next message
-    //currentXPos = 0; // Reset X position for the new line
     
-    String key = message.substring(0,2);
-    if (key == "<@"){
-
-      #ifdef DEBUG
-        Serial.print(message.substring(0,2));
-        Serial.print("  -  ");
+    int found = message.indexOf("<@");
+    if (found>=0) {
+      printf("<@ found at char %d\n", found);
+    #ifdef DEBUG
         Serial.println(message);
-      #endif
+        if (found>=1){
+        message.remove(0,found);
+        }
+        Serial.println(message);
+    #endif
 
       // Save to the buffer
       ParseData(message);
+
+      if (StartupPhase) 
+        {
+          printf("Time ms = %d\n", millis()-timestamp);
+        }
       
     }
   }
-  else
-  {
-    if(PrintInProgress){
-      PrintALine();
-    }
-    else{
-      if (ScreenChanged[THIS_SCREEN_NUM]=true)
-      {
-        
-        StartScreenPrint();
+  else {
+  // No data incoming so see if we need to display anything
+    if (StartupPhase==false){
+      if (ScreenChanged[THIS_SCREEN_NUM]==true) {
+
+          if (PrintInProgress==true) { 
+
+              PrintALine();
+          }
+          else {
+            StartScreenPrint();
+          }
       }
     }
   }
@@ -119,18 +120,18 @@ void TFT_Startup()
     uint16_t ID = tft.readID();
     Serial.print("TFT ID = 0x");
     Serial.println(ID, HEX);
-    #ifdef DEBUG
-    Serial.println("Calibrate for your Touch Panel");
-    #endif
-    if (ID == 0xD3D3) ID = 0x9486; // write-only shield
+    // #ifdef DEBUG
+    // Serial.println("Calibrate for your Touch Panel");
+    // #endif
+    //if (ID == 0xD3D3) ID = 0x9486; // write-only shield
 
     tft.begin(ID);
   
     tft.setRotation(1);           
-    tft.setTextColor(0xFFFF); 
+    tft.setTextColor(WHITE); 
     tft.fillScreen(BLACK);
 
-    TFT_DrawHeader();
+    StartScreenPrint();
 
 }
 
@@ -140,7 +141,7 @@ void TFT_DrawHeader() {
     sprintf(header, "DCC-EX   SCREEN %d", THIS_SCREEN_NUM);
     showmsgXY(1, 20, 1, YELLOW, header);
     tft.drawFastHLine(0, 25, tft.width(), WHITE);
-    delay(5000);
+    
 }
 
 void showmsgXY(int x, int y, byte sz, char colour, char *msg)
@@ -151,10 +152,8 @@ void showmsgXY(int x, int y, byte sz, char colour, char *msg)
     tft.setCursor(x, y);
     tft.setTextColor(colour);
     tft.setTextSize(sz);
-
-    #ifdef DEBUG
     tft.print(msg);
-    #endif
+   
     
 }
 
@@ -178,97 +177,108 @@ void testprint(byte lines){
 
 }
 
-// void displayMessage(String message) {
-//   // Iterate through each character in the message
-//   for (size_t i = 0; i < message.length(); i++) {
-//     char character = message.charAt(i); // Get the current character
-
-//     // Check if adding the character will exceed the display width
-//     if (currentXPos + CHAR_WIDTH > DISPLAY_WIDTH) {
-//       // Move to the next line
-//       currentXPos = 0;
-//       currentYPos += FONT_SIZE * 8; // Move down by one font height
-
-//       // Check if adding the character will exceed the display height
-//       if (currentYPos + FONT_SIZE * 8 > DISPLAY_HEIGHT) {
-//         // Clear the screen if all lines are used
-//         tft.fillScreen(0);
-//         currentXPos = 0;
-//         currentYPos = 0;
-//       }
-//     }
-
-//     // Handle newline character
-//     if (character == '\n') {
-//       // Move to the next line
-//       currentXPos = 0;
-//       currentYPos += FONT_SIZE * 8; // Move down by one font height
-//     } else {
-//       // Print the character at the current position
-//       tft.setCursor(currentXPos, currentYPos);
-//       tft.write(character);
-
-//       // Update x-position for the next character
-//       currentXPos += CHAR_WIDTH;
-//     }
-//   }
-// }
 
 void ParseData(String message){
   
   int pos1 = message.indexOf(' ')+1;  //finds location of first SPACE
   int pos2 = message.indexOf(' ', pos1);   //finds location of second 
   int screenNo = (message.substring(pos1, pos2)).toInt();
-  //ScreenItem->screen = (message.substring(pos1, pos2)).toInt();
   int pos3 = message.indexOf(' ', pos2+1);
   int screenRow = (message.substring(pos2+1, pos3)).toInt();
-  //ScreenItem->row = (message.substring(pos2+1, pos3)).toInt();
   int pos4 = message.indexOf('"')+1; // finds location of start of desc
   int lastchar = message.indexOf('"', pos4+1);
-  char msg[35];
+  char msg[MAX_LINE_LENGTH+1];
   DisplayLines[screenNo][screenRow].inuse=true;
   DisplayLines[screenNo][screenRow].row=screenRow;
-  message.substring(pos4, lastchar).toCharArray(DisplayLines[screenNo][screenRow].text, MAX_LINE_LENGTH);
-
+  String buffer = message.substring(pos4, lastchar);
+  buffer.toCharArray(msg, MAX_LINE_LENGTH);
+  strcpy (DisplayLines[screenNo][screenRow].text, msg);
+  // set a flag to indicate a screen has changed.
   ScreenChanged[screenNo]=true;
 
   #ifdef DEBUG
-  // printf("pos1 %d Pos2 %d Pos3 %d Pos4 %d Last %d\n", pos1, pos2, pos3, pos4, lastchar);
-  //printf("Screen : %d Row %d - %s\n", screenNo, screenRow, msg);
+    Serial.print(" Buffer - ");
+    Serial.println(buffer);
+    Serial.print("msg = ");
+    Serial.println(msg);
+    // printf("pos1 %d Pos2 %d Pos3 %d Pos4 %d Last %d\n", pos1, pos2, pos3, pos4, lastchar);
+    printf("Screen : %d Row %d - %s\n", screenNo, screenRow, DisplayLines[screenNo][screenRow].text);
   #endif
 
+  // if (ScreenDrawn){
+  //   printf("Printing single line %d", screenRow);
+  //   PrintSingleLine(screenNo, screenRow);
+  // }
 }
 
 void StartScreenPrint() {
     
+    Serial.println("New Page");
     tft.fillScreen(BLACK);
     TFT_DrawHeader();
+    Serial.println("Drawn Header");
     PrintInProgress=true;
     NextRowToPrint=0;
     NextScreenLine=0;
 
 }
 
+void PrintSingleLine(byte screenNo, byte screenRow) {
+    printf("Printing lines %d\n", screenRow);
+    // Find which screen row to print on
+    byte Row = 0;
+    for (byte x=0; x<=screenRow; x++) {
+      if (DisplayLines[screenNo][x].row<screenRow){
+        if (DisplayLines[screenNo][x].inuse==true) {
+          Row=Row+1;
+        }
+      }
+    }
+    printf("Row found - %d\n", Row);
+    //NextRowToPrint=Row;
+    byte vpos = (Row * 21) + 44;
+    showmsgXY(1, vpos, 1, WHITE, "                              ");
+    tft.fillRect(1,(vpos-21),320, 20, BLACK);
+    char msg[MAX_LINE_LENGTH];
+    strcpy(msg, DisplayLines[THIS_SCREEN_NUM][Row].text);
+    showmsgXY(1, vpos, 1, WHITE, msg);
+    
+}
+
 void PrintALine() {
 
-  if (DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].inuse) {
+  printf("Printing a line %d MAX %d", NextRowToPrint, MAX_ROWS);
+  delay(50);
+  if (DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].inuse==true) {
+    printf("Print row %d screen %d\n", NextScreenLine, THIS_SCREEN_NUM);
     byte vpos = (NextScreenLine * 21) + 44;
-    //   tft.fillRect(1,vpos,320, 20, BLACK);
+    
+    showmsgXY(1, vpos, 1, WHITE, "                              ");
     char msg[MAX_LINE_LENGTH];
     strcpy(msg, DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].text);
-    showmsgXY(1, vpos, 1, WHITE, *msg);
-    NextRowToPrint++;
-    NextScreenLine++;  
+    showmsgXY(1, vpos, 1, WHITE, msg);
+    printf("Printing Row %d - %s", NextScreenLine, msg);
+    // increment the screen line count
+    NextScreenLine++;
   }
-  if (NextRowToPrint == MAX_ROWS) {
-    // We've reached the end of this page
+  // increment the data line count
+  NextRowToPrint++;
+
+  if (NextRowToPrint >= MAX_ROWS) {
+    //We've reached the end of this page
     PrintInProgress=false;
-    NextRowToPrint=0;
-    NextScreenLine=0;
     ScreenChanged[THIS_SCREEN_NUM]=false;
+    DisplayScreen();  // just for debug
+    // Any blank lines needed?
+    while (NextScreenLine<MAX_ROWS){
+      byte vpos = (NextScreenLine * 21) + 44;
+      showmsgXY(1, vpos, 1, WHITE, "                              ");
+      NextScreenLine++;
+    }
   }
-  //}
+  
 }
+
 
 void DisplayScreen(){
   //if (screenNo == 0){
@@ -276,5 +286,9 @@ void DisplayScreen(){
   //   tft.fillRect(1,vpos,320, 20, BLACK);
    //  showmsgXY(1, vpos, 1, WHITE, msg);
   //}
+
+  for (byte x=0;x<10;x++){
+    printf("Line %d - Use - %d - %s\n", x, DisplayLines[THIS_SCREEN_NUM][x].inuse, DisplayLines[THIS_SCREEN_NUM][x].text);
+  }
 
 }
