@@ -20,7 +20,7 @@
 #include <Arduino.h>
 #include <MCUFRIEND_kbv.h>
 #include <Adafruit_GFX.h>
-
+//
 #include "EX-Display.h"
 //#include "LinkedList.h"
 #ifdef DEBUG
@@ -32,12 +32,16 @@ MCUFRIEND_kbv tft;
 #include "Arial9pt7b.h"
 //#include "FreeSans12pt7b.h"
 
-// #if defined(ARDUINO_AVR_MEGA2560)
-//   #define RX_PIN 19 // Define the RX pin for Serial1
-//   #elif defined(ARDUINO_AVR_UNO)
-//   #define RX_PIN 0
-//   #define Serial1 Serial
-//   #endif
+#if defined(ARDUINO_AVR_MEGA2560)
+//     #define Serial Serial1
+//     #define RX_PIN 19 // Define the RX pin for Serial1
+     #define RX_PIN 0 // Define the RX pin for Serial1
+     #elif defined(ARDUINO_AVR_UNO)
+     #define RX_PIN 0
+     #elif defined(ESP32)
+     #define RX_PIN 0
+//     #define Serial1 Serial
+     #endif
 
 //LinkedList<String> ListBuffer;
 //byte ItemsInBuffer =0;
@@ -128,7 +132,7 @@ void TFT_Startup()
     tft.begin(ID);
   
     tft.setRotation(1);           
-    tft.setTextColor(WHITE); 
+    tft.setTextColor(0xFFFF); 
     tft.fillScreen(BLACK);
 
     StartScreenPrint();
