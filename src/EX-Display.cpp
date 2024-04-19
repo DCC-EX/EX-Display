@@ -36,12 +36,20 @@ MCUFRIEND_kbv tft;
 //     #define Serial Serial1
 //     #define RX_PIN 19 // Define the RX pin for Serial1
      #define RX_PIN 0 // Define the RX pin for Serial1
+     #define SERIAL Serial
      #elif defined(ARDUINO_AVR_UNO)
      #define RX_PIN 0
+     #define SERIAL Serial
      #elif defined(ESP32)
      #define RX_PIN 0
-//     #define Serial1 Serial
-     #endif
+     #define SERIAL Serial
+
+     #elif defined(ARDUINO_NUCLEO_F446RE) 
+     HardwareSerial Serial5(PD2, PC12);  // Rx=PD2, Tx=PC12 -- UART5 - F446RE
+     #define SERIAL Serial5
+     #define RX_PIN PD2;
+     //defined(ARDUINO_NUCLEO_F411RE)
+#endif
 
 //LinkedList<String> ListBuffer;
 //byte ItemsInBuffer =0;
@@ -55,14 +63,14 @@ int ScreenLines;
 
 
 void setup() {
-  Serial.begin(115200); // Start the serial communication
-  //Serial1.begin(115200); // Start Serial1 for listening to messages
+  SERIAL.begin(115200); // Start the serial communication
+  //SERIAL1.begin(115200); // Start Serial1 for listening to messages
 
   TFT_Startup(); // Initialize the display
   //tft.invertDisplay(1);
   tft.invertDisplay(0);
 
-  Serial.println("End of Setup");
+  SERIAL.println("End of Setup");
 
   timestamp = millis();
 
@@ -78,19 +86,19 @@ void loop() {
     }
   }
 
-  if (Serial.available()) { // Check if data is available on Serial1
-    String message = Serial.readStringUntil('\n'); // Read the incoming message
+  if (SERIAL.available()) { // Check if data is available on Serial1
+    String message = SERIAL.readStringUntil('\n'); // Read the incoming message
     message.trim(); // Remove leading and trailing whitespaces
     
     int found = message.indexOf("<@");
     if (found>=0) {
       printf("<@ found at char %d\n", found);
     #ifdef DEBUG
-        Serial.println(message);
+        SERIAL.println(message);
         if (found>=1){
         message.remove(0,found);
         }
-        Serial.println(message);
+        SERIAL.println(message);
     #endif
 
       // Save to the buffer
@@ -139,10 +147,10 @@ void TFT_Startup()
 {
 
     uint16_t ID = tft.readID();
-    Serial.print("TFT ID = 0x");
-    Serial.println(ID, HEX);
+    SERIAL.print("TFT ID = 0x");
+    SERIAL.println(ID, HEX);
     // #ifdef DEBUG
-    // Serial.println("Calibrate for your Touch Panel");
+    // SERIAL.println("Calibrate for your Touch Panel");
     // #endif
     //if (ID == 0xD3D3) ID = 0x9486; // write-only shield
 
@@ -189,7 +197,7 @@ void testprint(byte lines){
 
     #ifdef DEBUG
     printf(message, "Line : %d Pos %d", no, vpos);
-    Serial.println(message);
+    SERIAL.println(message);
     #endif
 
     //showmsgXY(1, vpos, 1, WHITE, message);
@@ -219,10 +227,10 @@ void ParseData(String message){
   ScreenChanged[screenNo]=true;
 
   #ifdef DEBUG
-    Serial.print(" Buffer - ");
-    Serial.println(buffer);
-    Serial.print("msg = ");
-    Serial.println(msg);
+    SERIAL.print(" Buffer - ");
+    SERIAL.println(buffer);
+    SERIAL.print("msg = ");
+    SERIAL.println(msg);
     // printf("pos1 %d Pos2 %d Pos3 %d Pos4 %d Last %d\n", pos1, pos2, pos3, pos4, lastchar);
     printf("Screen : %d Row %d - %s\n", screenNo, screenRow, DisplayLines[screenNo][screenRow].text);
   #endif
@@ -235,10 +243,10 @@ void ParseData(String message){
 
 void StartScreenPrint() {
     
-    Serial.println("New Page");
+    SERIAL.println("New Page");
     tft.fillScreen(BLACK);
     TFT_DrawHeader();
-    Serial.println("Drawn Header");
+    SERIAL.println("Drawn Header");
     PrintInProgress=true;
     NextRowToPrint=0;
     NextScreenLine=0;
