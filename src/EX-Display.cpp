@@ -20,11 +20,14 @@
 #include <Arduino.h>
 #include <MCUFRIEND_kbv.h>
 #include <Adafruit_GFX.h>
-//
+#include "config.h"
 #include "EX-Display.h"
-//#include "LinkedList.h"
+
 #ifdef DEBUG
-//#include "LibPrintf.h"
+  #if defined(ARDUINO_AVR_UNO)
+    // for the Uno include this so we can use printf
+    #include "LibPrintf.h"
+  #endif
 #endif
 
 MCUFRIEND_kbv tft;
@@ -57,15 +60,7 @@ MCUFRIEND_kbv tft;
      
 #endif
 
-//LinkedList<String> ListBuffer;
-//byte ItemsInBuffer =0;
-//LinkedList<DisplayLine*> myScreenList = LinkedList<DisplayLine*>();
-//int ScreenIndex[MAX_ROWS][MAX_SCREENS];
 int ScreenLines;
-
-
-//int16_t currentXPos = 0; // Track the current x-position for printing text
-//int16_t currentYPos = 0; // Track the current y-position for printing text
 
 
 void setup() {

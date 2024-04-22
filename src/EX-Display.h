@@ -1,20 +1,19 @@
+#ifndef EX_DISPLAY_h
+#define EX_DISPLAY_H
+
 // EX-Display.h
 
 #define DEBUG
 
 byte THIS_SCREEN_NUM = 0;
-#define DISPLAY_WIDTH 320
-#define DISPLAY_HEIGHT 240
-
-#define MAX_ROWS 10  
-#define MAX_SCREENS 3  
-#define MAX_LINE_LENGTH 30  
 
 #define FONT_SIZE 2.5 // Adjust font size as needed
 #define CHAR_WIDTH (6 * FONT_SIZE) // Width of a single character in pixels
 
 // Set this following string to the header you require.  This is displayed at the top of the screen
 #define HDDR_SIZE  25
+
+
 
 
 // ALL Touch panels and wiring is DIFFERENT.  The touch screen needs to be calibrated
@@ -55,8 +54,8 @@ struct DisplayStruct
 } DisplayLines[MAX_SCREENS][MAX_ROWS];
 
 // variables to indicate what needs doing to display the screen
-bool ScreenChanged[MAX_SCREENS] = {false,false,false};
-//bool ScreenDrawn=false;
+bool ScreenChanged[MAX_SCREENS] = {false,false};
+//bool ScreenDrawn=false
 bool PrintInProgress=false;
 byte NextRowToPrint=0;
 byte NextScreenLine=0;
@@ -76,3 +75,6 @@ void StartScreenPrint();
 void PrintSingleLine(byte screenNo, byte screenRow);
 void PrintALine();
 void DisplayScreen();
+
+
+#endif
