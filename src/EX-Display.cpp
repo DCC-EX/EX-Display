@@ -91,6 +91,7 @@ void TFT_Startup()
     }
     blankmsg[MAX_LINE_LENGTH+1]='\0';
 
+    StartScreenPrint();
 
 }
 
