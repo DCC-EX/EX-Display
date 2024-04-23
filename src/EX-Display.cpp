@@ -86,11 +86,16 @@ void TFT_Startup()
     tft.setTextColor(0xFFFF); 
     tft.fillScreen(BLACK);
 
-    StartScreenPrint();
+    for (byte x=0; x<=MAX_LINE_LENGTH; x++){
+      blankmsg[x]=' ';
+    }
+    blankmsg[MAX_LINE_LENGTH+1]='\0';
+
+    //StartScreenPrint();
 
 }
 
-void showmsgXY(int x, int y, byte sz, const char *msg)
+void showmsgXY(int x, int y, int sz, const char *msg)
 {
     tft.setFont();
     tft.setFont(&Arial9pt7b);
@@ -127,7 +132,6 @@ void testprint(byte lines){
       SERIAL.println(message);
     #endif
 
-    //showmsgXY(1, vpos, 1, WHITE, message);
     showmsgXY(1, vpos, 1, message);
     
     }
@@ -196,28 +200,25 @@ void PrintSingleLine(byte screenNo, byte screenRow) {
     byte vpos = (Row * 21) + 44;
     showmsgXY(1, vpos, 1, blankmsg);
     tft.fillRect(1,(vpos-21),320, 20, BLACK);
-    char msg[MAX_LINE_LENGTH];
-    strcpy(msg, DisplayLines[THIS_SCREEN_NUM][Row].text);
-    showmsgXY(1, vpos, 1, msg);
+
+    showmsgXY(1, vpos, 1, DisplayLines[THIS_SCREEN_NUM][Row].text);
     
 }
 
 void PrintALine() {
   
+  int vpos=0;
   printf("Printing a line %d MAX %d", NextRowToPrint, MAX_ROWS);
   delay(50);
   if (DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].inuse==true) {
     printf("Print row %d screen %d\n", NextScreenLine, THIS_SCREEN_NUM);
-    byte vpos = (NextScreenLine * 21) + 44;
+    vpos = (NextScreenLine * 21) + 44;
     
-    //showmsgXY(1, vpos, 1, WHITE, "                              ");
-    char msg[MAX_LINE_LENGTH+1];
-
     showmsgXY(1, vpos, 1, blankmsg);
-    
-    strcpy(msg, DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].text);
-    showmsgXY(1, vpos, 1, msg);
-    printf("Printing Row %d - %s", NextScreenLine, msg);
+
+    showmsgXY(1, vpos, 1, DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].text);
+
+    printf("Printing Row %d - %s", NextScreenLine, DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].text);
     // increment the screen line count
     NextScreenLine++;
   }
@@ -231,7 +232,7 @@ void PrintALine() {
     DisplayScreen();  // just for debug
     // Any blank lines needed?
     while (NextScreenLine<MAX_ROWS){
-      byte vpos = (NextScreenLine * 21) + 44;
+      vpos = (NextScreenLine * 21) + 44;
       showmsgXY(1, vpos, 1, blankmsg);
       NextScreenLine++;
     }
@@ -321,7 +322,7 @@ void loop() {
             PrintALine();
         }
         else {
-          StartScreenPrint();
+          //StartScreenPrint();
         }
     }
   }
@@ -337,7 +338,7 @@ void loop() {
       
     }
     screencount=millis();
-    StartScreenPrint();
+    //StartScreenPrint();
   }
 
 }
