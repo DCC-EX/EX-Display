@@ -91,7 +91,6 @@ void TFT_Startup()
     }
     blankmsg[MAX_LINE_LENGTH+1]='\0';
 
-    //StartScreenPrint();
 
 }
 
@@ -141,7 +140,9 @@ void testprint(byte lines){
 
 void ParseData(char * message){
   
+
   bool success = DCCEXInbound::parse(message);
+  printf("Result of Parse = %d", success);
   
   if (success) {
     int screenNo = DCCEXInbound::getNumber(1);
@@ -287,21 +288,30 @@ void loop() {
 
   while (SERIAL.available()) { // Check if data is available on Serial1
     char FirstChar = Serial.read();
+    printf("FirstChar %c\n", FirstChar);
     if (FirstChar == '<') {      // This is a command so check next
       char SecondChar = Serial.read();
+      printf("SecondChar %c\n", SecondChar);
       if (SecondChar == '@') {    // This is a screen command so psave the data
         char Buffer[64] = {'\0'};
-        byte BufferCount = 0;
+        Buffer[0] = FirstChar;
+        Buffer[1] = SecondChar;
+        byte BufferCount = 2;
         while (true) {
         char NextChar = Serial.read();
-          if (NextChar == '\0' || NextChar == '>') { break; } // End of buffer or Data
-          else {
+        printf("NextChar %c\n", NextChar);
+          if (NextChar != '\0' && NextChar != '>') { // End of buffer or Data
             Buffer[BufferCount]=NextChar;
             BufferCount++;
           }
-          //send the line to the parseroutine to be saved
-          ParseData(Buffer);
+          else {
+          Buffer[BufferCount]=NextChar;
+          break;
+          }
         }
+        //send the line to the parseroutine to be saved
+        printf("Buffer - %s\n", Buffer);
+        ParseData(Buffer);
       }
     }
   }
@@ -322,7 +332,7 @@ void loop() {
             PrintALine();
         }
         else {
-          //StartScreenPrint();
+          StartScreenPrint();
         }
     }
   }
@@ -338,7 +348,7 @@ void loop() {
       
     }
     screencount=millis();
-    //StartScreenPrint();
+    StartScreenPrint();
   }
 
 }
