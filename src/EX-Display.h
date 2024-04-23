@@ -65,11 +65,11 @@ bool StartupPhase = true;
 
 void TFT_Startup();
 //void showmsgXY(int x, int y, byte sz, char colour, char *msg);
-void showmsgXY(int x, int y, byte sz, uint16_t color, char *msg);
+void showmsgXY(int x, int y, int sz, const char *msg);
 
 void TFT_DrawHeader();
 void testprint(byte lines);
-void ParseData(String message);
+void ParseData(char * msg);
 void StartScreenPrint();
 //void PrintNextLine();
 void PrintSingleLine(byte screenNo, byte screenRow);
