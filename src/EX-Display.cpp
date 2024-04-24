@@ -86,6 +86,7 @@ void TFT_Startup()
     tft.setTextColor(0xFFFF); 
     tft.fillScreen(BLACK);
 
+    // create a string of blanks for the display.
     for (byte x=0; x<=MAX_LINE_LENGTH; x++){
       blankmsg[x]=' ';
     }
@@ -143,7 +144,8 @@ void ParseData(char * message){
   
 
   bool success = DCCEXInbound::parse(message);
-  printf("Result of Parse = %d", success);
+
+  printf("Result of Parse = %d\n", success);
   
   if (success) {
     int screenNo = DCCEXInbound::getNumber(1);

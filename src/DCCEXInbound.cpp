@@ -91,10 +91,14 @@ char* DCCEXInbound::getSafeText(int16_t parameterNumber) {
 }
 
 bool DCCEXInbound::parse(char* command) {
+
+   printf("Parse Received %s", command);
+
   _parameterCount = 0;
   _opcode=0;
   _cmdBuffer=command; 
   
+
   int32_t runningValue = 0;
   char *remainingCmd = command; 
   bool signNegative = false;
