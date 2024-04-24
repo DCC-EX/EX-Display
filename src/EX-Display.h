@@ -63,13 +63,21 @@ long timestamp=0;
 long screencount=0;
 bool StartupPhase = true;
 
+//Commands for serial input
+#define COMMAND_BUFFER_SIZE 100
+bool inCommand = false;
+bool inDisplayLine = false;
+char buffer[COMMAND_BUFFER_SIZE] = {'\0'};
+int bufferLength=0;
+
 void TFT_Startup();
 //void showmsgXY(int x, int y, byte sz, char colour, char *msg);
+
 void showmsgXY(int x, int y, int sz, const char *msg);
 
 void TFT_DrawHeader();
 void testprint(byte lines);
-void ParseData(char * msg);
+void ParseData(char * message);
 void StartScreenPrint();
 //void PrintNextLine();
 void PrintSingleLine(byte screenNo, byte screenRow);

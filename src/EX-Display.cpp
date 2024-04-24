@@ -20,9 +20,11 @@
 #include <Arduino.h>
 #include <MCUFRIEND_kbv.h>
 #include <Adafruit_GFX.h>
+
+#include "DCCEXInbound.h"
 #include "config.h"
 #include "EX-Display.h"
-#include "DCCEXInbound.h"
+
 
 #ifdef DEBUG
   #if defined(ARDUINO_AVR_UNO)
@@ -38,7 +40,7 @@ MCUFRIEND_kbv tft;
 
 #if defined(ARDUINO_AVR_MEGA2560)
      #define RX_PIN 0 // Define the RX pin for Serial1
-     //#define SERIAL Serial
+     #define SERIAL Serial
      //#define SERIAL Serial1
      //#define RX_PIN 19 // Define the RX pin for Serial1
 
@@ -66,6 +68,120 @@ int ScreenLines;
 char blankmsg[MAX_LINE_LENGTH+1];
 
 
+void setup() {
+  SERIAL.begin(115200); // Start the serial communication
+  //SERIAL1.begin(115200); // Start Serial1 for listening to messages
+
+  DCCEXInbound::setup(10);
+
+  TFT_Startup(); // Initialize the display
+  //tft.invertDisplay(1);
+  //tft.invertDisplay(0);
+
+  for (byte x=0; x<=MAX_LINE_LENGTH-1; x++){
+    blankmsg[x]= ' ';
+  }
+  blankmsg[MAX_LINE_LENGTH]='\0';
+
+  SERIAL.println("End of Setup");
+  delay(1000);
+
+  timestamp = millis();
+
+
+}
+
+void loop() {
+
+  if (StartupPhase) {
+    if ((millis() - timestamp) >= 8000){
+            StartupPhase=false;
+            screencount=millis();
+    }
+  }
+
+  while (SERIAL.available()) { // Check if data is available on Serial1
+    char InputChar = Serial.read();
+    printf("InputChar %c\n", InputChar);
+    if (InputChar == '<') {      // This is a command so check next
+        inCommand=true;
+        bufferLength = 0;
+        buffer[0] = '<';
+    }
+    else{
+      if (inCommand == true && InputChar == '@') { // we have a display line
+        printf("InputChar 2 %c\n", InputChar);
+          buffer[0] = '<';
+          bufferLength = 1;
+          inDisplayLine = true;
+      }
+      // else {
+      //   inCommand = false;
+      //   buffer[0] = '\0';
+      // }
+    }
+
+    if (inDisplayLine) {  // we are receiving a display ine
+      if (bufferLength <  (COMMAND_BUFFER_SIZE-1)) {
+        
+	      buffer[bufferLength] = InputChar;
+        bufferLength++;
+        printf("InputChar %c\n", InputChar);
+        printf("Buffer %s\n", buffer);
+      }
+      if (InputChar == '>') {
+        buffer[bufferLength-1] = '\0';
+
+        inCommand = false;
+        inDisplayLine = false;
+        //send the line to the parseroutine to be saved
+        printf("Buffer - %s\n", buffer);
+        ParseData(buffer);
+        buffer[0] = '\0';
+        break;
+      }  
+    }
+  }
+
+
+  if (StartupPhase) 
+    {
+      int timelapse = millis()-timestamp;
+      printf("Time ms = %d\n", timelapse);
+    }
+      
+  // No data incoming so see if we need to display anything
+  if (StartupPhase==false){
+    if (ScreenChanged[THIS_SCREEN_NUM]==true) {
+
+        if (PrintInProgress==true) { 
+
+            PrintALine();
+        }
+        else {
+          StartScreenPrint();
+        }
+    }
+  }
+
+  //Check Page Time to see if we need to scroll
+  if((millis()-screencount) > SCROLLTIME) {
+
+    if (THIS_SCREEN_NUM >= MAX_SCREENS-1) {
+      THIS_SCREEN_NUM=0;
+    }
+    else {
+      THIS_SCREEN_NUM++;
+      
+    }
+    screencount=millis();
+    StartScreenPrint();
+  }
+
+  //Serial.println("End of Loop");
+  delay(1000);
+
+}
 
 
 
@@ -111,6 +227,7 @@ void TFT_DrawHeader() {
     char header[HDDR_SIZE] = {""};
     sprintf(header, "DCC-EX   SCREEN %d", THIS_SCREEN_NUM);
     tft.setTextColor(YELLOW);
+    printf("Header to show = %s", header);
     showmsgXY(1, 20, 1, header);
     tft.drawFastHLine(0, 25, tft.width(), WHITE);
     tft.setTextColor(WHITE);
@@ -142,14 +259,22 @@ void testprint(byte lines){
 
 void ParseData(char * message){
   
+ 
+  printf("Calling Parser with %s\n", message);
 
+  
   bool success = DCCEXInbound::parse(message);
+  //bool success = false;
+  if (success) {
+  printf("OPCODE %s\n", DCCEXInbound::getOpcode());
+  printf("Parameter count %d\n", DCCEXInbound::getParameterCount());
+}
 
   printf("Result of Parse = %d\n", success);
   
   if (success) {
-    int screenNo = DCCEXInbound::getNumber(1);
-    int screenRow = DCCEXInbound::getNumber(2);
+    int screenNo = DCCEXInbound::getNumber(0);
+    int screenRow = DCCEXInbound::getNumber(1);
     
     DisplayLines[screenNo][screenRow].inuse=true;
     DisplayLines[screenNo][screenRow].row=screenRow;
@@ -180,7 +305,9 @@ void StartScreenPrint() {
     
     SERIAL.println("New Page");
     tft.fillScreen(BLACK);
+
     TFT_DrawHeader();
+
     SERIAL.println("Drawn Header");
     PrintInProgress=true;
     NextRowToPrint=0;
@@ -258,100 +385,3 @@ void DisplayScreen(){
 
 }
 
-void setup() {
-  SERIAL.begin(115200); // Start the serial communication
-  //SERIAL1.begin(115200); // Start Serial1 for listening to messages
-
-  TFT_Startup(); // Initialize the display
-  //tft.invertDisplay(1);
-  tft.invertDisplay(0);
-
-  DCCEXInbound::setup(3);
-
-  for (byte x=0; x<=MAX_LINE_LENGTH-1; x++){
-    blankmsg[x]= ' ';
-  }
-  blankmsg[MAX_LINE_LENGTH]='\0';
-
-  SERIAL.println("End of Setup");
-
-  timestamp = millis();
-
-
-}
-
-void loop() {
-
-  if (StartupPhase) {
-    if ((millis() - timestamp) >= 8000){
-            StartupPhase=false;
-            screencount=millis();
-    }
-  }
-
-  while (SERIAL.available()) { // Check if data is available on Serial1
-    char FirstChar = Serial.read();
-    printf("FirstChar %c\n", FirstChar);
-    if (FirstChar == '<') {      // This is a command so check next
-      char SecondChar = Serial.read();
-      printf("SecondChar %c\n", SecondChar);
-      if (SecondChar == '@') {    // This is a screen command so psave the data
-        char Buffer[64] = {'\0'};
-        Buffer[0] = FirstChar;
-        Buffer[1] = SecondChar;
-        byte BufferCount = 2;
-        while (true) {
-        char NextChar = Serial.read();
-        printf("NextChar %c\n", NextChar);
-          if (NextChar != '\0' && NextChar != '>') { // End of buffer or Data
-            Buffer[BufferCount]=NextChar;
-            BufferCount++;
-          }
-          else {
-          Buffer[BufferCount]=NextChar;
-          break;
-          }
-        }
-        //send the line to the parseroutine to be saved
-        printf("Buffer - %s\n", Buffer);
-        ParseData(Buffer);
-      }
-    }
-  }
-
-
-  if (StartupPhase) 
-    {
-      int timelapse = millis()-timestamp;
-      printf("Time ms = %d\n", timelapse);
-    }
-      
-  // No data incoming so see if we need to display anything
-  if (StartupPhase==false){
-    if (ScreenChanged[THIS_SCREEN_NUM]==true) {
-
-        if (PrintInProgress==true) { 
-
-            PrintALine();
-        }
-        else {
-          StartScreenPrint();
-        }
-    }
-  }
-
-  //Check Page Time to see if we need to scroll
-  if((millis()-screencount) > SCROLLTIME) {
-
-    if (THIS_SCREEN_NUM >= MAX_SCREENS-1) {
-      THIS_SCREEN_NUM=0;
-    }
-    else {
-      THIS_SCREEN_NUM++;
-      
-    }
-    screencount=millis();
-    StartScreenPrint();
-  }
-
-}
