@@ -71,7 +71,6 @@ bool StartupPhase = true;
 // int bufferLength=0;
 
 void TFT_Startup();
-//void showmsgXY(int x, int y, byte sz, char colour, char *msg);
 
 void showmsgXY(int x, int y, int sz, const char *msg);
 

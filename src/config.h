@@ -31,5 +31,7 @@
 // And now define the maximum text length. 
 #define MAX_LINE_LENGTH 30  
 
+// The startup Timelapse - allows time to handle all the CS output
+#define STARTUP_TIME 2000
 
 #endif

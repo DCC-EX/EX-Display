@@ -65,7 +65,7 @@ MCUFRIEND_kbv tft;
 
 int ScreenLines;
 
-char blankmsg[MAX_LINE_LENGTH+1];
+//char blankmsg[MAX_LINE_LENGTH+1];
 
 
 void setup() {
@@ -74,79 +74,36 @@ void setup() {
 
   DCCEXInbound::setup(10);
 
-  TFT_Startup(); // Initialize the display
+  // Initialize the display
+
+  TFT_Startup(); 
   //tft.invertDisplay(1);
   //tft.invertDisplay(0);
 
-  for (byte x=0; x<=MAX_LINE_LENGTH-1; x++){
-    blankmsg[x]= ' ';
-  }
-  blankmsg[MAX_LINE_LENGTH]='\0';
 
   SERIAL.println("End of Setup");
   delay(1000);
 
   timestamp = millis();
 
-
 }
 
 void loop() {
 
+  // Check if we are in the startup phase 
+  // This phase inhibits screen drawing until the startup messages are
+  // issued by the CS
   if (StartupPhase) {
-    if ((millis() - timestamp) >= 1000){
+    if ((millis() - timestamp) >= STARTUP_TIME){
             StartupPhase=false;
             screencount=millis();
     }
   }
 
+  // Process any data in the serial buffer
   processSerialInput();
-  /* MOVED TO processSerialInput()
-  while (SERIAL.available()) { // Check if data is available on Serial1
-    char InputChar = Serial.read();
-    printf("InputChar %c\n", InputChar);
-    if (InputChar == '<') {      // This is a command so check next
-        inCommand=true;
-        bufferLength = 0;
-        buffer[0] = '<';
-    }
-    else{
-      if (inCommand == true && InputChar == '@') { // we have a display line
-        printf("InputChar 2 %c\n", InputChar);
-          buffer[0] = '<';
-          bufferLength = 1;
-          inDisplayLine = true;
-      }
-      // else {
-      //   inCommand = false;
-      //   buffer[0] = '\0';
-      // }
-    }
-
-    if (inDisplayLine) {  // we are receiving a display ine
-      if (bufferLength <  (COMMAND_BUFFER_SIZE-1)) {
-        
-	      buffer[bufferLength] = InputChar;
-        bufferLength++;
-        printf("InputChar %c\n", InputChar);
-        printf("Buffer %s\n", buffer);
-      }
-      if (InputChar == '>') {
-        buffer[bufferLength-1] = '\0';
-
-        inCommand = false;
-        inDisplayLine = false;
-        //send the line to the parseroutine to be saved
-        printf("Buffer - %s\n", buffer);
-        ParseData(buffer);
-        buffer[0] = '\0';
-        break;
-      }  
-    }
-  }
-  */
-
-
+  
+  // Display the time on the startup phase 
   if (StartupPhase) 
     {
       int timelapse = millis()-timestamp;
@@ -156,13 +113,15 @@ void loop() {
   // No data incoming so see if we need to display anything
   if (StartupPhase==false){
     if (ScreenChanged[THIS_SCREEN_NUM]==true) {
-
+        printf("Time to draw a screen line\n");
         if (PrintInProgress==true) { 
-
+            printf("Pinting a line\n");
             PrintALine();
         }
         else {
+          printf("Redraw Screen\n");
           StartScreenPrint();
+
         }
     }
   }
@@ -179,6 +138,7 @@ void loop() {
     }
     screencount=millis();
     StartScreenPrint();
+
   }
 
   //Serial.println("End of Loop");
@@ -220,7 +180,7 @@ void processSerialInput() {
     }
   }
   if (newSerialData == true) {
-    Serial.println(F("Got serial command"));
+    Serial.println(F("Got serial command "));
     for (uint8_t i = 0; i < maxBufferSize; i++) {
       if (serialInputBytes[i] == '\0') break;
       Serial.print((char)serialInputBytes[i]);
@@ -249,10 +209,11 @@ void TFT_Startup()
     tft.fillScreen(BLACK);
 
     // create a string of blanks for the display.
-    for (byte x=0; x<=MAX_LINE_LENGTH; x++){
-      blankmsg[x]=' ';
-    }
-    blankmsg[MAX_LINE_LENGTH+1]='\0';
+    // This does not seem necessary as we draw the whole screen.
+    // for (byte x=0; x<=MAX_LINE_LENGTH; x++){
+    //   blankmsg[x]=' ';
+    // }
+    // blankmsg[MAX_LINE_LENGTH+1]='\0';
 
     StartScreenPrint();
 
@@ -271,9 +232,9 @@ void showmsgXY(int x, int y, int sz, const char *msg)
 void TFT_DrawHeader() {
 
     char header[HDDR_SIZE] = {""};
-    sprintf(header, "DCC-EX   SCREEN %d", THIS_SCREEN_NUM);
+    sprintf(header, "DCC-EX   SCREEN %d\n", THIS_SCREEN_NUM);
     tft.setTextColor(YELLOW);
-    printf("Header to show = %s", header);
+    //printf("Header to show = %s", header);
     showmsgXY(1, 20, 1, header);
     tft.drawFastHLine(0, 25, tft.width(), WHITE);
     tft.setTextColor(WHITE);
@@ -304,7 +265,9 @@ void testprint(byte lines){
 
 
 void parseData(char * message){
+
   printf("Calling Parser with %s\n", message);
+
   bool success = DCCEXInbound::parse(message);
   
   if (success) {
@@ -313,14 +276,20 @@ void parseData(char * message){
     if (opcode == '@' && paramCount == 3) {
       int screenNo = DCCEXInbound::getNumber(0);
       int screenRow = DCCEXInbound::getNumber(1);
-      
-      DisplayLines[screenNo][screenRow].inuse=true;
-      DisplayLines[screenNo][screenRow].row=screenRow;
-      
-      strcpy (DisplayLines[screenNo][screenRow].text,  DCCEXInbound::getTextParameter(2));
+      char screentext[MAX_LINE_LENGTH+1];
+      strcpy(screentext, DCCEXInbound::getTextParameter(2));
+      if (screentext[0]=='\0'){
+        DisplayLines[screenNo][screenRow].inuse=false;
+      }
+      else {     
+        DisplayLines[screenNo][screenRow].inuse=true;
+      }
+      DisplayLines[screenNo][screenRow].row=screenRow;  
+      strcpy (DisplayLines[screenNo][screenRow].text,  screentext);
 
       ScreenChanged[screenNo]=true;
-      printf("Screen : %d Row %d - %s\n", screenNo, screenRow, DisplayLines[screenNo][screenRow].text);
+
+      printf("Processed Screen : %d Row %d - %s\n", screenNo, screenRow, DisplayLines[screenNo][screenRow].text);
 
       #ifdef DEBUG
         // SERIAL.print(" Buffer - ");
@@ -346,10 +315,14 @@ void StartScreenPrint() {
 
     TFT_DrawHeader();
 
-    SERIAL.println("Drawn Header");
+    SERIAL.println("Drawn Header\n");
+    // force the redraw of the screen
+    ScreenChanged[THIS_SCREEN_NUM]==true;
     PrintInProgress=true;
     NextRowToPrint=0;
     NextScreenLine=0;
+    DisplayScreen();  // debug output only
+    
 
 }
 
@@ -367,8 +340,8 @@ void PrintSingleLine(byte screenNo, byte screenRow) {
     printf("Row found - %d\n", Row);
     //NextRowToPrint=Row;
     byte vpos = (Row * 21) + 44;
-    showmsgXY(1, vpos, 1, blankmsg);
-    tft.fillRect(1,(vpos-21),320, 20, BLACK);
+    //showmsgXY(1, vpos, 1, blankmsg);
+    //tft.fillRect(1,(vpos-21),320, 20, BLACK);
 
     showmsgXY(1, vpos, 1, DisplayLines[THIS_SCREEN_NUM][Row].text);
     
@@ -377,17 +350,17 @@ void PrintSingleLine(byte screenNo, byte screenRow) {
 void PrintALine() {
   
   int vpos=0;
-  printf("Printing a line %d MAX %d", NextRowToPrint, MAX_ROWS);
-  delay(50);
+  //printf("Printing a line %d MAX %d\n", NextRowToPrint, MAX_ROWS);
+  //delay(50);
   if (DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].inuse==true) {
     printf("Print row %d screen %d\n", NextScreenLine, THIS_SCREEN_NUM);
     vpos = (NextScreenLine * 21) + 44;
     
-    showmsgXY(1, vpos, 1, blankmsg);
+    //showmsgXY(1, vpos, 1, blankmsg);
 
     showmsgXY(1, vpos, 1, DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].text);
 
-    printf("Printing Row %d - %s", NextScreenLine, DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].text);
+    printf("Printing Row %d - %s\n", NextScreenLine, DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].text);
     // increment the screen line count
     NextScreenLine++;
   }
@@ -398,13 +371,15 @@ void PrintALine() {
     //We've reached the end of this page
     PrintInProgress=false;
     ScreenChanged[THIS_SCREEN_NUM]=false;
-    DisplayScreen();  // just for debug
+    
     // Any blank lines needed?
     while (NextScreenLine<MAX_ROWS){
       vpos = (NextScreenLine * 21) + 44;
-      showmsgXY(1, vpos, 1, blankmsg);
+      //showmsgXY(1, vpos, 1, blankmsg);
       NextScreenLine++;
     }
+  NextRowToPrint = 0;
+  NextScreenLine = 0;
   }
   
 }
