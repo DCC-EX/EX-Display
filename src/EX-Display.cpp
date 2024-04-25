@@ -94,12 +94,14 @@ void setup() {
 void loop() {
 
   if (StartupPhase) {
-    if ((millis() - timestamp) >= 8000){
+    if ((millis() - timestamp) >= 1000){
             StartupPhase=false;
             screencount=millis();
     }
   }
 
+  processSerialInput();
+  /* MOVED TO processSerialInput()
   while (SERIAL.available()) { // Check if data is available on Serial1
     char InputChar = Serial.read();
     printf("InputChar %c\n", InputChar);
@@ -142,6 +144,7 @@ void loop() {
       }  
     }
   }
+  */
 
 
   if (StartupPhase) 
@@ -179,11 +182,54 @@ void loop() {
   }
 
   //Serial.println("End of Loop");
-  delay(1000);
+  // delay(1000);
 
 }
 
+const uint8_t maxBufferSize = 100;
+char serialInputBytes[maxBufferSize];
+bool newSerialData = false;
 
+void processSerialInput() {
+  static bool serialInProgress = false;
+  static uint8_t serialIndex = 0;
+  char startMarker = '<';
+  char endMarker = '>';
+  char serialByte;
+  while (Serial.available() > 0 && newSerialData == false) {
+    serialByte = Serial.read();
+    if (serialInProgress == true) {
+      if (serialByte != endMarker) {
+        serialInputBytes[serialIndex++] = serialByte;
+        if (serialIndex >= maxBufferSize) { // If we're at the buffer size, need to reduce to capture endMarker
+          serialIndex = maxBufferSize - 1;
+        }
+      } else {
+        if (serialIndex >= maxBufferSize - 1) { // If we're at the buffer size - 1, need room to add endMarker and null terminator
+          serialIndex = maxBufferSize - 2;
+        }
+        serialInputBytes[serialIndex++] = endMarker;
+        serialInputBytes[serialIndex] = '\0';
+        serialInProgress = false;
+        serialIndex = 0;
+        newSerialData = true;
+      }
+    } else if (serialByte == startMarker) {
+      serialInProgress = true;
+      serialInputBytes[serialIndex++] = startMarker;
+    }
+  }
+  if (newSerialData == true) {
+    Serial.println(F("Got serial command"));
+    for (uint8_t i = 0; i < maxBufferSize; i++) {
+      if (serialInputBytes[i] == '\0') break;
+      Serial.print((char)serialInputBytes[i]);
+    }
+    Serial.println(F(""));
+    newSerialData = false;
+    parseData(serialInputBytes);
+  } 
+}
 
 void TFT_Startup()
 {
@@ -257,42 +303,34 @@ void testprint(byte lines){
 }
 
 
-void ParseData(char * message){
-  
- 
+void parseData(char * message){
   printf("Calling Parser with %s\n", message);
-
-  
   bool success = DCCEXInbound::parse(message);
-  //bool success = false;
-  if (success) {
-  printf("OPCODE %s\n", DCCEXInbound::getOpcode());
-  printf("Parameter count %d\n", DCCEXInbound::getParameterCount());
-}
-
-  printf("Result of Parse = %d\n", success);
   
   if (success) {
-    int screenNo = DCCEXInbound::getNumber(0);
-    int screenRow = DCCEXInbound::getNumber(1);
-    
-    DisplayLines[screenNo][screenRow].inuse=true;
-    DisplayLines[screenNo][screenRow].row=screenRow;
-    
-    strcpy (DisplayLines[screenNo][screenRow].text,  DCCEXInbound::getText(3));
+    char opcode = DCCEXInbound::getOpcode();
+    int paramCount = DCCEXInbound::getParameterCount();
+    if (opcode == '@' && paramCount == 3) {
+      int screenNo = DCCEXInbound::getNumber(0);
+      int screenRow = DCCEXInbound::getNumber(1);
+      
+      DisplayLines[screenNo][screenRow].inuse=true;
+      DisplayLines[screenNo][screenRow].row=screenRow;
+      
+      strcpy (DisplayLines[screenNo][screenRow].text,  DCCEXInbound::getTextParameter(2));
 
-    ScreenChanged[screenNo]=true;
-    printf("Screen : %d Row %d - %s\n", screenNo, screenRow, DisplayLines[screenNo][screenRow].text);
-
-    #ifdef DEBUG
-      // SERIAL.print(" Buffer - ");
-      // SERIAL.println(buffer);
-      // SERIAL.print("msg = ");
-      // SERIAL.println(msg);
-      // printf("pos1 %d Pos2 %d Pos3 %d Pos4 %d Last %d\n", pos1, pos2, pos3, pos4, lastchar);
+      ScreenChanged[screenNo]=true;
       printf("Screen : %d Row %d - %s\n", screenNo, screenRow, DisplayLines[screenNo][screenRow].text);
-    #endif
 
+      #ifdef DEBUG
+        // SERIAL.print(" Buffer - ");
+        // SERIAL.println(buffer);
+        // SERIAL.print("msg = ");
+        // SERIAL.println(msg);
+        // printf("pos1 %d Pos2 %d Pos3 %d Pos4 %d Last %d\n", pos1, pos2, pos3, pos4, lastchar);
+        printf("Screen : %d Row %d - %s\n", screenNo, screenRow, DisplayLines[screenNo][screenRow].text);
+      #endif
+    }
   }
 
   // if (ScreenDrawn){
