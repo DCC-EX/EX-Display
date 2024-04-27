@@ -20,10 +20,8 @@
 #include <Arduino.h>
 #include <MCUFRIEND_kbv.h>
 #include <Adafruit_GFX.h>
-
-#include "DCCEXInbound.h"
 #include "config.h"
-#include "EX-Display.h"
+#include "EX-Screen.h"
 
 
 #ifdef DEBUG
@@ -38,158 +36,9 @@ MCUFRIEND_kbv tft;
 #include "Arial9pt7b.h"
 //#include "FreeSans12pt7b.h"
 
-#if defined(ARDUINO_AVR_MEGA2560)
-     #define RX_PIN 0 // Define the RX pin for Serial1
-     #define SERIAL Serial
-     //#define SERIAL Serial1
-     //#define RX_PIN 19 // Define the RX pin for Serial1
-
-     #elif defined(ARDUINO_AVR_UNO)
-     #define RX_PIN 0
-     #define SERIAL Serial
-     #elif defined(ESP32)
-     #define RX_PIN 0
-     #define SERIAL Serial
-
-    #elif defined(ARDUINO_NUCLEO_F411RE) 
-    HardwareSerial Serial1(PB7, PA15);  // Rx=PB7, Tx=PA15 -- CN7 pins 17 and 21 - F411RE
-     #define SERIAL Serial1
-     #define RX_PIN PB7;
-
-     #elif defined(ARDUINO_NUCLEO_F446RE) 
-     HardwareSerial Serial5(PD2, PC12);  // Rx=PD2, Tx=PC12 -- UART5 - F446RE
-     #define SERIAL Serial5
-     #define RX_PIN PD2;
-     
-#endif
 
 int ScreenLines;
 
-//char blankmsg[MAX_LINE_LENGTH+1];
-
-
-void setup() {
-  SERIAL.begin(115200); // Start the serial communication
-  //SERIAL1.begin(115200); // Start Serial1 for listening to messages
-
-  DCCEXInbound::setup(10);
-
-  // Initialize the display
-
-  TFT_Startup(); 
-  //tft.invertDisplay(1);
-  //tft.invertDisplay(0);
-
-
-  SERIAL.println("End of Setup");
-  delay(1000);
-
-  timestamp = millis();
-
-}
-
-void loop() {
-
-  // Check if we are in the startup phase 
-  // This phase inhibits screen drawing until the startup messages are
-  // issued by the CS
-  if (StartupPhase) {
-    if ((millis() - timestamp) >= STARTUP_TIME){
-            StartupPhase=false;
-            screencount=millis();
-    }
-  }
-
-  // Process any data in the serial buffer
-  processSerialInput();
-  
-  // Display the time on the startup phase 
-  if (StartupPhase) 
-    {
-      int timelapse = millis()-timestamp;
-      printf("Time ms = %d\n", timelapse);
-    }
-      
-  // No data incoming so see if we need to display anything
-  if (StartupPhase==false){
-    if (ScreenChanged[THIS_SCREEN_NUM]==true) {
-        printf("Time to draw a screen line\n");
-        if (PrintInProgress==true) { 
-            printf("Pinting a line\n");
-            PrintALine();
-        }
-        else {
-          printf("Redraw Screen\n");
-          StartScreenPrint();
-
-        }
-    }
-  }
-
-  //Check Page Time to see if we need to scroll
-  if((millis()-screencount) > SCROLLTIME) {
-
-    if (THIS_SCREEN_NUM >= MAX_SCREENS-1) {
-      THIS_SCREEN_NUM=0;
-    }
-    else {
-      THIS_SCREEN_NUM++;
-      
-    }
-    screencount=millis();
-    StartScreenPrint();
-
-  }
-
-  //Serial.println("End of Loop");
-  // delay(1000);
-
-}
-
-const uint8_t maxBufferSize = 100;
-char serialInputBytes[maxBufferSize];
-bool newSerialData = false;
-
-void processSerialInput() {
-  static bool serialInProgress = false;
-  static uint8_t serialIndex = 0;
-  char startMarker = '<';
-  char endMarker = '>';
-  char serialByte;
-  while (Serial.available() > 0 && newSerialData == false) {
-    serialByte = Serial.read();
-    if (serialInProgress == true) {
-      if (serialByte != endMarker) {
-        serialInputBytes[serialIndex++] = serialByte;
-        if (serialIndex >= maxBufferSize) { // If we're at the buffer size, need to reduce to capture endMarker
-          serialIndex = maxBufferSize - 1;
-        }
-      } else {
-        if (serialIndex >= maxBufferSize - 1) { // If we're at the buffer size - 1, need room to add endMarker and null terminator
-          serialIndex = maxBufferSize - 2;
-        }
-        serialInputBytes[serialIndex++] = endMarker;
-        serialInputBytes[serialIndex] = '\0';
-        serialInProgress = false;
-        serialIndex = 0;
-        newSerialData = true;
-      }
-    } else if (serialByte == startMarker) {
-      serialInProgress = true;
-      serialInputBytes[serialIndex++] = startMarker;
-    }
-  }
-  if (newSerialData == true) {
-    Serial.println(F("Got serial command "));
-    for (uint8_t i = 0; i < maxBufferSize; i++) {
-      if (serialInputBytes[i] == '\0') break;
-      Serial.print((char)serialInputBytes[i]);
-    }
-    Serial.println(F(""));
-    newSerialData = false;
-    parseData(serialInputBytes);
-  } 
-}
 
 void TFT_Startup()
 {
@@ -316,13 +165,11 @@ void StartScreenPrint() {
     TFT_DrawHeader();
 
     SERIAL.println("Drawn Header\n");
-    // force the redraw of the screen
-    ScreenChanged[THIS_SCREEN_NUM]==true;
-    PrintInProgress=true;
     NextRowToPrint=0;
     NextScreenLine=0;
+    #ifdef DEBUG
     DisplayScreen();  // debug output only
-    
+    #endif
 
 }
 
@@ -370,7 +217,6 @@ void PrintALine() {
   if (NextRowToPrint >= MAX_ROWS) {
     //We've reached the end of this page
     PrintInProgress=false;
-    ScreenChanged[THIS_SCREEN_NUM]=false;
     
     // Any blank lines needed?
     while (NextScreenLine<MAX_ROWS){

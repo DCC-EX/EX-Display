@@ -1,7 +1,7 @@
-#ifndef EX_DISPLAY_h
-#define EX_DISPLAY_H
+#ifndef EX_SCREEN_h
+#define EX_SCREEN_H
 
-// EX-Display.h
+// EX-Screen.h
 
 #define DEBUG
 
@@ -59,9 +59,8 @@ bool ScreenChanged[MAX_SCREENS] = {false,false};
 bool PrintInProgress=false;
 byte NextRowToPrint=0;
 byte NextScreenLine=0;
-long timestamp=0;
-long screencount=0;
-bool StartupPhase = true;
+
+
 
 //Commands for serial input
 // #define COMMAND_BUFFER_SIZE 100
@@ -70,19 +69,21 @@ bool StartupPhase = true;
 // char buffer[COMMAND_BUFFER_SIZE] = {'\0'};
 // int bufferLength=0;
 
-void TFT_Startup();
+namespace SCREEN
+{
 
-void showmsgXY(int x, int y, int sz, const char *msg);
+    void TFT_Startup();
+    void showmsgXY(int x, int y, int sz, const char *msg);
+    void TFT_DrawHeader();
+    void testprint(byte lines);
+    void parseData(char * message);
+    void StartScreenPrint();
+    //void PrintNextLine();
+    void PrintSingleLine(byte screenNo, byte screenRow);
+    void PrintALine();
+    void DisplayScreen();
+    void processSerialInput();
 
-void TFT_DrawHeader();
-void testprint(byte lines);
-void parseData(char * message);
-void StartScreenPrint();
-//void PrintNextLine();
-void PrintSingleLine(byte screenNo, byte screenRow);
-void PrintALine();
-void DisplayScreen();
-void processSerialInput();
-
+}
 
 #endif
