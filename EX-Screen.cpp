@@ -22,7 +22,7 @@
 #include <Adafruit_GFX.h>
 #include "config.h"
 #include "EX-Screen.h"
-#include "EX-Display.h"
+#include "Defines.h"
 
 MCUFRIEND_kbv tft;
 
@@ -37,10 +37,10 @@ void TFT_Startup()
 {
 
     uint16_t ID = tft.readID();
-    SERIAL.print("TFT ID = 0x");
-    SERIAL.println(ID, HEX);
+    CONSOLE.print("TFT ID = 0x");
+    CONSOLE.println(ID, HEX);
     // #ifdef DEBUG
-    // SERIAL.println("Calibrate for your Touch Panel");
+    // CONSOLE.println("Calibrate for your Touch Panel");
     // #endif
     //if (ID == 0xD3D3) ID = 0x9486; // write-only shield
 
@@ -86,12 +86,12 @@ void TFT_DrawHeader() {
 
 void StartScreenPrint() {
     
-    SERIAL.println("New Page");
+    CONSOLE.println("New Page");
     tft.fillScreen(BLACK);
 
     TFT_DrawHeader();
 
-    SERIAL.println("Drawn Header\n");
+    CONSOLE.println("Drawn Header\n");
     NextRowToPrint=0;
     NextScreenLine=0;
     #ifdef DEBUG
