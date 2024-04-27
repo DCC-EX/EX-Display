@@ -22,10 +22,11 @@
 #define MAX_SCREENS 3  
 #define MAX_ROWS 10
 
-// Now define the scroll requirements
-// 0 = by time
-// 1 = by touch - requires a touch screen to operate
-#define SCROLLTYPE 0  // the default
+// If a touch screen is in use a touch will swap from screen to screen
+// if in use uncomment the following
+// #define USE_TOUCH
+
+// if the touch screen not in use, Now define the scroll requirements
 #define SCROLLTIME 15000 // 15 seconds
 
 // And now define the maximum text length. 

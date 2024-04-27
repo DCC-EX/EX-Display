@@ -2,32 +2,9 @@
 #include <Arduino.h>
 #include "AtFinder.h"
 #include "config.h"
+#include "EX-Display.h"
 #include "EX-Screen.h"
 
-#if defined(ARDUINO_AVR_MEGA2560)
-     #define RX_PIN 0 // Define the RX pin for Serial1
-     #define SERIAL Serial
-     //#define SERIAL Serial1
-     //#define RX_PIN 19 // Define the RX pin for Serial1
-
-     #elif defined(ARDUINO_AVR_UNO)
-     #define RX_PIN 0
-     #define SERIAL Serial
-     #elif defined(ESP32)
-     #define RX_PIN 0
-     #define SERIAL Serial
-
-    #elif defined(ARDUINO_NUCLEO_F411RE) 
-    HardwareSerial Serial1(PB7, PA15);  // Rx=PB7, Tx=PA15 -- CN7 pins 17 and 21 - F411RE
-     #define SERIAL Serial1
-     #define RX_PIN PB7;
-
-     #elif defined(ARDUINO_NUCLEO_F446RE) 
-     HardwareSerial Serial5(PD2, PC12);  // Rx=PD2, Tx=PC12 -- UART5 - F446RE
-     #define SERIAL Serial5
-     #define RX_PIN PD2;
-     
-#endif
 
 
 // callback function when a <@ id row "text"> message detected 
@@ -39,6 +16,18 @@ void processDisplay(int16_t screenId,int16_t screenRow, char* text) {
     Serial.print(F(" text=\""));
     Serial.print(text);
     Serial.print(F("\"\n"));
+
+    if (text[0]=='\0'){
+        DisplayLines[screenID][screenRow].inuse=false;
+      }
+      else {     
+        DisplayLines[screenID][screenRow].inuse=true;
+      }
+    DisplayLines[screenID][screenRow].row=screenRow;  
+    strcpy (DisplayLines[screenID][screenRow].text,  text);
+
+    ScreenChanged[screenID]=true;
+
 }
 
 bool StartupPhase = true;
@@ -96,6 +85,7 @@ void loop() {
         }
   }
 
+#ifndef USE_TOUCH 
     //Check Page Time to see if we need to scroll
     if((millis()-screencount) > SCROLLTIME) {
 
@@ -110,6 +100,20 @@ void loop() {
         ScreenChanged[THIS_SCREEN_NUM] = true;
 
     }
+#else
+    if (SCREEN::check_touch) {
+        if (THIS_SCREEN_NUM >= MAX_SCREENS-1) {
+            THIS_SCREEN_NUM=0;
+            }
+            else {
+            THIS_SCREEN_NUM++;
+            
+            }
 
+            ScreenChanged[THIS_SCREEN_NUM] = true;
+        }
+    }
+
+#endif
 
 }
