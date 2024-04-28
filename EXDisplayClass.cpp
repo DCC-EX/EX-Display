@@ -12,7 +12,9 @@ EXDisplayRow::EXDisplayRow(uint8_t rowNumber, char *rowText, bool ticker, bool c
 uint8_t EXDisplayRow::getRowNumber() { return _rowNumber; }
 
 void EXDisplayRow::setRowText(char *rowText) {
-  _rowText = rowText;
+  uint8_t length = strlen(rowText);
+  realloc(_rowText, length + 1);
+  strcpy(_rowText, rowText);
   _changed = true;
 }
 
