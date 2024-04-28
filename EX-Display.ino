@@ -1,8 +1,9 @@
 
+#include <Arduino.h>
 #include "AtFinder.h"
 #include "Defines.h"
 #include "DisplayFunctions.h"
-#include <Arduino.h>
+#include "EXDisplayClass.h"
 
 // #include "EXScreen.h"
 
@@ -34,6 +35,12 @@ bool StartupPhase = true;
 long timestamp = 0;
 long screencount = 0;
 
+
+// Chris just doing this for manual testing on my mega... so I can debug down the serial monitor 
+#undef CS_LISTEN
+#define CS_LISTEN Serial
+
+
 void setup() {
   CONSOLE.begin(115200);
   CS_LISTEN.begin(115200); // Start Serial1 for listening to messages
@@ -46,7 +53,14 @@ void setup() {
   // tft.invertDisplay(1);
   // tft.invertDisplay(0);
 
-  CONSOLE.println("End of Setup");
+  // HARDWARE SETUP TODO..... Create an EXDisplay instance for each screen this ino wants to display.
+  //  The updateEXDisplayRow will ignore messages destined for screens we dont have.
+  // For testing lets create some  
+  new EXDisplay(0,16);   // id 0, physical screen width 16
+  new EXDisplay(1,32);
+
+
+  CONSOLE.println(F("End of Setup"));
   delay(1000);
 
   timestamp = millis();
@@ -68,12 +82,7 @@ void loop() {
   if (CS_LISTEN.available())
     AtFinder::processInputChar(CS_LISTEN.read());
 
-  // If any rows have been changed, update the display
-  displayChangedRows();
-
-  if (debug) {
-    displayAllRows(3000);
-  }
+  // you can display all rows by sending <@ 255 0 "">
 
   // No data incoming so see if we need to display anything
   /* DISABLE TO START
