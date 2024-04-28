@@ -42,6 +42,7 @@ public:
 
 private:
   uint8_t _rowNumber;
+  uint8_t _maxMalloc;
   char *_rowText;
   bool _changed;
   EXDisplayRow *_next;
