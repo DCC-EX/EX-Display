@@ -41,6 +41,15 @@ EXDisplayRow *EXDisplayRow::getNext() { return _next; }
  */
 EXDisplay::EXDisplay(uint8_t displayNumber, uint8_t maxRows, uint8_t maxRowWidth, uint8_t maxTextWidth, bool autoTicker,
                      EXDisplay *copyOf) {
+  _displayNumber = displayNumber;
+  _maxRows = maxRows;
+  _maxRowWidth = maxRowWidth;
+  _maxTextWidth = maxTextWidth;
+  _autoTicker = autoTicker;
+  _copyOf = copyOf;
+  _firstRow = nullptr;
+  _next = nullptr;
+  
   EXDisplay *existingDisplay = getDisplayByNumber(displayNumber);
   if (existingDisplay) {
     existingDisplay->_maxRows = maxRows;
@@ -49,27 +58,17 @@ EXDisplay::EXDisplay(uint8_t displayNumber, uint8_t maxRows, uint8_t maxRowWidth
     existingDisplay->_autoTicker = autoTicker;
     existingDisplay->_copyOf = copyOf;
     _next = existingDisplay->_next;
-    _firstRow = existingDisplay->_firstRow;
-    return;
-  }
-  _displayNumber = displayNumber;
-  _maxRows = maxRows;
-  _maxRowWidth = maxRowWidth;
-  _maxTextWidth = maxTextWidth;
-  _autoTicker = autoTicker;
-  _copyOf = copyOf;
-  _firstRow = nullptr;
-  _next = _first;
-  _first = this;
-
-  if (_next == nullptr) {
-    _first = this;
+    existingDisplay->_next = this;
   } else {
-    EXDisplay *current = _first;
-    while (current->_next != nullptr) {
-      current = current->_next;
+    if (_first == nullptr) {
+      _first = this;
+    } else {
+      EXDisplay *current = _first;
+      while (current->_next != nullptr) {
+        current = current->_next;
+      }
+      current->_next = this;
     }
-    current->_next = this;
   }
 }
 

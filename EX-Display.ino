@@ -72,7 +72,7 @@ void loop() {
   displayChangedRows();
 
   if (debug) {
-    displayAllRows(5000);
+    displayAllRows(3000);
   }
 
   // No data incoming so see if we need to display anything
