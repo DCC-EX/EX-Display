@@ -1,7 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// This is the configuration file for EX-Display 
+// This is the configuration file for EX-Display
 // Entries here will control how the screen display will operate
 
 // Firstle entries about the display you are using
@@ -19,7 +19,7 @@
 #define INITIAL_SCREEN 0
 
 // Now define how many screens you wish to be used in turn
-#define MAX_SCREENS 3  
+#define MAX_SCREENS 3
 #define MAX_ROWS 10
 
 // If a touch screen is in use a touch will swap from screen to screen
@@ -29,10 +29,13 @@
 // if the touch screen not in use, Now define the scroll requirements
 #define SCROLLTIME 15000 // 15 seconds
 
-// And now define the maximum text length. 
-#define MAX_LINE_LENGTH 30  
+// And now define the maximum text length.
+#define MAX_LINE_LENGTH 30
 
 // The startup Timelapse - allows time to handle all the CS output
 #define STARTUP_TIME 2000
+
+// Uncomment this line to display debug output
+#define DEBUG
 
 #endif

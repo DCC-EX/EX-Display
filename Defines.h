@@ -1,6 +1,8 @@
 #ifndef EX_DISPLAY_H
 #define EX_DISPLAY_H
 
+#include "config.h"
+
 #if defined(ARDUINO_AVR_MEGA2560)
 #define RX_PIN 0 // Define the RX pin for Serial1
 #define CONSOLE Serial

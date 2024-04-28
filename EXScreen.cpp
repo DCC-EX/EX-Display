@@ -21,7 +21,7 @@
 #include <MCUFRIEND_kbv.h>
 #include <Adafruit_GFX.h>
 #include "config.h"
-#include "EX-Screen.h"
+#include "EXScreen.h"
 #include "Defines.h"
 
 MCUFRIEND_kbv tft;

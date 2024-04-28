@@ -13,7 +13,8 @@ public:
   /// @brief Constructor for the EXDisplayRow object
   /// @param rowNumber Row number on the display, 0 - 255
   /// @param rowText Char array of text for the row, max length is the EXDisplay object's maxRowWidth attribute
-  /// @param ticker True to ticker even if shorter than screen width, false not to ticker even if wider than screen width
+  /// @param ticker True to ticker even if shorter than screen width, false not to ticker even if wider than screen
+  /// width
   EXDisplayRow(uint8_t rowNumber, char *rowText, bool ticker = false, bool changed = true);
 
   /// @brief Get the row number this should be displayed on
@@ -31,7 +32,7 @@ public:
   /// @brief Update the ticker flag for the specified row
   /// @param ticker True|False
   void setTicker(bool ticker);
-  
+
   /// @brief Check if this row should scroll horizontally as a ticker
   /// @return True|False
   bool isTicker();
@@ -59,12 +60,24 @@ private:
 /**
  * @brief Class for each display.
  * Each display is in a linked list, with associated rows in a linked list as an attribute of the EXDisplay object.
- * 
+ *
  */
 class EXDisplay {
 public:
-  EXDisplay(uint8_t displayNumber, uint8_t maxRows, uint8_t maxColumns, uint16_t maxRowWidth, bool autoTicker,
+  EXDisplay(uint8_t displayNumber, uint8_t maxRows, uint8_t maxRowWidth, uint8_t maxTextWidth, bool autoTicker = false,
             EXDisplay *copyOf = nullptr);
+
+  /// @brief Get the first EXDisplay object in the linked list
+  /// @return Pointer to the first EXDisplay object
+  static EXDisplay *getFirst();
+
+  /// @brief Get the next EXDisplay object in the linked list
+  /// @return Pointer to the next EXDisplay object
+  EXDisplay *getNext();
+
+  /// @brief Get the first EXDisplayRow object associated with this display
+  /// @return Pointer to the first EXDisplayRow object for this display
+  EXDisplayRow *getFirstRow();
 
   /// @brief Get the display's number
   /// @return 0 - 255
@@ -74,13 +87,13 @@ public:
   /// @return 0 - 255
   uint8_t getMaxRows();
 
-  /// @brief Get the maximum number of columns - used to determine ticker attribute if text is wider than this
+  /// @brief Get the maximum width of the row - used to determine ticker attribute if text is wider than this
   /// @return 0 - 255
-  uint8_t getMaxColumns();
+  uint8_t getMaxRowWidth();
 
-  /// @brief Get the maximum text width - determines max row width
-  /// @return 0 - 65535
-  uint16_t getMaxRowWidth();
+  /// @brief Get the maximum text width, can be wider than row width and can trigger ticker if enabled
+  /// @return 0 - 255
+  uint8_t getMaxTextWidth();
 
   /// @brief Check if rows should automatically ticker horizontally if greater than max columns
   /// @return True to automatically ticker, false to use the row's ticker attribute
@@ -118,8 +131,8 @@ public:
 private:
   uint8_t _displayNumber;
   uint8_t _maxRows;
-  uint8_t _maxColumns;
-  uint16_t _maxRowWidth;
+  uint8_t _maxRowWidth;
+  uint8_t _maxTextWidth;
   bool _autoTicker;
   EXDisplay *_copyOf;
   EXDisplayRow *_firstRow;

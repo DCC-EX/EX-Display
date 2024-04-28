@@ -21,7 +21,10 @@ char *EXDisplayRow::getRowText() {
   return _rowText;
 }
 
-void EXDisplayRow::setTicker(bool ticker) { _ticker = ticker; }
+void EXDisplayRow::setTicker(bool ticker) {
+  _ticker = ticker;
+  _changed = true;
+}
 
 bool EXDisplayRow::isTicker() { return _ticker; }
 
@@ -34,13 +37,13 @@ EXDisplayRow *EXDisplayRow::getNext() { return _next; }
 /*
  * EXDisplay class implementation
  */
-EXDisplay::EXDisplay(uint8_t displayNumber, uint8_t maxRows, uint8_t maxColumns, uint16_t maxRowWidth, bool autoTicker,
+EXDisplay::EXDisplay(uint8_t displayNumber, uint8_t maxRows, uint8_t maxRowWidth, uint8_t maxTextWidth, bool autoTicker,
                      EXDisplay *copyOf) {
   EXDisplay *existingDisplay = getDisplayByNumber(displayNumber);
   if (existingDisplay) {
     existingDisplay->_maxRows = maxRows;
-    existingDisplay->_maxColumns = maxColumns;
     existingDisplay->_maxRowWidth = maxRowWidth;
+    existingDisplay->_maxTextWidth = maxTextWidth;
     existingDisplay->_autoTicker = autoTicker;
     existingDisplay->_copyOf = copyOf;
     _next = existingDisplay->_next;
@@ -49,8 +52,8 @@ EXDisplay::EXDisplay(uint8_t displayNumber, uint8_t maxRows, uint8_t maxColumns,
   }
   _displayNumber = displayNumber;
   _maxRows = maxRows;
-  _maxColumns = maxColumns;
   _maxRowWidth = maxRowWidth;
+  _maxTextWidth = maxTextWidth;
   _autoTicker = autoTicker;
   _copyOf = copyOf;
   _firstRow = nullptr;
@@ -68,29 +71,23 @@ EXDisplay::EXDisplay(uint8_t displayNumber, uint8_t maxRows, uint8_t maxColumns,
   }
 }
 
-uint8_t EXDisplay::getDisplayNumber() {
-  return _displayNumber;
-}
+EXDisplay *EXDisplay::getFirst() { return _first; }
 
-uint8_t EXDisplay::getMaxRows() {
-  return _maxRows;
-}
+EXDisplay *EXDisplay::getNext() { return _next; }
 
-uint8_t EXDisplay::getMaxColumns() {
-  return _maxColumns;
-}
+EXDisplayRow *EXDisplay::getFirstRow() { return _firstRow; }
 
-uint16_t EXDisplay::getMaxRowWidth() {
-  return _maxRowWidth;
-}
+uint8_t EXDisplay::getDisplayNumber() { return _displayNumber; }
 
-bool EXDisplay::isAutoTicker() {
-  return _autoTicker;
-}
+uint8_t EXDisplay::getMaxRows() { return _maxRows; }
 
-EXDisplay *EXDisplay::getCopyOf() {
-  return _copyOf;
-}
+uint8_t EXDisplay::getMaxRowWidth() { return _maxRowWidth; }
+
+uint8_t EXDisplay::getMaxTextWidth() { return _maxTextWidth; }
+
+bool EXDisplay::isAutoTicker() { return _autoTicker; }
+
+EXDisplay *EXDisplay::getCopyOf() { return _copyOf; }
 
 EXDisplayRow *EXDisplay::getRowByNumber(uint8_t rowNumber) {
   for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
@@ -103,9 +100,21 @@ EXDisplayRow *EXDisplay::getRowByNumber(uint8_t rowNumber) {
 
 void EXDisplay::updateRow(uint8_t rowNumber, char *rowText, bool ticker) {
   EXDisplayRow *existingRow = getRowByNumber(rowNumber);
+  size_t rowTextLength = strlen(rowText);
+  if (rowTextLength >= _maxTextWidth) {
+    char truncatedText[_maxTextWidth];
+    strncpy(truncatedText, rowText, _maxTextWidth - 1);
+    truncatedText[_maxTextWidth - 1] = '\0';
+    rowText = truncatedText;
+  }
+
   if (existingRow != nullptr) {
-    existingRow->setRowText(rowText);
-    existingRow->setTicker(ticker);
+    if (existingRow->getRowText() != rowText) {
+      existingRow->setRowText(rowText);
+    }
+    if (existingRow->isTicker() != ticker) {
+      existingRow->setTicker(ticker);
+    }
     return;
   }
 
