@@ -20,6 +20,15 @@ char *AtFinder::text = nullptr;
 
 // Set maximum accepted length of "text". Longer texts will be trimmed.
 // Set callback function that will be called when message detected.
+
+// Note: the code is safe if setup is not called before use because the
+// code can not reach the text handling or callback states. 
+// If the sketch has no reference to the setup function at all,
+// then compiler constant propagation is smart enough to realise
+// that it can never reach the text handling states, and thus
+// the entire function has no effect and is eliminated from the link.
+
+
 void AtFinder::setup(uint8_t _maxTextLength, DISPLAY_CALLBACK _callback) {
   maxTextLength = _maxTextLength;
   text = (char *)malloc(maxTextLength + 1);
@@ -33,7 +42,7 @@ void AtFinder::processInputChar(char hot) {
     SKIP_SPACES1,   // skip spaces to screen id
     BUILD_SCREENID, // building screen Id
     SKIP_SPACES2,   // skip spaces to row
-    BUILD_DROW,     // building screen row
+    BUILD_ROW,      // building screen row
     SKIP_SPACES3,   // skip spaces to "text"
     COPY_TEXT       // copying text to buffer
   };
@@ -48,7 +57,7 @@ void AtFinder::processInputChar(char hot) {
       state = SET_OPCODE;
     return;
   case SET_OPCODE: // waiting for opcode
-    state = (hot == '@') ? SKIP_SPACES1 : FIND_START;
+    state = (hot == '@' && callback) ? SKIP_SPACES1 : FIND_START;
     return;
   case SKIP_SPACES1: // skip spaces to screen id
     if (hot == ' ')
@@ -62,7 +71,7 @@ void AtFinder::processInputChar(char hot) {
       return;
     }
     if (hot < '0' || hot > '9') {
-      state = FIND_START;
+      state = FIND_START; // malformed number, start again.
       return;
     }
     screenId = 10 * screenId + (hot - '0');
@@ -71,15 +80,15 @@ void AtFinder::processInputChar(char hot) {
     if (hot == ' ')
       return;
     screenRow = 0;
-    state = BUILD_DROW;
+    state = BUILD_ROW;
     [[fallthrough]]; // character will be reinterpreted
-  case BUILD_DROW:   // building screen row
+  case BUILD_ROW:   // building screen row
     if (hot == ' ') {
       state = SKIP_SPACES3;
       return;
     }
     if (hot < '0' || hot > '9') {
-      state = FIND_START;
+      state = FIND_START; // malformed number, start again.
       return;
     }
     screenRow = 10 * screenRow + (hot - '0');
@@ -91,7 +100,7 @@ void AtFinder::processInputChar(char hot) {
       textLength = 0;
       state = COPY_TEXT;
     } else
-      state = FIND_START;
+      state = FIND_START; // missing "text", start again
     return;
   case COPY_TEXT: // copying text to buffer
     if (hot == '"') {
