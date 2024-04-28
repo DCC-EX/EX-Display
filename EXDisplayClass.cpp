@@ -38,9 +38,24 @@ void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
   if (!row) {
     // create a new row and chain it in
     row=new EXDisplayRow(rowNumber);
-    row->setNext(_firstRow);
-    _firstRow= row;
-  }
+
+    // find the row prior to the one we want to add
+    EXDisplayRow* previous=nullptr;
+    for (auto peek=_firstRow; peek; peek=peek->getNext()) {
+      if (peek->getRowNumber()>rowNumber) break;
+      previous=peek; 
+    }
+    if (previous) {
+        // chain after previous
+        row->setNext(previous->getNext());
+        previous->setNext(row);
+      }
+      else {
+        // chain at start of list  
+        row->setNext(_firstRow);
+         _firstRow=row;
+      }
+    }
   row->setRowText(rowText);
 }
 
