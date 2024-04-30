@@ -57,6 +57,8 @@ void setup() {
   // HARDWARE SETUP TODO..... Create an EXDisplay instance for each screen this ino wants to display.
   //  The updateEXDisplayRow will ignore messages destined for screens we dont have.
   // For testing lets create some  
+
+/* DISABLE SO IT WILL COMPILE
   for (byte x=0; (x= MAX_SCREENS-1); x++) {
     new EXDisplay(x,MAX_LINE_LENGTH);   // id 0, physical screen width 16
     ScreenChanged[x]={false};
@@ -71,7 +73,7 @@ void setup() {
 
   timestamp = millis();
   CONSOLE.println(F("End of Setup"));
-
+*/
 }
 
 void loop() {
@@ -96,6 +98,8 @@ void loop() {
   // DISABLE IN STARTUPPHASE
   else 
   {
+
+/* DISABLE SO IT WILL COMPILE
     if (StartupPhase==false){
         // add thie following in once display is working
         // for (byte x= 0; x<MAX_SCREENS; x++){
@@ -136,5 +140,6 @@ void loop() {
 
       #endif
     }
+*/
   }
 }

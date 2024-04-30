@@ -26,7 +26,6 @@ public:
   /// @return Char array
   char *getRowText();
 
-
   /// @brief Check if this row has been changed, set when setRowText called, reset when getRowText called
   /// @return True|False
   bool isChanged();
@@ -34,7 +33,7 @@ public:
   /// @brief calculated to determine which screen row is used
   /// @return 0 - 255
   uint8_t displayRow();
-  
+
   /// @brief Set the pointer to the next EXDisplayRow object in the linked list
   /// @param next Pointer to the next EXDisplayRow object
   void setNext(EXDisplayRow *next);

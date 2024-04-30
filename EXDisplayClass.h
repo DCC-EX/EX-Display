@@ -1,5 +1,5 @@
-#ifndef DISPLAYCLASS_H
-#define DISPLAYCLASS_H
+#ifndef EXDISPLAYCLASS_H
+#define EXDISPLAYCLASS_H
 
 #include <Arduino.h>
 
@@ -29,12 +29,10 @@ public:
   /// @return 0 - 255
   uint8_t getDisplayNumber();
 
-
   /// @brief Get the maximum width of the hardware  - used to determine ticker attribute if text is wider than this
   /// @return 0 - 255
   uint8_t getMaxScreenWidth();
 
-  
   /// @brief Get an EXDisplayRow object for this display by the specified row number
   /// @param rowNumber Row number to retrieve, 0 - 255
   /// @return Pointer to an EXDisplayRow object, or nullptr if not exists
@@ -45,6 +43,9 @@ public:
   /// @param rowText Char array of text for the row
   void updateRow(uint8_t rowNumber, char *rowText);
 
+  /// @brief Check if the rows for this display have changed
+  /// @return True|False
+  bool isChanged();
 
   /// @brief Check if there is already a display created at the specified number
   /// @param displayNumber True|False
@@ -63,8 +64,9 @@ private:
   // display data and rows
   uint8_t _displayNumber;
   EXDisplayRow *_firstRow;
-  // Screen management variables added here 
-  uint8_t _maxScreenWidth; 
+  // Screen management variables added here
+  uint8_t _maxScreenWidth;
+  bool _displayChanged;
 };
 
 #endif
