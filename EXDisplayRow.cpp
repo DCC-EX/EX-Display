@@ -36,6 +36,7 @@ char *EXDisplayRow::getRowText() {
 
 bool EXDisplayRow::isChanged() { return _changed; }
 
+uint8_t EXDisplayRow::displayRow() {return _displayRow; }
 
 EXDisplayRow *EXDisplayRow::getNext() { return _next; }
 

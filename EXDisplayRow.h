@@ -31,6 +31,9 @@ public:
   /// @return True|False
   bool isChanged();
 
+  /// @brief calculated to determine which screen row is used
+  /// @return 0 - 255
+  uint8_t displayRow();
   
   /// @brief Set the pointer to the next EXDisplayRow object in the linked list
   /// @param next Pointer to the next EXDisplayRow object
@@ -45,6 +48,7 @@ private:
   uint8_t _maxMalloc;
   char *_rowText;
   bool _changed;
+  uint8_t _displayRow;
   EXDisplayRow *_next;
 };
 #endif

@@ -2,10 +2,11 @@
 #include <Arduino.h>
 #include "AtFinder.h"
 #include "Defines.h"
+#include "EXScreen.h"
 #include "DisplayFunctions.h"
 #include "EXDisplayClass.h"
+#include "EXDisplayRow.h"
 
-// #include "EXScreen.h"
 
 /* MOVED TO DisplayFunctions - now updateDisplayRows()
 // callback function when a <@ id row "text"> message detected
@@ -56,14 +57,21 @@ void setup() {
   // HARDWARE SETUP TODO..... Create an EXDisplay instance for each screen this ino wants to display.
   //  The updateEXDisplayRow will ignore messages destined for screens we dont have.
   // For testing lets create some  
-  new EXDisplay(0,16);   // id 0, physical screen width 16
-  new EXDisplay(1,32);
-
-
-  CONSOLE.println(F("End of Setup"));
-  delay(1000);
+  for (byte x=0; (x= MAX_SCREENS-1); x++) {
+    new EXDisplay(x,MAX_LINE_LENGTH);   // id 0, physical screen width 16
+    ScreenChanged[x]={false};
+  }
+  //Setup the start screen.
+  if (MAX_SCREENS > 1) {
+  currentScreenID = INITIAL_SCREEN;
+  }
+  else {
+    currentScreenID = 0;
+  }
 
   timestamp = millis();
+  CONSOLE.println(F("End of Setup"));
+
 }
 
 void loop() {
@@ -79,59 +87,54 @@ void loop() {
   }
 
   // each byte received form serial is passed to the parse
-  if (CS_LISTEN.available())
+  if (CS_LISTEN.available()) {
     AtFinder::processInputChar(CS_LISTEN.read());
-
+  }
   // you can display all rows by sending <@ 255 0 "">
 
   // No data incoming so see if we need to display anything
-  /* DISABLE TO START
-      if (StartupPhase==false){
+  // DISABLE IN STARTUPPHASE
+  else 
+  {
+    if (StartupPhase==false){
+        // add thie following in once display is working
+        // for (byte x= 0; x<MAX_SCREENS; x++){
+        //   if (ScreenChanged[x]) { setScreenRows(x); }
+        // }
 
-          if (ScreenChanged[THIS_SCREEN_NUM]==true) {
-              CONSOLE.print("Time to draw a screen line");
-              SCREEN::StartScreenPrint();
-              PrintInProgress=true;
-              ScreenChanged[THIS_SCREEN_NUM] = false;
-          }
+       SCREEN::CheckScreens();
 
-          if (PrintInProgress==true) {
-              CONSOLE.println("Pinting a line");
-              SCREEN::PrintALine();
-          }
-    }
-  */
+      // DISABLE TO START
+      #ifndef USE_TOUCH
+          //Check Page Time to see if we need to scroll
+          if((millis()-screencount) > SCROLLTIME) {
 
-  /* DISABLE TO START
-  #ifndef USE_TOUCH
-      //Check Page Time to see if we need to scroll
-      if((millis()-screencount) > SCROLLTIME) {
-
-          if (THIS_SCREEN_NUM >= MAX_SCREENS-1) {
-          THIS_SCREEN_NUM=0;
-          }
-          else {
-          THIS_SCREEN_NUM++;
-
-          }
-          screencount=millis();
-          ScreenChanged[THIS_SCREEN_NUM] = true;
-
-      }
-  #else
-      if (SCREEN::check_touch) {
-          if (THIS_SCREEN_NUM >= MAX_SCREENS-1) {
-              THIS_SCREEN_NUM=0;
+              if (currentScreenID >= MAX_SCREENS-1) {
+              currentScreenID=0;
               }
               else {
-              THIS_SCREEN_NUM++;
+              currentScreenID++;
+
+              }
+              screencount=millis();
+              ScreenChanged[currentScreenID] = true;
+
+          }
+      #else
+          if (SCREEN::check_touch) {
+              if (currentScreenID >= MAX_SCREENS-1) {
+                  currentScreenID=0;
+              }
+              else {
+              currentScreenID++;
 
               }
 
-              ScreenChanged[THIS_SCREEN_NUM] = true;
+              ScreenChanged[currentScreenID] = true;
+              
           }
-      }
 
-  #endif
-  */
+      #endif
+    }
+  }
 }

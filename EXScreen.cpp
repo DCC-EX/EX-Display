@@ -23,6 +23,9 @@
 #include "config.h"
 #include "EXScreen.h"
 #include "Defines.h"
+#include "DisplayFunctions.h"
+#include "EXDisplayRow.h"
+#include "EXDisplayClass.h"
 
 MCUFRIEND_kbv tft;
 
@@ -71,15 +74,47 @@ void showmsgXY(int x, int y, int sz, const char *msg)
        
 }
 
+void setScreenRows(uint8_t rowId) {
+
+
+}
+
+void CheckScreens(){
+
+    if (ScreenChanged[currentScreenID]==true) {
+        CONSOLE.print("Time to draw a screen");
+        SCREEN::StartScreenPrint();
+        PrintInProgress=false;
+        ScreenChanged[currentScreenID] = false;
+          
+        EXDisplay *display = EXDisplay::getDisplayByNumber(currentScreenID);
+        if (display) {
+            EXDisplayRow *row = display->getFirstRow();
+            CONSOLE.println("Pinting a line");
+            SCREEN::PrintALine(row->getRowNumber(), row->getRowText());
+            PrintInProgress=true;
+        }
+        else {
+          SCREEN::PrintNoData();
+        }
+      } 
+      else {
+        if (PrintInProgress) {
+            EXDisplayRow *row = row->getNext();
+            SCREEN::PrintALine(row->getRowNumber(), row->getRowText());
+        }
+      
+    }        
+}
+
 void TFT_DrawHeader() {
 
-    char header[HDDR_SIZE] = {""};
-    sprintf(header, "DCC-EX   SCREEN %d\n", THIS_SCREEN_NUM);
+    char header[25] = {""};
+    sprintf(header, "DCC-EX   SCREEN %d\n", currentScreenID);
     tft.setTextColor(YELLOW);
-    //printf("Header to show = %s", header);
     showmsgXY(1, 20, 1, header);
     tft.drawFastHLine(0, 25, tft.width(), WHITE);
-    tft.setTextColor(WHITE);
+    tft.setTextColor(WHITE);  // set this for all screen lines
     
 }
 
@@ -94,55 +129,29 @@ void StartScreenPrint() {
     CONSOLE.println("Drawn Header\n");
     NextRowToPrint=0;
     NextScreenLine=0;
-    #ifdef DEBUG
-    SCREEN::DisplayScreen();  // debug output only
-    #endif
 
 }
 
-void PrintSingleLine(byte screenNo, byte screenRow) {
-    printf("Printing lines %d\n", screenRow);
-    // Find which screen row to print on
-    byte Row = 0;
-    for (byte x=0; x<=screenRow; x++) {
-      if (DisplayLines[screenNo][x].row<screenRow){
-        if (DisplayLines[screenNo][x].inuse==true) {
-          Row=Row+1;
-        }
-      }
-    }
-    printf("Row found - %d\n", Row);
-    //NextRowToPrint=Row;
-    byte vpos = (Row * 21) + 44;
-    //showmsgXY(1, vpos, 1, blankmsg);
-    //tft.fillRect(1,(vpos-21),320, 20, BLACK);
+void PrintNoData() {
 
-    showmsgXY(1, vpos, 1, DisplayLines[THIS_SCREEN_NUM][Row].text);
-    
+  showmsgXY(100, 100, 1, "No Data");
+
 }
 
-void PrintALine() {
-  
-  int vpos=0;
-  //printf("Printing a line %d MAX %d\n", NextRowToPrint, MAX_ROWS);
-  //delay(50);
-  if (DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].inuse==true) {
-    printf("Print row %d screen %d\n", NextScreenLine, THIS_SCREEN_NUM);
-    vpos = (NextScreenLine * 21) + 44;
-    
-    //showmsgXY(1, vpos, 1, blankmsg);
 
-    showmsgXY(1, vpos, 1, DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].text);
+void PrintALine(int Row, char * text) {
 
-    printf("Printing Row %d - %s\n", NextScreenLine, DisplayLines[THIS_SCREEN_NUM][NextRowToPrint].text);
-    // increment the screen line count
-    NextScreenLine++;
-  }
-  // increment the data line count
+  int vpos = (NextScreenLine * 21) + 44;
+
+  //showmsgXY(1, vpos, 1, blankmsg);
+
+  showmsgXY(1, vpos, 1, text);
+  // increment the screen & line count
   NextRowToPrint++;
+  NextScreenLine++;
 
   if (NextRowToPrint >= MAX_ROWS) {
-    //We've reached the end of this page
+    //We've reached the end of this data for this page
     PrintInProgress=false;
     
     // Any blank lines needed?
@@ -151,8 +160,8 @@ void PrintALine() {
       //showmsgXY(1, vpos, 1, blankmsg);
       NextScreenLine++;
     }
-  NextRowToPrint = 0;
-  NextScreenLine = 0;
+    NextRowToPrint = 0;
+    NextScreenLine = 0;
   }
   
 }
@@ -161,7 +170,7 @@ void PrintALine() {
 void DisplayScreen(){
 
   for (byte x=0;x<10;x++){
-    printf("Line %d - Use - %d - %s\n", x, DisplayLines[THIS_SCREEN_NUM][x].inuse, DisplayLines[THIS_SCREEN_NUM][x].text);
+    //printf("Line %d - Use - %d - %s\n", x, DisplayLines[currentScreenID][x].inuse, DisplayLines[currentScreenID][x].text);
   }
 
 }

@@ -19,7 +19,7 @@
 #define INITIAL_SCREEN 0
 
 // Now define how many screens you wish to be used in turn
-#define MAX_SCREENS 3
+#define MAX_SCREENS 2
 #define MAX_ROWS 10
 
 // If a touch screen is in use a touch will swap from screen to screen

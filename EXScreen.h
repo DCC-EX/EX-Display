@@ -5,18 +5,9 @@
 
 #define DEBUG
 
-byte THIS_SCREEN_NUM = 0;
+uint8_t currentScreenID = 0;
 
-#define FONT_SIZE 2.5 // Adjust font size as needed
-#define CHAR_WIDTH (6 * FONT_SIZE) // Width of a single character in pixels
-
-// Set this following string to the header you require.  This is displayed at the top of the screen
-#define HDDR_SIZE  25
-
-
-
-
-// ALL Touch panels and wiring is DIFFERENT.  The touch screen needs to be calibrated
+// ALL Touch panels and wiring are DIFFERENT.  The touch screen needs to be calibrated
 // See the README files for how to run the calibration routine and
 // copy-paste results from TouchScreen_Calibr_native.ino into the lines below.
 // These settings are for the McuFriend 2.8" shield in Portrait tft.screenRotaion(0)
@@ -45,17 +36,8 @@ byte THIS_SCREEN_NUM = 0;
   #define WHITE ~WHITE
 #endif*/
 
-// A structure to store the screen lines.
-struct DisplayStruct
-{
-  bool inuse=false;
-  byte row=0;
-  char text[MAX_LINE_LENGTH]=" ";
-} DisplayLines[MAX_SCREENS][MAX_ROWS];
-
 // variables to indicate what needs doing to display the screen
-bool ScreenChanged[MAX_SCREENS] = {false,false};
-//bool ScreenDrawn=false
+bool ScreenChanged[MAX_SCREENS];
 bool PrintInProgress=false;
 byte NextRowToPrint=0;
 byte NextScreenLine=0;
@@ -67,11 +49,13 @@ namespace SCREEN
     void showmsgXY(int x, int y, int sz, const char *msg);
     void TFT_DrawHeader();
     void testprint(byte lines);
+    void setScreenRows(uint8_t rowId);
+    void CheckScreens();
     void StartScreenPrint();
-    void PrintSingleLine(byte screenNo, byte screenRow);
-    void PrintALine();
+    void PrintNoData();
+    //void PrintSingleLine(byte screenNo, byte screenRow);
+    void PrintALine(int Row, char * text);
     void DisplayScreen();
-    void processSerialInput();
     void check_touch();
 
 }

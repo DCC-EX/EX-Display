@@ -1,6 +1,7 @@
 #include "Defines.h"
 #include "DisplayFunctions.h"
 #include "EXDisplayClass.h"
+#include "EXScreen.h"
 
 #ifdef DEBUG
 bool debug = true;
@@ -30,6 +31,11 @@ void updateEXDisplayRow(uint8_t screenId, uint8_t screenRow, char *text) {
     CONSOLE.print(screenRow);
     CONSOLE.print(F("|"));
     CONSOLE.println(text);
+    // Set a flag so the screen driver knows something has changed.
+    ScreenChanged[screenId]=true;
+    // If this is the current screen we could call a row update line directly from here
+    // but do we know which screen row to use?
+    // PrintThisLine(screenId, screenRow, text)
   }
   else {
     CONSOLE.print("\nCallback ignored for screen ");
