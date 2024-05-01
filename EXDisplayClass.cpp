@@ -6,10 +6,8 @@ EXDisplay *EXDisplay::_first = nullptr;
 /*
  * EXDisplay class implementation
  */
-EXDisplay::EXDisplay(uint8_t displayNumber, uint8_t maxScreenWidth) {
-  _displayNumber = displayNumber;
-  _maxScreenWidth = maxScreenWidth;
-  _maxScreenWidth = maxScreenWidth;
+EXDisplay::EXDisplay(uint8_t displayNumber, EXScreen *exScreen, uint8_t maxScreenWidth)
+    : _displayNumber(displayNumber), _exScreen(exScreen), _maxScreenWidth(maxScreenWidth) {
   _firstRow = nullptr;
   _next = _first;
   _first = this;

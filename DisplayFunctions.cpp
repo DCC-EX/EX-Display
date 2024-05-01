@@ -1,14 +1,14 @@
 #include "Defines.h"
 #include "DisplayFunctions.h"
-#include "EXDisplayClass.h"
-// #include "EXScreen.h"
+#include "MCUFriendScreen.h"
 
 #ifdef DEBUG
 bool debug = true;
 #else
 bool debug = false;
 #endif
-unsigned long lastRowDisplay = 0;
+
+EXDisplay *display0 = new EXDisplay(0, new MCUFriendScreen(), 30);
 
 // This function is called from AtFinder when a
 // <@ screenid row "text"> message is discovered.

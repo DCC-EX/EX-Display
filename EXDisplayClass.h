@@ -4,6 +4,7 @@
 #include <Arduino.h>
 
 #include "EXDisplayRow.h"
+#include "EXScreen.h"
 /**
  * @brief Class for each display.
  * Each display is in a linked list, with associated rows in a linked list as an attribute of the EXDisplay object.
@@ -11,7 +12,7 @@
  */
 class EXDisplay {
 public:
-  EXDisplay(uint8_t displayNumber, uint8_t maxScreenWidth);
+  EXDisplay(uint8_t displayNumber, EXScreen *exScreen, uint8_t maxScreenWidth);
 
   /// @brief Get the first EXDisplay object in the linked list
   /// @return Pointer to the first EXDisplay object
@@ -64,6 +65,7 @@ private:
   // display data and rows
   uint8_t _displayNumber;
   EXDisplayRow *_firstRow;
+  EXScreen *_exScreen;
   // Screen management variables added here
   uint8_t _maxScreenWidth;
   bool _displayChanged;

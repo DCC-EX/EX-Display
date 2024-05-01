@@ -1,12 +1,8 @@
 
-#include <Arduino.h>
 #include "AtFinder.h"
 #include "Defines.h"
-#include "EXScreen.h"
 #include "DisplayFunctions.h"
-#include "EXDisplayClass.h"
-#include "EXDisplayRow.h"
-
+#include <Arduino.h>
 
 /* MOVED TO DisplayFunctions - now updateDisplayRows()
 // callback function when a <@ id row "text"> message detected
@@ -36,11 +32,9 @@ bool StartupPhase = true;
 long timestamp = 0;
 long screencount = 0;
 
-
-// Chris just doing this for manual testing on my mega... so I can debug down the serial monitor 
+// Chris just doing this for manual testing on my mega... so I can debug down the serial monitor
 #undef CS_LISTEN
 #define CS_LISTEN Serial
-
 
 void setup() {
   CONSOLE.begin(115200);
@@ -56,24 +50,24 @@ void setup() {
 
   // HARDWARE SETUP TODO..... Create an EXDisplay instance for each screen this ino wants to display.
   //  The updateEXDisplayRow will ignore messages destined for screens we dont have.
-  // For testing lets create some  
+  // For testing lets create some
 
-/* DISABLE SO IT WILL COMPILE
-  for (byte x=0; (x= MAX_SCREENS-1); x++) {
-    new EXDisplay(x,MAX_LINE_LENGTH);   // id 0, physical screen width 16
-    ScreenChanged[x]={false};
-  }
-  //Setup the start screen.
-  if (MAX_SCREENS > 1) {
-  currentScreenID = INITIAL_SCREEN;
-  }
-  else {
-    currentScreenID = 0;
-  }
+  /* DISABLE SO IT WILL COMPILE
+    for (byte x=0; (x= MAX_SCREENS-1); x++) {
+      new EXDisplay(x,MAX_LINE_LENGTH);   // id 0, physical screen width 16
+      ScreenChanged[x]={false};
+    }
+    //Setup the start screen.
+    if (MAX_SCREENS > 1) {
+    currentScreenID = INITIAL_SCREEN;
+    }
+    else {
+      currentScreenID = 0;
+    }
 
-  timestamp = millis();
-  CONSOLE.println(F("End of Setup"));
-*/
+    timestamp = millis();
+    CONSOLE.println(F("End of Setup"));
+  */
 }
 
 void loop() {
@@ -96,50 +90,49 @@ void loop() {
 
   // No data incoming so see if we need to display anything
   // DISABLE IN STARTUPPHASE
-  else 
-  {
+  else {
 
-/* DISABLE SO IT WILL COMPILE
-    if (StartupPhase==false){
-        // add thie following in once display is working
-        // for (byte x= 0; x<MAX_SCREENS; x++){
-        //   if (ScreenChanged[x]) { setScreenRows(x); }
-        // }
+    /* DISABLE SO IT WILL COMPILE
+        if (StartupPhase==false){
+            // add thie following in once display is working
+            // for (byte x= 0; x<MAX_SCREENS; x++){
+            //   if (ScreenChanged[x]) { setScreenRows(x); }
+            // }
 
-       SCREEN::CheckScreens();
+           SCREEN::CheckScreens();
 
-      // DISABLE TO START
-      #ifndef USE_TOUCH
-          //Check Page Time to see if we need to scroll
-          if((millis()-screencount) > SCROLLTIME) {
+          // DISABLE TO START
+          #ifndef USE_TOUCH
+              //Check Page Time to see if we need to scroll
+              if((millis()-screencount) > SCROLLTIME) {
 
-              if (currentScreenID >= MAX_SCREENS-1) {
-              currentScreenID=0;
-              }
-              else {
-              currentScreenID++;
-
-              }
-              screencount=millis();
-              ScreenChanged[currentScreenID] = true;
-
-          }
-      #else
-          if (SCREEN::check_touch) {
-              if (currentScreenID >= MAX_SCREENS-1) {
+                  if (currentScreenID >= MAX_SCREENS-1) {
                   currentScreenID=0;
-              }
-              else {
-              currentScreenID++;
+                  }
+                  else {
+                  currentScreenID++;
+
+                  }
+                  screencount=millis();
+                  ScreenChanged[currentScreenID] = true;
 
               }
+          #else
+              if (SCREEN::check_touch) {
+                  if (currentScreenID >= MAX_SCREENS-1) {
+                      currentScreenID=0;
+                  }
+                  else {
+                  currentScreenID++;
 
-              ScreenChanged[currentScreenID] = true;
-              
-          }
+                  }
 
-      #endif
-    }
-*/
+                  ScreenChanged[currentScreenID] = true;
+
+              }
+
+          #endif
+        }
+    */
   }
 }
