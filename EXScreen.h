@@ -6,11 +6,14 @@
 class EXScreen {
 public:
   /// @brief Constructor for a new EXScreen object
-  EXScreen() {}
+  EXScreen(uint8_t maxRows, uint8_t maxColumns) : _maxRows(maxRows), _maxColumns(maxColumns) {}
 
   /// @brief Virtual function to override to write a row of text to the physical screen
   virtual void writeRow(uint8_t row, uint8_t column, char *message);
 
+private:
+  uint8_t _maxRows;    // Maximum number of rows this screen can display
+  uint8_t _maxColumns; // Maximum number of columns this screen can display
 };
 
 #endif

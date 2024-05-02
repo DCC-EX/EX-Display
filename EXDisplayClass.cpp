@@ -11,7 +11,6 @@ EXDisplay::EXDisplay(uint8_t displayNumber, EXScreen *exScreen, uint8_t maxScree
   _firstRow = nullptr;
   _next = _first;
   _first = this;
-  _displayChanged = true;
 }
 
 EXDisplay *EXDisplay::getFirst() { return _first; }
@@ -55,10 +54,7 @@ void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
     }
   }
   row->setRowText(rowText);
-  _displayChanged = true;
 }
-
-bool EXDisplay::isChanged() { return _displayChanged; }
 
 /*** probably not needed
  void EXDisplay::deleteRowNumber(uint8_t rowNumber) {

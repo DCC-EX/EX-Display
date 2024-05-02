@@ -30,9 +30,17 @@ public:
   /// @return True|False
   bool isChanged();
 
+  /// @brief Set the physical screen row this row should be rendered/drawn on
+  /// @param displayRow 0 - 255
+  void setDisplayRow(uint8_t displayRow);
+
   /// @brief calculated to determine which screen row is used
   /// @return 0 - 255
   uint8_t displayRow();
+
+  /// @brief Check if this row fits on a physical display and needs to be rendered/drawn
+  /// @return True|False
+  bool needsRender();
 
   /// @brief Set the pointer to the next EXDisplayRow object in the linked list
   /// @param next Pointer to the next EXDisplayRow object
@@ -43,11 +51,12 @@ public:
   EXDisplayRow *getNext();
 
 private:
-  uint8_t _rowNumber;
-  uint8_t _maxMalloc;
-  char *_rowText;
-  bool _changed;
-  uint8_t _displayRow;
+  uint8_t _rowNumber;  // This is the row number received from the parser
+  uint8_t _maxMalloc;  // This is the calculated maximum length of the text received from the parser
+  char *_rowText;      // This is the text received from the parser
+  bool _changed;       // Flag set when text received from the parser is different to rowText
+  uint8_t _displayRow; // This is the calculated physical row on a display that this line belongs on
+  bool _needsRender;   // Flag that is set when row belongs on a physical display, false when off-screen
   EXDisplayRow *_next;
 };
 #endif

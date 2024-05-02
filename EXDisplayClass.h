@@ -44,10 +44,6 @@ public:
   /// @param rowText Char array of text for the row
   void updateRow(uint8_t rowNumber, char *rowText);
 
-  /// @brief Check if the rows for this display have changed
-  /// @return True|False
-  bool isChanged();
-
   /// @brief Check if there is already a display created at the specified number
   /// @param displayNumber True|False
   /// @return
@@ -68,7 +64,6 @@ private:
   EXScreen *_exScreen;
   // Screen management variables added here
   uint8_t _maxScreenWidth;
-  bool _displayChanged;
 };
 
 #endif

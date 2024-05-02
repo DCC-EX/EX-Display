@@ -1,6 +1,6 @@
 #include "MCUFriendScreen.h"
 
-MCUFriendScreen::MCUFriendScreen() {
+MCUFriendScreen::MCUFriendScreen(uint8_t maxRows, uint8_t maxColumns) : EXScreen(maxRows, maxColumns) {
   MCUFRIEND_kbv _tft;
 }
 
