@@ -39,7 +39,14 @@ char *EXDisplayRow::getRowText() {
 
 bool EXDisplayRow::isChanged() { return _changed; }
 
-void EXDisplayRow::setDisplayRow(uint8_t displayRow) { _displayRow = displayRow; }
+void EXDisplayRow::setDisplayRow(uint8_t displayRow, uint8_t maxScreenRows) {
+  _displayRow = displayRow;
+  if (_displayRow >= maxScreenRows) {
+    _needsRender = false;
+  } else {
+    _needsRender = true;
+  }
+}
 
 uint8_t EXDisplayRow::displayRow() { return _displayRow; }
 
