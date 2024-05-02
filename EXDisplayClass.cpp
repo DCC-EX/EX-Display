@@ -58,23 +58,32 @@ void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
     }
   }
   row->setRowText(rowText);
+  row->setDisplayRow(rowNumber, _exScreen->getMaxRows());
 }
 
-void EXDisplay::autoScroll(unsigned long scrollDelay) {
+void EXDisplay::scroll() {
   uint8_t screenRows = _exScreen->getMaxRows();
   uint8_t newPosition = 0;
   if (_numberOfRows <= screenRows) {
     _scrollPosition = newPosition;
   } else {
-    if (millis() - _lastScrollTime > scrollDelay) {
-      newPosition = _scrollPosition++;
-      if (newPosition >= _numberOfRows) {
-        newPosition = 0;
-      }
+    newPosition = _scrollPosition++;
+    if (newPosition >= _numberOfRows) {
+      newPosition = 0;
     }
   }
-  _scrollPosition = newPosition;
+  _scrollPosition = newPosition;  
 }
+
+void EXDisplay::autoScroll(unsigned long scrollDelay) {
+  if (millis() - _lastScrollTime > scrollDelay) {
+    scroll();
+  }
+}
+
+uint8_t EXDisplay::getScreenMaxRows() { return _exScreen->getMaxRows(); }
+
+uint8_t EXDisplay::getScreenMaxColumns() { return _exScreen->getMaxColumns(); }
 
 /*** probably not needed
  void EXDisplay::deleteRowNumber(uint8_t rowNumber) {

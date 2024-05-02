@@ -48,7 +48,7 @@ void EXDisplayRow::setDisplayRow(uint8_t displayRow, uint8_t maxScreenRows) {
   }
 }
 
-uint8_t EXDisplayRow::displayRow() { return _displayRow; }
+uint8_t EXDisplayRow::getDisplayRow() { return _displayRow; }
 
 bool EXDisplayRow::needsRender() { return _needsRender; }
 

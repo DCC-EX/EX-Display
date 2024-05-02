@@ -37,7 +37,7 @@ public:
 
   /// @brief calculated to determine which screen row is used
   /// @return 0 - 255
-  uint8_t displayRow();
+  uint8_t getDisplayRow();
 
   /// @brief Check if this row fits on a physical display and needs to be rendered/drawn
   /// @return True|False

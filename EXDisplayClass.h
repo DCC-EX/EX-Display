@@ -44,9 +44,20 @@ public:
   /// @param rowText Char array of text for the row
   void updateRow(uint8_t rowNumber, char *rowText);
 
+  /// @brief Scroll one row vertically
+  void scroll();
+
   /// @brief Method to automatically update row positions for automatic vertical scrolling
   /// @param scrollDelay Time in milliseconds between vertical scrolling updates
   void autoScroll(unsigned long scrollDelay);
+
+  /// @brief Get the maximum number of rows displayable on the associated screen
+  /// @return 0 - 255
+  uint8_t getScreenMaxRows();
+
+  /// @brief Get the maximum number of columns displayable on the associated screen
+  /// @return 0 - 255
+  uint8_t getScreenMaxColumns();
 
   /// @brief Check if there is already a display created at the specified number
   /// @param displayNumber True|False
