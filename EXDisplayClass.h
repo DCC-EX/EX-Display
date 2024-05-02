@@ -44,6 +44,10 @@ public:
   /// @param rowText Char array of text for the row
   void updateRow(uint8_t rowNumber, char *rowText);
 
+  /// @brief Method to automatically update row positions for automatic vertical scrolling
+  /// @param scrollDelay Time in milliseconds between vertical scrolling updates
+  void autoScroll(unsigned long scrollDelay);
+
   /// @brief Check if there is already a display created at the specified number
   /// @param displayNumber True|False
   /// @return
@@ -63,7 +67,10 @@ private:
   EXDisplayRow *_firstRow;
   EXScreen *_exScreen;
   // Screen management variables added here
-  uint8_t _maxScreenWidth;
+  uint8_t _maxScreenWidth;       // Maximum number of chars that can fit on the physical screen
+  uint8_t _numberOfRows;         // Calculated number of rows for this screen
+  uint8_t _scrollPosition;       // Row number that is top of screen for scrolling support
+  unsigned long _lastScrollTime; // Last time in milliseconds an auto scroll was done
 };
 
 #endif

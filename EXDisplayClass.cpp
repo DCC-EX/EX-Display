@@ -11,6 +11,9 @@ EXDisplay::EXDisplay(uint8_t displayNumber, EXScreen *exScreen, uint8_t maxScree
   _firstRow = nullptr;
   _next = _first;
   _first = this;
+  _numberOfRows = 0;
+  _scrollPosition = 0;
+  _lastScrollTime = 0;
 }
 
 EXDisplay *EXDisplay::getFirst() { return _first; }
@@ -35,6 +38,7 @@ void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
   if (!row) {
     // create a new row and chain it in
     row = new EXDisplayRow(rowNumber);
+    _numberOfRows++;
 
     // find the row prior to the one we want to add
     EXDisplayRow *previous = nullptr;
@@ -54,6 +58,22 @@ void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
     }
   }
   row->setRowText(rowText);
+}
+
+void EXDisplay::autoScroll(unsigned long scrollDelay) {
+  uint8_t screenRows = _exScreen->getMaxRows();
+  uint8_t newPosition = 0;
+  if (_numberOfRows <= screenRows) {
+    _scrollPosition = newPosition;
+  } else {
+    if (millis() - _lastScrollTime > scrollDelay) {
+      newPosition = _scrollPosition++;
+      if (newPosition >= _numberOfRows) {
+        newPosition = 0;
+      }
+    }
+  }
+  _scrollPosition = newPosition;
 }
 
 /*** probably not needed
