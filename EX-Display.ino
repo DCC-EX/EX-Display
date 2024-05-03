@@ -4,29 +4,7 @@
 #include "DisplayFunctions.h"
 #include <Arduino.h>
 
-/* MOVED TO DisplayFunctions - now updateDisplayRows()
-// callback function when a <@ id row "text"> message detected
-void processDisplay(int16_t screenId, int16_t screenRow, char *text) {
-  CONSOLE.print(F("\n id="));
-  CONSOLE.print(screenId);
-  CONSOLE.print(F(" row="));
-  CONSOLE.print(screenRow);
-  CONSOLE.print(F(" text=\""));
-  CONSOLE.print(text);
-  CONSOLE.print(F("\"\n"));
 
-  if (text[0]=='\0'){
-      DisplayLines[screenId][screenRow].inuse=false;
-    }
-    else {
-      DisplayLines[screenId][screenRow].inuse=true;
-    }
-  DisplayLines[screenId][screenRow].row=screenRow;
-  strcpy (DisplayLines[screenId][screenRow].text,  text);
-
-  ScreenChanged[screenId]=true;
-}
-*/
 
 bool StartupPhase = true;
 long timestamp = 0;
@@ -52,22 +30,17 @@ void setup() {
   //  The updateEXDisplayRow will ignore messages destined for screens we dont have.
   // For testing lets create some
 
-  /* DISABLE SO IT WILL COMPILE
-    for (byte x=0; (x= MAX_SCREENS-1); x++) {
-      new EXDisplay(x,MAX_LINE_LENGTH);   // id 0, physical screen width 16
-      ScreenChanged[x]={false};
-    }
     //Setup the start screen.
-    if (MAX_SCREENS > 1) {
-    currentScreenID = INITIAL_SCREEN;
-    }
-    else {
-      currentScreenID = 0;
-    }
+    // if (MAX_SCREENS > 1) {
+    // currentScreenID = INITIAL_SCREEN;
+    // }
+    // else {
+    //   currentScreenID = 0;
+    // }
 
     timestamp = millis();
     CONSOLE.println(F("End of Setup"));
-  */
+  
 }
 
 void loop() {
