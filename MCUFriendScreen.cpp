@@ -1,6 +1,8 @@
+#include "Defines.h"
 #include "MCUFriendScreen.h"
 
-MCUFriendScreen::MCUFriendScreen() {
+
+MCUFriendScreen::MCUFriendScreen(uint8_t maxRows, uint8_t maxColumns) : EXScreen(maxRows, maxColumns) {
   MCUFRIEND_kbv _tft;
 }
 
@@ -26,6 +28,12 @@ void EXScreen::newPage(uint8_t screenId) {
     tft.drawFastHLine(0, 25, tft.width(), WHITE);
     tft.setTextColor(WHITE);  // set this for all screen lines
     
+void EXScreen::writeRow(uint8_t row, char *message) {
+  // Method here to write to the display
+  CONSOLE.print(F("Write to screen DisplayRow|Message: "));
+  CONSOLE.print(row);
+  CONSOLE.print(F("|"));
+  CONSOLE.println(message);
 }
 
 void EXSCREEN::startUp(uint8_t rotation, int8_t colour) {

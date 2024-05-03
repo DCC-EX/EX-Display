@@ -6,6 +6,8 @@ EXDisplayRow::EXDisplayRow(uint8_t rowNumber) {
   _rowNumber = rowNumber;
   _maxMalloc = 0;
   _rowText = nullptr;
+  _changed = true;
+  _needsRender = false;
 }
 
 uint8_t EXDisplayRow::getRowNumber() { return _rowNumber; }
@@ -37,7 +39,18 @@ char *EXDisplayRow::getRowText() {
 
 bool EXDisplayRow::isChanged() { return _changed; }
 
-uint8_t EXDisplayRow::displayRow() { return _displayRow; }
+void EXDisplayRow::setDisplayRow(uint8_t displayRow, uint8_t maxScreenRows) {
+  _displayRow = displayRow;
+  if (_displayRow >= maxScreenRows) {
+    _needsRender = false;
+  } else {
+    _needsRender = true;
+  }
+}
+
+uint8_t EXDisplayRow::getDisplayRow() { return _displayRow; }
+
+bool EXDisplayRow::needsRender() { return _needsRender; }
 
 EXDisplayRow *EXDisplayRow::getNext() { return _next; }
 

@@ -11,7 +11,9 @@ EXDisplay::EXDisplay(uint8_t displayNumber, EXScreen *exScreen, uint8_t maxScree
   _firstRow = nullptr;
   _next = _first;
   _first = this;
-  _displayChanged = true;
+  _numberOfRows = 0;
+  _scrollPosition = 0;
+  _lastScrollTime = 0;
 }
 
 EXDisplay *EXDisplay::getFirst() { return _first; }
@@ -36,6 +38,7 @@ void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
   if (!row) {
     // create a new row and chain it in
     row = new EXDisplayRow(rowNumber);
+    _numberOfRows++;
 
     // find the row prior to the one we want to add
     EXDisplayRow *previous = nullptr;
@@ -55,10 +58,36 @@ void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
     }
   }
   row->setRowText(rowText);
-  _displayChanged = true;
+  row->setDisplayRow(rowNumber, _exScreen->getMaxRows());
 }
 
-bool EXDisplay::isChanged() { return _displayChanged; }
+void EXDisplay::scroll() {
+  uint8_t screenRows = _exScreen->getMaxRows();
+  uint8_t newPosition = 0;
+  if (_numberOfRows <= screenRows) {
+    _scrollPosition = newPosition;
+  } else {
+    newPosition = _scrollPosition++;
+    if (newPosition >= _numberOfRows) {
+      newPosition = 0;
+    }
+  }
+  _scrollPosition = newPosition;
+}
+
+void EXDisplay::autoScroll(unsigned long scrollDelay) {
+  if (millis() - _lastScrollTime > scrollDelay) {
+    _lastScrollTime = millis();
+    CONSOLE.println(F("Time to scroll"));
+    scroll();
+  }
+}
+
+EXScreen *EXDisplay::getEXScreen() { return _exScreen; }
+
+uint8_t EXDisplay::getScreenMaxRows() { return _exScreen->getMaxRows(); }
+
+uint8_t EXDisplay::getScreenMaxColumns() { return _exScreen->getMaxColumns(); }
 
 /*** probably not needed
  void EXDisplay::deleteRowNumber(uint8_t rowNumber) {

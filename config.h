@@ -27,7 +27,7 @@
 // #define USE_TOUCH
 
 // if the touch screen not in use, Now define the scroll requirements
-#define SCROLLTIME 15000 // 15 seconds
+#define SCROLLTIME 5000 // 5 seconds
 
 // And now define the maximum text length.
 #define MAX_LINE_LENGTH 30

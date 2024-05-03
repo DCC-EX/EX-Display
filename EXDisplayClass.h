@@ -3,8 +3,10 @@
 
 #include <Arduino.h>
 
+#include "Defines.h"
 #include "EXDisplayRow.h"
 #include "EXScreen.h"
+
 /**
  * @brief Class for each display.
  * Each display is in a linked list, with associated rows in a linked list as an attribute of the EXDisplay object.
@@ -30,10 +32,6 @@ public:
   /// @return 0 - 255
   uint8_t getDisplayNumber();
 
-  /// @brief Get the maximum width of the hardware  - used to determine ticker attribute if text is wider than this
-  /// @return 0 - 255
-  uint8_t getMaxScreenWidth();
-
   /// @brief Get an EXDisplayRow object for this display by the specified row number
   /// @param rowNumber Row number to retrieve, 0 - 255
   /// @return Pointer to an EXDisplayRow object, or nullptr if not exists
@@ -44,9 +42,24 @@ public:
   /// @param rowText Char array of text for the row
   void updateRow(uint8_t rowNumber, char *rowText);
 
-  /// @brief Check if the rows for this display have changed
-  /// @return True|False
-  bool isChanged();
+  /// @brief Scroll one row vertically
+  void scroll();
+
+  /// @brief Method to automatically update row positions for automatic vertical scrolling
+  /// @param scrollDelay Time in milliseconds between vertical scrolling updates
+  void autoScroll(unsigned long scrollDelay);
+
+  /// @brief Get the EXScreen object associated with this display
+  /// @return Pointer to the associated EXScreen object
+  EXScreen *getEXScreen();
+
+  /// @brief Get the maximum number of rows displayable on the associated screen
+  /// @return 0 - 255
+  uint8_t getScreenMaxRows();
+
+  /// @brief Get the maximum number of columns displayable on the associated screen
+  /// @return 0 - 255
+  uint8_t getScreenMaxColumns();
 
   /// @brief Check if there is already a display created at the specified number
   /// @param displayNumber True|False
@@ -67,8 +80,10 @@ private:
   EXDisplayRow *_firstRow;
   EXScreen *_exScreen;
   // Screen management variables added here
-  uint8_t _maxScreenWidth;
-  bool _displayChanged;
+  uint8_t _maxScreenWidth;       // Maximum number of chars that can fit on the physical screen
+  uint8_t _numberOfRows;         // Calculated number of rows for this screen
+  uint8_t _scrollPosition;       // Row number that is top of screen for scrolling support
+  unsigned long _lastScrollTime; // Last time in milliseconds an auto scroll was done
 };
 
 #endif

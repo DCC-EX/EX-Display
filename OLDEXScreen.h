@@ -3,9 +3,9 @@
 
 // EX-Screen.h
 
-#define DEBUG
+// #define DEBUG
 
-uint8_t currentScreenID = 0;
+// uint8_t currentScreenID = 0;
 
 // ALL Touch panels and wiring are DIFFERENT.  The touch screen needs to be calibrated
 // See the README files for how to run the calibration routine and
@@ -37,11 +37,14 @@ uint8_t currentScreenID = 0;
 #endif*/
 
 // variables to indicate what needs doing to display the screen
+/* DISABLE
 bool ScreenChanged[MAX_SCREENS];
 bool PrintInProgress=false;
 byte NextRowToPrint=0;
 byte NextScreenLine=0;
+*/
 
+/* DISABLE
 namespace SCREEN
 {
 
@@ -59,5 +62,6 @@ namespace SCREEN
     void check_touch();
 
 }
+*/
 
 #endif
