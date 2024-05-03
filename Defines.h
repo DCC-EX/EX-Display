@@ -1,7 +1,12 @@
 #ifndef EX_DISPLAY_H
 #define EX_DISPLAY_H
 
+#if __has_include("config.h")
 #include "config.h"
+#else
+#warning Configuration file "config.h" not found, using example file "config.example.h"
+#include "config.example.h"
+#endif
 
 #if defined(ARDUINO_AVR_MEGA2560)
 #define RX_PIN 0 // Define the RX pin for Serial1

@@ -18,6 +18,7 @@
 
 // Define some colours for the display
 
+/* DISABLE
 #define BLACK   0x0000U
 #define RED     0xF800U
 #define GREEN   0x07E0U
@@ -25,6 +26,7 @@
 #define MAGENTA 0xF81FU
 #define YELLOW  0xFFE0U
 #define WHITE   0xFFFFU
+*/
 //#define YELLOW  0xE0U
 //#define WHITE   0xFFU
 //const uint16_t YELLOW = 0xFFE0U;

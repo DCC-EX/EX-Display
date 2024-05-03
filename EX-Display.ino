@@ -7,7 +7,7 @@
 
 
 bool StartupPhase = true;
-long timestamp = 0;
+unsigned long timestamp = 0;
 long screencount = 0;
 
 // Chris just doing this for manual testing on my mega... so I can debug down the serial monitor

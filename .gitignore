@@ -1,6 +1,4 @@
 .pio
 .vscode
 .DS_Store
-Saved
-.txt
-src/CSSerialInput.txt
+config.h
