@@ -5,6 +5,7 @@
 #include "MCUFriendScreen.h"
 #include <Arduino.h>
 
+
 bool StartupPhase = true;
 long timestamp = 0;
 long screencount = 0;
@@ -43,22 +44,17 @@ void setup() {
     CONSOLE.println(display->getScreenMaxColumns());
   }
 
-  /* DISABLE SO IT WILL COMPILE
-    for (byte x=0; (x= MAX_SCREENS-1); x++) {
-      new EXDisplay(x,MAX_LINE_LENGTH);   // id 0, physical screen width 16
-      ScreenChanged[x]={false};
-    }
     //Setup the start screen.
-    if (MAX_SCREENS > 1) {
-    currentScreenID = INITIAL_SCREEN;
-    }
-    else {
-      currentScreenID = 0;
-    }
+    // if (MAX_SCREENS > 1) {
+    // currentScreenID = INITIAL_SCREEN;
+    // }
+    // else {
+    //   currentScreenID = 0;
+    // }
 
     timestamp = millis();
     CONSOLE.println(F("End of Setup"));
-  */
+  
 }
 
 void loop() {
