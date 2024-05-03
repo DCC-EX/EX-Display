@@ -3,8 +3,10 @@
 
 #include <Arduino.h>
 
+#include "Defines.h"
 #include "EXDisplayRow.h"
 #include "EXScreen.h"
+
 /**
  * @brief Class for each display.
  * Each display is in a linked list, with associated rows in a linked list as an attribute of the EXDisplay object.
@@ -30,10 +32,6 @@ public:
   /// @return 0 - 255
   uint8_t getDisplayNumber();
 
-  /// @brief Get the maximum width of the hardware  - used to determine ticker attribute if text is wider than this
-  /// @return 0 - 255
-  uint8_t getMaxScreenWidth();
-
   /// @brief Get an EXDisplayRow object for this display by the specified row number
   /// @param rowNumber Row number to retrieve, 0 - 255
   /// @return Pointer to an EXDisplayRow object, or nullptr if not exists
@@ -50,6 +48,10 @@ public:
   /// @brief Method to automatically update row positions for automatic vertical scrolling
   /// @param scrollDelay Time in milliseconds between vertical scrolling updates
   void autoScroll(unsigned long scrollDelay);
+
+  /// @brief Get the EXScreen object associated with this display
+  /// @return Pointer to the associated EXScreen object
+  EXScreen *getEXScreen();
 
   /// @brief Get the maximum number of rows displayable on the associated screen
   /// @return 0 - 255

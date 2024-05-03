@@ -43,19 +43,13 @@ void updateEXDisplayRow(uint8_t screenId, uint8_t screenRow, char *text) {
 
 void updateScreens() {
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
+    auto *screen = display->getEXScreen();
 #ifdef SCROLLTIME
     display->autoScroll(SCROLLTIME);
 #endif
     for (EXDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
       if (row->needsRender() && row->isChanged()) {
-        CONSOLE.print(F("Screen|Row|DisplayRow|Message: "));
-        CONSOLE.print(display->getDisplayNumber());
-        CONSOLE.print(F("|"));
-        CONSOLE.print(row->getRowNumber());
-        CONSOLE.print(F("|"));
-        CONSOLE.print(row->getDisplayRow());
-        CONSOLE.print(F("|"));
-        CONSOLE.println(row->getRowText());
+        screen->writeRow(row->getDisplayRow(), row->getRowText());
       }
     }
   }

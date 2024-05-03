@@ -9,7 +9,7 @@ public:
   EXScreen(uint8_t maxRows, uint8_t maxColumns) : _maxRows(maxRows), _maxColumns(maxColumns) {}
 
   /// @brief Virtual function to override to write a row of text to the physical screen
-  virtual void writeRow(uint8_t row, uint8_t column, char *message);
+  virtual void writeRow(uint8_t row, char *message);
 
   /// @brief Get the maximum number of rows this screen can physically display
   /// @return 0 - 255
