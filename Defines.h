@@ -1,6 +1,9 @@
 #ifndef EX_DISPLAY_H
 #define EX_DISPLAY_H
 
+#define MCU 1
+#define TFT 2
+
 #if __has_include("config.h")
 #include "config.h"
 #else
@@ -25,6 +28,14 @@
 #define SCREEN_ROTATION 1
 #endif
 
+#if SCREEN_0_TYPE == MCU
+#define SCREEN_0 new EXDisplay(0, new MCUFriendScreen(tft, 8, 20), 30);
+#elif SCREEN_0_TYPE == TFT
+#define SCREEN_0 new EXDisplay(0, new TFT_eSPIScreen(tft, 8, 20), 30);
+#else
+#error A screen type for the first screen has not been set, you must define either MCU or TFT
+#endif
+
 // Set up console and CS listener for Mega
 #if defined(ARDUINO_AVR_MEGA2560)
 #define RX_PIN 0 // Define the RX pin for Serial1
@@ -42,18 +53,18 @@
 #define CONSOLE Serial
 #define CS_LISTEN Serial
 // Set up console and CS listener for F411RE
-#elif defined(ARDUINO_NUCLEO_F411RE) 
+#elif defined(ARDUINO_NUCLEO_F411RE)
 #define CONSOLE Serial
-HardwareSerial Serial1(PB7, PA15);  // Rx=PB7, Tx=PA15 -- CN7 pins 17 and 21 - F411RE
+HardwareSerial Serial1(PB7, PA15); // Rx=PB7, Tx=PA15 -- CN7 pins 17 and 21 - F411RE
 #define CS_LISTEN Serial1
 #define RX_PIN PB7;
 // Set up console and CS listener for F446RE
-#elif defined(ARDUINO_NUCLEO_F446RE) 
+#elif defined(ARDUINO_NUCLEO_F446RE)
 #define CONSOLE Serial
-HardwareSerial Serial5(PD2, PC12);  // Rx=PD2, Tx=PC12 -- UART5 - F446RE
+HardwareSerial Serial5(PD2, PC12); // Rx=PD2, Tx=PC12 -- UART5 - F446RE
 #define CS_LISTEN Serial5
 #define RX_PIN PD2;
-     
+
 #endif
 
 #endif

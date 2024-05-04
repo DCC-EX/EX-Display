@@ -7,7 +7,6 @@
 #include "version.h"
 #include <Arduino.h>
 
-
 bool StartupPhase = true;
 unsigned long timestamp = 0;
 long screencount = 0;
@@ -16,6 +15,12 @@ long screencount = 0;
 #if defined(ARDUINO_AVR_MEGA2560)
 #undef CS_LISTEN
 #define CS_LISTEN Serial
+#endif
+
+#if SCREEN_0_TYPE == MCU
+MCUFRIEND_kbv tft;
+#elif SCREEN_0_TYPE == TFT
+TFT_eSPI tft = TFT_eSPI();
 #endif
 
 void setup() {
@@ -36,12 +41,12 @@ void setup() {
   // HARDWARE SETUP TODO..... Create an EXDisplay instance for each screen this ino wants to display.
   //  The updateEXDisplayRow will ignore messages destined for screens we dont have.
   // For testing lets create some
-  SCREEN_0_TYPE
+  SCREEN_0
 #ifdef SCREEN_1_TYPE
-  SCREEN_1_TYPE
+  SCREEN_1
 #endif
 #ifdef SCREEN_2_TYPE
-  SCREEN_2_TYPE
+  SCREEN_2
 #endif
   // new EXDisplay(0, new MCUFriendScreen(8, 20), 30);
 

@@ -10,10 +10,10 @@
 
 // Define the screen types in use here - this needs to be ultra simplified at some point
 // Should we eventually support up to 3 displays?
-#define SCREEN_0_TYPE new EXDisplay(0, new MCUFriendScreen(8, 20), 30);
-// #define SCREEN_0_TYPE new EXDisplay(0, new TFT_eSPIScreen(8, 20), 30);
-// #define SCREEN_1_TYPE
-// #define SCREEN_2_TYPE
+#define SCREEN_0_TYPE MCU
+// #define SCREEN_0_TYPE TFT
+// #define SCREEN_1_TYPE MCU
+// #define SCREEN_2_TYPE MCU
 
 // Font options
 #define TEXT_FONT ARIAL9PT7B
