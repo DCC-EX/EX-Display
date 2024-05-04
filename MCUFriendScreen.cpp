@@ -5,7 +5,7 @@ MCUFriendScreen::MCUFriendScreen(uint8_t maxRows, uint8_t maxColumns) : EXScreen
   MCUFRIEND_kbv _tft;
 }
 
-void MCUFriendScreen::setupScreen(uint8_t rotation, uint8_t textColour, uint8_t backgroundColour) {
+void MCUFriendScreen::setupScreen(uint8_t rotation, uint16_t textColour, uint16_t backgroundColour) {
   uint16_t screenId = _tft.readID();
   CONSOLE.print("TFT ID: 0x");
   CONSOLE.println(screenId, HEX);
@@ -18,10 +18,12 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, uint8_t textColour, uint8_t 
   _tft.fillScreen(backgroundColour);
 }
 
-void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, const GFXfont *fontName, uint8_t textSize,
-                               uint8_t fontColour, char *message) {
-  CONSOLE.print(F("Write to screen DisplayRow|Message: "));
+void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, const GFXfont *fontName, uint16_t fontColour,
+                               uint8_t textSize, char *message) {
+  CONSOLE.print(F("Write to screen DisplayRow|Column|Message: "));
   CONSOLE.print(row);
+  CONSOLE.print(F("|"));
+  CONSOLE.print(column);
   CONSOLE.print(F("|"));
   CONSOLE.println(message);
   _tft.setFont(fontName);
