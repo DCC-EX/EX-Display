@@ -2,43 +2,33 @@
 #include "AtFinder.h"
 #include "Defines.h"
 #include "DisplayFunctions.h"
+#include "MCUFriendScreen.h"
+#include "TFT_eSPIScreen.h"
+#include "version.h"
 #include <Arduino.h>
 
-/* MOVED TO DisplayFunctions - now updateDisplayRows()
-// callback function when a <@ id row "text"> message detected
-void processDisplay(int16_t screenId, int16_t screenRow, char *text) {
-  CONSOLE.print(F("\n id="));
-  CONSOLE.print(screenId);
-  CONSOLE.print(F(" row="));
-  CONSOLE.print(screenRow);
-  CONSOLE.print(F(" text=\""));
-  CONSOLE.print(text);
-  CONSOLE.print(F("\"\n"));
-
-  if (text[0]=='\0'){
-      DisplayLines[screenId][screenRow].inuse=false;
-    }
-    else {
-      DisplayLines[screenId][screenRow].inuse=true;
-    }
-  DisplayLines[screenId][screenRow].row=screenRow;
-  strcpy (DisplayLines[screenId][screenRow].text,  text);
-
-  ScreenChanged[screenId]=true;
-}
-*/
-
 bool StartupPhase = true;
-long timestamp = 0;
+unsigned long timestamp = 0;
 long screencount = 0;
 
 // Chris just doing this for manual testing on my mega... so I can debug down the serial monitor
+#if defined(ARDUINO_AVR_MEGA2560)
 #undef CS_LISTEN
 #define CS_LISTEN Serial
+#endif
+
+#if SCREEN_0_TYPE == MCU
+MCUFRIEND_kbv tft;
+#elif SCREEN_0_TYPE == TFT
+TFT_eSPI tft = TFT_eSPI();
+#endif
 
 void setup() {
   CONSOLE.begin(115200);
   CS_LISTEN.begin(115200); // Start Serial1 for listening to messages
+
+  CONSOLE.print(F("EX-Display v"));
+  CONSOLE.println(VERSION);
 
   // Tell AtFinder our maximum supported text length,
   // and how to call back when found.
@@ -51,23 +41,35 @@ void setup() {
   // HARDWARE SETUP TODO..... Create an EXDisplay instance for each screen this ino wants to display.
   //  The updateEXDisplayRow will ignore messages destined for screens we dont have.
   // For testing lets create some
+  SCREEN_0
+#ifdef SCREEN_1_TYPE
+  SCREEN_1
+#endif
+#ifdef SCREEN_2_TYPE
+  SCREEN_2
+#endif
+  // new EXDisplay(0, new MCUFriendScreen(8, 20), 30);
 
-  /* DISABLE SO IT WILL COMPILE
-    for (byte x=0; (x= MAX_SCREENS-1); x++) {
-      new EXDisplay(x,MAX_LINE_LENGTH);   // id 0, physical screen width 16
-      ScreenChanged[x]={false};
-    }
-    //Setup the start screen.
-    if (MAX_SCREENS > 1) {
-    currentScreenID = INITIAL_SCREEN;
-    }
-    else {
-      currentScreenID = 0;
-    }
+  for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
+    display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_COLOUR, BACKGROUND_COLOUR);
+    CONSOLE.print(F("Display ID|Max Rows|Max Columns: "));
+    CONSOLE.print(display->getDisplayNumber());
+    CONSOLE.print(F("|"));
+    CONSOLE.print(display->getScreenMaxRows());
+    CONSOLE.print(F("|"));
+    CONSOLE.println(display->getScreenMaxColumns());
+  }
 
-    timestamp = millis();
-    CONSOLE.println(F("End of Setup"));
-  */
+  // Setup the start screen.
+  // if (MAX_SCREENS > 1) {
+  // currentScreenID = INITIAL_SCREEN;
+  // }
+  // else {
+  //   currentScreenID = 0;
+  // }
+
+  timestamp = millis();
+  CONSOLE.println(F("End of Setup"));
 }
 
 void loop() {
@@ -87,11 +89,10 @@ void loop() {
     AtFinder::processInputChar(CS_LISTEN.read());
   }
   // you can display all rows by sending <@ 255 0 "">
-
   // No data incoming so see if we need to display anything
   // DISABLE IN STARTUPPHASE
   else {
-
+    updateScreens();
     /* DISABLE SO IT WILL COMPILE
         if (StartupPhase==false){
             // add thie following in once display is working

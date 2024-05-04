@@ -3,9 +3,9 @@
 
 // EX-Screen.h
 
-#define DEBUG
+// #define DEBUG
 
-uint8_t currentScreenID = 0;
+// uint8_t currentScreenID = 0;
 
 // ALL Touch panels and wiring are DIFFERENT.  The touch screen needs to be calibrated
 // See the README files for how to run the calibration routine and
@@ -18,6 +18,7 @@ uint8_t currentScreenID = 0;
 
 // Define some colours for the display
 
+/* DISABLE
 #define BLACK   0x0000U
 #define RED     0xF800U
 #define GREEN   0x07E0U
@@ -25,6 +26,7 @@ uint8_t currentScreenID = 0;
 #define MAGENTA 0xF81FU
 #define YELLOW  0xFFE0U
 #define WHITE   0xFFFFU
+*/
 //#define YELLOW  0xE0U
 //#define WHITE   0xFFU
 //const uint16_t YELLOW = 0xFFE0U;
@@ -37,11 +39,14 @@ uint8_t currentScreenID = 0;
 #endif*/
 
 // variables to indicate what needs doing to display the screen
+/* DISABLE
 bool ScreenChanged[MAX_SCREENS];
 bool PrintInProgress=false;
 byte NextRowToPrint=0;
 byte NextScreenLine=0;
+*/
 
+/* DISABLE
 namespace SCREEN
 {
 
@@ -59,5 +64,6 @@ namespace SCREEN
     void check_touch();
 
 }
+*/
 
 #endif

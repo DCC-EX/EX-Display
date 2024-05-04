@@ -17,25 +17,25 @@
  *  along with CommandStation.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include <Arduino.h>
-#include <MCUFRIEND_kbv.h>
-#include <Adafruit_GFX.h>
-#include "config.h"
-#include "OLDEXScreen.h"
 #include "Defines.h"
 #include "DisplayFunctions.h"
-#include "EXDisplayRow.h"
 #include "EXDisplayClass.h"
+#include "EXDisplayRow.h"
+#include "OLDEXScreen.h"
+#include "config.h"
+#include <Adafruit_GFX.h>
+#include <Arduino.h>
+#include <MCUFRIEND_kbv.h>
 
-MCUFRIEND_kbv tft;
+
+// MCUFRIEND_kbv tft;
 
 #include "Arial9pt7b.h"
 //#include "FreeSans12pt7b.h"
 
+// int ScreenLines;
 
-int ScreenLines;
-
-
+/* DISABLE
 void TFT_Startup()
 {
 
@@ -48,9 +48,9 @@ void TFT_Startup()
     //if (ID == 0xD3D3) ID = 0x9486; // write-only shield
 
     tft.begin(ID);
-  
-    tft.setRotation(1);           
-    tft.setTextColor(0xFFFF); 
+
+    tft.setRotation(1);
+    tft.setTextColor(0xFFFF);
     tft.fillScreen(BLACK);
 
     // create a string of blanks for the display.
@@ -63,22 +63,27 @@ void TFT_Startup()
     SCREEN::StartScreenPrint();
 
 }
+*/
 
+/* DISABLE
 void showmsgXY(int x, int y, int sz, const char *msg)
 {
     tft.setFont();
     tft.setFont(&Arial9pt7b);
-    tft.setCursor(x, y); 
+    tft.setCursor(x, y);
     tft.setTextSize(sz);
     tft.print(msg);
-       
-}
 
+}
+*/
+
+/* DISABLE
 void setScreenRows(uint8_t rowId) {
 
-
 }
+*/
 
+/* DISABLE
 void CheckScreens(){
 
     if (ScreenChanged[currentScreenID]==true) {
@@ -86,7 +91,7 @@ void CheckScreens(){
         SCREEN::StartScreenPrint();
         PrintInProgress=false;
         ScreenChanged[currentScreenID] = false;
-          
+
         EXDisplay *display = EXDisplay::getDisplayByNumber(currentScreenID);
         if (display) {
             EXDisplayRow *row = display->getFirstRow();
@@ -97,53 +102,49 @@ void CheckScreens(){
         else {
           SCREEN::PrintNoData();
         }
-      } 
+      }
       else {
         if (PrintInProgress) {
             EXDisplayRow *row = row->getNext();
             SCREEN::PrintALine(row->getRowNumber(), row->getRowText());
         }
-      
-    }        
-}
 
+    }
+}
+*/
+
+/* DISABLE
 void TFT_DrawHeader() {
-
-    char header[25] = {""};
-    sprintf(header, "DCC-EX   SCREEN %d\n", currentScreenID);
-    tft.setTextColor(YELLOW);
-    showmsgXY(1, 20, 1, header);
-    tft.drawFastHLine(0, 25, tft.width(), WHITE);
-    tft.setTextColor(WHITE);  // set this for all screen lines
-    
+  char header[25] = {""};
+  sprintf(header, "DCC-EX   SCREEN %d\n", currentScreenID);
+  tft.setTextColor(YELLOW);
+  showmsgXY(1, 20, 1, header);
+  tft.drawFastHLine(0, 25, tft.width(), WHITE);
+  tft.setTextColor(WHITE); // set this for all screen lines
 }
+*/
 
-
+/* DISABLE
 void StartScreenPrint() {
-    
-    CONSOLE.println("New Page");
-    tft.fillScreen(BLACK);
+  CONSOLE.println("New Page");
+  tft.fillScreen(BLACK);
 
-    TFT_DrawHeader();
+  TFT_DrawHeader();
 
-    CONSOLE.println("Drawn Header\n");
-    NextRowToPrint=0;
-    NextScreenLine=0;
-
+  CONSOLE.println("Drawn Header\n");
+  NextRowToPrint = 0;
+  NextScreenLine = 0;
 }
+*/
 
-void PrintNoData() {
+// void PrintNoData() { showmsgXY(100, 100, 1, "No Data"); }
 
-  showmsgXY(100, 100, 1, "No Data");
-
-}
-
-
-void PrintALine(int Row, char * text) {
+/* DISABLE
+void PrintALine(int Row, char *text) {
 
   int vpos = (NextScreenLine * 21) + 44;
 
-  //showmsgXY(1, vpos, 1, blankmsg);
+  // showmsgXY(1, vpos, 1, blankmsg);
 
   showmsgXY(1, vpos, 1, text);
   // increment the screen & line count
@@ -151,32 +152,29 @@ void PrintALine(int Row, char * text) {
   NextScreenLine++;
 
   if (NextRowToPrint >= MAX_ROWS) {
-    //We've reached the end of this data for this page
-    PrintInProgress=false;
-    
+    // We've reached the end of this data for this page
+    PrintInProgress = false;
+
     // Any blank lines needed?
-    while (NextScreenLine<MAX_ROWS){
+    while (NextScreenLine < MAX_ROWS) {
       vpos = (NextScreenLine * 21) + 44;
-      //showmsgXY(1, vpos, 1, blankmsg);
+      // showmsgXY(1, vpos, 1, blankmsg);
       NextScreenLine++;
     }
     NextRowToPrint = 0;
     NextScreenLine = 0;
   }
-  
 }
+*/
 
+/* DISABLE
+void DisplayScreen() {
 
-void DisplayScreen(){
-
-  for (byte x=0;x<10;x++){
-    //printf("Line %d - Use - %d - %s\n", x, DisplayLines[currentScreenID][x].inuse, DisplayLines[currentScreenID][x].text);
+  for (byte x = 0; x < 10; x++) {
+    // printf("Line %d - Use - %d - %s\n", x, DisplayLines[currentScreenID][x].inuse,
+    // DisplayLines[currentScreenID][x].text);
   }
-
 }
+*/
 
-bool check_touch() {
-
-  return false;
-  
-}
+// bool check_touch() { return false; }

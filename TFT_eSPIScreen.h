@@ -1,13 +1,14 @@
-#ifndef MCUFRIENDSCREEN_H
-#define MCUFRIENDSCREEN_H
+#ifndef TFT_ESPISCREEN_H
+#define TFT_ESPISCREEN_H
 
 #include "EXScreen.h"
-#include "MCUFRIEND_kbv.h"
 #include <Arduino.h>
+#include <SPI.h>
+#include <TFT_eSPI.h>
 
-class MCUFriendScreen : public EXScreen {
+class TFT_eSPIScreen : public EXScreen {
 public:
-  MCUFriendScreen(MCUFRIEND_kbv &tft, uint8_t maxRows, uint8_t maxColumns);
+  TFT_eSPIScreen(TFT_eSPI &tft, uint8_t maxRows, uint8_t maxColumns);
 
   virtual void setupScreen(uint8_t rotation, uint16_t textColour, uint16_t backgroundColour) override;
 
@@ -15,7 +16,7 @@ public:
                         char *message) override;
 
 private:
-  MCUFRIEND_kbv _tft;
+  TFT_eSPI _tft;
 };
 
 #endif

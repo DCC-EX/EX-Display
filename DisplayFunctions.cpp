@@ -8,7 +8,7 @@ bool debug = true;
 bool debug = false;
 #endif
 
-EXDisplay *display0 = new EXDisplay(0, new MCUFriendScreen(), 30);
+// EXDisplay *display0 = new EXDisplay(0, new MCUFriendScreen(8, 20), 30);
 
 // This function is called from AtFinder when a
 // <@ screenid row "text"> message is discovered.
@@ -41,15 +41,35 @@ void updateEXDisplayRow(uint8_t screenId, uint8_t screenRow, char *text) {
   }
 }
 
+void updateScreens() {
+  for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
+    auto *screen = display->getEXScreen();
+#ifdef SCROLLTIME
+    display->autoScroll(SCROLLTIME);
+#endif
+    for (EXDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
+      if (row->needsRender() && row->isChanged()) {
+        screen->writeRow(row->getDisplayRow(), 0, TEXT_FONT, TEXT_COLOUR, TEXT_SIZE, row->getRowText());
+      }
+    }
+  }
+}
+
 void displayAllRows() {
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
-    CONSOLE.print(F("\n\nDisplay: "));
-    CONSOLE.print(display->getDisplayNumber());
-    CONSOLE.println(F("|"));
+    CONSOLE.print(F("\n\nRows for display "));
+    CONSOLE.println(display->getDisplayNumber());
+    CONSOLE.println(F("Row|Display Row|Message|isChanged|needsRender"));
     for (EXDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
       CONSOLE.print(row->getRowNumber());
       CONSOLE.print(F("|"));
-      CONSOLE.println(row->getRowText());
+      CONSOLE.print(row->getDisplayRow());
+      CONSOLE.print(F("|"));
+      CONSOLE.print(row->getRowText());
+      CONSOLE.print(F("|"));
+      CONSOLE.print(row->isChanged());
+      CONSOLE.print(F("|"));
+      CONSOLE.println(row->needsRender());
     }
   }
 }
