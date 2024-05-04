@@ -1,10 +1,30 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+// DO NOT REMOVE THIS LINE
+// Include the various fonts and font colours available for use with EX-Display
+#include "FontOptions.h"
+
 // This is the configuration file for EX-Display
 // Entries here will control how the screen display will operate
 
-// Firstle entries about the display you are using
+// Define the screen types in use here - this needs to be ultra simplified at some point
+// Should we eventually support up to 3 displays?
+#define SCREEN_0_TYPE MCU
+// #define SCREEN_0_TYPE TFT
+// #define SCREEN_1_TYPE MCU
+// #define SCREEN_2_TYPE MCU
+
+// Font options
+#define TEXT_FONT ARIAL9PT7B
+#define TEXT_COLOUR WHITE
+#define TEXT_SIZE 1
+#define BACKGROUND_COLOUR BLACK
+
+// If rotation of the screen is required, set it here
+#define SCREEN_ROTATION 1
+
+// First entries about the display you are using
 // as we display across the wider part of the screen iwdth is the larger dimension
 #define DISPLAY_WIDTH 320
 #define DISPLAY_HEIGHT 240
