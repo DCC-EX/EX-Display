@@ -34,10 +34,6 @@ void setup() {
   // and how to call back when found.
   AtFinder::setup(100, updateEXDisplayRow);
 
-  // SCREEN::TFT_Startup();
-  // tft.invertDisplay(1);
-  // tft.invertDisplay(0);
-
   // HARDWARE SETUP TODO..... Create an EXDisplay instance for each screen this ino wants to display.
   //  The updateEXDisplayRow will ignore messages destined for screens we dont have.
   // For testing lets create some
@@ -48,7 +44,6 @@ void setup() {
 #ifdef SCREEN_2_TYPE
   SCREEN_2
 #endif
-  // new EXDisplay(0, new MCUFriendScreen(8, 20), 30);
 
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
     display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_COLOUR, BACKGROUND_COLOUR);
