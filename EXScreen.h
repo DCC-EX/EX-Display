@@ -17,10 +17,14 @@ public:
   EXScreen(uint8_t maxRows, uint8_t maxColumns) : _maxRows(maxRows), _maxColumns(maxColumns) {}
 
   /// @brief Virtual function to implement to setup the required parameters for the physical screen
-  virtual void setupScreen(uint8_t rotation, uint16_t textColour, uint16_t backgroundColour);
+  virtual void setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint8_t textSize, uint16_t backgroundColour);
+
+  /// @brief Virtual function to implement
+  /// @param backgroundColour
+  virtual void clearScreen(uint16_t backgroundColour);
 
   /// @brief Virtual function to implement to write a row of text to the physical screen
-  virtual void writeRow(uint8_t row, uint8_t column, const GFXfont *fontName, uint16_t fontColour, uint8_t textSize,
+  virtual void writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
                         char *message);
 
   /// @brief Get the maximum number of rows this screen can physically display
@@ -30,6 +34,9 @@ public:
   /// @brief  Get the maximum number of columns this screen can physically display
   /// @return 0 - 255
   uint8_t getMaxColumns() { return _maxColumns; }
+
+  /// @brief Height of the font in use to determine row height
+  uint8_t fontHeight;
 
 private:
   uint8_t _maxRows;    // Maximum number of rows this screen can display

@@ -12,6 +12,8 @@ EXDisplayRow::EXDisplayRow(uint8_t rowNumber) {
 
 uint8_t EXDisplayRow::getRowNumber() { return _rowNumber; }
 
+uint8_t EXDisplayRow::getMaxRowLength() { return _maxMalloc; }
+
 void EXDisplayRow::setRowText(char *rowText) {
   // Note size limit is 254 chars but that is beyond
   // the capability of the caller anyway.
