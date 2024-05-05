@@ -47,6 +47,8 @@ void setup() {
 
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
     display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_COLOUR, BACKGROUND_COLOUR);
+    display->getEXScreen()->writeRow(0, 0, TEXT_FONT, TEXT_COLOUR, TEXT_SIZE, "EX-Display");
+    display->getEXScreen()->writeRow(1, 0, TEXT_FONT, TEXT_COLOUR, TEXT_SIZE, VERSION);
     CONSOLE.print(F("Display ID|Max Rows|Max Columns: "));
     CONSOLE.print(display->getDisplayNumber());
     CONSOLE.print(F("|"));
