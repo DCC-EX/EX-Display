@@ -16,14 +16,16 @@ void TFT_eSPIScreen::writeRow(uint8_t row, uint8_t column, const GFXfont *fontNa
                               uint8_t textSize, char *message) {
   _tft.setTextSize(textSize);
   _tft.setFreeFont(fontName);
-  uint8_t textRow = row * 8;
+  uint8_t fontHeight = fontName->yAdvance;
+  uint8_t textRow = (row * fontHeight) + fontHeight;
   _tft.setCursor(column, textRow);
   uint8_t blankLength = strlen(message);
-  _tft.setTextColor(BACKGROUND_COLOUR);
+  CONSOLE.print(F("Blanking: "));
+  CONSOLE.println(blankLength);
+  _tft.setTextColor(fontColour);
   for (uint8_t i = 0; i < blankLength; i++) {
-    _tft.print(' ');
+    _tft.print(" ");
   }
   _tft.setCursor(column, textRow);
-  _tft.setTextColor(fontColour);
   _tft.print(message);
 }

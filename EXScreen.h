@@ -1,8 +1,9 @@
 #ifndef EXSCREEN_H
 #define EXSCREEN_H
 
-#include <Adafruit_GFX.h>
+// #include <Adafruit_GFX.h>
 #include <Arduino.h>
+#include <TFT_eSPI.h>
 
 /// @brief This EXScreen class is designed to be extended by other screen classes that define the methods to perform the
 /// requesite activities according to the library in use to drive the physical display.
