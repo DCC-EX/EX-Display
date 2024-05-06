@@ -18,22 +18,36 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint
   _tft.setFont(gfxFont);
   _tft.setTextSize(textSize);
   fontHeight = gfxFont->yAdvance;
+  uint8_t fontWidth = getCharacterWidth('A');
+  maxRows = _tft.height() / fontHeight;
+  maxColumns = _tft.width() / fontWidth;
+}
+
+uint8_t MCUFriendScreen::getCharacterWidth(char character) {
+  int16_t x1, y1;
+  uint16_t w, h;
+  _tft.getTextBounds(&character, 0, 0, &x1, &y1, &w, &h);
+  return w;
 }
 
 void MCUFriendScreen::clearScreen(uint16_t backgroundColour) { _tft.fillScreen(backgroundColour); }
 
 void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
                                uint8_t maxLength, char *message) {
-  CONSOLE.print(F("Write to screen DisplayRow|Column|Message: "));
+  uint16_t textRow = (row * fontHeight) + row;
+  uint8_t fontWidth = getCharacterWidth('A');
+  uint16_t width = fontWidth * maxLength;
+/*  CONSOLE.print(F("Write to screen DisplayRow|Column|Message: "));
   CONSOLE.print(row);
   CONSOLE.print(F("|"));
   CONSOLE.print(column);
   CONSOLE.print(F("|"));
-  CONSOLE.println(message);
+  CONSOLE.println(message);*/
+  uint16_t paddedColumn = column + width;
   _tft.setTextColor(fontColour, backgroundColour);
-  _tft.setCursor(column, row);
+  _tft.setCursor(paddedColumn, textRow);
   _tft.print(message);
-}
+  }
 
 /*
 void EXScreen::newPage(uint8_t screenId) {
