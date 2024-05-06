@@ -8,6 +8,7 @@
 //  - Fixed TFT_eSPI row height calculations and overwrite of previous text
 //  - Moved to using TFT_eSPI fonts only
 //  - Refactored EXScreen and associated classes
+//  - Calculate max rows and columns based on resolution and specified font size
 // 0.0.2 includes:
 //  - Adding TFT_eSPI library
 //  - Implement vertical scrolling

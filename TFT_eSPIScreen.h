@@ -8,7 +8,7 @@
 
 class TFT_eSPIScreen : public EXScreen {
 public:
-  TFT_eSPIScreen(TFT_eSPI &tft, uint8_t maxRows, uint8_t maxColumns);
+  TFT_eSPIScreen(TFT_eSPI &tft);
 
   virtual void setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint8_t textSize,
                            uint16_t backgroundColour) override;

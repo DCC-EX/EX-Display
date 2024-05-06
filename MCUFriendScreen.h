@@ -7,7 +7,7 @@
 
 class MCUFriendScreen : public EXScreen {
 public:
-  MCUFriendScreen(MCUFRIEND_kbv &tft, uint8_t maxRows, uint8_t maxColumns);
+  MCUFriendScreen(MCUFRIEND_kbv &tft);
 
   virtual void setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint8_t textSize,
                            uint16_t backgroundColour) override;

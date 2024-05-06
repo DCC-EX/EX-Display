@@ -1,8 +1,8 @@
 #include "Defines.h"
 #include "MCUFriendScreen.h"
 
-MCUFriendScreen::MCUFriendScreen(MCUFRIEND_kbv &tft, uint8_t maxRows, uint8_t maxColumns)
-    : EXScreen(maxRows, maxColumns), _tft(tft) {}
+MCUFriendScreen::MCUFriendScreen(MCUFRIEND_kbv &tft)
+    : EXScreen(), _tft(tft) {}
 
 void MCUFriendScreen::setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint8_t textSize,
                                   uint16_t backgroundColour) {
