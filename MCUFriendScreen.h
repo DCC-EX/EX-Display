@@ -2,7 +2,7 @@
 #define MCUFRIENDSCREEN_H
 
 #include "EXScreen.h"
-#include "MCUFRIEND_kbv.h"
+#include <MCUFRIEND_kbv.h>
 #include <Arduino.h>
 
 class MCUFriendScreen : public EXScreen {
