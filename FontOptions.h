@@ -11,9 +11,13 @@
 #define WHITE 0xFFFF
 
 /// @brief Macros for available fonts
-#define SMALL &FreeSans9pt7b
-#define MEDIUM &FreeSans12pt7b
-#define LARGE &FreeSans18pt7b
-#define XLARGE &FreeSans24pt7b
+#define SMALL &FreeMono9pt7b
+#define MEDIUM &FreeMono12pt7b
+#define LARGE &FreeMono18pt7b
+#define XLARGE &FreeMono24pt7b
+#define SMALL_SANS &FreeSans9pt7b
+#define MEDIUM_SANS &FreeSans12pt7b
+#define LARGE_SANS &FreeSans18pt7b
+#define XLARGE_SANS &FreeSans24pt7b
 
 #endif

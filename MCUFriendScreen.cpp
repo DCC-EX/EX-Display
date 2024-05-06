@@ -1,8 +1,7 @@
 #include "Defines.h"
 #include "MCUFriendScreen.h"
 
-MCUFriendScreen::MCUFriendScreen(MCUFRIEND_kbv &tft)
-    : EXScreen(), _tft(tft) {}
+MCUFriendScreen::MCUFriendScreen(MCUFRIEND_kbv &tft) : EXScreen(), _tft(tft) {}
 
 void MCUFriendScreen::setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint8_t textSize,
                                   uint16_t backgroundColour) {
@@ -37,17 +36,17 @@ void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour,
   uint16_t textRow = (row * fontHeight) + row;
   uint8_t fontWidth = getCharacterWidth('A');
   uint16_t width = fontWidth * maxLength;
-/*  CONSOLE.print(F("Write to screen DisplayRow|Column|Message: "));
-  CONSOLE.print(row);
-  CONSOLE.print(F("|"));
-  CONSOLE.print(column);
-  CONSOLE.print(F("|"));
-  CONSOLE.println(message);*/
+  /*  CONSOLE.print(F("Write to screen DisplayRow|Column|Message: "));
+    CONSOLE.print(row);
+    CONSOLE.print(F("|"));
+    CONSOLE.print(column);
+    CONSOLE.print(F("|"));
+    CONSOLE.println(message);*/
   uint16_t paddedColumn = column + width;
   _tft.setTextColor(fontColour, backgroundColour);
   _tft.setCursor(paddedColumn, textRow);
   _tft.print(message);
-  }
+}
 
 /*
 void EXScreen::newPage(uint8_t screenId) {

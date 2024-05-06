@@ -13,7 +13,7 @@ public:
                            uint16_t backgroundColour) override;
 
   virtual void clearScreen(uint16_t backgroundColour) override;
-  
+
   virtual void writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
                         char *message) override;
   uint8_t getCharacterWidth(char character);
