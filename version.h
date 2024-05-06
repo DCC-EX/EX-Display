@@ -2,8 +2,10 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.3"
+#define VERSION "0.0.4"
 
+// 0.0.4 includes:
+//  - Adjusted to use Adafruit fonts for MCUFRIEND_kbv
 // 0.0.3 includes:
 //  - Fixed TFT_eSPI row height calculations and overwrite of previous text
 //  - Moved to using TFT_eSPI fonts only
