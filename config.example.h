@@ -16,7 +16,7 @@
 // #define SCREEN_2_TYPE MCU
 
 // Font options
-#define TEXT_FONT ARIAL9PT7B
+#define TEXT_FONT MEDIUM
 #define TEXT_COLOUR WHITE
 #define TEXT_SIZE 1
 #define BACKGROUND_COLOUR BLACK

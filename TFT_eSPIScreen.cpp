@@ -18,7 +18,7 @@ void TFT_eSPIScreen::clearScreen(uint16_t backgroundColour) { _tft.fillScreen(ba
 
 void TFT_eSPIScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
                               uint8_t maxLength, char *message) {
-  uint8_t textRow = (row * fontHeight) + fontHeight;
+  uint8_t textRow = (row * fontHeight) + row;
   uint8_t width = _tft.textWidth("A") * maxLength;
   _tft.setTextPadding(width);
   _tft.setTextColor(fontColour, backgroundColour);

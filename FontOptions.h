@@ -1,9 +1,6 @@
 #ifndef FONTOPTIONS_H
 #define FONTOPTIONS_H
 
-#include "Arial9pt7b.h"
-#include "FreeSans12pt7b.h"
-
 /// @brief Macros for available colours
 #define BLACK 0x0000
 #define RED 0xF800
@@ -14,9 +11,9 @@
 #define WHITE 0xFFFF
 
 /// @brief Macros for available fonts
-#define ARIAL9PT7B &Arial9pt7b
-#define FREESANS &FreeSans9pt7b
-#define FREEMONO &FreeMono9pt7b
-#define FREESANS12PT7B &FreeSans12pt7b
+#define SMALL &FreeSans9pt7b
+#define MEDIUM &FreeSans12pt7b
+#define LARGE &FreeSans18pt7b
+#define XLARGE &FreeSans24pt7b
 
 #endif
