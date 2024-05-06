@@ -34,10 +34,6 @@ void setup() {
   // and how to call back when found.
   AtFinder::setup(100, updateEXDisplayRow);
 
-  // SCREEN::TFT_Startup();
-  // tft.invertDisplay(1);
-  // tft.invertDisplay(0);
-
   // HARDWARE SETUP TODO..... Create an EXDisplay instance for each screen this ino wants to display.
   //  The updateEXDisplayRow will ignore messages destined for screens we dont have.
   // For testing lets create some
@@ -48,16 +44,23 @@ void setup() {
 #ifdef SCREEN_2_TYPE
   SCREEN_2
 #endif
-  // new EXDisplay(0, new MCUFriendScreen(8, 20), 30);
 
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
-    display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_COLOUR, BACKGROUND_COLOUR);
+    display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_FONT, BACKGROUND_COLOUR, TEXT_SIZE);
+    display->getEXScreen()->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, "EX-Display");
+    display->getEXScreen()->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, VERSION);
     CONSOLE.print(F("Display ID|Max Rows|Max Columns: "));
     CONSOLE.print(display->getDisplayNumber());
     CONSOLE.print(F("|"));
     CONSOLE.print(display->getScreenMaxRows());
     CONSOLE.print(F("|"));
     CONSOLE.println(display->getScreenMaxColumns());
+  }
+
+  delay(2000);
+
+  for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
+    display->getEXScreen()->clearScreen(BACKGROUND_COLOUR);
   }
 
   // Setup the start screen.

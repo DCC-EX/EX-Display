@@ -1,10 +1,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// DO NOT REMOVE THIS LINE
-// Include the various fonts and font colours available for use with EX-Display
-#include "FontOptions.h"
-
 // This is the configuration file for EX-Display
 // Entries here will control how the screen display will operate
 
@@ -15,8 +11,11 @@
 // #define SCREEN_1_TYPE MCU
 // #define SCREEN_2_TYPE MCU
 
+// DO NOT REMOVE OR MOVE THIS LINE - MUST BE BEFORE FONT DEFINITION
+// Include the various fonts and font colours available for use with EX-Display
+#include "FontOptions.h"
 // Font options
-#define TEXT_FONT ARIAL9PT7B
+#define TEXT_FONT MEDIUM
 #define TEXT_COLOUR WHITE
 #define TEXT_SIZE 1
 #define BACKGROUND_COLOUR BLACK

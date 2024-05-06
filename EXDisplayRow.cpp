@@ -1,4 +1,6 @@
+#include "Defines.h"
 #include "EXDisplayRow.h"
+
 /*
  * EXDisplayRow class implementation
  */
@@ -11,6 +13,8 @@ EXDisplayRow::EXDisplayRow(uint8_t rowNumber) {
 }
 
 uint8_t EXDisplayRow::getRowNumber() { return _rowNumber; }
+
+uint8_t EXDisplayRow::getMaxRowLength() { return _maxMalloc; }
 
 void EXDisplayRow::setRowText(char *rowText) {
   // Note size limit is 254 chars but that is beyond
@@ -27,6 +31,8 @@ void EXDisplayRow::setRowText(char *rowText) {
     // the tail which we will probabaly need later anyway.
     _rowText = (char *)realloc(_rowText, bytesNeeded);
     _maxMalloc = bytesNeeded;
+    CONSOLE.print(F("maxMalloc: "));
+    CONSOLE.println(_maxMalloc);
   }
   strcpy(_rowText, rowText);
   _changed = true;

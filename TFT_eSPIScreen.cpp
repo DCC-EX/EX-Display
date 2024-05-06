@@ -1,20 +1,30 @@
 #include "Defines.h"
-#include "TFT_eSPIScreen.h"
+#include <TFT_eSPIScreen.h>
 
-TFT_eSPIScreen::TFT_eSPIScreen(TFT_eSPI &tft, uint8_t maxRows, uint8_t maxColumns)
-    : EXScreen(maxRows, maxColumns), _tft(tft) {}
+TFT_eSPIScreen::TFT_eSPIScreen(TFT_eSPI &tft)
+    : EXScreen(), _tft(tft) {}
 
-void TFT_eSPIScreen::setupScreen(uint8_t rotation, uint16_t textColour, uint16_t backgroundColour) {
+void TFT_eSPIScreen::setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint8_t textSize,
+                                 uint16_t backgroundColour) {
   _tft.init();
   _tft.setRotation(rotation);
   _tft.fillScreen(backgroundColour);
-  _tft.setCursor(0, 0);
-  _tft.print(F("EX-Display"));
+  _tft.setFreeFont(gfxFont);
+  _tft.setTextSize(textSize);
+  fontHeight = gfxFont->yAdvance;
+  uint8_t fontWidth = _tft.textWidth("A");
+  maxRows = _tft.height() / fontHeight;
+  maxColumns = _tft.width() / fontWidth;
 }
 
-void TFT_eSPIScreen::writeRow(uint8_t row, uint8_t column, const GFXfont *fontName, uint16_t fontColour,
-                              uint8_t textSize, char *message) {
-  _tft.setCursor(column, row);
-  _tft.setTextColor(fontColour);
-  _tft.print(message);
+void TFT_eSPIScreen::clearScreen(uint16_t backgroundColour) { _tft.fillScreen(backgroundColour); }
+
+void TFT_eSPIScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
+                              uint8_t maxLength, char *message) {
+  uint16_t textRow = (row * fontHeight) + row;
+  uint8_t fontWidth = _tft.textWidth("A");
+  uint16_t width = fontWidth * maxLength;
+  _tft.setTextPadding(width);
+  _tft.setTextColor(fontColour, backgroundColour);
+  _tft.drawString(message, column, textRow);
 }

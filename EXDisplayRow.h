@@ -18,6 +18,10 @@ public:
   /// @return 0 - 255
   uint8_t getRowNumber();
 
+  /// @brief Get the maximum length this row has been set to
+  /// @return 0 - 255
+  uint8_t getMaxRowLength();
+
   /// @brief Update the text for the specified row
   /// @param rowText Char array containing the text
   void setRowText(char *rowText);

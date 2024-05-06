@@ -1,9 +1,16 @@
 #ifndef FONTOPTIONS_H
 #define FONTOPTIONS_H
 
-#include "Adafruit_GFX.h"
-#include "Arial9pt7b.h"
-#include "FreeSans12pt7b.h"
+#if SCREEN_0_TYPE==MCU
+#include <Fonts/FreeMono9pt7b.h>
+#include <Fonts/FreeMono12pt7b.h>
+#include <Fonts/FreeMono18pt7b.h>
+#include <Fonts/FreeMono24pt7b.h>
+#include <Fonts/FreeSans9pt7b.h>
+#include <Fonts/FreeSans12pt7b.h>
+#include <Fonts/FreeSans18pt7b.h>
+#include <Fonts/FreeSans24pt7b.h>
+#endif
 
 /// @brief Macros for available colours
 #define BLACK 0x0000
@@ -14,8 +21,14 @@
 #define YELLOW 0xFFE0
 #define WHITE 0xFFFF
 
-/// @brief Macros for avaialble fonts
-#define ARIAL9PT7B &Arial9pt7b
-#define FREESANS12PT7B &FreeSans12pt7b
+/// @brief Macros for available fonts
+#define SMALL &FreeMono9pt7b
+#define MEDIUM &FreeMono12pt7b
+#define LARGE &FreeMono18pt7b
+#define XLARGE &FreeMono24pt7b
+#define SMALL_SANS &FreeSans9pt7b
+#define MEDIUM_SANS &FreeSans12pt7b
+#define LARGE_SANS &FreeSans18pt7b
+#define XLARGE_SANS &FreeSans24pt7b
 
 #endif

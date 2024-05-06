@@ -14,6 +14,10 @@
  */
 class EXDisplay {
 public:
+  /// @brief Constructor for the EXDisplay class
+  /// @param displayNumber The ID of this display, 0 - 254
+  /// @param exScreen Pointer to an associated EXScreen object to use for the physical display
+  /// @param maxScreenWidth Maximum number of characters that will fit on the physical screen, 0 - 255
   EXDisplay(uint8_t displayNumber, EXScreen *exScreen, uint8_t maxScreenWidth);
 
   /// @brief Get the first EXDisplay object in the linked list
