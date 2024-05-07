@@ -20,12 +20,18 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint
   _tft.setFont(gfxFont);
   _tft.setTextSize(textSize);
 
+    CONSOLE.print(F("| text Size"));
+    CONSOLE.print(textSize);
+    CONSOLE.print(F("| tft height"));
+    CONSOLE.print(_tft.height());
+
   //fontHeight = gfxFont->yAdvance;
   fontHeight = getFontHeight(gfxFont);
 
   uint8_t fontWidth = getCharacterWidth('A');
   maxRows = _tft.height() / fontHeight;
   maxColumns = _tft.width() / fontWidth;
+  
 }
 
 uint8_t MCUFriendScreen::getCharacterWidth(char character) {
@@ -37,10 +43,10 @@ uint8_t MCUFriendScreen::getCharacterWidth(char character) {
 
 uint8_t MCUFriendScreen::getFontHeight(const GFXfont *font) {
   // Calculate font height (vertical advance - maximum ascent)
-  //return font->yAdvance - font->glyph->yOffset;
-    CONSOLE.print(F("| yAdvance"));
+  //return font->yAdvance;  //- font->glyph->yOffset
+    CONSOLE.print(F("| yAdvance "));
     CONSOLE.print(font->yAdvance);
-    CONSOLE.print(F("| yOffset"));
+    CONSOLE.print(F("| yOffset "));
     CONSOLE.print(font->glyph->yOffset);
   return font->yAdvance;
 }
