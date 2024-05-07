@@ -13,6 +13,9 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint
   }
   _tft.begin(screenId);
   _tft.setRotation(rotation);
+  #ifdef INVERT_SCREEN
+    _tft.invertDisplay(screenId);
+  #endif
   _tft.fillScreen(backgroundColour);
   _tft.setFont(gfxFont);
   _tft.setTextSize(textSize);

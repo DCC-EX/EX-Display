@@ -23,6 +23,9 @@
 // If rotation of the screen is required, set it here
 #define SCREEN_ROTATION 1
 
+// Some screens need inverting
+#define INVERT_SCREEN
+
 // First entries about the display you are using
 // as we display across the wider part of the screen iwdth is the larger dimension
 #define DISPLAY_WIDTH 320
