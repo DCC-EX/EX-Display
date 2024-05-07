@@ -17,10 +17,12 @@ long screencount = 0;
 #define CS_LISTEN Serial
 #endif
 
-#if SCREEN_0_TYPE == MCU
+#if SCREEN_TYPE == MCU
 MCUFRIEND_kbv tft;
-#elif SCREEN_0_TYPE == TFT
+MCUFriendScreen *screen = new MCUFriendScreen(tft);
+#elif SCREEN_TYPE == TFT
 TFT_eSPI tft = TFT_eSPI();
+TFT_eSPIScreen *screen = new TFT_eSPIScreen(tft);
 #endif
 
 void setup() {
@@ -34,16 +36,10 @@ void setup() {
   // and how to call back when found.
   AtFinder::setup(100, updateEXDisplayRow);
 
-  // HARDWARE SETUP TODO..... Create an EXDisplay instance for each screen this ino wants to display.
-  //  The updateEXDisplayRow will ignore messages destined for screens we dont have.
-  // For testing lets create some
-  SCREEN_0
-#ifdef SCREEN_1_TYPE
-  SCREEN_1
-#endif
-#ifdef SCREEN_2_TYPE
-  SCREEN_2
-#endif
+  // Create display instances
+  new EXDisplay(DISPLAY_1_ID, screen, 30);
+  new EXDisplay(DISPLAY_2_ID, screen, 30);
+  new EXDisplay(DISPLAY_3_ID, screen, 30);
 
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
     display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_FONT, BACKGROUND_COLOUR, TEXT_SIZE);

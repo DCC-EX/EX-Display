@@ -2,8 +2,11 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.4"
+#define VERSION "0.0.5"
 
+// 0.0.5 includes:
+//  - Refactor screen and logical display to enable multiple displays to use the same screen
+//  - Enable switching between logical displays
 // 0.0.4 includes:
 //  - Adjusted to use Adafruit fonts for MCUFRIEND_kbv
 // 0.0.3 includes:

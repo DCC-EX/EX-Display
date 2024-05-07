@@ -28,6 +28,8 @@
 #define SCREEN_ROTATION 1
 #endif
 
+/* DISABLE AS THIS TIGHTLY COUPLES ONE DISPLAY TO ONE SCREEN
+WE NEED TO HAVE A ONE SCREEN TO MANY DISPLAY RELATIONSHIP
 #if SCREEN_0_TYPE == MCU
 #define SCREEN_0 new EXDisplay(0, new MCUFriendScreen(tft), 30);
 #elif SCREEN_0_TYPE == TFT
@@ -35,6 +37,7 @@
 #else
 #error A screen type for the first screen has not been set, you must define either MCU or TFT
 #endif
+*/
 
 // Set up console and CS listener for Mega
 #if defined(ARDUINO_AVR_MEGA2560)

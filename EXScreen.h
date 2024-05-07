@@ -3,9 +3,9 @@
 
 #include "Defines.h"
 #include <Arduino.h>
-#if SCREEN_0_TYPE==MCU
+#if SCREEN_TYPE == MCU
 #include <Adafruit_GFX.h>
-#elif SCREEN_0_TYPE==TFT
+#elif SCREEN_TYPE == TFT
 #include <TFT_eSPI.h>
 #endif
 
