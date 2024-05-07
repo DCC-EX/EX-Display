@@ -21,7 +21,7 @@ public:
   // virtual void writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
   //                             uint8_t maxLength, char *message);
 
-  uint8_t getCharacterWidth(char character);
+  uint8_t getCharacterWidth(const char *character);
 
 private:
   MCUFRIEND_kbv &_tft;

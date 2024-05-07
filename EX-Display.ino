@@ -49,6 +49,14 @@ void setup() {
     display->getEXScreen()->clearScreen(BACKGROUND_COLOUR);
   }
 
+  const GFXfont *tempFont = TEXT_FONT;
+  CONSOLE.print(F("DEBUG Font: first|last|yAdvance: "));
+  CONSOLE.print(tempFont->first);
+  CONSOLE.print(F("|"));
+  CONSOLE.print(tempFont->last);
+  CONSOLE.print(F("|"));
+  CONSOLE.println(tempFont->yAdvance);
+
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
     display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_FONT, TEXT_SIZE, BACKGROUND_COLOUR);
     display->getEXScreen()->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 1, "EX-Display");

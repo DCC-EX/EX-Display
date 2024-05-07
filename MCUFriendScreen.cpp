@@ -6,6 +6,13 @@ MCUFriendScreen::MCUFriendScreen(MCUFRIEND_kbv &tft) : EXScreen(), _tft(tft) {}
 void MCUFriendScreen::setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint8_t textSize,
                                   uint16_t backgroundColour) {
 
+  CONSOLE.print(F("DEBUG Font: first|last|yAdvance: "));
+  CONSOLE.print(gfxFont->first);
+  CONSOLE.print(F("|"));
+  CONSOLE.print(gfxFont->last);
+  CONSOLE.print(F("|"));
+  CONSOLE.println(gfxFont->yAdvance);
+  
   uint16_t screenId = _tft.readID();
   CONSOLE.print("TFT ID: 0x");
   CONSOLE.println(screenId, HEX);
@@ -15,12 +22,13 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint
   _tft.begin(screenId);
   _tft.setRotation(rotation);
   _tft.setFont(gfxFont);
+  _tft.setTextSize(textSize);
 #ifdef INVERT_SCREEN
   _tft.invertDisplay(screenId);
 #endif
   _tft.fillScreen(backgroundColour);
   fontHeight = gfxFont->yAdvance;
-  fontWidth = getCharacterWidth('A');
+  fontWidth = getCharacterWidth("A");
   maxRows = _tft.height() / fontHeight;
   maxColumns = _tft.width() / fontWidth;
   CONSOLE.print(F("Setup done: fontHeight|fontWidth|tftHeight|tftWidth: "));
@@ -33,10 +41,10 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint
   CONSOLE.println(_tft.width());
 }
 
-uint8_t MCUFriendScreen::getCharacterWidth(char character) {
+uint8_t MCUFriendScreen::getCharacterWidth(const char *character) {
   int16_t x1, y1;
   uint16_t w, h;
-  _tft.getTextBounds(&character, 0, 0, &x1, &y1, &w, &h);
+  _tft.getTextBounds(character, 0, 0, &x1, &y1, &w, &h);
   return w;
 }
 
@@ -44,8 +52,7 @@ void MCUFriendScreen::clearScreen(uint16_t backgroundColour) { _tft.fillScreen(b
 
 void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
                                uint8_t maxLength, char *message) {
-  uint16_t textRow = ((row + 1) * fontHeight) + fontHeight;
-  uint8_t fontWidth = getCharacterWidth('A');
+  uint16_t textRow = (row * fontHeight) + row;
   uint16_t width = fontWidth * maxLength;
   uint16_t paddedColumn = column + width;
   _tft.setTextColor(fontColour, backgroundColour);
