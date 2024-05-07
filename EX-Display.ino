@@ -45,10 +45,20 @@ void setup() {
   SCREEN_2
 #endif
 
+for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
+    display->getEXScreen()->clearScreen(BACKGROUND_COLOUR);
+  }
+
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
-    display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_FONT, BACKGROUND_COLOUR, TEXT_SIZE);
-    display->getEXScreen()->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, "EX-Display");
-    display->getEXScreen()->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, VERSION);
+    display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_FONT, TEXT_SIZE, BACKGROUND_COLOUR);
+    #if SCREEN_0_TYPE == TFT  
+        display->getEXScreen()->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 1, "EX-Display");
+        display->getEXScreen()->writeRow(0, 100, TEXT_COLOUR, BACKGROUND_COLOUR, 1, VERSION);   
+    #elif SCREEN_0_TYPE == MCU
+        display->getEXScreen()->writeHeaderRow(1, 25, YELLOW, BACKGROUND_COLOUR, 20, "EX-Display");
+        display->getEXScreen()->writeHeaderRow(200, 25, YELLOW, BACKGROUND_COLOUR, 20, VERSION);   
+    #endif
+    
     CONSOLE.print(F("Display ID|Max Rows|Max Columns: "));
     CONSOLE.print(display->getDisplayNumber());
     CONSOLE.print(F("|"));
@@ -59,9 +69,7 @@ void setup() {
 
   delay(2000);
 
-  for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
-    display->getEXScreen()->clearScreen(BACKGROUND_COLOUR);
-  }
+  
 
   // Setup the start screen.
   // if (MAX_SCREENS > 1) {

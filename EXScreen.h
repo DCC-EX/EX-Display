@@ -35,6 +35,9 @@ public:
   virtual void writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
                         char *message);
 
+  virtual void writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
+                        char *message);
+
   /// @brief Height of the font in use to determine row height
   uint8_t fontHeight;
 

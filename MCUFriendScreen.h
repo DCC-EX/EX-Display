@@ -17,6 +17,10 @@ public:
 
   virtual void writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
                         char *message) override;
+
+  virtual void writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
+                        char *message);
+
   uint8_t getCharacterWidth(char character);
   uint8_t getFontHeight(const GFXfont *font);
 

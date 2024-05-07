@@ -72,7 +72,7 @@ void MCUFriendScreen::clearScreen(uint16_t backgroundColour) { _tft.fillScreen(b
 
 void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
                                uint8_t maxLength, char *message) {
-  uint16_t textRow = ((row +2) * fontHeight) + row;
+  uint16_t textRow = ((row +1) * fontHeight) + fontHeight;
   uint8_t fontWidth = getCharacterWidth('A');
   uint16_t width = fontWidth * maxLength;
     CONSOLE.print(F("Write to screen DisplayRow|Column|Message: "));
@@ -97,8 +97,20 @@ void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour,
     CONSOLE.print(fontHeight);
     CONSOLE.print(F("|"));
 
-
     
+}
+
+void MCUFriendScreen::writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
+                        char *message) {
+
+  CONSOLE.print(F("Heading at column "));
+  CONSOLE.print(column);
+  //uint16_t textRow = ((row +1) * fontHeight) + fontHeight;
+  _tft.setTextColor(fontColour, backgroundColour);
+  _tft.setCursor(row, column);
+  _tft.print(message);
+  _tft.drawFastHLine(0, 30, _tft.width(), WHITE);
+
 }
 
 /*
