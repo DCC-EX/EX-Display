@@ -2,8 +2,6 @@
 #include "AtFinder.h"
 #include "Defines.h"
 #include "DisplayFunctions.h"
-#include "MCUFriendScreen.h"
-#include "TFT_eSPIScreen.h"
 #include "version.h"
 #include <Arduino.h>
 
@@ -18,9 +16,11 @@ long screencount = 0;
 #endif
 
 #if SCREEN_0_TYPE == MCU
-MCUFRIEND_kbv tft;
+  #include "MCUFriendScreen.h"
+  MCUFRIEND_kbv tft;
 #elif SCREEN_0_TYPE == TFT
-TFT_eSPI tft = TFT_eSPI();
+  #include "TFT_eSPIScreen.h" 
+  TFT_eSPI tft = TFT_eSPI();
 #endif
 
 void setup() {

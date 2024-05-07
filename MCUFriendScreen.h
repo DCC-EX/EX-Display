@@ -3,6 +3,7 @@
 
 #include "EXScreen.h"
 #include <MCUFRIEND_kbv.h>
+#include <Adafruit_GFX.h>
 #include <Arduino.h>
 
 class MCUFriendScreen : public EXScreen {
