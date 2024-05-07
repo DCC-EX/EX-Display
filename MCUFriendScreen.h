@@ -17,12 +17,13 @@ public:
   virtual void writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
                         char *message) override;
   uint8_t getCharacterWidth(char character);
+  uint8_t getFontHeight(const GFXfont *font);
 
 private:
   MCUFRIEND_kbv &_tft;
-  uint8_t fontHeight;
-  uint8_t maxRows;
-  uint8_t maxColumns;
+  //uint8_t fontHeight;
+  //uint8_t maxRows;
+  //uint8_t maxColumns;
 };
 
 #endif
