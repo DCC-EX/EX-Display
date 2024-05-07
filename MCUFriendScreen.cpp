@@ -4,7 +4,7 @@
 MCUFriendScreen::MCUFriendScreen(MCUFRIEND_kbv &tft) : EXScreen(), _tft(tft) {}
 
 void MCUFriendScreen::setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint8_t textSize,
-                                 uint16_t backgroundColour) {
+                                  uint16_t backgroundColour) {
 
   uint16_t screenId = _tft.readID();
   CONSOLE.print("TFT ID: 0x");
@@ -14,28 +14,23 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint
   }
   _tft.begin(screenId);
   _tft.setRotation(rotation);
-  _tft.setFont();
   _tft.setFont(gfxFont);
- 
-  #ifdef INVERT_SCREEN
-    _tft.invertDisplay(screenId);
-  #endif
+#ifdef INVERT_SCREEN
+  _tft.invertDisplay(screenId);
+#endif
   _tft.fillScreen(backgroundColour);
-  
-  _tft.setTextSize(textSize);
-
-    CONSOLE.print(F("| text Size"));
-    CONSOLE.print(textSize);
-    CONSOLE.print(F("| tft height"));
-    CONSOLE.print(_tft.height());
-
-  //fontHeight = gfxFont->yAdvance;
-  fontHeight = getFontHeight(gfxFont);
-
-  uint8_t fontWidth = getCharacterWidth('A');
+  fontHeight = gfxFont->yAdvance;
+  fontWidth = getCharacterWidth('A');
   maxRows = _tft.height() / fontHeight;
   maxColumns = _tft.width() / fontWidth;
-  
+  CONSOLE.print(F("Setup done: fontHeight|fontWidth|tftHeight|tftWidth: "));
+  CONSOLE.print(fontHeight);
+  CONSOLE.print(F("|"));
+  CONSOLE.print(fontWidth);
+  CONSOLE.print(F("|"));
+  CONSOLE.print(_tft.height());
+  CONSOLE.print(F("|"));
+  CONSOLE.println(_tft.width());
 }
 
 uint8_t MCUFriendScreen::getCharacterWidth(char character) {
@@ -45,73 +40,31 @@ uint8_t MCUFriendScreen::getCharacterWidth(char character) {
   return w;
 }
 
-uint8_t MCUFriendScreen::getFontHeight(const GFXfont *gfxFont) {
-  // Calculate font height (vertical advance - maximum ascent)
-  //return font->yAdvance;  //- font->glyph->yOffset
-//   int vpos = 0;
-// switch (font) {
-//     case () :
-//         vpos = 21;
-//         break;
-//     case (SMALL || SMALL_SANS) :
-//         vpos = 27;
-//         break;
-//     default :
-//         vpos = 21;
-//         break;
-//   }
-    int yAdvance = 27;
-    CONSOLE.print(F("| yAdvance "));
-    CONSOLE.print(yAdvance);
-    //CONSOLE.print(F("| yOffset "));
-    //CONSOLE.print(font->glyph->yOffset);
-  return yAdvance;
-}
-
 void MCUFriendScreen::clearScreen(uint16_t backgroundColour) { _tft.fillScreen(backgroundColour); }
 
 void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
                                uint8_t maxLength, char *message) {
-  uint16_t textRow = ((row +1) * fontHeight) + fontHeight;
+  uint16_t textRow = ((row + 1) * fontHeight) + fontHeight;
   uint8_t fontWidth = getCharacterWidth('A');
   uint16_t width = fontWidth * maxLength;
-    CONSOLE.print(F("Write to screen DisplayRow|Column|Message: "));
-    CONSOLE.print(row);
-    CONSOLE.print(F("|"));
-    CONSOLE.print(column);
-    CONSOLE.print(F("|"));
-    CONSOLE.println(message);
   uint16_t paddedColumn = column + width;
   _tft.setTextColor(fontColour, backgroundColour);
   //_tft.setCursor(paddedColumn, textRow);
   _tft.setCursor(1, textRow);
   _tft.print(message);
-    
-    CONSOLE.print(F("row "));
-    CONSOLE.print(row);
-    CONSOLE.print(F("|"));
-    CONSOLE.print(F("textRow "));
-    CONSOLE.print(textRow);
-    CONSOLE.print(F("|"));
-    CONSOLE.print(F("fontheight "));
-    CONSOLE.print(fontHeight);
-    CONSOLE.print(F("|"));
-
-    
 }
 
-void MCUFriendScreen::writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
-                        char *message) {
+// void MCUFriendScreen::writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
+//                                      uint8_t maxLength, char *message) {
 
-  CONSOLE.print(F("Heading at column "));
-  CONSOLE.print(column);
-  //uint16_t textRow = ((row +1) * fontHeight) + fontHeight;
-  _tft.setTextColor(fontColour, backgroundColour);
-  _tft.setCursor(row, column);
-  _tft.print(message);
-  _tft.drawFastHLine(0, 30, _tft.width(), WHITE);
-
-}
+//   CONSOLE.print(F("Heading at column "));
+//   CONSOLE.print(column);
+//   // uint16_t textRow = ((row +1) * fontHeight) + fontHeight;
+//   _tft.setTextColor(fontColour, backgroundColour);
+//   _tft.setCursor(row, column);
+//   _tft.print(message);
+//   _tft.drawFastHLine(0, 30, _tft.width(), WHITE);
+// }
 
 /*
 void EXScreen::newPage(uint8_t screenId) {

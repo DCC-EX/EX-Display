@@ -2,9 +2,9 @@
 #define MCUFRIENDSCREEN_H
 
 #include "EXScreen.h"
-#include <MCUFRIEND_kbv.h>
 #include <Adafruit_GFX.h>
 #include <Arduino.h>
+#include <MCUFRIEND_kbv.h>
 
 class MCUFriendScreen : public EXScreen {
 public:
@@ -18,17 +18,13 @@ public:
   virtual void writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
                         char *message) override;
 
-  virtual void writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
-                        char *message);
+  // virtual void writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
+  //                             uint8_t maxLength, char *message);
 
   uint8_t getCharacterWidth(char character);
-  uint8_t getFontHeight(const GFXfont *font);
 
 private:
   MCUFRIEND_kbv &_tft;
-  //uint8_t fontHeight;
-  //uint8_t maxRows;
-  //uint8_t maxColumns;
 };
 
 #endif

@@ -16,11 +16,11 @@ long screencount = 0;
 #endif
 
 #if SCREEN_0_TYPE == MCU
-  #include "MCUFriendScreen.h"
-  MCUFRIEND_kbv tft;
+#include "MCUFriendScreen.h"
+MCUFRIEND_kbv tft;
 #elif SCREEN_0_TYPE == TFT
-  #include "TFT_eSPIScreen.h" 
-  TFT_eSPI tft = TFT_eSPI();
+#include "TFT_eSPIScreen.h"
+TFT_eSPI tft = TFT_eSPI();
 #endif
 
 void setup() {
@@ -45,20 +45,15 @@ void setup() {
   SCREEN_2
 #endif
 
-for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
+  for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
     display->getEXScreen()->clearScreen(BACKGROUND_COLOUR);
   }
 
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
     display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_FONT, TEXT_SIZE, BACKGROUND_COLOUR);
-    #if SCREEN_0_TYPE == TFT  
-        display->getEXScreen()->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 1, "EX-Display");
-        display->getEXScreen()->writeRow(0, 100, TEXT_COLOUR, BACKGROUND_COLOUR, 1, VERSION);   
-    #elif SCREEN_0_TYPE == MCU
-        display->getEXScreen()->writeHeaderRow(1, 25, YELLOW, BACKGROUND_COLOUR, 20, "EX-Display");
-        display->getEXScreen()->writeHeaderRow(200, 25, YELLOW, BACKGROUND_COLOUR, 20, VERSION);   
-    #endif
-    
+    display->getEXScreen()->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 1, "EX-Display");
+    display->getEXScreen()->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 1, VERSION);
+
     CONSOLE.print(F("Display ID|Max Rows|Max Columns: "));
     CONSOLE.print(display->getDisplayNumber());
     CONSOLE.print(F("|"));
@@ -69,8 +64,10 @@ for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->get
 
   delay(2000);
 
+  for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
+    display->getEXScreen()->clearScreen(BACKGROUND_COLOUR);
+  }
   
-
   // Setup the start screen.
   // if (MAX_SCREENS > 1) {
   // currentScreenID = INITIAL_SCREEN;
