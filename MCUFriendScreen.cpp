@@ -1,5 +1,10 @@
+#ifdef NEEDS_MCU
+
+CONSOLE.println("Loading MCUFRIEND code");
+
 #include "Defines.h"
 #include "MCUFriendScreen.h"
+
 
 MCUFriendScreen::MCUFriendScreen(MCUFRIEND_kbv &tft) : EXScreen(), _tft(tft) {}
 
@@ -85,3 +90,5 @@ void EXScreen::newPage(uint8_t screenId) {
     tft.drawFastHLine(0, 25, tft.width(), WHITE);
     tft.setTextColor(WHITE);  // set this for all screen lines
 */
+
+#endif

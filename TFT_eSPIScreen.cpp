@@ -1,3 +1,7 @@
+#ifdef NEEDS_TFT
+
+CONSOLE.println("Loading TFT_eSPI code");
+
 #include "Defines.h"
 #include <TFT_eSPIScreen.h>
 
@@ -34,3 +38,5 @@ void TFT_eSPIScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, 
   _tft.setTextColor(fontColour, backgroundColour);
   _tft.drawString(message, column, textRow);
 }
+
+#endif

@@ -1,5 +1,8 @@
+#ifdef NEEDS_MCU
+
 #ifndef MCUFRIENDSCREEN_H
 #define MCUFRIENDSCREEN_H
+
 
 #include "EXScreen.h"
 #include <Adafruit_GFX.h>
@@ -27,4 +30,5 @@ private:
   MCUFRIEND_kbv &_tft;
 };
 
+#endif
 #endif

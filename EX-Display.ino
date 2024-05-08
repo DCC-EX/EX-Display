@@ -1,9 +1,10 @@
-
+#include "config.h"
 #include "AtFinder.h"
 #include "Defines.h"
 #include "DisplayFunctions.h"
 #include "version.h"
 #include <Arduino.h>
+
 
 bool StartupPhase = true;
 unsigned long timestamp = 0;
@@ -16,11 +17,13 @@ long screencount = 0;
 #endif
 
 #if SCREEN_0_TYPE == MCU
-#include "MCUFriendScreen.h"
-MCUFRIEND_kbv tft;
+  #define NEEDS_MCU   
+  #include "MCUFriendScreen.h"
+  MCUFRIEND_kbv tft;
 #elif SCREEN_0_TYPE == TFT
-#include "TFT_eSPIScreen.h"
-TFT_eSPI tft = TFT_eSPI();
+  #define NEEDS_TFT
+  #include "TFT_eSPIScreen.h"
+  TFT_eSPI tft = TFT_eSPI();
 #endif
 
 void setup() {

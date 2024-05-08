@@ -1,5 +1,8 @@
+#ifdef NEEDS_TFT
+
 #ifndef TFT_ESPISCREEN_H
 #define TFT_ESPISCREEN_H
+
 
 #include "EXScreen.h"
 #include <Arduino.h>
@@ -21,5 +24,7 @@ public:
 private:
   TFT_eSPI &_tft;
 };
+
+#endif
 
 #endif
