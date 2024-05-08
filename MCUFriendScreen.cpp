@@ -56,7 +56,8 @@ void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour,
                                uint8_t maxLength, char *message) {
   CONSOLE.print(F("row:"));
   CONSOLE.println(row);
-  uint16_t textRow = ((row+1) * fontHeight) + row;
+  //uint16_t textRow = ((row+1) * fontHeight) + row;
+  uint16_t textRow = ((row+1) * fontHeight);
   CONSOLE.print(F("textRow:"));
   CONSOLE.println(textRow);
   uint16_t width = fontWidth * maxLength;
