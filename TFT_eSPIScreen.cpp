@@ -3,8 +3,6 @@
 
 #include <TFT_eSPIScreen.h>
 
-// CONSOLE.println("Loading TFT_eSPI code");
-
 TFT_eSPIScreen::TFT_eSPIScreen(TFT_eSPI &tft) : EXScreen(), _tft(tft) {}
 
 void TFT_eSPIScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) {
