@@ -1,9 +1,11 @@
+#include "config.h"
 #ifdef NEEDS_TFT
 
-CONSOLE.println("Loading TFT_eSPI code");
 
 #include "Defines.h"
 #include <TFT_eSPIScreen.h>
+
+//CONSOLE.println("Loading TFT_eSPI code");
 
 TFT_eSPIScreen::TFT_eSPIScreen(TFT_eSPI &tft) : EXScreen(), _tft(tft) {}
 

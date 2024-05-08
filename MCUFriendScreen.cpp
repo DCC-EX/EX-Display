@@ -1,10 +1,11 @@
+#include "config.h"
 #ifdef NEEDS_MCU
 
-CONSOLE.println("Loading MCUFRIEND code");
 
 #include "Defines.h"
 #include "MCUFriendScreen.h"
 
+//CONSOLE.println("Loading MCUFRIEND code");
 
 MCUFriendScreen::MCUFriendScreen(MCUFRIEND_kbv &tft) : EXScreen(), _tft(tft) {}
 

@@ -1,8 +1,9 @@
 #ifndef EXDISPLAYCLASS_H
 #define EXDISPLAYCLASS_H
 
-#include <Arduino.h>
 
+#include <Arduino.h>
+#include "config.h"
 #include "Defines.h"
 #include "EXDisplayRow.h"
 #include "EXScreen.h"

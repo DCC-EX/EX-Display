@@ -16,12 +16,10 @@ long screencount = 0;
 #define CS_LISTEN Serial
 #endif
 
-#if SCREEN_0_TYPE == MCU
-  #define NEEDS_MCU   
+#if SCREEN_0_TYPE == MCU 
   #include "MCUFriendScreen.h"
   MCUFRIEND_kbv tft;
 #elif SCREEN_0_TYPE == TFT
-  #define NEEDS_TFT
   #include "TFT_eSPIScreen.h"
   TFT_eSPI tft = TFT_eSPI();
 #endif

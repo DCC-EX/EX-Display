@@ -1,3 +1,4 @@
+#include "config.h"
 #ifdef NEEDS_TFT
 
 #ifndef TFT_ESPISCREEN_H

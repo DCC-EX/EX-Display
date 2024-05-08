@@ -1,3 +1,4 @@
+#include "config.h"
 #include "Defines.h"
 #include "DisplayFunctions.h"
 #include "MCUFriendScreen.h"
