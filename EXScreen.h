@@ -3,9 +3,9 @@
 
 #include "Defines.h"
 #include <Arduino.h>
-#if SCREEN_0_TYPE==MCU
+#if SCREEN_0_TYPE == MCU
 #include <Adafruit_GFX.h>
-#elif SCREEN_0_TYPE==TFT
+#elif SCREEN_0_TYPE == TFT
 #include <TFT_eSPI.h>
 #endif
 
@@ -24,8 +24,11 @@ public:
     maxColumns = 0;
   }
 
-  /// @brief Virtual function to implement to setup the required parameters for the physical screen
-  virtual void setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint8_t textSize, uint16_t backgroundColour);
+  /// @brief Virtual function to implement to setup the physical screen parameters
+  /// @param rotation Rotate the screen if necessary
+  /// @param textSize Pixel multiplier to increase text size if desired
+  /// @param backgroundColour Fill the screen with this colour during setup
+  virtual void setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour);
 
   /// @brief Virtual function to implement
   /// @param backgroundColour
@@ -35,7 +38,8 @@ public:
   virtual void writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
                         char *message);
 
-  // virtual void writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
+  // virtual void writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t
+  // maxLength,
   //                       char *message);
 
   /// @brief Height of the font in use to determine row height

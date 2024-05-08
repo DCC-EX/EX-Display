@@ -1,24 +1,20 @@
 #include "Defines.h"
 #ifdef NEEDS_MCU
 
-
-
 #include "MCUFriendScreen.h"
-
-//CONSOLE.println("Loading MCUFRIEND code");
 
 MCUFriendScreen::MCUFriendScreen(MCUFRIEND_kbv &tft) : EXScreen(), _tft(tft) {}
 
-void MCUFriendScreen::setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint8_t textSize,
-                                  uint16_t backgroundColour) {
+void MCUFriendScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) {
 
+  const GFXfont *gfxFont = TEXT_FONT;
   CONSOLE.print(F("DEBUG Font: first|last|yAdvance: "));
   CONSOLE.print(gfxFont->first);
   CONSOLE.print(F("|"));
   CONSOLE.print(gfxFont->last);
   CONSOLE.print(F("|"));
   CONSOLE.println(gfxFont->yAdvance);
-  
+
   uint16_t screenId = _tft.readID();
   CONSOLE.print("TFT ID: 0x");
   CONSOLE.println(screenId, HEX);

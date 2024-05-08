@@ -1,4 +1,3 @@
-#include "config.h"
 #include "Defines.h"
 #include "DisplayFunctions.h"
 #include "MCUFriendScreen.h"
@@ -50,7 +49,8 @@ void updateScreens() {
 #endif
     for (EXDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
       if (row->needsRender() && row->isChanged()) {
-        screen->writeRow(row->getDisplayRow(), 0, TEXT_COLOUR, BACKGROUND_COLOUR, row->getMaxRowLength(), row->getRowText());
+        screen->writeRow(row->getDisplayRow(), 0, TEXT_COLOUR, BACKGROUND_COLOUR, row->getMaxRowLength(),
+                         row->getRowText());
       }
     }
   }
