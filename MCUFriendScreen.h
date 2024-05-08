@@ -4,7 +4,6 @@
 #ifndef MCUFRIENDSCREEN_H
 #define MCUFRIENDSCREEN_H
 
-
 #include "EXScreen.h"
 #include <Adafruit_GFX.h>
 #include <Arduino.h>
@@ -14,8 +13,7 @@ class MCUFriendScreen : public EXScreen {
 public:
   MCUFriendScreen(MCUFRIEND_kbv &tft);
 
-  virtual void setupScreen(uint8_t rotation, const GFXfont *gfxFont, uint8_t textSize,
-                           uint16_t backgroundColour) override;
+  virtual void setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) override;
 
   virtual void clearScreen(uint16_t backgroundColour) override;
 
@@ -29,6 +27,7 @@ public:
 
 private:
   MCUFRIEND_kbv &_tft;
+  GFXfont _gfxFont;
 };
 
 #endif

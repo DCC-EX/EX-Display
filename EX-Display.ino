@@ -1,10 +1,8 @@
-#include "config.h"
 #include "AtFinder.h"
 #include "Defines.h"
 #include "DisplayFunctions.h"
 #include "version.h"
 #include <Arduino.h>
-
 
 bool StartupPhase = true;
 unsigned long timestamp = 0;
@@ -16,12 +14,12 @@ long screencount = 0;
 #define CS_LISTEN Serial
 #endif
 
-#if SCREEN_0_TYPE == MCU 
-  #include "MCUFriendScreen.h"
-  MCUFRIEND_kbv tft;
+#if SCREEN_0_TYPE == MCU
+#include "MCUFriendScreen.h"
+MCUFRIEND_kbv tft;
 #elif SCREEN_0_TYPE == TFT
-  #include "TFT_eSPIScreen.h"
-  TFT_eSPI tft = TFT_eSPI();
+#include "TFT_eSPIScreen.h"
+TFT_eSPI tft = TFT_eSPI();
 #endif
 
 void setup() {
@@ -50,16 +48,8 @@ void setup() {
     display->getEXScreen()->clearScreen(BACKGROUND_COLOUR);
   }
 
-  const GFXfont *tempFont = TEXT_FONT;
-  CONSOLE.print(F("DEBUG Font: first|last|yAdvance: "));
-  CONSOLE.print(tempFont->first);
-  CONSOLE.print(F("|"));
-  CONSOLE.print(tempFont->last);
-  CONSOLE.print(F("|"));
-  CONSOLE.println(tempFont->yAdvance);
-
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
-    display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_FONT, TEXT_SIZE, BACKGROUND_COLOUR);
+    display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_SIZE, BACKGROUND_COLOUR);
     display->getEXScreen()->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 1, "EX-Display");
     display->getEXScreen()->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 1, VERSION);
 
@@ -76,7 +66,7 @@ void setup() {
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
     display->getEXScreen()->clearScreen(BACKGROUND_COLOUR);
   }
-  
+
   // Setup the start screen.
   // if (MAX_SCREENS > 1) {
   // currentScreenID = INITIAL_SCREEN;
