@@ -11,6 +11,12 @@
 // #define SCREEN_1_TYPE MCU
 // #define SCREEN_2_TYPE MCU
 
+#if SCREEN_0_TYPE == MCU
+  #define NEEDS_MCU   
+#elif SCREEN_0_TYPE == TFT
+  #define NEEDS_TFT
+#endif
+
 // DO NOT REMOVE OR MOVE THIS LINE - MUST BE BEFORE FONT DEFINITION
 // Include the various fonts and font colours available for use with EX-Display
 #include "FontOptions.h"
