@@ -54,7 +54,11 @@ void MCUFriendScreen::clearScreen(uint16_t backgroundColour) { _tft.fillScreen(b
 
 void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
                                uint8_t maxLength, char *message) {
-  uint16_t textRow = (row * fontHeight) + row;
+  CONSOLE.print(F("row:"));
+  CONSOLE.println(row);
+  uint16_t textRow = ((row+1) * fontHeight) + row;
+  CONSOLE.print(F("textRow:"));
+  CONSOLE.println(textRow);
   uint16_t width = fontWidth * maxLength;
   uint16_t paddedColumn = column + width;
   _tft.setTextColor(fontColour, backgroundColour);
