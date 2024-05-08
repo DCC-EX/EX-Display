@@ -41,17 +41,28 @@ void updateEXDisplayRow(uint8_t screenId, uint8_t screenRow, char *text) {
   }
 }
 
-void updateScreens() {
-  for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
-    auto *screen = display->getEXScreen();
+void updateScreen() {
+  EXDisplay *display = EXDisplay::getActiveDisplay();
+  auto *screen = display->getEXScreen();
+  if (display->needsRedraw()) {
+    screen->clearScreen(BACKGROUND_COLOUR);
+  }
 #ifdef SCROLLTIME
-    display->autoScroll(SCROLLTIME);
+  display->autoScroll(SCROLLTIME);
 #endif
-    for (EXDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
-      if (row->needsRender() && row->isChanged()) {
-        screen->writeRow(row->getDisplayRow(), 0, TEXT_COLOUR, BACKGROUND_COLOUR, row->getMaxRowLength(), row->getRowText());
-      }
+  for (EXDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
+    if (row->needsRender() && (row->isChanged() || display->needsRedraw())) {
+      screen->writeRow(row->getDisplayRow(), 0, TEXT_COLOUR, BACKGROUND_COLOUR, row->getMaxRowLength(), row->getRowText());
     }
+  }
+  display->resetRedraw();
+}
+
+unsigned long lastDisplaySwitch = 0;
+void switchDisplays() {
+  if (millis() - lastDisplaySwitch > DISPLAY_SWITCH_TIME) {
+    lastDisplaySwitch = millis();
+    EXDisplay::switchActiveDisplay();
   }
 }
 

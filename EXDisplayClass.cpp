@@ -3,6 +3,9 @@
 /// @brief Define the first EXDisplay object as a nullptr
 EXDisplay *EXDisplay::_first = nullptr;
 
+/// @brief Define the active display as nullptr also
+EXDisplay *EXDisplay::_activeDisplay = nullptr;
+
 /*
  * EXDisplay class implementation
  */
@@ -14,6 +17,10 @@ EXDisplay::EXDisplay(uint8_t displayNumber, EXScreen *exScreen, uint8_t maxScree
   _numberOfRows = 0;
   _scrollPosition = 0;
   _lastScrollTime = 0;
+  _needsRedraw = false;
+  if (!_activeDisplay) {
+    _activeDisplay = _first;
+  }
 }
 
 EXDisplay *EXDisplay::getFirst() { return _first; }
@@ -89,6 +96,10 @@ uint8_t EXDisplay::getScreenMaxRows() { return _exScreen->maxRows; }
 
 uint8_t EXDisplay::getScreenMaxColumns() { return _exScreen->maxColumns; }
 
+bool EXDisplay::needsRedraw() { return _needsRedraw; }
+
+void EXDisplay::resetRedraw() { _needsRedraw = false; }
+
 /*** probably not needed
  void EXDisplay::deleteRowNumber(uint8_t rowNumber) {
   EXDisplayRow *currentRow = _firstRow;
@@ -113,4 +124,15 @@ EXDisplay *EXDisplay::getDisplayByNumber(uint8_t displayNumber) {
     }
   }
   return nullptr;
+}
+
+EXDisplay *EXDisplay::getActiveDisplay() { return _activeDisplay; }
+
+void EXDisplay::switchActiveDisplay() {
+  if (_activeDisplay->_next) {
+    _activeDisplay = _activeDisplay->_next;
+  } else {
+    _activeDisplay = _first;
+  }
+  _activeDisplay->_needsRedraw = true;
 }

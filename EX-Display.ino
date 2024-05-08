@@ -43,8 +43,6 @@ void setup() {
 
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
     display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_FONT, BACKGROUND_COLOUR, TEXT_SIZE);
-    display->getEXScreen()->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, "EX-Display");
-    display->getEXScreen()->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, VERSION);
     CONSOLE.print(F("Display ID|Max Rows|Max Columns: "));
     CONSOLE.print(display->getDisplayNumber());
     CONSOLE.print(F("|"));
@@ -53,11 +51,13 @@ void setup() {
     CONSOLE.println(display->getScreenMaxColumns());
   }
 
+  EXDisplay *activeDisplay = EXDisplay::getActiveDisplay();
+  activeDisplay->getEXScreen()->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, "EX-Display");
+  activeDisplay->getEXScreen()->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, VERSION);
+
   delay(2000);
 
-  for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
-    display->getEXScreen()->clearScreen(BACKGROUND_COLOUR);
-  }
+  activeDisplay->getEXScreen()->clearScreen(BACKGROUND_COLOUR);
 
   // Setup the start screen.
   // if (MAX_SCREENS > 1) {
@@ -91,7 +91,8 @@ void loop() {
   // No data incoming so see if we need to display anything
   // DISABLE IN STARTUPPHASE
   else {
-    updateScreens();
+    updateScreen();
+    switchDisplays();
     /* DISABLE SO IT WILL COMPILE
         if (StartupPhase==false){
             // add thie following in once display is working

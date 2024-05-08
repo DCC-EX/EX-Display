@@ -65,6 +65,13 @@ public:
   /// @return 0 - 255
   uint8_t getScreenMaxColumns();
 
+  /// @brief Check if this display needs to be redrawn
+  /// @return True|False
+  bool needsRedraw();
+
+  /// @brief Reset the needsRedraw flag
+  void resetRedraw();
+
   /// @brief Check if there is already a display created at the specified number
   /// @param displayNumber True|False
   /// @return
@@ -74,6 +81,13 @@ public:
   /// @param displayNumber Display number to get, 0 - 255
   /// @return EXDisplay object, or nullptr if not exists
   static EXDisplay *getDisplayByNumber(uint8_t displayNumber);
+
+  /// @brief Get the currently selected display
+  /// @return Pointer to the currently selected display
+  static EXDisplay *getActiveDisplay();
+
+  /// @brief Switch active display to the next display in the linked list
+  static void switchActiveDisplay();
 
 private:
   // chaining displays
@@ -88,6 +102,8 @@ private:
   uint8_t _numberOfRows;         // Calculated number of rows for this screen
   uint8_t _scrollPosition;       // Row number that is top of screen for scrolling support
   unsigned long _lastScrollTime; // Last time in milliseconds an auto scroll was done
+  bool _needsRedraw;             // Flag if this display needs to be redrawn
+  static EXDisplay *_activeDisplay;
 };
 
 #endif

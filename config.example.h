@@ -57,6 +57,9 @@
 // if the touch screen not in use, Now define the scroll requirements
 #define SCROLLTIME 5000 // 5 seconds
 
+// If hosting multiple displays on the same screen, set switching delay
+#define DISPLAY_SWITCH_TIME 5000
+
 // And now define the maximum text length.
 #define MAX_LINE_LENGTH 30
 
