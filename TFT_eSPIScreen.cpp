@@ -1,8 +1,8 @@
-#include "config.h"
+#include "Defines.h"
 #ifdef NEEDS_TFT
 
 
-#include "Defines.h"
+
 #include <TFT_eSPIScreen.h>
 
 //CONSOLE.println("Loading TFT_eSPI code");

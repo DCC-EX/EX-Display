@@ -1,4 +1,4 @@
-#include "config.h"
+#include "Defines.h"
 #ifdef NEEDS_MCU
 
 #ifndef MCUFRIENDSCREEN_H

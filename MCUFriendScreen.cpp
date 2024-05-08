@@ -1,8 +1,8 @@
-#include "config.h"
+#include "Defines.h"
 #ifdef NEEDS_MCU
 
 
-#include "Defines.h"
+
 #include "MCUFriendScreen.h"
 
 //CONSOLE.println("Loading MCUFRIEND code");
