@@ -17,6 +17,7 @@ EXDisplay::EXDisplay(uint8_t displayNumber, EXScreen *exScreen, uint8_t maxScree
   _firstRow = nullptr;
   _next = _first;
   _first = this;
+  _maxRowNumber = 0;
   _numberOfRows = 0;
   _scrollPosition = 0;
   _lastScrollTime = 0;
@@ -66,6 +67,9 @@ void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
       row->setNext(_firstRow);
       _firstRow = row;
     }
+    if (rowNumber > _maxRowNumber) {
+      _maxRowNumber = rowNumber;
+    }
   }
   row->setRowText(rowText);
   row->setDisplayRow(rowNumber, _exScreen->maxRows);
@@ -89,13 +93,22 @@ void EXDisplay::scrollDown() {
   // If the highest row number is more than will fit on the screen we need to scroll
   // If not, do not redraw screen and do not update any displayRow or scroll values
   uint8_t lastRow = _exScreen->maxRows - 1;
-  uint8_t newScroll = _scrollPosition;
-  if (_scrollPosition == lastRow) {
-    newScroll = 0;
+  if (_maxRowNumber <= lastRow) {
+    return;
+  }
+  if (_scrollPosition >= lastRow) {
+    _scrollPosition = 0;
   } else {
-    for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
-
+    _scrollPosition++;
+  }
+  for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
+    uint8_t newRow = row->getDisplayRow();
+    if (newRow == 0) {
+      newRow = _maxRowNumber;
+    } else {
+      newRow--;
     }
+    row->setDisplayRow(newRow, _exScreen->maxRows);
   }
   _needsRedraw = true;
 }

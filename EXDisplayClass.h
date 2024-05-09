@@ -107,6 +107,7 @@ private:
   uint8_t _displayNumber;
   EXDisplayRow *_firstRow;
   EXScreen *_exScreen;
+  uint8_t _maxRowNumber;
   // Screen management variables added here
   uint8_t _maxScreenWidth;              // Maximum number of chars that can fit on the physical screen
   uint8_t _numberOfRows;                // Calculated number of rows for this screen
