@@ -6,6 +6,9 @@ EXDisplay *EXDisplay::_first = nullptr;
 /// @brief Define the active display as nullptr also
 EXDisplay *EXDisplay::_activeDisplay = nullptr;
 
+/// @brief Define initial last switch time as 0
+unsigned long EXDisplay::_lastSwitchTime = 0;
+
 /*
  * EXDisplay class implementation
  */
@@ -68,13 +71,13 @@ void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
   row->setDisplayRow(rowNumber, _exScreen->maxRows);
 }
 
-void EXDisplay::scroll() {
+void EXDisplay::scrollUp() {
   uint8_t screenRows = _exScreen->maxRows;
   uint8_t newPosition = 0;
   if (_numberOfRows <= screenRows) {
     _scrollPosition = newPosition;
   } else {
-    newPosition = _scrollPosition++;
+    newPosition = _scrollPosition--;
     if (newPosition >= _numberOfRows) {
       newPosition = 0;
     }
@@ -82,11 +85,26 @@ void EXDisplay::scroll() {
   _scrollPosition = newPosition;
 }
 
+void EXDisplay::scrollDown() {
+  // If the highest row number is more than will fit on the screen we need to scroll
+  // If not, do not redraw screen and do not update any displayRow or scroll values
+  uint8_t lastRow = _exScreen->maxRows - 1;
+  uint8_t newScroll = _scrollPosition;
+  if (_scrollPosition == lastRow) {
+    newScroll = 0;
+  } else {
+    for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
+
+    }
+  }
+  _needsRedraw = true;
+}
+
 void EXDisplay::autoScroll(unsigned long scrollDelay) {
   if (millis() - _lastScrollTime > scrollDelay) {
     _lastScrollTime = millis();
     CONSOLE.println(F("Time to scroll"));
-    scroll();
+    scrollDown();
   }
 }
 
@@ -128,11 +146,39 @@ EXDisplay *EXDisplay::getDisplayByNumber(uint8_t displayNumber) {
 
 EXDisplay *EXDisplay::getActiveDisplay() { return _activeDisplay; }
 
-void EXDisplay::switchActiveDisplay() {
+void EXDisplay::setNextDisplay() {
+  if (!_activeDisplay) {
+    _activeDisplay = _first;
+    _activeDisplay->_needsRedraw = true;
+    return;
+  }
   if (_activeDisplay->_next) {
     _activeDisplay = _activeDisplay->_next;
   } else {
     _activeDisplay = _first;
   }
   _activeDisplay->_needsRedraw = true;
+}
+
+void EXDisplay::setPreviousDisplay() {
+  if (!_activeDisplay) {
+    _activeDisplay = _first;
+    _activeDisplay->_needsRedraw = true;
+    return;
+  }
+  for (EXDisplay *display = _activeDisplay; display; display = display->getNext()) {
+    if (display->getNext() == _activeDisplay) {
+      _activeDisplay = display;
+      _activeDisplay->_needsRedraw = true;
+      return;
+    }
+  }
+}
+
+void EXDisplay::autoSwitch(unsigned long switchDelay) {
+  if (millis() - EXDisplay::_lastSwitchTime > switchDelay) {
+    EXDisplay::_lastSwitchTime = millis();
+    CONSOLE.println(F("Time to switch"));
+    setNextDisplay();
+  }
 }

@@ -18,9 +18,6 @@ void updateEXDisplayRow(uint8_t screenId, uint8_t screenRow, char *text);
 /// @brief Update the active display on its associated screen
 void updateScreen();
 
-/// @brief Switch active displays if enabled
-void switchDisplays();
-
 /// @brief Display all rows on all screens - handy for debug
 void displayAllRows();
 

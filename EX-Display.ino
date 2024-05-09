@@ -92,7 +92,6 @@ void loop() {
   // DISABLE IN STARTUPPHASE
   else {
     updateScreen();
-    switchDisplays();
     /* DISABLE SO IT WILL COMPILE
         if (StartupPhase==false){
             // add thie following in once display is working

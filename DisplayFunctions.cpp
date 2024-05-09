@@ -50,20 +50,15 @@ void updateScreen() {
 #ifdef SCROLLTIME
   display->autoScroll(SCROLLTIME);
 #endif
+#ifdef DISPLAY_SWITCH_TIME
+  display->autoSwitch(DISPLAY_SWITCH_TIME);
+#endif
   for (EXDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
     if (row->needsRender() && (row->isChanged() || display->needsRedraw())) {
       screen->writeRow(row->getDisplayRow(), 0, TEXT_COLOUR, BACKGROUND_COLOUR, row->getMaxRowLength(), row->getRowText());
     }
   }
   display->resetRedraw();
-}
-
-unsigned long lastDisplaySwitch = 0;
-void switchDisplays() {
-  if (millis() - lastDisplaySwitch > DISPLAY_SWITCH_TIME) {
-    lastDisplaySwitch = millis();
-    EXDisplay::switchActiveDisplay();
-  }
 }
 
 void displayAllRows() {
