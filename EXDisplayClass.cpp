@@ -90,15 +90,13 @@ void EXDisplay::scrollUp() {
 }
 
 void EXDisplay::scrollDown() {
-  // If the highest row number is more than will fit on the screen we need to scroll
-  // If not, do not redraw screen and do not update any displayRow or scroll values
-  uint8_t lastRow = _exScreen->maxRows - 1;
-  if (_maxRowNumber <= lastRow) {
+  uint8_t lastRow = _exScreen->maxRows - 1; // Highest possible row number on screen
+  if (_maxRowNumber <= lastRow) {           // If our max row number is on screen, no scroll required
     return;
   }
-  if (_scrollPosition >= lastRow) {
+  if (_scrollPosition >= lastRow) { // If last row is top of screen, goes to bottom
     _scrollPosition = 0;
-  } else {
+  } else { // Otherwise next row is top of screen
     _scrollPosition++;
   }
   for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
@@ -194,4 +192,17 @@ void EXDisplay::autoSwitch(unsigned long switchDelay) {
     CONSOLE.println(F("Time to switch"));
     setNextDisplay();
   }
+}
+
+void EXDisplay::redrawDisplay() {
+  if (_needsRedraw) {
+    _exScreen->clearScreen(BACKGROUND_COLOUR);
+  }
+  for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
+    if (row->needsRender() && (row->isChanged() || _needsRedraw)) {
+      _exScreen->writeRow(row->getDisplayRow(), 0, TEXT_COLOUR, BACKGROUND_COLOUR, row->getMaxRowLength(),
+                          row->getRowText());
+    }
+  }
+  _needsRedraw = false;
 }

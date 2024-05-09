@@ -43,22 +43,13 @@ void updateEXDisplayRow(uint8_t screenId, uint8_t screenRow, char *text) {
 
 void updateScreen() {
   EXDisplay *display = EXDisplay::getActiveDisplay();
-  auto *screen = display->getEXScreen();
-  if (display->needsRedraw()) {
-    screen->clearScreen(BACKGROUND_COLOUR);
-  }
 #ifdef SCROLLTIME
   display->autoScroll(SCROLLTIME);
 #endif
 #ifdef DISPLAY_SWITCH_TIME
   display->autoSwitch(DISPLAY_SWITCH_TIME);
 #endif
-  for (EXDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
-    if (row->needsRender() && (row->isChanged() || display->needsRedraw())) {
-      screen->writeRow(row->getDisplayRow(), 0, TEXT_COLOUR, BACKGROUND_COLOUR, row->getMaxRowLength(), row->getRowText());
-    }
-  }
-  display->resetRedraw();
+  display->redrawDisplay();
 }
 
 void displayAllRows() {

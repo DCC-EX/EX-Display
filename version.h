@@ -8,6 +8,7 @@
 //  - Refactor screen and logical display to enable multiple displays to use the same screen
 //  - Enable timed switching between logical displays
 //  - Enable timed vertical scrolling when there are more rows than can be on a single screen
+//  - Moved display redraw function into the EXDisplay class to simplify screen updates
 // 0.0.4 includes:
 //  - Adjusted to use Adafruit fonts for MCUFRIEND_kbv
 // 0.0.3 includes:

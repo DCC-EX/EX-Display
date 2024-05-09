@@ -32,6 +32,12 @@ public:
   virtual void clearScreen(uint16_t backgroundColour);
 
   /// @brief Virtual function to implement to write a row of text to the physical screen
+  /// @param row
+  /// @param column
+  /// @param fontColour
+  /// @param backgroundColour
+  /// @param maxLength
+  /// @param message
   virtual void writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
                         char *message);
 

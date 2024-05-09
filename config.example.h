@@ -8,10 +8,6 @@
 // Should we eventually support up to 3 displays?
 // #define SCREEN_TYPE MCU
 #define SCREEN_TYPE TFT
-// #define SCREEN_0_TYPE MCU
-// #define SCREEN_0_TYPE TFT
-// #define SCREEN_1_TYPE MCU
-// #define SCREEN_2_TYPE MCU
 
 // Define the number of logical displays here
 // This is not a good way to do this

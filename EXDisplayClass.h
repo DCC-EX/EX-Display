@@ -52,7 +52,7 @@ public:
   /// @brief Scroll down one row vertically
   void scrollDown();
 
-  /// @brief Method to automatically update row positions for automatic vertical scrolling
+  /// @brief Call this method as often as possible to support timed vertical scrolling
   /// @param scrollDelay Time in milliseconds between vertical scrolling updates
   void autoScroll(unsigned long scrollDelay);
 
@@ -95,9 +95,13 @@ public:
   /// @brief Switch active display to the previous display in the linked list
   static void setPreviousDisplay();
 
-  /// @brief Method to automatically switch logical displays on a timed basis
+  /// @brief Call this method as often as possible to support timed display switching
   /// @param switchDelay Time in milliseconds before switching displays
   static void autoSwitch(unsigned long switchDelay);
+
+  /// @brief Call this method as often as possible to ensure a physical screen is updated correctly
+  /// @param display Pointer to the EXDisplay object that needs to have it's physical screen updated
+  void redrawDisplay();
 
 private:
   // chaining displays
