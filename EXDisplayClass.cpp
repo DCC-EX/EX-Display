@@ -78,7 +78,7 @@ void EXDisplay::scroll() {
 void EXDisplay::autoScroll(unsigned long scrollDelay) {
   if (millis() - _lastScrollTime > scrollDelay) {
     _lastScrollTime = millis();
-    CONSOLE.println(F("Time to scroll"));
+    //CONSOLE.println(F("Time to scroll"));
     scroll();
   }
 }

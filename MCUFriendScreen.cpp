@@ -62,6 +62,8 @@ void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour,
   CONSOLE.println(textRow);
   uint16_t width = fontWidth * maxLength;
   uint16_t paddedColumn = column + width;
+  //_tft.fillRect(1, textRow, fontHeight, DISPLAY_WIDTH, backgroundColour);
+  _tft.fillRect(1, (textRow - fontHeight), DISPLAY_WIDTH, fontHeight, backgroundColour);
   _tft.setTextColor(fontColour, backgroundColour);
   //_tft.setCursor(paddedColumn, textRow);
   _tft.setCursor(1, textRow);
