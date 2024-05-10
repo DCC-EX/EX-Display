@@ -58,7 +58,15 @@ public:
   /// @brief Set the text/foreground and background colour for this row
   /// @param textColour Hex value of the text/foreground colour
   /// @param backgroundColour Hex value of the background colour
-  void setColours(uint16_t textColour, uint16_t backgroundColour);
+  void setRowColours(uint16_t textColour, uint16_t backgroundColour);
+
+  /// @brief Get the text/foreground colour for this row
+  /// @return Colour code
+  uint16_t getTextColour();
+
+  /// @brief Get the background colour for this row
+  /// @return Colour code
+  uint16_t getBackgroundColour();
 
 private:
   uint8_t _rowNumber;  // This is the row number received from the parser

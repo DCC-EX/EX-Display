@@ -24,6 +24,7 @@ void updateEXDisplayRow(uint8_t screenId, uint8_t screenRow, char *text) {
       uint16_t textColour;
       uint16_t backgroundColour;
       extractColours(text, &textColour, &backgroundColour);
+      display->updateRowColours(screenRow, textColour, backgroundColour);
       CONSOLE.print(F("Got colours, text|background: "));
       CONSOLE.print(textColour, HEX);
       CONSOLE.print(F("|"));

@@ -46,6 +46,12 @@ public:
   /// @param rowText Char array of text for the row
   void updateRow(uint8_t rowNumber, char *rowText);
 
+  /// @brief Update text/foreground and background colours for the specified row
+  /// @param rowNumber Row number for colours, 0 - 255
+  /// @param textColour Any valid hex colour code
+  /// @param backgroundColour Any valid hex colour code
+  void updateRowColours(uint8_t rowNumber, uint16_t textColour, uint16_t backgroundColour);
+  
   /// @brief Scroll up one row vertically
   void scrollUp();
 
@@ -120,6 +126,11 @@ private:
   static unsigned long _lastSwitchTime; // Last time in milliseconds an auto switch was done
   bool _needsRedraw;                    // Flag if this display needs to be redrawn
   static EXDisplay *_activeDisplay;     // Pointer to the current active display
+
+  /// @brief Private method to add a row
+  /// @param rowNumber 0 - 255
+  /// @return Pointer to the created EXDisplayRow object
+  EXDisplayRow *_addRow(uint8_t rowNumber);
 };
 
 #endif

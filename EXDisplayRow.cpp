@@ -60,7 +60,12 @@ EXDisplayRow *EXDisplayRow::getNext() { return _next; }
 
 void EXDisplayRow::setNext(EXDisplayRow *next) { _next = next; }
 
-void EXDisplayRow::setColours(uint16_t textColour, uint16_t backgroundColour) {
+void EXDisplayRow::setRowColours(uint16_t textColour, uint16_t backgroundColour) {
   _textColour = textColour;
   _backgroundColour = backgroundColour;
+  _changed = true;
 }
+
+uint16_t EXDisplayRow::getTextColour() { return _textColour; }
+
+uint16_t EXDisplayRow::getBackgroundColour() { return _backgroundColour; }

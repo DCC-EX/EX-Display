@@ -33,6 +33,10 @@ void TFT_eSPIScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, 
   uint16_t textRow = (row * fontHeight) + row;
   uint16_t width = fontWidth * maxLength;
   _tft.setTextPadding(width);
+  CONSOLE.print(F("fontColour|backgroundColour: 0x"));
+  CONSOLE.print(fontColour, HEX);
+  CONSOLE.print(F("|0x"));
+  CONSOLE.println(backgroundColour, HEX);
   _tft.setTextColor(fontColour, backgroundColour);
   _tft.drawString(message, column, textRow);
 }
