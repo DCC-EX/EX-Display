@@ -9,9 +9,11 @@ unsigned long timestamp = 0;
 long screencount = 0;
 
 #if SCREEN_TYPE == MCU
+#include "MCUFriendScreen.h"
 MCUFRIEND_kbv tft;
 MCUFriendScreen *screen = new MCUFriendScreen(tft);
 #elif SCREEN_TYPE == TFT
+#include "TFT_eSPIScreen.h"
 TFT_eSPI tft = TFT_eSPI();
 TFT_eSPIScreen *screen = new TFT_eSPIScreen(tft);
 #endif
@@ -39,7 +41,7 @@ void setup() {
 #endif
 
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
-    display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_FONT, BACKGROUND_COLOUR, TEXT_SIZE);
+    display->getEXScreen()->setupScreen(SCREEN_ROTATION, BACKGROUND_COLOUR, TEXT_SIZE);
     CONSOLE.print(F("Display ID|Max Rows|Max Columns: "));
     CONSOLE.print(display->getDisplayNumber());
     CONSOLE.print(F("|"));
