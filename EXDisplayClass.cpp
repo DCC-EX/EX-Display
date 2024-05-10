@@ -3,6 +3,12 @@
 /// @brief Define the first EXDisplay object as a nullptr
 EXDisplay *EXDisplay::_first = nullptr;
 
+/// @brief Define the active display as nullptr also
+EXDisplay *EXDisplay::_activeDisplay = nullptr;
+
+/// @brief Define initial last switch time as 0
+unsigned long EXDisplay::_lastSwitchTime = 0;
+
 /*
  * EXDisplay class implementation
  */
@@ -11,9 +17,14 @@ EXDisplay::EXDisplay(uint8_t displayNumber, EXScreen *exScreen, uint8_t maxScree
   _firstRow = nullptr;
   _next = _first;
   _first = this;
+  _maxRowNumber = 0;
   _numberOfRows = 0;
   _scrollPosition = 0;
   _lastScrollTime = 0;
+  _needsRedraw = false;
+  if (!_activeDisplay) {
+    _activeDisplay = _first;
+  }
 }
 
 EXDisplay *EXDisplay::getFirst() { return _first; }
@@ -56,30 +67,66 @@ void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
       row->setNext(_firstRow);
       _firstRow = row;
     }
+    if (rowNumber > _maxRowNumber) {
+      _maxRowNumber = rowNumber;
+    }
   }
   row->setRowText(rowText);
   row->setDisplayRow(rowNumber, _exScreen->maxRows);
 }
 
-void EXDisplay::scroll() {
-  uint8_t screenRows = _exScreen->maxRows;
-  uint8_t newPosition = 0;
-  if (_numberOfRows <= screenRows) {
-    _scrollPosition = newPosition;
-  } else {
-    newPosition = _scrollPosition++;
-    if (newPosition >= _numberOfRows) {
-      newPosition = 0;
-    }
+void EXDisplay::scrollUp() {
+  // Scroll up logic:
+  // _scrollPosition needs to decrement to bring lower rows up the screen
+  // If _scrollPosition ends at 0, it should become the highest possible row
+  uint8_t lastRow = _exScreen->maxRows - 1; // Highest possible row number on screen
+  if (_maxRowNumber <= lastRow) {           // If our max row number is on screen, no scroll required
+    return;
   }
-  _scrollPosition = newPosition;
+  if (_scrollPosition == 0) { // If row 0 is top of screen, need to move to the highest row number
+    _scrollPosition = _maxRowNumber;
+  } else { // 
+    _scrollPosition--;
+  }
+  for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
+    uint8_t newRow = row->getDisplayRow();
+    if (newRow == _maxRowNumber) { // If row at bottom, it becomes first row
+      newRow = 0;
+    } else { // Otherwise move down one row
+      newRow++;
+    }
+    row->setDisplayRow(newRow, _exScreen->maxRows);
+  }
+  _needsRedraw = true; // Need to redraw after each scroll
+}
+
+void EXDisplay::scrollDown() {
+  uint8_t lastRow = _exScreen->maxRows - 1; // Highest possible row number on screen
+  if (_maxRowNumber <= lastRow) {           // If our max row number is on screen, no scroll required
+    return;
+  }
+  if (_scrollPosition >= lastRow) { // If last row is top of screen, goes to bottom
+    _scrollPosition = 0;
+  } else { // Otherwise next row is top of screen
+    _scrollPosition++;
+  }
+  for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
+    uint8_t newRow = row->getDisplayRow();
+    if (newRow == 0) { // If row at top of screen, it becomes last row
+      newRow = _maxRowNumber;
+    } else { // Otherwise move up one row
+      newRow--;
+    }
+    row->setDisplayRow(newRow, _exScreen->maxRows);
+  }
+  _needsRedraw = true; // Need to redraw after each scroll
 }
 
 void EXDisplay::autoScroll(unsigned long scrollDelay) {
   if (millis() - _lastScrollTime > scrollDelay) {
     _lastScrollTime = millis();
-    //CONSOLE.println(F("Time to scroll"));
-    scroll();
+    CONSOLE.println(F("Time to scroll"));
+    scrollDown();
   }
 }
 
@@ -88,6 +135,10 @@ EXScreen *EXDisplay::getEXScreen() { return _exScreen; }
 uint8_t EXDisplay::getScreenMaxRows() { return _exScreen->maxRows; }
 
 uint8_t EXDisplay::getScreenMaxColumns() { return _exScreen->maxColumns; }
+
+bool EXDisplay::needsRedraw() { return _needsRedraw; }
+
+void EXDisplay::resetRedraw() { _needsRedraw = false; }
 
 /*** probably not needed
  void EXDisplay::deleteRowNumber(uint8_t rowNumber) {
@@ -113,4 +164,56 @@ EXDisplay *EXDisplay::getDisplayByNumber(uint8_t displayNumber) {
     }
   }
   return nullptr;
+}
+
+EXDisplay *EXDisplay::getActiveDisplay() { return _activeDisplay; }
+
+void EXDisplay::setNextDisplay() {
+  if (!_activeDisplay) {
+    _activeDisplay = _first;
+    _activeDisplay->_needsRedraw = true;
+    return;
+  }
+  if (_activeDisplay->_next) {
+    _activeDisplay = _activeDisplay->_next;
+  } else {
+    _activeDisplay = _first;
+  }
+  _activeDisplay->_needsRedraw = true;
+}
+
+void EXDisplay::setPreviousDisplay() {
+  if (!_activeDisplay) {
+    _activeDisplay = _first;
+    _activeDisplay->_needsRedraw = true;
+    return;
+  }
+  for (EXDisplay *display = _activeDisplay; display; display = display->getNext()) {
+    if (display->getNext() == _activeDisplay) {
+      _activeDisplay = display;
+      _activeDisplay->_needsRedraw = true;
+      return;
+    }
+  }
+}
+
+void EXDisplay::autoSwitch(unsigned long switchDelay) {
+  if (millis() - EXDisplay::_lastSwitchTime > switchDelay) {
+    EXDisplay::_lastSwitchTime = millis();
+    CONSOLE.println(F("Time to switch"));
+    setNextDisplay();
+  }
+}
+
+void EXDisplay::redrawDisplay() {
+  if (_needsRedraw) {
+    _exScreen->clearScreen(BACKGROUND_COLOUR);
+  }
+  for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
+    if (row->needsRender() && (row->isChanged() || _needsRedraw)) {
+      _exScreen->writeRow(row->getDisplayRow(), 0, TEXT_COLOUR, BACKGROUND_COLOUR, row->getMaxRowLength(),
+                          row->getRowText());
+    }
+  }
+  _needsRedraw = false;
 }

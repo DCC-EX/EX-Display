@@ -8,8 +8,6 @@ bool debug = true;
 bool debug = false;
 #endif
 
-// EXDisplay *display0 = new EXDisplay(0, new MCUFriendScreen(8, 20), 30);
-
 // This function is called from AtFinder when a
 // <@ screenid row "text"> message is discovered.
 
@@ -41,19 +39,15 @@ void updateEXDisplayRow(uint8_t screenId, uint8_t screenRow, char *text) {
   }
 }
 
-void updateScreens() {
-  for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
-    auto *screen = display->getEXScreen();
+void updateScreen() {
+  EXDisplay *display = EXDisplay::getActiveDisplay();
 #ifdef SCROLLTIME
-    display->autoScroll(SCROLLTIME);
+  display->autoScroll(SCROLLTIME);
 #endif
-    for (EXDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
-      if (row->needsRender() && row->isChanged()) {
-        screen->writeRow(row->getDisplayRow(), 0, TEXT_COLOUR, BACKGROUND_COLOUR, row->getMaxRowLength(),
-                         row->getRowText());
-      }
-    }
-  }
+#ifdef DISPLAY_SWITCH_TIME
+  display->autoSwitch(DISPLAY_SWITCH_TIME);
+#endif
+  display->redrawDisplay();
 }
 
 void displayAllRows() {

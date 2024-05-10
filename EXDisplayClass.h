@@ -46,10 +46,13 @@ public:
   /// @param rowText Char array of text for the row
   void updateRow(uint8_t rowNumber, char *rowText);
 
-  /// @brief Scroll one row vertically
-  void scroll();
+  /// @brief Scroll up one row vertically
+  void scrollUp();
 
-  /// @brief Method to automatically update row positions for automatic vertical scrolling
+  /// @brief Scroll down one row vertically
+  void scrollDown();
+
+  /// @brief Call this method as often as possible to support timed vertical scrolling
   /// @param scrollDelay Time in milliseconds between vertical scrolling updates
   void autoScroll(unsigned long scrollDelay);
 
@@ -65,6 +68,13 @@ public:
   /// @return 0 - 255
   uint8_t getScreenMaxColumns();
 
+  /// @brief Check if this display needs to be redrawn
+  /// @return True|False
+  bool needsRedraw();
+
+  /// @brief Reset the needsRedraw flag
+  void resetRedraw();
+
   /// @brief Check if there is already a display created at the specified number
   /// @param displayNumber True|False
   /// @return
@@ -75,6 +85,24 @@ public:
   /// @return EXDisplay object, or nullptr if not exists
   static EXDisplay *getDisplayByNumber(uint8_t displayNumber);
 
+  /// @brief Get the currently selected display
+  /// @return Pointer to the currently selected display
+  static EXDisplay *getActiveDisplay();
+
+  /// @brief Switch active display to the next display in the linked list
+  static void setNextDisplay();
+
+  /// @brief Switch active display to the previous display in the linked list
+  static void setPreviousDisplay();
+
+  /// @brief Call this method as often as possible to support timed display switching
+  /// @param switchDelay Time in milliseconds before switching displays
+  static void autoSwitch(unsigned long switchDelay);
+
+  /// @brief Call this method as often as possible to ensure a physical screen is updated correctly
+  /// @param display Pointer to the EXDisplay object that needs to have it's physical screen updated
+  void redrawDisplay();
+
 private:
   // chaining displays
   static EXDisplay *_first;
@@ -83,11 +111,15 @@ private:
   uint8_t _displayNumber;
   EXDisplayRow *_firstRow;
   EXScreen *_exScreen;
+  uint8_t _maxRowNumber;
   // Screen management variables added here
-  uint8_t _maxScreenWidth;       // Maximum number of chars that can fit on the physical screen
-  uint8_t _numberOfRows;         // Calculated number of rows for this screen
-  uint8_t _scrollPosition;       // Row number that is top of screen for scrolling support
-  unsigned long _lastScrollTime; // Last time in milliseconds an auto scroll was done
+  uint8_t _maxScreenWidth;              // Maximum number of chars that can fit on the physical screen
+  uint8_t _numberOfRows;                // Calculated number of rows for this screen
+  uint8_t _scrollPosition;              // Row number that is top of screen for scrolling support
+  unsigned long _lastScrollTime;        // Last time in milliseconds an auto scroll was done
+  static unsigned long _lastSwitchTime; // Last time in milliseconds an auto switch was done
+  bool _needsRedraw;                    // Flag if this display needs to be redrawn
+  static EXDisplay *_activeDisplay;     // Pointer to the current active display
 };
 
 #endif

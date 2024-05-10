@@ -1,7 +1,7 @@
 #ifndef FONTOPTIONS_H
 #define FONTOPTIONS_H
 
-#if SCREEN_0_TYPE==MCU
+#if SCREEN_TYPE==MCU
 #include <Fonts/FreeMono9pt7b.h>
 #include <Fonts/FreeMono12pt7b.h>
 #include <Fonts/FreeMono18pt7b.h>

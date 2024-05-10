@@ -4,12 +4,17 @@
 // This is the configuration file for EX-Display
 // Entries here will control how the screen display will operate
 
-// Define the screen types in use here - this needs to be ultra simplified at some point
+// Define the pphysical screen types in use here - this needs to be ultra simplified at some point
 // Should we eventually support up to 3 displays?
-#define SCREEN_0_TYPE MCU
-// #define SCREEN_0_TYPE TFT
-// #define SCREEN_1_TYPE MCU
-// #define SCREEN_2_TYPE MCU
+// #define SCREEN_TYPE MCU
+#define SCREEN_TYPE TFT
+
+// Define the number of logical displays here
+// This is not a good way to do this
+#define NUMBER_OF_DISPLAYS 3
+#define DISPLAY_1_ID 0
+#define DISPLAY_2_ID 3
+#define DISPLAY_3_ID 8
 
 
 
@@ -52,6 +57,9 @@
 
 // if the touch screen not in use, Now define the scroll requirements
 #define SCROLLTIME 5000 // 5 seconds
+
+// If hosting multiple displays on the same screen, set switching delay
+#define DISPLAY_SWITCH_TIME 5000
 
 // And now define the maximum text length.
 #define MAX_LINE_LENGTH 30
