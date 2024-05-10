@@ -59,3 +59,8 @@ bool EXDisplayRow::needsRender() { return _needsRender; }
 EXDisplayRow *EXDisplayRow::getNext() { return _next; }
 
 void EXDisplayRow::setNext(EXDisplayRow *next) { _next = next; }
+
+void EXDisplayRow::setColours(uint16_t textColour, uint16_t backgroundColour) {
+  _textColour = textColour;
+  _backgroundColour = backgroundColour;
+}

@@ -55,6 +55,11 @@ public:
   /// @return Pointer to the next EXDisplayRow object in the linked list
   EXDisplayRow *getNext();
 
+  /// @brief Set the text/foreground and background colour for this row
+  /// @param textColour Hex value of the text/foreground colour
+  /// @param backgroundColour Hex value of the background colour
+  void setColours(uint16_t textColour, uint16_t backgroundColour);
+
 private:
   uint8_t _rowNumber;  // This is the row number received from the parser
   uint8_t _maxMalloc;  // This is the calculated maximum length of the text received from the parser
@@ -63,5 +68,7 @@ private:
   uint8_t _displayRow; // This is the calculated physical row on a display that this line belongs on
   bool _needsRender;   // Flag that is set when row belongs on a physical display, false when off-screen
   EXDisplayRow *_next;
+  uint16_t _textColour;       // Text/foreground colour for this row
+  uint16_t _backgroundColour; // Background colour for this row
 };
 #endif

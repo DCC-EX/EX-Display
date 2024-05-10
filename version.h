@@ -2,8 +2,10 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.5"
+#define VERSION "0.0.6"
 
+// 0.0.6 includes:
+//  - Add ability to set individual row colours via the parser
 // 0.0.5 includes:
 //  - Refactor screen and logical display to enable multiple displays to use the same screen
 //  - Enable timed switching between logical displays

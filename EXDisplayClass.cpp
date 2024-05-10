@@ -125,7 +125,6 @@ void EXDisplay::scrollDown() {
 void EXDisplay::autoScroll(unsigned long scrollDelay) {
   if (millis() - _lastScrollTime > scrollDelay) {
     _lastScrollTime = millis();
-    CONSOLE.println(F("Time to scroll"));
     scrollDown();
   }
 }
@@ -200,7 +199,6 @@ void EXDisplay::setPreviousDisplay() {
 void EXDisplay::autoSwitch(unsigned long switchDelay) {
   if (millis() - EXDisplay::_lastSwitchTime > switchDelay) {
     EXDisplay::_lastSwitchTime = millis();
-    CONSOLE.println(F("Time to switch"));
     setNextDisplay();
   }
 }
