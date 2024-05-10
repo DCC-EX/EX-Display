@@ -1,9 +1,6 @@
-
 #include "AtFinder.h"
 #include "Defines.h"
 #include "DisplayFunctions.h"
-#include "MCUFriendScreen.h"
-#include "TFT_eSPIScreen.h"
 #include "version.h"
 #include <Arduino.h>
 

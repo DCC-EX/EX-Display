@@ -1,11 +1,11 @@
 #ifndef EXDISPLAYCLASS_H
 #define EXDISPLAYCLASS_H
 
-#include <Arduino.h>
-
 #include "Defines.h"
 #include "EXDisplayRow.h"
 #include "EXScreen.h"
+#include <Arduino.h>
+
 
 /**
  * @brief Class for each display.

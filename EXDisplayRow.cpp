@@ -31,8 +31,6 @@ void EXDisplayRow::setRowText(char *rowText) {
     // the tail which we will probabaly need later anyway.
     _rowText = (char *)realloc(_rowText, bytesNeeded);
     _maxMalloc = bytesNeeded;
-    CONSOLE.print(F("maxMalloc: "));
-    CONSOLE.println(_maxMalloc);
   }
   strcpy(_rowText, rowText);
   _changed = true;

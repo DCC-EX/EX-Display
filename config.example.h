@@ -16,6 +16,8 @@
 #define DISPLAY_2_ID 3
 #define DISPLAY_3_ID 8
 
+
+
 // DO NOT REMOVE OR MOVE THIS LINE - MUST BE BEFORE FONT DEFINITION
 // Include the various fonts and font colours available for use with EX-Display
 #include "FontOptions.h"
@@ -27,6 +29,9 @@
 
 // If rotation of the screen is required, set it here
 #define SCREEN_ROTATION 1
+
+// Some screens need inverting. If your screen displays inverted colours uncomment the following line.
+//#define INVERT_SCREEN
 
 // First entries about the display you are using
 // as we display across the wider part of the screen iwdth is the larger dimension
