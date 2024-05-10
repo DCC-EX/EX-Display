@@ -8,8 +8,6 @@ bool debug = true;
 bool debug = false;
 #endif
 
-// EXDisplay *display0 = new EXDisplay(0, new MCUFriendScreen(8, 20), 30);
-
 // This function is called from AtFinder when a
 // <@ screenid row "text"> message is discovered.
 

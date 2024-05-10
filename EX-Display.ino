@@ -11,12 +11,6 @@ bool StartupPhase = true;
 unsigned long timestamp = 0;
 long screencount = 0;
 
-// Chris just doing this for manual testing on my mega... so I can debug down the serial monitor
-#if defined(ARDUINO_AVR_MEGA2560)
-#undef CS_LISTEN
-#define CS_LISTEN Serial
-#endif
-
 #if SCREEN_TYPE == MCU
 MCUFRIEND_kbv tft;
 MCUFriendScreen *screen = new MCUFriendScreen(tft);
@@ -37,9 +31,15 @@ void setup() {
   AtFinder::setup(100, updateEXDisplayRow);
 
   // Create display instances
+#if defined(DISPLAY_1_ID)
   new EXDisplay(DISPLAY_1_ID, screen, 30);
+#endif
+#if defined(DISPLAY_2_ID)
   new EXDisplay(DISPLAY_2_ID, screen, 30);
+#endif
+#if defined(DISPLAY_3_ID)
   new EXDisplay(DISPLAY_3_ID, screen, 30);
+#endif
 
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
     display->getEXScreen()->setupScreen(SCREEN_ROTATION, TEXT_FONT, BACKGROUND_COLOUR, TEXT_SIZE);
@@ -58,14 +58,6 @@ void setup() {
   delay(2000);
 
   activeDisplay->getEXScreen()->clearScreen(BACKGROUND_COLOUR);
-
-  // Setup the start screen.
-  // if (MAX_SCREENS > 1) {
-  // currentScreenID = INITIAL_SCREEN;
-  // }
-  // else {
-  //   currentScreenID = 0;
-  // }
 
   timestamp = millis();
   CONSOLE.println(F("End of Setup"));
@@ -92,47 +84,5 @@ void loop() {
   // DISABLE IN STARTUPPHASE
   else {
     updateScreen();
-    /* DISABLE SO IT WILL COMPILE
-        if (StartupPhase==false){
-            // add thie following in once display is working
-            // for (byte x= 0; x<MAX_SCREENS; x++){
-            //   if (ScreenChanged[x]) { setScreenRows(x); }
-            // }
-
-           SCREEN::CheckScreens();
-
-          // DISABLE TO START
-          #ifndef USE_TOUCH
-              //Check Page Time to see if we need to scroll
-              if((millis()-screencount) > SCROLLTIME) {
-
-                  if (currentScreenID >= MAX_SCREENS-1) {
-                  currentScreenID=0;
-                  }
-                  else {
-                  currentScreenID++;
-
-                  }
-                  screencount=millis();
-                  ScreenChanged[currentScreenID] = true;
-
-              }
-          #else
-              if (SCREEN::check_touch) {
-                  if (currentScreenID >= MAX_SCREENS-1) {
-                      currentScreenID=0;
-                  }
-                  else {
-                  currentScreenID++;
-
-                  }
-
-                  ScreenChanged[currentScreenID] = true;
-
-              }
-
-          #endif
-        }
-    */
   }
 }

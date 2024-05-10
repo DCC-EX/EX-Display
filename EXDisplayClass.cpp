@@ -76,17 +76,28 @@ void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
 }
 
 void EXDisplay::scrollUp() {
-  uint8_t screenRows = _exScreen->maxRows;
-  uint8_t newPosition = 0;
-  if (_numberOfRows <= screenRows) {
-    _scrollPosition = newPosition;
-  } else {
-    newPosition = _scrollPosition--;
-    if (newPosition >= _numberOfRows) {
-      newPosition = 0;
-    }
+  // Scroll up logic:
+  // _scrollPosition needs to decrement to bring lower rows up the screen
+  // If _scrollPosition ends at 0, it should become the highest possible row
+  uint8_t lastRow = _exScreen->maxRows - 1; // Highest possible row number on screen
+  if (_maxRowNumber <= lastRow) {           // If our max row number is on screen, no scroll required
+    return;
   }
-  _scrollPosition = newPosition;
+  if (_scrollPosition == 0) { // If row 0 is top of screen, need to move to the highest row number
+    _scrollPosition = _maxRowNumber;
+  } else { // 
+    _scrollPosition--;
+  }
+  for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
+    uint8_t newRow = row->getDisplayRow();
+    if (newRow == _maxRowNumber) { // If row at bottom, it becomes first row
+      newRow = 0;
+    } else { // Otherwise move down one row
+      newRow++;
+    }
+    row->setDisplayRow(newRow, _exScreen->maxRows);
+  }
+  _needsRedraw = true; // Need to redraw after each scroll
 }
 
 void EXDisplay::scrollDown() {
@@ -101,14 +112,14 @@ void EXDisplay::scrollDown() {
   }
   for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
     uint8_t newRow = row->getDisplayRow();
-    if (newRow == 0) {
+    if (newRow == 0) { // If row at top of screen, it becomes last row
       newRow = _maxRowNumber;
-    } else {
+    } else { // Otherwise move up one row
       newRow--;
     }
     row->setDisplayRow(newRow, _exScreen->maxRows);
   }
-  _needsRedraw = true;
+  _needsRedraw = true; // Need to redraw after each scroll
 }
 
 void EXDisplay::autoScroll(unsigned long scrollDelay) {
