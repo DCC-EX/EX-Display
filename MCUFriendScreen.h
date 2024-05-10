@@ -20,9 +20,6 @@ public:
   virtual void writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
                         char *message) override;
 
-  // virtual void writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
-  //                             uint8_t maxLength, char *message);
-
   uint8_t getCharacterWidth(const char *character);
 
 private:

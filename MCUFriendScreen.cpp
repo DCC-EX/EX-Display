@@ -56,8 +56,8 @@ void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour,
                                uint8_t maxLength, char *message) {
   CONSOLE.print(F("row:"));
   CONSOLE.println(row);
-  //uint16_t textRow = ((row+1) * fontHeight) + row;
-  uint16_t textRow = ((row+1) * fontHeight);
+  // uint16_t textRow = ((row+1) * fontHeight) + row;
+  uint16_t textRow = ((row + 1) * fontHeight);
   CONSOLE.print(F("textRow:"));
   CONSOLE.println(textRow);
   uint16_t width = fontWidth * maxLength;
@@ -68,30 +68,5 @@ void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour,
   _tft.setCursor(1, textRow);
   _tft.print(message);
 }
-
-// void MCUFriendScreen::writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
-//                                      uint8_t maxLength, char *message) {
-
-//   CONSOLE.print(F("Heading at column "));
-//   CONSOLE.print(column);
-//   // uint16_t textRow = ((row +1) * fontHeight) + fontHeight;
-//   _tft.setTextColor(fontColour, backgroundColour);
-//   _tft.setCursor(row, column);
-//   _tft.print(message);
-//   _tft.drawFastHLine(0, 30, _tft.width(), WHITE);
-// }
-
-/*
-void EXScreen::newPage(uint8_t screenId) {
-  // Method here to write new page to the display
-    CONSOLE.println("New Page");
-    tft.fillScreen(BLACK);
-    char header[25] = {""};
-    sprintf(header, "DCC-EX   SCREEN %d\n", screenId);
-    tft.setTextColor(YELLOW);
-    showmsgXY(1, 20, 1, header);
-    tft.drawFastHLine(0, 25, tft.width(), WHITE);
-    tft.setTextColor(WHITE);  // set this for all screen lines
-*/
 
 #endif

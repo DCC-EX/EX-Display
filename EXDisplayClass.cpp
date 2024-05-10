@@ -196,8 +196,13 @@ void EXDisplay::redrawDisplay() {
   }
   for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
     if (row->needsRender() && (row->isChanged() || _needsRedraw)) {
-      _exScreen->writeRow(row->getDisplayRow(), 0, row->getTextColour(), row->getBackgroundColour(),
-                          row->getMaxRowLength(), row->getRowText());
+      if (row->isLine()) {
+        _exScreen->writeLine(row->getDisplayRow(), 0, 5, _exScreen->maxColumns, row->getTextColour(),
+                             row->getBackgroundColour());
+      } else {
+        _exScreen->writeRow(row->getDisplayRow(), 0, row->getTextColour(), row->getBackgroundColour(),
+                            _exScreen->maxColumns, row->getRowText());
+      }
     }
   }
   _needsRedraw = false;

@@ -9,6 +9,14 @@
  *
  */
 class EXDisplayRow {
+
+  /// @brief Struct for row attributes, which allows for 8 in total
+  struct RowAttributes {
+    bool line : 1;
+    bool neverTicker : 1;
+    bool alwaysTicker : 1;
+  };
+
 public:
   /// @brief Constructor for the EXDisplayRow object
   /// @param rowNumber Row number on the display, 0 - 255
@@ -68,6 +76,14 @@ public:
   /// @return Colour code
   uint16_t getBackgroundColour();
 
+  /// @brief Set if this row is a line or not, if it is, will clear any text
+  /// @param line true|false
+  void setLine(bool line);
+
+  /// @brief Check if this row is a line
+  /// @return true|false
+  bool isLine();
+
 private:
   uint8_t _rowNumber;  // This is the row number received from the parser
   uint8_t _maxMalloc;  // This is the calculated maximum length of the text received from the parser
@@ -76,7 +92,8 @@ private:
   uint8_t _displayRow; // This is the calculated physical row on a display that this line belongs on
   bool _needsRender;   // Flag that is set when row belongs on a physical display, false when off-screen
   EXDisplayRow *_next;
-  uint16_t _textColour;       // Text/foreground colour for this row
-  uint16_t _backgroundColour; // Background colour for this row
+  uint16_t _textColour;                       // Text/foreground colour for this row
+  uint16_t _backgroundColour;                 // Background colour for this row
+  EXDisplayRow::RowAttributes _rowAttributes; // One bit per attribute to allow 8 total
 };
 #endif

@@ -33,12 +33,19 @@ void TFT_eSPIScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, 
   uint16_t textRow = (row * fontHeight) + row;
   uint16_t width = fontWidth * maxLength;
   _tft.setTextPadding(width);
-  CONSOLE.print(F("fontColour|backgroundColour: 0x"));
-  CONSOLE.print(fontColour, HEX);
-  CONSOLE.print(F("|0x"));
-  CONSOLE.println(backgroundColour, HEX);
   _tft.setTextColor(fontColour, backgroundColour);
   _tft.drawString(message, column, textRow);
+}
+
+void TFT_eSPIScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineWidth, uint8_t lineLength, uint16_t lineColour,
+                               uint16_t backgroundColour) {
+  // The line should be drawn in the middle of the row
+  // x1/y1 start of line, x2/y2 end of line
+  int32_t x1 = column;
+  int32_t y1 = (row * fontHeight) + row;
+  int32_t x2 = fontWidth * lineLength;
+  int32_t y2 = y1 + lineWidth;
+  _tft.drawLine(x1, y1, x2, y2, lineColour);
 }
 
 #endif

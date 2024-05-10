@@ -6,6 +6,7 @@
 
 // 0.0.6 includes:
 //  - Add ability to set individual row colours via the parser
+//  - Add ability to draw a horizontal line via the parser
 // 0.0.5 includes:
 //  - Refactor screen and logical display to enable multiple displays to use the same screen
 //  - Enable timed switching between logical displays

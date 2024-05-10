@@ -35,18 +35,24 @@ public:
   virtual void clearScreen(uint16_t backgroundColour);
 
   /// @brief Virtual function to implement to write a row of text to the physical screen
-  /// @param row
-  /// @param column
-  /// @param fontColour
-  /// @param backgroundColour
-  /// @param maxLength
-  /// @param message
+  /// @param row Row on screen, 0 - 255 (not pixels)
+  /// @param column Column on screen, 0 - 255 (not pixels)
+  /// @param fontColour Valid colour for the text
+  /// @param backgroundColour Valid colour for the background
+  /// @param maxLength Maximum number of columns (not pixels) that can fit on the screen
+  /// @param message Char array containing the text to display
   virtual void writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
                         char *message);
 
-  // virtual void writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t
-  // maxLength,
-  //                       char *message);
+  /// @brief Virtual function to implement to write a horizontal line on the specified row
+  /// @param row Row on screen, 0 - 255 (not pixels)
+  /// @param column Column to start the line, 0 - 255 (not pixels)
+  /// @param lineWidth Pixel width to make the line
+  /// @param lineLength Number of columns for the line (not pixels), 0 - 255
+  /// @param lineColour Valid colour for the line
+  /// @param backgroundColour Valid colour for the background
+  virtual void writeLine(uint8_t row, uint8_t column, uint8_t lineWidth, uint8_t lineLength, uint16_t lineColour,
+                         uint16_t backgroundColour);
 
   /// @brief Height of the font in use to determine row height
   uint8_t fontHeight;

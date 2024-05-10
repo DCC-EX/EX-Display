@@ -69,3 +69,13 @@ void EXDisplayRow::setRowColours(uint16_t textColour, uint16_t backgroundColour)
 uint16_t EXDisplayRow::getTextColour() { return _textColour; }
 
 uint16_t EXDisplayRow::getBackgroundColour() { return _backgroundColour; }
+
+void EXDisplayRow::setLine(bool line) {
+  _rowAttributes.line = line;
+  _changed = true;
+  if (line) {
+    _rowText = nullptr;
+  }
+}
+
+bool EXDisplayRow::isLine() { return _rowAttributes.line; }
