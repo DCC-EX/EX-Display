@@ -22,13 +22,38 @@ void displayAllRows();
 
 /// @brief Check if the provided message contains embedded colours
 /// @param message Message to check for format #0x0000#0x0000#
-/// @return True|False
+/// @return frue|false
 bool embeddedColours(const char *message);
 
 /// @brief Extract text/foreground and background colours
-/// @param message Message to extrat colours from
+/// @param message Message to extract colours from (see embeddedColours)
 /// @param textColour Integer for the text/foreground colour
 /// @param backgroundColour Integer for the background colour
 void extractColours(char *message, uint16_t *textColour, uint16_t *backgroundColour);
+
+/// @brief Check if the provided message contains embedded colours
+/// @param message Message to check for format @00000000@
+/// @return true|false
+bool embeddedAttributes(const char *message);
+
+/// @brief Extract attributes from the provided message
+/// @param message Message to extract attributes from (see embeddedAttritubes)
+/// @param attributes 8 bit integer for the attributes
+void extractAttributes(char *message, uint8_t *attributes);
+
+/// @brief Check if the line attribute (bit 1) is set in the provided message
+/// @param message Attribute message (see embeddedAttributes)
+/// @return true|false
+bool isLine(const char *message);
+
+/// @brief Check if the always ticker attribute (bit 2) is set in the provided message
+/// @param message Attribute message (see embeddedAttributes)
+/// @return true|false
+bool alwaysTicker(const char *message);
+
+/// @brief Check if the never ticker attribute (bit 3) is set in the provided message
+/// @param message Attribute message (see embeddedAttributes)
+/// @return true|false
+bool neverTicker(const char *message);
 
 #endif

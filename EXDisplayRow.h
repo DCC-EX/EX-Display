@@ -10,13 +10,6 @@
  */
 class EXDisplayRow {
 
-  /// @brief Struct for row attributes, which allows for 8 in total
-  struct RowAttributes {
-    bool line : 1;
-    bool neverTicker : 1;
-    bool alwaysTicker : 1;
-  };
-
 public:
   /// @brief Constructor for the EXDisplayRow object
   /// @param rowNumber Row number on the display, 0 - 255
@@ -66,7 +59,7 @@ public:
   /// @brief Set the text/foreground and background colour for this row
   /// @param textColour Hex value of the text/foreground colour
   /// @param backgroundColour Hex value of the background colour
-  void setRowColours(uint16_t textColour, uint16_t backgroundColour);
+  void setColours(uint16_t textColour, uint16_t backgroundColour);
 
   /// @brief Get the text/foreground colour for this row
   /// @return Colour code
@@ -76,11 +69,12 @@ public:
   /// @return Colour code
   uint16_t getBackgroundColour();
 
-  /// @brief Set if this row is a line or not, if it is, will clear any text
-  /// @param line true|false
-  void setLine(bool line);
+  /// @brief Set the state of the specified attribute
+  /// @param attribute EXDisplayRow::RowAttributes attribute to set
+  /// @param state true|false
+  void setAttributes(uint8_t attributes);
 
-  /// @brief Check if this row is a line
+  /// @brief Check if this row is a horizontal line
   /// @return true|false
   bool isLine();
 
@@ -92,8 +86,8 @@ private:
   uint8_t _displayRow; // This is the calculated physical row on a display that this line belongs on
   bool _needsRender;   // Flag that is set when row belongs on a physical display, false when off-screen
   EXDisplayRow *_next;
-  uint16_t _textColour;                       // Text/foreground colour for this row
-  uint16_t _backgroundColour;                 // Background colour for this row
-  EXDisplayRow::RowAttributes _rowAttributes; // One bit per attribute to allow 8 total
+  uint16_t _textColour;       // Text/foreground colour for this row
+  uint16_t _backgroundColour; // Background colour for this row
+  uint8_t _rowAttributes;     // One bit per attribute to allow 8 total
 };
 #endif

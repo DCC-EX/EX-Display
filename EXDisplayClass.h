@@ -6,7 +6,6 @@
 #include "EXScreen.h"
 #include <Arduino.h>
 
-
 /**
  * @brief Class for each display.
  * Each display is in a linked list, with associated rows in a linked list as an attribute of the EXDisplay object.
@@ -44,14 +43,19 @@ public:
   /// @brief Update text and ticker for the specified row number, will add if it doesn't exist
   /// @param rowNumber Row number to display text on, 0 - 255
   /// @param rowText Char array of text for the row
-  void updateRow(uint8_t rowNumber, char *rowText);
+  void updateRowText(uint8_t rowNumber, char *rowText);
 
   /// @brief Update text/foreground and background colours for the specified row
   /// @param rowNumber Row number for colours, 0 - 255
   /// @param textColour Any valid hex colour code
   /// @param backgroundColour Any valid hex colour code
   void updateRowColours(uint8_t rowNumber, uint16_t textColour, uint16_t backgroundColour);
-  
+
+  /// @brief Update attributes for the specified row
+  /// @param rowNumber Row number for the attribute, 0 - 255
+  /// @param attributes 8 bit integer for attribute states
+    void updateRowAttributes(uint8_t rowNumber, uint8_t attributes);
+
   /// @brief Scroll up one row vertically
   void scrollUp();
 
@@ -107,7 +111,7 @@ public:
 
   /// @brief Call this method as often as possible to ensure a physical screen is updated correctly
   /// @param display Pointer to the EXDisplay object that needs to have it's physical screen updated
-  void redrawDisplay();
+  void processDisplay();
 
 private:
   // chaining displays

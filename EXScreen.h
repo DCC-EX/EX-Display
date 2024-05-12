@@ -30,9 +30,14 @@ public:
   /// @param backgroundColour Fill the screen with this colour during setup
   virtual void setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour);
 
-  /// @brief Virtual function to implement
-  /// @param backgroundColour
+  /// @brief Virtual function to implement to clear the entire screen
+  /// @param backgroundColour Valid colour to set the entire screen to
   virtual void clearScreen(uint16_t backgroundColour);
+
+  /// @brief Virtual function to implement to clear the specified row
+  /// @param row Row number to clear, 0 - 255
+  /// @param backgroundColour Valid colour to set the row to
+  virtual void clearRow(uint8_t row, uint16_t backgroundColour);
 
   /// @brief Virtual function to implement to write a row of text to the physical screen
   /// @param row Row on screen, 0 - 255 (not pixels)
@@ -51,7 +56,7 @@ public:
   /// @param lineLength Number of columns for the line (not pixels), 0 - 255
   /// @param lineColour Valid colour for the line
   /// @param backgroundColour Valid colour for the background
-  virtual void writeLine(uint8_t row, uint8_t column, uint8_t lineWidth, uint8_t lineLength, uint16_t lineColour,
+  virtual void writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
                          uint16_t backgroundColour);
 
   /// @brief Height of the font in use to determine row height
