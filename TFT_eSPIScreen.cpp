@@ -29,22 +29,11 @@ void TFT_eSPIScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t ba
 void TFT_eSPIScreen::clearScreen(uint16_t backgroundColour) { _tft.fillScreen(backgroundColour); }
 
 void TFT_eSPIScreen::clearRow(uint8_t row, uint16_t backgroundColour) {
-  int32_t x = (row * fontHeight) + row;
-  int32_t y = 0;
+  int32_t x = 0;
+  int32_t y = (row * fontHeight) + row;
   int32_t w = fontWidth * maxColumns;
   int32_t h = fontHeight;
-  CONSOLE.print(F("clearRow x|y|w|h|colour: "));
-  CONSOLE.print(F("|"));
-  CONSOLE.print(x);
-  CONSOLE.print(F("|"));
-  CONSOLE.print(y);
-  CONSOLE.print(F("|"));
-  CONSOLE.print(w);
-  CONSOLE.print(F("|"));
-  CONSOLE.print(h);
-  CONSOLE.print(F("|0x"));
-  CONSOLE.println(backgroundColour, HEX);
-  _tft.drawRect(x, y, w, h, backgroundColour);
+  _tft.fillRect(x, y, w, h, backgroundColour);
 }
 
 void TFT_eSPIScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,

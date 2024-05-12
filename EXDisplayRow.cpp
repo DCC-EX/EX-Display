@@ -41,7 +41,7 @@ void EXDisplayRow::setRowText(char *rowText) {
 }
 
 char *EXDisplayRow::getRowText() {
-  _changed = false; // are you sure... every time?
+  _changed = false;
   return _rowText;
 }
 
@@ -76,8 +76,11 @@ uint16_t EXDisplayRow::getBackgroundColour() { return _backgroundColour; }
 
 void EXDisplayRow::setAttributes(uint8_t attributes) {
   _rowAttributes = attributes;
+  char blankText[1] = {'\0'};
   if (bitRead(_rowAttributes, 0)) {
-    _rowText = nullptr;
+    _rowText = blankText;
+  } else if (!bitRead(_rowAttributes, 0) && !_rowText) {
+    _rowText = blankText;
   }
   _changed = true;
 }
@@ -90,3 +93,5 @@ bool EXDisplayRow::isLine() {
     return false;
   }
 }
+
+uint8_t EXDisplayRow::getAttributes() { return _rowAttributes; }

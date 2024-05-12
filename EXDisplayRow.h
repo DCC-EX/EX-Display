@@ -78,6 +78,10 @@ public:
   /// @return true|false
   bool isLine();
 
+  /// @brief Get all current attributes for the row
+  /// @return 0 - 255
+  uint8_t getAttributes();
+
 private:
   uint8_t _rowNumber;  // This is the row number received from the parser
   uint8_t _maxMalloc;  // This is the calculated maximum length of the text received from the parser
