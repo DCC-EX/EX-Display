@@ -47,7 +47,7 @@ public:
   /// @param maxLength Maximum number of columns (not pixels) that can fit on the screen
   /// @param message Char array containing the text to display
   virtual void writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
-                        char *message);
+                        char *message, bool underlined);
 
   /// @brief Virtual function to implement to write a horizontal line on the specified row
   /// @param row Row on screen, 0 - 255 (not pixels)

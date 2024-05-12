@@ -37,12 +37,15 @@ void TFT_eSPIScreen::clearRow(uint8_t row, uint16_t backgroundColour) {
 }
 
 void TFT_eSPIScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
-                              uint8_t maxLength, char *message) {
+                              uint8_t maxLength, char *message, bool underlined) {
   uint16_t textRow = (row * fontHeight) + row;
   uint16_t width = fontWidth * maxLength;
   _tft.setTextPadding(width);
   _tft.setTextColor(fontColour, backgroundColour);
   _tft.drawString(message, column, textRow);
+  if (underlined) {
+    _tft.drawLine(column, textRow + fontHeight, width, textRow + fontHeight, fontColour);
+  }
 }
 
 void TFT_eSPIScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,

@@ -210,7 +210,7 @@ void EXDisplay::processDisplay() {
                              row->getBackgroundColour());
       } else {
         _exScreen->writeRow(row->getDisplayRow(), 0, row->getTextColour(), row->getBackgroundColour(),
-                            _exScreen->maxColumns, row->getRowText());
+                            _exScreen->maxColumns, row->getRowText(), row->isUnderlined());
       }
     }
   }

@@ -94,4 +94,12 @@ bool EXDisplayRow::isLine() {
   }
 }
 
+bool EXDisplayRow::isUnderlined() {
+  if (bitRead(_rowAttributes, 1)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 uint8_t EXDisplayRow::getAttributes() { return _rowAttributes; }

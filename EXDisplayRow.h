@@ -78,6 +78,10 @@ public:
   /// @return true|false
   bool isLine();
 
+  /// @brief Check if this row should be underlined
+  /// @return true|false
+  bool isUnderlined();
+
   /// @brief Get all current attributes for the row
   /// @return 0 - 255
   uint8_t getAttributes();
