@@ -8,17 +8,15 @@ MCUFriendScreen::MCUFriendScreen(MCUFRIEND_kbv &tft) : EXScreen(), _tft(tft) {}
 void MCUFriendScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) {
 
   const GFXfont *gfxFont = TEXT_FONT;
-  CONSOLE.print(F("DEBUG Font: first|last|yAdvance: "));
-  CONSOLE.print(gfxFont->first);
-  CONSOLE.print(F("|"));
-  CONSOLE.print(gfxFont->last);
-  CONSOLE.print(F("|"));
-  CONSOLE.println(gfxFont->yAdvance);
 
   uint16_t screenId = _tft.readID();
   CONSOLE.print("TFT ID: 0x");
   CONSOLE.println(screenId, HEX);
   if (screenId == 0xD3D3) {
+    screenId = 0x9486;
+  }
+  if (screenId == 0x0) {
+    CONSOLE.println(F("NO SCREEN DODGY FORCE TO 0x9486"));
     screenId = 0x9486;
   }
   _tft.begin(screenId);
@@ -33,6 +31,24 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t b
   fontWidth = getCharacterWidth("A");
   maxRows = _tft.height() / fontHeight;
   maxColumns = _tft.width() / fontWidth;
+  CONSOLE.println(F("\n~~ SETUP PARAMETERS ~~"));
+  CONSOLE.print(F("MCUFRIEND_kbv parameters: _tft.height()|_tft.width(): "));
+  CONSOLE.print(_tft.height());
+  CONSOLE.print(F("|"));
+  CONSOLE.println(_tft.width());
+  CONSOLE.print(F("config.h parameters DISPLAY_HEIGHT|DISPLAY_WIDTH: "));
+  CONSOLE.print(DISPLAY_HEIGHT);
+  CONSOLE.print(F("|"));
+  CONSOLE.println(DISPLAY_WIDTH);
+  CONSOLE.print(F("maxRows|maxColumns|fontHeight|fontWidth: "));
+  CONSOLE.print(maxRows);
+  CONSOLE.print(F("|"));
+  CONSOLE.print(maxColumns);
+  CONSOLE.print(F("|"));
+  CONSOLE.print(fontHeight);
+  CONSOLE.print(F("|"));
+  CONSOLE.println(fontWidth);
+  CONSOLE.println(F("~~ END SETUP PARAMETERS ~~\n"));
 }
 
 uint8_t MCUFriendScreen::getCharacterWidth(const char *character) {
@@ -64,6 +80,12 @@ void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour,
   if (underlined) {
     _tft.drawLine(column, textRow + fontHeight, width, textRow + fontHeight, fontColour);
   }
+  CONSOLE.println(F("\n~~ WRITE ROW PARAMETERS ~~"));
+  CONSOLE.print(F("textRow|width: "));
+  CONSOLE.print(textRow);
+  CONSOLE.print(F("|"));
+  CONSOLE.println(width);
+  CONSOLE.println(F("~~ END WRITE ROW PARAMETERS ~~\n"));
 }
 
 void MCUFriendScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
