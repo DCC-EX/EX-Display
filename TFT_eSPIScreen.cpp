@@ -28,13 +28,36 @@ void TFT_eSPIScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t ba
 
 void TFT_eSPIScreen::clearScreen(uint16_t backgroundColour) { _tft.fillScreen(backgroundColour); }
 
+void TFT_eSPIScreen::clearRow(uint8_t row, uint16_t backgroundColour) {
+  int32_t x = 0;
+  int32_t y = (row * fontHeight) + row;
+  int32_t w = fontWidth * maxColumns;
+  int32_t h = fontHeight;
+  _tft.fillRect(x, y, w, h, backgroundColour);
+}
+
 void TFT_eSPIScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
-                              uint8_t maxLength, char *message) {
+                              uint8_t maxLength, char *message, bool underlined) {
   uint16_t textRow = (row * fontHeight) + row;
   uint16_t width = fontWidth * maxLength;
   _tft.setTextPadding(width);
   _tft.setTextColor(fontColour, backgroundColour);
   _tft.drawString(message, column, textRow);
+  if (underlined) {
+    _tft.drawLine(column, textRow + fontHeight, width, textRow + fontHeight, fontColour);
+  }
+}
+
+void TFT_eSPIScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
+                               uint16_t backgroundColour) {
+  // Horizontal start/end
+  int32_t x1 = column;
+  int32_t x2 = fontWidth * lineLength;
+  // Vertical start - half way up the font height
+  int32_t y1 = (row * fontHeight) + row + (fontHeight / 2);
+  int32_t y2 = y1;
+  clearRow(row, backgroundColour);
+  _tft.drawLine(x1, y1, x2, y2, lineColour);
 }
 
 #endif

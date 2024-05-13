@@ -9,7 +9,16 @@
  *
  */
 class EXDisplayRow {
+
 public:
+  // Where does this really belong, and how can we use it to query and set attributes externally?
+  struct RowAttributes {
+    bool line : 1;
+    bool underline : 1;
+    bool alwaysTicker : 1;
+    bool neverTicker : 1;
+  };
+
   /// @brief Constructor for the EXDisplayRow object
   /// @param rowNumber Row number on the display, 0 - 255
   EXDisplayRow(uint8_t rowNumber);
@@ -55,6 +64,39 @@ public:
   /// @return Pointer to the next EXDisplayRow object in the linked list
   EXDisplayRow *getNext();
 
+  /// @brief Set the text/foreground and background colour for this row
+  /// @param textColour Hex value of the text/foreground colour
+  /// @param backgroundColour Hex value of the background colour
+  void setColours(uint16_t textColour, uint16_t backgroundColour);
+
+  /// @brief Get the text/foreground colour for this row
+  /// @return Colour code
+  uint16_t getTextColour();
+
+  /// @brief Get the background colour for this row
+  /// @return Colour code
+  uint16_t getBackgroundColour();
+
+  /// @brief Set the line attribute for this row
+  /// @param line true|false
+  void setLine(bool line);
+
+  /// @brief Check if this row is a horizontal line
+  /// @return true|false
+  bool isLine();
+
+  /// @brief Set the underline attribute for this row
+  /// @param underline true|false
+  void setUnderline(bool underline);
+
+  /// @brief Check if this row should be underlined
+  /// @return true|false
+  bool isUnderlined();
+
+  /// @brief Get all current attributes for the row
+  /// @return 0 - 255
+  uint8_t getAttributes();
+
 private:
   uint8_t _rowNumber;  // This is the row number received from the parser
   uint8_t _maxMalloc;  // This is the calculated maximum length of the text received from the parser
@@ -63,5 +105,8 @@ private:
   uint8_t _displayRow; // This is the calculated physical row on a display that this line belongs on
   bool _needsRender;   // Flag that is set when row belongs on a physical display, false when off-screen
   EXDisplayRow *_next;
+  uint16_t _textColour;       // Text/foreground colour for this row
+  uint16_t _backgroundColour; // Background colour for this row
+  byte _rowAttributes;     // One bit per attribute to allow 8 total
 };
 #endif

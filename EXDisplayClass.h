@@ -6,7 +6,6 @@
 #include "EXScreen.h"
 #include <Arduino.h>
 
-
 /**
  * @brief Class for each display.
  * Each display is in a linked list, with associated rows in a linked list as an attribute of the EXDisplay object.
@@ -44,7 +43,23 @@ public:
   /// @brief Update text and ticker for the specified row number, will add if it doesn't exist
   /// @param rowNumber Row number to display text on, 0 - 255
   /// @param rowText Char array of text for the row
-  void updateRow(uint8_t rowNumber, char *rowText);
+  void updateRowText(uint8_t rowNumber, char *rowText);
+
+  /// @brief Update text/foreground and background colours for the specified row
+  /// @param rowNumber Row number for colours, 0 - 255
+  /// @param textColour Any valid hex colour code
+  /// @param backgroundColour Any valid hex colour code
+  void updateRowColours(uint8_t rowNumber, uint16_t textColour, uint16_t backgroundColour);
+
+  /// @brief Update the line attribute for the specified row
+  /// @param rowNumber Row number to set to a line, 0 - 255
+  /// @param line true|false
+  void updateRowLine(uint8_t rowNumber, bool line);
+
+  /// @brief Update underline attribute for the specified row
+  /// @param rowNumber Row number to set underline for, 0 - 255
+  /// @param underline true|false
+  void updateRowUnderline(uint8_t rowNumber, bool underline);
 
   /// @brief Scroll up one row vertically
   void scrollUp();
@@ -101,7 +116,7 @@ public:
 
   /// @brief Call this method as often as possible to ensure a physical screen is updated correctly
   /// @param display Pointer to the EXDisplay object that needs to have it's physical screen updated
-  void redrawDisplay();
+  void processDisplay();
 
 private:
   // chaining displays
@@ -120,6 +135,12 @@ private:
   static unsigned long _lastSwitchTime; // Last time in milliseconds an auto switch was done
   bool _needsRedraw;                    // Flag if this display needs to be redrawn
   static EXDisplay *_activeDisplay;     // Pointer to the current active display
+  static uint8_t _displayCount;
+
+  /// @brief Private method to add a row
+  /// @param rowNumber 0 - 255
+  /// @return Pointer to the created EXDisplayRow object
+  EXDisplayRow *_addRow(uint8_t rowNumber);
 };
 
 #endif

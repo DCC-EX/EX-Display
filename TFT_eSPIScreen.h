@@ -17,8 +17,13 @@ public:
 
   virtual void clearScreen(uint16_t backgroundColour) override;
 
+  virtual void clearRow(uint8_t row, uint16_t backgroundColour) override;
+
   virtual void writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour, uint8_t maxLength,
-                        char *message) override;
+                        char *message, bool underlined) override;
+
+  virtual void writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
+                         uint16_t backgroundColour) override;
 
 private:
   TFT_eSPI &_tft;

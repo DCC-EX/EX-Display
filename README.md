@@ -10,6 +10,57 @@ In the context of this project, the term "screen" is used when referring to a ph
 
 The term "display" refers to a logical representation of a physical screen, enabling one physical screen to be used to dislay information from one or more EXRAIL defined screens.
 
+## Configuration
+
+Copy "config.example.h" to "config.h".
+
+The key parameters to set are...
+
+## Features and Usage
+
+As features are added they will be outlined here, with examples on how to use them.
+
+### Basic EXRAIL commands
+
+The basic EXRAIL command format is `SCREEN(screen, row, "Message")`.
+
+This example displays the text "This is row 0" on the first row of the first screen:
+
+`SCREEN(0, 0, "This is row 0")`
+
+### Setting Colours
+
+It is possible to set the text/foreground and background colours to any valid hex colour code when setting the colours using the "Message" field of the command.
+
+This is done by using the format `<@ screen row "#0x<textColour>#0x<backgroundColour>#">`. Note that the hex values must be in the format "0xdddd", where "d" represents a four digit colour code.
+
+This example displays the text "Yellow" on the first row of the first screen with yellow coloured text on a black background:
+
+```
+SCREEN(0, 0, "#0xFFE0#0x0000")
+SCREEN(0, 0, "Yellow")
+```
+
+### Horizontal Line
+
+`SCREEN(0, 0, "--")`
+
+### Underlined Text
+
+`SCREEN(0, 0, "_This is underlined_")`
+
+### Always Ticker This Row
+
+*Not implemented yet*
+
+`SCREEN(0, 0, "~~This will always ticker")`
+
+### Never Ticker This Row
+
+*Not implemented yet*
+
+`SCREEN(0, 0, "!~This will never ticker")`
+
 ## Serial Connections
 
 - MEGA: GND-GND and RX pin 19 on mega to serial tx pin on EX-CS

@@ -33,14 +33,6 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t b
   fontWidth = getCharacterWidth("A");
   maxRows = _tft.height() / fontHeight;
   maxColumns = _tft.width() / fontWidth;
-  CONSOLE.print(F("Setup done: fontHeight|fontWidth|tftHeight|tftWidth: "));
-  CONSOLE.print(fontHeight);
-  CONSOLE.print(F("|"));
-  CONSOLE.print(fontWidth);
-  CONSOLE.print(F("|"));
-  CONSOLE.print(_tft.height());
-  CONSOLE.print(F("|"));
-  CONSOLE.println(_tft.width());
 }
 
 uint8_t MCUFriendScreen::getCharacterWidth(const char *character) {
@@ -52,46 +44,38 @@ uint8_t MCUFriendScreen::getCharacterWidth(const char *character) {
 
 void MCUFriendScreen::clearScreen(uint16_t backgroundColour) { _tft.fillScreen(backgroundColour); }
 
-void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
-                               uint8_t maxLength, char *message) {
-  CONSOLE.print(F("row:"));
-  CONSOLE.println(row);
-  //uint16_t textRow = ((row+1) * fontHeight) + row;
-  uint16_t textRow = ((row+1) * fontHeight);
-  CONSOLE.print(F("textRow:"));
-  CONSOLE.println(textRow);
-  uint16_t width = fontWidth * maxLength;
-  uint16_t paddedColumn = column + width;
-  _tft.fillRect(1, ((textRow - fontHeight) + 10), DISPLAY_WIDTH, (fontHeight), backgroundColour);
-  _tft.setTextColor(fontColour, backgroundColour);
-  //_tft.setCursor(paddedColumn, textRow);
-  _tft.setCursor(1, textRow);
-  _tft.print(message);
+void MCUFriendScreen::clearRow(uint8_t row, uint16_t backgroundColour) {
+  uint16_t textRow = ((row + 1) * fontHeight);
+  int32_t x = 0;
+  int32_t y = ((textRow - fontHeight) + 10);
+  int32_t w = fontWidth * maxColumns;
+  int32_t h = fontHeight;
+  _tft.fillRect(x, y, w, h, backgroundColour);
 }
 
-// void MCUFriendScreen::writeHeaderRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
-//                                      uint8_t maxLength, char *message) {
+void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
+                               uint8_t maxLength, char *message, bool underlined) {
+  uint16_t textRow = ((row + 1) * fontHeight);
+  uint16_t width = fontWidth * maxLength;
+  _tft.fillRect(1, ((textRow - fontHeight) + 10), DISPLAY_WIDTH, (fontHeight), backgroundColour);
+  _tft.setTextColor(fontColour, backgroundColour);
+  _tft.setCursor(1, textRow);
+  _tft.print(message);
+  if (underlined) {
+    _tft.drawLine(column, textRow + fontHeight, width, textRow + fontHeight, fontColour);
+  }
+}
 
-//   CONSOLE.print(F("Heading at column "));
-//   CONSOLE.print(column);
-//   // uint16_t textRow = ((row +1) * fontHeight) + fontHeight;
-//   _tft.setTextColor(fontColour, backgroundColour);
-//   _tft.setCursor(row, column);
-//   _tft.print(message);
-//   _tft.drawFastHLine(0, 30, _tft.width(), WHITE);
-// }
-
-/*
-void EXScreen::newPage(uint8_t screenId) {
-  // Method here to write new page to the display
-    CONSOLE.println("New Page");
-    tft.fillScreen(BLACK);
-    char header[25] = {""};
-    sprintf(header, "DCC-EX   SCREEN %d\n", screenId);
-    tft.setTextColor(YELLOW);
-    showmsgXY(1, 20, 1, header);
-    tft.drawFastHLine(0, 25, tft.width(), WHITE);
-    tft.setTextColor(WHITE);  // set this for all screen lines
-*/
+void MCUFriendScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
+                                uint16_t backgroundColour) {
+  // Horizontal start/end
+  int32_t x1 = column;
+  int32_t x2 = fontWidth * lineLength;
+  // Vertical start - half way up the font height
+  int32_t y1 = (row * fontHeight) + row + (fontHeight / 2);
+  int32_t y2 = y1;
+  clearRow(row, backgroundColour);
+  _tft.drawLine(x1, y1, x2, y2, lineColour);
+}
 
 #endif

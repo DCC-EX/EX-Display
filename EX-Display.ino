@@ -51,8 +51,8 @@ void setup() {
   }
 
   EXDisplay *activeDisplay = EXDisplay::getActiveDisplay();
-  activeDisplay->getEXScreen()->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, "EX-Display");
-  activeDisplay->getEXScreen()->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, VERSION);
+  activeDisplay->getEXScreen()->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, "EX-Display", false);
+  activeDisplay->getEXScreen()->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, VERSION, false);
 
   delay(2000);
 

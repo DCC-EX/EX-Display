@@ -10,6 +10,7 @@ EXDisplayRow::EXDisplayRow(uint8_t rowNumber) {
   _rowText = nullptr;
   _changed = true;
   _needsRender = false;
+  _rowAttributes = 0;
 }
 
 uint8_t EXDisplayRow::getRowNumber() { return _rowNumber; }
@@ -33,11 +34,14 @@ void EXDisplayRow::setRowText(char *rowText) {
     _maxMalloc = bytesNeeded;
   }
   strcpy(_rowText, rowText);
+  if (isLine()) {
+    bitClear(_rowAttributes, 0);
+  }
   _changed = true;
 }
 
 char *EXDisplayRow::getRowText() {
-  _changed = false; // are you sure... every time?
+  _changed = false;
   return _rowText;
 }
 
@@ -59,3 +63,40 @@ bool EXDisplayRow::needsRender() { return _needsRender; }
 EXDisplayRow *EXDisplayRow::getNext() { return _next; }
 
 void EXDisplayRow::setNext(EXDisplayRow *next) { _next = next; }
+
+void EXDisplayRow::setColours(uint16_t textColour, uint16_t backgroundColour) {
+  _textColour = textColour;
+  _backgroundColour = backgroundColour;
+  _changed = true;
+}
+
+uint16_t EXDisplayRow::getTextColour() { return _textColour; }
+
+uint16_t EXDisplayRow::getBackgroundColour() { return _backgroundColour; }
+
+void EXDisplayRow::setLine(bool line) {
+  if (line) {
+    bitSet(_rowAttributes, 0);
+  } else {
+    bitClear(_rowAttributes, 0);
+  }
+  _changed = true;
+}
+
+bool EXDisplayRow::isLine() {
+  _changed = false;
+  return bitRead(_rowAttributes, 0);
+}
+
+void EXDisplayRow::setUnderline(bool underline) {
+  if (underline) {
+    bitSet(_rowAttributes, 1);
+  } else {
+    bitClear(_rowAttributes, 1);
+  }
+  _changed = true;
+}
+
+bool EXDisplayRow::isUnderlined() { return bitRead(_rowAttributes, 1); }
+
+uint8_t EXDisplayRow::getAttributes() { return _rowAttributes; }

@@ -13,7 +13,7 @@
 
 // Set default parameters if not set in config.h for some reason
 #ifndef TEXT_FONT
-#define TEXT_FONT ARIAL9PT7B
+#define TEXT_FONT MEDIUM
 #endif
 #ifndef TEXT_COLOUR
 #define TEXT_COLOUR WHITE

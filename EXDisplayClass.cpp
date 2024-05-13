@@ -9,6 +9,9 @@ EXDisplay *EXDisplay::_activeDisplay = nullptr;
 /// @brief Define initial last switch time as 0
 unsigned long EXDisplay::_lastSwitchTime = 0;
 
+/// @brief Count of displays
+uint8_t EXDisplay::_displayCount = 0;
+
 /*
  * EXDisplay class implementation
  */
@@ -25,6 +28,7 @@ EXDisplay::EXDisplay(uint8_t displayNumber, EXScreen *exScreen, uint8_t maxScree
   if (!_activeDisplay) {
     _activeDisplay = _first;
   }
+  _displayCount++;
 }
 
 EXDisplay *EXDisplay::getFirst() { return _first; }
@@ -44,35 +48,40 @@ EXDisplayRow *EXDisplay::getRowByNumber(uint8_t rowNumber) {
   return nullptr;
 }
 
-void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
+void EXDisplay::updateRowText(uint8_t rowNumber, char *rowText) {
   auto *row = getRowByNumber(rowNumber);
   if (!row) {
-    // create a new row and chain it in
-    row = new EXDisplayRow(rowNumber);
-    _numberOfRows++;
-
-    // find the row prior to the one we want to add
-    EXDisplayRow *previous = nullptr;
-    for (auto peek = _firstRow; peek; peek = peek->getNext()) {
-      if (peek->getRowNumber() > rowNumber)
-        break;
-      previous = peek;
-    }
-    if (previous) {
-      // chain after previous
-      row->setNext(previous->getNext());
-      previous->setNext(row);
-    } else {
-      // chain at start of list
-      row->setNext(_firstRow);
-      _firstRow = row;
-    }
-    if (rowNumber > _maxRowNumber) {
-      _maxRowNumber = rowNumber;
-    }
+    row = _addRow(rowNumber);
+    row->setDisplayRow(rowNumber, _exScreen->maxRows);
   }
   row->setRowText(rowText);
-  row->setDisplayRow(rowNumber, _exScreen->maxRows);
+}
+
+void EXDisplay::updateRowColours(uint8_t rowNumber, uint16_t textColour, uint16_t backgroundColour) {
+  auto *row = getRowByNumber(rowNumber);
+  if (!row) {
+    row = _addRow(rowNumber);
+    row->setDisplayRow(rowNumber, _exScreen->maxRows);
+  }
+  row->setColours(textColour, backgroundColour);
+}
+
+void EXDisplay::updateRowLine(uint8_t rowNumber, bool line) {
+  auto *row = getRowByNumber(rowNumber);
+  if (!row) {
+    row = _addRow(rowNumber);
+    row->setDisplayRow(rowNumber, _exScreen->maxRows);
+  }
+  row->setLine(line);
+}
+
+void EXDisplay::updateRowUnderline(uint8_t rowNumber, bool underline) {
+  auto *row = getRowByNumber(rowNumber);
+  if (!row) {
+    row = _addRow(rowNumber);
+    row->setDisplayRow(rowNumber, _exScreen->maxRows);
+  }
+  row->setUnderline(underline);
 }
 
 void EXDisplay::scrollUp() {
@@ -85,7 +94,7 @@ void EXDisplay::scrollUp() {
   }
   if (_scrollPosition == 0) { // If row 0 is top of screen, need to move to the highest row number
     _scrollPosition = _maxRowNumber;
-  } else { // 
+  } else { //
     _scrollPosition--;
   }
   for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
@@ -125,7 +134,6 @@ void EXDisplay::scrollDown() {
 void EXDisplay::autoScroll(unsigned long scrollDelay) {
   if (millis() - _lastScrollTime > scrollDelay) {
     _lastScrollTime = millis();
-    CONSOLE.println(F("Time to scroll"));
     scrollDown();
   }
 }
@@ -174,6 +182,9 @@ void EXDisplay::setNextDisplay() {
     _activeDisplay->_needsRedraw = true;
     return;
   }
+  if (_displayCount == 1) {
+    return;
+  }
   if (_activeDisplay->_next) {
     _activeDisplay = _activeDisplay->_next;
   } else {
@@ -188,6 +199,9 @@ void EXDisplay::setPreviousDisplay() {
     _activeDisplay->_needsRedraw = true;
     return;
   }
+  if (_displayCount == 1) {
+    return;
+  }
   for (EXDisplay *display = _activeDisplay; display; display = display->getNext()) {
     if (display->getNext() == _activeDisplay) {
       _activeDisplay = display;
@@ -200,20 +214,54 @@ void EXDisplay::setPreviousDisplay() {
 void EXDisplay::autoSwitch(unsigned long switchDelay) {
   if (millis() - EXDisplay::_lastSwitchTime > switchDelay) {
     EXDisplay::_lastSwitchTime = millis();
-    CONSOLE.println(F("Time to switch"));
     setNextDisplay();
   }
 }
 
-void EXDisplay::redrawDisplay() {
+void EXDisplay::processDisplay() {
   if (_needsRedraw) {
     _exScreen->clearScreen(BACKGROUND_COLOUR);
   }
   for (EXDisplayRow *row = _firstRow; row; row = row->getNext()) {
     if (row->needsRender() && (row->isChanged() || _needsRedraw)) {
-      _exScreen->writeRow(row->getDisplayRow(), 0, TEXT_COLOUR, BACKGROUND_COLOUR, row->getMaxRowLength(),
-                          row->getRowText());
+      if (row->isLine()) {
+        _exScreen->writeLine(row->getDisplayRow(), 0, _exScreen->maxColumns, row->getTextColour(),
+                             row->getBackgroundColour());
+      } else {
+        _exScreen->writeRow(row->getDisplayRow(), 0, row->getTextColour(), row->getBackgroundColour(),
+                            _exScreen->maxColumns, row->getRowText(), row->isUnderlined());
+      }
     }
   }
   _needsRedraw = false;
+}
+
+EXDisplayRow *EXDisplay::_addRow(uint8_t rowNumber) {
+  // create a new row and chain it in
+  EXDisplayRow *row = new EXDisplayRow(rowNumber);
+  _numberOfRows++;
+
+  // find the row prior to the one we want to add
+  EXDisplayRow *previous = nullptr;
+  for (auto peek = _firstRow; peek; peek = peek->getNext()) {
+    if (peek->getRowNumber() > rowNumber)
+      break;
+    previous = peek;
+  }
+  if (previous) {
+    // chain after previous
+    row->setNext(previous->getNext());
+    previous->setNext(row);
+  } else {
+    // chain at start of list
+    row->setNext(_firstRow);
+    _firstRow = row;
+  }
+  if (rowNumber > _maxRowNumber) {
+    _maxRowNumber = rowNumber;
+  }
+  char blank[1] = {'\0'};
+  row->setColours(TEXT_COLOUR, BACKGROUND_COLOUR);
+  row->setRowText(blank);
+  return row;
 }
