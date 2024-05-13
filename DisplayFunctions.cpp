@@ -31,6 +31,7 @@ void updateEXDisplayRow(uint8_t screenId, uint8_t screenRow, char *text) {
       display->updateRowAttributes(screenRow, attributes);
     } else {
       display->updateRowText(screenRow, text);
+      display->updateRowUnderline(screenRow, underline(text));
       CONSOLE.print(F("\nCallback activated for screen|row|text: "));
       CONSOLE.print(screenId);
       CONSOLE.print(F("|"));
@@ -161,4 +162,36 @@ void extractAttributes(char *message, uint8_t *attributes) {
   // Convert text colour
   char *endPointer;
   *attributes = (uint8_t)strtol(start + 1, &endPointer, 10);
+}
+
+bool underline(const char *message) {
+  // Check for leading and trailing "_"
+  if (message[0] != '_' || message[strlen(message) - 1] != '_') {
+    return false;
+  }
+  return true;
+}
+
+bool line(const char *message) {
+  // Check for exactly "--"
+  if (strlen(message) != 3 || (message[0] != '-' && message[strlen(message) - 1] != '-')) {
+    return false;
+  }
+  return true;
+}
+
+bool alwaysTicker(const char *message) {
+  // Check for leading "~~"
+  if (message[0] != '~' || message[1] != '~') {
+    return false;
+  }
+  return true;
+}
+
+bool neverTicker(const char *message) {
+  // Check for leading "~~"
+  if (message[0] != '!' || message[1] != '~') {
+    return false;
+  }
+  return true;
 }

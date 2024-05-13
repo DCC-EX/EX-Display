@@ -71,6 +71,15 @@ void EXDisplay::updateRowAttributes(uint8_t rowNumber, uint8_t attributes) {
   row->setAttributes(attributes);
 }
 
+void EXDisplay::updateRowUnderline(uint8_t rowNumber, bool underline) {
+  auto *row = getRowByNumber(rowNumber);
+  if (!row) {
+    row = _addRow(rowNumber);
+    row->setDisplayRow(rowNumber, _exScreen->maxRows);
+  }
+  // Set underline attribute here
+}
+
 void EXDisplay::scrollUp() {
   // Scroll up logic:
   // _scrollPosition needs to decrement to bring lower rows up the screen

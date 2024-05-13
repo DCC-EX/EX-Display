@@ -54,7 +54,12 @@ public:
   /// @brief Update attributes for the specified row
   /// @param rowNumber Row number for the attribute, 0 - 255
   /// @param attributes 8 bit integer for attribute states
-    void updateRowAttributes(uint8_t rowNumber, uint8_t attributes);
+  void updateRowAttributes(uint8_t rowNumber, uint8_t attributes);
+
+  /// @brief Update underline attribute for the specified row
+  /// @param rowNumber Row number to set underline for, 0 - 255
+  /// @param underline true|false
+  void updateRowUnderline(uint8_t rowNumber, bool underline);
 
   /// @brief Scroll up one row vertically
   void scrollUp();

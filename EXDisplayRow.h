@@ -11,6 +11,14 @@
 class EXDisplayRow {
 
 public:
+  // Where does this really belong, and how can we use it to query and set attributes externally?
+  struct RowAttributes {
+    bool line : 1;
+    bool underline : 1;
+    bool alwaysTicker : 1;
+    bool neverTicker : 1;
+  };
+
   /// @brief Constructor for the EXDisplayRow object
   /// @param rowNumber Row number on the display, 0 - 255
   EXDisplayRow(uint8_t rowNumber);

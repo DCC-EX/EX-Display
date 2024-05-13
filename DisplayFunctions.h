@@ -32,7 +32,7 @@ bool embeddedColours(const char *message);
 void extractColours(char *message, uint16_t *textColour, uint16_t *backgroundColour);
 
 /// @brief Check if the provided message contains embedded colours
-/// @param message Message to check for format @00000000@
+/// @param message Message to check for format #00000000#
 /// @return true|false
 bool embeddedAttributes(const char *message);
 
@@ -41,18 +41,23 @@ bool embeddedAttributes(const char *message);
 /// @param attributes 8 bit integer for the attributes
 void extractAttributes(char *message, uint8_t *attributes);
 
-/// @brief Check if the line attribute (bit 1) is set in the provided message
-/// @param message Attribute message (see embeddedAttributes)
+/// @brief Check if the provided message indicates it should be underlined
+/// @param message Message to check for leading and trailing "_"
 /// @return true|false
-bool isLine(const char *message);
+bool underline(const char *message);
 
-/// @brief Check if the always ticker attribute (bit 2) is set in the provided message
-/// @param message Attribute message (see embeddedAttributes)
+/// @brief Check if the provided message indicates it should be a horizontal line
+/// @param message Message to check for "--"
+/// @return true|false
+bool line(const char *message);
+
+/// @brief Check if this text should always ticker
+/// @param message Message to check for leading "~~"
 /// @return true|false
 bool alwaysTicker(const char *message);
 
-/// @brief Check if the never ticker attribute (bit 3) is set in the provided message
-/// @param message Attribute message (see embeddedAttributes)
+/// @brief Check if this text should never ticker
+/// @param message Message to check for leading "!~"
 /// @return true|false
 bool neverTicker(const char *message);
 
