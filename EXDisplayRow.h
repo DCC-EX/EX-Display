@@ -107,6 +107,6 @@ private:
   EXDisplayRow *_next;
   uint16_t _textColour;       // Text/foreground colour for this row
   uint16_t _backgroundColour; // Background colour for this row
-  byte _rowAttributes;     // One bit per attribute to allow 8 total
+  byte _rowAttributes;        // One bit per attribute to allow 8 total
 };
 #endif

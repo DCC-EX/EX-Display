@@ -16,8 +16,6 @@
 #define DISPLAY_2_ID 3
 #define DISPLAY_3_ID 8
 
-
-
 // DO NOT REMOVE OR MOVE THIS LINE - MUST BE BEFORE FONT DEFINITION
 // Include the various fonts and font colours available for use with EX-Display
 #include "FontOptions.h"
@@ -56,7 +54,7 @@
 // #define USE_TOUCH
 
 // if the touch screen not in use, Now define the scroll requirements
-#define SCROLLTIME 5000 // 5 seconds
+#define SCROLLTIME 1000 // 5 seconds
 
 // If hosting multiple displays on the same screen, set switching delay
 #define DISPLAY_SWITCH_TIME 5000

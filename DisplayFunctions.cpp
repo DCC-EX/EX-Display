@@ -77,7 +77,7 @@ bool embeddedColours(const char *message) {
     return false;
   }
   char *middle = strchr(start + 1, '#');
-  if (middle ==NULL) {
+  if (middle == NULL) {
     return false;
   }
   char *end = strchr(middle + 1, '#');

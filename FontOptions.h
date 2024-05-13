@@ -1,15 +1,16 @@
 #ifndef FONTOPTIONS_H
 #define FONTOPTIONS_H
 
-#if SCREEN_TYPE==MCU
-#include <Fonts/FreeMono9pt7b.h>
+#if SCREEN_TYPE == MCU
 #include <Fonts/FreeMono12pt7b.h>
 #include <Fonts/FreeMono18pt7b.h>
 #include <Fonts/FreeMono24pt7b.h>
-#include <Fonts/FreeSans9pt7b.h>
+#include <Fonts/FreeMono9pt7b.h>
 #include <Fonts/FreeSans12pt7b.h>
 #include <Fonts/FreeSans18pt7b.h>
 #include <Fonts/FreeSans24pt7b.h>
+#include <Fonts/FreeSans9pt7b.h>
+
 #endif
 
 /// @brief Macros for available colours

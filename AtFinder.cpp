@@ -1,7 +1,6 @@
 #include "AtFinder.h"
 #include <Arduino.h>
 
-
 /* This is a finite state automation (FSA) to recognize a dccex output message
 in the format <@ screenid screenrow "text">.
 
@@ -22,12 +21,11 @@ char *AtFinder::text = nullptr;
 // Set callback function that will be called when message detected.
 
 // Note: the code is safe if setup is not called before use because the
-// code can not reach the text handling or callback states. 
+// code can not reach the text handling or callback states.
 // If the sketch has no reference to the setup function at all,
 // then compiler constant propagation is smart enough to realise
 // that it can never reach the text handling states, and thus
 // the entire function has no effect and is eliminated from the link.
-
 
 void AtFinder::setup(uint8_t _maxTextLength, DISPLAY_CALLBACK _callback) {
   maxTextLength = _maxTextLength;
@@ -82,7 +80,7 @@ void AtFinder::processInputChar(char hot) {
     screenRow = 0;
     state = BUILD_ROW;
     [[fallthrough]]; // character will be reinterpreted
-  case BUILD_ROW:   // building screen row
+  case BUILD_ROW:    // building screen row
     if (hot == ' ') {
       state = SKIP_SPACES3;
       return;
