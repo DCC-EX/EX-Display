@@ -51,9 +51,13 @@ SCREEN(0, 0, "Yellow")
 
 ### Always Ticker This Row
 
+*Not implemented yet*
+
 `SCREEN(0, 0, "~~This will always ticker")`
 
 ### Never Ticker This Row
+
+*Not implemented yet*
 
 `SCREEN(0, 0, "!~This will never ticker")`
 

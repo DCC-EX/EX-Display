@@ -51,10 +51,10 @@ public:
   /// @param backgroundColour Any valid hex colour code
   void updateRowColours(uint8_t rowNumber, uint16_t textColour, uint16_t backgroundColour);
 
-  /// @brief Update attributes for the specified row
-  /// @param rowNumber Row number for the attribute, 0 - 255
-  /// @param attributes 8 bit integer for attribute states
-  void updateRowAttributes(uint8_t rowNumber, uint8_t attributes);
+  /// @brief Update the line attribute for the specified row
+  /// @param rowNumber Row number to set to a line, 0 - 255
+  /// @param line true|false
+  void updateRowLine(uint8_t rowNumber, bool line);
 
   /// @brief Update underline attribute for the specified row
   /// @param rowNumber Row number to set underline for, 0 - 255
@@ -135,6 +135,7 @@ private:
   static unsigned long _lastSwitchTime; // Last time in milliseconds an auto switch was done
   bool _needsRedraw;                    // Flag if this display needs to be redrawn
   static EXDisplay *_activeDisplay;     // Pointer to the current active display
+  static uint8_t _displayCount;
 
   /// @brief Private method to add a row
   /// @param rowNumber 0 - 255

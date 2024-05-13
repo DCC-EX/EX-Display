@@ -9,6 +9,9 @@ EXDisplay *EXDisplay::_activeDisplay = nullptr;
 /// @brief Define initial last switch time as 0
 unsigned long EXDisplay::_lastSwitchTime = 0;
 
+/// @brief Count of displays
+uint8_t EXDisplay::_displayCount = 0;
+
 /*
  * EXDisplay class implementation
  */
@@ -25,6 +28,7 @@ EXDisplay::EXDisplay(uint8_t displayNumber, EXScreen *exScreen, uint8_t maxScree
   if (!_activeDisplay) {
     _activeDisplay = _first;
   }
+  _displayCount++;
 }
 
 EXDisplay *EXDisplay::getFirst() { return _first; }
@@ -62,13 +66,13 @@ void EXDisplay::updateRowColours(uint8_t rowNumber, uint16_t textColour, uint16_
   row->setColours(textColour, backgroundColour);
 }
 
-void EXDisplay::updateRowAttributes(uint8_t rowNumber, uint8_t attributes) {
+void EXDisplay::updateRowLine(uint8_t rowNumber, bool line) {
   auto *row = getRowByNumber(rowNumber);
   if (!row) {
     row = _addRow(rowNumber);
     row->setDisplayRow(rowNumber, _exScreen->maxRows);
   }
-  row->setAttributes(attributes);
+  row->setLine(line);
 }
 
 void EXDisplay::updateRowUnderline(uint8_t rowNumber, bool underline) {
@@ -77,7 +81,7 @@ void EXDisplay::updateRowUnderline(uint8_t rowNumber, bool underline) {
     row = _addRow(rowNumber);
     row->setDisplayRow(rowNumber, _exScreen->maxRows);
   }
-  // Set underline attribute here
+  row->setUnderline(underline);
 }
 
 void EXDisplay::scrollUp() {
@@ -178,6 +182,9 @@ void EXDisplay::setNextDisplay() {
     _activeDisplay->_needsRedraw = true;
     return;
   }
+  if (_displayCount == 1) {
+    return;
+  }
   if (_activeDisplay->_next) {
     _activeDisplay = _activeDisplay->_next;
   } else {
@@ -190,6 +197,9 @@ void EXDisplay::setPreviousDisplay() {
   if (!_activeDisplay) {
     _activeDisplay = _first;
     _activeDisplay->_needsRedraw = true;
+    return;
+  }
+  if (_displayCount == 1) {
     return;
   }
   for (EXDisplay *display = _activeDisplay; display; display = display->getNext()) {
@@ -250,7 +260,8 @@ EXDisplayRow *EXDisplay::_addRow(uint8_t rowNumber) {
   if (rowNumber > _maxRowNumber) {
     _maxRowNumber = rowNumber;
   }
+  char blank[1] = {'\0'};
   row->setColours(TEXT_COLOUR, BACKGROUND_COLOUR);
-  row->setRowText("");
+  row->setRowText(blank);
   return row;
 }

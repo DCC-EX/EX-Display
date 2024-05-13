@@ -77,14 +77,17 @@ public:
   /// @return Colour code
   uint16_t getBackgroundColour();
 
-  /// @brief Set the state of the specified attribute
-  /// @param attribute EXDisplayRow::RowAttributes attribute to set
-  /// @param state true|false
-  void setAttributes(uint8_t attributes);
+  /// @brief Set the line attribute for this row
+  /// @param line true|false
+  void setLine(bool line);
 
   /// @brief Check if this row is a horizontal line
   /// @return true|false
   bool isLine();
+
+  /// @brief Set the underline attribute for this row
+  /// @param underline true|false
+  void setUnderline(bool underline);
 
   /// @brief Check if this row should be underlined
   /// @return true|false
@@ -104,6 +107,6 @@ private:
   EXDisplayRow *_next;
   uint16_t _textColour;       // Text/foreground colour for this row
   uint16_t _backgroundColour; // Background colour for this row
-  uint8_t _rowAttributes;     // One bit per attribute to allow 8 total
+  byte _rowAttributes;     // One bit per attribute to allow 8 total
 };
 #endif

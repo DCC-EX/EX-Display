@@ -74,32 +74,29 @@ uint16_t EXDisplayRow::getTextColour() { return _textColour; }
 
 uint16_t EXDisplayRow::getBackgroundColour() { return _backgroundColour; }
 
-void EXDisplayRow::setAttributes(uint8_t attributes) {
-  _rowAttributes = attributes;
-  char blankText[1] = {'\0'};
-  if (bitRead(_rowAttributes, 0)) {
-    _rowText = blankText;
-  } else if (!bitRead(_rowAttributes, 0) && !_rowText) {
-    _rowText = blankText;
+void EXDisplayRow::setLine(bool line) {
+  if (line) {
+    bitSet(_rowAttributes, 0);
+  } else {
+    bitClear(_rowAttributes, 0);
   }
   _changed = true;
 }
 
 bool EXDisplayRow::isLine() {
   _changed = false;
-  if (bitRead(_rowAttributes, 0)) {
-    return true;
-  } else {
-    return false;
-  }
+  return bitRead(_rowAttributes, 0);
 }
 
-bool EXDisplayRow::isUnderlined() {
-  if (bitRead(_rowAttributes, 1)) {
-    return true;
+void EXDisplayRow::setUnderline(bool underline) {
+  if (underline) {
+    bitSet(_rowAttributes, 1);
   } else {
-    return false;
+    bitClear(_rowAttributes, 1);
   }
+  _changed = true;
 }
+
+bool EXDisplayRow::isUnderlined() { return bitRead(_rowAttributes, 1); }
 
 uint8_t EXDisplayRow::getAttributes() { return _rowAttributes; }

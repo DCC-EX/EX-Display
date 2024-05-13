@@ -31,25 +31,15 @@ bool embeddedColours(const char *message);
 /// @param backgroundColour Integer for the background colour
 void extractColours(char *message, uint16_t *textColour, uint16_t *backgroundColour);
 
-/// @brief Check if the provided message contains embedded colours
-/// @param message Message to check for format #00000000#
-/// @return true|false
-bool embeddedAttributes(const char *message);
-
-/// @brief Extract attributes from the provided message
-/// @param message Message to extract attributes from (see embeddedAttritubes)
-/// @param attributes 8 bit integer for the attributes
-void extractAttributes(char *message, uint8_t *attributes);
-
 /// @brief Check if the provided message indicates it should be underlined
 /// @param message Message to check for leading and trailing "_"
 /// @return true|false
-bool underline(const char *message);
+bool isUnderline(const char *message);
 
 /// @brief Check if the provided message indicates it should be a horizontal line
 /// @param message Message to check for "--"
 /// @return true|false
-bool line(const char *message);
+bool isLine(const char *message);
 
 /// @brief Check if this text should always ticker
 /// @param message Message to check for leading "~~"

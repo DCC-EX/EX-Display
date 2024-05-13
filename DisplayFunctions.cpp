@@ -25,28 +25,12 @@ void updateEXDisplayRow(uint8_t screenId, uint8_t screenRow, char *text) {
       uint16_t backgroundColour;
       extractColours(text, &textColour, &backgroundColour);
       display->updateRowColours(screenRow, textColour, backgroundColour);
-    } else if (embeddedAttributes(text)) {
-      uint8_t attributes;
-      extractAttributes(text, &attributes);
-      display->updateRowAttributes(screenRow, attributes);
+    } else if (isLine(text)) {
+      display->updateRowLine(screenRow, isLine(text));
     } else {
       display->updateRowText(screenRow, text);
-      display->updateRowUnderline(screenRow, underline(text));
-      CONSOLE.print(F("\nCallback activated for screen|row|text: "));
-      CONSOLE.print(screenId);
-      CONSOLE.print(F("|"));
-      CONSOLE.print(screenRow);
-      CONSOLE.print(F("|"));
-      CONSOLE.println(text);
-      // Set a flag so the screen driver knows something has changed.
-      // ScreenChanged[screenId]=true;
-      // If this is the current screen we could call a row update line directly from here
-      // but do we know which screen row to use?
-      // PrintThisLine(screenId, screenRow, text)
+      display->updateRowUnderline(screenRow, isUnderline(text));
     }
-  } else {
-    CONSOLE.print("\nCallback ignored for screen ");
-    CONSOLE.println(screenId);
   }
 }
 
@@ -133,38 +117,7 @@ void extractColours(char *message, uint16_t *textColour, uint16_t *backgroundCol
   *backgroundColour = (uint16_t)strtol(start + 1, &endPointer, 16);
 }
 
-bool embeddedAttributes(const char *message) {
-  // Check for format #00000000#
-  if (message[0] != '#' || message[strlen(message) - 1] != '#') {
-    return false;
-  }
-  // Find the positions of the two '#' characters
-  char *start = strchr(message, '#');
-  if (start == NULL) {
-    return false;
-  }
-  char *end = strchr(start + 1, '#');
-  if (end == NULL) {
-    return false;
-  }
-  // Validate that each char is a 0 or 1 only
-  for (const char *p = message + 1; p < end; p++) {
-    if (!(p[0] >= '0' && p[0] <= '1')) {
-      return false;
-    }
-  }
-  return true;
-}
-
-void extractAttributes(char *message, uint8_t *attributes) {
-  // Find first @
-  char *start = strchr(message, '#');
-  // Convert text colour
-  char *endPointer;
-  *attributes = (uint8_t)strtol(start + 1, &endPointer, 10);
-}
-
-bool underline(const char *message) {
+bool isUnderline(const char *message) {
   // Check for leading and trailing "_"
   if (message[0] != '_' || message[strlen(message) - 1] != '_') {
     return false;
@@ -172,9 +125,9 @@ bool underline(const char *message) {
   return true;
 }
 
-bool line(const char *message) {
+bool isLine(const char *message) {
   // Check for exactly "--"
-  if (strlen(message) != 3 || (message[0] != '-' && message[strlen(message) - 1] != '-')) {
+  if (strlen(message) != 2 || message[0] != '-' || message[strlen(message) - 1] != '-') {
     return false;
   }
   return true;
@@ -189,7 +142,7 @@ bool alwaysTicker(const char *message) {
 }
 
 bool neverTicker(const char *message) {
-  // Check for leading "~~"
+  // Check for leading "!~"
   if (message[0] != '!' || message[1] != '~') {
     return false;
   }
