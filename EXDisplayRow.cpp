@@ -100,3 +100,13 @@ void EXDisplayRow::setUnderline(bool underline) {
 bool EXDisplayRow::isUnderlined() { return bitRead(_rowAttributes, 1); }
 
 uint8_t EXDisplayRow::getAttributes() { return _rowAttributes; }
+
+void EXDisplayRow::_rowFormatter(EXDisplayRow *row) {
+  /*
+  Need to check for all possible formatting codes here
+  When formatting codes discovered:
+  - Apply attributes to _rowAttributes as required
+  - Copy _rowText to a temp char
+  - Use strncpy to copy only the text from temp back to _rowText (drop format codes)
+  */
+}

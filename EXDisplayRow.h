@@ -108,5 +108,9 @@ private:
   uint16_t _textColour;       // Text/foreground colour for this row
   uint16_t _backgroundColour; // Background colour for this row
   byte _rowAttributes;        // One bit per attribute to allow 8 total
+
+  /// @brief Private method to format the row attributes for the specified row
+  /// @param row Pointer to an EXDisplayRow object
+  static void _rowFormatter(EXDisplayRow *row);
 };
 #endif
