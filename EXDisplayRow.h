@@ -77,17 +77,9 @@ public:
   /// @return Colour code
   uint16_t getBackgroundColour();
 
-  /// @brief Set the line attribute for this row
-  /// @param line true|false
-  void setLine(bool line);
-
   /// @brief Check if this row is a horizontal line
   /// @return true|false
   bool isLine();
-
-  /// @brief Set the underline attribute for this row
-  /// @param underline true|false
-  void setUnderline(bool underline);
 
   /// @brief Check if this row should be underlined
   /// @return true|false
@@ -111,6 +103,43 @@ private:
 
   /// @brief Private method to format the row attributes for the specified row
   /// @param row Pointer to an EXDisplayRow object
-  static void _rowFormatter(EXDisplayRow *row);
+  static void _rowFormatter(EXDisplayRow *row, char *rowText);
+
+  /// @brief Check for "#0xdddd#0xdddd#"
+  /// @param text Char array to check
+  /// @return true|false
+  static bool _isEmbeddedColours(const char *text);
+
+  /// @brief Extract colour codes from text
+  /// @param text Char array containing codes (see _isEmbeddedColours)
+  void _extractColours(const char *text);
+
+  /// @brief Set the line attribute for this row
+  /// @param line true|false
+  void _setLine();
+  
+  /// @brief Check for "--"
+  /// @param text Char array to check
+  /// @return true|false
+  static bool _isLine(const char *text);
+
+  /// @brief Set the underline attribute for this row
+  /// @param underline true|false
+  void _setUnderline();
+
+  /// @brief Check for "_Underlined text_"
+  /// @param text Char array to check
+  /// @return true|false
+  static bool _isUnderline(const char *text);
+
+  /// @brief Check for "~~Always ticker this text"
+  /// @param text Char array to check
+  /// @return true|false
+  static bool _alwaysTicker(const char *text);
+
+  /// @brief Check for "!~Never ticker this text"
+  /// @param text Char array to check
+  /// @return true|false
+  static bool _neverTicker(const char *text);
 };
 #endif

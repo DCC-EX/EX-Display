@@ -48,40 +48,13 @@ EXDisplayRow *EXDisplay::getRowByNumber(uint8_t rowNumber) {
   return nullptr;
 }
 
-void EXDisplay::updateRowText(uint8_t rowNumber, char *rowText) {
+void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
   auto *row = getRowByNumber(rowNumber);
   if (!row) {
-    row = _addRow(rowNumber);
-    row->setDisplayRow(rowNumber, _exScreen->maxRows);
+    row = _addRow(rowNumber, rowText);
+  } else {
+    row->setRowText(rowText);
   }
-  row->setRowText(rowText);
-}
-
-void EXDisplay::updateRowColours(uint8_t rowNumber, uint16_t textColour, uint16_t backgroundColour) {
-  auto *row = getRowByNumber(rowNumber);
-  if (!row) {
-    row = _addRow(rowNumber);
-    row->setDisplayRow(rowNumber, _exScreen->maxRows);
-  }
-  row->setColours(textColour, backgroundColour);
-}
-
-void EXDisplay::updateRowLine(uint8_t rowNumber, bool line) {
-  auto *row = getRowByNumber(rowNumber);
-  if (!row) {
-    row = _addRow(rowNumber);
-    row->setDisplayRow(rowNumber, _exScreen->maxRows);
-  }
-  row->setLine(line);
-}
-
-void EXDisplay::updateRowUnderline(uint8_t rowNumber, bool underline) {
-  auto *row = getRowByNumber(rowNumber);
-  if (!row) {
-    row = _addRow(rowNumber);
-    row->setDisplayRow(rowNumber, _exScreen->maxRows);
-  }
-  row->setUnderline(underline);
 }
 
 void EXDisplay::scrollUp() {
@@ -236,7 +209,7 @@ void EXDisplay::processDisplay() {
   _needsRedraw = false;
 }
 
-EXDisplayRow *EXDisplay::_addRow(uint8_t rowNumber) {
+EXDisplayRow *EXDisplay::_addRow(uint8_t rowNumber, char *rowText) {
   // create a new row and chain it in
   EXDisplayRow *row = new EXDisplayRow(rowNumber);
   _numberOfRows++;
@@ -260,8 +233,8 @@ EXDisplayRow *EXDisplay::_addRow(uint8_t rowNumber) {
   if (rowNumber > _maxRowNumber) {
     _maxRowNumber = rowNumber;
   }
-  char blank[1] = {'\0'};
   row->setColours(TEXT_COLOUR, BACKGROUND_COLOUR);
-  row->setRowText(blank);
+  row->setRowText(rowText);
+  row->setDisplayRow(rowNumber, _exScreen->maxRows);
   return row;
 }
