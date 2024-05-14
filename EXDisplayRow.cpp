@@ -108,5 +108,7 @@ void EXDisplayRow::_rowFormatter(EXDisplayRow *row) {
   - Apply attributes to _rowAttributes as required
   - Copy _rowText to a temp char
   - Use strncpy to copy only the text from temp back to _rowText (drop format codes)
+  - Delete temp char
+  - Need to add a formatter for DELETING a row, which must delete from linked list + _rowText
   */
 }
