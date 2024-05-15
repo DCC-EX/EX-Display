@@ -9,6 +9,12 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t b
 
   const GFXfont *gfxFont = TEXT_FONT;
 
+  #ifdef USE_TOUCH
+     _buttonPressed = 0;
+     _debounceDelay = 75;       //  the debounce time; increase if the output flickers
+  #endif
+ 
+
   uint16_t screenId = _tft.readID();
   CONSOLE.print("TFT ID: 0x");
   CONSOLE.println(screenId, HEX);
@@ -101,4 +107,51 @@ void MCUFriendScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength,
   _tft.drawLine(x1, y1, x2, y2, lineColour);
 }
 
+#ifdef USE_TOUCH
+void MCUFriendScreen::defineButtons() {
+
+    _key[0].initButton(&tft,  1, 1, _tft.width()/4, _tft.height(), WHITE, GREEN, WHITE, "Left", 1);
+    
+    _key[1].initButton(&tft,  (_tft.width()/4)*3, 1, _tft.width()/4, _tft.height(), WHITE, RED, WHITE, "Right", 1);
+    
+    _key[2].initButton(&tft,  _tft.width()/4, 1, _tft.width()/2, (_tft.height()/2)-20, WHITE, CYAN, BLACK, "Up", 1);
+    
+    _key[3].initButton(&tft,  _tft.width()/4, (_tft.height()/4)+20, _tft.width()/2, (_tft.width()/4)*3, WHITE, CYAN, BLACK, "Down", 1);
+    
+    _key[4].initButton(&tft,  _tft.width()/4, (_tft.height()/2)-20, _tft.width()/2, 40, WHITE, CYAN, BLACK, "Setup", 21);
+    
+}
+
+bool MCUFriendScreen::Touch_getXY(void) {
+    TSPoint p = ts::getPoint();
+    pinMode(YP, OUTPUT);      //restore shared pins
+    pinMode(XM, OUTPUT);
+    digitalWrite(YP, HIGH);   //because TFT control pins
+    digitalWrite(XM, HIGH);
+    bool pressed = (p.z > MINPRESSURE && p.z < MAXPRESSURE);
+    if (pressed) {
+        _pixel_x = map(p.x, TS_LEFT, TS_RT, 0, _tft.width()); //.kbv makes sense to me
+        _pixel_y = map(p.y, TS_TOP, TS_BOT, 0, _tft.height());
+    }
+    return pressed; 
+
+}  
+void MCUFriendScreen::CheckButtons() {
+
+    bool down =  MCUFriendScreen::Touch_getXY();
+
+    for (uint8_t b = 0; b < 5; b++){
+      _key[b].press(down && _key[b].contains(_pixel_x, _pixel_y));
+      if (_key[b].justReleased())
+          _key[b].drawButton();
+      if (_key[b].justPressed()) {
+          _key[b].drawButton(true);
+          _buttonPressed = b + 1;
+          delay(_debounceDelay);
+      }
+    }
+  
+}
+
+#endif
 #endif
