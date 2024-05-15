@@ -166,18 +166,21 @@ void EXDisplayRow::_extractColours(const char *text) {
   start = strchr(start + 1, '#');
   // Convert background colour
   _backgroundColour = (uint16_t)strtol(start + 1, &endPointer, 16);
-  char blank[1] = {'\0'};
-  char *temp = _rowText;
-  _rowText = blank;
-  delete(temp);
+  // char blank[1] = {'\0'};
+  // if (_rowText != nullptr) {
+  //   delete _rowText;
+  // }
+  // _rowText = blank;
 }
 
 void EXDisplayRow::_setLine() {
   bitSet(_rowAttributes, 0);
-  char blank[1] = {'\0'};
-  char *temp = _rowText;
-  _rowText = blank;
-  delete(temp);
+  // char blank[1] = {'\0'};
+  // char *temp = _rowText;
+  // _rowText = blank;
+  // if (temp) {
+  //   delete temp;
+  // }
   _changed = true;
 }
 

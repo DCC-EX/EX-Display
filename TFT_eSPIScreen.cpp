@@ -1,7 +1,7 @@
 #include "Defines.h"
 #ifdef NEEDS_TFT
 
-#include <TFT_eSPIScreen.h>
+#include "TFT_eSPIScreen.h"
 
 TFT_eSPIScreen::TFT_eSPIScreen(TFT_eSPI &tft) : EXScreen(), _tft(tft) {}
 
