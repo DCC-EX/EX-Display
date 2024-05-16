@@ -10,7 +10,7 @@ EXDisplayRow::EXDisplayRow(uint8_t rowNumber) {
   _rowText = nullptr;
   _changed = true;
   _needsRender = false;
-  _rowAttributes = 0;
+  _rowAttributes = {false, false, false, false};
 }
 
 uint8_t EXDisplayRow::getRowNumber() { return _rowNumber; }
@@ -20,6 +20,7 @@ uint8_t EXDisplayRow::getMaxRowLength() { return _maxMalloc; }
 void EXDisplayRow::setRowText(char *rowText) {
   // Note size limit is 254 chars but that is beyond
   // the capability of the caller anyway.
+
   // Ignore change if text the same...
   if (_rowText && strcmp(_rowText, rowText) == 0)
     return;
@@ -34,9 +35,10 @@ void EXDisplayRow::setRowText(char *rowText) {
     _maxMalloc = bytesNeeded;
   }
   strcpy(_rowText, rowText);
-  if (isLine()) {
-    bitClear(_rowAttributes, 0);
-  }
+
+  // Now we have our new text, check for formatters
+  _rowFormatter();
+
   _changed = true;
 }
 
@@ -74,41 +76,131 @@ uint16_t EXDisplayRow::getTextColour() { return _textColour; }
 
 uint16_t EXDisplayRow::getBackgroundColour() { return _backgroundColour; }
 
-void EXDisplayRow::setLine(bool line) {
-  if (line) {
-    bitSet(_rowAttributes, 0);
-  } else {
-    bitClear(_rowAttributes, 0);
-  }
-  _changed = true;
-}
-
 bool EXDisplayRow::isLine() {
   _changed = false;
-  return bitRead(_rowAttributes, 0);
+  return _rowAttributes.line;
 }
 
-void EXDisplayRow::setUnderline(bool underline) {
-  if (underline) {
-    bitSet(_rowAttributes, 1);
-  } else {
-    bitClear(_rowAttributes, 1);
-  }
-  _changed = true;
-}
+bool EXDisplayRow::isUnderlined() { return _rowAttributes.underline; }
 
-bool EXDisplayRow::isUnderlined() { return bitRead(_rowAttributes, 1); }
+EXDisplayRow::~EXDisplayRow() { free(_rowText); }
 
-uint8_t EXDisplayRow::getAttributes() { return _rowAttributes; }
-
-void EXDisplayRow::_rowFormatter(EXDisplayRow *row) {
+void EXDisplayRow::_rowFormatter() {
   /*
   Need to check for all possible formatting codes here
   When formatting codes discovered:
   - Apply attributes to _rowAttributes as required
-  - Copy _rowText to a temp char
-  - Use strncpy to copy only the text from temp back to _rowText (drop format codes)
-  - Delete temp char
-  - Need to add a formatter for DELETING a row, which must delete from linked list + _rowText
+    - Embedded colours: "#0xdddd#0xdddd#Coloured text"
+    - Row underlined: "_This text is underlined_"
+    - Row is a horizontal line: "--"
+    - Row always tickers: "~~Text to ticker"
+    - Row never tickers: "!~Never ticker text"
   */
+  _setColours();
+  _setLine();
+  _setUnderline();
+  _alwaysTicker();
+  _neverTicker();
+}
+
+void EXDisplayRow::_setColours() {
+  // Check for format #0xdddd#0xdddd#
+  if (_rowText[0] != '#' || _rowText[7] != '#' || _rowText[14] != '#') {
+    return;
+  }
+  // Find the positions of the three '#' characters
+  char *start = strchr(_rowText, '#');
+  if (start == NULL) {
+    return;
+  }
+  char *middle = strchr(start + 1, '#');
+  if (middle == NULL) {
+    return;
+  }
+  char *end = strchr(middle + 1, '#');
+  if (end == NULL) {
+    return;
+  }
+  // Check if the hexadecimal values are of the correct length (4 characters)
+  if (end - middle - 1 != 6 || middle - start - 1 != 6) {
+    return;
+  }
+  // Check if the characters between the '#' are valid hexadecimal digits
+  if (_rowText[1] != '0' || _rowText[2] != 'x' || middle[1] != '0' || middle[2] != 'x') {
+    return;
+  }
+  for (const char *p = _rowText + 3; p < middle; p++) {
+    if (!((p[0] >= '0' && p[0] <= '9') || (p[0] >= 'A' && p[0] <= 'F'))) {
+      return;
+    }
+  }
+  for (const char *p = middle + 3; p < end; p++) {
+    if (!((p[0] >= '0' && p[0] <= '9') || (p[0] >= 'A' && p[0] <= 'F'))) {
+      return;
+    }
+  }
+  // Find first #
+  start = strchr(_rowText, '#');
+  // Convert text colour
+  char *endPointer;
+  _textColour = (uint16_t)strtol(start + 1, &endPointer, 16);
+  // Find next #
+  start = strchr(start + 1, '#');
+  // Convert background colour
+  _backgroundColour = (uint16_t)strtol(start + 1, &endPointer, 16);
+  _removeFormatters(15);
+}
+
+void EXDisplayRow::_setLine() {
+  if (strlen(_rowText) != 2 || _rowText[0] != '-' || _rowText[strlen(_rowText) - 1] != '-') {
+    _rowAttributes.line = false;
+    return;
+  }
+  _rowAttributes.line = true;
+  _removeFormatters(2);
+}
+
+void EXDisplayRow::_setUnderline() {
+  if (_rowText[0] != '_' || _rowText[1] != '_') {
+    if (_rowAttributes.underline) {
+      _rowAttributes.underline = false;
+    }
+    return;
+  }
+  _rowAttributes.underline = true;
+  _removeFormatters(2);
+}
+
+void EXDisplayRow::_alwaysTicker() {
+  // Check for leading "~~"
+  if (_rowText[0] != '~' || _rowText[1] != '~') {
+    _rowAttributes.alwaysTicker = false;
+    return;
+  }
+  _rowAttributes.alwaysTicker = true;
+  return;
+}
+
+void EXDisplayRow::_neverTicker() {
+  // Check for leading "!~"
+  if (_rowText[0] != '!' || _rowText[1] != '~') {
+    _rowAttributes.neverTicker = false;
+    return;
+  }
+  _rowAttributes.neverTicker = true;
+  return;
+}
+
+void EXDisplayRow::_removeFormatters(uint8_t size) {
+  // New length for "text" needs to be length - formatters (size) + null pointer (1)
+  uint8_t textLength = strlen(_rowText) - size + 1;
+  // Set our temp char array to what we already have defined as our max size
+  char *temp = (char *)malloc(_maxMalloc);
+  // Copy the text minus formatters to temp and null terminate
+  strncpy(temp, _rowText + size, textLength);
+  temp[textLength] = '\0';
+  // Free the no longer required _rowText memory
+  free(_rowText);
+  // Temp is now _rowText
+  _rowText = temp;
 }

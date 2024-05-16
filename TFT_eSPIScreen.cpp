@@ -1,7 +1,7 @@
 #include "Defines.h"
 #ifdef NEEDS_TFT
 
-#include <TFT_eSPIScreen.h>
+#include "TFT_eSPIScreen.h"
 
 TFT_eSPIScreen::TFT_eSPIScreen(TFT_eSPI &tft) : EXScreen(), _tft(tft) {}
 
@@ -42,10 +42,12 @@ void TFT_eSPIScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, 
   uint16_t width = fontWidth * maxLength;
   _tft.setTextPadding(width);
   _tft.setTextColor(fontColour, backgroundColour);
-  _tft.drawString(message, column, textRow);
   if (underlined) {
     _tft.drawLine(column, textRow + fontHeight, width, textRow + fontHeight, fontColour);
+  } else {
+    _tft.drawLine(column, textRow + fontHeight, width, textRow + fontHeight, backgroundColour);
   }
+  _tft.drawString(message, column, textRow);
 }
 
 void TFT_eSPIScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,

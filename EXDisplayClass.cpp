@@ -48,40 +48,17 @@ EXDisplayRow *EXDisplay::getRowByNumber(uint8_t rowNumber) {
   return nullptr;
 }
 
-void EXDisplay::updateRowText(uint8_t rowNumber, char *rowText) {
+void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
   auto *row = getRowByNumber(rowNumber);
-  if (!row) {
-    row = _addRow(rowNumber);
-    row->setDisplayRow(rowNumber, _exScreen->maxRows);
+  if (row && strlen(rowText) == 0) {
+    _deleteRow(row);
+  } else if (!row && strlen(rowText) == 0) {
+    return;
+  } else if (!row) {
+    row = _addRow(rowNumber, rowText);
+  } else {
+    row->setRowText(rowText);
   }
-  row->setRowText(rowText);
-}
-
-void EXDisplay::updateRowColours(uint8_t rowNumber, uint16_t textColour, uint16_t backgroundColour) {
-  auto *row = getRowByNumber(rowNumber);
-  if (!row) {
-    row = _addRow(rowNumber);
-    row->setDisplayRow(rowNumber, _exScreen->maxRows);
-  }
-  row->setColours(textColour, backgroundColour);
-}
-
-void EXDisplay::updateRowLine(uint8_t rowNumber, bool line) {
-  auto *row = getRowByNumber(rowNumber);
-  if (!row) {
-    row = _addRow(rowNumber);
-    row->setDisplayRow(rowNumber, _exScreen->maxRows);
-  }
-  row->setLine(line);
-}
-
-void EXDisplay::updateRowUnderline(uint8_t rowNumber, bool underline) {
-  auto *row = getRowByNumber(rowNumber);
-  if (!row) {
-    row = _addRow(rowNumber);
-    row->setDisplayRow(rowNumber, _exScreen->maxRows);
-  }
-  row->setUnderline(underline);
 }
 
 void EXDisplay::scrollUp() {
@@ -147,21 +124,6 @@ uint8_t EXDisplay::getScreenMaxColumns() { return _exScreen->maxColumns; }
 bool EXDisplay::needsRedraw() { return _needsRedraw; }
 
 void EXDisplay::resetRedraw() { _needsRedraw = false; }
-
-/*** probably not needed
- void EXDisplay::deleteRowNumber(uint8_t rowNumber) {
-  EXDisplayRow *currentRow = _firstRow;
-  while (currentRow != nullptr && currentRow->getNext() != nullptr) {
-    if (currentRow->getNext()->getRowNumber() == rowNumber) {
-      EXDisplayRow *temp = currentRow->getNext();
-      currentRow->setNext(temp->getNext());
-      delete temp; // CAUTION DESTRUCTOR MUST DELETE TEXT TOO
-      return;
-    }
-    currentRow = currentRow->getNext();
-  }
-}
-***/
 
 bool EXDisplay::displayNumberExists(uint8_t displayNumber) { return getDisplayByNumber(displayNumber) != nullptr; }
 
@@ -236,7 +198,7 @@ void EXDisplay::processDisplay() {
   _needsRedraw = false;
 }
 
-EXDisplayRow *EXDisplay::_addRow(uint8_t rowNumber) {
+EXDisplayRow *EXDisplay::_addRow(uint8_t rowNumber, char *rowText) {
   // create a new row and chain it in
   EXDisplayRow *row = new EXDisplayRow(rowNumber);
   _numberOfRows++;
@@ -260,8 +222,54 @@ EXDisplayRow *EXDisplay::_addRow(uint8_t rowNumber) {
   if (rowNumber > _maxRowNumber) {
     _maxRowNumber = rowNumber;
   }
-  char blank[1] = {'\0'};
   row->setColours(TEXT_COLOUR, BACKGROUND_COLOUR);
-  row->setRowText(blank);
+  row->setRowText(rowText);
+  row->setDisplayRow(rowNumber, _exScreen->maxRows);
   return row;
+}
+
+void EXDisplay::_deleteRow(EXDisplayRow *row) {
+  if (!row) {
+    return; // Return if the row is nullptr
+  }
+
+  // Find the previous node in the linked list
+  EXDisplayRow *previous = nullptr;
+  EXDisplayRow *current = _firstRow;
+  while (current != row) {
+    previous = current;
+    current = current->getNext();
+  }
+
+  // Remove the node from the linked list
+  if (previous) {
+    previous->setNext(row->getNext());
+  } else {
+    _firstRow = row->getNext();
+  }
+
+  // Decrement the number of rows
+  _numberOfRows--;
+
+  // Update the maximum row number if necessary
+  if (row->getRowNumber() == _maxRowNumber) {
+    _maxRowNumber = 0;
+    for (EXDisplayRow *temp = _firstRow; temp; temp = temp->getNext()) {
+      if (temp->getRowNumber() > _maxRowNumber) {
+        _maxRowNumber = temp->getRowNumber();
+      }
+    }
+  }
+
+  // If we're now within the confines of the screen, need to reset display rows and redraw
+  if (_maxRowNumber <= _exScreen->maxRows) {
+    _scrollPosition = 0;
+    for (EXDisplayRow *temp = _firstRow; temp; temp = temp->getNext()) {
+      temp->setDisplayRow(temp->getRowNumber(), _exScreen->maxRows);
+    }
+    _needsRedraw = true;
+  }
+
+  // Delete the row object
+  delete row;
 }

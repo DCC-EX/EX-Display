@@ -43,23 +43,7 @@ public:
   /// @brief Update text and ticker for the specified row number, will add if it doesn't exist
   /// @param rowNumber Row number to display text on, 0 - 255
   /// @param rowText Char array of text for the row
-  void updateRowText(uint8_t rowNumber, char *rowText);
-
-  /// @brief Update text/foreground and background colours for the specified row
-  /// @param rowNumber Row number for colours, 0 - 255
-  /// @param textColour Any valid hex colour code
-  /// @param backgroundColour Any valid hex colour code
-  void updateRowColours(uint8_t rowNumber, uint16_t textColour, uint16_t backgroundColour);
-
-  /// @brief Update the line attribute for the specified row
-  /// @param rowNumber Row number to set to a line, 0 - 255
-  /// @param line true|false
-  void updateRowLine(uint8_t rowNumber, bool line);
-
-  /// @brief Update underline attribute for the specified row
-  /// @param rowNumber Row number to set underline for, 0 - 255
-  /// @param underline true|false
-  void updateRowUnderline(uint8_t rowNumber, bool underline);
+  void updateRow(uint8_t rowNumber, char *rowText);
 
   /// @brief Scroll up one row vertically
   void scrollUp();
@@ -139,8 +123,13 @@ private:
 
   /// @brief Private method to add a row
   /// @param rowNumber 0 - 255
+  /// @param rowText Pointer to the char array containing the text for this row
   /// @return Pointer to the created EXDisplayRow object
-  EXDisplayRow *_addRow(uint8_t rowNumber);
+  EXDisplayRow *_addRow(uint8_t rowNumber, char *rowText);
+
+  /// @brief Delete the specified row number
+  /// @param rowNumber Row number to delete, 0 - 255
+  void _deleteRow(EXDisplayRow *row);
 };
 
 #endif
