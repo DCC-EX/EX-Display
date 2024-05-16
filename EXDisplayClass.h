@@ -126,6 +126,10 @@ private:
   /// @param rowText Pointer to the char array containing the text for this row
   /// @return Pointer to the created EXDisplayRow object
   EXDisplayRow *_addRow(uint8_t rowNumber, char *rowText);
+
+  /// @brief Delete the specified row number
+  /// @param rowNumber Row number to delete, 0 - 255
+  void _deleteRow(EXDisplayRow *row);
 };
 
 #endif

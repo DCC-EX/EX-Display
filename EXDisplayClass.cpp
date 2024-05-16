@@ -50,7 +50,11 @@ EXDisplayRow *EXDisplay::getRowByNumber(uint8_t rowNumber) {
 
 void EXDisplay::updateRow(uint8_t rowNumber, char *rowText) {
   auto *row = getRowByNumber(rowNumber);
-  if (!row) {
+  if (row && strlen(rowText) == 0) {
+    _deleteRow(row);
+  } else if (!row && strlen(rowText) == 0) {
+    return;
+  } else if (!row) {
     row = _addRow(rowNumber, rowText);
   } else {
     row->setRowText(rowText);
@@ -120,21 +124,6 @@ uint8_t EXDisplay::getScreenMaxColumns() { return _exScreen->maxColumns; }
 bool EXDisplay::needsRedraw() { return _needsRedraw; }
 
 void EXDisplay::resetRedraw() { _needsRedraw = false; }
-
-/*** probably not needed
- void EXDisplay::deleteRowNumber(uint8_t rowNumber) {
-  EXDisplayRow *currentRow = _firstRow;
-  while (currentRow != nullptr && currentRow->getNext() != nullptr) {
-    if (currentRow->getNext()->getRowNumber() == rowNumber) {
-      EXDisplayRow *temp = currentRow->getNext();
-      currentRow->setNext(temp->getNext());
-      delete temp; // CAUTION DESTRUCTOR MUST DELETE TEXT TOO
-      return;
-    }
-    currentRow = currentRow->getNext();
-  }
-}
-***/
 
 bool EXDisplay::displayNumberExists(uint8_t displayNumber) { return getDisplayByNumber(displayNumber) != nullptr; }
 
@@ -237,4 +226,18 @@ EXDisplayRow *EXDisplay::_addRow(uint8_t rowNumber, char *rowText) {
   row->setRowText(rowText);
   row->setDisplayRow(rowNumber, _exScreen->maxRows);
   return row;
+}
+
+void EXDisplay::_deleteRow(EXDisplayRow *row) {
+  CONSOLE.print(F("Need to implement deleting row "));
+  CONSOLE.println(row->getRowNumber());
+  // EXDisplayRow *currentRow = _firstRow;
+  // while (currentRow != nullptr && currentRow->getNext() != nullptr) {
+  //   if (currentRow->getNext()->getRowNumber() == rowNumber) {
+  //     EXDisplayRow *temp = currentRow->getNext();
+  //     currentRow->setNext(temp->getNext());
+  //     delete temp; // CAUTION DESTRUCTOR MUST DELETE TEXT TOO
+  //     return;
+  //   }
+  //   currentRow = currentRow->getNext();
 }

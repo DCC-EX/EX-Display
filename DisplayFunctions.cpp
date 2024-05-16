@@ -39,7 +39,7 @@ void displayAllRows() {
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
     CONSOLE.print(F("\n\nRows for display "));
     CONSOLE.println(display->getDisplayNumber());
-    CONSOLE.println(F("Row|Display Row|Message|isChanged|needsRender|rowAttributes"));
+    CONSOLE.println(F("Row|Display Row|Message|isChanged|needsRender"));
     for (EXDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
       CONSOLE.print(row->getRowNumber());
       CONSOLE.print(F("|"));
@@ -49,9 +49,7 @@ void displayAllRows() {
       CONSOLE.print(F("|"));
       CONSOLE.print(row->isChanged());
       CONSOLE.print(F("|"));
-      CONSOLE.print(row->needsRender());
-      CONSOLE.print(F("|"));
-      CONSOLE.println(row->getAttributes(), BIN);
+      CONSOLE.println(row->needsRender());
     }
   }
 }

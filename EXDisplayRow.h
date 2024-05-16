@@ -9,9 +9,7 @@
  *
  */
 class EXDisplayRow {
-
-public:
-  // Where does this really belong, and how can we use it to query and set attributes externally?
+  /// @brief Structure for the _rowAttributes attribute for row formatting
   struct RowAttributes {
     bool line : 1;
     bool underline : 1;
@@ -19,6 +17,7 @@ public:
     bool neverTicker : 1;
   };
 
+public:
   /// @brief Constructor for the EXDisplayRow object
   /// @param rowNumber Row number on the display, 0 - 255
   EXDisplayRow(uint8_t rowNumber);
@@ -85,10 +84,6 @@ public:
   /// @return true|false
   bool isUnderlined();
 
-  /// @brief Get all current attributes for the row
-  /// @return 0 - 255
-  uint8_t getAttributes();
-
 private:
   uint8_t _rowNumber;  // This is the row number received from the parser
   uint8_t _maxMalloc;  // This is the calculated maximum length of the text received from the parser
@@ -97,49 +92,35 @@ private:
   uint8_t _displayRow; // This is the calculated physical row on a display that this line belongs on
   bool _needsRender;   // Flag that is set when row belongs on a physical display, false when off-screen
   EXDisplayRow *_next;
-  uint16_t _textColour;       // Text/foreground colour for this row
-  uint16_t _backgroundColour; // Background colour for this row
-  byte _rowAttributes;        // One bit per attribute to allow 8 total
+  uint16_t _textColour;         // Text/foreground colour for this row
+  uint16_t _backgroundColour;   // Background colour for this row
+  RowAttributes _rowAttributes; // One bit per attribute to allow 8 total
 
   /// @brief Private method to format the row attributes for the specified row
   /// @param row Pointer to an EXDisplayRow object
-  static void _rowFormatter(EXDisplayRow *row, char *rowText);
-
-  /// @brief Check for "#0xdddd#0xdddd#"
-  /// @param text Char array to check
-  /// @return true|false
-  static bool _isEmbeddedColours(const char *text);
+  void _rowFormatter();
 
   /// @brief Extract colour codes from text
-  /// @param text Char array containing codes (see _isEmbeddedColours)
-  void _extractColours(const char *text);
+  void _setColours();
 
   /// @brief Set the line attribute for this row
-  /// @param line true|false
   void _setLine();
-  
-  /// @brief Check for "--"
-  /// @param text Char array to check
-  /// @return true|false
-  static bool _isLine(const char *text);
 
   /// @brief Set the underline attribute for this row
   /// @param underline true|false
   void _setUnderline();
 
-  /// @brief Check for "_Underlined text_"
-  /// @param text Char array to check
-  /// @return true|false
-  static bool _isUnderline(const char *text);
-
   /// @brief Check for "~~Always ticker this text"
-  /// @param text Char array to check
   /// @return true|false
-  static bool _alwaysTicker(const char *text);
+  void _alwaysTicker();
 
   /// @brief Check for "!~Never ticker this text"
-  /// @param text Char array to check
   /// @return true|false
-  static bool _neverTicker(const char *text);
+  void _neverTicker();
+
+  /// @brief Remove leading formatting characters from the provided char array
+  /// @param text Pointer to the char array
+  /// @param size Number of leading formatting characters to remove
+  void _removeFormatters(uint8_t size);
 };
 #endif
