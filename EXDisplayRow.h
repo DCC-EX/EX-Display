@@ -84,6 +84,9 @@ public:
   /// @return true|false
   bool isUnderlined();
 
+  /// @brief Destructor for the EXDisplayRow object
+  ~EXDisplayRow();
+
 private:
   uint8_t _rowNumber;  // This is the row number received from the parser
   uint8_t _maxMalloc;  // This is the calculated maximum length of the text received from the parser

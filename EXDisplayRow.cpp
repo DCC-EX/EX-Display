@@ -81,8 +81,9 @@ bool EXDisplayRow::isLine() {
   return _rowAttributes.line;
 }
 
-bool EXDisplayRow::isUnderlined() { 
-  return _rowAttributes.underline; }
+bool EXDisplayRow::isUnderlined() { return _rowAttributes.underline; }
+
+EXDisplayRow::~EXDisplayRow() { free(_rowText); }
 
 void EXDisplayRow::_rowFormatter() {
   /*

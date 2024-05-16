@@ -229,15 +229,38 @@ EXDisplayRow *EXDisplay::_addRow(uint8_t rowNumber, char *rowText) {
 }
 
 void EXDisplay::_deleteRow(EXDisplayRow *row) {
-  CONSOLE.print(F("Need to implement deleting row "));
-  CONSOLE.println(row->getRowNumber());
-  // EXDisplayRow *currentRow = _firstRow;
-  // while (currentRow != nullptr && currentRow->getNext() != nullptr) {
-  //   if (currentRow->getNext()->getRowNumber() == rowNumber) {
-  //     EXDisplayRow *temp = currentRow->getNext();
-  //     currentRow->setNext(temp->getNext());
-  //     delete temp; // CAUTION DESTRUCTOR MUST DELETE TEXT TOO
-  //     return;
-  //   }
-  //   currentRow = currentRow->getNext();
+  if (!row) {
+    return; // Return if the row is nullptr
+  }
+
+  // Find the previous node in the linked list
+  EXDisplayRow *previous = nullptr;
+  EXDisplayRow *current = _firstRow;
+  while (current != row) {
+    previous = current;
+    current = current->getNext();
+  }
+
+  // Remove the node from the linked list
+  if (previous) {
+    previous->setNext(row->getNext());
+  } else {
+    _firstRow = row->getNext();
+  }
+
+  // Decrement the number of rows
+  _numberOfRows--;
+
+  // Update the maximum row number if necessary
+  if (row->getRowNumber() == _maxRowNumber) {
+    _maxRowNumber = 0;
+    for (EXDisplayRow *temp = _firstRow; temp; temp = temp->getNext()) {
+      if (temp->getRowNumber() > _maxRowNumber) {
+        _maxRowNumber = temp->getRowNumber();
+      }
+    }
+  }
+
+  // Delete the row object
+  delete row;
 }

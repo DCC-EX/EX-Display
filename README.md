@@ -76,8 +76,6 @@ Note that setting a horizontal line will remove any text previously set for that
 
 ### Delete Row
 
-*Not implemented yet*
-
 Simply set the row message to zero length to delete it, noting that this doesn't just blank the text out, but deletes the row in its entirety, including all formatting attributes.
 
 `SCREEN(0, 1, "")`
