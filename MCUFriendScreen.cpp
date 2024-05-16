@@ -17,7 +17,7 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t b
   }
   if (screenId == 0x0) {
     CONSOLE.println(F("NO SCREEN DODGY FORCE TO 0x9486"));
-    screenId = 0x9486;
+    screenId = 0x9341;
   }
   _tft.begin(screenId);
   _tft.setRotation(rotation);
