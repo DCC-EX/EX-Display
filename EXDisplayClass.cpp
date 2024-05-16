@@ -261,6 +261,15 @@ void EXDisplay::_deleteRow(EXDisplayRow *row) {
     }
   }
 
+  // If we're now within the confines of the screen, need to reset display rows and redraw
+  if (_maxRowNumber <= _exScreen->maxRows) {
+    _scrollPosition = 0;
+    for (EXDisplayRow *temp = _firstRow; temp; temp = temp->getNext()) {
+      temp->setDisplayRow(temp->getRowNumber(), _exScreen->maxRows);
+    }
+    _needsRedraw = true;
+  }
+
   // Delete the row object
   delete row;
 }
