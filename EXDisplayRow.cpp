@@ -49,8 +49,12 @@ char *EXDisplayRow::getRowText() {
 
 bool EXDisplayRow::isChanged() { return _changed; }
 
-void EXDisplayRow::setDisplayRow(uint8_t displayRow, uint8_t maxScreenRows) {
-  _displayRow = displayRow;
+void EXDisplayRow::setDisplayRow(uint8_t scrollPosition, uint8_t maxScreenRows, uint8_t maxRowNumber) {
+  if (_rowNumber >= scrollPosition) {
+    _displayRow = _rowNumber - scrollPosition;
+  } else {
+    _displayRow = maxRowNumber - (scrollPosition - _rowNumber - 1);
+  }
   if (_displayRow >= maxScreenRows) {
     _needsRender = false;
   } else {

@@ -81,7 +81,7 @@ void EXDisplay::scrollUp() {
     } else { // Otherwise move down one row
       newRow++;
     }
-    row->setDisplayRow(newRow, _exScreen->maxRows);
+    row->setDisplayRow(_scrollPosition, _exScreen->maxRows, _maxRowNumber);
   }
   _needsRedraw = true; // Need to redraw after each scroll
 }
@@ -103,7 +103,7 @@ void EXDisplay::scrollDown() {
     } else { // Otherwise move up one row
       newRow--;
     }
-    row->setDisplayRow(newRow, _exScreen->maxRows);
+    row->setDisplayRow(_scrollPosition, _exScreen->maxRows, _maxRowNumber);
   }
   _needsRedraw = true; // Need to redraw after each scroll
 }
@@ -224,7 +224,7 @@ EXDisplayRow *EXDisplay::_addRow(uint8_t rowNumber, char *rowText) {
   }
   row->setColours(TEXT_COLOUR, BACKGROUND_COLOUR);
   row->setRowText(rowText);
-  row->setDisplayRow(rowNumber, _exScreen->maxRows);
+  row->setDisplayRow(_scrollPosition, _exScreen->maxRows, _maxRowNumber);
   return row;
 }
 
@@ -265,7 +265,7 @@ void EXDisplay::_deleteRow(EXDisplayRow *row) {
   if (_maxRowNumber <= _exScreen->maxRows) {
     _scrollPosition = 0;
     for (EXDisplayRow *temp = _firstRow; temp; temp = temp->getNext()) {
-      temp->setDisplayRow(temp->getRowNumber(), _exScreen->maxRows);
+      temp->setDisplayRow(_scrollPosition, _exScreen->maxRows, _maxRowNumber);
     }
     _needsRedraw = true;
   }
