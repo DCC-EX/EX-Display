@@ -42,10 +42,11 @@ public:
   /// @return True|False
   bool isChanged();
 
-  /// @brief Set the physical screen row this row should be rendered/drawn on and provide the max rows for the screen
-  /// @param displayRow 0 - 255
+  /// @brief Set the physical screen row this row should be rendered/drawn on
+  /// @param scrollPosition The current row that is at the top of the screen
   /// @param maxScreenRows Maximum number of rows the screen can display - sets _needsRender
-  void setDisplayRow(uint8_t displayRow, uint8_t maxScreenRows);
+  /// @param maxRowNumber The highest row number in the list of rows
+  void setDisplayRow(uint8_t scrollPosition, uint8_t maxScreenRows, uint8_t maxRowNumber);
 
   /// @brief calculated to determine which screen row is used
   /// @return 0 - 255
