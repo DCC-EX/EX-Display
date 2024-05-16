@@ -50,7 +50,19 @@ char *EXDisplayRow::getRowText() {
 bool EXDisplayRow::isChanged() { return _changed; }
 
 void EXDisplayRow::setDisplayRow(uint8_t scrollPosition, uint8_t maxScreenRows, uint8_t maxRowNumber) {
-  _displayRow = _rowNumber - scrollPosition;
+  if (_rowNumber >= scrollPosition) {
+    _displayRow = _rowNumber - scrollPosition;
+  } else {
+    _displayRow = maxRowNumber - (scrollPosition - _rowNumber + 1);
+  }
+  CONSOLE.print(F("setDisplayRow _rowNumber|scrollPosition|maxRowNumber|_displayRow: "));
+  CONSOLE.print(_rowNumber);
+  CONSOLE.print(F("|"));
+  CONSOLE.print(scrollPosition);
+  CONSOLE.print(F("|"));
+  CONSOLE.print(maxRowNumber);
+  CONSOLE.print(F("|"));
+  CONSOLE.println(_displayRow);
   if (_displayRow >= maxScreenRows) {
     _needsRender = false;
   } else {
