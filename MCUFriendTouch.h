@@ -35,6 +35,8 @@ public:
 private:
   TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300)
 
+  uint8_t _buttonPressed; // Indicates which button was pressed
+  
 };
 
 #endif // end include guard
