@@ -4,17 +4,25 @@ A project for multiple displays connected to EX-CommandStation.
 
 The aim is to extend the current JMRI type virtual screen functionality to be displayed on additional microcontrollers with attached screens by using the `SCREEN(screen, row, "Message")` EXRAIL command.
 
+There will be support for displaying output for multiple logical displays on one single physical screen, as well as displaying output on multiple physical screens.
+
 ## Terminology - Display vs. Screen
 
 In the context of this project, the term "screen" is used when referring to a physical screen connected to a microcontroller to display information. This aligns with the use of the `SCREEN()` EXRAIL command, as it is designed to display information on a screen.
 
 The term "display" refers to a logical representation of a physical screen, enabling one physical screen to be used to dislay information from one or more EXRAIL defined screens.
 
+## Supported Screen Types
+
+It is possible to use any physical screen that is supported by either the MCUFRIEND_kbv or TFT_eSPI libraries.
+
+In addition, it is also possible to use OLEDs based on either the SSD1306 or SH1106 drivers.
+
 ## Configuration
 
-Copy "config.example.h" to "config.h".
+Copy "config.example.h" to "config.h" and set the desired parameters.
 
-The key parameters to set are...
+The key parameters to set depend on the physical screen type in use and are commented in the example config file.
 
 ## Features and Usage
 

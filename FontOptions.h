@@ -21,6 +21,9 @@
 #define MAGENTA 0xF81F
 #define YELLOW 0xFFE0
 #define WHITE 0xFFFF
+#define OLED_BLACK 0
+#define OLED_WHITE 1
+#define OLED_INVERT 2
 
 /// @brief Macros for available fonts
 #define SMALL &FreeMono9pt7b

@@ -6,14 +6,12 @@
 
 // Define the pphysical screen types in use here - this needs to be ultra simplified at some point
 // Should we eventually support up to 3 displays?
-// #define SCREEN_TYPE MCU
+#define SCREEN_TYPE MCU
 // #define SCREEN_TYPE TFT
-#define SCREEN_TYPE OLED_SSD1306
+// #define SCREEN_TYPE OLED_SSD1306
 // #define SCREEN_TYPE OLED_SH1106
 
-#define OLED_WIDTH 128
-#define OLED_HEIGHT 64
-#define OLED_ADDRESS 0x3C
+// #define OLED_ADDRESS 0x3C
 
 // Define the number of logical displays here
 // This is not a good way to do this
@@ -24,36 +22,31 @@
 
 // DO NOT REMOVE OR MOVE THIS LINE - MUST BE BEFORE FONT DEFINITION
 // Include the various fonts and font colours available for use with EX-Display
+// Note for monochrome OLEDs you will need to set the OLED colour option here
 #include "FontOptions.h"
 // Font options
 #define TEXT_FONT MEDIUM
 #define TEXT_COLOUR WHITE
+// #define TEXT_COLOUR OLED_WHITE
 #define TEXT_SIZE 1
 #define BACKGROUND_COLOUR BLACK
+// #define BACKGROUND_COLOUR OLED_BLACK
 
 // If rotation of the screen is required, set it here
+// TFT type screen typically require 1, OLEDs typically require 0
+// #define SCREEN_ROTATION 0
 #define SCREEN_ROTATION 1
+// #define SCREEN_ROTATION 2
+// #define SCREEN_ROTATION 3
 
 // Some screens need inverting. If your screen displays inverted colours uncomment the following line.
 //#define INVERT_SCREEN
 
 // First entries about the display you are using
 // as we display across the wider part of the screen iwdth is the larger dimension
-#define SCREEN_WIDTH 320
-#define SCREEN_HEIGHT 240
-
-// Now we have to define how many screens you wish to display
-// The system output screen is 0.
-// An arduino Uno is capable of storing and displaying about 60 lines
-// before running out of RAM e.g. (using 30 char lines)
-// 4 screens of 16 lines
-// 6 screens of 10 lines
-// The first paramater tells EX-Display which initial screen to display
-#define INITIAL_SCREEN 0
-
-// Now define how many screens you wish to be used in turn
-#define MAX_SCREENS 2
-#define MAX_ROWS 10
+// These should only be required if using OLED screen type
+// #define SCREEN_WIDTH 128
+// #define SCREEN_HEIGHT 64
 
 // If a touch screen is in use a touch will swap from screen to screen
 // if in use uncomment the following
@@ -66,7 +59,7 @@
 #define DISPLAY_SWITCH_TIME 5000
 
 // And now define the maximum text length.
-#define MAX_LINE_LENGTH 30
+#define MAX_LINE_LENGTH 50
 
 // The startup Timelapse - allows time to handle all the CS output
 #define STARTUP_TIME 2000

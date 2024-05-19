@@ -42,24 +42,25 @@ void OLEDScreen::clearScreen(uint16_t backgroundColour) {
 }
 
 void OLEDScreen::clearRow(uint8_t row, uint16_t backgroundColour) {
-  int32_t x = 0;
-  int32_t y = (row * fontHeight) + row;
-  int32_t w = fontWidth * maxColumns;
-  int32_t h = fontHeight;
+  int16_t x = 0;
+  int16_t y = (row * fontHeight) + row;
+  int16_t w = fontWidth * maxColumns;
+  int16_t h = fontHeight;
   _oled.fillRect(x, y, w, h, backgroundColour);
+  _oled.display();
 }
 
 void OLEDScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
                           uint8_t maxLength, char *message, bool underlined) {
   uint16_t x = column;
   uint16_t y = (row * fontHeight) + fontHeight;
-  _oled.setTextColor(fontColour, backgroundColour);
+  _oled.setTextColor(fontColour);
   _oled.setCursor(x, y);
   _oled.print(message);
   if (underlined) {
-    _oled.drawLine(column, y + fontHeight, _oled.width(), y + fontHeight, fontColour);
+    _oled.drawLine(column, y+1, _oled.width(), y+1, fontColour);
   } else {
-    _oled.drawLine(column, y + fontHeight, _oled.width(), y + fontHeight, backgroundColour);
+    _oled.drawLine(column, y+1, _oled.width(), y+1, backgroundColour);
   }
   _oled.display();
   CONSOLE.print(F("\nwriteRow textRow|message: "));
@@ -71,11 +72,11 @@ void OLEDScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint
 void OLEDScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
                            uint16_t backgroundColour) {
   // Horizontal start/end
-  int32_t x1 = column;
-  int32_t x2 = fontWidth * lineLength;
+  int16_t x1 = column;
+  int16_t x2 = fontWidth * lineLength;
   // Vertical start - half way up the font height
-  int32_t y1 = (row * fontHeight) + row + (fontHeight / 2);
-  int32_t y2 = y1;
+  int16_t y1 = (row * fontHeight) + row + (fontHeight / 2);
+  int16_t y2 = y1;
   clearRow(row, backgroundColour);
   _oled.drawLine(x1, y1, x2, y2, lineColour);
   _oled.display();

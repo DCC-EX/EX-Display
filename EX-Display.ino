@@ -43,13 +43,13 @@ void setup() {
 
   // Create display instances
 #if defined(DISPLAY_1_ID)
-  new EXDisplay(DISPLAY_1_ID, screen, 30);
+  new EXDisplay(DISPLAY_1_ID, screen, MAX_LINE_LENGTH);
 #endif
 #if defined(DISPLAY_2_ID)
-  new EXDisplay(DISPLAY_2_ID, screen, 30);
+  new EXDisplay(DISPLAY_2_ID, screen, MAX_LINE_LENGTH);
 #endif
 #if defined(DISPLAY_3_ID)
-  new EXDisplay(DISPLAY_3_ID, screen, 30);
+  new EXDisplay(DISPLAY_3_ID, screen, MAX_LINE_LENGTH);
 #endif
 
   for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
