@@ -20,6 +20,7 @@ void OLEDScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgr
   _oled.setRotation(rotation);
   _oled.setFont(gfxFont);
   _oled.setTextSize(textSize);
+  _oled.setTextWrap(false);
   _oled.clearDisplay();
   _oled.display();
   fontHeight = gfxFont->yAdvance;

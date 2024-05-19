@@ -6,6 +6,7 @@
 
 // 0.0.9 includes:
 //  - Add support for SSD1306 and SH1106 I2C connected OLEDs
+//  - Disable text wrap
 // 0.0.8 includes:
 //  - Fix a bug where adding new rows while the screen is scrolling puts them on the wrong row
 // 0.0.7 includes:
