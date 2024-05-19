@@ -3,6 +3,8 @@
 
 #define MCU 1
 #define TFT 2
+#define OLED_SSD1306 3
+#define OLED_SH1106 4
 
 #if __has_include("config.h")
 #include "config.h"
@@ -34,6 +36,9 @@
 #elif SCREEN_TYPE == TFT
 #define NEEDS_TFT
 #define SCREEN_0 new EXDisplay(0, new TFT_eSPIScreen(tft), 30);
+#elif SCREEN_TYPE == OLED_SSD1306 || SCREEN_TYPE == OLED_SH1106
+#define NEEDS_OLED
+#define SCREEN_0 new EXDisplay(0, new OLEDScreen(oled), 30);
 #else
 #error A screen type for the first screen has not been set, you must define either MCU or TFT
 #endif
@@ -66,7 +71,12 @@ HardwareSerial Serial1(PB7, PA15); // Rx=PB7, Tx=PA15 -- CN7 pins 17 and 21 - F4
 HardwareSerial Serial5(PD2, PC12); // Rx=PD2, Tx=PC12 -- UART5 - F446RE
 #define CS_LISTEN Serial5
 #define RX_PIN PD2;
+#endif
 
+// If user has defined SERIAL_ONLY, override CS_LISTEN
+#ifdef SERIAL_ONLY
+#undef CS_LISTEN
+#define CS_LISTEN Serial
 #endif
 
 #endif

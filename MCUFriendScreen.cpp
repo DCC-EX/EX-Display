@@ -23,6 +23,7 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t b
   _tft.setRotation(rotation);
   _tft.setFont(gfxFont);
   _tft.setTextSize(textSize);
+  _tft.setTextWrap(false);
 #ifdef INVERT_SCREEN
   _tft.invertDisplay(screenId);
 #endif
@@ -37,9 +38,9 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t b
   CONSOLE.print(F("|"));
   CONSOLE.println(_tft.width());
   CONSOLE.print(F("config.h parameters DISPLAY_HEIGHT|DISPLAY_WIDTH: "));
-  CONSOLE.print(DISPLAY_HEIGHT);
+  CONSOLE.print(SCREEN_HEIGHT);
   CONSOLE.print(F("|"));
-  CONSOLE.println(DISPLAY_WIDTH);
+  CONSOLE.println(SCREEN_WIDTH);
   CONSOLE.print(F("maxRows|maxColumns|fontHeight|fontWidth: "));
   CONSOLE.print(maxRows);
   CONSOLE.print(F("|"));
@@ -73,7 +74,7 @@ void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour,
                                uint8_t maxLength, char *message, bool underlined) {
   uint16_t textRow = ((row + 1) * fontHeight);
   uint16_t width = fontWidth * maxLength;
-  _tft.fillRect(1, ((textRow - fontHeight) + 10), DISPLAY_WIDTH, (fontHeight), backgroundColour);
+  _tft.fillRect(1, ((textRow - fontHeight) + 10), _tft.width(), (fontHeight), backgroundColour);
   _tft.setTextColor(fontColour, backgroundColour);
   _tft.setCursor(1, textRow);
   _tft.print(message);
