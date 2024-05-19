@@ -2,8 +2,10 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.8"
+#define VERSION "0.0.9"
 
+// 0.0.9 includes:
+//  - Add support for SSD1306 and SH1106 I2C connected OLEDs
 // 0.0.8 includes:
 //  - Fix a bug where adding new rows while the screen is scrolling puts them on the wrong row
 // 0.0.7 includes:

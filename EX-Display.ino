@@ -16,6 +16,14 @@ MCUFriendScreen *screen = new MCUFriendScreen(tft);
 #include "TFT_eSPIScreen.h"
 TFT_eSPI tft = TFT_eSPI();
 TFT_eSPIScreen *screen = new TFT_eSPIScreen(tft);
+#elif SCREEN_TYPE == OLED_SSD1306
+#include "OLEDScreen.h"
+Adafruit_SSD1306 oled = Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
+OLEDScreen *screen = new OLEDScreen(oled);
+#elif SCREEN_TYPE == OLED_SH1106
+#include "OLEDScreen.h"
+Adafruit_SH1106G oled = Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
+OLEDScreen *screen = new OLEDScreen(oled);
 #endif
 
 void setup() {
@@ -24,6 +32,10 @@ void setup() {
 
   CONSOLE.print(F("EX-Display v"));
   CONSOLE.println(VERSION);
+
+#ifdef NEEDS_OLED
+  Wire.begin();
+#endif
 
   // Tell AtFinder our maximum supported text length,
   // and how to call back when found.

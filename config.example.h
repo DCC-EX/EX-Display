@@ -7,14 +7,20 @@
 // Define the pphysical screen types in use here - this needs to be ultra simplified at some point
 // Should we eventually support up to 3 displays?
 // #define SCREEN_TYPE MCU
-#define SCREEN_TYPE TFT
+// #define SCREEN_TYPE TFT
+#define SCREEN_TYPE OLED_SSD1306
+// #define SCREEN_TYPE OLED_SH1106
+
+#define OLED_WIDTH 128
+#define OLED_HEIGHT 64
+#define OLED_ADDRESS 0x3C
 
 // Define the number of logical displays here
 // This is not a good way to do this
-#define NUMBER_OF_DISPLAYS 3
+#define NUMBER_OF_DISPLAYS 1
 #define DISPLAY_1_ID 0
-#define DISPLAY_2_ID 3
-#define DISPLAY_3_ID 8
+// #define DISPLAY_2_ID 3
+// #define DISPLAY_3_ID 8
 
 // DO NOT REMOVE OR MOVE THIS LINE - MUST BE BEFORE FONT DEFINITION
 // Include the various fonts and font colours available for use with EX-Display
@@ -33,8 +39,8 @@
 
 // First entries about the display you are using
 // as we display across the wider part of the screen iwdth is the larger dimension
-#define DISPLAY_WIDTH 320
-#define DISPLAY_HEIGHT 240
+#define SCREEN_WIDTH 320
+#define SCREEN_HEIGHT 240
 
 // Now we have to define how many screens you wish to display
 // The system output screen is 0.
@@ -67,5 +73,9 @@
 
 // Uncomment this line to display debug output
 #define DEBUG
+
+// Uncomment this line when wanting to test with serial in put only, and no CS connection
+// This overrides the input and only accepts input from the serial console
+// #define SERIAL_ONLY
 
 #endif

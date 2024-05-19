@@ -1,7 +1,7 @@
 #ifndef FONTOPTIONS_H
 #define FONTOPTIONS_H
 
-#if SCREEN_TYPE == MCU
+#if SCREEN_TYPE == MCU || SCREEN_TYPE == OLED_SSD1306 || SCREEN_TYPE == OLED_SH1106
 #include <Fonts/FreeMono12pt7b.h>
 #include <Fonts/FreeMono18pt7b.h>
 #include <Fonts/FreeMono24pt7b.h>
