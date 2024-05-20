@@ -2,8 +2,19 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.6"
+#define VERSION "0.0.10"
 
+// 0.0.10 includes:
+//  - Add EXTouch class to support input methods
+// 0.0.9 includes:
+//  - Add support for SSD1306 and SH1106 I2C connected OLEDs
+//  - Disable text wrap
+// 0.0.8 includes:
+//  - Fix a bug where adding new rows while the screen is scrolling puts them on the wrong row
+// 0.0.7 includes:
+//  - Move row formatting to the EXDisplayRow class so only one call is needed to set a row up
+//  - Change colour attributes to match other formatting options so they can be sent with text
+//  - Implement support for deleting a row when sending "" as the message
 // 0.0.6 includes:
 //  - Add ability to set individual row colours via the parser
 //  - Add ability to draw a horizontal line on a row rather than text
