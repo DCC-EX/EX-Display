@@ -8,28 +8,38 @@ MCUFriendTouch::MCUFriendTouch(TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300)
 void MCUFriendTouch::setupTouch(){
 
   // Define the operating buttons
-  //Adafruit_GFX_Button btn1, btn2, btn3, btn4, btn5, btn6;
-  Adafruit_GFX_Button key[6];
+  Adafruit_GFX_Button key[5];
 
+  _tft = MCUFriendScreen::returnTFT();
+  _screenHeight = MCUFriendScreen::return::returnHeight();
+  _screenWidth = MCUFriendScreen::return::returnWidth();
   _buttonPressed = 0;
 
 }
 
-void MCUFriendTouch::drawButtons(uint16_t fontColour, uint16_t backgroundColour) {
+void MCUFriendTouch::drawButtons(byte option, uint16_t fontColour, uint16_t backgroundColour) {
 
-    //Serial.println("Defining Buttons");
-    key[0].initButton(&tft,  40, 220, 70, 40, WHITE, GREEN, WHITE, "Start", 2);   
-    key[1].initButton(&tft,  120, 220, 70, 40, WHITE, RED, WHITE, "Save", 2);   
-    key[2].initButton(&tft,  200, 220, 70, 40, WHITE, CYAN, BLACK, "Reset", 2);   
-    key[3].initButton(&tft,  40, 270, 70, 40, WHITE, CYAN, BLACK, "T+", 2);    
-    key[4].initButton(&tft,  120, 270, 70, 40, WHITE, CYAN, BLACK, "T-", 2);   
-    key[5].initButton(&tft,  200, 270, 70, 40, WHITE, CYAN, BLACK, "Rate", 2); 
+  switch (option) {
+
+    case 2:
+      // add code here for paramater screen buttons
+      break;
     
-    // draw buttons - not needed for this application
-    for (byte x = 0; x < 6; x++) {
-      key[x].drawButton(false);
-      delay(10);    // Seem to need a slight pause
-    }
+    default:
+
+      //Serial.println("Defining Buttons");
+      key[0].initButton(_tft,  _screenWidth/8, _screenHeight/2, _screenWidth/4, _screenHeight, WHITE, GREEN, WHITE, "Left", 1);   
+      key[1].initButton(_tft,  (_screenWidth/8)*7, _screenHeight/2, _screenWidth/4, _screenHeight, WHITE, RED, WHITE, "Right", 1);   
+      key[1].initButton(_tft,  _screenWidth/2, (_screenHeight/4)-10, _screenWidth/2, (_screenHeight/2)-20, WHITE, CYAN, BLACK, "Top", 1);   
+      key[3].initButton(_tft,  _screenWidth/2, ((_screenHeight/4)*3)+10, _screenWidth/2, ((_screenHeight/2)+20), WHITE, CYAN, BLACK, "Bottom", 1);    
+      key[4].initButton(_tft,  _screenWidth/2, _screenHeight/2, _screenWidth/2, 40, WHITE, CYAN, BLACK, "Centre", 1);   
+          
+          // draw buttons - not needed for this application but included just for testing
+          for (byte x = 0; x < 5; x++) {
+            key[x].drawButton(false);
+            delay(10);    // Seem to need a slight pause
+          }
+    break;
 }
 
 bool MCUFriendTouch::touchGetXY() {

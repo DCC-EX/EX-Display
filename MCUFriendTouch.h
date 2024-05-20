@@ -20,23 +20,21 @@ public:
 
   virtual void setupTouch();
 
-  virtual void drawButtons(uint16_t fontColour, uint16_t backgroundColour);
+  virtual void drawButtons(byte option, uint16_t fontColour, uint16_t backgroundColour);
 
   bool touchGetXY();
 
   void checkButtons();
 
-  uint8_t tft;
-
-  uint8_t screenHeight;
-
-  uint8_t screenWidth;
+  
 
 private:
   TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300)
 
   uint8_t _buttonPressed; // Indicates which button was pressed
-  
+  uint16_t _tft;
+  uint8_t _screenHeight;
+  uint8_t _screenWidth;
 };
 
 #endif // end include guard

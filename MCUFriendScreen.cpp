@@ -100,4 +100,11 @@ void MCUFriendScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength,
   _tft.drawLine(x1, y1, x2, y2, lineColour);
 }
 
+uint8_t MCUFriendScreen::returnHeight() { return _tft.height(); }
+
+uint8_t MCUFriendScreen::returnWidth() { return _tft.width(); }
+
+uint16_t MCUFriendScreen::returnTFT() { return _tft; }
+
+
 #endif

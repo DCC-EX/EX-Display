@@ -8,7 +8,7 @@
 // is the followinf block needed?
 #if SCREEN_TYPE == MCU
 #include <Adafruit_GFX.h>
-#include <Touchscreen.h>
+//#include <Touchscreen.h>
 #elif SCREEN_TYPE == TFT
 #include <TFT_eSPI.h>
 #endif
@@ -34,9 +34,10 @@ public:
   virtual void setupTouch();
 
   /// @brief Virtual function to implement to clear the entire screen
+  /// @param option indicator for which screen buttons to be setup
   /// @param fontColour Valid colour to set the button text to
   /// @param backgroundColour Valid colour to set the button colour to
-  virtual void drawButtons(uint16_t fontColour, uint16_t backgroundColour);
+  virtual void drawButtons(byte option, uint16_t fontColour, uint16_t backgroundColour);
 
   /// @brief Virtual function test if the screen was pressed.  Returns true or false
   bool touchGetXY();

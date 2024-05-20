@@ -25,6 +25,12 @@ public:
   virtual void writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
                          uint16_t backgroundColour) override;
 
+  uint8_t returnHeight();
+
+  uint8_t returnWidth();
+
+  uint16_t returnTFT();
+
   uint8_t getCharacterWidth(const char *character);
 
 private:
