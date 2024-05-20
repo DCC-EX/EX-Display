@@ -2,8 +2,10 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.9"
+#define VERSION "0.0.10"
 
+// 0.0.10 includes:
+//  - Add EXTouch class to support input methods
 // 0.0.9 includes:
 //  - Add support for SSD1306 and SH1106 I2C connected OLEDs
 //  - Disable text wrap

@@ -18,6 +18,7 @@ To keep independent of hardware, we shouldn't need pixel locations etc. in this 
 individual button, so left of screen might be button 0, top button 1, right button 2, etc.
 The button should map to a task, ie. switch display, scroll up, etc.
 I think there is a way to do this with a callback type setup, but not sure how to do that just yet.
+Brief start made on ButtonInput class, but does debounce need to be across all inputs or just physical buttons?
 */
 
 /// @brief This EXTouch class is designed to be extended by other touch screen classes that define the methods to
