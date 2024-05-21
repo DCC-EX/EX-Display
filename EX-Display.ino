@@ -94,6 +94,8 @@ void loop() {
   // No data incoming so see if we need to display anything
   // DISABLE IN STARTUPPHASE
   else {
-    updateScreen();
+    if (!StartupPhase) {
+      updateScreen();
+    }
   }
 }

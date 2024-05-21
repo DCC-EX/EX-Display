@@ -37,10 +37,10 @@ void MCUFriendScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t b
   CONSOLE.print(_tft.height());
   CONSOLE.print(F("|"));
   CONSOLE.println(_tft.width());
-  CONSOLE.print(F("config.h parameters DISPLAY_HEIGHT|DISPLAY_WIDTH: "));
-  CONSOLE.print(SCREEN_HEIGHT);
-  CONSOLE.print(F("|"));
-  CONSOLE.println(SCREEN_WIDTH);
+  // CONSOLE.print(F("config.h parameters DISPLAY_HEIGHT|DISPLAY_WIDTH: "));
+  // CONSOLE.print(SCREEN_HEIGHT);
+  // CONSOLE.print(F("|"));
+  // CONSOLE.println(SCREEN_WIDTH);
   CONSOLE.print(F("maxRows|maxColumns|fontHeight|fontWidth: "));
   CONSOLE.print(maxRows);
   CONSOLE.print(F("|"));
@@ -81,12 +81,14 @@ void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour,
   if (underlined) {
     _tft.drawLine(column, textRow + fontHeight, width, textRow + fontHeight, fontColour);
   }
-  CONSOLE.println(F("\n~~ WRITE ROW PARAMETERS ~~"));
-  CONSOLE.print(F("textRow|width: "));
-  CONSOLE.print(textRow);
-  CONSOLE.print(F("|"));
-  CONSOLE.println(width);
-  CONSOLE.println(F("~~ END WRITE ROW PARAMETERS ~~\n"));
+  // CONSOLE.println(F("\n~~ WRITE ROW PARAMETERS ~~"));
+  // CONSOLE.print(F("textRow|width: "));
+  // CONSOLE.print(textRow);
+  // CONSOLE.print(F("|"));
+  // CONSOLE.println(width);
+  // CONSOLE.println(F("~~ END WRITE ROW PARAMETERS ~~\n"));
+  CONSOLE.print(F("Printing row: "));
+  CONSOLE.println(message);
 }
 
 void MCUFriendScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
