@@ -1,10 +1,10 @@
 #include "Defines.h"
-#include "EXDisplayRow.h"
+#include "LogicalDisplayRow.h"
 
 /*
- * EXDisplayRow class implementation
+ * LogicalDisplayRow class implementation
  */
-EXDisplayRow::EXDisplayRow(uint8_t rowNumber) {
+LogicalDisplayRow::LogicalDisplayRow(uint8_t rowNumber) {
   _rowNumber = rowNumber;
   _maxMalloc = 0;
   _rowText = nullptr;
@@ -13,11 +13,11 @@ EXDisplayRow::EXDisplayRow(uint8_t rowNumber) {
   _rowAttributes = {false, false, false, false};
 }
 
-uint8_t EXDisplayRow::getRowNumber() { return _rowNumber; }
+uint8_t LogicalDisplayRow::getRowNumber() { return _rowNumber; }
 
-uint8_t EXDisplayRow::getMaxRowLength() { return _maxMalloc; }
+uint8_t LogicalDisplayRow::getMaxRowLength() { return _maxMalloc; }
 
-void EXDisplayRow::setRowText(char *rowText) {
+void LogicalDisplayRow::setRowText(char *rowText) {
   // Note size limit is 254 chars but that is beyond
   // the capability of the caller anyway.
 
@@ -42,14 +42,14 @@ void EXDisplayRow::setRowText(char *rowText) {
   _changed = true;
 }
 
-char *EXDisplayRow::getRowText() {
+char *LogicalDisplayRow::getRowText() {
   _changed = false;
   return _rowText;
 }
 
-bool EXDisplayRow::isChanged() { return _changed; }
+bool LogicalDisplayRow::isChanged() { return _changed; }
 
-void EXDisplayRow::setDisplayRow(uint8_t scrollPosition, uint8_t maxScreenRows, uint8_t maxRowNumber) {
+void LogicalDisplayRow::setDisplayRow(uint8_t scrollPosition, uint8_t maxScreenRows, uint8_t maxRowNumber) {
   if (_rowNumber >= scrollPosition) {
     _displayRow = _rowNumber - scrollPosition;
   } else {
@@ -62,34 +62,34 @@ void EXDisplayRow::setDisplayRow(uint8_t scrollPosition, uint8_t maxScreenRows, 
   }
 }
 
-uint8_t EXDisplayRow::getDisplayRow() { return _displayRow; }
+uint8_t LogicalDisplayRow::getDisplayRow() { return _displayRow; }
 
-bool EXDisplayRow::needsRender() { return _needsRender; }
+bool LogicalDisplayRow::needsRender() { return _needsRender; }
 
-EXDisplayRow *EXDisplayRow::getNext() { return _next; }
+LogicalDisplayRow *LogicalDisplayRow::getNext() { return _next; }
 
-void EXDisplayRow::setNext(EXDisplayRow *next) { _next = next; }
+void LogicalDisplayRow::setNext(LogicalDisplayRow *next) { _next = next; }
 
-void EXDisplayRow::setColours(uint16_t textColour, uint16_t backgroundColour) {
+void LogicalDisplayRow::setColours(uint16_t textColour, uint16_t backgroundColour) {
   _textColour = textColour;
   _backgroundColour = backgroundColour;
   _changed = true;
 }
 
-uint16_t EXDisplayRow::getTextColour() { return _textColour; }
+uint16_t LogicalDisplayRow::getTextColour() { return _textColour; }
 
-uint16_t EXDisplayRow::getBackgroundColour() { return _backgroundColour; }
+uint16_t LogicalDisplayRow::getBackgroundColour() { return _backgroundColour; }
 
-bool EXDisplayRow::isLine() {
+bool LogicalDisplayRow::isLine() {
   _changed = false;
   return _rowAttributes.line;
 }
 
-bool EXDisplayRow::isUnderlined() { return _rowAttributes.underline; }
+bool LogicalDisplayRow::isUnderlined() { return _rowAttributes.underline; }
 
-EXDisplayRow::~EXDisplayRow() { free(_rowText); }
+LogicalDisplayRow::~LogicalDisplayRow() { free(_rowText); }
 
-void EXDisplayRow::_rowFormatter() {
+void LogicalDisplayRow::_rowFormatter() {
   /*
   Need to check for all possible formatting codes here
   When formatting codes discovered:
@@ -107,7 +107,7 @@ void EXDisplayRow::_rowFormatter() {
   _neverTicker();
 }
 
-void EXDisplayRow::_setColours() {
+void LogicalDisplayRow::_setColours() {
   // Check for format #0xdddd#0xdddd#
   if (_rowText[0] != '#' || _rowText[7] != '#' || _rowText[14] != '#') {
     return;
@@ -155,7 +155,7 @@ void EXDisplayRow::_setColours() {
   _removeFormatters(15);
 }
 
-void EXDisplayRow::_setLine() {
+void LogicalDisplayRow::_setLine() {
   if (strlen(_rowText) != 2 || _rowText[0] != '-' || _rowText[strlen(_rowText) - 1] != '-') {
     _rowAttributes.line = false;
     return;
@@ -164,7 +164,7 @@ void EXDisplayRow::_setLine() {
   _removeFormatters(2);
 }
 
-void EXDisplayRow::_setUnderline() {
+void LogicalDisplayRow::_setUnderline() {
   if (_rowText[0] != '_' || _rowText[1] != '_') {
     if (_rowAttributes.underline) {
       _rowAttributes.underline = false;
@@ -175,7 +175,7 @@ void EXDisplayRow::_setUnderline() {
   _removeFormatters(2);
 }
 
-void EXDisplayRow::_alwaysTicker() {
+void LogicalDisplayRow::_alwaysTicker() {
   // Check for leading "~~"
   if (_rowText[0] != '~' || _rowText[1] != '~') {
     _rowAttributes.alwaysTicker = false;
@@ -185,7 +185,7 @@ void EXDisplayRow::_alwaysTicker() {
   return;
 }
 
-void EXDisplayRow::_neverTicker() {
+void LogicalDisplayRow::_neverTicker() {
   // Check for leading "!~"
   if (_rowText[0] != '!' || _rowText[1] != '~') {
     _rowAttributes.neverTicker = false;
@@ -195,7 +195,7 @@ void EXDisplayRow::_neverTicker() {
   return;
 }
 
-void EXDisplayRow::_removeFormatters(uint8_t size) {
+void LogicalDisplayRow::_removeFormatters(uint8_t size) {
   // New length for "text" needs to be length - formatters (size) + null pointer (1)
   uint8_t textLength = strlen(_rowText) - size + 1;
   // Set our temp char array to what we already have defined as our max size
