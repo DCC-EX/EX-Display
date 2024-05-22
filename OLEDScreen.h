@@ -4,7 +4,7 @@
 #ifndef OLEDSCREEN_H
 #define OLEDSCREEN_H
 
-#include "EXScreen.h"
+#include "PhysicalScreen.h"
 #include <Adafruit_GFX.h>
 #include <Adafruit_SH110X.h>
 #include <Adafruit_SSD1306.h>
@@ -12,7 +12,7 @@
 #include <Wire.h>
 
 /// @brief Class to drive monochrome OLEDs with EX-Display, noting all colours are ignored
-class OLEDScreen : public EXScreen {
+class OLEDScreen : public PhysicalScreen {
 public:
 #if SCREEN_TYPE == OLED_SSD1306
   OLEDScreen(Adafruit_SSD1306 &oled, uint8_t muxAddress = 0, uint8_t subBus = 255);

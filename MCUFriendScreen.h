@@ -4,12 +4,12 @@
 #ifndef MCUFRIENDSCREEN_H
 #define MCUFRIENDSCREEN_H
 
-#include "EXScreen.h"
+#include "PhysicalScreen.h"
 #include <Adafruit_GFX.h>
 #include <Arduino.h>
 #include <MCUFRIEND_kbv.h>
 
-class MCUFriendScreen : public EXScreen {
+class MCUFriendScreen : public PhysicalScreen {
 public:
   MCUFriendScreen(MCUFRIEND_kbv &tft);
 
