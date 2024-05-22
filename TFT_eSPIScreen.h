@@ -4,12 +4,12 @@
 #ifndef TFT_ESPISCREEN_H
 #define TFT_ESPISCREEN_H
 
-#include "EXScreen.h"
+#include "PhysicalScreen.h"
 #include <Arduino.h>
 #include <SPI.h>
 #include <TFT_eSPI.h>
 
-class TFT_eSPIScreen : public EXScreen {
+class TFT_eSPIScreen : public PhysicalScreen {
 public:
   TFT_eSPIScreen(TFT_eSPI &tft);
 

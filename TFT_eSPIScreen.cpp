@@ -3,7 +3,7 @@
 
 #include "TFT_eSPIScreen.h"
 
-TFT_eSPIScreen::TFT_eSPIScreen(TFT_eSPI &tft) : EXScreen(), _tft(tft) {}
+TFT_eSPIScreen::TFT_eSPIScreen(TFT_eSPI &tft) : PhysicalScreen(), _tft(tft) {}
 
 void TFT_eSPIScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) {
   const GFXfont *gfxFont = TEXT_FONT;

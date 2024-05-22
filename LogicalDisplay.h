@@ -9,9 +9,10 @@ class LogicalDisplay {
 public:
   /// @brief Constructor for the LogicalDisplay class
   /// @param displayNumber The ID of this display, 0 - 254
-  /// @param maxRowLength The maximum number of characters that will fit on the physical screen
-  /// @param maxRowNumber The maximum number of rows that will fit on the physical screen
-  LogicalDisplay(uint8_t displayNumber, uint8_t maxRowLength, uint8_t maxRowNumber);
+  /// @param textColour Valid colour code for the default text colour
+  /// @param backgroundColour Valid colour code for the default background colour
+  LogicalDisplay(uint8_t displayNumber, uint8_t maxRowLength, uint8_t maxRowNumber, uint16_t textColour,
+                 uint16_t backgroundColour);
 
   /// @brief Get the next LogicalDisplay object in the linked list
   /// @return Pointer to the next LogicalDisplay object
@@ -49,22 +50,37 @@ public:
   /// @return True|False
   bool needsRedraw();
 
-  /// @brief Reset the needsRedraw flag
-  void resetRedraw();
+  /// @brief Set the needsRedraw flag
+  /// @param redraw true|false
+  void setRedraw(bool redraw);
+
+  /// @brief Get the default text colour for this display
+  /// @return 16 bit colour code
+  uint16_t getDefaultTextColour();
+
+  /// @brief Get the default background colour for this display
+  /// @return 16 bit colour code
+  uint16_t getDefaultBackgroundColour();
+
+  /// @brief Get the maximum number of characters that will fit on a row
+  /// @return 0 - 255
+  uint8_t getMaxRowLength();
 
 private:
-  LogicalDisplay *_next;         // Pointer to the next display in the list
-  uint8_t _displayNumber;        // ID of this display
-  LogicalDisplayRow *_firstRow;  // Pointer to the first LogicalDisplayRow instances in the linked list
-  uint8_t _highestRowNumber;     // Highest row number from the associated linked list instances
-  uint8_t _maxRowLength;         // Number of characters that will fit on the physical screen
-  uint8_t _maxRowNumber;         // Max row number that will fit on the physical screen
-  uint8_t _numberOfRows;         // Calculated number of rows in the linked list
-  uint8_t _scrollPosition;       // Row number that is at the top of the display to support scrolling
-  unsigned long _lastScrollTime; // Last time in ms a scroll function was performed
-  bool _needsRedraw;             // Flag if this display needs to be redrawn
-  uint8_t _fontHeight;           // Height of the font for this display
-  uint8_t _fontWidth;            // Width of the font for this display
+  LogicalDisplay *_next;            // Pointer to the next display in the list
+  uint8_t _displayNumber;           // ID of this display
+  LogicalDisplayRow *_firstRow;     // Pointer to the first LogicalDisplayRow instances in the linked list
+  uint8_t _highestRowNumber;        // Highest row number from the associated linked list instances
+  uint8_t _maxRowLength;            // Number of characters that will fit on the physical screen
+  uint8_t _maxRowNumber;            // Max number of rows that will fit on the physical screen
+  uint8_t _numberOfRows;            // Calculated number of rows in the linked list
+  uint8_t _scrollPosition;          // Row number that is at the top of the display to support scrolling
+  unsigned long _lastScrollTime;    // Last time in ms a scroll function was performed
+  bool _needsRedraw;                // Flag if this display needs to be redrawn
+  uint8_t _fontHeight;              // Height of the font for this display
+  uint8_t _fontWidth;               // Width of the font for this display
+  uint8_t _defaultTextColour;       // Default colour for text for this display
+  uint8_t _defaultBackgroundColour; // Default background colour for this display
 
   /// @brief Private method to add a row
   /// @param rowNumber 0 - 255

@@ -4,8 +4,10 @@
 /*
  * LogicalDisplay class implementation
  */
-LogicalDisplay::LogicalDisplay(uint8_t displayNumber, uint8_t maxRowLength, uint8_t maxRowNumber)
-    : _displayNumber(displayNumber), _maxRowLength(maxRowLength), _maxRowNumber(maxRowNumber) {
+LogicalDisplay::LogicalDisplay(uint8_t displayNumber, uint8_t maxRowLength, uint8_t maxRowNumber, uint16_t textColour,
+                               uint16_t backgroundColour)
+    : _displayNumber(displayNumber), _maxRowLength(maxRowLength), _maxRowNumber(maxRowNumber),
+      _defaultTextColour(textColour), _defaultBackgroundColour(backgroundColour) {
   _firstRow = nullptr;
   _next = nullptr;
   _highestRowNumber = 0;
@@ -48,7 +50,7 @@ void LogicalDisplay::scrollUp() {
   // _scrollPosition needs to decrement to bring lower rows up the screen
   // If _scrollPosition ends at 0, it should become the highest possible row
   uint8_t lastRow = _maxRowNumber - 1; // Highest possible row number on screen
-  if (_highestRowNumber <= lastRow) {           // If our max row number is on screen, no scroll required
+  if (_highestRowNumber <= lastRow) {  // If our max row number is on screen, no scroll required
     return;
   }
   if (_scrollPosition == 0) { // If row 0 is top of screen, need to move to the highest row number
@@ -70,7 +72,7 @@ void LogicalDisplay::scrollUp() {
 
 void LogicalDisplay::scrollDown() {
   uint8_t lastRow = _maxRowNumber - 1; // Highest possible row number on screen
-  if (_highestRowNumber <= lastRow) {           // If our max row number is on screen, no scroll required
+  if (_highestRowNumber <= lastRow) {  // If our max row number is on screen, no scroll required
     return;
   }
   if (_scrollPosition >= lastRow) { // If last row is top of screen, goes to bottom
@@ -99,7 +101,13 @@ void LogicalDisplay::autoScroll(unsigned long scrollDelay) {
 
 bool LogicalDisplay::needsRedraw() { return _needsRedraw; }
 
-void LogicalDisplay::resetRedraw() { _needsRedraw = false; }
+void LogicalDisplay::setRedraw(bool redraw) { _needsRedraw = redraw; }
+
+uint16_t LogicalDisplay::getDefaultTextColour() { return _defaultTextColour; }
+
+uint16_t LogicalDisplay::getDefaultBackgroundColour() { return _defaultBackgroundColour; }
+
+uint8_t LogicalDisplay::getMaxRowLength() { return _maxRowLength; }
 
 LogicalDisplayRow *LogicalDisplay::_addRow(uint8_t rowNumber, char *rowText) {
   // create a new row and chain it in
