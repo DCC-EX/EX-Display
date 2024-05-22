@@ -37,38 +37,40 @@ void setup() {
   Wire.begin();
 #endif
 
-  // Tell AtFinder our maximum supported text length,
-  // and how to call back when found.
-  AtFinder::setup(100, updateEXDisplayRow);
+  // Setup our physical screens first - required before adding displays
+  screen->setupScreen(SCREEN_ROTATION, TEXT_SIZE, BACKGROUND_COLOUR);
 
-  // Create display instances
+  // Add the displays to the screen
 #if defined(DISPLAY_1_ID)
-  new EXDisplay(DISPLAY_1_ID, screen, MAX_LINE_LENGTH);
+  screen->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
 #endif
 #if defined(DISPLAY_2_ID)
-  new EXDisplay(DISPLAY_2_ID, screen, MAX_LINE_LENGTH);
+screen->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
 #endif
 #if defined(DISPLAY_3_ID)
-  new EXDisplay(DISPLAY_3_ID, screen, MAX_LINE_LENGTH);
+  screen->addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
 #endif
 
-  for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
-    display->getEXScreen()->setupScreen(SCREEN_ROTATION, BACKGROUND_COLOUR, TEXT_SIZE);
+  // Tell AtFinder our maximum supported text length,
+  // and how to call back when found.
+  AtFinder::setup(100, updateDisplayRow);
+
+  // Create display instances
+  for (LogicalDisplay *display = screen->getFirstDisplay(); display; display = display->getNext()) {
     CONSOLE.print(F("Display ID|Max Rows|Max Columns: "));
     CONSOLE.print(display->getDisplayNumber());
     CONSOLE.print(F("|"));
-    CONSOLE.print(display->getScreenMaxRows());
+    CONSOLE.print(screen->getMaxRows());
     CONSOLE.print(F("|"));
-    CONSOLE.println(display->getScreenMaxColumns());
+    CONSOLE.println(display->getMaxRowLength());
   }
 
-  EXDisplay *activeDisplay = EXDisplay::getActiveDisplay();
-  activeDisplay->getEXScreen()->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, "EX-Display", false);
-  activeDisplay->getEXScreen()->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, VERSION, false);
+  screen->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, "EX-Display", false);
+  screen->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, VERSION, false);
 
   delay(2000);
 
-  activeDisplay->getEXScreen()->clearScreen(BACKGROUND_COLOUR);
+  screen->clearScreen(BACKGROUND_COLOUR);
 
   timestamp = millis();
   CONSOLE.println(F("End of Setup"));

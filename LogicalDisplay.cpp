@@ -17,6 +17,8 @@ LogicalDisplay::LogicalDisplay(uint8_t displayNumber, uint8_t maxRowLength, uint
   _needsRedraw = false;
 }
 
+void LogicalDisplay::setNext(LogicalDisplay *display) { _next = display; }
+
 LogicalDisplay *LogicalDisplay::getNext() { return _next; }
 
 LogicalDisplayRow *LogicalDisplay::getFirstRow() { return _firstRow; }

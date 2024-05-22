@@ -2,6 +2,9 @@
 #include "PhysicalScreen.h"
 #include <Arduino.h>
 
+PhysicalScreen *PhysicalScreen::_first = nullptr;
+uint8_t PhysicalScreen::_screenCount = 0;
+
 PhysicalScreen::PhysicalScreen() {
   _firstDisplay = nullptr;
   _activeDisplay = nullptr;
@@ -9,13 +12,56 @@ PhysicalScreen::PhysicalScreen() {
   _lastSwitchTime = 0;
   _maxRows = 0;
   _maxRowLength = 0;
+  _fontHeight = 0;
+  _fontWidth = 0;
+  _screenNumber = _screenCount++;
+  if (!_first) {
+    _first = this;
+    _next = nullptr;
+  } else {
+    for (PhysicalScreen *screen = PhysicalScreen::getFirst(); screen; screen = screen->_next) {
+      if (!screen->_next) {
+        screen->_next = this;
+      }
+    }
+  }
 }
 
+PhysicalScreen *PhysicalScreen::getFirst() { return _first; }
+
+PhysicalScreen *PhysicalScreen::getNext() { return _next; }
+
 void PhysicalScreen::addDisplay(uint8_t displayNumber, uint16_t defaultTextColour, uint16_t defaultBackgroundColour) {
-  
+  // Create a new display
+  LogicalDisplay *display =
+      new LogicalDisplay(displayNumber, _maxRowLength, _maxRows, defaultTextColour, defaultBackgroundColour);
+
+  // Find previous display
+  LogicalDisplay *previous = nullptr;
+  for (auto peek = _firstDisplay; peek; peek = peek->getNext()) {
+    if (peek->getDisplayNumber() > displayNumber) {
+      break;
+    }
+    previous = peek;
+  }
+  if (previous) {
+    // If there's a previous display, chain after it
+    display->setNext(previous->getNext());
+    previous->setNext(display);
+  } else {
+    // Put at start of list
+    display->setNext(_firstDisplay);
+    _firstDisplay = display;
+  }
+  if (!_activeDisplay) {
+    _activeDisplay = display;
+  }
+  _displayCount++;
 }
 
 LogicalDisplay *PhysicalScreen::getFirstDisplay() { return _firstDisplay; }
+
+void PhysicalScreen::setActiveDisplay(LogicalDisplay *activeDisplay) { _activeDisplay = activeDisplay; }
 
 LogicalDisplay *PhysicalScreen::getActiveDisplay() { return _activeDisplay; }
 
@@ -73,6 +119,8 @@ void PhysicalScreen::autoSwitch(unsigned long switchDelay) {
 }
 
 void PhysicalScreen::processActiveDisplay() {
+  if (!_activeDisplay)
+    return;
   if (_activeDisplay->needsRedraw()) {
     clearScreen(_activeDisplay->getDefaultBackgroundColour());
   }
@@ -89,3 +137,9 @@ void PhysicalScreen::processActiveDisplay() {
   }
   _activeDisplay->setRedraw(false);
 }
+
+uint8_t PhysicalScreen::getScreenNumber() { return _screenNumber; }
+
+uint8_t PhysicalScreen::getMaxRows() { return _maxRows; }
+
+uint8_t PhysicalScreen::getMaxRowLength() { return _maxRowLength; }

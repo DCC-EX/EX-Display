@@ -14,6 +14,10 @@ public:
   LogicalDisplay(uint8_t displayNumber, uint8_t maxRowLength, uint8_t maxRowNumber, uint16_t textColour,
                  uint16_t backgroundColour);
 
+  /// @brief Set the next display in the linked list
+  /// @param display Pointer to the next LogicalDisplay instance
+  void setNext(LogicalDisplay *display);
+
   /// @brief Get the next LogicalDisplay object in the linked list
   /// @return Pointer to the next LogicalDisplay object
   LogicalDisplay *getNext();
