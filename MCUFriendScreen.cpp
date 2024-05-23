@@ -77,12 +77,14 @@ void MCUFriendScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour,
   if (underlined) {
     _tft.drawLine(column, textRow + _fontHeight, width, textRow + _fontHeight, fontColour);
   }
-  CONSOLE.println(F("\n~~ WRITE ROW PARAMETERS ~~"));
-  CONSOLE.print(F("textRow|width: "));
-  CONSOLE.print(textRow);
-  CONSOLE.print(F("|"));
-  CONSOLE.println(width);
-  CONSOLE.println(F("~~ END WRITE ROW PARAMETERS ~~\n"));
+  // CONSOLE.println(F("\n~~ WRITE ROW PARAMETERS ~~"));
+  // CONSOLE.print(F("textRow|width: "));
+  // CONSOLE.print(textRow);
+  // CONSOLE.print(F("|"));
+  // CONSOLE.println(width);
+  // CONSOLE.println(F("~~ END WRITE ROW PARAMETERS ~~\n"));
+  CONSOLE.print(F("Printing row: "));
+  CONSOLE.println(message);
 }
 
 void MCUFriendScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
