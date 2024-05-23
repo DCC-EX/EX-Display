@@ -45,7 +45,7 @@ void setup() {
   screen->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
 #endif
 #if defined(DISPLAY_2_ID)
-screen->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
+  screen->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
 #endif
 #if defined(DISPLAY_3_ID)
   screen->addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
@@ -96,6 +96,8 @@ void loop() {
   // No data incoming so see if we need to display anything
   // DISABLE IN STARTUPPHASE
   else {
-    updateScreen();
+    if (!StartupPhase) {
+      updateScreen();
+    }
   }
 }
