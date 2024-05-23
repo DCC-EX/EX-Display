@@ -1,5 +1,5 @@
-#ifndef EXDisplayRow_H
-#define EXDisplayRow_H
+#ifndef LOGICALDISPLAYROW_H
+#define LOGICALDISPLAYROW_H
 
 #include <Arduino.h>
 
@@ -8,7 +8,7 @@
  * Each row is a member of a linked list which is an attribute of an EXDisplay object.
  *
  */
-class EXDisplayRow {
+class LogicalDisplayRow {
   /// @brief Structure for the _rowAttributes attribute for row formatting
   struct RowAttributes {
     bool line : 1;
@@ -18,9 +18,9 @@ class EXDisplayRow {
   };
 
 public:
-  /// @brief Constructor for the EXDisplayRow object
+  /// @brief Constructor for the LogicalDisplayRow object
   /// @param rowNumber Row number on the display, 0 - 255
-  EXDisplayRow(uint8_t rowNumber);
+  LogicalDisplayRow(uint8_t rowNumber);
 
   /// @brief Get the row number this should be displayed on
   /// @return 0 - 255
@@ -56,13 +56,13 @@ public:
   /// @return True|False
   bool needsRender();
 
-  /// @brief Set the pointer to the next EXDisplayRow object in the linked list
-  /// @param next Pointer to the next EXDisplayRow object
-  void setNext(EXDisplayRow *next);
+  /// @brief Set the pointer to the next LogicalDisplayRow object in the linked list
+  /// @param next Pointer to the next LogicalDisplayRow object
+  void setNext(LogicalDisplayRow *next);
 
   /// @brief Get the next row
-  /// @return Pointer to the next EXDisplayRow object in the linked list
-  EXDisplayRow *getNext();
+  /// @return Pointer to the next LogicalDisplayRow object in the linked list
+  LogicalDisplayRow *getNext();
 
   /// @brief Set the text/foreground and background colour for this row
   /// @param textColour Hex value of the text/foreground colour
@@ -85,8 +85,8 @@ public:
   /// @return true|false
   bool isUnderlined();
 
-  /// @brief Destructor for the EXDisplayRow object
-  ~EXDisplayRow();
+  /// @brief Destructor for the LogicalDisplayRow object
+  ~LogicalDisplayRow();
 
 private:
   uint8_t _rowNumber;  // This is the row number received from the parser
@@ -95,13 +95,13 @@ private:
   bool _changed;       // Flag set when text received from the parser is different to rowText
   uint8_t _displayRow; // This is the calculated physical row on a display that this line belongs on
   bool _needsRender;   // Flag that is set when row belongs on a physical display, false when off-screen
-  EXDisplayRow *_next;
+  LogicalDisplayRow *_next;
   uint16_t _textColour;         // Text/foreground colour for this row
   uint16_t _backgroundColour;   // Background colour for this row
   RowAttributes _rowAttributes; // One bit per attribute to allow 8 total
 
   /// @brief Private method to format the row attributes for the specified row
-  /// @param row Pointer to an EXDisplayRow object
+  /// @param row Pointer to an LogicalDisplayRow object
   void _rowFormatter();
 
   /// @brief Extract colour codes from text

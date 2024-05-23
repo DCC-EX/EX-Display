@@ -10,7 +10,7 @@ bool debug = false;
 // This function is called from AtFinder when a
 // <@ screenid row "text"> message is discovered.
 
-void updateEXDisplayRow(uint8_t screenId, uint8_t screenRow, char *text) {
+void updateDisplayRow(uint8_t screenId, uint8_t screenRow, char *text) {
 
   // special diagnostic to dump buffers on request
   if (screenId == 255) {
@@ -18,38 +18,51 @@ void updateEXDisplayRow(uint8_t screenId, uint8_t screenRow, char *text) {
     return;
   }
 
-  EXDisplay *display = EXDisplay::getDisplayByNumber(screenId);
-  if (display) {
-    display->updateRow(screenRow, text);
+  for (PhysicalScreen *screen = PhysicalScreen::getFirst(); screen; screen = screen->getNext()) {
+    for (LogicalDisplay *display = screen->getFirstDisplay(); display; display = display->getNext()) {
+      if (display->getDisplayNumber() == screenId) {
+        display->updateRow(screenRow, text);
+        return;
+      }
+    }
   }
 }
 
 void updateScreen() {
-  EXDisplay *display = EXDisplay::getActiveDisplay();
+  for (PhysicalScreen *screen = PhysicalScreen::getFirst(); screen; screen = screen->getNext()) {
 #ifdef SCROLLTIME
-  display->autoScroll(SCROLLTIME);
+    for (LogicalDisplay *display = screen->getFirstDisplay(); display; display = display->getNext()) {
+      display->autoScroll(SCROLLTIME);
+    }
 #endif
 #ifdef DISPLAY_SWITCH_TIME
-  display->autoSwitch(DISPLAY_SWITCH_TIME);
+    screen->autoSwitch(DISPLAY_SWITCH_TIME);
 #endif
-  display->processDisplay();
+    screen->processActiveDisplay();
+  }
 }
 
 void displayAllRows() {
-  for (EXDisplay *display = EXDisplay::getFirst(); display; display = display->getNext()) {
-    CONSOLE.print(F("\n\nRows for display "));
-    CONSOLE.println(display->getDisplayNumber());
-    CONSOLE.println(F("Row|Display Row|Message|isChanged|needsRender"));
-    for (EXDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
-      CONSOLE.print(row->getRowNumber());
-      CONSOLE.print(F("|"));
-      CONSOLE.print(row->getDisplayRow());
-      CONSOLE.print(F("|"));
-      CONSOLE.print(row->getRowText());
-      CONSOLE.print(F("|"));
-      CONSOLE.print(row->isChanged());
-      CONSOLE.print(F("|"));
-      CONSOLE.println(row->needsRender());
+  for (PhysicalScreen *screen = PhysicalScreen::getFirst(); screen; screen = screen->getNext()) {
+    CONSOLE.print(F("\n~~ All displays and rows for screen "));
+    CONSOLE.print(screen->getScreenNumber());
+    CONSOLE.println(F(" ~~"));
+
+    for (LogicalDisplay *display = screen->getFirstDisplay(); display; display = display->getNext()) {
+      CONSOLE.print(F("\nRows for display "));
+      CONSOLE.println(display->getDisplayNumber());
+      CONSOLE.println(F("Row|Display Row|Message|isChanged|needsRender"));
+      for (LogicalDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
+        CONSOLE.print(row->getRowNumber());
+        CONSOLE.print(F("|"));
+        CONSOLE.print(row->getDisplayRow());
+        CONSOLE.print(F("|"));
+        CONSOLE.print(row->getRowText());
+        CONSOLE.print(F("|"));
+        CONSOLE.print(row->isChanged());
+        CONSOLE.print(F("|"));
+        CONSOLE.println(row->needsRender());
+      }
     }
   }
 }

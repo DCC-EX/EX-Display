@@ -4,7 +4,7 @@
 
 #if SCREEN_TYPE == OLED_SSD1306
 OLEDScreen::OLEDScreen(Adafruit_SSD1306 &oled, uint8_t muxAddress, uint8_t subBus)
-    : EXScreen(), _oled(oled), _muxAddress(muxAddress), _subBus(subBus) {}
+    : PhysicalScreen(), _oled(oled), _muxAddress(muxAddress), _subBus(subBus) {}
 #elif SCREEN_TYPE == OLED_SH1106
 OLEDScreen::OLEDScreen(Adafruit_SH1106G &oled, uint8_t muxAddress, uint8_t subBus)
     : EXScreen(), _oled(oled), _muxAddress(muxAddress), _subBus(subBus) {}
@@ -23,14 +23,14 @@ void OLEDScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgr
   _oled.setTextWrap(false);
   _oled.clearDisplay();
   _oled.display();
-  fontHeight = gfxFont->yAdvance;
-  fontWidth = _getTextWidth();
-  maxRows = _oled.height() / fontHeight;
-  maxColumns = _oled.width() / fontWidth;
-  CONSOLE.print(F("Setup done: fontHeight|fontWidth|tftHeight|tftWidth: "));
-  CONSOLE.print(fontHeight);
+  _fontHeight = gfxFont->yAdvance;
+  _fontWidth = _getTextWidth();
+  _maxRows = _oled.height() / _fontHeight;
+  _maxRowLength = _oled.width() / _fontWidth;
+  CONSOLE.print(F("Setup done: _fontHeight|_fontWidth|_oled.Height|_oled.Width: "));
+  CONSOLE.print(_fontHeight);
   CONSOLE.print(F("|"));
-  CONSOLE.print(fontWidth);
+  CONSOLE.print(_fontWidth);
   CONSOLE.print(F("|"));
   CONSOLE.print(_oled.height());
   CONSOLE.print(F("|"));
@@ -44,9 +44,9 @@ void OLEDScreen::clearScreen(uint16_t backgroundColour) {
 
 void OLEDScreen::clearRow(uint8_t row, uint16_t backgroundColour) {
   int16_t x = 0;
-  int16_t y = (row * fontHeight) + row;
-  int16_t w = fontWidth * maxColumns;
-  int16_t h = fontHeight;
+  int16_t y = (row * _fontHeight) + row;
+  int16_t w = _fontWidth * _maxRowLength;
+  int16_t h = _fontHeight;
   _oled.fillRect(x, y, w, h, backgroundColour);
   _oled.display();
 }
@@ -54,14 +54,14 @@ void OLEDScreen::clearRow(uint8_t row, uint16_t backgroundColour) {
 void OLEDScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
                           uint8_t maxLength, char *message, bool underlined) {
   uint16_t x = column;
-  uint16_t y = (row * fontHeight) + fontHeight;
+  uint16_t y = (row * _fontHeight) + _fontHeight;
   _oled.setTextColor(fontColour);
   _oled.setCursor(x, y);
   _oled.print(message);
   if (underlined) {
-    _oled.drawLine(column, y+1, _oled.width(), y+1, fontColour);
+    _oled.drawLine(column, y + 1, _oled.width(), y + 1, fontColour);
   } else {
-    _oled.drawLine(column, y+1, _oled.width(), y+1, backgroundColour);
+    _oled.drawLine(column, y + 1, _oled.width(), y + 1, backgroundColour);
   }
   _oled.display();
   CONSOLE.print(F("\nwriteRow textRow|message: "));
@@ -74,9 +74,9 @@ void OLEDScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint
                            uint16_t backgroundColour) {
   // Horizontal start/end
   int16_t x1 = column;
-  int16_t x2 = fontWidth * lineLength;
+  int16_t x2 = _fontWidth * lineLength;
   // Vertical start - half way up the font height
-  int16_t y1 = (row * fontHeight) + row + (fontHeight / 2);
+  int16_t y1 = (row * _fontHeight) + row + (_fontHeight / 2);
   int16_t y2 = y1;
   clearRow(row, backgroundColour);
   _oled.drawLine(x1, y1, x2, y2, lineColour);

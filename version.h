@@ -2,8 +2,12 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.9"
+#define VERSION "0.0.10"
 
+// 0.0.10 includes:
+//  - Refactor so that logical displays are attributes of physical screens
+//  - This should simplify addition of touch/input control
+//  - Ensure order of logical displays in linked list are in ascending order of number
 // 0.0.9 includes:
 //  - Add support for SSD1306 and SH1106 I2C connected OLEDs
 //  - Disable text wrap
