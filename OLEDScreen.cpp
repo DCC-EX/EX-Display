@@ -83,6 +83,10 @@ void OLEDScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint
   _oled.display();
 }
 
+uint16_t OLEDScreen::getHeight() { return _oled.height(); }
+
+uint16_t OLEDScreen::getWidth() { return _oled.width(); }
+
 uint8_t OLEDScreen::_getTextWidth() {
   int16_t x1, y1;
   uint16_t w, h;

@@ -52,6 +52,23 @@
 // if in use uncomment the following
 // #define USE_TOUCH
 
+// If using an MCUFRIEND_kbv type screen it requires the Adafruit TouchScreen driver
+// You must define the below parameters for this scenario
+// #define YP A1  // must be an analog pin, use "An" notation!
+// #define XM A2  // must be an analog pin, use "An" notation!
+// #define YM 7   // can be a digital pin
+// #define XP 6   // can be a digital pin
+
+// If using push buttons rather than a touch screen, comment out USE_TOUCH above and uncomment the below
+// Also efine the GPIO pin used by each push button
+// #define USE_BUTTONS
+
+// #define LEFT_BUTTON 22
+// #define RIGHT_BUTTON 23
+// #define UP_BUTTON 24
+// #define DOWN_BUTTON 25
+// #define CENTRE_BUTTON 26
+
 // if the touch screen not in use, Now define the scroll requirements
 #define SCROLLTIME 1000 // 5 seconds
 

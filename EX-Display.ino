@@ -1,8 +1,10 @@
 #include "AtFinder.h"
 #include "Defines.h"
 #include "DisplayFunctions.h"
+#include "InputMethod.h"
 #include "version.h"
 #include <Arduino.h>
+
 
 bool StartupPhase = true;
 unsigned long timestamp = 0;
@@ -12,10 +14,19 @@ long screencount = 0;
 #include "MCUFriendScreen.h"
 MCUFRIEND_kbv tft;
 MCUFriendScreen *screen = new MCUFriendScreen(tft);
+#ifdef USE_TOUCH
+#include "AdafruitTouch.h"
+TouchScreen touchScreen = TouchScreen(XP, YP, XM, YM, 300);
+InputMethod *input = new AdafruitTouch(touchScreen);
+#endif
 #elif SCREEN_TYPE == TFT
 #include "TFT_eSPIScreen.h"
 TFT_eSPI tft = TFT_eSPI();
 TFT_eSPIScreen *screen = new TFT_eSPIScreen(tft);
+#ifdef USE_TOUCH
+#include "TFT_eSPITouch.h"
+InputMethod *input = new TFT_eSPITouch(tft);
+#endif
 #elif SCREEN_TYPE == OLED_SSD1306
 #include "OLEDScreen.h"
 Adafruit_SSD1306 oled = Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
@@ -73,6 +84,10 @@ void setup() {
   screen->clearScreen(BACKGROUND_COLOUR);
 
   timestamp = millis();
+
+  input->setScreen(screen);
+  input->begin();
+
   CONSOLE.println(F("End of Setup"));
 }
 
@@ -98,6 +113,7 @@ void loop() {
   else {
     if (!StartupPhase) {
       updateScreen();
+      input->processInput();
     }
   }
 }

@@ -23,11 +23,13 @@ public:
   /// @brief Constructor for the InputMethod class
   InputMethod();
 
-  virtual void process() = 0;
+  virtual void begin() = 0;
+
+  virtual void processInput() = 0;
 
   void setScreen(PhysicalScreen *screen);
 
-private:
+protected:
   static InputMethod *_first; //
   InputMethod *_next;
   PhysicalScreen *_screen;

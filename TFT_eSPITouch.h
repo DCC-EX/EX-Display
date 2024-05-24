@@ -3,7 +3,7 @@
 
 #include "Defines.h"
 
-#ifdef NEEDS_TFT
+#if defined(NEEDS_TFT) && defined(USE_TOUCH)
 #include "InputMethod.h"
 #include <Arduino.h>
 #include <TFT_eSPI.h>
@@ -14,10 +14,14 @@ public:
   /// @param tftTouch Reference to an existing TFT_eSPI instance
   TFT_eSPITouch(TFT_eSPI &tftTouch);
 
+  void begin() override;
+
+  void processInput() override;
+
 private:
   TFT_eSPI &_tftTouch;
 };
 
-#endif // NEEDS_TFT
+#endif // NEEDS_TFT and USE_TOUCH
 
 #endif

@@ -62,4 +62,8 @@ void TFT_eSPIScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, 
   _tft.drawLine(x1, y1, x2, y2, lineColour);
 }
 
+uint16_t TFT_eSPIScreen::getHeight() { return _tft.height(); }
+
+uint16_t TFT_eSPIScreen::getWidth() { return _tft.width(); }
+
 #endif
