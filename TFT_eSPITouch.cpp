@@ -6,7 +6,13 @@
 
 TFT_eSPITouch::TFT_eSPITouch(TFT_eSPI &tftTouch) : InputMethod(), _tftTouch(tftTouch) {}
 
-void TFT_eSPITouch::begin() {}
+void TFT_eSPITouch::begin() {
+  if (!_screen) {return;}
+  CONSOLE.print(F("Screen Height|Width: "));
+  CONSOLE.print(_screen->getHeight());
+  CONSOLE.print(F("|"));
+  CONSOLE.println(_screen->getWidth());
+}
 
 void TFT_eSPITouch::processInput() {
   uint16_t touchX, touchY;
