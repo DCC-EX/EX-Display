@@ -52,6 +52,9 @@
 // if in use uncomment the following
 // #define USE_TOUCH
 
+// If you have a need force recalibrating the touch screen, uncomment this line
+// #define FORCE_CALIBRATION
+
 // If using an MCUFRIEND_kbv type screen it requires the Adafruit TouchScreen driver
 // You must define the below parameters for this scenario
 // #define YP A1  // must be an analog pin, use "An" notation!

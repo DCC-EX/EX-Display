@@ -18,6 +18,24 @@ InputMethod instances will be in a linked list to cycle through to process input
 have a pointer to a screen to control.
 */
 
+#ifdef USE_TOUCH
+struct ButtonDimensions {
+  uint16_t xStart = 0;
+  uint16_t xEnd = 0;
+  uint16_t yStart = 0;
+  uint16_t yEnd = 0;
+};
+#endif
+
+enum Button {
+  LeftButton = 0,
+  RightButton = 1,
+  CentreButton = 2,
+  UpButton = 3,
+  DownButton = 4,
+  NoButton = 5,
+};
+
 class InputMethod {
 public:
   /// @brief Constructor for the InputMethod class
@@ -25,14 +43,22 @@ public:
 
   virtual void begin() = 0;
 
-  virtual void processInput() = 0;
+  virtual Button processInput() = 0;
 
   void setScreen(PhysicalScreen *screen);
 
 protected:
-  static InputMethod *_first; //
-  InputMethod *_next;
-  PhysicalScreen *_screen;
+  InputMethod *_next;      // Next input instance in the list
+  PhysicalScreen *_screen; // Physical screen instance associated with this input
+  uint8_t _inputNumber;    // Auto incrementing number, enables multiple touch screens
+
+#ifdef USE_TOUCH
+  ButtonDimensions _buttons[5];
+  void _calculateButtons();
+#endif
+
+  static InputMethod *_first; // Start a linked list to cater for multiple inputs
+  static uint8_t _inputCount; // Count of all inputs
 };
 
 #endif

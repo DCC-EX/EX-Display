@@ -85,8 +85,10 @@ void setup() {
 
   timestamp = millis();
 
+#if defined(USE_TOUCH) || defined(USE_BUTTONS)
   input->setScreen(screen);
   input->begin();
+#endif
 
   CONSOLE.println(F("End of Setup"));
 }
@@ -113,7 +115,33 @@ void loop() {
   else {
     if (!StartupPhase) {
       updateScreen();
-      input->processInput();
+#if defined(USE_TOUCH) || defined(USE_BUTTONS)
+      Button inputButton = input->processInput();
+      switch (inputButton) {
+        case LeftButton:
+          CONSOLE.println(F("Left button pressed"));
+          break;
+
+        case RightButton:
+          CONSOLE.println(F("Right button pressed"));
+          break;
+
+        case CentreButton:
+          CONSOLE.println(F("Centre button pressed"));
+          break;
+
+        case UpButton:
+          CONSOLE.println(F("Up button pressed"));
+          break;
+
+        case DownButton:
+          CONSOLE.println(F("Down button pressed"));
+          break;
+
+        default:
+          break;
+      }
+#endif
     }
   }
 }
