@@ -13,9 +13,8 @@ public:
 
   void begin() override;
 
-  Button processInput() override;
-
 private:
+  bool _readRawInput(ButtonName button) override;
   
 };
 

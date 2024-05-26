@@ -1,10 +1,12 @@
 #include "AtFinder.h"
 #include "Defines.h"
 #include "DisplayFunctions.h"
-#include "InputMethod.h"
 #include "version.h"
 #include <Arduino.h>
 
+#if defined(USE_TOUCH) || defined(USE_BUTTONS)
+#include "InputMethod.h"
+#endif
 
 bool StartupPhase = true;
 unsigned long timestamp = 0;
@@ -121,30 +123,35 @@ void loop() {
     if (!StartupPhase) {
       updateScreen();
 #if defined(USE_TOUCH) || defined(USE_BUTTONS)
-      Button inputButton = input->processInput();
-      switch (inputButton) {
-        case LeftButton:
-          CONSOLE.println(F("Left button pressed"));
-          break;
+      ButtonResult inputButton = input->processInput();
+      switch (inputButton.button) {
+      case LeftButton:
+        CONSOLE.print(F("Left button state: "));
+        CONSOLE.println(inputButton.state);
+        break;
 
-        case RightButton:
-          CONSOLE.println(F("Right button pressed"));
-          break;
+      case RightButton:
+        CONSOLE.print(F("Right button state: "));
+        CONSOLE.println(inputButton.state);
+        break;
 
-        case CentreButton:
-          CONSOLE.println(F("Centre button pressed"));
-          break;
+      case CentreButton:
+        CONSOLE.print(F("Centre button state: "));
+        CONSOLE.println(inputButton.state);
+        break;
 
-        case UpButton:
-          CONSOLE.println(F("Up button pressed"));
-          break;
+      case UpButton:
+        CONSOLE.print(F("Up button state: "));
+        CONSOLE.println(inputButton.state);
+        break;
 
-        case DownButton:
-          CONSOLE.println(F("Down button pressed"));
-          break;
+      case DownButton:
+        CONSOLE.print(F("Down button state: "));
+        CONSOLE.println(inputButton.state);
+        break;
 
-        default:
-          break;
+      default:
+        break;
       }
 #endif
     }

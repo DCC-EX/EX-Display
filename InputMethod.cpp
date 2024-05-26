@@ -8,12 +8,43 @@ InputMethod::InputMethod() {
   _next = nullptr;
   _screen = nullptr;
   _inputNumber = _inputCount++;
-  for (uint8_t i = 0; i < 5; i++) {
-    _buttons[i]._lastDebounceTime = 0;
-    _buttons[i]._buttonHoldStartTime = 0;
-    _buttons[i]._buttonState = false;
-    _buttons[i]._lastButtonState = false;
+  for (ButtonName b = LeftButton; b < NoButton; b = static_cast<ButtonName>(static_cast<uint8_t>(b) + 1)) {
+    _buttons[b]._lastDebounceTime = 0;
+    _buttons[b]._buttonHoldStartTime = 0;
+    _buttons[b]._buttonState = false;
+    _buttons[b]._lastButtonState = false;
   }
+}
+
+ButtonResult InputMethod::processInput() {
+  unsigned long currentTime = millis();
+  ButtonResult result = {NoButton, None};
+
+  for (ButtonName b = LeftButton; b < NoButton; b = static_cast<ButtonName>(static_cast<uint8_t>(b) + 1)) {
+    bool rawState = _readRawInput(b);
+    Button &btn = _buttons[b];
+    if (rawState != btn._lastButtonState) {
+      btn._lastDebounceTime = currentTime;
+    }
+    if ((currentTime - btn._lastDebounceTime) > _debounceDelay) {
+      if (rawState != btn._buttonState) {
+        btn._buttonState = rawState;
+        if (btn._buttonState) {
+          btn._buttonHoldStartTime = currentTime;
+          result = {b, Pressed};
+        } else {
+          result = {b, Released};
+        }
+      } else if (btn._buttonState && (currentTime - btn._buttonHoldStartTime) > _holdThreshold) {
+        result = {b, Held};
+      }
+    }
+    btn._lastButtonState = rawState;
+    if (result.state != None) {
+      break;
+    }
+  }
+  return result;
 }
 
 void InputMethod::setScreen(PhysicalScreen *screen) { _screen = screen; }

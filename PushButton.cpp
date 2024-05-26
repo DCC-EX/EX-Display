@@ -21,13 +21,8 @@ void PushButton::begin() {
   pinMode(_buttons[DownButton].pin, INPUT_PULLUP);
 }
 
-Button PushButton::processInput() {
-  for (Button b = LeftButton; b < NoButton; b = static_cast<Button>(static_cast<uint8_t>(b) + 1)) {
-    bool buttonState = digitalRead(_buttons[b].pin);
-    if (!buttonState)
-      return b;
-  }
-  return NoButton;
+bool PushButton::_readRawInput(ButtonName button) {
+  return digitalRead(_buttons[button].pin) == LOW;
 }
 
 #endif

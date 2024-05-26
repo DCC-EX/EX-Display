@@ -45,8 +45,13 @@ enum ButtonName {
 enum ButtonState {
   Pressed = 0,
   Held = 1,
-  Release = 2,
+  Released = 2,
   None = 3,
+};
+
+struct ButtonResult {
+  ButtonName button;
+  ButtonState state;
 };
 
 class InputMethod {
@@ -56,9 +61,7 @@ public:
 
   virtual void begin() = 0;
 
-  virtual bool readRawInput(ButtonName button) = 0;
-
-  virtual ButtonState processInput() = 0;
+  ButtonResult processInput();
 
   void setScreen(PhysicalScreen *screen);
 
@@ -71,6 +74,7 @@ protected:
 #if defined(USE_TOUCH)
   void _calculateButtons();
 #endif
+  virtual bool _readRawInput(ButtonName button) = 0;
 
   static InputMethod *_first; // Start a linked list to cater for multiple inputs
   static uint8_t _inputCount; // Count of all inputs
