@@ -23,7 +23,7 @@ InputMethod *input = new AdafruitTouch(touchScreen);
 #include "TFT_eSPIScreen.h"
 TFT_eSPI tft = TFT_eSPI();
 TFT_eSPIScreen *screen = new TFT_eSPIScreen(tft);
-#ifdef USE_TOUCH
+#if defined(USE_TOUCH)
 #include "TFT_eSPITouch.h"
 InputMethod *input = new TFT_eSPITouch(tft);
 #endif
@@ -35,6 +35,11 @@ OLEDScreen *screen = new OLEDScreen(oled);
 #include "OLEDScreen.h"
 Adafruit_SH1106G oled = Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
 OLEDScreen *screen = new OLEDScreen(oled);
+#endif
+
+#if defined(USE_BUTTONS)
+#include "PushButton.h"
+InputMethod *input = new PushButton(LEFT_BUTTON, RIGHT_BUTTON, CENTRE_BUTTON, UP_BUTTON, DOWN_BUTTON);
 #endif
 
 void setup() {

@@ -18,12 +18,16 @@ InputMethod instances will be in a linked list to cycle through to process input
 have a pointer to a screen to control.
 */
 
-#ifdef USE_TOUCH
+#if defined(USE_TOUCH)
 struct ButtonDimensions {
   uint16_t xStart = 0;
   uint16_t xEnd = 0;
   uint16_t yStart = 0;
   uint16_t yEnd = 0;
+};
+#elif defined(USE_BUTTONS)
+struct ButtonPin {
+  uint8_t pin;
 };
 #endif
 
@@ -52,9 +56,11 @@ protected:
   PhysicalScreen *_screen; // Physical screen instance associated with this input
   uint8_t _inputNumber;    // Auto incrementing number, enables multiple touch screens
 
-#ifdef USE_TOUCH
+#if defined(USE_TOUCH)
   ButtonDimensions _buttons[5];
   void _calculateButtons();
+#elif defined(USE_BUTTONS)
+  ButtonPin _buttons[5];
 #endif
 
   static InputMethod *_first; // Start a linked list to cater for multiple inputs

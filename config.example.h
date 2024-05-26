@@ -66,11 +66,19 @@
 // Also efine the GPIO pin used by each push button
 // #define USE_BUTTONS
 
+// Example pins for Mega2560
 // #define LEFT_BUTTON 22
 // #define RIGHT_BUTTON 23
-// #define UP_BUTTON 24
-// #define DOWN_BUTTON 25
-// #define CENTRE_BUTTON 26
+// #define CENTRE_BUTTON 24
+// #define UP_BUTTON 25
+// #define DOWN_BUTTON 26
+
+// Example pins for ESP32 WROOM
+// #define LEFT_BUTTON 32
+// #define RIGHT_BUTTON 33
+// #define CENTRE_BUTTON 25
+// #define UP_BUTTON 26
+// #define DOWN_BUTTON 27
 
 // if the touch screen not in use, Now define the scroll requirements
 #define SCROLLTIME 1000 // 5 seconds
