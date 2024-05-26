@@ -19,8 +19,6 @@ public:
 
   void begin() override;
 
-  Button processInput() override;
-
 private:
   TFT_eSPI &_tft;
 
@@ -29,6 +27,7 @@ private:
 #endif
   bool _setCalibration();
   bool _doCalibration();
+  bool _readRawInput(ButtonName button) override;
 };
 
 #endif // NEEDS_TFT and USE_TOUCH
