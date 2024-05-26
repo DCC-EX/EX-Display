@@ -34,7 +34,8 @@ void TFT_eSPITouch::begin() {
     if (!_doCalibration()) {
       _screen->clearScreen(TFT_BLACK);
       _screen->writeRow(0, 0, TFT_WHITE, TFT_RED, _screen->getMaxRowLength(), "ERROR", true);
-      _screen->writeRow(1, 0, TFT_WHITE, TFT_BLACK, _screen->getMaxRowLength(), "Could not save calibration data", false);
+      _screen->writeRow(1, 0, TFT_WHITE, TFT_BLACK, _screen->getMaxRowLength(), "Could not save calibration data",
+                        false);
       CONSOLE.println(F("ERROR: Could not save calibration data"));
       delay(3000);
       _screen->clearScreen(TFT_BLACK);
@@ -46,18 +47,6 @@ void TFT_eSPITouch::begin() {
     _screen->clearScreen(TFT_BLACK);
   }
   _calculateButtons();
-}
-
-Button TFT_eSPITouch::processInput() {
-  uint16_t touchX, touchY;
-  if (_tft.getTouch(&touchX, &touchY)) {
-    for (Button b = LeftButton; b < NoButton; b = static_cast<Button>(static_cast<uint8_t>(b) + 1)) {
-      if (touchX >= _buttons[b].xStart && touchX <= _buttons[b].xEnd && touchY >= _buttons[b].yStart && touchY <= _buttons[b].yEnd) {
-        return b;
-      }
-    }
-  }
-  return NoButton;
 }
 
 bool TFT_eSPITouch::_setCalibration() {
@@ -93,6 +82,17 @@ bool TFT_eSPITouch::_doCalibration() {
     f.write((const unsigned char *)calibrationData, 14);
     f.close();
     return true;
+  }
+  return false;
+}
+
+bool TFT_eSPITouch::_readRawInput(ButtonName button) {
+  uint16_t touchX, touchY;
+  if (_tft.getTouch(&touchX, &touchY)) {
+    if (touchX >= _buttons[button].xStart && touchX <= _buttons[button].xEnd && touchY >= _buttons[button].yStart &&
+        touchY <= _buttons[button].yEnd) {
+      return true;
+    }
   }
   return false;
 }

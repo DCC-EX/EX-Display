@@ -18,26 +18,40 @@ InputMethod instances will be in a linked list to cycle through to process input
 have a pointer to a screen to control.
 */
 
+struct Button {
 #if defined(USE_TOUCH)
-struct ButtonDimensions {
   uint16_t xStart = 0;
   uint16_t xEnd = 0;
   uint16_t yStart = 0;
   uint16_t yEnd = 0;
-};
 #elif defined(USE_BUTTONS)
-struct ButtonPin {
   uint8_t pin;
-};
 #endif
+  unsigned long _lastDebounceTime;
+  unsigned long _buttonHoldStartTime;
+  bool _buttonState;
+  bool _lastButtonState;
+};
 
-enum Button {
+enum ButtonName {
   LeftButton = 0,
   RightButton = 1,
   CentreButton = 2,
   UpButton = 3,
   DownButton = 4,
   NoButton = 5,
+};
+
+enum ButtonState {
+  Pressed = 0,
+  Held = 1,
+  Released = 2,
+  None = 3,
+};
+
+struct ButtonResult {
+  ButtonName button;
+  ButtonState state;
 };
 
 class InputMethod {
@@ -47,7 +61,7 @@ public:
 
   virtual void begin() = 0;
 
-  virtual Button processInput() = 0;
+  ButtonResult processInput();
 
   void setScreen(PhysicalScreen *screen);
 
@@ -56,15 +70,16 @@ protected:
   PhysicalScreen *_screen; // Physical screen instance associated with this input
   uint8_t _inputNumber;    // Auto incrementing number, enables multiple touch screens
 
+  Button _buttons[5];
 #if defined(USE_TOUCH)
-  ButtonDimensions _buttons[5];
   void _calculateButtons();
-#elif defined(USE_BUTTONS)
-  ButtonPin _buttons[5];
 #endif
+  virtual bool _readRawInput(ButtonName button) = 0;
 
   static InputMethod *_first; // Start a linked list to cater for multiple inputs
   static uint8_t _inputCount; // Count of all inputs
+  static const unsigned long _debounceDelay = 50;
+  static const unsigned long _holdThreshold = 500;
 };
 
 #endif
