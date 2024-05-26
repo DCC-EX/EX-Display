@@ -8,6 +8,12 @@ InputMethod::InputMethod() {
   _next = nullptr;
   _screen = nullptr;
   _inputNumber = _inputCount++;
+  for (uint8_t i = 0; i < 5; i++) {
+    _buttons[i]._lastDebounceTime = 0;
+    _buttons[i]._buttonHoldStartTime = 0;
+    _buttons[i]._buttonState = false;
+    _buttons[i]._lastButtonState = false;
+  }
 }
 
 void InputMethod::setScreen(PhysicalScreen *screen) { _screen = screen; }
