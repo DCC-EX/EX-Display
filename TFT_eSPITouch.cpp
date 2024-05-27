@@ -85,8 +85,14 @@ bool TFT_eSPITouch::_doCalibration() {
 bool TFT_eSPITouch::_readRawInput(ButtonName button) {
   uint16_t touchX, touchY;
   if (_tft.getTouch(&touchX, &touchY)) {
+    CONSOLE.print(F("Touch X|Y: "));
+    CONSOLE.print(touchX);
+    CONSOLE.print(F("|"));
+    CONSOLE.println(touchY);
     if (touchX >= _buttons[button].xStart && touchX <= _buttons[button].xEnd && touchY >= _buttons[button].yStart &&
         touchY <= _buttons[button].yEnd) {
+      CONSOLE.print(F("Raw button: "));
+      CONSOLE.println(button);
       return true;
     }
   }

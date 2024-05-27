@@ -74,5 +74,17 @@ void InputMethod::_calculateButtons() {
   _buttons[RightButton].xEnd = _screen->getWidth();
   _buttons[RightButton].yStart = 0;
   _buttons[RightButton].yEnd = _screen->getHeight();
+  for (ButtonName b = LeftButton; b < NoButton; b = static_cast<ButtonName>(static_cast<uint8_t>(b) + 1)) {
+    CONSOLE.print(F("Button|xStart|xEnd|yStart|yEnd: "));
+    CONSOLE.print(b);
+    CONSOLE.print(F("|"));
+    CONSOLE.print(_buttons[b].xStart);
+    CONSOLE.print(F("|"));
+    CONSOLE.print(_buttons[b].xEnd);
+    CONSOLE.print(F("|"));
+    CONSOLE.print(_buttons[b].yStart);
+    CONSOLE.print(F("|"));
+    CONSOLE.println(_buttons[b].yEnd);
+  }
 }
 #endif

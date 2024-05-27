@@ -4,9 +4,9 @@
 #include "version.h"
 #include <Arduino.h>
 
-#if defined(USE_TOUCH) || defined(USE_BUTTONS)
-#include "InputMethod.h"
-#endif
+// #if defined(USE_TOUCH) || defined(USE_BUTTONS)
+// #include "InputMethod.h"
+// #endif
 
 bool StartupPhase = true;
 unsigned long timestamp = 0;
@@ -19,7 +19,7 @@ MCUFriendScreen *screen = new MCUFriendScreen(tft);
 #ifdef USE_TOUCH
 #include "AdafruitTouch.h"
 TouchScreen touchScreen = TouchScreen(XP, YP, XM, YM, 300);
-InputMethod *input = new AdafruitTouch(touchScreen);
+AdafruitTouch *input = new AdafruitTouch(touchScreen);
 #endif
 #elif SCREEN_TYPE == TFT
 #include "TFT_eSPIScreen.h"
@@ -27,7 +27,7 @@ TFT_eSPI tft = TFT_eSPI();
 TFT_eSPIScreen *screen = new TFT_eSPIScreen(tft);
 #if defined(USE_TOUCH)
 #include "TFT_eSPITouch.h"
-InputMethod *input = new TFT_eSPITouch(tft);
+TFT_eSPITouch *input = new TFT_eSPITouch(tft);
 #endif
 #elif SCREEN_TYPE == OLED_SSD1306
 #include "OLEDScreen.h"
@@ -41,7 +41,7 @@ OLEDScreen *screen = new OLEDScreen(oled);
 
 #if defined(USE_BUTTONS)
 #include "PushButton.h"
-InputMethod *input = new PushButton(LEFT_BUTTON, RIGHT_BUTTON, CENTRE_BUTTON, UP_BUTTON, DOWN_BUTTON);
+PushButton *input = new PushButton(LEFT_BUTTON, RIGHT_BUTTON, CENTRE_BUTTON, UP_BUTTON, DOWN_BUTTON);
 #endif
 
 void setup() {
