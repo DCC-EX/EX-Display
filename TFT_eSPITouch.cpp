@@ -18,10 +18,6 @@ void TFT_eSPITouch::begin() {
   if (!_screen) {
     return;
   }
-  CONSOLE.print(F("Screen Height|Width: "));
-  CONSOLE.print(_screen->getHeight());
-  CONSOLE.print(F("|"));
-  CONSOLE.println(_screen->getWidth());
 #ifdef USE_SPIFFS
   if (!SPIFFS.begin()) {
     CONSOLE.println(F("Formatting file system"));

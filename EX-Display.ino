@@ -126,13 +126,13 @@ void loop() {
       ButtonResult inputButton = input->processInput();
       switch (inputButton.button) {
       case LeftButton:
-        CONSOLE.print(F("Left button state: "));
-        CONSOLE.println(inputButton.state);
+        if (inputButton.state == Pressed)
+          screen->switchToPreviousDisplay();
         break;
 
       case RightButton:
-        CONSOLE.print(F("Right button state: "));
-        CONSOLE.println(inputButton.state);
+        if (inputButton.state == Pressed)
+          screen->switchToNextDisplay();
         break;
 
       case CentreButton:
@@ -141,13 +141,13 @@ void loop() {
         break;
 
       case UpButton:
-        CONSOLE.print(F("Up button state: "));
-        CONSOLE.println(inputButton.state);
+        if (inputButton.state == Pressed)
+          screen->getActiveDisplay()->scrollUp();
         break;
 
       case DownButton:
-        CONSOLE.print(F("Down button state: "));
-        CONSOLE.println(inputButton.state);
+        if (inputButton.state == Pressed)
+          screen->getActiveDisplay()->scrollDown();
         break;
 
       default:
