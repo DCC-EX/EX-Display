@@ -49,9 +49,9 @@ void displayAllRows() {
     CONSOLE.println(F(" ~~"));
 
     for (LogicalDisplay *display = screen->getFirstDisplay(); display; display = display->getNext()) {
-      CONSOLE.print(F("\nRows for display "));
-      CONSOLE.println(display->getDisplayNumber());
-      CONSOLE.println(F("Row|Display Row|Message|isChanged|needsRender"));
+      CONSOLE.print(F("~~ Display "));
+      CONSOLE.print(display->getDisplayNumber());
+      CONSOLE.println(F(" ~~\nRow|Display Row|Message|isChanged|needsRender"));
       for (LogicalDisplayRow *row = display->getFirstRow(); row; row = row->getNext()) {
         CONSOLE.print(row->getRowNumber());
         CONSOLE.print(F("|"));

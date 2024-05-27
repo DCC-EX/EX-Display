@@ -49,28 +49,33 @@
 #define CONSOLE Serial
 #define CS_LISTEN Serial1
 //#define RX_PIN 19 // Define the RX pin for Serial1
+#define USE_EEPROM
 // Set up console and CS listener for Uno
 #elif defined(ARDUINO_AVR_UNO)
 #define RX_PIN 0
 #define CONSOLE Serial
 #define CS_LISTEN Serial
+#define USE_EEPROM
 // Set up console and CS listener for ESP32
-#elif defined(ESP32)
+#elif defined(ARDUINO_ARCH_ESP32)
 #define RX_PIN 0
 #define CONSOLE Serial
 #define CS_LISTEN Serial
+#define USE_SPIFFS
 // Set up console and CS listener for F411RE
 #elif defined(ARDUINO_NUCLEO_F411RE)
 #define CONSOLE Serial
 HardwareSerial Serial1(PB7, PA15); // Rx=PB7, Tx=PA15 -- CN7 pins 17 and 21 - F411RE
 #define CS_LISTEN Serial1
 #define RX_PIN PB7;
+#define USE_FLASH
 // Set up console and CS listener for F446RE
 #elif defined(ARDUINO_NUCLEO_F446RE)
 #define CONSOLE Serial
 HardwareSerial Serial5(PD2, PC12); // Rx=PD2, Tx=PC12 -- UART5 - F446RE
 #define CS_LISTEN Serial5
 #define RX_PIN PD2;
+#define USE_FLASH
 #endif
 
 // If user has defined SERIAL_ONLY, override CS_LISTEN

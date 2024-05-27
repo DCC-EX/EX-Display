@@ -4,6 +4,10 @@
 #include "version.h"
 #include <Arduino.h>
 
+#if defined(USE_TOUCH) || defined(USE_BUTTONS)
+#include "InputMethod.h"
+#endif
+
 bool StartupPhase = true;
 unsigned long timestamp = 0;
 long screencount = 0;
@@ -12,10 +16,19 @@ long screencount = 0;
 #include "MCUFriendScreen.h"
 MCUFRIEND_kbv tft;
 MCUFriendScreen *screen = new MCUFriendScreen(tft);
+#ifdef USE_TOUCH
+#include "AdafruitTouch.h"
+TouchScreen touchScreen = TouchScreen(XP, YP, XM, YM, 300);
+InputMethod *input = new AdafruitTouch(touchScreen);
+#endif
 #elif SCREEN_TYPE == TFT
 #include "TFT_eSPIScreen.h"
 TFT_eSPI tft = TFT_eSPI();
 TFT_eSPIScreen *screen = new TFT_eSPIScreen(tft);
+#if defined(USE_TOUCH)
+#include "TFT_eSPITouch.h"
+InputMethod *input = new TFT_eSPITouch(tft);
+#endif
 #elif SCREEN_TYPE == OLED_SSD1306
 #include "OLEDScreen.h"
 Adafruit_SSD1306 oled = Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
@@ -24,6 +37,11 @@ OLEDScreen *screen = new OLEDScreen(oled);
 #include "OLEDScreen.h"
 Adafruit_SH1106G oled = Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
 OLEDScreen *screen = new OLEDScreen(oled);
+#endif
+
+#if defined(USE_BUTTONS)
+#include "PushButton.h"
+InputMethod *input = new PushButton(LEFT_BUTTON, RIGHT_BUTTON, CENTRE_BUTTON, UP_BUTTON, DOWN_BUTTON);
 #endif
 
 void setup() {
@@ -73,6 +91,12 @@ void setup() {
   screen->clearScreen(BACKGROUND_COLOUR);
 
   timestamp = millis();
+
+#if defined(USE_TOUCH) || defined(USE_BUTTONS)
+  input->setScreen(screen);
+  input->begin();
+#endif
+
   CONSOLE.println(F("End of Setup"));
 }
 
@@ -98,6 +122,38 @@ void loop() {
   else {
     if (!StartupPhase) {
       updateScreen();
+#if defined(USE_TOUCH) || defined(USE_BUTTONS)
+      ButtonResult inputButton = input->processInput();
+      switch (inputButton.button) {
+      case LeftButton:
+        if (inputButton.state == Pressed)
+          screen->switchToPreviousDisplay();
+        break;
+
+      case RightButton:
+        if (inputButton.state == Pressed)
+          screen->switchToNextDisplay();
+        break;
+
+      case CentreButton:
+        CONSOLE.print(F("Centre button state: "));
+        CONSOLE.println(inputButton.state);
+        break;
+
+      case UpButton:
+        if (inputButton.state == Pressed)
+          screen->getActiveDisplay()->scrollUp();
+        break;
+
+      case DownButton:
+        if (inputButton.state == Pressed)
+          screen->getActiveDisplay()->scrollDown();
+        break;
+
+      default:
+        break;
+      }
+#endif
     }
   }
 }

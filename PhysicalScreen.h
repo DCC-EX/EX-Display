@@ -50,6 +50,14 @@ public:
   virtual void writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
                          uint16_t backgroundColour) = 0;
 
+  /// @brief Get the physical screen height
+  /// @return Screen height in pixels
+  virtual uint16_t getHeight() = 0;
+
+  /// @brief Get they physical screen width
+  /// @return Screen width in pixels
+  virtual uint16_t getWidth() = 0;
+
   /// @brief Get the first screen
   /// @return Pointer to the first PhysicalScreen instance
   static PhysicalScreen *getFirst();

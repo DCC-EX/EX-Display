@@ -2,8 +2,11 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.10"
+#define VERSION "0.0.11"
 
+// 0.0.11 includes:
+//  - Add InputMethod class with support for TFT_eSPI and MCUFRIEND_kbv touch screens
+//  - Also add support for physical push buttons
 // 0.0.10 includes:
 //  - Refactor so that logical displays are attributes of physical screens
 //  - This should simplify addition of touch/input control

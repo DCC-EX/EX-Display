@@ -25,6 +25,10 @@ public:
   virtual void writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
                          uint16_t backgroundColour) override;
 
+  virtual uint16_t getHeight() override;
+
+  virtual uint16_t getWidth() override;
+
 private:
   TFT_eSPI &_tft;
 };

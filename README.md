@@ -18,6 +18,12 @@ It is possible to use any physical screen that is supported by either the MCUFRI
 
 In addition, it is also possible to use OLEDs based on either the SSD1306 or SH1106 drivers.
 
+### Device limitations
+
+In its current form, it is only possible to configure one physical screen due to the way the config.h file has been implemented, however the classes have been written to facilitate multiple physical screens, and multiple input methods in future.
+
+**However** there are conflicts between the MCUFRIEND_kbv and TFT_eSPI libraries that mean when we do support multiple physical screens, we will not be able to have a mix of MCUFRIEND_kbv and TFT_eSPI types.
+
 ## Configuration
 
 Copy "config.example.h" to "config.h" and set the desired parameters.

@@ -52,6 +52,50 @@
 // if in use uncomment the following
 // #define USE_TOUCH
 
+// If you have a need force recalibrating the touch screen, uncomment this line
+// #define FORCE_CALIBRATION
+
+// If using an MCUFRIEND_kbv type screen it requires the Adafruit TouchScreen driver
+// You must define the below parameters for this scenario
+// If using an MCUFRIEND_kbv type screen it requires the Adafruit TouchScreen driver
+// You must define the below parameters for this scenario
+// Example pins for Uno/Mega2560
+// #define YP A1  // must be an analog pin, use "An" notation!
+// #define XM A2  // must be an analog pin, use "An" notation!
+// #define YM 7   // can be a digital pin
+// #define XP 6   // can be a digital pin
+
+// Example pins for ESP32 WROOM
+// #define YP 4  // must be an analog pin, use "An" notation!
+// #define XM 2  // must be an analog pin, use "An" notation!
+// #define YM 35   // can be a digital pin
+// #define XP 32   // can be a digital pin
+
+// Also if using MCUFRIEND_kbv with the Adafruit TouchScreen driver you must define the below
+// parameters for calibration
+// #define TS_MINX 150
+// #define TS_MAXX 920
+// #define TS_MINY 120
+// #define TS_MAXY 940
+
+// If using push buttons rather than a touch screen, comment out USE_TOUCH above and uncomment the below
+// Also efine the GPIO pin used by each push button
+// #define USE_BUTTONS
+
+// Example pins for Mega2560
+// #define LEFT_BUTTON 22
+// #define RIGHT_BUTTON 23
+// #define CENTRE_BUTTON 24
+// #define UP_BUTTON 25
+// #define DOWN_BUTTON 26
+
+// Example pins for ESP32 WROOM
+// #define LEFT_BUTTON 32
+// #define RIGHT_BUTTON 33
+// #define CENTRE_BUTTON 25
+// #define UP_BUTTON 26
+// #define DOWN_BUTTON 27
+
 // if the touch screen not in use, Now define the scroll requirements
 #define SCROLLTIME 1000 // 5 seconds
 
