@@ -32,13 +32,13 @@
 
 #if SCREEN_TYPE == MCU
 #define NEEDS_MCU
-#define SCREEN_0 new EXDisplay(0, new MCUFriendScreen(tft), 30);
+// #define SCREEN_0 new EXDisplay(0, new MCUFriendScreen(tft), 30);
 #elif SCREEN_TYPE == TFT
 #define NEEDS_TFT
-#define SCREEN_0 new EXDisplay(0, new TFT_eSPIScreen(tft), 30);
+// #define SCREEN_0 new EXDisplay(0, new TFT_eSPIScreen(tft), 30);
 #elif SCREEN_TYPE == OLED_SSD1306 || SCREEN_TYPE == OLED_SH1106
 #define NEEDS_OLED
-#define SCREEN_0 new EXDisplay(0, new OLEDScreen(oled), 30);
+// #define SCREEN_0 new EXDisplay(0, new OLEDScreen(oled), 30);
 #else
 #error A screen type for the first screen has not been set, you must define either MCU or TFT
 #endif
