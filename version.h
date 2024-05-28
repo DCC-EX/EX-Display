@@ -2,8 +2,10 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.11"
+#define VERSION "0.0.12"
 
+// 0.0.12 includes:
+//  - Fixed left button selecting previous logical display
 // 0.0.11 includes:
 //  - Add InputMethod class with support for TFT_eSPI and MCUFRIEND_kbv touch screens
 //  - Also add support for physical push buttons

@@ -45,6 +45,12 @@ PushButton *input = new PushButton(LEFT_BUTTON, RIGHT_BUTTON, CENTRE_BUTTON, UP_
 #endif
 
 void setup() {
+#if defined(DISABLE_SECOND_TFT) // Workaround for second TFT not controlled yet
+  pinMode(22, OUTPUT);
+  pinMode(16, OUTPUT);
+  digitalWrite(22, HIGH);
+  digitalWrite(16, HIGH);
+#endif
   CONSOLE.begin(115200);
   CS_LISTEN.begin(115200); // Start Serial1 for listening to messages
 

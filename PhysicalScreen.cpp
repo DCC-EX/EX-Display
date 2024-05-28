@@ -102,7 +102,19 @@ void PhysicalScreen::switchToPreviousDisplay() {
   if (_displayCount == 1) {
     return;
   }
-  for (LogicalDisplay *display = _activeDisplay; display; display = display->getNext()) {
+  LogicalDisplay *last = nullptr;
+  for (LogicalDisplay *display = _firstDisplay; display; display = display->getNext()) {
+    if (!display->getNext()) {
+      last = display;
+      break;
+    }
+  }
+  if (_activeDisplay == _firstDisplay) {
+    _activeDisplay = last;
+    _activeDisplay->setRedraw(true);
+    return;
+  }
+  for (LogicalDisplay *display = _firstDisplay; display; display = display->getNext()) {
     if (display->getNext() == _activeDisplay) {
       _activeDisplay = display;
       _activeDisplay->setRedraw(true);
