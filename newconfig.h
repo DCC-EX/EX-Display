@@ -1,70 +1,45 @@
-#ifdef USE__NEW_CONFIG
+// #define USE_NEW_CONFIG
 
-// Current physical screen instantiation
+#ifdef USE_NEW_CONFIG
 
-// MCUFRIEND_kbv
+/* PHYSICAL SCREEN INSTANTIATION*/
+// MCUFRIEND_kbv - SCREEN_TYPE MCU
 MCUFRIEND_kbv tft;
 MCUFriendScreen *screen = new MCUFriendScreen(tft);
 
-// TFT_eSPI
+// TFT_eSPI - SCREEN_TYPE TFT
 TFT_eSPI tft = TFT_eSPI();
 TFT_eSPIScreen *screen = new TFT_eSPIScreen(tft);
 
-// SSD1306 OLED
+// SSD1306 OLED - SCREEN_TYPE OLED_SSD1306
 Adafruit_SSD1306 oled = Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
 OLEDScreen *screen = new OLEDScreen(oled);
 
-// SH1106 OLED
+// SH1106 OLED - SCREEN_TYPE OLED_SH1106
 Adafruit_SH1106G oled = Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
 OLEDScreen *screen = new OLEDScreen(oled);
 
-
-
-#if SCREEN_TYPE == MCU
-#include "MCUFriendScreen.h"
-MCUFRIEND_kbv tft;
-MCUFriendScreen *screen = new MCUFriendScreen(tft);
-#ifdef USE_TOUCH
-#include "AdafruitTouch.h"
+/* INPUT INSTANTIATION */
+// MCUFRIEND_kbv/Adafruit TouchScreen - NEEDS_MCU && USE_TOUCH
 TouchScreen touchScreen = TouchScreen(XP, YP, XM, YM, 300);
 AdafruitTouch *input = new AdafruitTouch(touchScreen);
-#endif
-#elif SCREEN_TYPE == TFT
-#include "TFT_eSPIScreen.h"
+
+// TFT_eSPI touch - NEEDS_TFT && USE_TOUCH
 TFT_eSPI tft = TFT_eSPI();
-TFT_eSPIScreen *screen = new TFT_eSPIScreen(tft);
-#if defined(USE_TOUCH)
-#include "TFT_eSPITouch.h"
 TFT_eSPITouch *input = new TFT_eSPITouch(tft);
-#endif
-#elif SCREEN_TYPE == OLED_SSD1306
-#include "OLEDScreen.h"
-Adafruit_SSD1306 oled = Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
-OLEDScreen *screen = new OLEDScreen(oled);
-#elif SCREEN_TYPE == OLED_SH1106
-#include "OLEDScreen.h"
-Adafruit_SH1106G oled = Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
-OLEDScreen *screen = new OLEDScreen(oled);
-#endif
 
-#if defined(USE_BUTTONS)
-#include "PushButton.h"
+// PushButton - USE_BUTTONS
 PushButton *input = new PushButton(LEFT_BUTTON, RIGHT_BUTTON, CENTRE_BUTTON, UP_BUTTON, DOWN_BUTTON);
-#endif
 
-#if defined(DISPLAY_1_ID)
+/* These are done in setup() */
+void setup() {
+  // Add logical display to screen, creates LogicalDisplay instances
   screen->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
-#endif
-#if defined(DISPLAY_2_ID)
   screen->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
-#endif
-#if defined(DISPLAY_3_ID)
   screen->addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
-#endif
-
-#if defined(USE_TOUCH) || defined(USE_BUTTONS)
+  // Set the physical screen the input controls
+  // If we have multiple screens, this should change to an active screen and associated linked list
   input->setScreen(screen);
-  input->begin();
-#endif
+}
 
 #endif
