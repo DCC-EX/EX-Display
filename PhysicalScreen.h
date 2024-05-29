@@ -68,7 +68,8 @@ public:
 
   /// @brief Add a new LogicalDisplay instance to be displayed on this screen, ordered by display number
   /// @param displayNumber Display ID for the instance
-  LogicalDisplay *addDisplay(uint8_t displayNumber, uint16_t defaultTextColour, uint16_t defaultBackgroundColour);
+  /// @return Pointer to the current PhysicalScreen instance to enable pipelining of multiple display creations
+  PhysicalScreen *addDisplay(uint8_t displayNumber, uint16_t defaultTextColour, uint16_t defaultBackgroundColour);
 
   /// @brief Get the first LogicalDisplay instance in the linked list
   /// @return Pointer to the first LogicalDisplay instance

@@ -62,15 +62,18 @@ void setup() {
   screen->setupScreen(SCREEN_ROTATION, TEXT_SIZE, BACKGROUND_COLOUR);
 
   // Add the displays to the screen
-#if defined(DISPLAY_1_ID)
-  screen->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
-#endif
-#if defined(DISPLAY_2_ID)
-  screen->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
-#endif
-#if defined(DISPLAY_3_ID)
-  screen->addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
-#endif
+  screen->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
+      ->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
+      ->addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
+  // #if defined(DISPLAY_1_ID)
+  //   screen->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
+  // #endif
+  // #if defined(DISPLAY_2_ID)
+  //   screen->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
+  // #endif
+  // #if defined(DISPLAY_3_ID)
+  //   screen->addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
+  // #endif
 
   // Tell AtFinder our maximum supported text length,
   // and how to call back when found.
