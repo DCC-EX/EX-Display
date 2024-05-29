@@ -31,7 +31,7 @@ PhysicalScreen *PhysicalScreen::getFirst() { return _first; }
 
 PhysicalScreen *PhysicalScreen::getNext() { return _next; }
 
-void PhysicalScreen::addDisplay(uint8_t displayNumber, uint16_t defaultTextColour, uint16_t defaultBackgroundColour) {
+LogicalDisplay *PhysicalScreen::addDisplay(uint8_t displayNumber, uint16_t defaultTextColour, uint16_t defaultBackgroundColour) {
   // Create a new display
   LogicalDisplay *display =
       new LogicalDisplay(displayNumber, _maxRowLength, _maxRows, defaultTextColour, defaultBackgroundColour);
@@ -57,6 +57,7 @@ void PhysicalScreen::addDisplay(uint8_t displayNumber, uint16_t defaultTextColou
     _activeDisplay = display;
   }
   _displayCount++;
+  return display;
 }
 
 LogicalDisplay *PhysicalScreen::getFirstDisplay() { return _firstDisplay; }
