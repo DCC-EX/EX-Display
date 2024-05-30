@@ -34,11 +34,9 @@ public:
   virtual uint16_t getWidth() override;
 
 private:
-#if SCREEN_TYPE == OLED_SSD1306
-  Adafruit_SSD1306 &_oled;
-#elif SCREEN_TYPE == OLED_SH1106
-  Adafruit_SH1106G &_oled;
-#endif
+  SSD1306AsciiWire *_oled;
+  uint8_t _screenWidth;
+  uint8_t _screenHeight;
   uint8_t _deviceAddress;
   uint8_t _muxAddress;
   uint8_t _subBus;
@@ -50,7 +48,7 @@ private:
   /// @brief Private method to select the correct MUX and sub bus if required for this screen
   /// @param muxAddress Valid MUX address, 0x70 - 0x77
   /// @param subBus Valid MUX sub bus, 0 - 7
-  static void _switchMUX(uint8_t muxAddress, uint8_t subBus);
+  void _switchMUX();
 };
 
 #endif
