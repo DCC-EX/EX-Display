@@ -6,7 +6,7 @@
 // TFT_eSPIScreen::TFT_eSPIScreen(TFT_eSPI &tft) : PhysicalScreen(), _tft(tft) {}
 TFT_eSPIScreen::TFT_eSPIScreen() : PhysicalScreen() { _tft = new TFT_eSPI(); }
 
-void TFT_eSPIScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) {
+PhysicalScreen *TFT_eSPIScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) {
   const GFXfont *gfxFont = TEXT_FONT;
   _tft->init();
   _tft->setRotation(rotation);
@@ -25,6 +25,7 @@ void TFT_eSPIScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t ba
   CONSOLE.print(_tft->height());
   CONSOLE.print(F("|"));
   CONSOLE.println(_tft->width());
+  return this;
 }
 
 void TFT_eSPIScreen::clearScreen(uint16_t backgroundColour) { _tft->fillScreen(backgroundColour); }

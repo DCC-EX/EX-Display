@@ -19,7 +19,8 @@ public:
   /// @param rotation Rotate the screen if necessary
   /// @param textSize Pixel multiplier to increase text size if desired
   /// @param backgroundColour Fill the screen with this colour during setup
-  virtual void setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) = 0;
+  /// @return Pointer to the current PhysicalScreen object to enable pipelining
+  virtual PhysicalScreen *setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) = 0;
 
   /// @brief Virtual function to implement to clear the entire screen
   /// @param backgroundColour Valid colour to set the entire screen to

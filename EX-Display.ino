@@ -21,7 +21,11 @@ auto *input = new AdafruitTouch(touchScreen);
 #include "TFT_eSPIScreen.h"
 // TFT_eSPI tft = TFT_eSPI();
 // auto *screen = new TFT_eSPIScreen(tft);
-auto *screen = new TFT_eSPIScreen();
+// auto *screen = (new TFT_eSPIScreen()) -> setupScreen(SCREEN_ROTATION, TEXT_SIZE, BACKGROUND_COLOUR)
+//                    -> addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
+//                        -> addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
+//                            -> addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
+auto *screen = (new TFT_eSPIScreen());
 #if defined(USE_TOUCH)
 #include "TFT_eSPITouch.h"
 auto *input = new TFT_eSPITouch(tft);
@@ -59,12 +63,12 @@ void setup() {
 #endif
 
   // Setup our physical screens first - required before adding displays
-  screen->setupScreen(SCREEN_ROTATION, TEXT_SIZE, BACKGROUND_COLOUR);
-
-  // Add the displays to the screen
-  screen->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
+  screen->setupScreen(SCREEN_ROTATION, TEXT_SIZE, BACKGROUND_COLOUR)
+      ->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
       ->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
       ->addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
+
+  // Add the displays to the screen
   // #if defined(DISPLAY_1_ID)
   //   screen->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
   // #endif
