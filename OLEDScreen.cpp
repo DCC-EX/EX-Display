@@ -2,15 +2,10 @@
 #ifdef NEEDS_OLED
 #include "OLEDScreen.h"
 
-#if SCREEN_TYPE == OLED_SSD1306
-OLEDScreen::OLEDScreen(Adafruit_SSD1306 &oled, uint8_t muxAddress, uint8_t subBus)
-    : PhysicalScreen(), _oled(oled), _muxAddress(muxAddress), _subBus(subBus) {}
-#elif SCREEN_TYPE == OLED_SH1106
-OLEDScreen::OLEDScreen(Adafruit_SH1106G &oled, uint8_t muxAddress, uint8_t subBus)
-    : EXScreen(), _oled(oled), _muxAddress(muxAddress), _subBus(subBus) {}
-#endif
+OLEDScreen::OLEDScreen(uint8_t screenWidth, uint8_t screenHeight, uint8_t deviceAddress = 0x3C, uint8_t muxAddress,
+             uint8_t subBus) : PhysicalScreen()
 
-void OLEDScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) {
+PhysicalScreen *OLEDScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) {
   const GFXfont *gfxFont = TEXT_FONT;
 #if SCREEN_TYPE == OLED_SSD1306
   _oled.begin(SSD1306_SWITCHCAPVCC, OLED_ADDRESS);
@@ -35,6 +30,7 @@ void OLEDScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgr
   CONSOLE.print(_oled.height());
   CONSOLE.print(F("|"));
   CONSOLE.println(_oled.width());
+  return this;
 }
 
 void OLEDScreen::clearScreen(uint16_t backgroundColour) {

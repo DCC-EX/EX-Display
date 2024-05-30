@@ -19,25 +19,15 @@ auto *input = new AdafruitTouch(touchScreen);
 #endif
 #elif SCREEN_TYPE == TFT
 #include "TFT_eSPIScreen.h"
-// TFT_eSPI tft = TFT_eSPI();
-// auto *screen = new TFT_eSPIScreen(tft);
-// auto *screen = (new TFT_eSPIScreen()) -> setupScreen(SCREEN_ROTATION, TEXT_SIZE, BACKGROUND_COLOUR)
-//                    -> addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
-//                        -> addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
-//                            -> addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
-auto *screen = (new TFT_eSPIScreen());
+// auto *screen = (new TFT_eSPIScreen());
 #if defined(USE_TOUCH)
 #include "TFT_eSPITouch.h"
 auto *input = new TFT_eSPITouch(tft);
 #endif
-#elif SCREEN_TYPE == OLED_SSD1306
+#elif SCREEN_TYPE == OLED
 #include "OLEDScreen.h"
-Adafruit_SSD1306 oled = Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
-auto *screen = new OLEDScreen(oled);
-#elif SCREEN_TYPE == OLED_SH1106
-#include "OLEDScreen.h"
-Adafruit_SH1106G oled = Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
-auto *screen = new OLEDScreen(oled);
+// Adafruit_SSD1306 oled = Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
+auto *screen = new OLEDScreen();
 #endif
 
 #if defined(USE_BUTTONS)
@@ -63,21 +53,17 @@ void setup() {
 #endif
 
   // Setup our physical screens first - required before adding displays
-  screen->setupScreen(SCREEN_ROTATION, TEXT_SIZE, BACKGROUND_COLOUR)
-      ->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
-      ->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
-      ->addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
-
-  // Add the displays to the screen
-  // #if defined(DISPLAY_1_ID)
-  //   screen->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
-  // #endif
-  // #if defined(DISPLAY_2_ID)
-  //   screen->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
-  // #endif
-  // #if defined(DISPLAY_3_ID)
-  //   screen->addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
-  // #endif
+#ifdef NEEDS_TFT
+  auto *screen = (new TFT_eSPIScreen())
+                     ->setupScreen(SCREEN_ROTATION, TEXT_SIZE, BACKGROUND_COLOUR)
+                     ->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
+                     ->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
+                     ->addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
+#endif
+  // screen->setupScreen(SCREEN_ROTATION, TEXT_SIZE, BACKGROUND_COLOUR)
+  //     ->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
+  //     ->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
+  //     ->addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
 
   // Tell AtFinder our maximum supported text length,
   // and how to call back when found.

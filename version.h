@@ -6,6 +6,7 @@
 
 // 0.0.13 includes:
 //  - Improved user configuration
+//  - Swap OLED support to use SSD1306_Ascii
 // 0.0.12 includes:
 //  - Fixed left button selecting previous logical display
 // 0.0.11 includes:

@@ -8,8 +8,7 @@
 // Should we eventually support up to 3 displays?
 #define SCREEN_TYPE MCU
 // #define SCREEN_TYPE TFT
-// #define SCREEN_TYPE OLED_SSD1306
-// #define SCREEN_TYPE OLED_SH1106
+// #define SCREEN_TYPE OLED
 
 // #define OLED_ADDRESS 0x3C
 

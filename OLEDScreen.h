@@ -5,22 +5,19 @@
 #define OLEDSCREEN_H
 
 #include "PhysicalScreen.h"
-#include <Adafruit_GFX.h>
-#include <Adafruit_SH110X.h>
-#include <Adafruit_SSD1306.h>
 #include <Arduino.h>
+#include <SSD1306Ascii.h>
+#include <SSD1306AsciiWire.h>
 #include <Wire.h>
 
 /// @brief Class to drive monochrome OLEDs with EX-Display, noting all colours are ignored
 class OLEDScreen : public PhysicalScreen {
 public:
-#if SCREEN_TYPE == OLED_SSD1306
-  OLEDScreen(Adafruit_SSD1306 &oled, uint8_t muxAddress = 0, uint8_t subBus = 255);
-#elif SCREEN_TYPE == OLED_SH1106
-  OLEDScreen(Adafruit_SH1106G &oled, uint8_t muxAddress = 0, uint8_t subBus = 255);
-#endif
+  // OLEDScreen(Adafruit_SSD1306 &oled, uint8_t muxAddress = 0, uint8_t subBus = 255);
+  OLEDScreen(uint8_t screenWidth, uint8_t screenHeight, uint8_t deviceAddress = 0x3C, uint8_t muxAddress = 0,
+             uint8_t subBus = 255);
 
-  virtual void setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) override;
+  virtual PhysicalScreen *setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) override;
 
   virtual void clearScreen(uint16_t backgroundColour) override;
 
@@ -42,6 +39,7 @@ private:
 #elif SCREEN_TYPE == OLED_SH1106
   Adafruit_SH1106G &_oled;
 #endif
+  uint8_t _deviceAddress;
   uint8_t _muxAddress;
   uint8_t _subBus;
 
