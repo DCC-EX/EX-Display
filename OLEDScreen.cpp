@@ -11,6 +11,7 @@ OLEDScreen::OLEDScreen(uint8_t screenWidth, uint8_t screenHeight, uint8_t device
     return;
   }
   _oled = new SSD1306AsciiWire;
+  _textSize = 1;
 }
 
 PhysicalScreen *OLEDScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) {
@@ -26,84 +27,58 @@ PhysicalScreen *OLEDScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint
   if (rotation == 1) {
     _oled->displayRemap(true);
   }
-  // _oled->setRotation(rotation);
-  // _oled->setFont(gfxFont);
-  // _oled->setTextSize(textSize);
-  // _oled->setTextWrap(false);
-  // _oled->clearDisplay();
-  // _oled->display();
-  // _fontHeight = gfxFont->yAdvance;
-  // _fontWidth = _getTextWidth();
-  // _maxRows = _oled->height() / _fontHeight;
-  // _maxRowLength = _oled->width() / _fontWidth;
-  // CONSOLE.print(F("Setup done: _fontHeight|_fontWidth|_oled->Height|_oled->Width: "));
-  // CONSOLE.print(_fontHeight);
-  // CONSOLE.print(F("|"));
-  // CONSOLE.print(_fontWidth);
-  // CONSOLE.print(F("|"));
-  // CONSOLE.print(_oled->height());
-  // CONSOLE.print(F("|"));
-  // CONSOLE.println(_oled->width());
+  _oled->setFont(TEXT_FONT);
+  if (textSize == 2) {
+    _textSize = 2;
+    _oled->set2X();
+  } else {
+    _oled->set1X();
+  }
+  _oled->clear();
+  // _fontHeight = _oled->fontHeight();
+  _fontHeight = 8 * _textSize; // This is pretty much hard coded by the library for row calculations
+  _fontWidth = _oled->fontWidth();
+  _maxRows = _oled->displayHeight() / _fontHeight;
+  _maxRowLength = _oled->displayWidth() / _fontWidth;
+  CONSOLE.print(F("Setup done: _fontHeight|_fontWidth|_oled->Height|_oled->Width: "));
+  CONSOLE.print(_fontHeight);
+  CONSOLE.print(F("|"));
+  CONSOLE.print(_fontWidth);
+  CONSOLE.print(F("|"));
+  CONSOLE.print(_oled->displayHeight());
+  CONSOLE.print(F("|"));
+  CONSOLE.println(_oled->displayWidth());
   return this;
 }
 
 void OLEDScreen::clearScreen(uint16_t backgroundColour) {
-  // _oled->clearDisplay();
-  // _oled->display();
+  _switchMUX();
+  _oled->clear();
 }
 
 void OLEDScreen::clearRow(uint8_t row, uint16_t backgroundColour) {
-  // int16_t x = 0;
-  // int16_t y = (row * _fontHeight) + row;
-  // int16_t w = _fontWidth * _maxRowLength;
-  // int16_t h = _fontHeight;
-  // _oled->fillRect(x, y, w, h, backgroundColour);
-  // _oled->display();
+  _switchMUX();
+  _oled->setCursor(0, row * _textSize);
+  _oled->clearToEOL();
 }
 
 void OLEDScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint16_t backgroundColour,
                           uint8_t maxLength, char *message, bool underlined) {
-  // uint16_t x = column;
-  // uint16_t y = (row * _fontHeight) + _fontHeight;
-  // _oled->setTextColor(fontColour);
-  // _oled->setCursor(x, y);
-  // _oled->print(message);
-  // if (underlined) {
-  //   _oled->drawLine(column, y + 1, _oled->width(), y + 1, fontColour);
-  // } else {
-  //   _oled->drawLine(column, y + 1, _oled->width(), y + 1, backgroundColour);
-  // }
-  // _oled->display();
-  // CONSOLE.print(F("\nwriteRow textRow|message: "));
-  // CONSOLE.print(y);
-  // CONSOLE.print(F("|"));
-  // CONSOLE.println(message);
+  _switchMUX();
+  _oled->setCursor(column, row * _textSize);
+  _oled->print(message);
+  CONSOLE.print(F("\nwriteRow textRow|message: "));
+  CONSOLE.print(row);
+  CONSOLE.print(F("|"));
+  CONSOLE.println(message);
 }
 
 void OLEDScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
-                           uint16_t backgroundColour) {
-  // Horizontal start/end
-  // int16_t x1 = column;
-  // int16_t x2 = _fontWidth * lineLength;
-  // // Vertical start - half way up the font height
-  // int16_t y1 = (row * _fontHeight) + row + (_fontHeight / 2);
-  // int16_t y2 = y1;
-  // clearRow(row, backgroundColour);
-  // _oled->drawLine(x1, y1, x2, y2, lineColour);
-  // _oled->display();
-}
+                           uint16_t backgroundColour) {}
 
 uint16_t OLEDScreen::getHeight() { return _oled->displayHeight(); }
 
 uint16_t OLEDScreen::getWidth() { return _oled->displayWidth(); }
-
-uint8_t OLEDScreen::_getTextWidth() {
-  // int16_t x1, y1;
-  // uint16_t w, h;
-  // _oled->getTextBounds("A", 0, 0, &x1, &y1, &w, &h);
-  // return w;
-  return 0;
-}
 
 void OLEDScreen::_switchMUX() {
   if (_muxAddress == 0 || _subBus == 255) {

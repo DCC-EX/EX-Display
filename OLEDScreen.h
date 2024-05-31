@@ -45,10 +45,7 @@ private:
   uint8_t _deviceAddress;
   uint8_t _muxAddress;
   uint8_t _subBus;
-
-  /// @brief Private method to get the text width using current font settings
-  /// @return Text width
-  uint8_t _getTextWidth();
+  uint8_t _textSize;
 
   /// @brief Private method to select the correct MUX and sub bus if required for this screen
   /// @param muxAddress Valid MUX address, 0x70 - 0x77
