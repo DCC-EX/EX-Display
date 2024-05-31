@@ -66,7 +66,6 @@ public:
   void setScreen(PhysicalScreen *screen);
 
 protected:
-  InputMethod *_next;      // Next input instance in the list
   PhysicalScreen *_screen; // Physical screen instance associated with this input
   uint8_t _inputNumber;    // Auto incrementing number, enables multiple touch screens
 
@@ -76,8 +75,6 @@ protected:
 #endif
   virtual bool _readRawInput(ButtonName button) = 0;
 
-  static InputMethod *_first; // Start a linked list to cater for multiple inputs
-  static uint8_t _inputCount; // Count of all inputs
   static const unsigned long _debounceDelay = 50;
   static const unsigned long _holdThreshold = 500;
 };
