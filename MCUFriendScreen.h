@@ -11,9 +11,9 @@
 
 class MCUFriendScreen : public PhysicalScreen {
 public:
-  MCUFriendScreen(MCUFRIEND_kbv &tft);
+  MCUFriendScreen();
 
-  virtual void setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) override;
+  virtual PhysicalScreen *setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) override;
 
   virtual void clearScreen(uint16_t backgroundColour) override;
 
@@ -32,7 +32,7 @@ public:
   uint8_t getCharacterWidth(const char *character);
 
 private:
-  MCUFRIEND_kbv &_tft;
+  MCUFRIEND_kbv *_tft;
 };
 
 #endif

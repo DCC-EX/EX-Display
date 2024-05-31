@@ -10,8 +10,6 @@ long screencount = 0;
 
 #if SCREEN_TYPE == MCU
 #include "MCUFriendScreen.h"
-MCUFRIEND_kbv tft;
-auto *screen = new MCUFriendScreen(tft);
 #ifdef USE_TOUCH
 #include "AdafruitTouch.h"
 TouchScreen touchScreen = TouchScreen(XP, YP, XM, YM, 300);
