@@ -2,8 +2,11 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.12"
+#define VERSION "0.0.13"
 
+// 0.0.13 includes:
+//  - Improved user configuration
+//  - Swap OLED support to use SSD1306_Ascii
 // 0.0.12 includes:
 //  - Fixed left button selecting previous logical display
 // 0.0.11 includes:

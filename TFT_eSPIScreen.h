@@ -11,9 +11,10 @@
 
 class TFT_eSPIScreen : public PhysicalScreen {
 public:
-  TFT_eSPIScreen(TFT_eSPI &tft);
+  // TFT_eSPIScreen(TFT_eSPI &tft);
+  TFT_eSPIScreen();
 
-  virtual void setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) override;
+  virtual PhysicalScreen *setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) override;
 
   virtual void clearScreen(uint16_t backgroundColour) override;
 
@@ -30,7 +31,8 @@ public:
   virtual uint16_t getWidth() override;
 
 private:
-  TFT_eSPI &_tft;
+  // TFT_eSPI &_tft;
+  TFT_eSPI *_tft;
 };
 
 #endif

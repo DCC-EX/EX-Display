@@ -5,22 +5,24 @@
 #define OLEDSCREEN_H
 
 #include "PhysicalScreen.h"
-#include <Adafruit_GFX.h>
-#include <Adafruit_SH110X.h>
-#include <Adafruit_SSD1306.h>
 #include <Arduino.h>
+#include <SSD1306Ascii.h>
+#include <SSD1306AsciiWire.h>
 #include <Wire.h>
 
 /// @brief Class to drive monochrome OLEDs with EX-Display, noting all colours are ignored
 class OLEDScreen : public PhysicalScreen {
 public:
-#if SCREEN_TYPE == OLED_SSD1306
-  OLEDScreen(Adafruit_SSD1306 &oled, uint8_t muxAddress = 0, uint8_t subBus = 255);
-#elif SCREEN_TYPE == OLED_SH1106
-  OLEDScreen(Adafruit_SH1106G &oled, uint8_t muxAddress = 0, uint8_t subBus = 255);
-#endif
+  /// @brief Constructor for an OLEDScreen instance
+  /// @param screenWidth Width of the OLED in pixels, must be either 128 (SSD1306) or 132 (SH1106)
+  /// @param screenHeight Height of the OLED in pixels, must be either 32 or 64
+  /// @param deviceAddress (Optional - default 0x3C) I2C address of the OLED
+  /// @param muxAddress (Optional) Address of a multiplexor the OLED is behind if appropriate
+  /// @param subBus (Optional) Sub bus ID of a multiplexor the OLED is on if appropriate
+  OLEDScreen(uint8_t screenWidth, uint8_t screenHeight, uint8_t deviceAddress = 0x3C, uint8_t muxAddress = 0,
+             uint8_t subBus = 255);
 
-  virtual void setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) override;
+  virtual PhysicalScreen *setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) override;
 
   virtual void clearScreen(uint16_t backgroundColour) override;
 
@@ -37,22 +39,18 @@ public:
   virtual uint16_t getWidth() override;
 
 private:
-#if SCREEN_TYPE == OLED_SSD1306
-  Adafruit_SSD1306 &_oled;
-#elif SCREEN_TYPE == OLED_SH1106
-  Adafruit_SH1106G &_oled;
-#endif
+  SSD1306AsciiWire *_oled;
+  uint8_t _screenWidth;
+  uint8_t _screenHeight;
+  uint8_t _deviceAddress;
   uint8_t _muxAddress;
   uint8_t _subBus;
-
-  /// @brief Private method to get the text width using current font settings
-  /// @return Text width
-  uint8_t _getTextWidth();
+  uint8_t _textSize;
 
   /// @brief Private method to select the correct MUX and sub bus if required for this screen
   /// @param muxAddress Valid MUX address, 0x70 - 0x77
   /// @param subBus Valid MUX sub bus, 0 - 7
-  static void _switchMUX(uint8_t muxAddress, uint8_t subBus);
+  void _switchMUX();
 };
 
 #endif

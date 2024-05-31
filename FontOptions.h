@@ -1,7 +1,7 @@
 #ifndef FONTOPTIONS_H
 #define FONTOPTIONS_H
 
-#if SCREEN_TYPE == MCU || SCREEN_TYPE == OLED_SSD1306 || SCREEN_TYPE == OLED_SH1106
+#if SCREEN_TYPE == MCU
 #include <Fonts/FreeMono12pt7b.h>
 #include <Fonts/FreeMono18pt7b.h>
 #include <Fonts/FreeMono24pt7b.h>
@@ -10,7 +10,6 @@
 #include <Fonts/FreeSans18pt7b.h>
 #include <Fonts/FreeSans24pt7b.h>
 #include <Fonts/FreeSans9pt7b.h>
-
 #endif
 
 /// @brief Macros for available colours
@@ -26,6 +25,7 @@
 #define OLED_INVERT 2
 
 /// @brief Macros for available fonts
+#if SCREEN_TYPE == MCU || SCREEN_TYPE == TFT
 #define SMALL &FreeMono9pt7b
 #define MEDIUM &FreeMono12pt7b
 #define LARGE &FreeMono18pt7b
@@ -34,5 +34,8 @@
 #define MEDIUM_SANS &FreeSans12pt7b
 #define LARGE_SANS &FreeSans18pt7b
 #define XLARGE_SANS &FreeSans24pt7b
+#elif SCREEN_TYPE == OLED
+#define MEDIUM System5x7
+#endif
 
 #endif

@@ -8,8 +8,7 @@
 // Should we eventually support up to 3 displays?
 #define SCREEN_TYPE MCU
 // #define SCREEN_TYPE TFT
-// #define SCREEN_TYPE OLED_SSD1306
-// #define SCREEN_TYPE OLED_SH1106
+// #define SCREEN_TYPE OLED
 
 // #define OLED_ADDRESS 0x3C
 
@@ -28,12 +27,16 @@
 #define TEXT_FONT MEDIUM
 #define TEXT_COLOUR WHITE
 // #define TEXT_COLOUR OLED_WHITE
-#define TEXT_SIZE 1
 #define BACKGROUND_COLOUR BLACK
 // #define BACKGROUND_COLOUR OLED_BLACK
 
+// Set the pixel multiplier for text - this will multiple a single pixel by this number
+// For OLED, this can only be 1 or 2
+#define TEXT_SIZE 1
+
 // If rotation of the screen is required, set it here
-// TFT type screen typically require 1, OLEDs typically require 0
+// TFT type screens typically require 1 or 3 to rotate from portrait to landscape
+// Set to 0 for an OLED screen or 1 to rotate 180 degrees
 // #define SCREEN_ROTATION 0
 #define SCREEN_ROTATION 1
 // #define SCREEN_ROTATION 2
@@ -60,14 +63,14 @@
 // If using an MCUFRIEND_kbv type screen it requires the Adafruit TouchScreen driver
 // You must define the below parameters for this scenario
 // Example pins for Uno/Mega2560
-const int XP=9,XM=A3,YP=A2,YM=8; //320x480 ID=0x9488
+const int XP = 9, XM = A3, YP = A2, YM = 8; // 320x480 ID=0x9488
 
 // Example pins for ESP32 WROOM
 // const int XP=32,XM=2,YP=4,YM=35; //320x480 ID=0x9488
 
 // Also if using MCUFRIEND_kbv with the Adafruit TouchScreen driver you must define the below
 // parameters for calibration
-const int TS_LEFT=114,TS_RT=917,TS_TOP=74,TS_BOT=931;
+const int TS_LEFT = 114, TS_RT = 917, TS_TOP = 74, TS_BOT = 931;
 
 // If using push buttons rather than a touch screen, comment out USE_TOUCH above and uncomment the below
 // Also efine the GPIO pin used by each push button
