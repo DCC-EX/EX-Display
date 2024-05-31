@@ -5,6 +5,8 @@
 #define TFT 2
 #define OLED 3
 
+#include "ConfigMacros.h"
+
 #if __has_include("config.h")
 #include "config.h"
 #else
