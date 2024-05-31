@@ -2,12 +2,16 @@
 #ifdef NEEDS_OLED
 #include "OLEDScreen.h"
 
-OLEDScreen::OLEDScreen(uint8_t screenWidth, uint8_t screenHeight, uint8_t deviceAddress = 0x3C, uint8_t muxAddress,
+OLEDScreen::OLEDScreen(uint8_t screenWidth, uint8_t screenHeight, uint8_t deviceAddress, uint8_t muxAddress,
                        uint8_t subBus)
     : PhysicalScreen(), _screenWidth(screenWidth), _screenHeight(screenHeight), _deviceAddress(deviceAddress),
       _muxAddress(muxAddress), _subBus(subBus) {
-        _oled = new SSD1306AsciiWire;
-      }
+  if ((_screenHeight != 32 && _screenHeight != 64) || (_screenWidth != 128 && _screenHeight != 132)) {
+    CONSOLE.println(F("Invalid screen width/height specified"));
+    return;
+  }
+  _oled = new SSD1306AsciiWire;
+}
 
 PhysicalScreen *OLEDScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint16_t backgroundColour) {
   _switchMUX();
@@ -18,6 +22,9 @@ PhysicalScreen *OLEDScreen::setupScreen(uint8_t rotation, uint8_t textSize, uint
     _oled->begin(&Adafruit128x64, _deviceAddress);
   } else if (_screenWidth == 128 && _screenHeight == 32) {
     _oled->begin(&Adafruit128x32, _deviceAddress);
+  }
+  if (rotation == 1) {
+    _oled->displayRemap(true);
   }
   // _oled->setRotation(rotation);
   // _oled->setFont(gfxFont);
@@ -67,10 +74,10 @@ void OLEDScreen::writeRow(uint8_t row, uint8_t column, uint16_t fontColour, uint
   //   _oled->drawLine(column, y + 1, _oled->width(), y + 1, backgroundColour);
   // }
   // _oled->display();
-  CONSOLE.print(F("\nwriteRow textRow|message: "));
-  CONSOLE.print(y);
-  CONSOLE.print(F("|"));
-  CONSOLE.println(message);
+  // CONSOLE.print(F("\nwriteRow textRow|message: "));
+  // CONSOLE.print(y);
+  // CONSOLE.print(F("|"));
+  // CONSOLE.println(message);
 }
 
 void OLEDScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint16_t lineColour,
@@ -86,9 +93,9 @@ void OLEDScreen::writeLine(uint8_t row, uint8_t column, uint8_t lineLength, uint
   // _oled->display();
 }
 
-uint16_t OLEDScreen::getHeight() { /*return _oled->height();*/ }
+uint16_t OLEDScreen::getHeight() { return _oled->displayHeight(); }
 
-uint16_t OLEDScreen::getWidth() { /*return _oled->width();*/ }
+uint16_t OLEDScreen::getWidth() { return _oled->displayWidth(); }
 
 uint8_t OLEDScreen::_getTextWidth() {
   // int16_t x1, y1;

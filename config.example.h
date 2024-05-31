@@ -32,7 +32,8 @@
 // #define BACKGROUND_COLOUR OLED_BLACK
 
 // If rotation of the screen is required, set it here
-// TFT type screen typically require 1, OLEDs typically require 0
+// TFT type screens typically require 1 or 3 to rotate from portrait to landscape
+// Set to 0 for an OLED screen or 1 to rotate 180 degrees
 // #define SCREEN_ROTATION 0
 #define SCREEN_ROTATION 1
 // #define SCREEN_ROTATION 2

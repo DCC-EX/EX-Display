@@ -13,7 +13,12 @@
 /// @brief Class to drive monochrome OLEDs with EX-Display, noting all colours are ignored
 class OLEDScreen : public PhysicalScreen {
 public:
-  // OLEDScreen(Adafruit_SSD1306 &oled, uint8_t muxAddress = 0, uint8_t subBus = 255);
+  /// @brief Constructor for an OLEDScreen instance
+  /// @param screenWidth Width of the OLED in pixels, must be either 128 (SSD1306) or 132 (SH1106)
+  /// @param screenHeight Height of the OLED in pixels, must be either 32 or 64
+  /// @param deviceAddress (Optional - default 0x3C) I2C address of the OLED
+  /// @param muxAddress (Optional) Address of a multiplexor the OLED is behind if appropriate
+  /// @param subBus (Optional) Sub bus ID of a multiplexor the OLED is on if appropriate
   OLEDScreen(uint8_t screenWidth, uint8_t screenHeight, uint8_t deviceAddress = 0x3C, uint8_t muxAddress = 0,
              uint8_t subBus = 255);
 
