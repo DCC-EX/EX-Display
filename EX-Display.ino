@@ -7,6 +7,7 @@
 bool StartupPhase = true;
 unsigned long timestamp = 0;
 long screencount = 0;
+char startupMessage[13] = {};
 
 #if SCREEN_TYPE == MCU
 #include "MCUFriendScreen.h"
@@ -75,8 +76,10 @@ void setup() {
     CONSOLE.println(display->getMaxRowLength());
   }
 
-  screen->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, "EX-Display", false);
-  screen->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, VERSION, false);
+  sprintf(startupMessage, "EX-Display");
+  screen->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, startupMessage, false);
+  sprintf(startupMessage, VERSION);
+  screen->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, startupMessage, false);
 
   delay(2000);
 
