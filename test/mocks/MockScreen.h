@@ -15,10 +15,18 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef PIO_UNIT_TESTING
+#ifndef MOCKSCREEN_H
+#define MOCKSCREEN_H
 
-void setup() {}
+#include "interfaces/ScreenInterface.h"
+#include <gmock/gmock.h>
 
-void loop() {}
+/// @brief Mock physical screen class
+class MockScreen : public ScreenInterface {
+public:
+  MOCK_METHOD(void, begin, (), (override));
 
-#endif // PIO_UNIT_TEST
+  MOCK_METHOD(void, clearScreen, (), (override));
+};
+
+#endif // MOCKSCREEN_H

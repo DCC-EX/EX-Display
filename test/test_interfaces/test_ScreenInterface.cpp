@@ -15,10 +15,22 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef PIO_UNIT_TESTING
+#include "test/mocks/MockScreen.h"
+#include <gtest/gtest.h>
 
-void setup() {}
+using namespace testing;
 
-void loop() {}
+/// @brief Test harness for physical screen interface tests
+class ScreenInterfaceTests : public Test {
+protected:
+  MockScreen mockScreen;
+  
+  void SetUp() override {}
 
-#endif // PIO_UNIT_TEST
+  void TearDown() override {}
+};
+
+TEST_F(ScreenInterfaceTests, DisplaySoftwareVersion) {
+  mockScreen.begin();
+  mockScreen.clearScreen();
+}

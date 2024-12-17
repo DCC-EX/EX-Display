@@ -15,10 +15,18 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef PIO_UNIT_TESTING
+#ifndef SCREENINTERFACE_H
+#define SCREENINTERFACE_H
 
-void setup() {}
+/// @brief Class for all physical screen classes to implement
+/// All logical displays must be associated with a screen interface, not directly to a screen implementation
+class ScreenInterface {
+public:
+  /// @brief Perform any initial once off setup or configuration here
+  virtual void begin() = 0;
 
-void loop() {}
+  /// @brief Clear the entire screen
+  virtual void clearScreen() = 0;
+};
 
-#endif // PIO_UNIT_TEST
+#endif // SCREENINTERFACE_H

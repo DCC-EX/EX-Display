@@ -15,10 +15,9 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef PIO_UNIT_TESTING
+#include <gtest/gtest.h>
 
-void setup() {}
-
-void loop() {}
-
-#endif // PIO_UNIT_TEST
+int main(int argc, char **argv) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}
