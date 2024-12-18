@@ -15,18 +15,16 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MOCKSCREEN_H
-#define MOCKSCREEN_H
+#ifndef MOCKATFINDERCALLBACK_H
+#define MOCKATFINDERCALLBACK_H
 
-#include "interfaces/ScreenInterface.h"
+#include "interfaces/CallbackInterface.h"
 #include <gmock/gmock.h>
 
-/// @brief Mock physical screen class
-class MockScreen : public ScreenInterface {
+/// @brief Mock class to test callbacks from AtFinder
+class MockAtFinderCallback : public CallbackInterface {
 public:
-  MOCK_METHOD(void, begin, (), (override));
-
-  MOCK_METHOD(void, clearScreen, (), (override));
+  MOCK_METHOD(void, updateScreen, (uint8_t screenId, uint8_t row, char *text), ());
 };
 
-#endif // MOCKSCREEN_H
+#endif // MOCKATFINDERCALLBACK_H

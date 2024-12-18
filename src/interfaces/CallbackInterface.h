@@ -15,18 +15,19 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef SCREENINTERFACE_H
-#define SCREENINTERFACE_H
+#ifndef CALLBACKINTERFACE_H
+#define CALLBACKINTERFACE_H
 
-/// @brief Class for all physical screen classes to implement
-/// All logical displays must be associated with a screen interface, not directly to a screen implementation
-class ScreenInterface {
+#include <Arduino.h>
+
+/// @brief Interface class to use for callbacks
+class CallbackInterface {
 public:
-  /// @brief Perform any initial once off setup or configuration here
-  virtual void begin() = 0;
-
-  /// @brief Clear the entire screen
-  virtual void clearScreen() = 0;
+  /// @brief Method to implement updating a screen
+  /// @param screenId ID of the screen to update
+  /// @param row Row number to update
+  /// @param text Text to update
+  virtual void updateScreen(uint8_t screenId, uint8_t row, char *text) = 0;
 };
 
-#endif // SCREENINTERFACE_H
+#endif // CALLBACKINTERFACE_H

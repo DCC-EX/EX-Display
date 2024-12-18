@@ -15,22 +15,22 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "test/mocks/MockScreen.h"
-#include <gtest/gtest.h>
+#ifndef MOCKDISPLAY_H
+#define MOCKDISPLAY_H
 
-using namespace testing;
+#include "interfaces/DisplayInterface.h"
+#include <gmock/gmock.h>
 
-/// @brief Test harness for physical screen interface tests
-class ScreenInterfaceTests : public Test {
-protected:
-  MockScreen mockScreen;
-  
-  void SetUp() override {}
+/// @brief Mock physical display class
+class MockDisplay : public DisplayInterface<int> {
+public:
+  MOCK_METHOD(void, begin, (), (override));
 
-  void TearDown() override {}
+  MOCK_METHOD(void, clearScreen, (), (override));
+
+  MOCK_METHOD(void, displayRow, (int row, const char *text, bool underlined, int column), (override));
+
+  MOCK_METHOD(void, clearRow, (int row), (override));
 };
 
-TEST_F(ScreenInterfaceTests, DisplaySoftwareVersion) {
-  mockScreen.begin();
-  mockScreen.clearScreen();
-}
+#endif // MOCKDISPLAY_H
