@@ -15,12 +15,14 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef PIO_UNIT_TESTING
+#ifndef DEFINES_H
+#define DEFINES_H
 
-#include "Defines.h"
+// Incude user's myConfig.h if it exists.
+#if __has_include("myConfig.h")
+#include "myConfig.h"
+#else
+#warning myConfig.h not found, using defaults
+#endif
 
-void setup() {}
-
-void loop() {}
-
-#endif // PIO_UNIT_TEST
+#endif // DEFINES_H

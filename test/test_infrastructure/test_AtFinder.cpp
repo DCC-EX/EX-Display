@@ -46,4 +46,23 @@ TEST_F(AtFinderTests, TestCallback) {
   for (size_t i = 0; i < strlen(inputText); i++) {
     AtFinder::processInputChar(inputText[i]);
   }
+
+  // Clean up
+  AtFinder::cleanUp();
+}
+
+TEST_F(AtFinderTests, TestInvalidCommand) {
+  // We shouldn't recieve any callbacks when setting up AtFinder
+  EXPECT_CALL(callback, updateScreen(testing::_, testing::_, testing::_)).Times(0);
+  AtFinder::setup(100, &callback);
+
+  // When sending a command without <@ at the front, we shouldn't callback
+  EXPECT_CALL(callback, updateScreen(testing::_, testing::_, testing::_)).Times(0);
+  const char *inputText = R"(<0 3 "Screen 0, row 3 text")";
+  for (size_t i = 0; i < strlen(inputText); i++) {
+    AtFinder::processInputChar(inputText[i]);
+  }
+
+  // Clean up
+  AtFinder::cleanUp();
 }

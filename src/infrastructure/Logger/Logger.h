@@ -20,8 +20,14 @@
 
 #include <Arduino.h>
 
+/// @brief Macro for shorter logging calls, assumes a pointer to a Logger instance called _logger
+/// LOG(LogLevel, "Message");
+#define LOG(level, ...)                                                                                                \
+  if (_logger)                                                                                                         \
+  _logger->log(level, __VA_ARGS__)
+
 /// @brief Define valid log levels in ascending order
-enum LogLevel { LogLevelNone, LogLevelError, LogLevelWarn, LogLevelInfo, LogLevelDebug };
+enum LogLevel { NONE, ERROR, WARN, INFO, DEBUG };
 
 /// @brief Class to enable simple logging to a Stream object with different log levels
 /// This enables embedding permanent error, warn, info, and debug messages in the software, with the user defining the
@@ -29,8 +35,8 @@ enum LogLevel { LogLevelNone, LogLevelError, LogLevelWarn, LogLevelInfo, LogLeve
 class Logger {
 public:
   /// @brief Constructor for the logger
-  /// @param outputStream Stream to output log messages to
-  Logger(Stream &outputStream);
+  /// @param outputStream Pointer to a Stream instance to output log messages to (eg. Logger(&Serial);)
+  Logger(Stream *outputStream);
 
   /// @brief Set the log level
   /// @param logLevel Valid LogLevel
@@ -46,7 +52,7 @@ public:
   void log(LogLevel logLevel, const char *format, ...);
 
 private:
-  Stream &_outputStream;
+  Stream *_outputStream;
   LogLevel _currentLevel;
 };
 

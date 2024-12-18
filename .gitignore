@@ -2,3 +2,6 @@
 .vscode
 .DS_Store
 config.h
+myConfig.h
+build
+_build

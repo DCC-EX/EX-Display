@@ -34,6 +34,9 @@ public:
   /// @param hot The next character to process in the stream
   static void processInputChar(char hot);
 
+  /// @brief Clean up memory allocations used by AtFinder
+  static void cleanUp();
+
 private:
   static uint8_t _maxTextLength;
   static char *_text;

@@ -1,4 +1,5 @@
 /*
+ *  © 2024 Chris Harlow
  *  © 2024 Peter Cole
  *
  *  This is free software: you can redistribute it and/or modify
@@ -15,12 +16,4 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef PIO_UNIT_TESTING
-
-#include "Defines.h"
-
-void setup() {}
-
-void loop() {}
-
-#endif // PIO_UNIT_TEST
+#include "ConsoleInput.h"

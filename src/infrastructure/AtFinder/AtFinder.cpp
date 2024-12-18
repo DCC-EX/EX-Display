@@ -132,3 +132,9 @@ void AtFinder::processInputChar(char hot) {
     return;
   }
 }
+
+void AtFinder::cleanUp() {
+  free(AtFinder::_text);
+  AtFinder::_text = nullptr;
+  AtFinder::_callback = nullptr;
+}
