@@ -21,7 +21,8 @@
 #include "src/interfaces/CallbackInterface.h"
 #include <Arduino.h>
 
-/// @brief
+/// @brief Class to monitor input stream for EXRAIL SCREEN commands
+/// Format: <@ screen row "Text">
 class AtFinder {
 public:
   /// @brief Setup the AtFinder parser
