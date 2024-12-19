@@ -18,6 +18,8 @@
 #ifndef DISPLAYINTERFACE_H
 #define DISPLAYINTERFACE_H
 
+#include "src/infrastructure/Logger/Logger.h"
+
 /// @brief Class to abstract away all physical display implementation to enable multiple display types
 /// When implementing this class, specify the colour type used by the associated display library
 /// Eg. class TFT_eSPIDisplay : public DisplayInterface<uint16_t> {...}
@@ -56,12 +58,17 @@ public:
   /// @return ColourType as implemented by the derived class
   ColourType getBackgroundColour() { return _backgroundColour; }
 
+  /// @brief Set the logger instance to use for diagnostic logging
+  /// @param logger Pointer to the Logger instance to use
+  void setLogger(Logger *logger) { _logger = logger; }
+
   /// @brief Destructor for a DisplayInterface
   virtual ~DisplayInterface() = default;
 
 private:
   ColourType _textColour;
   ColourType _backgroundColour;
+  Logger *_logger = nullptr;
 };
 
 #endif // DISPLAYINTERFACE_H

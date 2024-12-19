@@ -19,6 +19,7 @@
 #ifndef AtFinder_h
 #define AtFinder_h
 #include "src/interfaces/CallbackInterface.h"
+#include "src/infrastructure/Logger/Logger.h"
 #include <Arduino.h>
 
 /// @brief Class to monitor input stream for EXRAIL SCREEN commands
@@ -37,9 +38,14 @@ public:
   /// @brief Clean up memory allocations used by AtFinder
   static void cleanUp();
 
+  /// @brief Set the logger instance to use for diagnostic logging
+  /// @param logger Pointer to the Logger instance to use
+  static void setLogger(Logger *logger);
+
 private:
   static uint8_t _maxTextLength;
   static char *_text;
   static CallbackInterface *_callback;
+  static Logger *_logger;
 };
 #endif

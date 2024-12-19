@@ -1,5 +1,4 @@
 /*
- *  © 2024 Chris Harlow
  *  © 2024 Peter Cole
  *
  *  This is free software: you can redistribute it and/or modify
@@ -16,11 +15,29 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef CONSOLEINPUT_H
-#define CONSOLEINPUT_H
+#include "mocks/Stream.h"
+#include "user_interaction/ConsoleInput/ConsoleInput.h"
+#include <gtest/gtest.h>
 
-class ConsoleInput {
+using namespace testing;
 
+class ConsoleInputTests : public Test {
+protected:
+  Stream stream;
+  ConsoleInput *console;
+
+  void SetUp() override {
+    // Initialise test objects
+    console = new ConsoleInput(&stream);
+    stream.clear();
+  }
+
+  void TearDown() override {
+    // Cleanup
+    delete console;
+  }
 };
 
-#endif // CONSOLEINPUT_H
+TEST_F(ConsoleInputTests, TestInput) {
+  //
+}

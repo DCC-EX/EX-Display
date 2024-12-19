@@ -40,6 +40,21 @@ public:
     buffer += "\r\n";         // Add newline
   }
 
+  /// @brief Check number of characters available in the buffer
+  /// @return Number of characters
+  int available() const { return buffer.length(); }
+
+  /// @brief Read a character from the buffer
+  /// @return The next char in the buffer, -1 for empty
+  int read() {
+    if (buffer.empty()) {
+      return -1; // Returns -1 if none available
+    }
+    char c = buffer[0];
+    buffer.erase(0, 1);         // Get first char and remove it from the buffer
+    return static_cast<int>(c); // Return as int for Arduino Stream compatibility
+  }
+
   /// @brief Clear the buffer
   void clear() { buffer.clear(); }
 };

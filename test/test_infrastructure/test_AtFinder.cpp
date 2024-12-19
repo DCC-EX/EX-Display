@@ -15,8 +15,8 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "src/infrastructure/AtFinder/AtFinder.h"
-#include "test/mocks/MockAtFinderCallback.h"
+#include "infrastructure/AtFinder/AtFinder.h"
+#include "mocks/MockAtFinderCallback.h"
 #include <gtest/gtest.h>
 
 using namespace testing;
@@ -51,16 +51,30 @@ TEST_F(AtFinderTests, TestCallback) {
   AtFinder::cleanUp();
 }
 
-TEST_F(AtFinderTests, TestInvalidCommand) {
+TEST_F(AtFinderTests, TestInvalidCommands) {
   // We shouldn't recieve any callbacks when setting up AtFinder
   EXPECT_CALL(callback, updateScreen(testing::_, testing::_, testing::_)).Times(0);
   AtFinder::setup(100, &callback);
 
   // When sending a command without <@ at the front, we shouldn't callback
   EXPECT_CALL(callback, updateScreen(testing::_, testing::_, testing::_)).Times(0);
-  const char *inputText = R"(<0 3 "Screen 0, row 3 text")";
-  for (size_t i = 0; i < strlen(inputText); i++) {
-    AtFinder::processInputChar(inputText[i]);
+  const char *invalidInput1 = R"(<0 3 "Screen 0, row 3 text")";
+  for (size_t i = 0; i < strlen(invalidInput1); i++) {
+    AtFinder::processInputChar(invalidInput1[i]);
+  }
+
+  // When sending a command with an extra parameter, we shouldn't callback
+  EXPECT_CALL(callback, updateScreen(testing::_, testing::_, testing::_)).Times(0);
+  const char *invalidInput2 = R"(<@ 0 3 77 "Screen 0, row 3 text")";
+  for (size_t i = 0; i < strlen(invalidInput2); i++) {
+    AtFinder::processInputChar(invalidInput2[i]);
+  }
+
+  // When sending a command without < at the front, we shouldn't callback
+  EXPECT_CALL(callback, updateScreen(testing::_, testing::_, testing::_)).Times(0);
+  const char *invalidInput3 = R"(@ 0 3 "Screen 0, row 3 text")";
+  for (size_t i = 0; i < strlen(invalidInput3); i++) {
+    AtFinder::processInputChar(invalidInput3[i]);
   }
 
   // Clean up

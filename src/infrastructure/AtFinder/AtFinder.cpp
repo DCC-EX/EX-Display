@@ -34,6 +34,7 @@ and the state may or may not change to a different state.  */
 uint8_t AtFinder::_maxTextLength = 0;
 char *AtFinder::_text = nullptr;
 CallbackInterface *AtFinder::_callback = nullptr;
+Logger *AtFinder::_logger = nullptr;
 
 // Set maximum accepted length of "text". Longer texts will be trimmed.
 // Set callback function that will be called when message detected.
@@ -49,6 +50,7 @@ void AtFinder::setup(uint8_t maxTextLength, CallbackInterface *callback) {
   _maxTextLength = maxTextLength;
   _text = (char *)malloc(_maxTextLength + 1);
   _callback = callback;
+  LOG(LogLevel::DEBUG, "AtFinder::setup with _maxTextLength %d", _maxTextLength);
 }
 
 void AtFinder::processInputChar(char hot) {
@@ -138,3 +140,5 @@ void AtFinder::cleanUp() {
   AtFinder::_text = nullptr;
   AtFinder::_callback = nullptr;
 }
+
+void AtFinder::setLogger(Logger *logger) { _logger = logger; }

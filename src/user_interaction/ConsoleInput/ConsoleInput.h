@@ -1,4 +1,5 @@
 /*
+ *  © 2024 Chris Harlow
  *  © 2024 Peter Cole
  *
  *  This is free software: you can redistribute it and/or modify
@@ -15,27 +16,39 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef CALLBACKINTERFACE_H
-#define CALLBACKINTERFACE_H
+#ifndef CONSOLEINPUT_H
+#define CONSOLEINPUT_H
 
 #include "src/infrastructure/Logger/Logger.h"
 #include <Arduino.h>
 
-/// @brief Interface class to use for callbacks
-class CallbackInterface {
+class ConsoleInput {
 public:
-  /// @brief Method to implement updating a screen
-  /// @param screenId ID of the screen to update
-  /// @param row Row number to update
-  /// @param text Text to update
-  virtual void updateScreen(uint8_t screenId, uint8_t row, char *text) = 0;
+  /// @brief Constructor for a ConsoleInput instance
+  /// @param stream Pointer to a stream to accept input from (eg. ConsoleInput(&Serial))
+  /// @param maxInputLength Maximum number of characters accepted for input (default 100)
+  ConsoleInput(Stream *stream, uint8_t maxInputLength = 100);
+
+  /// @brief Process Stream for user input
+  void check();
 
   /// @brief Set the logger instance to use for diagnostic logging
   /// @param logger Pointer to the Logger instance to use
-  void setLogger(Logger *logger) { _logger = logger; }
+  void setLogger(Logger *logger);
+
+  /// @brief Destructor for a ConsoleInput instance
+  ~ConsoleInput();
 
 private:
-  Logger *_logger = nullptr;
+  Stream *_stream;
+  uint8_t _maxInputLength;
+  Logger *_logger;
+  char *_inputBuffer;
+  uint8_t _inputIndex;
+
+  /// @brief Process the command currently in _inputBuffer
+  /// @param command Char array containing the command to process
+  void _processCommand(const char *command);
 };
 
-#endif // CALLBACKINTERFACE_H
+#endif // CONSOLEINPUT_H

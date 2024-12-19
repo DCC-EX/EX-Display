@@ -27,7 +27,7 @@ protected:
 
   // Optional setup method
   void SetUp() override {
-    // Initialize any test resources
+    // Initialise any test resources
     logger = new Logger(&stream);
     stream.clear();
   }

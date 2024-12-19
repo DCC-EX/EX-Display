@@ -17,10 +17,18 @@
 
 #ifndef PIO_UNIT_TESTING
 
-#include "Defines.h"
+#include "src/Defines.h"
+#include "src/user_interaction/ConsoleInput/ConsoleInput.h"
 
-void setup() {}
+Logger *logger = new Logger(&Serial);
+ConsoleInput *input = new ConsoleInput(&Serial);
 
-void loop() {}
+void setup() {
+  Serial.begin(115200);
+  logger->setLogLevel(LogLevel::DEBUG);
+  logger->log(LogLevel::INFO, "Starting EX-Display");
+}
+
+void loop() { input->check(); }
 
 #endif // PIO_UNIT_TEST
