@@ -25,6 +25,7 @@ ConsoleInput *input = new ConsoleInput(&Serial);
 
 void setup() {
   Serial.begin(115200);
+  input->setLogger(logger);
   logger->setLogLevel(LogLevel::DEBUG);
   logger->log(LogLevel::INFO, "Starting EX-Display");
 }
