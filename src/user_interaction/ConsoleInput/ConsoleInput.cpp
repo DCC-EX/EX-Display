@@ -25,22 +25,23 @@ ConsoleInput::ConsoleInput(Stream *stream, uint8_t maxInputLength)
 }
 
 void ConsoleInput::check() {
-  while (_stream->available()) {
-    char c = _stream->read();
-    char start = '<';
-    char end = '>';
-    if (c == start) {
-      _inputIndex = 0;
-      _inputBuffer[_inputIndex++] = c; // Reset buffer with start indicator
-    } else if (c == end && _inputIndex > 0) {
-      _inputBuffer[_inputIndex++] = c;    // Add end indicator
-      _inputBuffer[_inputIndex++] = '\0'; // Null terminator
-      _processCommand(_inputBuffer);
-      _inputIndex = 0; // Reset buffer index
-    } else if (_inputIndex > 0 && _inputIndex < _maxInputLength - 1) {
-      _inputBuffer[_inputIndex++] = c; // Append to buffer
-    }
-  }
+  // while (_stream->available()) {
+  //   char c = _stream->read();
+  //   char start = '<';
+  //   char end = '>';
+  //   if (c == start) {
+  //     _inputIndex = 0;
+  //     _inputBuffer[_inputIndex++] = c; // Reset buffer with start indicator
+  //   } else if (c == end && _inputIndex > 0) {
+  //     _inputBuffer[_inputIndex++] = c;    // Add end indicator
+  //     _inputBuffer[_inputIndex++] = '\0'; // Null terminator
+  // _processCommand(_inputBuffer);
+  _processCommand("<test command>");
+  //     _inputIndex = 0; // Reset buffer index
+  //   } else if (_inputIndex > 0 && _inputIndex < _maxInputLength - 1) {
+  //     _inputBuffer[_inputIndex++] = c; // Append to buffer
+  //   }
+  // }
 }
 
 void ConsoleInput::setLogger(Logger *logger) { _logger = logger; }
@@ -52,5 +53,5 @@ ConsoleInput::~ConsoleInput() {
 }
 
 void ConsoleInput::_processCommand(const char *command) {
-  LOG(LogLevel::DEBUG, "ConsoleInput::_processCommand: %s", command);
+  LOG(LogLevel::ERROR, "ConsoleInput::_processCommand: %s", command);
 }

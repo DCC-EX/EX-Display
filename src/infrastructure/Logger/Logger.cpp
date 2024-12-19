@@ -25,15 +25,7 @@ LogLevel Logger::getLogLevel() { return _currentLevel; }
 
 void Logger::log(LogLevel logLevel, const char *format, ...) {
   if (logLevel <= _currentLevel) {
-    // Start args processing
-    va_list args;
-    va_start(args, format);
-    // Get size of string + null terminator
-    int size = vsnprintf(nullptr, 0, format, args) + 1;
-    // End args processing
-    va_end(args);
-
-    // Now setup the prefix
+    // Setup the prefix
     const char *prefix;
     switch (logLevel) {
     case LogLevel::ERROR:
@@ -53,8 +45,22 @@ void Logger::log(LogLevel logLevel, const char *format, ...) {
       break;
     }
 
+    // Calculate buffer size from args + prefix
+    va_list args;
+    va_start(args, format);
+    // Get size of string + null terminator
+    int size = vsnprintf(nullptr, 0, format, args) + 1;
+    // End args processing
+    va_end(args);
+
     // Allocate buffer including prefix size
-    char *buffer = new char[size + strlen(prefix)];
+    size_t totalSize = size + strlen(prefix);
+    char *buffer = new char[totalSize];
+
+    if (buffer == nullptr) {
+      _outputStream->println("[ERROR] Logger::log memory allocation failed");
+      return;
+    }
 
     // Copy prefix to buffer
     strcpy(buffer, prefix);
