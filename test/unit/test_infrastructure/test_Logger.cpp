@@ -15,7 +15,7 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "infrastructure/Logger/Logger.h"
+#include "Logger.h"
 #include <gtest/gtest.h>
 
 using namespace testing;

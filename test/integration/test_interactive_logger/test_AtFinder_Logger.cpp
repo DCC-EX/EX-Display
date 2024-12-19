@@ -15,41 +15,38 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "AtFinder.h"
 #include "Logger.h"
+#include "test/mocks/MockAtFinderCallback.h"
 #include "test/mocks/Stream.h"
-#include "ConsoleInput.h"
 #include <gtest/gtest.h>
 
 using namespace testing;
 
 /// @brief Test harness integration testing of ConsoleInput and Logger classes
-class ConsoleInputLoggerIntegrationTests : public Test {
+class AtFinderLoggerIntegrationTests : public Test {
 protected:
   Stream stream;
   Logger *logger;
-  ConsoleInput *input;
+  MockAtFinderCallback callback;
 
   void SetUp() override {
     logger = new Logger(&stream);
-    input = new ConsoleInput(&stream);
-    input->setLogger(logger);
     stream.clear();
   }
 
-  void TearDown() override {
-    delete input;
-    delete logger;
-  }
+  void TearDown() override { delete logger; }
 };
 
-TEST_F(ConsoleInputLoggerIntegrationTests, IntegrationTest) {
-  // Define a valid test command and send to the stream buffer
-  const char *testCommand = "<test command>";
-  stream.buffer = testCommand;
+TEST_F(AtFinderLoggerIntegrationTests, IntegrationTest) {
+  // Set logging to debug
+  logger->setLogLevel(LogLevel::DEBUG);
 
-  // Check for input
-  input->check();
+  // Set AtFinder logger
+  AtFinder::setLogger(logger);
 
-  // Expect ERROR output
-  EXPECT_THAT(stream.buffer, testing::HasSubstr("[ERROR] ConsoleInput::_processCommand: <test command>\r\n"));
+  // Setup AtFinder
+  AtFinder::setup(100, &callback);
+
+  EXPECT_THAT(stream.buffer, testing::HasSubstr("[DEBUG] AtFinder::setup with _maxTextLength 100\r\n"));
 }

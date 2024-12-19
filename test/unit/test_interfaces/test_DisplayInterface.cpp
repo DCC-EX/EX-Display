@@ -15,7 +15,7 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "mocks/MockDisplay.h"
+#include "test/mocks/MockDisplay.h"
 #include <gtest/gtest.h>
 
 using namespace testing;

@@ -18,7 +18,7 @@
 #ifndef CALLBACKINTERFACE_H
 #define CALLBACKINTERFACE_H
 
-#include "src/infrastructure/Logger/Logger.h"
+#include "Logger.h"
 #include <Arduino.h>
 
 /// @brief Interface class to use for callbacks

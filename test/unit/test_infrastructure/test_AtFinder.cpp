@@ -15,8 +15,8 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "infrastructure/AtFinder/AtFinder.h"
-#include "mocks/MockAtFinderCallback.h"
+#include "AtFinder.h"
+#include "test/mocks/MockAtFinderCallback.h"
 #include <gtest/gtest.h>
 
 using namespace testing;

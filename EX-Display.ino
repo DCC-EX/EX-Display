@@ -17,8 +17,8 @@
 
 #ifndef PIO_UNIT_TESTING
 
-#include "src/Defines.h"
-#include "src/user_interaction/ConsoleInput/ConsoleInput.h"
+#include "Defines.h"
+#include "ConsoleInput.h"
 
 Logger *logger = new Logger(&Serial);
 ConsoleInput *input = new ConsoleInput(&Serial);

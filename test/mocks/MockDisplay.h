@@ -18,7 +18,7 @@
 #ifndef MOCKDISPLAY_H
 #define MOCKDISPLAY_H
 
-#include "interfaces/DisplayInterface.h"
+#include "DisplayInterface.h"
 #include <gmock/gmock.h>
 
 /// @brief Mock physical display class

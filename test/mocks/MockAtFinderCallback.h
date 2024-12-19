@@ -18,7 +18,7 @@
 #ifndef MOCKATFINDERCALLBACK_H
 #define MOCKATFINDERCALLBACK_H
 
-#include "interfaces/CallbackInterface.h"
+#include "CallbackInterface.h"
 #include <gmock/gmock.h>
 
 /// @brief Mock class to test callbacks from AtFinder

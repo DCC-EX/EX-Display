@@ -15,8 +15,8 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "mocks/Stream.h"
-#include "user_interaction/ConsoleInput/ConsoleInput.h"
+#include "ConsoleInput.h"
+#include "test/mocks/Stream.h"
 #include <gtest/gtest.h>
 
 using namespace testing;

@@ -19,8 +19,8 @@
 #define DEFINES_H
 
 // Incude user's myConfig.h if it exists.
-#if __has_include("../myConfig.h")
-#include "../myConfig.h"
+#if __has_include("myConfig.h")
+#include "myConfig.h"
 #else
 #warning myConfig.h not found, using defaults
 #endif

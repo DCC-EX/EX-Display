@@ -19,7 +19,7 @@
 #ifndef CONSOLEINPUT_H
 #define CONSOLEINPUT_H
 
-#include "src/infrastructure/Logger/Logger.h"
+#include "Logger.h"
 #include <Arduino.h>
 
 class ConsoleInput {

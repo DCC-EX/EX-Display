@@ -18,7 +18,7 @@
 #ifndef DISPLAYINTERFACE_H
 #define DISPLAYINTERFACE_H
 
-#include "src/infrastructure/Logger/Logger.h"
+#include "Logger.h"
 
 /// @brief Class to abstract away all physical display implementation to enable multiple display types
 /// When implementing this class, specify the colour type used by the associated display library

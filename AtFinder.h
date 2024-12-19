@@ -18,8 +18,8 @@
 
 #ifndef AtFinder_h
 #define AtFinder_h
-#include "src/interfaces/CallbackInterface.h"
-#include "src/infrastructure/Logger/Logger.h"
+#include "CallbackInterface.h"
+#include "Logger.h"
 #include <Arduino.h>
 
 /// @brief Class to monitor input stream for EXRAIL SCREEN commands
