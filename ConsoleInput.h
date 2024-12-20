@@ -22,6 +22,7 @@
 #include "Logger.h"
 #include <Arduino.h>
 
+/// @brief Class to support interactive configuration of EX-Display
 class ConsoleInput {
 public:
   /// @brief Constructor for a ConsoleInput instance

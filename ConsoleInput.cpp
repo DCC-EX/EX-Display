@@ -24,11 +24,17 @@ ConsoleInput::ConsoleInput(Stream *stream, uint8_t maxInputLength)
   _inputIndex = 0;
 }
 
+/// @brief Check incoming stream for valid command syntax to do stuff
+/// Start/end chars are [] respectively
+/// L - Set log level:
+///   - [L NONE|ERROR|WARN|INFO|DEBUG]
+/// T - send a test command which will send to a screen/display
+///   - [T <@ screen row "message">]
 void ConsoleInput::check() {
   while (_stream->available()) {
     char c = _stream->read();
-    char start = '<';
-    char end = '>';
+    char start = '[';
+    char end = ']';
     if (c == start) {
       _inputIndex = 0;
       _inputBuffer[_inputIndex++] = c; // Reset buffer with start indicator
