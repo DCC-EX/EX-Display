@@ -31,7 +31,7 @@ protected:
 };
 
 TEST_F(AtFinderTests, TestCallback) {
-  // We shouldn't recieve any callbacks when setting up AtFinder
+  // We shouldn't receive any callbacks when setting up AtFinder
   EXPECT_CALL(callback, updateScreen(testing::_, testing::_, testing::_)).Times(0);
   AtFinder::setup(100, &callback);
 

@@ -2,8 +2,12 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.13"
+#define VERSION "0.0.14"
 
+// 0.0.14 includes:
+//  - Major rewrite using OOP
+//  - Swap display/screen terminology - screen is logical from EX-CommandStation, display is physical
+//  - Add tests
 // 0.0.13 includes:
 //  - Improved user configuration
 //  - Swap OLED support to use SSD1306_Ascii

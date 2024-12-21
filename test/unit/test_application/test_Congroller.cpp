@@ -15,29 +15,17 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "ConsoleInput.h"
-#include "test/mocks/Stream.h"
+#include "Controller.h"
 #include <gtest/gtest.h>
 
 using namespace testing;
 
-class ConsoleInputTests : public Test {
+class ControllerTests : public Test {
 protected:
-  Stream stream;
-  ConsoleInput *console;
+  void SetUp() override {}
 
-  void SetUp() override {
-    // Initialise test objects
-    console = new ConsoleInput(&stream);
-    stream.clear();
-  }
-
-  void TearDown() override {
-    // Cleanup
-    delete console;
-  }
+  void TearDown() override {}
 };
 
-TEST_F(ConsoleInputTests, TestInput) {
-  //
-}
+/// @brief Create a ScreenRow and check all attributes are valid
+TEST_F(ControllerTests, CreateController) {}

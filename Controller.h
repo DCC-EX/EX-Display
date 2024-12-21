@@ -15,30 +15,37 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef CALLBACKINTERFACE_H
-#define CALLBACKINTERFACE_H
+#ifndef CONTROLLER_H
+#define CONTROLLER_H
 
+#include "CallbackInterface.h"
 #include "Logger.h"
 #include <Arduino.h>
 
-/// @brief Interface class to use for callbacks
-class CallbackInterface {
+/// @brief Class for the central controller for EX-Display
+/// All application activities are controlled through this class to manage screens, displays, and user input
+class Controller : public CallbackInterface {
 public:
+  /// @brief Constructor for the Controller
+  Controller(Stream *consoleStream, Stream *commandStationStream, Logger *logger);
+
+  /// @brief Processes all ongoing activities, monitoring streams, receiving user input, updates displays, etc.
+  /// Call at least once per main loop iteration
+  void update();
+
   /// @brief Method to implement updating a screen
   /// @param screenId ID of the screen to update
   /// @param row Row number to update
   /// @param text Text to update
-  virtual void updateScreen(uint8_t screenId, uint8_t row, char *text) = 0;
+  void updateScreen(uint8_t screenId, uint8_t row, char *text) override;
 
-  /// @brief Set the logger instance to use for diagnostic logging
-  /// @param logger Pointer to the Logger instance to use
-  void setLogger(Logger *logger) { _logger = logger; }
-
-  /// @brief Virtual destructor for the CallBackInterface
-  virtual ~CallbackInterface() = default;
+  /// @brief Destructor for the Controller
+  ~Controller() override;
 
 private:
-  Logger *_logger = nullptr;
+  Stream *_consoleStream;
+  Stream *_commandStationStream;
+  Logger *_logger;
 };
 
-#endif // CALLBACKINTERFACE_H
+#endif // CONTROLLER_H

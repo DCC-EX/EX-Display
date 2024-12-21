@@ -15,21 +15,28 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef PIO_UNIT_TESTING
+#include "ScreenRow.h"
 
-#include "Configurator.h"
+ScreenRow::ScreenRow(uint8_t screenRowId)
+    : _screenRowId(screenRowId), _text(nullptr), _next(nullptr), _logger(nullptr) {}
 
-Configurator configurator(&CONSOLE_STREAM, &COMMANDSTATION_STREAM, LOG_LEVEL);
+uint8_t ScreenRow::getId() { return _screenRowId; }
 
-void setup() {
-  CONSOLE_STREAM.begin(115200);
-  COMMANDSTATION_STREAM.begin(115200);
-  configurator.initialise();
+void ScreenRow::setNext(ScreenRow *screenRow) { _next = screenRow; }
+
+ScreenRow *ScreenRow::getNext() { return _next; }
+
+void ScreenRow::setText(const char *text) {
+  _text = text;
+  LOG(LogLevel::DEBUG, "ScreenRow::setText(%s)", _text);
 }
 
-void loop() {
-  Controller *controller = configurator.getController();
-  controller->update();
-}
+const char *ScreenRow::getText() { return _text; }
 
-#endif // PIO_UNIT_TEST
+void ScreenRow::setLogger(Logger *logger) { _logger = logger; }
+
+ScreenRow::~ScreenRow() {
+  _text = nullptr;
+  _next = nullptr;
+  _logger = nullptr;
+}
