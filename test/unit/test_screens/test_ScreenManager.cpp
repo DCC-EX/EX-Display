@@ -39,10 +39,13 @@ TEST_F(ScreenManagerTests, CreateScreenManager) {
 TEST_F(ScreenManagerTests, CreateScreenList) {
   ScreenManager *screenManager = new ScreenManager();
 
-  // Add some screens
-  Screen *screen0 = screenManager->addScreen(0);
-  Screen *screen8 = screenManager->addScreen(8);
-  Screen *screen2 = screenManager->addScreen(2);
+  // Add some screens and validate max screen ID
+  Screen *screen0 = screenManager->updateScreen(0);
+  EXPECT_EQ(screenManager->getMaxScreenId(), 0);
+  Screen *screen8 = screenManager->updateScreen(8);
+  EXPECT_EQ(screenManager->getMaxScreenId(), 8);
+  Screen *screen2 = screenManager->updateScreen(2);
+  EXPECT_EQ(screenManager->getMaxScreenId(), 8);
 
   // Validate screens are as expected
   EXPECT_EQ(screen0->getId(), 0);
@@ -65,6 +68,57 @@ TEST_F(ScreenManagerTests, CreateScreenList) {
 
   // Validate an unknown ID is nullptr
   EXPECT_EQ(screenManager->getScreenById(11), nullptr);
+
+  // Clean up
+  delete screenManager;
+}
+
+/// @brief Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list
+TEST_F(ScreenManagerTests, NavigateScreens) {
+  // Create a ScreenManager with some screens out of number order
+  ScreenManager *screenManager = new ScreenManager;
+  Screen *screen1 = screenManager->updateScreen(1);
+  Screen *screen5 = screenManager->updateScreen(5);
+  Screen *screen35 = screenManager->updateScreen(35);
+  Screen *screen8 = screenManager->updateScreen(8);
+  Screen *screen3 = screenManager->updateScreen(3);
+  Screen *screen42 = screenManager->updateScreen(42);
+  Screen *screen2 = screenManager->updateScreen(2);
+
+  // Check a couple to ensure list order is as expected
+  EXPECT_EQ(screen1->getNext(), screen5);
+  EXPECT_EQ(screen35->getNext(), screen8);
+  EXPECT_EQ(screen3->getNext(), screen42);
+  EXPECT_EQ(screen2->getNext(), nullptr);
+
+  // Validate min/max
+  EXPECT_EQ(screenManager->getMinScreenId(), 1);
+  EXPECT_EQ(screenManager->getMaxScreenId(), 42);
+
+  // Start with first screen
+  Screen *currentScreen = screenManager->getFirstScreen();
+
+  // Get previous two screens and validate
+  currentScreen = screenManager->getPreviousScreen(currentScreen);
+  EXPECT_EQ(currentScreen->getId(), 42);
+  currentScreen = screenManager->getPreviousScreen(currentScreen);
+  EXPECT_EQ(currentScreen->getId(), 35);
+
+  // Make sure lowest screen returns highest as previous
+  Screen *lowestScreen = screenManager->getScreenById(screenManager->getMinScreenId());
+  EXPECT_EQ(screenManager->getPreviousScreen(lowestScreen)->getId(), 42);
+
+  // Repeat for next instead of previous
+  currentScreen = screenManager->getFirstScreen();
+
+  currentScreen = screenManager->getNextScreen(currentScreen);
+  EXPECT_EQ(currentScreen->getId(), 2);
+  currentScreen = screenManager->getNextScreen(currentScreen);
+  EXPECT_EQ(currentScreen->getId(), 3);
+
+  // Make sure highest screen returns lowest as next
+  Screen *highestScreen = screenManager->getScreenById(screenManager->getMaxScreenId());
+  EXPECT_EQ(screenManager->getNextScreen(highestScreen)->getId(), 1);
 
   // Clean up
   delete screenManager;

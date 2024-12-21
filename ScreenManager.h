@@ -26,10 +26,10 @@ public:
   /// @brief Constructor for the ScreenManager
   ScreenManager();
 
-  /// @brief Add a new Screen
+  /// @brief Update a Screen, adds a new one if it doesn't exist
   /// @param screenId ID of the Screen
   /// @return Pointer to the new Screen
-  Screen *addScreen(uint8_t screenId);
+  Screen *updateScreen(uint8_t screenId);
 
   /// @brief Get the first Screen instance in the list
   /// @return Pointer to the first Screen instance
@@ -39,6 +39,24 @@ public:
   /// @param screenId ID of the Screen instance to retrieve
   /// @return Pointer to the Screen instance
   Screen *getScreenById(uint8_t screenId);
+
+  /// @brief Get the previous screen in the list (sorted by ID)
+  /// @param screen Pointer to the current screen
+  /// @return Pointer to the previous Screen
+  Screen *getPreviousScreen(Screen *screen);
+
+  /// @brief Get the next screen in the list (sorted by ID)
+  /// @param screen Pointer to the current screen
+  /// @return Pointer to the next Screen
+  Screen *getNextScreen(Screen *screen);
+
+  /// @brief Get the lowest Screen ID in the list
+  /// @return Lowest Screen ID
+  uint8_t getMinScreenId();
+
+  /// @brief Get the highest Screen ID in the list
+  /// @return Highest Screen ID
+  uint8_t getMaxScreenId();
 
   /// @brief Set the Logger instance
   /// @param logger Pointer to the Logger

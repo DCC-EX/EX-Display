@@ -24,7 +24,7 @@
 /// @brief Mock class to test callbacks from AtFinder
 class MockAtFinderCallback : public CallbackInterface {
 public:
-  MOCK_METHOD(void, updateScreen, (uint8_t screenId, uint8_t row, char *text), ());
+  MOCK_METHOD(void, updateScreen, (uint8_t screenId, uint8_t row, const char *text), ());
 };
 
 #endif // MOCKATFINDERCALLBACK_H

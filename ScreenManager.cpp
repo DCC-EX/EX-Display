@@ -19,7 +19,7 @@
 
 ScreenManager::ScreenManager() : _firstScreen(nullptr), _logger(nullptr) {}
 
-Screen *ScreenManager::addScreen(uint8_t screenId) {
+Screen *ScreenManager::updateScreen(uint8_t screenId) {
   // If the screen doesn't exist, create and add to list
   LOG(LogLevel::DEBUG, "ScreenManager::addScreen(%d)", screenId);
   if (getScreenById(screenId) == nullptr) {
@@ -55,6 +55,86 @@ Screen *ScreenManager::getScreenById(uint8_t screenId) {
     }
   }
   return nullptr;
+}
+
+Screen *ScreenManager::getPreviousScreen(Screen *screen) {
+  // If there is no screen, nullptr
+  if (_firstScreen == nullptr) {
+    return nullptr;
+  }
+  // If there's only one screen, that's the one
+  if (_firstScreen->getNext() == nullptr) {
+    return _firstScreen;
+  }
+  // If this is the lowest numbered screen, wrap to highest as previous
+  if (screen->getId() == getMinScreenId()) {
+    return getScreenById(getMaxScreenId());
+  }
+  // Otherwise we need to find it
+  // Iterate descending through all screens by ID, starting from provided screen -1
+  uint8_t minId = getMinScreenId();
+  uint8_t maxId = screen->getId() - 1;
+  for (uint8_t i = maxId; i >= minId; i--) {
+    Screen *testScreen = getScreenById(i);
+    // If there's a screen at this ID, it must be the previous, return it
+    if (testScreen != nullptr) {
+      return testScreen;
+    }
+  }
+  return nullptr;
+}
+
+Screen *ScreenManager::getNextScreen(Screen *screen) {
+  // If there is no screen, nullptr
+  if (_firstScreen == nullptr) {
+    return nullptr;
+  }
+  // If there's only one screen, that's the one
+  if (_firstScreen->getNext() == nullptr) {
+    return _firstScreen;
+  }
+  // If this is the highest numbered screen, wrap to lowest as next
+  if (screen->getId() == getMaxScreenId()) {
+    return getScreenById(getMinScreenId());
+  }
+  // Otherwise we need to find it
+  // Iterate through all screens by ID, starting from provided screen +1
+  uint8_t minId = screen->getId() + 1;
+  uint8_t maxId = getMaxScreenId();
+  for (uint8_t i = minId; i <= maxId; i++) {
+    Screen *testScreen = getScreenById(i);
+    // If there's a screen at this ID, it must be the next, return it
+    if (testScreen != nullptr) {
+      return testScreen;
+    }
+  }
+  return nullptr;
+}
+
+uint8_t ScreenManager::getMinScreenId() {
+  if (_firstScreen == nullptr) {
+    return 0;
+  }
+  uint8_t screenId = _firstScreen->getId();
+  for (Screen *screen = _firstScreen; screen; screen = screen->getNext()) {
+    if (screen->getId() < screenId) {
+      screenId = screen->getId();
+    }
+  }
+  return screenId;
+}
+
+uint8_t ScreenManager::getMaxScreenId() {
+  if (_firstScreen == nullptr) {
+    return 0;
+  }
+  uint8_t screenId = _firstScreen->getId();
+  for (Screen *screen = _firstScreen; screen; screen = screen->getNext()) {
+    if (screen->getId() > screenId) {
+      screenId = screen->getId();
+    }
+  }
+  return screenId;
 }
 
 void ScreenManager::setLogger(Logger *logger) { _logger = logger; }
