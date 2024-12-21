@@ -125,8 +125,7 @@ void AtFinder::processInputChar(char hot) {
       // end of text found
       _text[textLength] = 0;
       if (_callback) {
-        LOG(LogLevel::DEBUG, "_callback->updateScreen(%d, %d, %s), screenId, screenRow, _text");
-      _callback->updateScreen(screenId, screenRow, _text);
+        _callback->updateScreen(screenId, screenRow, _text);
       }
       state = FIND_START;
       return;

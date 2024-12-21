@@ -46,10 +46,6 @@ public:
   /// @return Pointer to the Logger
   Logger *getLogger();
 
-  /// @brief Get the ScreenManager instance for this Configurator
-  /// @return Pointer to the ScreenManager
-  ScreenManager *getScreenManager();
-
   /// @brief Get the Controller instance for this Configurator
   /// @return Pointer to the Controller
   Controller *getController();
@@ -61,7 +57,6 @@ private:
   Stream *_consoleStream;
   Stream *_commandStationStream;
   Logger *_logger;
-  ScreenManager *_screenManager;
   Controller *_controller;
 };
 

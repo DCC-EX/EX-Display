@@ -19,21 +19,27 @@
 
 ScreenManager::ScreenManager() : _firstScreen(nullptr), _logger(nullptr) {}
 
-void ScreenManager::addScreen(uint8_t screenId) {
+Screen *ScreenManager::addScreen(uint8_t screenId) {
   // If the screen doesn't exist, create and add to list
   LOG(LogLevel::DEBUG, "ScreenManager::addScreen(%d)", screenId);
   if (getScreenById(screenId) == nullptr) {
     Screen *newScreen = new Screen(screenId);
+    if (_logger != nullptr) {
+      newScreen->setLogger(_logger);
+    }
     // Make it the first one if we don't already have a first
     if (_firstScreen == nullptr) {
       _firstScreen = newScreen;
-      return;
+      return newScreen;
     }
     Screen *screen = _firstScreen;
     while (screen->getNext() != nullptr) {
       screen = screen->getNext();
     }
     screen->setNext(newScreen);
+    return newScreen;
+  } else {
+    return getScreenById(screenId);
   }
 }
 

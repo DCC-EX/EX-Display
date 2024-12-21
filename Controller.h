@@ -20,6 +20,7 @@
 
 #include "CallbackInterface.h"
 #include "Logger.h"
+#include "ScreenManager.h"
 #include <Arduino.h>
 
 /// @brief Class for the central controller for EX-Display
@@ -37,7 +38,7 @@ public:
   /// @param screenId ID of the screen to update
   /// @param row Row number to update
   /// @param text Text to update
-  void updateScreen(uint8_t screenId, uint8_t row, char *text) override;
+  void updateScreen(uint8_t screenId, uint8_t row, const char *text) override;
 
   /// @brief Destructor for the Controller
   ~Controller() override;
@@ -46,6 +47,7 @@ private:
   Stream *_consoleStream;
   Stream *_commandStationStream;
   Logger *_logger;
+  ScreenManager *_screenManager;
 };
 
 #endif // CONTROLLER_H

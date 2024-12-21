@@ -28,7 +28,8 @@ public:
 
   /// @brief Add a new Screen
   /// @param screenId ID of the Screen
-  void addScreen(uint8_t screenId);
+  /// @return Pointer to the new Screen
+  Screen *addScreen(uint8_t screenId);
 
   /// @brief Get the first Screen instance in the list
   /// @return Pointer to the first Screen instance

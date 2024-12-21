@@ -15,15 +15,15 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "Configurator.h"
 #include "AtFinder.h"
+#include "Configurator.h"
 #include "Version.h"
+
 
 Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, LogLevel logLevel)
     : _consoleStream(consoleStream), _commandStationStream(commandStationStream) {
   _logger = new Logger(_consoleStream);
   _logger->setLogLevel(logLevel);
-  _screenManager = new ScreenManager();
   _controller = new Controller(_consoleStream, _commandStationStream, _logger);
 }
 
@@ -40,15 +40,11 @@ Stream *Configurator::getCommandStationStream() { return _commandStationStream; 
 
 Logger *Configurator::getLogger() { return _logger; }
 
-ScreenManager *Configurator::getScreenManager() { return _screenManager; }
-
 Controller *Configurator::getController() { return _controller; }
 
 Configurator::~Configurator() {
   delete _controller;
-  delete _screenManager;
   delete _logger;
   _controller = nullptr;
-  _screenManager = nullptr;
   _logger = nullptr;
 }

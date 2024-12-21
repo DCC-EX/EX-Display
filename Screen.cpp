@@ -76,6 +76,9 @@ Screen::~Screen() {
 void Screen::_addScreenRow(uint8_t screenRowId, const char *text) {
   LOG(LogLevel::DEBUG, "Screen::_addScreenRow(%d, %s)", screenRowId, text);
   ScreenRow *newRow = new ScreenRow(screenRowId);
+  if (_logger != nullptr) {
+    newRow->setLogger(_logger);
+  }
   newRow->setText(text);
   // If we don't have a first, this is it
   if (_firstScreenRow == nullptr) {

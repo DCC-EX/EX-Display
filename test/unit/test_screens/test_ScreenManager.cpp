@@ -40,9 +40,14 @@ TEST_F(ScreenManagerTests, CreateScreenList) {
   ScreenManager *screenManager = new ScreenManager();
 
   // Add some screens
-  screenManager->addScreen(0);
-  screenManager->addScreen(8);
-  screenManager->addScreen(2);
+  Screen *screen0 = screenManager->addScreen(0);
+  Screen *screen8 = screenManager->addScreen(8);
+  Screen *screen2 = screenManager->addScreen(2);
+
+  // Validate screens are as expected
+  EXPECT_EQ(screen0->getId(), 0);
+  EXPECT_EQ(screen8->getId(), 8);
+  EXPECT_EQ(screen2->getId(), 2);
 
   // Validate screens are in the list
   Screen *screen = screenManager->getFirstScreen();

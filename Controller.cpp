@@ -15,12 +15,15 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "Controller.h"
 #include "AtFinder.h"
+#include "Controller.h"
 
 Controller::Controller(Stream *consoleStream, Stream *commandStationStream, Logger *logger)
     : _consoleStream(consoleStream), _commandStationStream(commandStationStream), _logger(logger) {
-  LOG(LogLevel::DEBUG, "Controller::Controller()");
+  _screenManager = new ScreenManager();
+  if (_logger != nullptr) {
+    _screenManager->setLogger(_logger);
+  }
 }
 
 void Controller::update() {
@@ -34,8 +37,12 @@ void Controller::update() {
   }
 }
 
-void Controller::updateScreen(uint8_t screenId, uint8_t row, char *text) {
+void Controller::updateScreen(uint8_t screenId, uint8_t row, const char *text) {
   LOG(LogLevel::DEBUG, "Controller::updateScreen(%d, %d, %s)", screenId, row, text);
+  Screen *screen = _screenManager->addScreen(screenId);
+  if (screen != nullptr) {
+    screen->updateScreenRow(row, text);
+  }
 }
 
 Controller::~Controller() {

@@ -28,7 +28,7 @@ public:
   /// @param screenId ID of the screen to update
   /// @param row Row number to update
   /// @param text Text to update
-  virtual void updateScreen(uint8_t screenId, uint8_t row, char *text) = 0;
+  virtual void updateScreen(uint8_t screenId, uint8_t row, const char *text) = 0;
 
   /// @brief Set the logger instance to use for diagnostic logging
   /// @param logger Pointer to the Logger instance to use
