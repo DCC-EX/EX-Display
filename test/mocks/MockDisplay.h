@@ -31,6 +31,8 @@ public:
   MOCK_METHOD(void, displayRow, (int row, const char *text, bool underlined, int column), (override));
 
   MOCK_METHOD(void, clearRow, (int row), (override));
+
+  MOCK_METHOD(void, displayStartupInfo, (const char *version), (override));
 };
 
 #endif // MOCKDISPLAY_H

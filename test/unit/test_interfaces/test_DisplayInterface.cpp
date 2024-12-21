@@ -15,6 +15,7 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "Version.h"
 #include "test/mocks/MockDisplay.h"
 #include <gtest/gtest.h>
 
@@ -56,7 +57,7 @@ TEST_F(DisplayInterfaceTests, TestParameterMethods) {
   display.displayRow(2, "This is text for row 2", true, 1);
 
   // Setup the expected clearRow call
-  EXPECT_CALL(display, clearRow(Truly([=](int row) { return row == expectRow;}))).Times(1);
+  EXPECT_CALL(display, clearRow(Truly([=](int row) { return row == expectRow; }))).Times(1);
 
   // Call it
   display.clearRow(2);
@@ -72,4 +73,15 @@ TEST_F(DisplayInterfaceTests, TestColours) {
 
   display.setBackgroundColour(backgroundColour);
   EXPECT_EQ(display.getBackgroundColour(), backgroundColour);
+}
+
+TEST_F(DisplayInterfaceTests, TestStartupInfo) {
+  // Set up version text
+  const char *expectedVersion = VERSION;
+  
+  // Setup expectation
+  EXPECT_CALL(display, displayStartupInfo(StrEq(expectedVersion))).Times(1);
+
+  // Call it
+  display.displayStartupInfo(VERSION);
 }

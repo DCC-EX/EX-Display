@@ -42,6 +42,10 @@ public:
   /// @param row Row number as specified in the SCREEN() command (not pixels)
   virtual void clearRow(int row) = 0;
 
+  /// @brief Display the startup screen with software version
+  /// @param version EX-Display version
+  virtual void displayStartupInfo(const char *version) = 0;
+
   /// @brief Set the current text colour
   /// @param textColour ColourType as implemented by the derived class
   void setTextColour(ColourType textColour) { _textColour = textColour; }
