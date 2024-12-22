@@ -49,7 +49,10 @@ public:
   virtual ~InputInterface() = default;
 
 protected:
+  /// @brief Pointer to the instance for callbacks
+  /// Must implement updateScreen() and onInputAction() methods
   CallbackInterface *_callback = nullptr;
+  /// @brief Pointer to the Logger instance for derived classes to use
   Logger *_logger = nullptr;
 };
 

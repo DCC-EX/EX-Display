@@ -34,7 +34,7 @@ protected:
   void TearDown() override {}
 };
 
-TEST_F(InputInterfaceTests, TestInputMethods) {
+TEST_F(InputInterfaceTests, TestSingleInputAction) {
   // Expect check() to be called once
   EXPECT_CALL(input, check())
       .WillOnce(Invoke([this]() {
@@ -48,4 +48,34 @@ TEST_F(InputInterfaceTests, TestInputMethods) {
 
   // Act
   input.check(); 
+}
+
+TEST_F(InputInterfaceTests, TestMultipleButtonPresses) {
+  // Expect check() to be called multiple times
+  EXPECT_CALL(input, check())
+      .Times(3)
+      .WillOnce(Invoke([this]() { this->callback.onInputAction(InputAction::PRESS_UP); }))
+      .WillOnce(Invoke([this]() { this->callback.onInputAction(InputAction::PRESS_DOWN); }))
+      .WillOnce(Invoke([this]() { this->callback.onInputAction(InputAction::PRESS_CENTRE); }));
+
+  // Expect onInputAction to be called with different actions
+  EXPECT_CALL(callback, onInputAction(InputAction::PRESS_UP)).Times(1);
+  EXPECT_CALL(callback, onInputAction(InputAction::PRESS_DOWN)).Times(1);
+  EXPECT_CALL(callback, onInputAction(InputAction::PRESS_CENTRE)).Times(1);
+
+  // Act
+  input.check();
+  input.check();
+  input.check();
+}
+
+TEST_F(InputInterfaceTests, TestNoButtonPress) {
+  // Expect check() to be called but not trigger any action
+  EXPECT_CALL(input, check()).Times(1);
+
+  // Expect onInputAction to not be called
+  EXPECT_CALL(callback, onInputAction(_)).Times(0);
+
+  // Act
+  input.check();
 }

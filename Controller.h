@@ -50,7 +50,6 @@ public:
 private:
   Stream *_consoleStream;
   Stream *_commandStationStream;
-  Logger *_logger;
   ScreenManager *_screenManager;
 };
 

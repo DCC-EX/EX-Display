@@ -42,7 +42,8 @@ public:
   /// @brief Virtual destructor for the CallBackInterface
   virtual ~CallbackInterface() = default;
 
-private:
+protected:
+  /// @brief Pointer to the logger interface
   Logger *_logger = nullptr;
 };
 

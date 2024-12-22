@@ -54,8 +54,11 @@ public:
   virtual ~DisplayInterface() = default;
 
 protected:
+  /// @brief Default text colour for the display
   ColourType _textColour;
+  /// @brief Default background colour for the display
   ColourType _backgroundColour;
+  /// @brief Pointer to the Logger instance for the DisplayInterface derived classes
   Logger *_logger = nullptr;
 };
 
