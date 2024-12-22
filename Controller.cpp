@@ -15,8 +15,9 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "Controller.h"
 #include "AtFinder.h"
+#include "Controller.h"
+
 
 Controller::Controller(Stream *consoleStream, Stream *commandStationStream, Logger *logger)
     : _consoleStream(consoleStream), _commandStationStream(commandStationStream), _logger(logger) {
@@ -44,6 +45,8 @@ void Controller::updateScreen(uint8_t screenId, uint8_t row, const char *text) {
     screen->updateScreenRow(row, text);
   }
 }
+
+void Controller::onInputAction(InputAction action) { LOG(LogLevel::DEBUG, "Controller::onInputAction(%d)", action); }
 
 Controller::~Controller() {
   delete _screenManager;

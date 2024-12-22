@@ -15,16 +15,18 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MOCKATFINDERCALLBACK_H
-#define MOCKATFINDERCALLBACK_H
+#ifndef MOCKINPUT_H
+#define MOCKINPUT_H
 
-#include "CallbackInterface.h"
+#include "InputInterface.h"
 #include <gmock/gmock.h>
 
-/// @brief Mock class to test callbacks from AtFinder
-class MockAtFinderCallback : public CallbackInterface {
+/// @brief Mock physical input class
+class MockInput : public InputInterface {
 public:
-  MOCK_METHOD(void, updateScreen, (uint8_t screenId, uint8_t row, const char *text), ());
+  MOCK_METHOD(void, begin, (), (override));
+
+  MOCK_METHOD(void, check, (), (override));
 };
 
-#endif // MOCKATFINDERCALLBACK_H
+#endif // MOCKINPUT_H

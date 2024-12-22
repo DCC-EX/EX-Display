@@ -18,6 +18,7 @@
 #ifndef CALLBACKINTERFACE_H
 #define CALLBACKINTERFACE_H
 
+#include "InputInterface.h"
 #include "Logger.h"
 #include <Arduino.h>
 
@@ -29,6 +30,10 @@ public:
   /// @param row Row number to update
   /// @param text Text to update
   virtual void updateScreen(uint8_t screenId, uint8_t row, const char *text) = 0;
+
+  /// @brief Method to implement to respond to an input action
+  /// @param action PRESS_UP, PRESS_DOWN, PRESS_LEFT, PRESS_RIGHT, PRESS_CENTRE
+  virtual void onInputAction(InputAction action) = 0;
 
   /// @brief Set the logger instance to use for diagnostic logging
   /// @param logger Pointer to the Logger instance to use

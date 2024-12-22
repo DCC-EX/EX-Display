@@ -15,48 +15,54 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef DISPLAYINTERFACE_H
-#define DISPLAYINTERFACE_H
+#ifndef TFT_ESPIDISPLAY_H
+#define TFT_ESPIDISPLAY_H
 
-#include "Logger.h"
+// Do not load when testing, TFT_eSPI library is incompatible and will cause failures.
+#ifndef PIO_UNIT_TESTING
 
-/// @brief Class to abstract away all physical display implementation to enable multiple display types
-/// When implementing this class, specify the colour type used by the associated display library
-/// Eg. class TFT_eSPIDisplay : public DisplayInterface<uint16_t> {...}
-template <typename ColourType> class DisplayInterface {
+#include "DisplayInterface.h"
+#include <SPI.h>
+#include <TFT_eSPI.h>
+
+/// @brief Display class for TFT_eSPI based displays
+class TFT_eSPIDisplay : public DisplayInterface<uint16_t> {
 public:
+  /// @brief Constructor for the TFT_eSPIDisplay
+  TFT_eSPIDisplay();
+
   /// @brief Perform any initial once off setup or configuration here and call only once
-  virtual void begin() = 0;
+  void begin() override;
 
   /// @brief Clear the entire screen
-  virtual void clearScreen() = 0;
+  void clearScreen() override;
 
   /// @brief Display a row of text on the display
   /// @param row Row number as specified in the SCREEN() command (not pixels)
   /// @param text Text to be displayed on this row
   /// @param underlined (Optional) Flag to underline this row - default false
   /// @param column (Optional) Column to start displaying the text, column being width of a character (not pixels)
-  virtual void displayRow(int row, const char *text, bool underlined = false, int column = 0) = 0;
+  void displayRow(int row, const char *text, bool underlined = false, int column = 0) override;
 
   /// @brief Clear the specified row
   /// @param row Row number as specified in the SCREEN() command (not pixels)
-  virtual void clearRow(int row) = 0;
+  void clearRow(int row) override;
 
   /// @brief Display the startup screen with software version
   /// @param version EX-Display version
-  virtual void displayStartupInfo(const char *version) = 0;
+  void displayStartupInfo(const char *version) override;
 
-  /// @brief Set the logger instance to use for diagnostic logging
-  /// @param logger Pointer to the Logger instance to use
-  void setLogger(Logger *logger) { _logger = logger; }
+  /// @brief Get the TFT_eSPI instance created by this instance - handy for the touch interface
+  /// @return Pointer to the TFT_eSPI instance
+  TFT_eSPI *getTFT_eSPIInstance();
 
-  /// @brief Destructor for a DisplayInterface
-  virtual ~DisplayInterface() = default;
+  /// @brief Destructor for the TFT_eSPIDisplay
+  ~TFT_eSPIDisplay() override;
 
-protected:
-  ColourType _textColour;
-  ColourType _backgroundColour;
-  Logger *_logger = nullptr;
+private:
+  TFT_eSPI *_tft;
 };
 
-#endif // DISPLAYINTERFACE_H
+#endif // PIO_UNIT_TESTING
+
+#endif // TFT_ESPIDISPLAY_H

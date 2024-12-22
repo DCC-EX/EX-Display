@@ -15,38 +15,37 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AtFinder.h"
-#include "Logger.h"
 #include "test/mocks/MockCallback.h"
-#include "test/mocks/Stream.h"
+#include "test/mocks/MockInput.h"
 #include <gtest/gtest.h>
 
 using namespace testing;
 
-/// @brief Test harness integration testing of ConsoleInput and Logger classes
-class AtFinderLoggerIntegrationTests : public Test {
+/// @brief Test harness for physical input interface tests
+class InputInterfaceTests : public Test {
 protected:
-  Stream stream;
-  Logger *logger;
+  MockInput input;
   MockCallback callback;
 
   void SetUp() override {
-    logger = new Logger(&stream);
-    stream.clear();
+    input.setCallback(&callback);
   }
 
-  void TearDown() override { delete logger; }
+  void TearDown() override {}
 };
 
-TEST_F(AtFinderLoggerIntegrationTests, IntegrationTest) {
-  // Set logging to debug
-  logger->setLogLevel(LogLevel::DEBUG);
+TEST_F(InputInterfaceTests, TestInputMethods) {
+  // Expect check() to be called once
+  EXPECT_CALL(input, check())
+      .WillOnce(Invoke([this]() {
+        // Simulate a button press by calling the callback
+        this->callback.onInputAction(InputAction::PRESS_UP);
+      }));
 
-  // Set AtFinder logger
-  AtFinder::setLogger(logger);
+  // Expect onInputAction to be called with PRESS_UP
+  EXPECT_CALL(callback, onInputAction(InputAction::PRESS_UP))
+      .Times(1);
 
-  // Setup AtFinder
-  AtFinder::setup(100, &callback);
-
-  EXPECT_THAT(stream.buffer, testing::HasSubstr("[DEBUG] AtFinder::setup with _maxTextLength 100\r\n"));
+  // Act
+  input.check(); 
 }

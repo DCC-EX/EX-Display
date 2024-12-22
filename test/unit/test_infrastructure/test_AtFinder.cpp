@@ -16,14 +16,14 @@
  */
 
 #include "AtFinder.h"
-#include "test/mocks/MockAtFinderCallback.h"
+#include "test/mocks/MockCallback.h"
 #include <gtest/gtest.h>
 
 using namespace testing;
 
 class AtFinderTests : public Test {
 protected:
-  MockAtFinderCallback callback;
+  MockCallback callback;
 
   void SetUp() override {}
 

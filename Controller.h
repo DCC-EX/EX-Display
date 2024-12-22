@@ -40,6 +40,10 @@ public:
   /// @param text Text to update
   void updateScreen(uint8_t screenId, uint8_t row, const char *text) override;
 
+  /// @brief Method to implement to respond to an input action
+  /// @param action PRESS_UP, PRESS_DOWN, PRESS_LEFT, PRESS_RIGHT, PRESS_CENTRE
+  void onInputAction(InputAction action) override;
+
   /// @brief Destructor for the Controller
   ~Controller() override;
 

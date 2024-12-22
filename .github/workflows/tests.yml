@@ -1,0 +1,21 @@
+name: Tests
+
+on:
+  push:
+    branches: [main, devel, freshness]
+  pull_request:
+    branches: [main, devel, freshness]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4.1.1
+    - name: Install Python Wheel
+      run: pip install wheel
+    - name: Install PlatformIO Core
+      run: pip install -U platformio
+    - name: Install valgrind
+      run: sudo apt install -y valgrind
+    - name: Run GoogleTest
+      run: python -m platformio test -e native_test -a "--gtest_shuffle" -a "--gtest_repeat=5"

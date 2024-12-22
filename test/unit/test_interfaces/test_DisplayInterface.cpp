@@ -63,22 +63,10 @@ TEST_F(DisplayInterfaceTests, TestParameterMethods) {
   display.clearRow(2);
 }
 
-TEST_F(DisplayInterfaceTests, TestColours) {
-  // Ensure getting/setting colours work
-  int textColor = 0xFFFF;
-  int backgroundColour = 0x1111;
-
-  display.setTextColour(textColor);
-  EXPECT_EQ(display.getTextColour(), textColor);
-
-  display.setBackgroundColour(backgroundColour);
-  EXPECT_EQ(display.getBackgroundColour(), backgroundColour);
-}
-
 TEST_F(DisplayInterfaceTests, TestStartupInfo) {
   // Set up version text
   const char *expectedVersion = VERSION;
-  
+
   // Setup expectation
   EXPECT_CALL(display, displayStartupInfo(StrEq(expectedVersion))).Times(1);
 
