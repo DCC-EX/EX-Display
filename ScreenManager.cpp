@@ -150,4 +150,5 @@ ScreenManager::~ScreenManager() {
     }
     _firstScreen = nullptr;
   }
+  _logger = nullptr;
 }

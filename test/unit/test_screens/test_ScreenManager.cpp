@@ -31,6 +31,9 @@ protected:
 TEST_F(ScreenManagerTests, CreateScreenManager) {
   ScreenManager *screenManager = new ScreenManager();
 
+  EXPECT_NE(screenManager, nullptr);
+  EXPECT_EQ(screenManager->getFirstScreen(), nullptr);
+
   // Clean up
   delete screenManager;
 }

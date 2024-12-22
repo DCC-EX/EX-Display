@@ -21,9 +21,7 @@
 #include "Logger.h"
 
 /// @brief Class to abstract away all physical display implementation to enable multiple display types
-/// When implementing this class, specify the colour type used by the associated display library
-/// Eg. class TFT_eSPIDisplay : public DisplayInterface<uint16_t> {...}
-template <typename ColourType> class DisplayInterface {
+class DisplayInterface {
 public:
   /// @brief Perform any initial once off setup or configuration here and call only once
   virtual void begin() = 0;
@@ -46,20 +44,40 @@ public:
   /// @param version EX-Display version
   virtual void displayStartupInfo(const char *version) = 0;
 
+  /// @brief Set the next DisplayInterface derived instance in the list
+  /// @param display Pointer to the next instance
+  void setNext(DisplayInterface *display) { _next = display; }
+
+  /// @brief Get the next DisplayInterface derived instance in the list
+  /// @return Pointer to the next instance
+  DisplayInterface *getNext() { return _next; }
+
   /// @brief Set the logger instance to use for diagnostic logging
   /// @param logger Pointer to the Logger instance to use
   void setLogger(Logger *logger) { _logger = logger; }
+
+  /// @brief Set the ID for this display instance
+  /// @param displayId ID of this display
+  void setId(uint8_t displayId) { _displayId = displayId; }
+
+  /// @brief Get the ID of this display instance
+  /// @return ID of this display
+  uint8_t getId() { return _displayId; }
 
   /// @brief Destructor for a DisplayInterface
   virtual ~DisplayInterface() = default;
 
 protected:
+  /// @brief Pointer to the next DisplayInterface derived instance in the list
+  DisplayInterface *_next = nullptr;
   /// @brief Default text colour for the display
-  ColourType _textColour;
+  uint16_t _textColour;
   /// @brief Default background colour for the display
-  ColourType _backgroundColour;
+  uint16_t _backgroundColour;
   /// @brief Pointer to the Logger instance for the DisplayInterface derived classes
   Logger *_logger = nullptr;
+  /// @brief ID for this display instance
+  uint8_t _displayId = 0;
 };
 
 #endif // DISPLAYINTERFACE_H

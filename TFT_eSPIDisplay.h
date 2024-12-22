@@ -26,7 +26,7 @@
 #include <TFT_eSPI.h>
 
 /// @brief Display class for TFT_eSPI based displays
-class TFT_eSPIDisplay : public DisplayInterface<uint16_t> {
+class TFT_eSPIDisplay : public DisplayInterface {
 public:
   /// @brief Constructor for the TFT_eSPIDisplay
   TFT_eSPIDisplay();

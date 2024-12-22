@@ -15,24 +15,18 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MOCKDISPLAY_H
-#define MOCKDISPLAY_H
+#include "DisplayConfig.h"
+#include "test/mocks/MockDisplay.h"
+#include <gtest/gtest.h>
 
-#include "DisplayInterface.h"
-#include <gmock/gmock.h>
+using namespace testing;
 
-/// @brief Mock physical display class
-class MockDisplay : public DisplayInterface {
-public:
-  MOCK_METHOD(void, begin, (), (override));
+class DisplayCreationTests : public Test {
+protected:
+  void SetUp() override {}
 
-  MOCK_METHOD(void, clearScreen, (), (override));
-
-  MOCK_METHOD(void, displayRow, (int row, const char *text, bool underlined, int column), (override));
-
-  MOCK_METHOD(void, clearRow, (int row), (override));
-
-  MOCK_METHOD(void, displayStartupInfo, (const char *version), (override));
+  void TearDown() override {}
 };
 
-#endif // MOCKDISPLAY_H
+/// @brief Create a ScreenRow and check all attributes are valid
+TEST_F(DisplayCreationTests, CreateDisplay) {}

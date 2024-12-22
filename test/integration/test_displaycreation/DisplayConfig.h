@@ -15,24 +15,11 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MOCKDISPLAY_H
-#define MOCKDISPLAY_H
+#ifndef DISPLAYCONFIG_H
+#define DISPLAYCONFIG_H
 
-#include "DisplayInterface.h"
-#include <gmock/gmock.h>
+// #define DISPLAY(1, TFT)
+// #define DISPLAY(2, TFT)
+// #define DISPLAY(3, OLED)
 
-/// @brief Mock physical display class
-class MockDisplay : public DisplayInterface {
-public:
-  MOCK_METHOD(void, begin, (), (override));
-
-  MOCK_METHOD(void, clearScreen, (), (override));
-
-  MOCK_METHOD(void, displayRow, (int row, const char *text, bool underlined, int column), (override));
-
-  MOCK_METHOD(void, clearRow, (int row), (override));
-
-  MOCK_METHOD(void, displayStartupInfo, (const char *version), (override));
-};
-
-#endif // MOCKDISPLAY_H
+#endif // DISPLAYCONFIG_H
