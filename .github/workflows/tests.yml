@@ -18,4 +18,4 @@ jobs:
     - name: Install valgrind
       run: sudo apt install -y valgrind
     - name: Run GoogleTest
-      run: python -m platformio test -e native_test -a "--gtest_shuffle" -a "--gtest_repeat=5"
+      run: python -m platformio test -v -e native_test -a "--gtest_shuffle" -a "--gtest_repeat=5"
