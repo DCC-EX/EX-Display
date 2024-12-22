@@ -89,6 +89,11 @@ TEST_F(LoggerTests, LogLevels) {
   logger->setLogLevel(LogLevel::NONE);
   logger->log(LogLevel::ERROR, errorMessage);
   EXPECT_EQ(stream.buffer, "");
+  stream.clear();
+
+  // However, we should always get a message even at none
+  logger->log(LogLevel::MESSAGE, debugMessage);
+  EXPECT_EQ(stream.buffer, "[MESSAGE] This is a debug message\r\n");
 }
 
 TEST_F(LoggerTests, TestMacroWithNullptr) {

@@ -27,7 +27,7 @@
   _logger->log(level, __VA_ARGS__)
 
 /// @brief Define valid log levels in ascending order
-enum LogLevel { NONE, ERROR, WARN, INFO, DEBUG };
+enum LogLevel { MESSAGE, NONE, ERROR, WARN, INFO, DEBUG };
 
 /// @brief Class to enable simple logging to a Stream object with different log levels
 /// This enables embedding permanent error, warn, info, and debug messages in the software, with the user defining the

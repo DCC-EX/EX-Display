@@ -28,6 +28,9 @@ void Logger::log(LogLevel logLevel, const char *format, ...) {
     // Setup the prefix
     const char *prefix;
     switch (logLevel) {
+    case LogLevel::MESSAGE:
+      prefix = "[MESSAGE] ";
+      break;
     case LogLevel::ERROR:
       prefix = "[ERROR] ";
       break;

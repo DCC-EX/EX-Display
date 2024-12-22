@@ -30,8 +30,7 @@ Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, 
 void Configurator::initialise() {
   AtFinder::setup(100, _controller);
   AtFinder::setLogger(_logger);
-  _consoleStream->print("EX-Display version ");
-  _consoleStream->println(VERSION);
+  LOG(LogLevel::MESSAGE, "EX-Display version %s", VERSION);
 }
 
 Stream *Configurator::getConsoleStream() { return _consoleStream; }
