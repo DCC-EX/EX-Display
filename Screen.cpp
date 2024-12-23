@@ -26,6 +26,10 @@ void Screen::setNext(Screen *screen) { _next = screen; }
 Screen *Screen::getNext() { return _next; }
 
 void Screen::updateScreenRow(uint8_t screenRowId, const char *text) {
+  if (text == nullptr) {
+    return;
+  }
+  LOG(LogLevel::DEBUG, "Screen::updateScreenRow[%d](%d, %s)", _screenId, screenRowId, text);
   // Check if it exists already
   ScreenRow *updateRow = getScreenRowById(screenRowId);
   // If not, create and add to the list unless this is supposed to delete it with ""
@@ -76,6 +80,7 @@ Screen::~Screen() {
 void Screen::_addScreenRow(uint8_t screenRowId, const char *text) {
   LOG(LogLevel::DEBUG, "Screen::_addScreenRow(%d, %s)", screenRowId, text);
   ScreenRow *newRow = new ScreenRow(screenRowId);
+  newRow->setText(text);
   if (_logger != nullptr) {
     newRow->setLogger(_logger);
   }

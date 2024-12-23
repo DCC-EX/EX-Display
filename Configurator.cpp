@@ -25,7 +25,9 @@ Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, 
   _logger->setLogLevel(logLevel);
   _displayManager = new DisplayManager();
   _displayManager->setLogger(_logger);
-  _controller = new Controller(_consoleStream, _commandStationStream, _displayManager, _logger);
+  _screenManager = new ScreenManager();
+  _screenManager->setLogger(_logger);
+  _controller = new Controller(_consoleStream, _commandStationStream, _displayManager, _screenManager, _logger);
 }
 
 void Configurator::initialise() {

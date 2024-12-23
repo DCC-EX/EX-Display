@@ -20,6 +20,7 @@ author = 'peteGSX'
 
 extensions = [
   'breathe',
+  'sphinx.ext.autodoc',
   'sphinx.ext.graphviz'
 ]
 

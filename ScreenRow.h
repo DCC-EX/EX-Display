@@ -51,14 +51,19 @@ public:
   /// @param logger Pointer to the Logger
   void setLogger(Logger *logger);
 
+  /// @brief Test if this row needs to be redrawn
+  /// @return true|false
+  bool needsRedraw();
+
   /// @brief Destructor for each ScreenRow instance
   ~ScreenRow();
 
 private:
   uint8_t _screenRowId;
-  const char *_text;
+  char *_text;
   ScreenRow *_next;
   Logger *_logger;
+  bool _needsRedraw;
 };
 
 #endif // SCREENROW_H

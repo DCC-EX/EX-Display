@@ -40,11 +40,11 @@ void TFT_eSPIDisplay::clearScreen() {
   _tft->fillScreen(_backgroundColour);
 }
 
-void TFT_eSPIDisplay::displayRow(int row, const char *text, bool underlined, int column) {
+void TFT_eSPIDisplay::displayRow(uint8_t row, const char *text, bool underlined, uint8_t column) {
   LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::displayRow[%d](%d, %s, %d, %d)", _displayId, row, text, underlined, column);
 }
 
-void TFT_eSPIDisplay::clearRow(int row) { LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::clearRow[%d](%d)", _displayId, row); }
+void TFT_eSPIDisplay::clearRow(uint8_t row) { LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::clearRow[%d](%d)", _displayId, row); }
 
 void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
   LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::displayStartupInfo[%d](%s)", _displayId, version);

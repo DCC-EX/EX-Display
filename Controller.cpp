@@ -19,28 +19,39 @@
 #include "Controller.h"
 
 Controller::Controller(Stream *consoleStream, Stream *commandStationStream, DisplayManager *displayManager,
-                       Logger *logger)
-    : _consoleStream(consoleStream), _commandStationStream(commandStationStream), _displayManager(displayManager) {
-  _screenManager = new ScreenManager();
+                       ScreenManager *screenManager, Logger *logger)
+    : _consoleStream(consoleStream), _commandStationStream(commandStationStream), _displayManager(displayManager),
+      _screenManager(screenManager) {
   _logger = logger;
-  if (_logger != nullptr) {
-    _screenManager->setLogger(_logger);
-  }
 }
 
 void Controller::update() {
-  if (_commandStationStream->available()) {
+  if (_commandStationStream != nullptr && _commandStationStream->available()) {
     char csChar = _commandStationStream->read();
     AtFinder::processInputChar(csChar);
   }
-  if (_consoleStream->available()) {
+  if (_consoleStream != nullptr && _consoleStream->available()) {
     char consoleChar = _consoleStream->read();
     AtFinder::processInputChar(consoleChar);
+  }
+  if (_displayManager != nullptr && _screenManager != nullptr) {
+    for (auto *display = _displayManager->getFirstDisplay(); display; display = display->getNext()) {
+      Screen *screen = _screenManager->getScreenById(display->getScreenId());
+      for (ScreenRow *row = screen->getFirstScreenRow(); row; row = row->getNext()) {
+        if (row->needsRedraw()) {
+          display->displayRow(row->getId(), row->getText());
+        }
+      }
+    }
   }
 }
 
 void Controller::updateScreen(uint8_t screenId, uint8_t row, const char *text) {
   LOG(LogLevel::DEBUG, "Controller::updateScreen(%d, %d, %s)", screenId, row, text);
+  if (_screenManager == nullptr) {
+    LOG(LogLevel::DEBUG, "Controller::_screenManager == nullptr");
+    return;
+  }
   Screen *screen = _screenManager->updateScreen(screenId);
   if (screen != nullptr) {
     screen->updateScreenRow(row, text);
@@ -50,7 +61,7 @@ void Controller::updateScreen(uint8_t screenId, uint8_t row, const char *text) {
 void Controller::onInputAction(InputAction action) { LOG(LogLevel::DEBUG, "Controller::onInputAction(%d)", action); }
 
 Controller::~Controller() {
-  delete _screenManager;
+  _displayManager = nullptr;
   _screenManager = nullptr;
   _consoleStream = nullptr;
   _commandStationStream = nullptr;

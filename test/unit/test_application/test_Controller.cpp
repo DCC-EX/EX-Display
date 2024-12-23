@@ -18,6 +18,7 @@
 #include "AtFinder.h"
 #include "Controller.h"
 #include "DisplayManager.h"
+#include "ScreenManager.h"
 #include "test/mocks/MockCallback.h"
 #include "test/mocks/Stream.h"
 #include <gtest/gtest.h>
@@ -29,6 +30,7 @@ protected:
   Stream console;
   Stream commandStation;
   DisplayManager displayManager;
+  ScreenManager screenManager;
 
   void SetUp() override {}
 
@@ -38,7 +40,7 @@ protected:
 /// @brief Create a Controller and check all attributes are valid
 TEST_F(ControllerTests, CreateController) {
   // Create Controller with mock streams
-  Controller *controller = new Controller(&console, &commandStation, &displayManager, nullptr);
+  Controller *controller = new Controller(&console, &commandStation, &displayManager, &screenManager, nullptr);
 
   // Make sure it is created
   EXPECT_NE(controller, nullptr);
@@ -54,7 +56,7 @@ TEST_F(ControllerTests, TestUpdate) {
   AtFinder::setup(100, &callback);
 
   // Create controller with mock streams
-  Controller *controller = new Controller(&console, &commandStation, &displayManager, nullptr);
+  Controller *controller = new Controller(&console, &commandStation, &displayManager, &screenManager, nullptr);
 
   // Setup expected console results
   uint8_t expectScreenId = 0;
@@ -104,7 +106,7 @@ TEST_F(ControllerTests, TestInvalidUpdate) {
   AtFinder::setup(100, &callback);
 
   // Create controller with mock streams
-  Controller *controller = new Controller(&console, &commandStation, &displayManager, nullptr);
+  Controller *controller = new Controller(&console, &commandStation, &displayManager, &screenManager, nullptr);
 
   // Set up expectation for sending to the console
   EXPECT_CALL(callback, updateScreen(testing::_, testing::_, testing::_)).Times(0);

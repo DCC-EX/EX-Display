@@ -47,13 +47,17 @@ public:
   /// @return Pointer to the Logger
   Logger *getLogger();
 
+  /// @brief Get the DisplayManager instance for this Configurator
+  /// @return Pointer to the DisplayManager;
+  DisplayManager *getDisplayManager();
+
+  /// @brief Get the ScreenManager instance for this Configurator
+  /// @return Pointer to the ScreenManager
+  ScreenManager *getScreenManager();
+
   /// @brief Get the Controller instance for this Configurator
   /// @return Pointer to the Controller
   Controller *getController();
-
-  /// @brief Get the DisplayManager instance for this Configurator
-  /// @return Pointer to the DisplayManager();
-  DisplayManager *getDisplayManager();
 
   /// @brief Destructor for the Configurator
   ~Configurator();
@@ -62,8 +66,9 @@ private:
   Stream *_consoleStream;
   Stream *_commandStationStream;
   Logger *_logger;
-  Controller *_controller;
   DisplayManager *_displayManager;
+  ScreenManager *_screenManager;
+  Controller *_controller;
 };
 
 #endif // CONFIGURATOR_H

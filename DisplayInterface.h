@@ -34,11 +34,11 @@ public:
   /// @param text Text to be displayed on this row
   /// @param underlined (Optional) Flag to underline this row - default false
   /// @param column (Optional) Column to start displaying the text, column being width of a character (not pixels)
-  virtual void displayRow(int row, const char *text, bool underlined = false, int column = 0) = 0;
+  virtual void displayRow(uint8_t row, const char *text, bool underlined = false, uint8_t column = 0) = 0;
 
   /// @brief Clear the specified row
   /// @param row Row number as specified in the SCREEN() command (not pixels)
-  virtual void clearRow(int row) = 0;
+  virtual void clearRow(uint8_t row) = 0;
 
   /// @brief Display the startup screen with software version
   /// @param version EX-Display version

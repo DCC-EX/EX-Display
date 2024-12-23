@@ -109,6 +109,12 @@ TEST_F(ScreenTests, CreateScreenRowList) {
   row = row->getNext();
   EXPECT_EQ(row->getNext(), nullptr);
 
+  // Validate text is correct
+  EXPECT_STREQ(screen->getScreenRowById(0)->getText(), "Row 0");
+  EXPECT_STREQ(screen->getScreenRowById(3)->getText(), "Row 3");
+  EXPECT_STREQ(screen->getScreenRowById(8)->getText(), "Row 8");
+  EXPECT_STREQ(screen->getScreenRowById(2)->getText(), "Row 2");
+
   // Clean up
   delete screen;
 }
@@ -148,6 +154,45 @@ TEST_F(ScreenTests, DeleteScreenRow) {
   EXPECT_EQ(screen->getScreenRowById(0), nullptr);
   EXPECT_EQ(screen->getFirstScreenRow()->getId(), 3);
   EXPECT_EQ(screen->getFirstScreenRow()->getNext()->getId(), 2);
+
+  // Clean up
+  delete screen;
+}
+
+/// @brief Validate that rows are to be redrawn by default, and not after retrieving text
+TEST_F(ScreenTests, ValidateRowRedrawBehaviour) {
+  // Create a screen and add some rows
+  Screen *screen = new Screen(0);
+  screen->updateScreenRow(0, "Row 0");
+  screen->updateScreenRow(3, "Row 3");
+  screen->updateScreenRow(8, "Row 8");
+  screen->updateScreenRow(2, "Row 2");
+
+  // By default, all rows show need a redraw
+  EXPECT_EQ(screen->getScreenRowById(0)->needsRedraw(), true);
+  EXPECT_EQ(screen->getScreenRowById(3)->needsRedraw(), true);
+  EXPECT_EQ(screen->getScreenRowById(8)->needsRedraw(), true);
+  EXPECT_EQ(screen->getScreenRowById(2)->needsRedraw(), true);
+
+  // Now retrieve text from some rows by validating it
+  EXPECT_STREQ(screen->getScreenRowById(0)->getText(), "Row 0");
+  EXPECT_STREQ(screen->getScreenRowById(2)->getText(), "Row 2");
+
+  // Validate redraw is now false
+  EXPECT_EQ(screen->getScreenRowById(0)->needsRedraw(), false);
+  EXPECT_EQ(screen->getScreenRowById(2)->needsRedraw(), false);
+  
+  // Repeat for last rows
+  EXPECT_STREQ(screen->getScreenRowById(3)->getText(), "Row 3");
+  EXPECT_STREQ(screen->getScreenRowById(8)->getText(), "Row 8");
+  EXPECT_EQ(screen->getScreenRowById(3)->needsRedraw(), false);
+  EXPECT_EQ(screen->getScreenRowById(8)->needsRedraw(), false);
+
+  // Now make sure an update sets redraw true again, and again resets after text retrieval
+  screen->getScreenRowById(8)->setText("New text");
+  EXPECT_EQ(screen->getScreenRowById(8)->needsRedraw(), true);
+  EXPECT_STREQ(screen->getScreenRowById(8)->getText(), "New text");
+  EXPECT_EQ(screen->getScreenRowById(8)->needsRedraw(), false);
 
   // Clean up
   delete screen;

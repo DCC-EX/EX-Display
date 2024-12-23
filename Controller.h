@@ -29,7 +29,8 @@
 class Controller : public CallbackInterface {
 public:
   /// @brief Constructor for the Controller
-  Controller(Stream *consoleStream, Stream *commandStationStream, DisplayManager *displayManager, Logger *logger);
+  Controller(Stream *consoleStream, Stream *commandStationStream, DisplayManager *displayManager,
+             ScreenManager *screenManager, Logger *logger);
 
   /// @brief Processes all ongoing activities, monitoring streams, receiving user input, updates displays, etc.
   /// Call at least once per main loop iteration
@@ -52,7 +53,6 @@ private:
   Stream *_consoleStream;
   Stream *_commandStationStream;
   DisplayManager *_displayManager;
-  Logger *_logger;
   ScreenManager *_screenManager;
 };
 

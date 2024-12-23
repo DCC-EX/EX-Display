@@ -18,7 +18,7 @@
 #include "ScreenRow.h"
 
 ScreenRow::ScreenRow(uint8_t screenRowId)
-    : _screenRowId(screenRowId), _text(nullptr), _next(nullptr), _logger(nullptr) {}
+    : _screenRowId(screenRowId), _text(nullptr), _next(nullptr), _logger(nullptr), _needsRedraw(true) {}
 
 uint8_t ScreenRow::getId() { return _screenRowId; }
 
@@ -27,15 +27,32 @@ void ScreenRow::setNext(ScreenRow *screenRow) { _next = screenRow; }
 ScreenRow *ScreenRow::getNext() { return _next; }
 
 void ScreenRow::setText(const char *text) {
-  _text = text;
+  if (text == nullptr) {
+    return;
+  }
+  if (_text) {
+    delete[] _text;
+    _text = nullptr;
+  }
+  _text = new char[strlen(text) + 1];
+  strcpy(_text, text);
+  _needsRedraw = true;
   LOG(LogLevel::DEBUG, "ScreenRow::setText(%s)", _text);
 }
 
-const char *ScreenRow::getText() { return _text; }
+const char *ScreenRow::getText() {
+  _needsRedraw = false;
+  return _text;
+}
 
 void ScreenRow::setLogger(Logger *logger) { _logger = logger; }
 
+bool ScreenRow::needsRedraw() { return _needsRedraw; }
+
 ScreenRow::~ScreenRow() {
+  if (_text) {
+    delete[] _text;
+  }
   _text = nullptr;
   _next = nullptr;
   _logger = nullptr;
