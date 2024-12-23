@@ -16,6 +16,9 @@
  */
 
 #include "DisplayManager.h"
+#ifndef PIO_UNIT_TESTING // Cannot create physical displays with Platform IO testing
+#include "TFT_eSPIDisplay.h"
+#endif // PIO_UNIT_TESTING
 
 DisplayManager::DisplayManager() : _firstDisplay(nullptr), _logger(nullptr), _nextDisplayId(0) {}
 
@@ -39,7 +42,33 @@ void DisplayManager::addDisplay(DisplayInterface *display) {
   current->setNext(display);
 }
 
-void DisplayManager::createDisplayList() {}
+void DisplayManager::createDisplayList() {
+#ifndef PIO_UNIT_TESTING // Cannot create physical displays with Platform IO testing
+  TFT_eSPIDisplay *tft = new TFT_eSPIDisplay();
+  addDisplay(tft);
+#endif // PIO_UNIT_TESTING
+}
+
+void DisplayManager::startDisplays() {
+  LOG(LogLevel::DEBUG, "DisplayManager::startDisplays()");
+  if (_firstDisplay == nullptr) {
+    return;
+  }
+  for (auto *display = _firstDisplay; display; display = display->getNext()) {
+    display->begin();
+  }
+}
+
+void DisplayManager::displayStartupInfo(const char *version) {
+  LOG(LogLevel::DEBUG, "DisplayManager::displayStartupInfo(%s)", version);
+  // Do nothing if we don't have a DisplayManager or any displays
+  if (_firstDisplay == nullptr) {
+    return;
+  }
+  for (auto *display = _firstDisplay; display; display = display->getNext()) {
+    display->displayStartupInfo(version);
+  }
+}
 
 DisplayInterface *DisplayManager::getFirstDisplay() { return _firstDisplay; }
 

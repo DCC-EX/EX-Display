@@ -16,6 +16,7 @@
  */
 
 #include "DisplayManager.h"
+#include "Version.h"
 #include "test/mocks/MockDisplay.h"
 #include <gtest/gtest.h>
 
@@ -69,5 +70,58 @@ TEST_F(DisplayManagerTests, CreateDisplayList) {
   EXPECT_EQ(test, display2);
   EXPECT_EQ(test->getNext(), nullptr);
 
+  delete displayManager;
+}
+
+/// @brief Validate the startDisplays() method correctly calls all display begin() methods
+TEST_F(DisplayManagerTests, StartDisplays) {
+  // Create DisplayManager and some mock displays
+  DisplayManager *displayManager = new DisplayManager();
+  MockDisplay *display0 = new MockDisplay();
+  MockDisplay *display1 = new MockDisplay();
+  MockDisplay *display2 = new MockDisplay();
+
+  // Add to DisplayManager and should now have correct IDs
+  displayManager->addDisplay(display0);
+  displayManager->addDisplay(display1);
+  displayManager->addDisplay(display2);
+
+  // Set up expectation each mock display's displayStartupInfo() method should be called with the correct version
+  EXPECT_CALL(*display0, begin()).Times(1);
+  EXPECT_CALL(*display1, begin()).Times(1);
+  EXPECT_CALL(*display2, begin()).Times(1);
+
+  // Call the method
+  displayManager->startDisplays();
+
+  // Clean up
+  delete displayManager;
+}
+
+/// @brief Validate the displayStartupInfo() method correct calls all display methods
+TEST_F(DisplayManagerTests, DisplayStartupInfo) {
+  // Create DisplayManager and some mock displays
+  DisplayManager *displayManager = new DisplayManager();
+  MockDisplay *display0 = new MockDisplay();
+  MockDisplay *display1 = new MockDisplay();
+  MockDisplay *display2 = new MockDisplay();
+
+  // Set the current version
+  const char *version = VERSION;
+
+  // Add to DisplayManager and should now have correct IDs
+  displayManager->addDisplay(display0);
+  displayManager->addDisplay(display1);
+  displayManager->addDisplay(display2);
+
+  // Set up expectation each mock display's displayStartupInfo() method should be called with the correct version
+  EXPECT_CALL(*display0, displayStartupInfo(StrEq(version))).Times(1);
+  EXPECT_CALL(*display1, displayStartupInfo(StrEq(version))).Times(1);
+  EXPECT_CALL(*display2, displayStartupInfo(StrEq(version))).Times(1);
+
+  // Call the method
+  displayManager->displayStartupInfo(version);
+
+  // Clean up
   delete displayManager;
 }

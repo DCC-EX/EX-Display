@@ -34,6 +34,13 @@ public:
   /// @brief Parses the displays configured in myConfig.h and creates the list of displays
   void createDisplayList();
 
+  /// @brief Call the begin() method for all associated Display instances
+  void startDisplays();
+
+  /// @brief Calls the displayStartupInfo of all Display instances to display the version
+  /// @param version EX-Display version
+  void displayStartupInfo(const char *version);
+
   /// @brief Get the first DisplayInterface derived instance in the list of displays
   /// @return Pointer to the first instance
   DisplayInterface *getFirstDisplay();

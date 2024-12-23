@@ -32,7 +32,9 @@ void Configurator::initialise() {
   AtFinder::setup(100, _controller);
   AtFinder::setLogger(_logger);
   _displayManager->createDisplayList();
+  _displayManager->startDisplays();
   LOG(LogLevel::MESSAGE, "EX-Display version %s", VERSION);
+  _displayManager->displayStartupInfo(VERSION);
 }
 
 Stream *Configurator::getConsoleStream() { return _consoleStream; }

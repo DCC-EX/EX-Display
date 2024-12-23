@@ -27,30 +27,43 @@ TFT_eSPIDisplay::TFT_eSPIDisplay() {
 }
 
 void TFT_eSPIDisplay::begin() {
+  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::begin[%d]()", _displayId);
   _tft->init();
-  _tft->setFreeFont(&FreeMono12pt7b);
   _tft->setTextSize(1);
   _tft->setRotation(1);
   _tft->setTextColor(_textColour);
   _tft->fillScreen(_backgroundColour);
 }
 
-void TFT_eSPIDisplay::clearScreen() { _tft->fillScreen(_backgroundColour); }
-
-void TFT_eSPIDisplay::displayRow(int row, const char *text, bool underlined, int column) {}
-
-void TFT_eSPIDisplay::clearRow(int row) {}
-
-void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
-  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::displayStartupInfo(%s)", version);
+void TFT_eSPIDisplay::clearScreen() {
+  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::clearScreen[%d]() - colour %d", _displayId, _backgroundColour);
   _tft->fillScreen(_backgroundColour);
-  _tft->drawString("EX-Display", 0, 20);
-  _tft->drawString("Version: ", 0, 40);
-  _tft->drawString(version, 100, 40);
 }
 
-TFT_eSPI *TFT_eSPIDisplay::getTFT_eSPIInstance() { return _tft; }
+void TFT_eSPIDisplay::displayRow(int row, const char *text, bool underlined, int column) {
+  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::displayRow[%d](%d, %s, %d, %d)", _displayId, row, text, underlined, column);
+}
 
-TFT_eSPIDisplay::~TFT_eSPIDisplay() {}
+void TFT_eSPIDisplay::clearRow(int row) { LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::clearRow[%d](%d)", _displayId, row); }
+
+void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
+  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::displayStartupInfo[%d](%s)", _displayId, version);
+  _tft->setFreeFont(&FreeMono12pt7b);
+  _tft->fillScreen(_backgroundColour);
+  _tft->setTextColor(_textColour);
+  _tft->drawString("EX-Display", 0, 20);
+  _tft->drawString("Version: ", 0, 40);
+  _tft->drawString(version, 120, 40);
+}
+
+TFT_eSPI *TFT_eSPIDisplay::getTFT_eSPIInstance() {
+  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::getTFT_eSPIInstance[%d]", _displayId);
+  return _tft;
+}
+
+TFT_eSPIDisplay::~TFT_eSPIDisplay() {
+  delete _tft;
+  _tft = nullptr;
+}
 
 #endif // PIO_UNIT_TESTING
