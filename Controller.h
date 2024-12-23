@@ -19,6 +19,7 @@
 #define CONTROLLER_H
 
 #include "CallbackInterface.h"
+#include "DisplayManager.h"
 #include "Logger.h"
 #include "ScreenManager.h"
 #include <Arduino.h>
@@ -28,7 +29,7 @@
 class Controller : public CallbackInterface {
 public:
   /// @brief Constructor for the Controller
-  Controller(Stream *consoleStream, Stream *commandStationStream, Logger *logger);
+  Controller(Stream *consoleStream, Stream *commandStationStream, DisplayManager *displayManager, Logger *logger);
 
   /// @brief Processes all ongoing activities, monitoring streams, receiving user input, updates displays, etc.
   /// Call at least once per main loop iteration
@@ -50,6 +51,8 @@ public:
 private:
   Stream *_consoleStream;
   Stream *_commandStationStream;
+  DisplayManager *_displayManager;
+  Logger *_logger;
   ScreenManager *_screenManager;
 };
 

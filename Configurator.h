@@ -20,6 +20,7 @@
 
 #include "Controller.h"
 #include "Defines.h"
+#include "DisplayManager.h"
 #include "Logger.h"
 #include "ScreenManager.h"
 
@@ -50,6 +51,10 @@ public:
   /// @return Pointer to the Controller
   Controller *getController();
 
+  /// @brief Get the DisplayManager instance for this Configurator
+  /// @return Pointer to the DisplayManager();
+  DisplayManager *getDisplayManager();
+
   /// @brief Destructor for the Configurator
   ~Configurator();
 
@@ -58,6 +63,7 @@ private:
   Stream *_commandStationStream;
   Logger *_logger;
   Controller *_controller;
+  DisplayManager *_displayManager;
 };
 
 #endif // CONFIGURATOR_H

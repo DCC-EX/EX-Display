@@ -18,8 +18,9 @@
 #include "AtFinder.h"
 #include "Controller.h"
 
-Controller::Controller(Stream *consoleStream, Stream *commandStationStream, Logger *logger)
-    : _consoleStream(consoleStream), _commandStationStream(commandStationStream) {
+Controller::Controller(Stream *consoleStream, Stream *commandStationStream, DisplayManager *displayManager,
+                       Logger *logger)
+    : _consoleStream(consoleStream), _commandStationStream(commandStationStream), _displayManager(displayManager) {
   _screenManager = new ScreenManager();
   _logger = logger;
   if (_logger != nullptr) {

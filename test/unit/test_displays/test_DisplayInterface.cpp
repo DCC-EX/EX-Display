@@ -45,6 +45,9 @@ TEST_F(DisplayInterfaceTests, TestBasicMethods) {
 
   // First display should have ID 0
   EXPECT_EQ(display->getId(), 0);
+
+  // Screen ID this display is displaying should start at 0
+  EXPECT_EQ(display->getScreenId(), 0);
 }
 
 /// @brief Test DisplayInterface methods that should interact with a physical display
@@ -69,6 +72,12 @@ TEST_F(DisplayInterfaceTests, TestParameterMethods) {
 
   // Call it
   display->clearRow(2);
+
+  // Make sure the screen ID is updated
+  display->setScreenId(4);
+  EXPECT_EQ(display->getScreenId(), 4);
+  display->setScreenId(1);
+  EXPECT_EQ(display->getScreenId(), 1);
 }
 
 /// @brief Test to ensure the startup info sets the EX-Display version correctly

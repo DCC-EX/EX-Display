@@ -64,6 +64,14 @@ public:
   /// @return ID of this display
   uint8_t getId() { return _displayId; }
 
+  /// @brief Set the Screen ID this display is currently displaying
+  /// @param screenId Screen ID
+  void setScreenId(uint8_t screenId) { _screenId = screenId; }
+
+  /// @brief Get the Screen ID this display is currently displaing
+  /// @return Screen ID
+  uint8_t getScreenId() { return _screenId; }
+
   /// @brief Destructor for a DisplayInterface
   virtual ~DisplayInterface() = default;
 
@@ -78,6 +86,8 @@ protected:
   Logger *_logger = nullptr;
   /// @brief ID for this display instance
   uint8_t _displayId = 0;
+  /// @brief ID of the screen this display is currently displaying
+  uint8_t _screenId = 0;
 };
 
 #endif // DISPLAYINTERFACE_H

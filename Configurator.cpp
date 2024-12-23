@@ -19,17 +19,19 @@
 #include "Configurator.h"
 #include "Version.h"
 
-
 Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, LogLevel logLevel)
     : _consoleStream(consoleStream), _commandStationStream(commandStationStream) {
   _logger = new Logger(_consoleStream);
   _logger->setLogLevel(logLevel);
-  _controller = new Controller(_consoleStream, _commandStationStream, _logger);
+  _displayManager = new DisplayManager();
+  _displayManager->setLogger(_logger);
+  _controller = new Controller(_consoleStream, _commandStationStream, _displayManager, _logger);
 }
 
 void Configurator::initialise() {
   AtFinder::setup(100, _controller);
   AtFinder::setLogger(_logger);
+  _displayManager->createDisplayList();
   LOG(LogLevel::MESSAGE, "EX-Display version %s", VERSION);
 }
 
@@ -41,9 +43,13 @@ Logger *Configurator::getLogger() { return _logger; }
 
 Controller *Configurator::getController() { return _controller; }
 
+DisplayManager *Configurator::getDisplayManager() { return _displayManager; }
+
 Configurator::~Configurator() {
   delete _controller;
   delete _logger;
+  delete _displayManager;
   _controller = nullptr;
   _logger = nullptr;
+  _displayManager = nullptr;
 }

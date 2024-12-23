@@ -45,6 +45,12 @@ TEST_F(ConfiguratorTests, CreateConfiguration) {
   Stream *commandStationResult = configurator.getCommandStationStream();
   EXPECT_NE(commandStationResult, nullptr);
   EXPECT_NE(nullptr, dynamic_cast<Stream *>(commandStationResult));
+
+  // Validate the Controller is created
+  EXPECT_NE(configurator.getController(), nullptr);
+
+  // Validate the DisplayManager is created
+  EXPECT_NE(configurator.getDisplayManager(), nullptr);
 }
 
 TEST_F(ConfiguratorTests, SetLogLevel) {
