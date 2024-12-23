@@ -37,9 +37,12 @@ void Controller::update() {
   if (_displayManager != nullptr && _screenManager != nullptr) {
     for (auto *display = _displayManager->getFirstDisplay(); display; display = display->getNext()) {
       Screen *screen = _screenManager->getScreenById(display->getScreenId());
+      if (screen == nullptr) {
+        continue;
+      }
       for (ScreenRow *row = screen->getFirstScreenRow(); row; row = row->getNext()) {
         if (row->needsRedraw()) {
-          display->displayRow(row->getId(), row->getText());
+          display->displayRow(row->getId(), row->getText(), false, 0);
         }
       }
     }

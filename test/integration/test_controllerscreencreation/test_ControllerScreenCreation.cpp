@@ -31,7 +31,7 @@ protected:
 
   void SetUp() override {}
 
-  void TearDown() override {}
+  void TearDown() override { delete controller; }
 };
 
 /// @brief Validates that the Controller->updateScreen() method creates a screen and updates rows correctly

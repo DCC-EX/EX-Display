@@ -15,8 +15,8 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AtFinder.h"
 #include "Configurator.h"
+#include "AtFinder.h"
 #include "Version.h"
 
 Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, LogLevel logLevel)
@@ -53,7 +53,9 @@ Configurator::~Configurator() {
   delete _controller;
   delete _logger;
   delete _displayManager;
+  delete _screenManager;
   _controller = nullptr;
   _logger = nullptr;
   _displayManager = nullptr;
+  _screenManager = nullptr;
 }
