@@ -1,14 +1,13 @@
 EX-Display documentation
 ========================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
-
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-.. doxygenindex::
-   :project: EX-Display
+   ex-display/ex-display_root
+
+Indices and tables
+==================
+
+* :ref:`genindex`

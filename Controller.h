@@ -28,9 +28,15 @@
 /// All application activities are controlled through this class to manage screens, displays, and user input
 class Controller : public CallbackInterface {
 public:
-  /// @brief Constructor for the Controller
+  /// @brief 
+  /// @param consoleStream 
+  /// @param commandStationStream 
+  /// @param displayManager 
+  /// @param screenManager 
+  /// @param logger 
+  /// @param pauseDisplayUpdatesUntil 
   Controller(Stream *consoleStream, Stream *commandStationStream, DisplayManager *displayManager,
-             ScreenManager *screenManager, Logger *logger);
+             ScreenManager *screenManager, Logger *logger, unsigned long pauseDisplayUpdatesUntil = 0);
 
   /// @brief Processes all ongoing activities, monitoring streams, receiving user input, updates displays, etc.
   /// Call at least once per main loop iteration
@@ -54,6 +60,16 @@ private:
   Stream *_commandStationStream;
   DisplayManager *_displayManager;
   ScreenManager *_screenManager;
+  unsigned long _pauseDisplayUpdatesUntil;
+  bool _pauseDisplayUpdates;
+
+  /// @brief Selects the previous screen for the selected display
+  /// @param display Pointer to the DisplayInterface to set
+  void _selectPreviousScreen(DisplayInterface *display);
+
+  /// @brief Selects the next screen for the selected display
+  /// @param display Pointer to the DisplayInterface to set
+  void _selectNextScreen(DisplayInterface *display);
 };
 
 #endif // CONTROLLER_H

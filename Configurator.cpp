@@ -15,9 +15,10 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "Configurator.h"
 #include "AtFinder.h"
+#include "Configurator.h"
 #include "Version.h"
+
 
 Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, LogLevel logLevel)
     : _consoleStream(consoleStream), _commandStationStream(commandStationStream) {
@@ -27,7 +28,9 @@ Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, 
   _displayManager->setLogger(_logger);
   _screenManager = new ScreenManager();
   _screenManager->setLogger(_logger);
-  _controller = new Controller(_consoleStream, _commandStationStream, _displayManager, _screenManager, _logger);
+  unsigned long pauseDisplayUpdates = STARTUP_INFO_DELAY + millis();
+  _controller = new Controller(_consoleStream, _commandStationStream, _displayManager, _screenManager, _logger,
+                               pauseDisplayUpdates);
 }
 
 void Configurator::initialise() {

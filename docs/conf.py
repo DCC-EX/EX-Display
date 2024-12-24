@@ -20,11 +20,12 @@ author = 'peteGSX'
 
 extensions = [
   'breathe',
+  'exhale',
   'sphinx.ext.autodoc',
-  'sphinx.ext.graphviz'
+  'sphinx.ext.graphviz',
 ]
 
-graphviz_output_format = 'svg'
+graphviz_output_format = 'png'
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -75,3 +76,24 @@ breathe_use_project_refids = True
 breathe_show_include_files = True
 breathe_show_grouped_typedefs = True
 breathe_use_inheritance_diagram = True
+breathe_graph_maxoutdegree = 10
+breathe_graph_maxdepth = 5
+breathe_use_inheritance_diagram = True
+breathe_show_include_graph = True
+breathe_show_collaboration_graph = True
+breathe_show_programlisting = True
+
+# -- Breathe configuration -------------------------------------------------
+
+exhale_args = {
+    # Required arguments
+    "containmentFolder":     "./ex-display",
+    "rootFileName":          "ex-display_root.rst",
+    "doxygenStripFromPath":  "..",
+    # Suggested optional arguments
+    "createTreeView":        True,
+    "treeViewIsBootstrap":   True,
+    # Include all the doxygen generated graphs
+    "exhaleExecutesDoxygen": False,
+    "generateBreatheFileDirectives": True,
+}

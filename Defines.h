@@ -33,14 +33,7 @@
 #else
 #warning myConfig.h not found, using defaults
 #endif // myConfig
-#endif // PIO_UNIT_TESTING
 
-// Default log level WARN
-#ifndef LOG_LEVEL
-#define LOG_LEVEL LOG_WARN
-#endif // LOG_LEVEL
-
-#ifndef PIO_UNIT_TESTING // Cannot use these for testing
 // Default settings for streams
 #ifndef CONSOLE_STREAM
 #define CONSOLE_STREAM Serial
@@ -53,5 +46,15 @@
 #endif // PLATFORM TYPE
 #endif // COMMANDSTATION_STREAM
 #endif // PIO_UNIT_TESTING
+
+// Default log level WARN unless overridden
+#ifndef LOG_LEVEL
+#define LOG_LEVEL LOG_WARN
+#endif // LOG_LEVEL
+
+// Default to showing the EX-Display version for 2 seconds unless overridden
+#ifndef STARTUP_INFO_DELAY
+#define STARTUP_INFO_DELAY 3000
+#endif // STARTUP_INFO_DELAY
 
 #endif // DEFINES_H

@@ -33,6 +33,7 @@ public:
   /// @param row Row number as specified in the SCREEN() command (not pixels)
   /// @param text Text to be displayed on this row
   /// @param underlined (Optional) Flag to underline this row - default false
+  /// @param column Column number to start displaying at (based on text width, not pixels)
   virtual void displayRow(uint8_t row, const char *text, bool underlined = false, uint8_t column = 0) = 0;
 
   /// @brief Clear the specified row
@@ -65,11 +66,11 @@ public:
 
   /// @brief Set the Screen ID this display is currently displaying
   /// @param screenId Screen ID
-  void setScreenId(uint8_t screenId) { _screenId = screenId; }
+  void setScreenId(int screenId) { _screenId = screenId; }
 
   /// @brief Get the Screen ID this display is currently displaing
   /// @return Screen ID
-  uint8_t getScreenId() { return _screenId; }
+  int getScreenId() { return _screenId; }
 
   /// @brief Destructor for a DisplayInterface
   virtual ~DisplayInterface() = default;
@@ -85,8 +86,8 @@ protected:
   Logger *_logger = nullptr;
   /// @brief ID for this display instance
   uint8_t _displayId = 0;
-  /// @brief ID of the screen this display is currently displaying
-  uint8_t _screenId = 0;
+  /// @brief ID of the screen this display is currently displaying, defaults to -1 to flag it is not a valid ID
+  int _screenId = -1;
   /// @brief Orientation of this display, most displays require this setting otherwise ignore it
   uint8_t _rotation = 0;
   /// @brief Multiplier for text size, most displays require this setting otherwise ignore it

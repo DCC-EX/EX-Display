@@ -21,37 +21,35 @@
 
 using namespace testing;
 
-/// @brief Test harness for physical input interface tests
+/// @brief Test harness for input interface tests
 class InputInterfaceTests : public Test {
 protected:
   MockInput input;
   MockCallback callback;
 
-  void SetUp() override {
-    input.setCallback(&callback);
-  }
+  void SetUp() override { input.setCallback(&callback); }
 
   void TearDown() override {}
 };
 
 TEST_F(InputInterfaceTests, TestSingleInputAction) {
   // Expect check() to be called once
-  EXPECT_CALL(input, check())
-      .WillOnce(Invoke([this]() {
-        // Simulate a button press by calling the callback
-        this->callback.onInputAction(InputAction::PRESS_UP);
-      }));
+  // When called, this simulates a user selecting up
+  EXPECT_CALL(input, check()).WillOnce(Invoke([this]() {
+    // Simulate a button press by calling the callback
+    this->callback.onInputAction(InputAction::PRESS_UP);
+  }));
 
   // Expect onInputAction to be called with PRESS_UP
-  EXPECT_CALL(callback, onInputAction(InputAction::PRESS_UP))
-      .Times(1);
+  EXPECT_CALL(callback, onInputAction(InputAction::PRESS_UP)).Times(1);
 
   // Act
-  input.check(); 
+  input.check();
 }
 
 TEST_F(InputInterfaceTests, TestMultipleButtonPresses) {
   // Expect check() to be called multiple times
+  // Simulate pressing up, then down, then centre in order
   EXPECT_CALL(input, check())
       .Times(3)
       .WillOnce(Invoke([this]() { this->callback.onInputAction(InputAction::PRESS_UP); }))

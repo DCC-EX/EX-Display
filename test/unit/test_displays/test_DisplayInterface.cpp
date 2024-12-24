@@ -46,8 +46,8 @@ TEST_F(DisplayInterfaceTests, TestBasicMethods) {
   // First display should have ID 0
   EXPECT_EQ(display->getId(), 0);
 
-  // Screen ID this display is displaying should start at 0
-  EXPECT_EQ(display->getScreenId(), 0);
+  // Screen ID this display is displaying should start at -1 (invalid)
+  EXPECT_EQ(display->getScreenId(), -1);
 }
 
 /// @brief Test DisplayInterface methods that should interact with a physical display
