@@ -20,18 +20,31 @@
 // Do not load when testing, TFT_eSPI library is incompatible and will cause failures.
 #ifndef PIO_UNIT_TESTING
 
-TFT_eSPIDisplay::TFT_eSPIDisplay() {
+TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour) {
+  _rotation = rotation;
+  _textSize = textSize;
+  _textColour = textColour;
+  _backgroundColour = backgroundColour;
   _tft = new TFT_eSPI();
-  _backgroundColour = 0x0000;
-  _textColour = 0xFFFF;
+  _gfxFont = TEXT_FONT;
 }
 
 void TFT_eSPIDisplay::begin() {
   LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::begin[%d]()", _displayId);
   _tft->init();
-  _tft->setTextSize(1);
-  _tft->setRotation(1);
+  _tft->setTextSize(_textSize);
+  _tft->setRotation(_rotation);
   _tft->setTextColor(_textColour);
+  _tft->setFreeFont(_gfxFont);
+  _fontHeight = _gfxFont->yAdvance;
+  _fontWidth = _tft->textWidth("A");
+  _maxRow = _tft->height() / _fontHeight;
+  _maxColumn = _tft->width() / _fontWidth;
+  LOG(LogLevel::DEBUG,
+      "TFT_eSPIDisplay[%d] settings: "
+      "_textSize=%d|_rotation=%d|_textColour=0x%04X|_backgroundColour=0x%04X|_fontHeight=%d|_fontWidth=%d|_maxRow=%d|_"
+      "maxColumn=%d",
+      _displayId, _textSize, _rotation, _textColour, _backgroundColour, _fontHeight, _fontWidth, _maxRow, _maxColumn);
   _tft->fillScreen(_backgroundColour);
 }
 
@@ -41,19 +54,42 @@ void TFT_eSPIDisplay::clearScreen() {
 }
 
 void TFT_eSPIDisplay::displayRow(uint8_t row, const char *text, bool underlined, uint8_t column) {
-  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::displayRow[%d](%d, %s, %d, %d)", _displayId, row, text, underlined, column);
+  if (text == nullptr) {
+    return;
+  }
+  int32_t x = 0;
+  int32_t y = 0;
+  _getRowPosition(column, row, x, y);
+  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::displayRow[%d](%d, %s, %d, %d) at X=%d|Y=%d", _displayId, row, text,
+      underlined, column, x, y);
+  _tft->setTextColor(_textColour);
+  if (column == 0) {
+    clearRow(row);
+  }
+  _tft->drawString(text, x, y);
 }
 
-void TFT_eSPIDisplay::clearRow(uint8_t row) { LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::clearRow[%d](%d)", _displayId, row); }
+void TFT_eSPIDisplay::clearRow(uint8_t row) {
+  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::clearRow[%d](%d)", _displayId, row);
+  int32_t x = 0;
+  int32_t y = 0;
+  _getRowPosition(0, row, x, y);
+  _tft->fillRect(x, y, _tft->width(), _fontHeight, _backgroundColour);
+}
 
 void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
   LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::displayStartupInfo[%d](%s)", _displayId, version);
-  _tft->setFreeFont(&FreeMono12pt7b);
   _tft->fillScreen(_backgroundColour);
   _tft->setTextColor(_textColour);
-  _tft->drawString("EX-Display", 0, 20);
-  _tft->drawString("Version: ", 0, 40);
-  _tft->drawString(version, 120, 40);
+  int32_t x = 0;
+  int32_t y = 0;
+  _getRowPosition(0, 0, x, y);
+  _tft->drawString("EX-Display", x, y);
+  _getRowPosition(0, 1, x, y);
+  _tft->drawString("Version: ", x, y);
+  _getRowPosition(9, 1, x, y);
+  _tft->setTextColor(TFT_YELLOW);
+  _tft->drawString(version, x, y);
 }
 
 TFT_eSPI *TFT_eSPIDisplay::getTFT_eSPIInstance() {
@@ -64,6 +100,14 @@ TFT_eSPI *TFT_eSPIDisplay::getTFT_eSPIInstance() {
 TFT_eSPIDisplay::~TFT_eSPIDisplay() {
   delete _tft;
   _tft = nullptr;
+}
+
+void TFT_eSPIDisplay::_getRowPosition(uint8_t column, uint8_t row, int32_t &x, int32_t &y) {
+  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::_getRowPosition[%d](%d, %d, %d, %d)", _displayId, column, row, x, y);
+  x = column * _fontWidth;
+  y = (row * _fontHeight);
+  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::_getRowPosition[%d] x=%d|_fontWidth=%d|y=%d|_fontHeight=%d", _displayId, x,
+      _fontWidth, y, _fontHeight);
 }
 
 #endif // PIO_UNIT_TESTING

@@ -33,7 +33,6 @@ public:
   /// @param row Row number as specified in the SCREEN() command (not pixels)
   /// @param text Text to be displayed on this row
   /// @param underlined (Optional) Flag to underline this row - default false
-  /// @param column (Optional) Column to start displaying the text, column being width of a character (not pixels)
   virtual void displayRow(uint8_t row, const char *text, bool underlined = false, uint8_t column = 0) = 0;
 
   /// @brief Clear the specified row
@@ -88,6 +87,18 @@ protected:
   uint8_t _displayId = 0;
   /// @brief ID of the screen this display is currently displaying
   uint8_t _screenId = 0;
+  /// @brief Orientation of this display, most displays require this setting otherwise ignore it
+  uint8_t _rotation = 0;
+  /// @brief Multiplier for text size, most displays require this setting otherwise ignore it
+  uint8_t _textSize = 1;
+  /// @brief Maximum row number (not count) that will fit on this display (based on font height, not pixels)
+  uint8_t _maxRow = 0;
+  /// @brief Maximum column number (not count) that will fit on this display (based on font width, not pixels)
+  uint8_t _maxColumn = 0;
+  /// @brief Calculated font height to determine row positioning
+  uint8_t _fontHeight = 0;
+  /// @brief Calculated font width to determine column positioning
+  uint8_t _fontWidth = 0;
 };
 
 #endif // DISPLAYINTERFACE_H
