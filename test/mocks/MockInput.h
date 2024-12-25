@@ -27,6 +27,10 @@ public:
   MOCK_METHOD(void, begin, (), (override));
 
   MOCK_METHOD(void, check, (), (override));
+
+  void setIsCalibrating(bool isCalibrating) { _isCalibrating = isCalibrating; }
+
+  void setNeedsDisplay(bool needsDisplay) { _needsDisplay = needsDisplay; }
 };
 
 #endif // MOCKINPUT_H

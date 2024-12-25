@@ -49,6 +49,10 @@ public:
   /// @return true|false
   bool isCalibrating() { return _isCalibrating; }
 
+  /// @brief Test if this InputInterface requires a display instance - needed for TFT_eSPI as it shares the instance
+  /// @return true|false
+  bool needsDisplay() { return _needsDisplay; }
+
   /// @brief Destructor for an InputInterface
   virtual ~InputInterface() = default;
 
@@ -60,6 +64,8 @@ protected:
   Logger *_logger = nullptr;
   /// @brief Flag if the input interface is undergoing calibration - needed for touch screens
   bool _isCalibrating = false;
+  /// @brief Flag if this input interface requires a display instance - needed for TFT_eSPI as it shares the instance
+  bool _needsDisplay = false;
 };
 
 #endif // INPUTINTERFACE_H

@@ -18,6 +18,8 @@
 #ifndef INPUTMANAGER_H
 #define INPUTMANAGER_H
 
+#include "CallbackInterface.h"
+#include "DisplayInterface.h"
 #include "InputInterface.h"
 
 class InputManager {
@@ -26,15 +28,22 @@ public:
   InputManager();
 
   /// @brief Call once to create the InputInterface derived input
-  void createInput();
+  /// @param callback CallbackInterface derived instance to call back to when user interacts with the input
+  void createInput(CallbackInterface *callback);
 
   /// @brief Set the InputInterface
-  /// @param input 
-  void setInput(InputInterface *input);
+  /// @param input Pointer to the InputInterface
+  /// @param callback CallbackInterface derived instance to call back to when user interacts with the input
+  void addInput(InputInterface *input, CallbackInterface *callback);
 
   /// @brief Get the configured InputInterface
   /// @return Pointer to the input
   InputInterface *getInput();
+
+  /// @brief Set the display interface to retrieve required attributes - note this should only be required for TFT_eSPI
+  /// touch screens that share the same instance between display and touch
+  /// @param display Pointer to the DisplayInterface
+  void setDisplay(DisplayInterface *display);
 
   /// @brief Start the configured input - calls the InputInterface::begin() method
   void startInput();
@@ -43,6 +52,7 @@ public:
   ~InputManager();
 
 private:
+  DisplayInterface *_display;
   InputInterface *_input;
 };
 

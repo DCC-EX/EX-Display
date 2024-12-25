@@ -22,18 +22,30 @@
 #include "TFT_eSPITouch.h"
 #endif // PIO_UNIT_TESTING
 
-InputManager::InputManager() : _input(nullptr) {}
+InputManager::InputManager() : _display(nullptr), _input(nullptr) {}
 
-void InputManager::createInput() {
+void InputManager::createInput(CallbackInterface *callback) {
 // Do not load when testing, TFT_eSPI library is incompatible and will cause failures.
 #ifndef PIO_UNIT_TESTING
-// Create TFT_eSPITouch instance here
+  // Create TFT_eSPITouch instance here
+  TFT_eSPITouch *touch = new TFT_eSPITouch();
+  addInput(touch, callback);
 #endif // PIO_UNIT_TESTING
 }
 
-void InputManager::setInput(InputInterface *input) { _input = input; }
+void InputManager::addInput(InputInterface *input, CallbackInterface *callback) {
+  if (input == nullptr) {
+    return;
+  }
+  _input = input;
+  if (callback != nullptr) {
+    _input->setCallback(callback);
+  }
+}
 
 InputInterface *InputManager::getInput() { return _input; }
+
+void InputManager::setDisplay(DisplayInterface *display) { _display = display; }
 
 void InputManager::startInput() {
   if (_input != nullptr) {

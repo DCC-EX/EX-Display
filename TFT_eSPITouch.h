@@ -31,8 +31,11 @@
 class TFT_eSPITouch : public InputInterface {
 public:
   /// @brief Constructor for the TFT_eSPITouch instance
-  /// @param display Pointer to an existing TFT_eSPIDisplay instance - need the TFT_eSPI instance from this
-  TFT_eSPITouch(TFT_eSPIDisplay *display);
+  TFT_eSPITouch();
+
+  /// @brief Set the TFT_eSPIDisplay instance to obtain the TFT_eSPI instance from
+  /// @param display Pointer to the TFT_eSPIDisplay instance
+  void setDisplay(TFT_eSPIDisplay *display);
 
   /// @brief Perform any initial once off setup or configuration here and call only once
   void begin() override;

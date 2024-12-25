@@ -17,6 +17,7 @@
 
 #include "Controller.h"
 #include "DisplayManager.h"
+#include "InputManager.h"
 #include "ScreenManager.h"
 #include "test/mocks/MockDisplay.h"
 #include "test/mocks/MockInput.h"
@@ -32,18 +33,20 @@ protected:
   Stream *console = new Stream;
   Stream *commandStation = new Stream;
   DisplayManager *displayManager = new DisplayManager;
+  InputManager *inputManager = new InputManager;
   ScreenManager *screenManager = new ScreenManager;
-  Controller *controller = new Controller(console, commandStation, displayManager, screenManager, nullptr, 0);
+  Controller *controller =
+      new Controller(console, commandStation, displayManager, inputManager, screenManager, nullptr, 0);
 
-  void SetUp() override { input->setCallback(controller); }
+  void SetUp() override { inputManager->addInput(input, controller); }
 
   void TearDown() override {
     delete controller;
     delete screenManager;
     delete displayManager;
+    delete inputManager;
     delete commandStation;
     delete console;
-    delete input;
   }
 };
 
@@ -52,6 +55,9 @@ TEST_F(ControllerInputActionTests, SwitchActiveScreen) {
   // Set up mock display
   MockDisplay *display0 = new MockDisplay();
   displayManager->addDisplay(display0);
+
+  // Validate our input isn't null
+  EXPECT_NE(input, nullptr);
 
   // Current screen for display0 should be invalid
   EXPECT_EQ(display0->getScreenId(), -1);
@@ -69,48 +75,49 @@ TEST_F(ControllerInputActionTests, SwitchActiveScreen) {
   EXPECT_EQ(screenManager->getScreenById(8)->getId(), 8);
   EXPECT_EQ(screenManager->getScreenById(2)->getId(), 2);
 
+  // Set up all call expectations first
+  EXPECT_CALL(*input, check())
+      .Times(7)           // Expect 7 calls total to input->check()
+      .WillOnce(Return()) // First will have no return with no input
+      .WillOnce(Invoke([this]() { controller->onInputAction(InputAction::PRESS_LEFT); }))  // First press left
+      .WillOnce(Invoke([this]() { controller->onInputAction(InputAction::PRESS_LEFT); }))  // Second press left
+      .WillOnce(Invoke([this]() { controller->onInputAction(InputAction::PRESS_LEFT); }))  // Third press left
+      .WillOnce(Invoke([this]() { controller->onInputAction(InputAction::PRESS_RIGHT); })) // First press right
+      .WillOnce(Invoke([this]() { controller->onInputAction(InputAction::PRESS_RIGHT); })) // Second press right
+      .WillOnce(Return()); // Last will have no return with no input
+
   // Expect a single controller->update() should now ensure display is set to screen 0 (first)
   controller->update();
   EXPECT_EQ(display0->getScreenId(), 0);
 
-  // Single left press/touch should select the previous screen ID which is 8
-  EXPECT_CALL(*input, check()).WillOnce(Invoke([this]() { this->controller->onInputAction(InputAction::PRESS_LEFT); }));
-
-  // Now call input->check() to action the left press
-  input->check();
+  // Now controller->update() should action the left press
+  controller->update();
 
   // Display0's screen ID should now be 8
   EXPECT_EQ(display0->getScreenId(), 8);
 
-  // Press again to go to 2
-  EXPECT_CALL(*input, check()).WillOnce(Invoke([this]() { this->controller->onInputAction(InputAction::PRESS_LEFT); }));
-
-  // Now call input->check() to action the left press
-  input->check();
+  // Now call controller->update() should action the left press
+  controller->update();
 
   // Display0's screen ID should now be 2
   EXPECT_EQ(display0->getScreenId(), 2);
 
-  // Once more to go to the start at 0
-  EXPECT_CALL(*input, check()).WillOnce(Invoke([this]() { this->controller->onInputAction(InputAction::PRESS_LEFT); }));
-
-  // Now call input->check() to action the left press
-  input->check();
+  // Now call controller->update() should action the left press
+  controller->update();
 
   // Display0's screen ID should now be 0
   EXPECT_EQ(display0->getScreenId(), 0);
 
-  // Pressing/touching right twice should get us to ID 8
-  EXPECT_CALL(*input, check())
-      .Times(2)
-      .WillOnce(Invoke([this]() { this->controller->onInputAction(InputAction::PRESS_RIGHT); }))
-      .WillOnce(Invoke([this]() { this->controller->onInputAction(InputAction::PRESS_RIGHT); }));
-  
-  // Call input-check() twice
-  input->check();
-  input->check();
+  // Call controller->update() twice
+  controller->update();
+  controller->update();
 
   // Display0's screen ID should now be 8
+  EXPECT_EQ(display0->getScreenId(), 8);
+
+  controller->update();
+
+  // Display0's screen ID should be unchanged at 8
   EXPECT_EQ(display0->getScreenId(), 8);
 }
 

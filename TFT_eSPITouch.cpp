@@ -20,19 +20,35 @@
 // Do not load when testing, TFT_eSPI library is incompatible and will cause failures.
 #ifndef PIO_UNIT_TESTING
 
-TFT_eSPITouch::TFT_eSPITouch(TFT_eSPIDisplay *display) : _display(display) {
-  _tft = _display->getTFT_eSPIInstance();
+TFT_eSPITouch::TFT_eSPITouch() : _display(nullptr), _tft(nullptr) {
+  _needsDisplay = true;
+  _isCalibrating = false;
+}
+
+void TFT_eSPITouch::setDisplay(TFT_eSPIDisplay *display) {
+  if (display != nullptr) {
+    _display = display;
+    _tft = display->getTFT_eSPIInstance();
+  }
 }
 
 void TFT_eSPITouch::begin() {
+  LOG(LogLevel::DEBUG, "TFT_eSPITouch::begin()");
+  // Can't do anything without a TFT_eSPIDisplay or TFT_eSPI instance
+  if (_display == nullptr || _tft == nullptr) {
+    LOG(LogLevel::ERROR, "An existing TFT_eSPI instance is not set, cannot use touch");
+    return;
+  }
   // If the display instance didn't initialised the tft instance, it must be done first, call begin()
   if (!_display->tftInitialised()) {
-    LOG(LogLevel::WARN, "The associated TFT_eSPIDislay instance %d has not been initialised, initialising now", _display->getId());
+    LOG(LogLevel::WARN, "The associated TFT_eSPIDislay instance %d has not been initialised, initialising now",
+        _display->getId());
     _display->begin();
   }
   // If the touch input isn't calibrated, do it first
   if (!_calibrated()) {
     LOG(LogLevel::DEBUG, "TFT_eSPI touch input not calibrated, starting");
+    _isCalibrating = true;
     // If calibration fails, or data can't be saved, show the user an error and halt for 5 secs
     // This will allow normal display operationg to resume, but input won't be reliable
     if (!_doCalibration()) {
@@ -44,19 +60,25 @@ void TFT_eSPITouch::begin() {
       _display->displayRow(3, "Operation resumes in 5 seconds");
       delay(5000);
       _display->clearScreen();
+      _isCalibrating = false;
     } else {
       // Otherwise clear the screen and continue
       LOG(LogLevel::DEBUG, "TFT_eSPI touch input calibrated successfully");
       _display->clearScreen();
+      _isCalibrating = false;
     }
   }
   // Need to calculate touch screen locations for inputs here
 }
 
-void TFT_eSPITouch::check() {}
+void TFT_eSPITouch::check() {
+  if (_tft == nullptr) {
+    return;
+  }
+}
 
-bool TFT_eSPITouch::_calibrated() {return true;}
+bool TFT_eSPITouch::_calibrated() { return true; }
 
-bool TFT_eSPITouch::_doCalibration() {return true;}
+bool TFT_eSPITouch::_doCalibration() { return true; }
 
 #endif // PIO_UNIT_TESTING

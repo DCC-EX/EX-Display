@@ -27,7 +27,7 @@ protected:
   Stream console;
   Stream commandStation;
   ScreenManager screenManager;
-  Controller *controller = new Controller(&console, &commandStation, nullptr, &screenManager, nullptr);
+  Controller *controller = new Controller(&console, &commandStation, nullptr, nullptr, &screenManager, nullptr);
 
   void SetUp() override {}
 

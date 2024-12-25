@@ -32,7 +32,7 @@ public:
   void addDisplay(DisplayInterface *display);
 
   /// @brief Parses the displays configured in myConfig.h and creates the list of displays
-  void createDisplayList();
+  void createDisplays();
 
   /// @brief Call the begin() method for all associated Display instances
   void startDisplays();

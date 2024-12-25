@@ -20,6 +20,7 @@
 
 #include "CallbackInterface.h"
 #include "DisplayManager.h"
+#include "InputManager.h"
 #include "Logger.h"
 #include "ScreenManager.h"
 #include <Arduino.h>
@@ -28,15 +29,17 @@
 /// All application activities are controlled through this class to manage screens, displays, and user input
 class Controller : public CallbackInterface {
 public:
-  /// @brief 
-  /// @param consoleStream 
-  /// @param commandStationStream 
-  /// @param displayManager 
-  /// @param screenManager 
-  /// @param logger 
-  /// @param pauseDisplayUpdatesUntil 
+  /// @brief
+  /// @param consoleStream
+  /// @param commandStationStream
+  /// @param displayManager
+  /// @param inputManager
+  /// @param screenManager
+  /// @param logger
+  /// @param pauseDisplayUpdatesUntil
   Controller(Stream *consoleStream, Stream *commandStationStream, DisplayManager *displayManager,
-             ScreenManager *screenManager, Logger *logger, unsigned long pauseDisplayUpdatesUntil = 0);
+             InputManager *inputManager, ScreenManager *screenManager, Logger *logger,
+             unsigned long pauseDisplayUpdatesUntil = 0);
 
   /// @brief Processes all ongoing activities, monitoring streams, receiving user input, updates displays, etc.
   /// Call at least once per main loop iteration
@@ -59,6 +62,7 @@ private:
   Stream *_consoleStream;
   Stream *_commandStationStream;
   DisplayManager *_displayManager;
+  InputManager *_inputManager;
   ScreenManager *_screenManager;
   unsigned long _pauseDisplayUpdatesUntil;
   bool _pauseDisplayUpdates;

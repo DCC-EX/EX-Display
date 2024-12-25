@@ -78,7 +78,16 @@ TEST_F(InputInterfaceTests, TestNoButtonPress) {
   input.check();
 }
 
-TEST_F(InputInterfaceTests, TestCalibrationFlag) {
-  // Flag should be false by default
+TEST_F(InputInterfaceTests, TestAttributes) {
+  // Calibration flag should be false by default
   EXPECT_FALSE(input.isCalibrating());
+
+  input.setIsCalibrating(true);
+  EXPECT_TRUE(input.isCalibrating());
+
+  // Needs display should be false by default
+  EXPECT_FALSE(input.needsDisplay());
+
+  input.setNeedsDisplay(true);
+  EXPECT_TRUE(input.needsDisplay());
 }

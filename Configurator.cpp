@@ -29,16 +29,16 @@ Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, 
   _screenManager = new ScreenManager();
   _screenManager->setLogger(_logger);
   unsigned long pauseDisplayUpdates = STARTUP_INFO_DELAY + millis();
-  _controller = new Controller(_consoleStream, _commandStationStream, _displayManager, _screenManager, _logger,
-                               pauseDisplayUpdates);
+  _controller = new Controller(_consoleStream, _commandStationStream, _displayManager, _inputManager, _screenManager,
+                               _logger, pauseDisplayUpdates);
 }
 
 void Configurator::initialise() {
   AtFinder::setup(100, _controller);
   AtFinder::setLogger(_logger);
-  _displayManager->createDisplayList();
+  _displayManager->createDisplays();
   _displayManager->startDisplays();
-  _inputManager->createInput();
+  _inputManager->createInput(_controller);
   _inputManager->startInput();
   LOG(LogLevel::MESSAGE, "EX-Display version %s", VERSION);
   _displayManager->displayStartupInfo(VERSION);

@@ -18,8 +18,10 @@
 #include "AtFinder.h"
 #include "Controller.h"
 #include "DisplayManager.h"
+#include "InputManager.h"
 #include "ScreenManager.h"
 #include "test/mocks/MockCallback.h"
+#include "test/mocks/MockInput.h"
 #include "test/mocks/Stream.h"
 #include <gtest/gtest.h>
 
@@ -27,20 +29,28 @@ using namespace testing;
 
 class ControllerTests : public Test {
 protected:
-  Stream console;
-  Stream commandStation;
-  DisplayManager displayManager;
-  ScreenManager screenManager;
+  Stream *console = new Stream;
+  Stream *commandStation = new Stream;
+  DisplayManager *displayManager = new DisplayManager;
+  InputManager *inputManager = new InputManager;
+  ScreenManager *screenManager = new ScreenManager;
 
   void SetUp() override {}
 
-  void TearDown() override {}
+  void TearDown() override {
+    delete console;
+    delete commandStation;
+    delete displayManager;
+    delete inputManager;
+    delete screenManager;
+  }
 };
 
 /// @brief Create a Controller and check all attributes are valid
 TEST_F(ControllerTests, CreateController) {
   // Create Controller with mock streams
-  Controller *controller = new Controller(&console, &commandStation, &displayManager, &screenManager, nullptr);
+  Controller *controller =
+      new Controller(console, commandStation, displayManager, inputManager, screenManager, nullptr);
 
   // Make sure it is created
   EXPECT_NE(controller, nullptr);
@@ -56,7 +66,8 @@ TEST_F(ControllerTests, TestUpdate) {
   AtFinder::setup(100, &callback);
 
   // Create controller with mock streams
-  Controller *controller = new Controller(&console, &commandStation, &displayManager, &screenManager, nullptr);
+  Controller *controller =
+      new Controller(console, commandStation, displayManager, inputManager, screenManager, nullptr);
 
   // Setup expected console results
   uint8_t expectScreenId = 0;
@@ -71,7 +82,7 @@ TEST_F(ControllerTests, TestUpdate) {
 
   // Send to console stream
   const char *sendConsole = R"(<@ 0 3 "Screen 0, row 3 text")";
-  console.buffer = sendConsole;
+  console->buffer = sendConsole;
   for (size_t i = 0; i < strlen(sendConsole); i++) {
     controller->update();
   }
@@ -89,7 +100,7 @@ TEST_F(ControllerTests, TestUpdate) {
 
   // Send to CommandStation stream
   const char *sendCommandStation = R"(<@ 2 21 "Screen 2, row 21 text")";
-  console.buffer = sendCommandStation;
+  console->buffer = sendCommandStation;
   for (size_t i = 0; i < strlen(sendCommandStation); i++) {
     controller->update();
   }
@@ -106,14 +117,15 @@ TEST_F(ControllerTests, TestInvalidUpdate) {
   AtFinder::setup(100, &callback);
 
   // Create controller with mock streams
-  Controller *controller = new Controller(&console, &commandStation, &displayManager, &screenManager, nullptr);
+  Controller *controller =
+      new Controller(console, commandStation, displayManager, inputManager, screenManager, nullptr);
 
   // Set up expectation for sending to the console
   EXPECT_CALL(callback, updateScreen(testing::_, testing::_, testing::_)).Times(0);
 
   // Send to console stream
   const char *sendConsole = R"(<0 3 "Screen 0, row 3 text")";
-  console.buffer = sendConsole;
+  console->buffer = sendConsole;
   for (size_t i = 0; i < strlen(sendConsole); i++) {
     controller->update();
   }
@@ -123,7 +135,7 @@ TEST_F(ControllerTests, TestInvalidUpdate) {
 
   // Send to CommandStation stream
   const char *sendCommandStation = R"(@ 2 21 "Screen 2, row 21 text")";
-  console.buffer = sendCommandStation;
+  console->buffer = sendCommandStation;
   for (size_t i = 0; i < strlen(sendCommandStation); i++) {
     controller->update();
   }

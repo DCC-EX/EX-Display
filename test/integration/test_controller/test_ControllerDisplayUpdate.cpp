@@ -32,7 +32,7 @@ protected:
   Stream commandStation;
   DisplayManager displayManager;
   ScreenManager screenManager;
-  Controller *controller = new Controller(&console, &commandStation, &displayManager, &screenManager, nullptr);
+  Controller *controller = new Controller(&console, &commandStation, &displayManager, nullptr, &screenManager, nullptr);
 
   void SetUp() override {}
 

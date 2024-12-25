@@ -15,13 +15,14 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AtFinder.h"
 #include "Controller.h"
+#include "AtFinder.h"
 
 Controller::Controller(Stream *consoleStream, Stream *commandStationStream, DisplayManager *displayManager,
-                       ScreenManager *screenManager, Logger *logger, unsigned long pauseDisplayUpdatesUntil)
+                       InputManager *inputManager, ScreenManager *screenManager, Logger *logger,
+                       unsigned long pauseDisplayUpdatesUntil)
     : _consoleStream(consoleStream), _commandStationStream(commandStationStream), _displayManager(displayManager),
-      _screenManager(screenManager), _pauseDisplayUpdatesUntil(pauseDisplayUpdatesUntil) {
+      _inputManager(inputManager), _screenManager(screenManager), _pauseDisplayUpdatesUntil(pauseDisplayUpdatesUntil) {
   _logger = logger;
   if (_pauseDisplayUpdatesUntil > 0) {
     _pauseDisplayUpdates = true;
@@ -74,6 +75,15 @@ void Controller::update() {
           display->displayRow(row->getId(), row->getText(), false, 0);
         }
       }
+    }
+  }
+
+  // Process user input provided there is a valid InputManager and InputInterface
+  if (_inputManager != nullptr) {
+    auto *input = _inputManager->getInput();
+    if (input) {
+      // Poll the InputInterface's check method for user input actions
+      input->check();
     }
   }
 }

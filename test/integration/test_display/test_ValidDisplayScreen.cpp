@@ -28,7 +28,7 @@ class ValidDisplayScreenTests : public Test {
 protected:
   DisplayManager *displayManager = new DisplayManager;
   ScreenManager *screenManager = new ScreenManager;
-  Controller *controller = new Controller(nullptr, nullptr, displayManager, screenManager, nullptr, 0);
+  Controller *controller = new Controller(nullptr, nullptr, displayManager, nullptr, screenManager, nullptr, 0);
 
   void SetUp() override {}
 
