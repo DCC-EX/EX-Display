@@ -68,9 +68,13 @@ public:
   /// @param version EX-Display version
   void displayStartupInfo(const char *version) override;
 
-  /// @brief Get the TFT_eSPI instance created by this instance - handy for the touch interface
+  /// @brief Get the TFT_eSPI instance created by this instance - needed for the touch interface
   /// @return Pointer to the TFT_eSPI instance
   TFT_eSPI *getTFT_eSPIInstance();
+
+  /// @brief Test if the TFT_eSPI instance has been initialised - needed for the touch interface
+  /// @return true|false
+  bool tftInitialised();
 
   /// @brief Destructor for the TFT_eSPIDisplay
   ~TFT_eSPIDisplay() override;
@@ -78,6 +82,7 @@ public:
 private:
   TFT_eSPI *_tft;
   const GFXfont *_gfxFont;
+  bool _tftInitialised;
 
   /// @brief Get the X/Y coordinates to draw the specified row, starting at the specified column
   /// @param row Row number

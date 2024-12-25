@@ -45,6 +45,10 @@ public:
   /// @param logger Pointer to the Logger instance to use
   void setLogger(Logger *logger) { _logger = logger; }
 
+  /// @brief Test if this InputInterface is undergoing calibration as required by touch screens
+  /// @return true|false
+  bool isCalibrating() { return _isCalibrating; }
+
   /// @brief Destructor for an InputInterface
   virtual ~InputInterface() = default;
 
@@ -54,6 +58,8 @@ protected:
   CallbackInterface *_callback = nullptr;
   /// @brief Pointer to the Logger instance for derived classes to use
   Logger *_logger = nullptr;
+  /// @brief Flag if the input interface is undergoing calibration - needed for touch screens
+  bool _isCalibrating = false;
 };
 
 #endif // INPUTINTERFACE_H

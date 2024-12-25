@@ -19,13 +19,13 @@
 #include "Configurator.h"
 #include "Version.h"
 
-
 Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, LogLevel logLevel)
     : _consoleStream(consoleStream), _commandStationStream(commandStationStream) {
   _logger = new Logger(_consoleStream);
   _logger->setLogLevel(logLevel);
   _displayManager = new DisplayManager();
   _displayManager->setLogger(_logger);
+  _inputManager = new InputManager();
   _screenManager = new ScreenManager();
   _screenManager->setLogger(_logger);
   unsigned long pauseDisplayUpdates = STARTUP_INFO_DELAY + millis();
@@ -38,6 +38,8 @@ void Configurator::initialise() {
   AtFinder::setLogger(_logger);
   _displayManager->createDisplayList();
   _displayManager->startDisplays();
+  _inputManager->createInput();
+  _inputManager->startInput();
   LOG(LogLevel::MESSAGE, "EX-Display version %s", VERSION);
   _displayManager->displayStartupInfo(VERSION);
 }
@@ -52,7 +54,12 @@ Controller *Configurator::getController() { return _controller; }
 
 DisplayManager *Configurator::getDisplayManager() { return _displayManager; }
 
+InputManager *Configurator::getInputManager() { return _inputManager; }
+
+ScreenManager *Configurator::getScreenManager() { return _screenManager; }
+
 Configurator::~Configurator() {
+  AtFinder::cleanUp();
   delete _controller;
   delete _logger;
   delete _displayManager;

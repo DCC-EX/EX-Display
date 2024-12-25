@@ -77,3 +77,8 @@ TEST_F(InputInterfaceTests, TestNoButtonPress) {
   // Act
   input.check();
 }
+
+TEST_F(InputInterfaceTests, TestCalibrationFlag) {
+  // Flag should be false by default
+  EXPECT_FALSE(input.isCalibrating());
+}

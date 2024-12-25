@@ -19,14 +19,21 @@
 
 #include "Configurator.h"
 
+/// @brief Create the Configurator instance to configure EX-Display
+/// @param console Pointer to the console stream - defaults to Serial, customise in myConfig.h
+/// @param commandStation Pointer to the CommandStation connection stream - default depends on platform, customise in
+/// myConfig.h
+/// @param logLevel Sets the log level for the application - defaults to WARN, customise in myConfig.h
 Configurator configurator(&CONSOLE_STREAM, &COMMANDSTATION_STREAM, LOG_LEVEL);
 
+/// @brief Main setup method, initialise Configurator here
 void setup() {
   CONSOLE_STREAM.begin(115200);
   COMMANDSTATION_STREAM.begin(115200);
   configurator.initialise();
 }
 
+/// @brief Main loop, simply calls controller->update() to manage all interactions
 void loop() {
   Controller *controller = configurator.getController();
   controller->update();

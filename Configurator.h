@@ -21,6 +21,7 @@
 #include "Controller.h"
 #include "Defines.h"
 #include "DisplayManager.h"
+#include "InputManager.h"
 #include "Logger.h"
 #include "ScreenManager.h"
 
@@ -48,8 +49,12 @@ public:
   Logger *getLogger();
 
   /// @brief Get the DisplayManager instance for this Configurator
-  /// @return Pointer to the DisplayManager;
+  /// @return Pointer to the DisplayManager
   DisplayManager *getDisplayManager();
+
+  /// @brief Get the InputManager instance for this Configurator
+  /// @return Pointer to the InputManager
+  InputManager *getInputManager();
 
   /// @brief Get the ScreenManager instance for this Configurator
   /// @return Pointer to the ScreenManager
@@ -67,6 +72,7 @@ private:
   Stream *_commandStationStream;
   Logger *_logger;
   DisplayManager *_displayManager;
+  InputManager *_inputManager;
   ScreenManager *_screenManager;
   Controller *_controller;
 };

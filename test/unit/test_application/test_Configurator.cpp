@@ -28,7 +28,7 @@ protected:
   void TearDown() override {}
 };
 
-/// @brief Create a ScreenRow and check all attributes are valid
+/// @brief Ensure the Configurator can be created successfully
 TEST_F(ConfiguratorTests, CreateConfiguration) {
   // Create two mock streams
   Stream console;
@@ -53,6 +53,7 @@ TEST_F(ConfiguratorTests, CreateConfiguration) {
   EXPECT_NE(configurator.getDisplayManager(), nullptr);
 }
 
+/// @brief Ensure the Configurator is created with the provided log level set
 TEST_F(ConfiguratorTests, SetLogLevel) {
   // Create two mock streams
   Stream console;
@@ -64,4 +65,28 @@ TEST_F(ConfiguratorTests, SetLogLevel) {
   // Validate logger is set to DEBUG
   Logger *logger = configurator.getLogger();
   EXPECT_EQ(logger->getLogLevel(), LogLevel::DEBUG);
+}
+
+/// @brief Ensure the Configurator is created and all attributes are as expected
+TEST_F(ConfiguratorTests, TestInitialisation) {
+  // Create two mock streams
+  Stream console;
+  Stream commandStation;
+
+  // Create a Configurator using these
+  Configurator *configurator = new Configurator(&console, &commandStation);
+
+  // Initialise the Configurator and make sure we have all attributes
+  configurator->initialise();
+
+  EXPECT_EQ(configurator->getConsoleStream(), &console);
+  EXPECT_EQ(configurator->getCommandStationStream(), &commandStation);
+  EXPECT_EQ(configurator->getLogger()->getLogLevel(), LogLevel::WARN);
+  EXPECT_NE(configurator->getDisplayManager(), nullptr);
+  EXPECT_NE(configurator->getInputManager(), nullptr);
+  EXPECT_NE(configurator->getScreenManager(), nullptr);
+  EXPECT_NE(configurator->getController(), nullptr);
+
+  // Clean up
+  delete configurator;
 }
