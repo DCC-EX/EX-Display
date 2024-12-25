@@ -140,6 +140,7 @@ void AtFinder::cleanUp() {
   free(AtFinder::_text);
   AtFinder::_text = nullptr;
   AtFinder::_callback = nullptr;
+  AtFinder::_logger = nullptr;
 }
 
 void AtFinder::setLogger(Logger *logger) { _logger = logger; }
