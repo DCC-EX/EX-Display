@@ -43,7 +43,7 @@ public:
 
 private:
   TFT_eSPI *_tft;
-  char _calibrationFile[20];
+  const char _calibrationFile[20];
 
   /// @brief Test if valid calibration data is available for this touch interface
   /// @return true|false
@@ -52,6 +52,14 @@ private:
   /// @brief Run the TFT_eSPI calibration sequence
   /// @return true if successful and saved, otherwise false
   bool _doCalibration();
+
+  /// @brief Ensure SPIFFS filesystem is up and running
+  /// @return true|false
+  bool _setupSPIFFS();
+
+  /// @brief Display calibration error on screen and pause for 5 seconds
+  /// @param display Pointer to the TFT_eSPIDisplay instance to use
+  void _displayCalibrationError(TFT_eSPIDisplay *display);
 };
 
 #endif // PIO_UNIT_TESTING

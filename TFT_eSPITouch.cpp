@@ -15,13 +15,17 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "TFT_eSPITouch.h"
-#include "CallbackInterface.h"
-
 // Do not load when testing, TFT_eSPI library is incompatible and will cause failures.
 #ifndef PIO_UNIT_TESTING
 
-TFT_eSPITouch::TFT_eSPITouch(int displayId) : _tft(nullptr) {
+// Must include SPIFFS before any other includes - Espressif limitation
+#include "SPIFFS.h"
+
+// Others here
+#include "CallbackInterface.h"
+#include "TFT_eSPITouch.h"
+
+TFT_eSPITouch::TFT_eSPITouch(int displayId) : _tft(nullptr), _calibrationFile("/calibrationData") {
   _needsDisplay = displayId;
   _isCalibrating = false;
 }
@@ -50,6 +54,11 @@ void TFT_eSPITouch::begin() {
         display->getId());
     display->begin();
   }
+  // If SPIFFS isn't setup or can't be formatted etc., we can't save calibration, don't do it
+  if (!_setupSPIFFS()) {
+    LOG(LogLevel::ERROR, "SPIFFS filesystem unable to begin, calibration not possible");
+    return;
+  }
   // If the touch input isn't calibrated, do it first
   if (!_calibrated()) {
     LOG(LogLevel::DEBUG, "TFT_eSPI touch input not calibrated, starting");
@@ -58,13 +67,7 @@ void TFT_eSPITouch::begin() {
     // This will allow normal display operationg to resume, but input won't be reliable
     if (!_doCalibration()) {
       LOG(LogLevel::ERROR, "TFT_eSPI touch input calibration failed");
-      display->clearScreen();
-      display->displayRow(0, "ERROR!");
-      display->displayRow(1, "TFT_eSPI touch input calibration failed");
-      display->displayRow(2, "Touch input will be unreliable");
-      display->displayRow(3, "Operation resumes in 5 seconds");
-      delay(5000);
-      display->clearScreen();
+      _displayCalibrationError(display);
       _isCalibrating = false;
     } else {
       // Otherwise clear the screen and continue
@@ -92,11 +95,62 @@ void TFT_eSPITouch::check() {
 }
 
 bool TFT_eSPITouch::_calibrated() {
-  bool isCalibrated = true;
-  LOG(LogLevel::DEBUG, "TFT_eSPITouch::_calibrated() - %s", (isCalibrated ? "true" : "false"));
-  return isCalibrated;
+  uint16_t calibrationData[5];
+  File file = SPIFFS.open(_calibrationFile, "r");
+  if (!file) {
+    LOG(LogLevel::WARN, "Calibration file not available, calibration required");
+    return false;
+  }
+  bool dataValid = false;
+  if (file.readBytes((char *)calibrationData, 14) == 14) {
+    dataValid = true;
+    file.close();
+  }
+  if (!dataValid) {
+    LOG(LogLevel::WARN, "Saved calibration data not valid, calibration required");
+    return false;
+  }
+  _tft->setTouch(calibrationData);
+  return true;
 }
 
-bool TFT_eSPITouch::_doCalibration() { return true; }
+bool TFT_eSPITouch::_doCalibration() {
+  LOG(LogLevel::WARN, "Calibration process commenced");
+  uint16_t calibrationData[5];
+  _tft->calibrateTouch(calibrationData, TFT_WHITE, TFT_RED, 15);
+  File file = SPIFFS.open(_calibrationFile, "w");
+  if (file) {
+    file.write((const unsigned char *)calibrationData, 14);
+    file.close();
+    LOG(LogLevel::MESSAGE, "Calibration succeeded");
+    return true;
+  }
+  LOG(LogLevel::ERROR, "Calibration process failed");
+  return false;
+}
+
+bool TFT_eSPITouch::_setupSPIFFS() {
+  bool setup = false;
+  if (!SPIFFS.begin()) {
+    LOG(LogLevel::WARN, "SPIFFS filesystem has not been initialised, formatting now, calibration required");
+    SPIFFS.format();
+    if (SPIFFS.begin()) {
+      setup = true;
+    }
+  } else {
+    setup = true;
+  }
+  return setup;
+}
+
+void TFT_eSPITouch::_displayCalibrationError(TFT_eSPIDisplay *display) {
+  display->clearScreen();
+  display->displayRow(0, "ERROR!");
+  display->displayRow(1, "TFT_eSPI touch input calibration failed");
+  display->displayRow(2, "Touch input will be unreliable");
+  display->displayRow(3, "Operation resumes in 5 seconds");
+  delay(5000);
+  display->clearScreen();
+}
 
 #endif // PIO_UNIT_TESTING
