@@ -19,8 +19,10 @@
 #define INPUTMANAGER_H
 
 #include "CallbackInterface.h"
+#include "Defines.h"
 #include "DisplayInterface.h"
 #include "InputInterface.h"
+#include "Logger.h"
 
 class InputManager {
 public:
@@ -48,12 +50,17 @@ public:
   /// @brief Start the configured input - calls the InputInterface::begin() method
   void startInput();
 
+  /// @brief Set the Logger instance
+  /// @param logger Pointer to the Logger
+  void setLogger(Logger *logger);
+
   /// @brief Destructor for the InputManager
   ~InputManager();
 
 private:
   DisplayInterface *_display;
   InputInterface *_input;
+  Logger *_logger;
 };
 
 #endif // INPUTMANAGER_H

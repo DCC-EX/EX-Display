@@ -15,22 +15,35 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MOCKINPUT_H
-#define MOCKINPUT_H
+#ifndef MOCKBUTTONINPUT_H
+#define MOCKBUTTONINPUT_H
 
+#include "CallbackInterface.h"
 #include "InputInterface.h"
 #include <gmock/gmock.h>
 
-/// @brief Mock physical input class
-class MockInput : public InputInterface {
+/// @brief Mock button input class using debounce and hold methods
+/// Use setRawAction() to simulate what a button press will provide
+/// Call check() before/after time advances to test debounce and hold
+class MockButtonInput : public InputInterface {
 public:
   MOCK_METHOD(void, begin, (), (override));
 
-  MOCK_METHOD(void, check, (), (override));
+  void check() override {
+    InputAction action = _debounceOrHeld(_rawAction);
+    if (action != InputAction::PRESS_NONE && _callback != nullptr) {
+      _callback->onInputAction(action);
+    }
+  }
+
+  void setRawAction(InputAction action) { _rawAction = action; }
 
   void setIsCalibrating(bool isCalibrating) { _isCalibrating = isCalibrating; }
 
   void setNeedsDisplay(int displayId) { _needsDisplay = displayId; }
+
+private:
+  InputAction _rawAction;
 };
 
-#endif // MOCKINPUT_H
+#endif // MOCKBUTTONINPUT_H

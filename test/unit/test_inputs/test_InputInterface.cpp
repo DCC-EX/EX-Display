@@ -85,8 +85,8 @@ TEST_F(InputInterfaceTests, TestAttributes) {
   input.setIsCalibrating(true);
   EXPECT_TRUE(input.isCalibrating());
 
-  // Needs display should be false by default
-  EXPECT_FALSE(input.needsDisplay());
+  // Needs display should be -1 by default
+  EXPECT_EQ(input.needsDisplay(), -1);
 
   input.setNeedsDisplay(true);
   EXPECT_TRUE(input.needsDisplay());

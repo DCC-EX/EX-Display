@@ -45,6 +45,10 @@ public:
   /// @return Pointer to the first instance
   DisplayInterface *getFirstDisplay();
 
+  /// @brief Get a DisplayInterface derived instance by its ID
+  /// @return Pointer to the specified instance
+  DisplayInterface *getDisplayById(uint8_t displayId);
+
   /// @brief Set the Logger instance
   /// @param logger Pointer to the Logger
   void setLogger(Logger *logger);

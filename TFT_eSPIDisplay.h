@@ -27,18 +27,18 @@
 #include <TFT_eSPI.h>
 
 // Define the standard fonts available for this display type
-#define TFT_ESPI_SMALL &FreeMono9pt7b
-#define TFT_ESPI_MEDIUM &FreeMono12pt7b
-#define TFT_ESPI_LARGE &FreeMono18pt7b
-#define TFT_ESPI_XLARGE &FreeMono24pt7b
-#define TFT_ESPI_SMALL_SANS &FreeSans9pt7b
-#define TFT_ESPI_MEDIUM_SANS &FreeSans12pt7b
-#define TFT_ESPI_LARGE_SANS &FreeSans18pt7b
-#define TFT_ESPI_XLARGE_SANS &FreeSans24pt7b
+#define FONT_TFT_ESPI_SMALL &FreeMono9pt7b
+#define FONT_TFT_ESPI_MEDIUM &FreeMono12pt7b
+#define FONT_TFT_ESPI_LARGE &FreeMono18pt7b
+#define FONT_TFT_ESPI_XLARGE &FreeMono24pt7b
+#define FONT_TFT_ESPI_SMALL_SANS &FreeSans9pt7b
+#define FONT_TFT_ESPI_MEDIUM_SANS &FreeSans12pt7b
+#define FONT_TFT_ESPI_LARGE_SANS &FreeSans18pt7b
+#define FONT_TFT_ESPI_XLARGE_SANS &FreeSans24pt7b
 
 // If not overridden by myConfig.h, set the font
 #ifndef TEXT_FONT
-#define TEXT_FONT TFT_ESPI_MEDIUM
+#define TEXT_FONT FONT_TFT_ESPI_MEDIUM
 #endif // TEXT_FONT
 
 /// @brief Display class for TFT_eSPI based displays

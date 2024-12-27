@@ -18,7 +18,7 @@
 #ifndef CALLBACKINTERFACE_H
 #define CALLBACKINTERFACE_H
 
-#include "InputInterface.h"
+#include "InputActions.h"
 #include "Logger.h"
 #include <Arduino.h>
 

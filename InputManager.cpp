@@ -22,36 +22,63 @@
 #include "TFT_eSPITouch.h"
 #endif // PIO_UNIT_TESTING
 
-InputManager::InputManager() : _display(nullptr), _input(nullptr) {}
+InputManager::InputManager() : _display(nullptr), _input(nullptr), _logger(nullptr) {}
 
 void InputManager::createInput(CallbackInterface *callback) {
+  LOG(LogLevel::DEBUG, "InputManager::createInput()");
 // Do not load when testing, TFT_eSPI library is incompatible and will cause failures.
 #ifndef PIO_UNIT_TESTING
   // Create TFT_eSPITouch instance here
-  TFT_eSPITouch *touch = new TFT_eSPITouch();
+  TFT_eSPITouch *touch = new TFT_eSPITouch(0);
+  if (touch == nullptr) {
+    LOG(LogLevel::ERROR, "Failed to create TFT_eSPITouch instance");
+    return;
+  }
   addInput(touch, callback);
 #endif // PIO_UNIT_TESTING
 }
 
 void InputManager::addInput(InputInterface *input, CallbackInterface *callback) {
+  LOG(LogLevel::DEBUG, "InputManager::addInput()");
   if (input == nullptr) {
+    LOG(LogLevel::ERROR, "InputInterface doesn't exist, user input will not be available");
     return;
   }
   _input = input;
-  if (callback != nullptr) {
-    _input->setCallback(callback);
+  if (_logger) {
+    _input->setLogger(_logger);
   }
+  if (callback == nullptr) {
+    LOG(LogLevel::ERROR, "InputInterface callback not set, user input will not be available");
+    return;
+  }
+  _input->setCallback(callback);
+#ifdef DEBOUNCE_DELAY
+  _input->setDebounceDelay(DEBOUNCE_DELAY);
+#endif // DEBOUNCE DELAY
+#ifdef HOLD_THRESHOLD
+  _input->setHoldThreshold(HOLD_THRESHOLD);
+#endif // HOLD_THRESHOLD
 }
 
 InputInterface *InputManager::getInput() { return _input; }
 
-void InputManager::setDisplay(DisplayInterface *display) { _display = display; }
+void InputManager::setDisplay(DisplayInterface *display) {
+  if (display == nullptr || _input == nullptr) {
+    return;
+  }
+  LOG(LogLevel::DEBUG, "InputManager::setDisplay() - display ID %d", display->getId());
+  _input->setDisplay(display);
+}
 
 void InputManager::startInput() {
+  LOG(LogLevel::DEBUG, "InputManager::startInput()");
   if (_input != nullptr) {
     _input->begin();
   }
 }
+
+void InputManager::setLogger(Logger *logger) { _logger = logger; }
 
 InputManager::~InputManager() {
   if (_input != nullptr) {

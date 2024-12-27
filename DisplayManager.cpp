@@ -72,6 +72,15 @@ void DisplayManager::displayStartupInfo(const char *version) {
 
 DisplayInterface *DisplayManager::getFirstDisplay() { return _firstDisplay; }
 
+DisplayInterface *DisplayManager::getDisplayById(uint8_t displayId) {
+  for (DisplayInterface *display = _firstDisplay; display; display = display->getNext()) {
+    if (display->getId() == displayId) {
+      return display;
+    }
+  }
+  return nullptr;
+}
+
 void DisplayManager::setLogger(Logger *logger) { _logger = logger; }
 
 DisplayManager::~DisplayManager() {

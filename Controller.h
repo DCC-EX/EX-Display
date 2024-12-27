@@ -41,6 +41,9 @@ public:
              InputManager *inputManager, ScreenManager *screenManager, Logger *logger,
              unsigned long pauseDisplayUpdatesUntil = 0);
 
+  /// @brief Call once to start displays and input
+  void begin();
+
   /// @brief Processes all ongoing activities, monitoring streams, receiving user input, updates displays, etc.
   /// Call at least once per main loop iteration
   void update();

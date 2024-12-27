@@ -17,6 +17,7 @@
 
 #include "Controller.h"
 #include "AtFinder.h"
+#include "Version.h"
 
 Controller::Controller(Stream *consoleStream, Stream *commandStationStream, DisplayManager *displayManager,
                        InputManager *inputManager, ScreenManager *screenManager, Logger *logger,
@@ -29,6 +30,13 @@ Controller::Controller(Stream *consoleStream, Stream *commandStationStream, Disp
   } else {
     _pauseDisplayUpdates = false;
   }
+}
+
+void Controller::begin() {
+  _displayManager->startDisplays(); // Start displays
+  _inputManager->startInput();      // Start input
+  LOG(LogLevel::MESSAGE, "EX-Display version %s", VERSION);
+  _displayManager->displayStartupInfo(VERSION); // Display version info
 }
 
 void Controller::update() {
@@ -46,6 +54,7 @@ void Controller::update() {
   // Configurator
   // When the time has passed, turn the pause of and clear each display to enable normal display operation
   if (_pauseDisplayUpdates && millis() > _pauseDisplayUpdatesUntil) {
+    LOG(LogLevel::DEBUG, "_pauseDisplayUpdatesUntil time exceeded, resume display updates");
     _pauseDisplayUpdatesUntil = 0;
     _pauseDisplayUpdates = false;
     for (auto *display = _displayManager->getFirstDisplay(); display; display = display->getNext()) {
@@ -53,8 +62,19 @@ void Controller::update() {
     }
   }
 
-  // Only process displays if there is a valid DisplayManager and ScreenManager
-  if (_displayManager != nullptr && _screenManager != nullptr && !_pauseDisplayUpdates) {
+  // Process user input provided there is a valid InputManager and InputInterface
+  bool isCalibrating = false; // Set up the calibrating flag to avoid display updates if in progress
+  if (_inputManager != nullptr) {
+    auto *input = _inputManager->getInput();
+    if (input) {
+      // Poll the InputInterface's check method for user input actions
+      isCalibrating = input->isCalibrating();
+      input->check();
+    }
+  }
+
+  // Only process displays if there is a valid DisplayManager and ScreenManager, and any input is not calibrating
+  if (_displayManager != nullptr && _screenManager != nullptr && !_pauseDisplayUpdates && !isCalibrating) {
     // Iterate through each physical display, auto means we don't care about the type as we're using the interface
     for (auto *display = _displayManager->getFirstDisplay(); display; display = display->getNext()) {
       // If the screen ID is invalid, set it to the first screen ID if there is one, otherwise continue to next display
@@ -75,15 +95,6 @@ void Controller::update() {
           display->displayRow(row->getId(), row->getText(), false, 0);
         }
       }
-    }
-  }
-
-  // Process user input provided there is a valid InputManager and InputInterface
-  if (_inputManager != nullptr) {
-    auto *input = _inputManager->getInput();
-    if (input) {
-      // Poll the InputInterface's check method for user input actions
-      input->check();
     }
   }
 }

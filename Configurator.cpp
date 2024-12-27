@@ -17,7 +17,6 @@
 
 #include "Configurator.h"
 #include "AtFinder.h"
-#include "Version.h"
 
 Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, LogLevel logLevel)
     : _consoleStream(consoleStream), _commandStationStream(commandStationStream) {
@@ -26,6 +25,7 @@ Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, 
   _displayManager = new DisplayManager();
   _displayManager->setLogger(_logger);
   _inputManager = new InputManager();
+  _inputManager->setLogger(_logger);
   _screenManager = new ScreenManager();
   _screenManager->setLogger(_logger);
   unsigned long pauseDisplayUpdates = STARTUP_INFO_DELAY + millis();
@@ -34,14 +34,20 @@ Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, 
 }
 
 void Configurator::initialise() {
-  AtFinder::setup(100, _controller);
-  AtFinder::setLogger(_logger);
-  _displayManager->createDisplays();
-  _displayManager->startDisplays();
-  _inputManager->createInput(_controller);
-  _inputManager->startInput();
-  LOG(LogLevel::MESSAGE, "EX-Display version %s", VERSION);
-  _displayManager->displayStartupInfo(VERSION);
+  AtFinder::setup(100, _controller);       // Setup AtFinder to call back to Controller
+  AtFinder::setLogger(_logger);            // Set the AtFinder logger for debug etc.
+  _displayManager->createDisplays();       // Create user defined displays from myConfig.h
+  _inputManager->createInput(_controller); // Create user defined input from myConfig.h
+  // If the user defined input requires a display instance, set it
+  if (_inputManager->getInput() != nullptr && _inputManager->getInput()->needsDisplay() != -1) {
+    uint8_t displayId = _inputManager->getInput()->needsDisplay();
+    DisplayInterface *display = _displayManager->getDisplayById(displayId);
+    if (display != nullptr) {
+      _inputManager->setDisplay(display);
+    } else {
+      LOG(LogLevel::ERROR, "Could not get display ID %d required by the input, user input not available", displayId);
+    }
+  }
 }
 
 Stream *Configurator::getConsoleStream() { return _consoleStream; }

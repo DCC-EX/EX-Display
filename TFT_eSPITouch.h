@@ -31,11 +31,8 @@
 class TFT_eSPITouch : public InputInterface {
 public:
   /// @brief Constructor for the TFT_eSPITouch instance
-  TFT_eSPITouch();
-
-  /// @brief Set the TFT_eSPIDisplay instance to obtain the TFT_eSPI instance from
-  /// @param display Pointer to the TFT_eSPIDisplay instance
-  void setDisplay(TFT_eSPIDisplay *display);
+  /// @param displayId ID of the display to retrieve the TFT_eSPI instance from
+  TFT_eSPITouch(int displayId);
 
   /// @brief Perform any initial once off setup or configuration here and call only once
   void begin() override;
@@ -45,7 +42,6 @@ public:
   void check() override;
 
 private:
-  TFT_eSPIDisplay *_display;
   TFT_eSPI *_tft;
   char _calibrationFile[20];
 

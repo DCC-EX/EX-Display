@@ -15,22 +15,22 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MOCKINPUT_H
-#define MOCKINPUT_H
+#ifndef INPUTACTION_H
+#define INPUTACTION_H
 
-#include "InputInterface.h"
-#include <gmock/gmock.h>
-
-/// @brief Mock physical input class
-class MockInput : public InputInterface {
-public:
-  MOCK_METHOD(void, begin, (), (override));
-
-  MOCK_METHOD(void, check, (), (override));
-
-  void setIsCalibrating(bool isCalibrating) { _isCalibrating = isCalibrating; }
-
-  void setNeedsDisplay(int displayId) { _needsDisplay = displayId; }
+/// @brief Input action to be returned from the user interface to control screens and displays
+enum InputAction {
+  PRESS_NONE,
+  PRESS_UP,
+  PRESS_DOWN,
+  PRESS_LEFT,
+  PRESS_RIGHT,
+  PRESS_CENTRE,
+  HOLD_UP,
+  HOLD_DOWN,
+  HOLD_LEFT,
+  HOLD_RIGHT,
+  HOLD_CENTRE
 };
 
-#endif // MOCKINPUT_H
+#endif // INPUTACTION_H

@@ -35,13 +35,18 @@
 // Define common Arduino types
 typedef uint8_t byte;
 
+// Declare millis so it can be mocked/returned
+static unsigned long _currentMillis = 0;
+
 // Mock Arduino functions
 inline void pinMode(int pin, int mode) {}
 inline void digitalWrite(int pin, int value) {}
 inline int digitalRead(int pin) { return 0; }
 inline void delay(unsigned long ms) {}
-inline unsigned long millis() { return 0; }
+inline unsigned long millis() { return _currentMillis; }
 inline void analogWrite(int pin, int value) {}
 inline int analogRead(int pin) { return 0; }
+
+inline void advanceMillis(unsigned long ms) { _currentMillis += ms; }
 
 #endif // ARDUINO_H

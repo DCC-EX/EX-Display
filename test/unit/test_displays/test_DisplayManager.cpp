@@ -73,6 +73,27 @@ TEST_F(DisplayManagerTests, CreateDisplayList) {
   delete displayManager;
 }
 
+
+TEST_F(DisplayManagerTests, GetDisplayById) {
+  DisplayManager *displayManager = new DisplayManager();
+  MockDisplay *display0 = new MockDisplay();
+  MockDisplay *display1 = new MockDisplay();
+  MockDisplay *display2 = new MockDisplay();
+
+  // Add to DisplayManager and should now have correct IDs
+  displayManager->addDisplay(display0);
+  displayManager->addDisplay(display1);
+  displayManager->addDisplay(display2);
+
+  // Make sure we can retrieve each display by ID
+  EXPECT_EQ(displayManager->getDisplayById(0), display0);
+  EXPECT_EQ(displayManager->getDisplayById(1), display1);
+  EXPECT_EQ(displayManager->getDisplayById(2), display2);
+
+  // Clean up
+  delete displayManager;
+}
+
 /// @brief Validate the startDisplays() method correctly calls all display begin() methods
 TEST_F(DisplayManagerTests, StartDisplays) {
   // Create DisplayManager and some mock displays

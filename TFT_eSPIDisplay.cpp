@@ -51,7 +51,7 @@ void TFT_eSPIDisplay::begin() {
 }
 
 void TFT_eSPIDisplay::clearScreen() {
-  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::clearScreen[%d]() - colour %d", _displayId, _backgroundColour);
+  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::clearScreen[%d]() - colour 0x%04X", _displayId, _backgroundColour);
   _tft->fillScreen(_backgroundColour);
 }
 
@@ -65,6 +65,7 @@ void TFT_eSPIDisplay::displayRow(uint8_t row, const char *text, bool underlined,
   LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::displayRow[%d](%d, %s, %d, %d) at X=%d|Y=%d", _displayId, row, text,
       underlined, column, x, y);
   _tft->setTextColor(_textColour);
+  LOG(LogLevel::DEBUG, "setTextColour(0x%04X)", _textColour);
   if (column == 0) {
     clearRow(row);
   }
@@ -81,16 +82,22 @@ void TFT_eSPIDisplay::clearRow(uint8_t row) {
 
 void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
   LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::displayStartupInfo[%d](%s)", _displayId, version);
-  _tft->fillScreen(_backgroundColour);
-  _tft->setTextColor(_textColour);
+  _tft->fillScreen(0xFFFF);
   int32_t x = 0;
   int32_t y = 0;
+  _tft->setTextColor(0x01C8);
   _getRowPosition(0, 0, x, y);
-  _tft->drawString("EX-Display", x, y);
+  _tft->drawString("DCC-", x, y);
+  _tft->setTextColor(0x03B6);
+  _getRowPosition(4, 0, x, y);
+  _tft->drawString("EX", x, y);
+  _tft->setTextColor(0x01C8);
   _getRowPosition(0, 1, x, y);
+  _tft->drawString("EX-Display", x, y);
+  _getRowPosition(0, 2, x, y);
   _tft->drawString("Version: ", x, y);
-  _getRowPosition(9, 1, x, y);
-  _tft->setTextColor(TFT_YELLOW);
+  _tft->setTextColor(0x03B6);
+  _getRowPosition(9, 2, x, y);
   _tft->drawString(version, x, y);
 }
 

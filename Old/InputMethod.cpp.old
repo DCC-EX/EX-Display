@@ -28,7 +28,7 @@ ButtonResult InputMethod::processInput() {
           btn._buttonHoldStartTime = currentTime;
           result = {b, Pressed};
         } else {
-          result = {b, Released};
+          result = {b, Released};us
         }
       } else if (btn._buttonState && (currentTime - btn._buttonHoldStartTime) > _holdThreshold) {
         result = {b, Held};
