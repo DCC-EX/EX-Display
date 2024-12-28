@@ -1,0 +1,6 @@
+<map id="ScreenManager::getPreviousScreen" name="ScreenManager::getPreviousScreen">
+<area shape="rect" id="node1" title="Get the previous screen in the list (sorted by ID)" alt="" coords="481,35,689,76"/>
+<area shape="rect" id="node2" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="237,5,433,47"/>
+<area shape="rect" id="node4" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="301,71,370,98"/>
+<area shape="rect" id="node3" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,13,189,39"/>
+</map>

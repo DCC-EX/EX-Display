@@ -1,0 +1,4 @@
+<map id="ScreenManager::getScreenById" name="ScreenManager::getScreenById">
+<area shape="rect" id="node1" title="Get the Screen with the specified ID." alt="" coords="5,5,231,32"/>
+<area shape="rect" id="node2" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="279,5,405,32"/>
+</map>

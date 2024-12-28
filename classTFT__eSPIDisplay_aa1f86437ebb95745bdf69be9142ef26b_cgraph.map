@@ -1,0 +1,4 @@
+<map id="TFT_eSPIDisplay::displayStartupInfo" name="TFT_eSPIDisplay::displayStartupInfo">
+<area shape="rect" id="node1" title="Display the startup screen with software version." alt="" coords="5,5,188,47"/>
+<area shape="rect" id="node2" href="$classTFT__eSPIDisplay.html#afcbf3673396a684fd540bc75214719a3" title="Get the X/Y coordinates to draw the specified row, starting at the specified column." alt="" coords="236,5,428,47"/>
+</map>

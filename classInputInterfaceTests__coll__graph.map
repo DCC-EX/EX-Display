@@ -1,0 +1,10 @@
+<map id="InputInterfaceTests" name="InputInterfaceTests">
+<area shape="rect" id="node1" title="Test harness for input interface tests." alt="" coords="28,375,175,401"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,285,53,312"/>
+<area shape="rect" id="node3" href="$classMockCallback.html" title="Mock class to test callbacks." alt="" coords="45,235,158,261"/>
+<area shape="rect" id="node4" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="47,95,183,121"/>
+<area shape="rect" id="node7" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="173,184,286,211"/>
+<area shape="rect" id="node5" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="197,5,264,32"/>
+<area shape="rect" id="node8" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="309,95,438,121"/>
+<area shape="rect" id="node6" href="$classMockInput.html" title="Mock physical input class." alt="" coords="184,285,275,312"/>
+</map>

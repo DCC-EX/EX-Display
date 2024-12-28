@@ -1,0 +1,4 @@
+<map id="MockButtonInput" name="MockButtonInput">
+<area shape="rect" id="node1" title="Mock button input class using debounce and hold methods Use setRawAction() to simulate what a button ..." alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node2" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="15,5,129,32"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="Controller::update" name="Controller::update">
+<area shape="rect" id="node1" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="5,325,144,352"/>
+<area shape="rect" id="node2" href="$classStream.html#a630f7c449a9674857fae9a7016d93dbe" title="Check number of characters available in the buffer." alt="" coords="236,5,373,32"/>
+<area shape="rect" id="node3" href="$classDisplayManager.html#a6ba13ae541760736e37f1f85477985a7" title="Get the first DisplayInterface derived instance in the list of displays." alt="" coords="212,57,397,98"/>
+<area shape="rect" id="node4" href="$classScreenManager.html#a110a39ff303b98b6d308518a9d6da8ff" title="Get the first Screen instance in the list." alt="" coords="193,123,417,149"/>
+<area shape="rect" id="node5" href="$classScreen.html#a0bf66c3d7a47302ecb77113f3eacc422" title="Get the first ScreenRow instance in the list." alt="" coords="207,173,402,200"/>
+<area shape="rect" id="node6" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="251,224,358,251"/>
+<area shape="rect" id="node7" href="$classInputManager.html#a2672882f95872798fd07d4d98f82063b" title="Get the configured InputInterface." alt="" coords="217,275,392,301"/>
+<area shape="rect" id="node8" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="210,325,399,352"/>
+<area shape="rect" id="node9" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="228,376,381,403"/>
+<area shape="rect" id="node10" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="192,427,417,453"/>
+<area shape="rect" id="node12" href="$classInputInterface.html#af4e357d021d6ff950b6c8497734dcd75" title="Test if this InputInterface is undergoing calibration as required by touch screens." alt="" coords="203,477,406,504"/>
+<area shape="rect" id="node13" href="$Arduino_8h.html#a6ff7f2532a22366f0013bc41397129fd" title=" " alt="" coords="275,528,334,555"/>
+<area shape="rect" id="node14" href="$classAtFinder.html#a76f0a4563646bfdcd04820845d440c01" title="Call this as often as possible with a streaming input (eg. Serial.read())" alt="" coords="206,579,403,605"/>
+<area shape="rect" id="node16" href="$classStream.html#a654017caec3e3feeba5feb346d83c7bb" title="Read a character from the buffer." alt="" coords="251,629,358,656"/>
+<area shape="rect" id="node11" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="474,427,601,453"/>
+<area shape="rect" id="node15" href="$classCallbackInterface.html#aba96f818abe5d19945217275bdbe6b67" title="Method to implement updating a screen." alt="" coords="465,571,609,613"/>
+</map>

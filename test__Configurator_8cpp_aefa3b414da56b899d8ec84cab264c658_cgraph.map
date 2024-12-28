@@ -1,0 +1,5 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="node1" title="Ensure the Configurator is created with the provided log level set." alt="" coords="5,31,75,57"/>
+<area shape="rect" id="node2" href="$classConfigurator.html#ae2152cdce689997e967e0f72b7ec1dd7" title="Get the Logger instance for this Configurator." alt="" coords="123,5,297,32"/>
+<area shape="rect" id="node3" href="$classLogger.html#a664ed7a5c0c16219a28a06b5889e131a" title="Get the current log level." alt="" coords="133,56,287,83"/>
+</map>

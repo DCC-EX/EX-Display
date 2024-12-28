@@ -1,0 +1,6 @@
+<map id="MockDisplay" name="MockDisplay">
+<area shape="rect" id="node1" title="Mock physical display class." alt="" coords="17,260,123,287"/>
+<area shape="rect" id="node2" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="5,184,135,211"/>
+<area shape="rect" id="node3" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="37,95,103,121"/>
+<area shape="rect" id="node4" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="35,5,105,32"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="ScreenManager::getNextScreen" name="ScreenManager::getNextScreen">
+<area shape="rect" id="node1" title="Get the next screen in the list (sorted by ID)" alt="" coords="5,82,232,108"/>
+<area shape="rect" id="node2" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="574,31,681,58"/>
+<area shape="rect" id="node3" href="$classScreenManager.html#a6cc01abb59037b653ca45f130c83c9b3" title="Get the highest Screen ID in the list." alt="" coords="280,82,516,108"/>
+<area shape="rect" id="node4" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="564,107,691,134"/>
+<area shape="rect" id="node5" href="$classScreenManager.html#acd4f0a92975819547a21bfc7d6320f6d" title="Get the lowest Screen ID in the list." alt="" coords="282,31,514,58"/>
+<area shape="rect" id="node6" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="285,132,511,159"/>
+</map>

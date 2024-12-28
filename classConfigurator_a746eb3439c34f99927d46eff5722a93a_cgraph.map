@@ -1,0 +1,4 @@
+<map id="Configurator::~Configurator" name="Configurator::~Configurator">
+<area shape="rect" id="node1" title="Destructor for the Configurator." alt="" coords="5,5,207,32"/>
+<area shape="rect" id="node2" href="$classAtFinder.html#ada7a2ab3b409d525ffa704badf4b4dd1" title="Clean up memory allocations used by AtFinder." alt="" coords="255,5,392,32"/>
+</map>

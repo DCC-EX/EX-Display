@@ -1,0 +1,4 @@
+<map id="ScreenRow::needsRedraw" name="ScreenRow::needsRedraw">
+<area shape="rect" id="node1" title="Test if this row needs to be redrawn." alt="" coords="123,5,312,32"/>
+<area shape="rect" id="node2" href="$test__Screen_8cpp.html#af450f2926aeb50c83ec7af1fe7d97a15" title="Validate that rows are to be redrawn by default, and not after retrieving text." alt="" coords="5,5,75,32"/>
+</map>

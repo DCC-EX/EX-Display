@@ -1,0 +1,16 @@
+<map id="Screen::getId" name="Screen::getId">
+<area shape="rect" id="node1" title="Get the ID for this screen instance." alt="" coords="1059,192,1165,219"/>
+<area shape="rect" id="node2" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="237,124,452,151"/>
+<area shape="rect" id="node4" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="247,58,443,99"/>
+<area shape="rect" id="node5" href="$classScreenManager.html#a6cc01abb59037b653ca45f130c83c9b3" title="Get the highest Screen ID in the list." alt="" coords="775,116,1011,143"/>
+<area shape="rect" id="node6" href="$classScreenManager.html#a38890def1478514514341039b83299ef" title="Get the next screen in the list (sorted by ID)" alt="" coords="500,229,727,256"/>
+<area shape="rect" id="node8" href="$classScreenManager.html#a64ecbfb9232d4051a75ff5abea58ba6d" title="Get the previous screen in the list (sorted by ID)" alt="" coords="509,163,717,205"/>
+<area shape="rect" id="node10" href="$classScreenManager.html#acd4f0a92975819547a21bfc7d6320f6d" title="Get the lowest Screen ID in the list." alt="" coords="777,268,1009,295"/>
+<area shape="rect" id="node11" href="$test__Screen_8cpp.html#a680e2c57d51963c79048644663f58770" title="Create a Screen and check all attributes are valid." alt="" coords="858,319,927,345"/>
+<area shape="rect" id="node12" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="823,369,962,396"/>
+<area shape="rect" id="node3" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,95,189,121"/>
+<area shape="rect" id="node9" href="$test__ScreenManager_8cpp.html#ab5ada86d9042a1a62ed2251d66d84ef3" title="Create a list of Screens with ScreenManager." alt="" coords="579,112,648,139"/>
+<area shape="rect" id="node7" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="310,229,379,256"/>
+<area shape="rect" id="node13" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="588,352,639,379"/>
+<area shape="rect" id="node14" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="579,403,648,429"/>
+</map>

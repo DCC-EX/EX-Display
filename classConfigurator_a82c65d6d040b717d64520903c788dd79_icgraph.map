@@ -1,0 +1,8 @@
+<map id="Configurator::getController" name="Configurator::getController">
+<area shape="rect" id="node1" title="Get the Controller instance for this Configurator." alt="" coords="591,56,785,83"/>
+<area shape="rect" id="node2" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="483,5,533,32"/>
+<area shape="rect" id="node3" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="479,56,537,83"/>
+<area shape="rect" id="node6" href="$test__Configurator_8cpp.html#a57e2feb5a9ed2c994f9c9ff550fa6c75" title="Ensure the Configurator can be created successfully." alt="" coords="473,107,543,133"/>
+<area shape="rect" id="node4" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="215,56,425,83"/>
+<area shape="rect" id="node5" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,56,167,83"/>
+</map>

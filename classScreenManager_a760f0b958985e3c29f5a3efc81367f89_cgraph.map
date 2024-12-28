@@ -1,0 +1,7 @@
+<map id="ScreenManager::updateScreen" name="ScreenManager::updateScreen">
+<area shape="rect" id="node1" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="5,56,225,83"/>
+<area shape="rect" id="node2" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="547,5,673,32"/>
+<area shape="rect" id="node3" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="273,31,499,57"/>
+<area shape="rect" id="node4" href="$classScreen.html#a3f87fd3cb0de678a506d26c44c79df5f" title="Set the Logger instance." alt="" coords="317,81,455,108"/>
+<area shape="rect" id="node5" href="$classScreen.html#a73bbfda08cbc10369ba075e765c8b18a" title="Set the next Screen instance in the list." alt="" coords="323,132,449,159"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Screen::getFirstScreenRow" name="Screen::getFirstScreenRow">
+<area shape="rect" id="node1" title="Get the first ScreenRow instance in the list." alt="" coords="309,31,504,57"/>
+<area shape="rect" id="node2" href="$test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly." alt="" coords="157,5,227,32"/>
+<area shape="rect" id="node3" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="123,56,261,83"/>
+<area shape="rect" id="node4" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="15,31,65,57"/>
+<area shape="rect" id="node5" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="5,81,75,108"/>
+</map>

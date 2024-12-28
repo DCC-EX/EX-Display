@@ -1,0 +1,4 @@
+<map id="TFT_eSPIDisplay::getTFT_eSPIInstance" name="TFT_eSPIDisplay::getTFT_eSPIInstance">
+<area shape="rect" id="node1" title="Get the TFT_eSPI instance created by this instance &#45; needed for the touch interface." alt="" coords="215,5,395,47"/>
+<area shape="rect" id="node2" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,13,167,39"/>
+</map>

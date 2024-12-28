@@ -1,0 +1,7 @@
+<map id="InputInterface::setDisplay" name="InputInterface::setDisplay">
+<area shape="rect" id="node1" title="Set the DisplayInterface for this input if required." alt="" coords="575,31,765,57"/>
+<area shape="rect" id="node2" href="$classInputManager.html#a27c7bc043eb9fbb8c7700624852220f6" title="Set the display interface to retrieve required attributes &#45; note this should only be required for TFT..." alt="" coords="337,31,527,57"/>
+<area shape="rect" id="node3" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="123,31,289,57"/>
+<area shape="rect" id="node4" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="11,5,69,32"/>
+<area shape="rect" id="node5" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="5,56,75,83"/>
+</map>

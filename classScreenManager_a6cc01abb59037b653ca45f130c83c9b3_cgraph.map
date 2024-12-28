@@ -1,0 +1,5 @@
+<map id="ScreenManager::getMaxScreenId" name="ScreenManager::getMaxScreenId">
+<area shape="rect" id="node1" title="Get the highest Screen ID in the list." alt="" coords="5,31,241,57"/>
+<area shape="rect" id="node2" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="299,5,406,32"/>
+<area shape="rect" id="node3" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="289,56,416,83"/>
+</map>

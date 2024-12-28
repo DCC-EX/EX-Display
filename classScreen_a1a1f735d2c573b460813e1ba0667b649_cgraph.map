@@ -1,0 +1,7 @@
+<map id="Screen::_addScreenRow" name="Screen::_addScreenRow">
+<area shape="rect" id="node1" title="Add a new ScreenRow to the list." alt="" coords="5,81,183,108"/>
+<area shape="rect" id="node2" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="237,5,390,32"/>
+<area shape="rect" id="node3" href="$classScreenRow.html#a51f874b0a3ca8fce7152755cdc849d01" title="Set the Logger instance." alt="" coords="231,56,396,83"/>
+<area shape="rect" id="node4" href="$classScreenRow.html#a11c13ad781e5bfe79ebd74462d6cedc0" title="Set the next ScreenRow instance in the list." alt="" coords="237,107,389,133"/>
+<area shape="rect" id="node5" href="$classScreenRow.html#a0d6afc0a69cc0abc42e1dd362e3e0832" title="Set the text associated with this ScreenRow." alt="" coords="239,157,387,184"/>
+</map>

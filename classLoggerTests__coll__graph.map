@@ -1,0 +1,6 @@
+<map id="LoggerTests" name="LoggerTests">
+<area shape="rect" id="node1" title=" " alt="" coords="52,184,151,211"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,53,121"/>
+<area shape="rect" id="node3" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="176,95,243,121"/>
+<area shape="rect" id="node4" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="88,5,157,32"/>
+</map>

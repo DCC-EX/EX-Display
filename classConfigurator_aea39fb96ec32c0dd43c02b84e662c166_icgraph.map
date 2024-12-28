@@ -1,0 +1,4 @@
+<map id="Configurator::getInputManager" name="Configurator::getInputManager">
+<area shape="rect" id="node1" title="Get the InputManager instance for this Configurator." alt="" coords="123,5,344,32"/>
+<area shape="rect" id="node2" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="5,5,75,32"/>
+</map>

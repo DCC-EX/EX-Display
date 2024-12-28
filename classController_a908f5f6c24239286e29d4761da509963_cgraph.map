@@ -1,0 +1,17 @@
+<map id="Controller::updateScreen" name="Controller::updateScreen">
+<area shape="rect" id="node1" title="Method to implement updating a screen." alt="" coords="5,160,188,187"/>
+<area shape="rect" id="node2" href="$classScreenManager.html#a760f0b958985e3c29f5a3efc81367f89" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="236,84,456,111"/>
+<area shape="rect" id="node7" href="$classScreen.html#a0a9a3a713a63ef55e854841d07630556" title="Update the specified ScreenRow, or create it if it doesn&#39;t exist This will automatically maintain the..." alt="" coords="251,236,441,263"/>
+<area shape="rect" id="node3" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="797,8,923,35"/>
+<area shape="rect" id="node4" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="504,33,729,60"/>
+<area shape="rect" id="node5" href="$classScreen.html#a3f87fd3cb0de678a506d26c44c79df5f" title="Set the Logger instance." alt="" coords="547,84,686,111"/>
+<area shape="rect" id="node6" href="$classScreen.html#a73bbfda08cbc10369ba075e765c8b18a" title="Set the next Screen instance in the list." alt="" coords="554,135,679,161"/>
+<area shape="rect" id="node8" href="$classScreen.html#a1a1f735d2c573b460813e1ba0667b649" title="Add a new ScreenRow to the list." alt="" coords="528,287,705,313"/>
+<area shape="rect" id="node12" href="$classScreenRow.html#a0d6afc0a69cc0abc42e1dd362e3e0832" title="Set the text associated with this ScreenRow." alt="" coords="786,388,934,415"/>
+<area shape="rect" id="node13" href="$classScreen.html#a43263117dfffa210ccd83b6cd12e0732" title="Delete the specified ScreenRow and update the list accordingly." alt="" coords="519,236,714,263"/>
+<area shape="rect" id="node15" href="$classScreen.html#a1545b68b9bd38176d171d769f3f3c7f3" title="Get the ScreenRow instance at the specified ID." alt="" coords="519,185,715,212"/>
+<area shape="rect" id="node9" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="783,185,937,212"/>
+<area shape="rect" id="node10" href="$classScreenRow.html#a51f874b0a3ca8fce7152755cdc849d01" title="Set the Logger instance." alt="" coords="777,337,943,364"/>
+<area shape="rect" id="node11" href="$classScreenRow.html#a11c13ad781e5bfe79ebd74462d6cedc0" title="Set the next ScreenRow instance in the list." alt="" coords="784,287,936,313"/>
+<area shape="rect" id="node14" href="$classScreenRow.html#a4c72ef81c0dde9c008c946625fdce36b" title="Get the ID of this ScreenRow." alt="" coords="793,236,927,263"/>
+</map>

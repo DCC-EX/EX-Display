@@ -1,0 +1,6 @@
+<map id="CallbackInterface::onInputAction" name="CallbackInterface::onInputAction">
+<area shape="rect" id="node1" title="Method to implement to respond to an input action." alt="" coords="232,57,376,98"/>
+<area shape="rect" id="node2" href="$classMockButtonInput.html#aff7bf3f4782dc8dd912f94be30b006e8" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="5,5,184,32"/>
+<area shape="rect" id="node3" href="$classMockTouchScreenInput.html#afd6a598f9008cc810597db1db68aa6c0" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="9,57,180,98"/>
+<area shape="rect" id="node4" href="$classTFT__eSPITouch.html#afd86f481b8789120fe1fa9357f183741" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="13,123,176,149"/>
+</map>

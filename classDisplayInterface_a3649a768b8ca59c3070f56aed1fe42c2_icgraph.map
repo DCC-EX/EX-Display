@@ -1,0 +1,11 @@
+<map id="DisplayInterface::getId" name="DisplayInterface::getId">
+<area shape="rect" id="node1" title="Get the ID of this display instance." alt="" coords="720,148,891,175"/>
+<area shape="rect" id="node2" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="457,5,672,32"/>
+<area shape="rect" id="node4" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="467,57,663,98"/>
+<area shape="rect" id="node5" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="484,123,645,149"/>
+<area shape="rect" id="node6" href="$classInputInterface.html#a8835a0d2c51926d4636f239d888a8e71" title="Set the DisplayInterface for this input if required." alt="" coords="469,173,660,200"/>
+<area shape="rect" id="node7" href="$classInputManager.html#a27c7bc043eb9fbb8c7700624852220f6" title="Set the display interface to retrieve required attributes &#45; note this should only be required for TFT..." alt="" coords="220,199,409,225"/>
+<area shape="rect" id="node9" href="$test__DisplayInterface_8cpp.html#aa023f143e38a3052f9e71534ff19f5f9" title="Test a second display can be accessed via the first in a list." alt="" coords="530,275,599,301"/>
+<area shape="rect" id="node3" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="223,35,407,61"/>
+<area shape="rect" id="node8" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="5,199,172,225"/>
+</map>

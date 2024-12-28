@@ -1,0 +1,7 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="node1" title="Create a ScreenRow and check all attributes are valid." alt="" coords="5,81,75,108"/>
+<area shape="rect" id="node2" href="$classScreenRow.html#a4c72ef81c0dde9c008c946625fdce36b" title="Get the ID of this ScreenRow." alt="" coords="132,5,267,32"/>
+<area shape="rect" id="node3" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="123,56,276,83"/>
+<area shape="rect" id="node4" href="$classScreenRow.html#a5da76ddfc30da8cd8609b1d136604c18" title="Get the text associated with this ScreenRow." alt="" coords="125,107,274,133"/>
+<area shape="rect" id="node5" href="$classScreenRow.html#a0d6afc0a69cc0abc42e1dd362e3e0832" title="Set the text associated with this ScreenRow." alt="" coords="125,157,273,184"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Logger::getLogLevel" name="Logger::getLogLevel">
+<area shape="rect" id="node1" title="Get the current log level." alt="" coords="123,5,276,32"/>
+<area shape="rect" id="node2" href="$test__Configurator_8cpp.html#aefa3b414da56b899d8ec84cab264c658" title="Ensure the Configurator is created with the provided log level set." alt="" coords="5,5,75,32"/>
+</map>

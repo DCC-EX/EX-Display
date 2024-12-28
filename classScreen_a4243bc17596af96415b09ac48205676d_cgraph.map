@@ -1,0 +1,4 @@
+<map id="Screen::~Screen" name="Screen::~Screen">
+<area shape="rect" id="node1" title="Destructor for the Screen instance Will automatically clean up the associated ScreenRow list." alt="" coords="5,5,135,32"/>
+<area shape="rect" id="node2" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="183,5,336,32"/>
+</map>

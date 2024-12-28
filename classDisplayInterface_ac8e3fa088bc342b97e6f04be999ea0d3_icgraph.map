@@ -1,0 +1,7 @@
+<map id="DisplayInterface::setNext" name="DisplayInterface::setNext">
+<area shape="rect" id="node1" title="Set the next DisplayInterface derived instance in the list." alt="" coords="759,31,947,57"/>
+<area shape="rect" id="node2" href="$classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="501,31,711,57"/>
+<area shape="rect" id="node3" href="$classDisplayManager.html#a9ade9b696372a53b8b716d29d7b53c70" title="Parses the displays configured in myConfig.h and creates the list of displays." alt="" coords="220,5,453,32"/>
+<area shape="rect" id="node5" href="$test__DisplayManager_8cpp.html#a8db4cc07d4e89d899e0a75ca521f9229" title="Create a list of mock displays and validate they are created and operate correctly." alt="" coords="302,56,371,83"/>
+<area shape="rect" id="node4" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="5,5,172,32"/>
+</map>

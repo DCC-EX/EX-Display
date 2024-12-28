@@ -1,0 +1,4 @@
+<map id="TFT_eSPITouch::_displayCalibrationError" name="TFT_eSPITouch::_displayCalibrationError">
+<area shape="rect" id="node1" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="215,5,465,47"/>
+<area shape="rect" id="node2" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,13,167,39"/>
+</map>

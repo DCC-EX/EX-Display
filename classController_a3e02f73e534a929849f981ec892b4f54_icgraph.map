@@ -1,0 +1,4 @@
+<map id="Controller::_selectPreviousScreen" name="Controller::_selectPreviousScreen">
+<area shape="rect" id="node1" title="Selects the previous screen for the selected display." alt="" coords="237,5,433,47"/>
+<area shape="rect" id="node2" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,13,189,39"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="MockTouchScreenInput" name="MockTouchScreenInput">
+<area shape="rect" id="node1" title="Mock touch screen input class using debounce and hold methods and calculating touch position to deter..." alt="" coords="5,80,176,107"/>
+<area shape="rect" id="node2" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="34,5,147,32"/>
+</map>

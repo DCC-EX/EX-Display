@@ -1,0 +1,5 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="node1" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="5,31,75,57"/>
+<area shape="rect" id="node2" href="$classAtFinder.html#ada7a2ab3b409d525ffa704badf4b4dd1" title="Clean up memory allocations used by AtFinder." alt="" coords="123,5,260,32"/>
+<area shape="rect" id="node3" href="$classAtFinder.html#abadf56235ed457d74fff16dfdcd6d693" title="Setup the AtFinder parser." alt="" coords="131,56,251,83"/>
+</map>

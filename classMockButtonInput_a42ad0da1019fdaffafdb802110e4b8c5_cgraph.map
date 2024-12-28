@@ -1,0 +1,4 @@
+<map id="MockButtonInput::setIsCalibrating" name="MockButtonInput::setIsCalibrating">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,248,32"/>
+<area shape="rect" id="node2" href="$classInputInterface.html#af4e357d021d6ff950b6c8497734dcd75" title="Test if this InputInterface is undergoing calibration as required by touch screens." alt="" coords="296,5,499,32"/>
+</map>

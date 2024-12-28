@@ -1,0 +1,10 @@
+<map id="DebounceHoldInputTests" name="DebounceHoldInputTests">
+<area shape="rect" id="node1" title="Test harness for inputs utilising debounce and hold options." alt="" coords="10,375,193,401"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,285,53,312"/>
+<area shape="rect" id="node3" href="$classMockCallback.html" title="Mock class to test callbacks." alt="" coords="50,235,163,261"/>
+<area shape="rect" id="node4" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="65,95,201,121"/>
+<area shape="rect" id="node7" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="193,184,306,211"/>
+<area shape="rect" id="node5" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="216,5,283,32"/>
+<area shape="rect" id="node8" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="327,95,457,121"/>
+<area shape="rect" id="node6" href="$classMockButtonInput.html" title="Mock button input class using debounce and hold methods Use setRawAction() to simulate what a button ..." alt="" coords="184,285,317,312"/>
+</map>

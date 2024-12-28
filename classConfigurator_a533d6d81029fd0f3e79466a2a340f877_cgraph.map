@@ -1,0 +1,8 @@
+<map id="Configurator::Configurator" name="Configurator::Configurator">
+<area shape="rect" id="node1" title="Constructor for this Configurator." alt="" coords="5,107,196,133"/>
+<area shape="rect" id="node2" href="$Arduino_8h.html#a6ff7f2532a22366f0013bc41397129fd" title=" " alt="" coords="315,5,373,32"/>
+<area shape="rect" id="node3" href="$classDisplayManager.html#a6ebe819284a199bbe5679ce4d8c94dec" title="Set the Logger instance." alt="" coords="244,56,444,83"/>
+<area shape="rect" id="node4" href="$classInputManager.html#a6aef6276d206038cd51623b05631aa26" title="Set the Logger instance." alt="" coords="252,107,436,133"/>
+<area shape="rect" id="node5" href="$classScreenManager.html#a18bd55bc7bcdfd56126398a830c56b87" title="Set the Logger instance." alt="" coords="247,157,441,184"/>
+<area shape="rect" id="node6" href="$classLogger.html#a76962587ace804ef14f24f7220a4a688" title="Set the log level." alt="" coords="268,208,420,235"/>
+</map>

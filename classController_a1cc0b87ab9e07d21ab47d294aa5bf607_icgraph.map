@@ -1,0 +1,6 @@
+<map id="Controller::begin" name="Controller::begin">
+<area shape="rect" id="node1" title="Call once to start displays and input." alt="" coords="580,5,711,32"/>
+<area shape="rect" id="node2" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="473,5,532,32"/>
+<area shape="rect" id="node3" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="215,5,425,32"/>
+<area shape="rect" id="node4" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,5,167,32"/>
+</map>

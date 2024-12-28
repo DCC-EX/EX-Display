@@ -1,0 +1,7 @@
+<map id="InputInterface::begin" name="InputInterface::begin">
+<area shape="rect" id="node1" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="521,31,679,57"/>
+<area shape="rect" id="node2" href="$classInputManager.html#aa180ec01ef4c17f0f9a3d681dc99817c" title="Start the configured input &#45; calls the InputInterface::begin() method." alt="" coords="291,31,473,57"/>
+<area shape="rect" id="node3" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="112,5,243,32"/>
+<area shape="rect" id="node5" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="143,56,212,83"/>
+<area shape="rect" id="node4" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="5,5,64,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="TFT_eSPIDisplay::clearRow" name="TFT_eSPIDisplay::clearRow">
+<area shape="rect" id="node1" title="Clear the specified row." alt="" coords="5,13,201,39"/>
+<area shape="rect" id="node2" href="$classTFT__eSPIDisplay.html#afcbf3673396a684fd540bc75214719a3" title="Get the X/Y coordinates to draw the specified row, starting at the specified column." alt="" coords="249,5,441,47"/>
+</map>

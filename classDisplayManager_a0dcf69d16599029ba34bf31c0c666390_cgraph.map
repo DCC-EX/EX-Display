@@ -1,0 +1,4 @@
+<map id="DisplayManager::getDisplayById" name="DisplayManager::getDisplayById">
+<area shape="rect" id="node1" title="Get a DisplayInterface derived instance by its ID." alt="" coords="5,5,240,32"/>
+<area shape="rect" id="node2" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="288,5,477,32"/>
+</map>

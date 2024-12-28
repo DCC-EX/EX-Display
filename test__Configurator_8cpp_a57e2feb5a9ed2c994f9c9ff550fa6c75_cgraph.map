@@ -1,0 +1,7 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="node1" title="Ensure the Configurator can be created successfully." alt="" coords="5,107,75,134"/>
+<area shape="rect" id="node2" href="$classConfigurator.html#ab7f0f6bdc7ee5395be5aa8432cde12a4" title="Get the CommandStation connection Stream instance for this configurator." alt="" coords="123,5,321,47"/>
+<area shape="rect" id="node3" href="$classConfigurator.html#ab92df2c113b8696167a3208edd45d1ca" title="Get the console Stream instance for this configurator." alt="" coords="131,71,313,112"/>
+<area shape="rect" id="node4" href="$classConfigurator.html#a82c65d6d040b717d64520903c788dd79" title="Get the Controller instance for this Configurator." alt="" coords="125,137,319,163"/>
+<area shape="rect" id="node5" href="$classConfigurator.html#a8d1bb9bee243e4b5e1a6c1e51ffde53f" title="Get the DisplayManager instance for this Configurator." alt="" coords="132,188,312,229"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="InputManager::getInput" name="InputManager::getInput">
+<area shape="rect" id="node1" title="Get the configured InputInterface." alt="" coords="596,93,771,120"/>
+<area shape="rect" id="node2" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="381,43,548,69"/>
+<area shape="rect" id="node6" href="$test__InputManager_8cpp.html#a27bbde065b428d0be138c73ae6cc27a4" title="Test to ensure the InputManager can be created." alt="" coords="430,93,499,120"/>
+<area shape="rect" id="node7" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="395,144,534,171"/>
+<area shape="rect" id="node3" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="269,5,328,32"/>
+<area shape="rect" id="node5" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="264,56,333,83"/>
+<area shape="rect" id="node4" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="5,5,216,32"/>
+<area shape="rect" id="node8" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="273,119,324,145"/>
+<area shape="rect" id="node9" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="264,169,333,196"/>
+</map>

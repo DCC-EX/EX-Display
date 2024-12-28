@@ -1,0 +1,8 @@
+<map id="ScreenRow::setNext" name="ScreenRow::setNext">
+<area shape="rect" id="node1" title="Set the next ScreenRow instance in the list." alt="" coords="717,31,869,57"/>
+<area shape="rect" id="node2" href="$classScreen.html#a1a1f735d2c573b460813e1ba0667b649" title="Add a new ScreenRow to the list." alt="" coords="483,5,661,32"/>
+<area shape="rect" id="node6" href="$classScreen.html#a43263117dfffa210ccd83b6cd12e0732" title="Delete the specified ScreenRow and update the list accordingly." alt="" coords="475,56,669,83"/>
+<area shape="rect" id="node3" href="$classScreen.html#a0a9a3a713a63ef55e854841d07630556" title="Update the specified ScreenRow, or create it if it doesn&#39;t exist This will automatically maintain the..." alt="" coords="236,31,427,57"/>
+<area shape="rect" id="node4" href="$test__Screen_8cpp.html#a9da657726211d6af0e63eaab94ad162f" title="Create a screen with associated row list and ensure rows are accessible by ID." alt="" coords="62,5,131,32"/>
+<area shape="rect" id="node5" href="$classController.html#a908f5f6c24239286e29d4761da509963" title="Method to implement updating a screen." alt="" coords="5,56,188,83"/>
+</map>

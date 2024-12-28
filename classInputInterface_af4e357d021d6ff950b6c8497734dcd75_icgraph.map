@@ -1,0 +1,9 @@
+<map id="InputInterface::isCalibrating" name="InputInterface::isCalibrating">
+<area shape="rect" id="node1" title="Test if this InputInterface is undergoing calibration as required by touch screens." alt="" coords="413,85,616,112"/>
+<area shape="rect" id="node2" href="$classMockButtonInput.html#a42ad0da1019fdaffafdb802110e4b8c5" title=" " alt="" coords="123,5,365,32"/>
+<area shape="rect" id="node3" href="$classMockInput.html#a76b4c4850d8774d3e988df775177b847" title=" " alt="" coords="144,56,344,83"/>
+<area shape="rect" id="node4" href="$classMockTouchScreenInput.html#aa1695790ef58c9a3681df59eaae9a522" title=" " alt="" coords="159,107,329,149"/>
+<area shape="rect" id="node5" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="175,173,313,200"/>
+<area shape="rect" id="node6" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="15,148,65,175"/>
+<area shape="rect" id="node7" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="5,199,75,225"/>
+</map>

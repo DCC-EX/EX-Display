@@ -1,0 +1,4 @@
+<map id="InputInterface::_debounceOrHeld" name="InputInterface::_debounceOrHeld">
+<area shape="rect" id="node1" title="Call this from the derived class&#39; check() method to debounce and detect if the input is a hold vs...." alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node2" href="$Arduino_8h.html#a6ff7f2532a22366f0013bc41397129fd" title=" " alt="" coords="244,13,303,39"/>
+</map>

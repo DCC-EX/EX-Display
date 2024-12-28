@@ -1,0 +1,7 @@
+<map id="DisplayManager::displayStartupInfo" name="DisplayManager::displayStartupInfo">
+<area shape="rect" id="node1" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="549,31,804,57"/>
+<area shape="rect" id="node2" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="371,5,501,32"/>
+<area shape="rect" id="node5" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="401,56,471,83"/>
+<area shape="rect" id="node3" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="264,5,323,32"/>
+<area shape="rect" id="node4" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="5,5,216,32"/>
+</map>

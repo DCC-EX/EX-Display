@@ -1,0 +1,6 @@
+<map id="MockButtonInput::check" name="MockButtonInput::check">
+<area shape="rect" id="node1" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="5,46,184,73"/>
+<area shape="rect" id="node2" href="$classInputInterface.html#afefc70fa413062a1df8e7950f1afc564" title="Call this from the derived class&#39; check() method to debounce and detect if the input is a hold vs...." alt="" coords="232,5,423,47"/>
+<area shape="rect" id="node4" href="$classCallbackInterface.html#a0050e0aa32d6f53635dd19462ab5153f" title="Method to implement to respond to an input action." alt="" coords="255,71,399,112"/>
+<area shape="rect" id="node3" href="$Arduino_8h.html#a6ff7f2532a22366f0013bc41397129fd" title=" " alt="" coords="471,13,529,39"/>
+</map>

@@ -1,0 +1,20 @@
+<map id="TFT_eSPITouch::begin" name="TFT_eSPITouch::begin">
+<area shape="rect" id="node1" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,224,167,251"/>
+<area shape="rect" id="node2" href="$classTFT__eSPITouch.html#a30285f08f51221839e884ccdd9679105" title="Test if valid calibration data is available for this touch interface." alt="" coords="241,5,439,32"/>
+<area shape="rect" id="node3" href="$classTFT__eSPITouch.html#ad71507c11a328924064e703daef05ada" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="215,107,465,149"/>
+<area shape="rect" id="node4" href="$classTFT__eSPIDisplay.html#af7bbb772e597d3431656ccd32d73bdf5" title="Clear the entire screen." alt="" coords="513,56,725,83"/>
+<area shape="rect" id="node9" href="$classTFT__eSPITouch.html#a68e426669d88922d6c9e761b53558257" title="Run the TFT_eSPI calibration sequence." alt="" coords="231,173,449,200"/>
+<area shape="rect" id="node10" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="235,224,445,251"/>
+<area shape="rect" id="node15" href="$classTFT__eSPIDisplay.html#ab7db81e0c696ad849833528a4e1212df" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="254,275,426,301"/>
+<area shape="rect" id="node16" href="$classDisplayInterface.html#a3649a768b8ca59c3070f56aed1fe42c2" title="Get the ID of this display instance." alt="" coords="255,325,425,352"/>
+<area shape="rect" id="node17" href="$classTFT__eSPIDisplay.html#ab3084ef6b927bc9dbc0991088dda2c6c" title="Get the TFT_eSPI instance created by this instance &#45; needed for the touch interface." alt="" coords="250,377,430,418"/>
+<area shape="rect" id="node18" href="$classTFT__eSPIDisplay.html#ad4f7da2ea80e0fd0206c84f4a787bfb2" title="Test if the TFT_eSPI instance has been initialised &#45; needed for the touch interface." alt="" coords="233,443,447,469"/>
+<area shape="rect" id="node5" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="590,107,649,133"/>
+<area shape="rect" id="node6" href="$classTFT__eSPIDisplay.html#a89e4a05e804059583a6d07f2efadc839" title="Display a row of text on the display." alt="" coords="514,157,725,184"/>
+<area shape="rect" id="node7" href="$classTFT__eSPIDisplay.html#afcbf3673396a684fd540bc75214719a3" title="Get the X/Y coordinates to draw the specified row, starting at the specified column." alt="" coords="1017,125,1209,166"/>
+<area shape="rect" id="node8" href="$classTFT__eSPIDisplay.html#aac207d0a3d33da4ad5989d1f63d87a9f" title="Clear the specified row." alt="" coords="773,157,969,184"/>
+<area shape="rect" id="node11" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="590,241,649,268"/>
+<area shape="rect" id="node12" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="806,208,937,235"/>
+<area shape="rect" id="node13" href="$classConfigurator.html#a82c65d6d040b717d64520903c788dd79" title="Get the Controller instance for this Configurator." alt="" coords="774,259,969,285"/>
+<area shape="rect" id="node14" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="788,309,955,336"/>
+</map>

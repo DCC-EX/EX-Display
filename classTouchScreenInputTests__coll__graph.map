@@ -1,0 +1,10 @@
+<map id="TouchScreenInputTests" name="TouchScreenInputTests">
+<area shape="rect" id="node1" title="Test harness for touch screen inputs requiring calculation of where the user has touched to be conver..." alt="" coords="17,375,186,401"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,285,53,312"/>
+<area shape="rect" id="node3" href="$classMockCallback.html" title="Mock class to test callbacks." alt="" coords="54,235,167,261"/>
+<area shape="rect" id="node4" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="83,95,219,121"/>
+<area shape="rect" id="node7" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="210,184,323,211"/>
+<area shape="rect" id="node5" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="233,5,300,32"/>
+<area shape="rect" id="node8" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="345,95,474,121"/>
+<area shape="rect" id="node6" href="$classMockTouchScreenInput.html" title="Mock touch screen input class using debounce and hold methods and calculating touch position to deter..." alt="" coords="184,285,355,312"/>
+</map>

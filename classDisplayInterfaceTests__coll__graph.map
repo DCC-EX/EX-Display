@@ -1,0 +1,7 @@
+<map id="DisplayInterfaceTests" name="DisplayInterfaceTests">
+<area shape="rect" id="node1" title="Test harness for physical display interface tests." alt="" coords="5,260,168,287"/>
+<area shape="rect" id="node2" title=" " alt="" coords="27,171,75,197"/>
+<area shape="rect" id="node3" href="$classMockDisplay.html" title="Mock physical display class." alt="" coords="99,171,205,197"/>
+<area shape="rect" id="node4" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="87,95,217,121"/>
+<area shape="rect" id="node5" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="119,5,185,32"/>
+</map>

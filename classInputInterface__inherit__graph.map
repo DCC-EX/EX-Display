@@ -1,0 +1,7 @@
+<map id="InputInterface" name="InputInterface">
+<area shape="rect" id="node1" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="229,5,342,32"/>
+<area shape="rect" id="node2" href="$classMockButtonInput.html" title="Mock button input class using debounce and hold methods Use setRawAction() to simulate what a button ..." alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node3" href="$classMockInput.html" title="Mock physical input class." alt="" coords="163,80,253,107"/>
+<area shape="rect" id="node4" href="$classMockTouchScreenInput.html" title="Mock touch screen input class using debounce and hold methods and calculating touch position to deter..." alt="" coords="277,80,448,107"/>
+<area shape="rect" id="node5" href="$classTFT__eSPITouch.html" title="Display class for TFT_eSPI touch screens." alt="" coords="472,80,589,107"/>
+</map>

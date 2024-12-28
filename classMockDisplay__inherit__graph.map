@@ -1,0 +1,4 @@
+<map id="MockDisplay" name="MockDisplay">
+<area shape="rect" id="node1" title="Mock physical display class." alt="" coords="17,80,123,107"/>
+<area shape="rect" id="node2" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="5,5,135,32"/>
+</map>

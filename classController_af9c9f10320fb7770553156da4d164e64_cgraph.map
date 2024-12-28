@@ -1,0 +1,17 @@
+<map id="Controller::onInputAction" name="Controller::onInputAction">
+<area shape="rect" id="node1" title="Method to implement to respond to an input action." alt="" coords="5,302,189,329"/>
+<area shape="rect" id="node2" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="237,193,452,219"/>
+<area shape="rect" id="node3" href="$classScreenManager.html#a110a39ff303b98b6d308518a9d6da8ff" title="Get the first Screen instance in the list." alt="" coords="501,323,725,350"/>
+<area shape="rect" id="node13" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="247,265,443,307"/>
+<area shape="rect" id="node15" href="$classDisplayManager.html#a6ba13ae541760736e37f1f85477985a7" title="Get the first DisplayInterface derived instance in the list of displays." alt="" coords="252,383,437,424"/>
+<area shape="rect" id="node4" href="$classDisplayInterface.html#a3649a768b8ca59c3070f56aed1fe42c2" title="Get the ID of this display instance." alt="" coords="528,222,699,249"/>
+<area shape="rect" id="node5" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="1069,151,1175,178"/>
+<area shape="rect" id="node6" href="$classScreenManager.html#a38890def1478514514341039b83299ef" title="Get the next screen in the list (sorted by ID)" alt="" coords="500,70,727,97"/>
+<area shape="rect" id="node10" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="780,329,1005,355"/>
+<area shape="rect" id="node11" href="$classDisplayInterface.html#a080200cc5dfe54b0d05fde5a4cb041fc" title="Get the Screen ID this display is currently displaing." alt="" coords="506,273,721,299"/>
+<area shape="rect" id="node12" href="$classDisplayInterface.html#a10b7691f495e4044e71e12caf6985d9a" title="Set the Screen ID this display is currently displaying." alt="" coords="507,171,720,198"/>
+<area shape="rect" id="node7" href="$classScreenManager.html#a6cc01abb59037b653ca45f130c83c9b3" title="Get the highest Screen ID in the list." alt="" coords="775,126,1011,153"/>
+<area shape="rect" id="node8" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="1059,278,1185,305"/>
+<area shape="rect" id="node9" href="$classScreenManager.html#acd4f0a92975819547a21bfc7d6320f6d" title="Get the lowest Screen ID in the list." alt="" coords="777,227,1009,254"/>
+<area shape="rect" id="node14" href="$classScreenManager.html#a64ecbfb9232d4051a75ff5abea58ba6d" title="Get the previous screen in the list (sorted by ID)" alt="" coords="509,375,717,416"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="TFT_eSPITouch" name="TFT_eSPITouch">
+<area shape="rect" id="node1" title="Display class for TFT_eSPI touch screens." alt="" coords="5,80,123,107"/>
+<area shape="rect" id="node2" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="7,5,121,32"/>
+</map>

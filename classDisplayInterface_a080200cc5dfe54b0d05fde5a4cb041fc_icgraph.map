@@ -1,0 +1,7 @@
+<map id="DisplayInterface::getScreenId" name="DisplayInterface::getScreenId">
+<area shape="rect" id="node1" title="Get the Screen ID this display is currently displaing." alt="" coords="500,64,715,91"/>
+<area shape="rect" id="node2" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="237,5,452,32"/>
+<area shape="rect" id="node4" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="247,57,443,98"/>
+<area shape="rect" id="node5" href="$test__ControllerInputAction_8cpp.html#a8f23663971c4dff626cd0d8c765fd290" title="This test ensures left/right buttons or touches switch the active screen." alt="" coords="310,123,379,149"/>
+<area shape="rect" id="node3" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,35,189,61"/>
+</map>

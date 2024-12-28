@@ -1,0 +1,14 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="node1" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="5,259,75,285"/>
+<area shape="rect" id="node2" href="$classScreenManager.html#a110a39ff303b98b6d308518a9d6da8ff" title="Get the first Screen instance in the list." alt="" coords="124,5,348,32"/>
+<area shape="rect" id="node3" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="691,157,798,184"/>
+<area shape="rect" id="node4" href="$classScreenManager.html#a6cc01abb59037b653ca45f130c83c9b3" title="Get the highest Screen ID in the list." alt="" coords="397,259,633,285"/>
+<area shape="rect" id="node5" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="681,360,808,387"/>
+<area shape="rect" id="node6" href="$classScreenManager.html#acd4f0a92975819547a21bfc7d6320f6d" title="Get the lowest Screen ID in the list." alt="" coords="399,157,631,184"/>
+<area shape="rect" id="node7" href="$classScreenManager.html#a38890def1478514514341039b83299ef" title="Get the next screen in the list (sorted by ID)" alt="" coords="123,208,349,235"/>
+<area shape="rect" id="node8" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="403,411,628,437"/>
+<area shape="rect" id="node9" href="$classScreenManager.html#a64ecbfb9232d4051a75ff5abea58ba6d" title="Get the previous screen in the list (sorted by ID)" alt="" coords="132,310,340,351"/>
+<area shape="rect" id="node10" href="$classScreenManager.html#a760f0b958985e3c29f5a3efc81367f89" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="126,512,346,539"/>
+<area shape="rect" id="node11" href="$classScreen.html#a3f87fd3cb0de678a506d26c44c79df5f" title="Set the Logger instance." alt="" coords="446,563,585,589"/>
+<area shape="rect" id="node12" href="$classScreen.html#a73bbfda08cbc10369ba075e765c8b18a" title="Set the next Screen instance in the list." alt="" coords="453,613,578,640"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="DisplayManager::getFirstDisplay" name="DisplayManager::getFirstDisplay">
+<area shape="rect" id="node1" title="Get the first DisplayInterface derived instance in the list of displays." alt="" coords="355,49,540,90"/>
+<area shape="rect" id="node2" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="123,5,307,32"/>
+<area shape="rect" id="node3" href="$test__DisplayManager_8cpp.html#aa8337fc1959edc9e8bd86823f8071176" title="Create DisplayManager and validate attributes are as expected." alt="" coords="180,56,249,83"/>
+<area shape="rect" id="node4" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="145,107,284,133"/>
+<area shape="rect" id="node5" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="15,81,65,108"/>
+<area shape="rect" id="node6" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="5,132,75,159"/>
+</map>
