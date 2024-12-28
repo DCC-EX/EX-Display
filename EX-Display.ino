@@ -15,6 +15,16 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/**
+ * @mainpage EX-Display - a project for multiple displays connected to EX-CommandStation
+ *
+ * @section intro_sec Introduction
+ * EX-Display enables one or more displays to be connected to EX-CommandStation via a serial connection, and emulating 
+ * JMRI's virtual screen capability.
+ * 
+ * @section Details
+ */
+
 #ifndef PIO_UNIT_TESTING
 
 #include "Configurator.h"

@@ -87,7 +87,8 @@ void TFT_eSPITouch::check() {
   uint16_t touchY;
   if (_tft->getTouch(&touchX, &touchY)) {
     LOG(LogLevel::DEBUG, "TFT_eSPITouch::check() - touchX=%d|touchY=%d", touchX, touchY);
-    InputAction action = _debounceOrHeld(InputAction::PRESS_UP);
+    InputAction action = _calculateInputAction(touchX, touchY, _tft->width(), _tft->height());
+    action = _debounceOrHeld(action);
     if (_callback != nullptr) {
       _callback->onInputAction(action);
     }

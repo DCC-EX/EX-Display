@@ -38,6 +38,7 @@ void InputInterface::setDebounceDelay(unsigned long delay) { _debounceDelay = de
 void InputInterface::setHoldThreshold(unsigned long threshold) { _holdThreshold = threshold; }
 
 InputAction InputInterface::_debounceOrHeld(InputAction currentAction) {
+  LOG(LogLevel::DEBUG, "InputInterface::_debounceOrHeld(%d)", currentAction);
   // Record the current time for comparisons
   unsigned long currentTime = millis();
   InputAction returnAction = InputAction::PRESS_NONE;
@@ -46,6 +47,7 @@ InputAction InputInterface::_debounceOrHeld(InputAction currentAction) {
     // If we're going from some action to none and not holding, then it must've been a press
     if ((currentTime - _lastDebounceTime) > _debounceDelay && currentAction == InputAction::PRESS_NONE && !_isHolding) {
       returnAction = _lastAction;
+      LOG(LogLevel::DEBUG, "InputInterface - press detected: %d", returnAction);
     }
     _lastDebounceTime = currentTime;
     _lastAction = currentAction;
@@ -59,6 +61,7 @@ InputAction InputInterface::_debounceOrHeld(InputAction currentAction) {
       if (!_isHolding) {
         // Flag that we're holding, and change from PRESS to HOLD
         _isHolding = true;
+        LOG(LogLevel::DEBUG, "InputInterface - hold detected: %d", currentAction);
         switch (currentAction) {
         case InputAction::PRESS_UP:
           returnAction = InputAction::HOLD_UP;
@@ -82,5 +85,27 @@ InputAction InputInterface::_debounceOrHeld(InputAction currentAction) {
       }
     }
   }
+  LOG(LogLevel::DEBUG, "InputInterface::_debounceOrHeld returning action %d", returnAction);
   return returnAction;
+}
+
+InputAction InputInterface::_calculateInputAction(int touchX, int touchY, int displayWidth, int displayHeight) {
+  LOG(LogLevel::DEBUG, "InputInterface::_calculateInputAction(%d, %d, %d, %d)", touchX, touchY, displayWidth,
+      displayHeight);
+  InputAction action = InputAction::PRESS_NONE;
+  int thirdWidth = displayWidth / 3;
+  int thirdHeight = displayHeight / 3;
+
+  if (touchX <= thirdWidth) {
+    action = InputAction::PRESS_LEFT;
+  } else if (touchX >= displayWidth - thirdWidth) {
+    action = InputAction::PRESS_RIGHT;
+  } else if (touchY <= thirdHeight) {
+    action = InputAction::PRESS_UP;
+  } else if (touchY >= displayHeight - thirdHeight) {
+    action = InputAction::PRESS_DOWN;
+  } else {
+    action = InputAction::PRESS_CENTRE;
+  }
+  return action;
 }

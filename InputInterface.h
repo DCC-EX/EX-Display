@@ -74,7 +74,8 @@ protected:
   Logger *_logger = nullptr;
   /// @brief Flag if the input interface is undergoing calibration - needed for touch screens
   bool _isCalibrating = false;
-  /// @brief Display ID if this input interface requires a display instance - needed for TFT_eSPI as it shares the instance
+  /// @brief Display ID if this input interface requires a display instance - needed for TFT_eSPI as it shares the
+  /// instance
   int _needsDisplay = -1;
   /// @brief Pointer to the DisplayInterface if this input requires it
   DisplayInterface *_display = nullptr;
@@ -93,6 +94,21 @@ protected:
   /// @param currentAction The InputAction needing to be interpreted
   /// @return Determined InputAction - either debounced press, held, or none
   InputAction _debounceOrHeld(InputAction currentAction);
+
+  /// @brief This method is designed to take an input from a touch screen display and determine which "button"  has been
+  /// touched according to the coordinates of the touch. This assumes the touch screen has been calibrated correctly.
+  /// @details The display is divided as such:
+  /// - The entire left third of the display is the left button
+  /// - The entire right third of the display is the right button
+  /// - The top third of the resulting centre of the display is the up button
+  /// - The bottom third of the resulting centre of the display is the down button
+  /// - The centre third of both width and height is the centre button
+  /// @param touchX The X coordinate of the touch
+  /// @param touchY The Y coordinate of the touch
+  /// @param displayWidth Display width in pixels
+  /// @param displayHeight Display height in pixels
+  /// @return A valid InputAction PRESS type
+  InputAction _calculateInputAction(int touchX, int touchY, int displayWidth, int displayHeight);
 };
 
 #endif // INPUTINTERFACE_H

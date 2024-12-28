@@ -112,6 +112,7 @@ void Controller::updateScreen(uint8_t screenId, uint8_t row, const char *text) {
 }
 
 void Controller::onInputAction(InputAction action) {
+  LOG(LogLevel::DEBUG, "Controller::onInputAction(%d)", action);
   // No inputs are valid if there are no displays or screens, so just bail out
   if (_displayManager == nullptr || _screenManager == nullptr || _displayManager->getFirstDisplay() == nullptr ||
       _screenManager->getFirstScreen() == nullptr) {
