@@ -15,18 +15,15 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "mockMyConfig.h"
-#include "test/mocks/MockDisplay.h"
-#include <gtest/gtest.h>
+/**
+ * @brief This file simulates a user's myConfig.h containing mock display and input devices that are to be created by
+ * the Configurator
+ */
 
-using namespace testing;
+#ifndef MYCONFIG_H
+#define MYCONFIG_H
 
-class DisplayCreationTests : public Test {
-protected:
-  void SetUp() override {}
+// TFT_DISPLAY()
 
-  void TearDown() override {}
-};
 
-/// @brief Create a ScreenRow and check all attributes are valid
-TEST_F(DisplayCreationTests, CreateDisplay) {}
+#endif // MYCONFIG_H
