@@ -3,12 +3,13 @@
 <area shape="rect" id="node2" href="$classScreen.html#a1a1f735d2c573b460813e1ba0667b649" title="Add a new ScreenRow to the list." alt="" coords="484,5,661,32"/>
 <area shape="rect" id="node6" href="$classScreen.html#a43263117dfffa210ccd83b6cd12e0732" title="Delete the specified ScreenRow and update the list accordingly." alt="" coords="475,56,670,83"/>
 <area shape="rect" id="node7" href="$classScreen.html#a1545b68b9bd38176d171d769f3f3c7f3" title="Get the ScreenRow instance at the specified ID." alt="" coords="475,107,671,133"/>
-<area shape="rect" id="node8" href="$test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly." alt="" coords="297,119,366,145"/>
-<area shape="rect" id="node9" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="503,208,642,235"/>
-<area shape="rect" id="node12" href="$classScreen.html#a4243bc17596af96415b09ac48205676d" title="Destructor for the Screen instance Will automatically clean up the associated ScreenRow list." alt="" coords="508,259,637,285"/>
+<area shape="rect" id="node8" href="$test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly." alt="" coords="297,132,366,159"/>
+<area shape="rect" id="node9" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="482,208,663,235"/>
+<area shape="rect" id="node13" href="$classScreen.html#a4243bc17596af96415b09ac48205676d" title="Destructor for the Screen instance Will automatically clean up the associated ScreenRow list." alt="" coords="508,259,637,285"/>
 <area shape="rect" id="node3" href="$classScreen.html#a0a9a3a713a63ef55e854841d07630556" title="Update the specified ScreenRow, or create it if it doesn&#39;t exist This will automatically maintain the..." alt="" coords="236,56,427,83"/>
 <area shape="rect" id="node4" href="$test__Screen_8cpp.html#a9da657726211d6af0e63eaab94ad162f" title="Create a screen with associated row list and ensure rows are accessible by ID." alt="" coords="62,31,131,57"/>
 <area shape="rect" id="node5" href="$classController.html#a908f5f6c24239286e29d4761da509963" title="Method to implement updating a screen." alt="" coords="5,81,188,108"/>
-<area shape="rect" id="node10" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="306,183,357,209"/>
-<area shape="rect" id="node11" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="297,233,366,260"/>
+<area shape="rect" id="node10" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="262,208,401,235"/>
+<area shape="rect" id="node11" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="71,183,122,209"/>
+<area shape="rect" id="node12" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="62,233,131,260"/>
 </map>

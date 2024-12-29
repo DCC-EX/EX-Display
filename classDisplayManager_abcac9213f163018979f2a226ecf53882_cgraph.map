@@ -1,0 +1,6 @@
+<map id="DisplayManager::_selectSPIDisplay" name="DisplayManager::_selectSPIDisplay">
+<area shape="rect" id="node1" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="5,31,256,57"/>
+<area shape="rect" id="node2" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="352,5,451,32"/>
+<area shape="rect" id="node4" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="304,56,499,83"/>
+<area shape="rect" id="node3" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="547,5,737,32"/>
+</map>

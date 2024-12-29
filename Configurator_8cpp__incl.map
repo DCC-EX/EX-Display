@@ -1,13 +1,13 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/Configurator.cpp" name="/home/runner/work/EX&#45;Display/EX&#45;Display/Configurator.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="136,5,396,47"/>
-<area shape="rect" id="node2" href="$Configurator_8h.html" title=" " alt="" coords="416,95,530,121"/>
-<area shape="rect" id="node11" href="$AtFinder_8h.html" title=" " alt="" coords="36,244,123,271"/>
-<area shape="rect" id="node3" href="$Controller_8h.html" title=" " alt="" coords="326,169,423,196"/>
-<area shape="rect" id="node5" href="$Logger_8h.html" title=" " alt="" coords="310,393,388,420"/>
-<area shape="rect" id="node7" href="$DisplayManager_8h.html" title=" " alt="" coords="198,244,337,271"/>
-<area shape="rect" id="node8" href="$InputManager_8h.html" title=" " alt="" coords="412,244,534,271"/>
-<area shape="rect" id="node9" href="$Defines_8h.html" title=" " alt="" coords="462,319,545,345"/>
-<area shape="rect" id="node10" href="$ScreenManager_8h.html" title=" " alt="" coords="559,244,694,271"/>
-<area shape="rect" id="node4" href="$CallbackInterface_8h.html" title=" " alt="" coords="138,319,286,345"/>
-<area shape="rect" id="node6" href="$Arduino_8h.html" title=" " alt="" coords="88,468,172,495"/>
+<area shape="rect" id="node1" title=" " alt="" coords="84,5,344,47"/>
+<area shape="rect" id="node2" href="$Configurator_8h.html" title=" " alt="" coords="389,95,503,121"/>
+<area shape="rect" id="node11" href="$AtFinder_8h.html" title=" " alt="" coords="5,244,92,271"/>
+<area shape="rect" id="node3" href="$Controller_8h.html" title=" " alt="" coords="397,169,495,196"/>
+<area shape="rect" id="node5" href="$Logger_8h.html" title=" " alt="" coords="246,393,323,420"/>
+<area shape="rect" id="node7" href="$DisplayManager_8h.html" title=" " alt="" coords="593,244,731,271"/>
+<area shape="rect" id="node8" href="$ScreenManager_8h.html" title=" " alt="" coords="492,319,627,345"/>
+<area shape="rect" id="node9" href="$InputManager_8h.html" title=" " alt="" coords="193,244,315,271"/>
+<area shape="rect" id="node10" href="$Defines_8h.html" title=" " alt="" coords="283,319,366,345"/>
+<area shape="rect" id="node4" href="$CallbackInterface_8h.html" title=" " alt="" coords="60,319,208,345"/>
+<area shape="rect" id="node6" href="$Arduino_8h.html" title=" " alt="" coords="165,468,249,495"/>
 </map>

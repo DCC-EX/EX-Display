@@ -92,8 +92,11 @@ Collaboration diagram for TFT_eSPIDisplay:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a915ccfb0de32650c3f5cb59b6ec298e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#a915ccfb0de32650c3f5cb59b6ec298e3">TFT_eSPIDisplay</a> (uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour)</td></tr>
-<tr class="memdesc:a915ccfb0de32650c3f5cb59b6ec298e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classTFT__eSPIDisplay.html" title="Display class for TFT_eSPI based displays.">TFT_eSPIDisplay</a>.  <a href="classTFT__eSPIDisplay.html#a915ccfb0de32650c3f5cb59b6ec298e3">More...</a><br /></td></tr>
+<tr class="memdesc:a915ccfb0de32650c3f5cb59b6ec298e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for a <a class="el" href="classTFT__eSPIDisplay.html" title="Display class for TFT_eSPI based displays.">TFT_eSPIDisplay</a> instance.  <a href="classTFT__eSPIDisplay.html#a915ccfb0de32650c3f5cb59b6ec298e3">More...</a><br /></td></tr>
 <tr class="separator:a915ccfb0de32650c3f5cb59b6ec298e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefb5e78182e866b2bf6c71d890b7955e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#aefb5e78182e866b2bf6c71d890b7955e">TFT_eSPIDisplay</a> (uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour, int csPin)</td></tr>
+<tr class="memdesc:aefb5e78182e866b2bf6c71d890b7955e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternate constructor for a <a class="el" href="classTFT__eSPIDisplay.html" title="Display class for TFT_eSPI based displays.">TFT_eSPIDisplay</a> instance to specify the CS pin to allow for two displays.  <a href="classTFT__eSPIDisplay.html#aefb5e78182e866b2bf6c71d890b7955e">More...</a><br /></td></tr>
+<tr class="separator:aefb5e78182e866b2bf6c71d890b7955e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7db81e0c696ad849833528a4e1212df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#ab7db81e0c696ad849833528a4e1212df">begin</a> () override</td></tr>
 <tr class="memdesc:ab7db81e0c696ad849833528a4e1212df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform any initial once off setup or configuration here and call only once.  <a href="classTFT__eSPIDisplay.html#ab7db81e0c696ad849833528a4e1212df">More...</a><br /></td></tr>
 <tr class="separator:ab7db81e0c696ad849833528a4e1212df"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,6 +143,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a080200cc5dfe54b0d05fde5a4cb041fc inherit pub_methods_classDisplayInterface"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#a080200cc5dfe54b0d05fde5a4cb041fc">getScreenId</a> ()</td></tr>
 <tr class="memdesc:a080200cc5dfe54b0d05fde5a4cb041fc inherit pub_methods_classDisplayInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">Screen</a> ID this display is currently displaing.  <a href="classDisplayInterface.html#a080200cc5dfe54b0d05fde5a4cb041fc">More...</a><br /></td></tr>
 <tr class="separator:a080200cc5dfe54b0d05fde5a4cb041fc inherit pub_methods_classDisplayInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99f118df7933707f23506e6c4138c8ac inherit pub_methods_classDisplayInterface"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac">getCSPin</a> ()</td></tr>
+<tr class="memdesc:a99f118df7933707f23506e6c4138c8ac inherit pub_methods_classDisplayInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the defined CS pin for this display to see if it needs manual SPI switching.  <a href="classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac">More...</a><br /></td></tr>
+<tr class="separator:a99f118df7933707f23506e6c4138c8ac inherit pub_methods_classDisplayInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfc41efbd20bf7fe035cf6bc195faf38 inherit pub_methods_classDisplayInterface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#adfc41efbd20bf7fe035cf6bc195faf38">~DisplayInterface</a> ()=default</td></tr>
 <tr class="memdesc:adfc41efbd20bf7fe035cf6bc195faf38 inherit pub_methods_classDisplayInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for a <a class="el" href="classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types.">DisplayInterface</a>.  <a href="classDisplayInterface.html#adfc41efbd20bf7fe035cf6bc195faf38">More...</a><br /></td></tr>
 <tr class="separator:adfc41efbd20bf7fe035cf6bc195faf38 inherit pub_methods_classDisplayInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,12 +204,15 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a26222bc5cace961ad3c6841db10f9894 inherit pro_attribs_classDisplayInterface"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#a26222bc5cace961ad3c6841db10f9894">_fontWidth</a> = 0</td></tr>
 <tr class="memdesc:a26222bc5cace961ad3c6841db10f9894 inherit pro_attribs_classDisplayInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculated font width to determine column positioning.  <a href="classDisplayInterface.html#a26222bc5cace961ad3c6841db10f9894">More...</a><br /></td></tr>
 <tr class="separator:a26222bc5cace961ad3c6841db10f9894 inherit pro_attribs_classDisplayInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d7067255c6434f7a626f3249f805193 inherit pro_attribs_classDisplayInterface"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#a0d7067255c6434f7a626f3249f805193">_csPin</a> = -1</td></tr>
+<tr class="memdesc:a0d7067255c6434f7a626f3249f805193 inherit pro_attribs_classDisplayInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">If there are more than one SPI displays that libraries don't officially support, the CS pin can be provided to switch between them (default -1 disables this)  <a href="classDisplayInterface.html#a0d7067255c6434f7a626f3249f805193">More...</a><br /></td></tr>
+<tr class="separator:a0d7067255c6434f7a626f3249f805193 inherit pro_attribs_classDisplayInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Display class for TFT_eSPI based displays. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a915ccfb0de32650c3f5cb59b6ec298e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a915ccfb0de32650c3f5cb59b6ec298e3">&#9670;&nbsp;</a></span>TFT_eSPIDisplay()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a915ccfb0de32650c3f5cb59b6ec298e3">&#9670;&nbsp;</a></span>TFT_eSPIDisplay() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,7 +249,74 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor for the <a class="el" href="classTFT__eSPIDisplay.html" title="Display class for TFT_eSPI based displays.">TFT_eSPIDisplay</a>. </p>
+<p>Constructor for a <a class="el" href="classTFT__eSPIDisplay.html" title="Display class for TFT_eSPI based displays.">TFT_eSPIDisplay</a> instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rotation</td><td></td></tr>
+    <tr><td class="paramname">textSize</td><td></td></tr>
+    <tr><td class="paramname">textColour</td><td></td></tr>
+    <tr><td class="paramname">backgroundColour</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aefb5e78182e866b2bf6c71d890b7955e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefb5e78182e866b2bf6c71d890b7955e">&#9670;&nbsp;</a></span>TFT_eSPIDisplay() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TFT_eSPIDisplay::TFT_eSPIDisplay </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>rotation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>textSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>textColour</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>backgroundColour</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>csPin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alternate constructor for a <a class="el" href="classTFT__eSPIDisplay.html" title="Display class for TFT_eSPI based displays.">TFT_eSPIDisplay</a> instance to specify the CS pin to allow for two displays. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rotation</td><td></td></tr>
+    <tr><td class="paramname">textSize</td><td></td></tr>
+    <tr><td class="paramname">textColour</td><td></td></tr>
+    <tr><td class="paramname">backgroundColour</td><td></td></tr>
+    <tr><td class="paramname">csPin</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

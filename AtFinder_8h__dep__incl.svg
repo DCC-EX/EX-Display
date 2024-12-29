@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 1308;
+var viewWidth = 1309;
 var viewHeight = 128;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,7 +54,7 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>/home/runner/work/EX&#45;Display/EX&#45;Display/AtFinder.h</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-124 1304,-124 1304,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-124 1305,-124 1305,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
@@ -120,7 +120,7 @@ var sectionId = 'dynsection-1';
 <polygon fill="white" stroke="black" points="608,-0.5 608,-52.5 792,-52.5 792,-0.5 608,-0.5"/>
 <text text-anchor="start" x="616" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/EX</text>
 <text text-anchor="start" x="616" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;Display/EX&#45;Display/test</text>
-<text text-anchor="start" x="616" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/integration/test_controller</text>
+<text text-anchor="start" x="616" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/integration/test_Controller</text>
 <text text-anchor="middle" x="700" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/test_ControllerDisplayUpdate.cpp</text>
 </a>
 </g>
@@ -135,55 +135,55 @@ var sectionId = 'dynsection-1';
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="test__AtFinder__Logger_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="810,-0.5 810,-52.5 988,-52.5 988,-0.5 810,-0.5"/>
-<text text-anchor="start" x="818" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/EX</text>
-<text text-anchor="start" x="818" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;Display/EX&#45;Display/test</text>
-<text text-anchor="start" x="818" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/integration/test_interactive</text>
-<text text-anchor="middle" x="899" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_logger/test_AtFinder_Logger.cpp</text>
+<polygon fill="white" stroke="black" points="810.5,-0.5 810.5,-52.5 995.5,-52.5 995.5,-0.5 810.5,-0.5"/>
+<text text-anchor="start" x="818.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/EX</text>
+<text text-anchor="start" x="818.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;Display/EX&#45;Display/test</text>
+<text text-anchor="start" x="818.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/integration/test_InteractiveLogger</text>
+<text text-anchor="middle" x="903" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/test_AtFinder_Logger.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M746.51,-85.74C772.32,-75.88 804.86,-63.45 833.24,-52.62"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="745.06,-82.55 736.96,-89.38 747.55,-89.08 745.06,-82.55"/>
+<path fill="none" stroke="midnightblue" d="M747.09,-85.87C773.48,-75.99 806.84,-63.5 835.91,-52.62"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="745.85,-82.6 737.71,-89.38 748.3,-89.15 745.85,-82.6"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="test__Controller_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1006.5,-0.5 1006.5,-52.5 1147.5,-52.5 1147.5,-0.5 1006.5,-0.5"/>
-<text text-anchor="start" x="1014.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/EX</text>
-<text text-anchor="start" x="1014.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;Display/EX&#45;Display/test</text>
-<text text-anchor="start" x="1014.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/unit/test_application/test</text>
-<text text-anchor="middle" x="1077" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Controller.cpp</text>
+<polygon fill="white" stroke="black" points="1013.5,-0.5 1013.5,-52.5 1148.5,-52.5 1148.5,-0.5 1013.5,-0.5"/>
+<text text-anchor="start" x="1021.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/EX</text>
+<text text-anchor="start" x="1021.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;Display/EX&#45;Display/test</text>
+<text text-anchor="start" x="1021.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/unit/test_Controller/test</text>
+<text text-anchor="middle" x="1081" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Controller.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M792.29,-91.21C851.27,-82.52 929.14,-69.5 997,-53 1000.12,-52.24 1003.29,-51.43 1006.48,-50.57"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="791.64,-87.77 782.25,-92.68 792.65,-94.7 791.64,-87.77"/>
+<path fill="none" stroke="midnightblue" d="M792.26,-92.13C853.16,-83.67 934.45,-70.56 1005,-53 1007.7,-52.33 1010.44,-51.61 1013.21,-50.84"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="791.71,-88.67 782.28,-93.5 792.66,-95.61 791.71,-88.67"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="test__AtFinder_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1166,-0.5 1166,-52.5 1300,-52.5 1300,-0.5 1166,-0.5"/>
-<text text-anchor="start" x="1174" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/EX</text>
-<text text-anchor="start" x="1174" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;Display/EX&#45;Display/test</text>
-<text text-anchor="start" x="1174" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/unit/test_infrastructure</text>
-<text text-anchor="middle" x="1233" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/test_AtFinder.cpp</text>
+<polygon fill="white" stroke="black" points="1167,-0.5 1167,-52.5 1301,-52.5 1301,-0.5 1167,-0.5"/>
+<text text-anchor="start" x="1175" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/EX</text>
+<text text-anchor="start" x="1175" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;Display/EX&#45;Display/test</text>
+<text text-anchor="start" x="1175" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/unit/test_Infrastructure</text>
+<text text-anchor="middle" x="1234" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/test_AtFinder.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M792.4,-99.09C885.38,-93.3 1032.46,-80.44 1157,-53 1159.85,-52.37 1162.75,-51.67 1165.67,-50.92"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="791.94,-95.61 782.17,-99.71 792.37,-102.6 791.94,-95.61"/>
+<path fill="none" stroke="midnightblue" d="M792.6,-99.11C885.79,-93.33 1033.19,-80.49 1158,-53 1160.85,-52.37 1163.75,-51.67 1166.67,-50.92"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="792.12,-95.63 782.35,-99.73 792.54,-102.62 792.12,-95.63"/>
 </g>
 </g>
 </svg>

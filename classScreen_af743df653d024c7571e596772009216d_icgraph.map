@@ -1,19 +1,18 @@
 <map id="Screen::getNext" name="Screen::getNext">
-<area shape="rect" id="node1" title="Get the next Screen instance in the list." alt="" coords="833,177,960,204"/>
-<area shape="rect" id="node2" href="$classScreenManager.html#a6cc01abb59037b653ca45f130c83c9b3" title="Get the highest Screen ID in the list." alt="" coords="546,152,782,179"/>
-<area shape="rect" id="node3" href="$classScreenManager.html#a38890def1478514514341039b83299ef" title="Get the next screen in the list (sorted by ID)" alt="" coords="268,39,495,65"/>
-<area shape="rect" id="node6" href="$classScreenManager.html#a64ecbfb9232d4051a75ff5abea58ba6d" title="Get the previous screen in the list (sorted by ID)" alt="" coords="277,90,485,131"/>
-<area shape="rect" id="node9" href="$classScreenManager.html#acd4f0a92975819547a21bfc7d6320f6d" title="Get the lowest Screen ID in the list." alt="" coords="548,51,780,77"/>
-<area shape="rect" id="node10" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="551,203,777,229"/>
-<area shape="rect" id="node14" href="$classScreenManager.html#a760f0b958985e3c29f5a3efc81367f89" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="271,409,491,436"/>
-<area shape="rect" id="node16" href="$test__Screen_8cpp.html#a680e2c57d51963c79048644663f58770" title="Create a Screen and check all attributes are valid." alt="" coords="629,304,699,331"/>
-<area shape="rect" id="node17" href="$classScreenManager.html#a515ec6aabc9fefe3c1cfbe734877da1e" title="Destructor for the ScreenManager." alt="" coords="543,355,785,381"/>
-<area shape="rect" id="node8" href="$test__ScreenManager_8cpp.html#ab5ada86d9042a1a62ed2251d66d84ef3" title="Create a list of Screens with ScreenManager." alt="" coords="78,359,147,385"/>
-<area shape="rect" id="node4" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="5,101,220,128"/>
-<area shape="rect" id="node5" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="78,39,147,65"/>
-<area shape="rect" id="node7" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="15,178,211,219"/>
-<area shape="rect" id="node11" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="312,257,451,284"/>
-<area shape="rect" id="node12" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="87,301,138,328"/>
-<area shape="rect" id="node13" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="78,251,147,277"/>
-<area shape="rect" id="node15" href="$classController.html#a908f5f6c24239286e29d4761da509963" title="Method to implement updating a screen." alt="" coords="21,409,204,436"/>
+<area shape="rect" id="node1" title="Get the next Screen instance in the list." alt="" coords="833,183,960,209"/>
+<area shape="rect" id="node2" href="$classScreenManager.html#a6cc01abb59037b653ca45f130c83c9b3" title="Get the highest Screen ID in the list." alt="" coords="546,107,782,133"/>
+<area shape="rect" id="node3" href="$classScreenManager.html#a38890def1478514514341039b83299ef" title="Get the next screen in the list (sorted by ID)" alt="" coords="268,23,495,49"/>
+<area shape="rect" id="node6" href="$classScreenManager.html#a64ecbfb9232d4051a75ff5abea58ba6d" title="Get the previous screen in the list (sorted by ID)" alt="" coords="277,74,485,115"/>
+<area shape="rect" id="node9" href="$classScreenManager.html#acd4f0a92975819547a21bfc7d6320f6d" title="Get the lowest Screen ID in the list." alt="" coords="548,5,780,32"/>
+<area shape="rect" id="node10" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="551,208,777,235"/>
+<area shape="rect" id="node13" href="$classScreenManager.html#a760f0b958985e3c29f5a3efc81367f89" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="271,393,491,420"/>
+<area shape="rect" id="node15" href="$test__Screen_8cpp.html#a680e2c57d51963c79048644663f58770" title="Create a Screen and check all attributes are valid." alt="" coords="629,309,699,336"/>
+<area shape="rect" id="node16" href="$classScreenManager.html#a515ec6aabc9fefe3c1cfbe734877da1e" title="Destructor for the ScreenManager." alt="" coords="543,360,785,387"/>
+<area shape="rect" id="node8" href="$test__ScreenManager_8cpp.html#ab5ada86d9042a1a62ed2251d66d84ef3" title="Create a list of Screens with ScreenManager." alt="" coords="78,292,147,319"/>
+<area shape="rect" id="node4" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="5,99,220,125"/>
+<area shape="rect" id="node5" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="78,23,147,49"/>
+<area shape="rect" id="node7" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="15,201,211,242"/>
+<area shape="rect" id="node11" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="291,343,472,369"/>
+<area shape="rect" id="node12" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="43,343,182,369"/>
+<area shape="rect" id="node14" href="$classController.html#a908f5f6c24239286e29d4761da509963" title="Method to implement updating a screen." alt="" coords="21,393,204,420"/>
 </map>

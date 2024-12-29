@@ -1,8 +1,8 @@
-<map id="/home/runner/work/EX&#45;Display/EX&#45;Display/test/unit/test_screens/test_Screen.cpp" name="/home/runner/work/EX&#45;Display/EX&#45;Display/test/unit/test_screens/test_Screen.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="93,5,272,76"/>
-<area shape="rect" id="node2" href="$Screen_8h.html" title=" " alt="" coords="86,124,165,151"/>
-<area shape="rect" id="node6" title=" " alt="" coords="189,124,293,151"/>
-<area shape="rect" id="node3" href="$ScreenRow_8h.html" title=" " alt="" coords="27,199,133,225"/>
-<area shape="rect" id="node5" href="$Arduino_8h.html" title=" " alt="" coords="78,348,162,375"/>
-<area shape="rect" id="node4" href="$Logger_8h.html" title=" " alt="" coords="5,273,83,300"/>
+<map id="/home/runner/work/EX&#45;Display/EX&#45;Display/test/unit/test_Screen/test_Screen.cpp" name="/home/runner/work/EX&#45;Display/EX&#45;Display/test/unit/test_Screen/test_Screen.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="63,5,302,61"/>
+<area shape="rect" id="node2" href="$Screen_8h.html" title=" " alt="" coords="86,109,165,136"/>
+<area shape="rect" id="node6" title=" " alt="" coords="189,109,293,136"/>
+<area shape="rect" id="node3" href="$ScreenRow_8h.html" title=" " alt="" coords="27,184,133,211"/>
+<area shape="rect" id="node5" href="$Arduino_8h.html" title=" " alt="" coords="78,333,162,360"/>
+<area shape="rect" id="node4" href="$Logger_8h.html" title=" " alt="" coords="5,259,83,285"/>
 </map>

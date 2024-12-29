@@ -1,7 +1,7 @@
 <map id="DisplayManager::getDisplayById" name="DisplayManager::getDisplayById">
 <area shape="rect" id="node1" title="Get a DisplayInterface derived instance by its ID." alt="" coords="596,56,831,83"/>
 <area shape="rect" id="node2" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="381,31,548,57"/>
-<area shape="rect" id="node6" href="$test__DisplayManager_8cpp.html#a086adee0e0e3565707e01f5b61e29dff" title=" " alt="" coords="430,81,499,108"/>
+<area shape="rect" id="node6" href="$test__DisplayManager_8cpp.html#a086adee0e0e3565707e01f5b61e29dff" title="Validate displays can be retrieved by their ID." alt="" coords="430,81,499,108"/>
 <area shape="rect" id="node3" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="269,5,328,32"/>
 <area shape="rect" id="node5" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="264,56,333,83"/>
 <area shape="rect" id="node4" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="5,5,216,32"/>

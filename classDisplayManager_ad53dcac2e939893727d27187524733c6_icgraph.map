@@ -1,0 +1,6 @@
+<map id="DisplayManager::update" name="DisplayManager::update">
+<area shape="rect" id="node1" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="309,31,491,57"/>
+<area shape="rect" id="node2" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="123,31,261,57"/>
+<area shape="rect" id="node3" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="15,5,65,32"/>
+<area shape="rect" id="node4" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="5,56,75,83"/>
+</map>

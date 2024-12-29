@@ -1,12 +1,12 @@
-<map id="/home/runner/work/EX&#45;Display/EX&#45;Display/test/integration/test_interactive_logger/test_AtFinder_Logger.cpp" name="/home/runner/work/EX&#45;Display/EX&#45;Display/test/integration/test_interactive_logger/test_AtFinder_Logger.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="49,5,287,76"/>
-<area shape="rect" id="node2" href="$AtFinder_8h.html" title=" " alt="" coords="43,124,130,151"/>
-<area shape="rect" id="node5" href="$Logger_8h.html" title=" " alt="" coords="99,273,176,300"/>
-<area shape="rect" id="node7" href="$Stream_8h.html" title=" " alt="" coords="97,423,178,449"/>
-<area shape="rect" id="node9" href="$MockCallback_8h.html" title=" " alt="" coords="206,124,407,151"/>
-<area shape="rect" id="node10" title=" " alt="" coords="432,124,536,151"/>
-<area shape="rect" id="node3" href="$CallbackInterface_8h.html" title=" " alt="" coords="206,199,354,225"/>
-<area shape="rect" id="node6" href="$Arduino_8h.html" title=" " alt="" coords="95,348,179,375"/>
-<area shape="rect" id="node4" href="$InputActions_8h.html" title=" " alt="" coords="200,273,315,300"/>
-<area shape="rect" id="node8" title=" " alt="" coords="206,497,333,524"/>
+<map id="/home/runner/work/EX&#45;Display/EX&#45;Display/test/integration/test_InteractiveLogger/test_AtFinder_Logger.cpp" name="/home/runner/work/EX&#45;Display/EX&#45;Display/test/integration/test_InteractiveLogger/test_AtFinder_Logger.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="232,5,479,76"/>
+<area shape="rect" id="node2" href="$AtFinder_8h.html" title=" " alt="" coords="231,124,317,151"/>
+<area shape="rect" id="node5" href="$Logger_8h.html" title=" " alt="" coords="291,273,369,300"/>
+<area shape="rect" id="node7" href="$Stream_8h.html" title=" " alt="" coords="252,423,333,449"/>
+<area shape="rect" id="node9" href="$MockCallback_8h.html" title=" " alt="" coords="5,124,207,151"/>
+<area shape="rect" id="node10" title=" " alt="" coords="443,124,547,151"/>
+<area shape="rect" id="node3" href="$CallbackInterface_8h.html" title=" " alt="" coords="68,199,216,225"/>
+<area shape="rect" id="node6" href="$Arduino_8h.html" title=" " alt="" coords="212,348,296,375"/>
+<area shape="rect" id="node4" href="$InputActions_8h.html" title=" " alt="" coords="51,273,166,300"/>
+<area shape="rect" id="node8" title=" " alt="" coords="151,497,277,524"/>
 </map>

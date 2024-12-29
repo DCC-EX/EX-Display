@@ -140,39 +140,39 @@ var sectionId = 'dynsection-8';
 <path fill="none" stroke="midnightblue" d="M121.14,-174C133.95,-174 147.75,-174 161.38,-174"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="161.76,-177.5 171.76,-174 161.76,-170.5 161.76,-177.5"/>
 </g>
-<!-- Node39 -->
+<!-- Node44 -->
 <g id="node15" class="node">
-<title>Node39</title>
+<title>Node44</title>
 <g id="a_node15"><a xlink:href="classTFT__eSPIDisplay.html#ab7db81e0c696ad849833528a4e1212df" target="_top" xlink:title="Perform any initial once off setup or configuration here and call only once.">
 <polygon fill="white" stroke="black" points="186.5,-126.5 186.5,-145.5 315.5,-145.5 315.5,-126.5 186.5,-126.5"/>
 <text text-anchor="middle" x="251" y="-133.5" font-family="Helvetica,sans-Serif" font-size="10.00">TFT_eSPIDisplay::begin</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node39 -->
+<!-- Node1&#45;&gt;Node44 -->
 <g id="edge15" class="edge">
-<title>Node1&#45;&gt;Node39</title>
+<title>Node1&#45;&gt;Node44</title>
 <path fill="none" stroke="midnightblue" d="M109.07,-164.41C134.5,-159.28 166,-152.93 192.77,-147.54"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="193.66,-150.93 202.78,-145.52 192.28,-144.07 193.66,-150.93"/>
 </g>
-<!-- Node35 -->
+<!-- Node40 -->
 <g id="node16" class="node">
-<title>Node35</title>
+<title>Node40</title>
 <g id="a_node16"><a xlink:href="classDisplayInterface.html#a3649a768b8ca59c3070f56aed1fe42c2" target="_top" xlink:title="Get the ID of this display instance.">
 <polygon fill="white" stroke="black" points="187,-88.5 187,-107.5 315,-107.5 315,-88.5 187,-88.5"/>
 <text text-anchor="middle" x="251" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisplayInterface::getId</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node35 -->
+<!-- Node1&#45;&gt;Node40 -->
 <g id="edge17" class="edge">
-<title>Node1&#45;&gt;Node35</title>
+<title>Node1&#45;&gt;Node40</title>
 <path fill="none" stroke="midnightblue" d="M74.37,-164.38C92.06,-151.62 125.31,-129.28 157,-117 163.76,-114.38 170.94,-112.1 178.21,-110.12"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="179.29,-113.45 188.13,-107.6 177.57,-106.67 179.29,-113.45"/>
 </g>
-<!-- Node40 -->
+<!-- Node45 -->
 <g id="node17" class="node">
-<title>Node40</title>
+<title>Node45</title>
 <g id="a_node17"><a xlink:href="classTFT__eSPIDisplay.html#ab3084ef6b927bc9dbc0991088dda2c6c" target="_top" xlink:title="Get the TFT_eSPI instance created by this instance &#45; needed for the touch interface.">
 <polygon fill="white" stroke="black" points="183.5,-39 183.5,-69 318.5,-69 318.5,-39 183.5,-39"/>
 <text text-anchor="start" x="191.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">TFT_eSPIDisplay::getTFT</text>
@@ -180,24 +180,24 @@ var sectionId = 'dynsection-8';
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node40 -->
+<!-- Node1&#45;&gt;Node45 -->
 <g id="edge18" class="edge">
-<title>Node1&#45;&gt;Node40</title>
+<title>Node1&#45;&gt;Node45</title>
 <path fill="none" stroke="midnightblue" d="M68.45,-164.27C82.76,-144.97 117.49,-101.77 157,-79 162.2,-76.01 167.76,-73.36 173.49,-71.02"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="175.12,-74.15 183.26,-67.38 172.67,-67.6 175.12,-74.15"/>
 </g>
-<!-- Node41 -->
+<!-- Node46 -->
 <g id="node18" class="node">
-<title>Node41</title>
+<title>Node46</title>
 <g id="a_node18"><a xlink:href="classTFT__eSPIDisplay.html#ad4f7da2ea80e0fd0206c84f4a787bfb2" target="_top" xlink:title="Test if the TFT_eSPI instance has been initialised &#45; needed for the touch interface.">
 <polygon fill="white" stroke="black" points="170.5,-0.5 170.5,-19.5 331.5,-19.5 331.5,-0.5 170.5,-0.5"/>
 <text text-anchor="middle" x="251" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">TFT_eSPIDisplay::tftInitialised</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node41 -->
+<!-- Node1&#45;&gt;Node46 -->
 <g id="edge19" class="edge">
-<title>Node1&#45;&gt;Node41</title>
+<title>Node1&#45;&gt;Node46</title>
 <path fill="none" stroke="midnightblue" d="M64.84,-164.32C74.48,-137.9 105.08,-64.14 157,-29 159.96,-27 163.08,-25.2 166.31,-23.59"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="167.93,-26.7 175.7,-19.5 165.14,-20.28 167.93,-26.7"/>
 </g>
@@ -304,33 +304,33 @@ var sectionId = 'dynsection-8';
 <path fill="none" stroke="midnightblue" d="M482.59,-163.82C508.52,-167.29 553.6,-173.31 590.23,-178.21"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="589.93,-181.7 600.31,-179.56 590.86,-174.76 589.93,-181.7"/>
 </g>
-<!-- Node18 -->
+<!-- Node23 -->
 <g id="node13" class="node">
-<title>Node18</title>
+<title>Node23</title>
 <g id="a_node13"><a xlink:href="classConfigurator.html#a82c65d6d040b717d64520903c788dd79" target="_top" xlink:title="Get the Controller instance for this Configurator.">
 <polygon fill="white" stroke="black" points="576.5,-138.5 576.5,-157.5 722.5,-157.5 722.5,-138.5 576.5,-138.5"/>
 <text text-anchor="middle" x="649.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">Configurator::getController</text>
 </a>
 </g>
 </g>
-<!-- Node11&#45;&gt;Node18 -->
+<!-- Node11&#45;&gt;Node23 -->
 <g id="edge13" class="edge">
-<title>Node11&#45;&gt;Node18</title>
+<title>Node11&#45;&gt;Node23</title>
 <path fill="none" stroke="midnightblue" d="M482.59,-159.53C503.01,-158.11 535.31,-155.87 566.01,-153.73"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="566.61,-157.2 576.34,-153.02 566.12,-150.22 566.61,-157.2"/>
 </g>
-<!-- Node19 -->
+<!-- Node24 -->
 <g id="node14" class="node">
-<title>Node19</title>
+<title>Node24</title>
 <g id="a_node14"><a xlink:href="classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" target="_top" xlink:title="Call all one&#45;shot initialisation or begin methods on startup.">
 <polygon fill="white" stroke="red" points="587,-100.5 587,-119.5 712,-119.5 712,-100.5 587,-100.5"/>
 <text text-anchor="middle" x="649.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">Configurator::initialise</text>
 </a>
 </g>
 </g>
-<!-- Node11&#45;&gt;Node19 -->
+<!-- Node11&#45;&gt;Node24 -->
 <g id="edge14" class="edge">
-<title>Node11&#45;&gt;Node19</title>
+<title>Node11&#45;&gt;Node24</title>
 <path fill="none" stroke="midnightblue" d="M482.58,-155C505.53,-148.49 543.33,-137.85 576,-129 584.31,-126.75 593.16,-124.4 601.72,-122.14"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="602.8,-125.47 611.59,-119.55 601.03,-118.7 602.8,-125.47"/>
 </g>

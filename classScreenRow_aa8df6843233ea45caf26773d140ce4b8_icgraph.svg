@@ -113,23 +113,23 @@ var sectionId = 'dynsection-2';
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" target="_top" xlink:title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly.">
-<polygon fill="white" stroke="black" points="218.5,-105.5 218.5,-124.5 270.5,-124.5 270.5,-105.5 218.5,-105.5"/>
-<text text-anchor="middle" x="244.5" y="-112.5" font-family="Helvetica,sans-Serif" font-size="10.00">TEST_F</text>
+<polygon fill="white" stroke="black" points="218.5,-95.5 218.5,-114.5 270.5,-114.5 270.5,-95.5 218.5,-95.5"/>
+<text text-anchor="middle" x="244.5" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">TEST_F</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
 <g id="edge10" class="edge">
 <title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M524.58,-103.33C476.52,-102.53 410.24,-102.27 352,-105 324.17,-106.3 292.39,-109.51 270.84,-111.95"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="524.79,-106.83 534.85,-103.51 524.91,-99.83 524.79,-106.83"/>
+<path fill="none" stroke="midnightblue" d="M524.62,-105C447.21,-105 323.62,-105 270.79,-105"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="524.75,-108.5 534.75,-105 524.75,-101.5 524.75,-108.5"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="classController.html#a7d04c17913f04f99429aa29fa8505484" target="_top" xlink:title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,...">
-<polygon fill="white" stroke="black" points="373.5,-38.5 373.5,-57.5 477.5,-57.5 477.5,-38.5 373.5,-38.5"/>
-<text text-anchor="middle" x="425.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">Controller::update</text>
+<g id="a_node9"><a xlink:href="classDisplayManager.html#ad53dcac2e939893727d27187524733c6" target="_top" xlink:title="Call this routinely to ensure all displays are updated with screens.">
+<polygon fill="white" stroke="black" points="357.5,-38.5 357.5,-57.5 493.5,-57.5 493.5,-38.5 357.5,-38.5"/>
+<text text-anchor="middle" x="425.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisplayManager::update</text>
 </a>
 </g>
 </g>
@@ -139,18 +139,18 @@ var sectionId = 'dynsection-2';
 <path fill="none" stroke="midnightblue" d="M555.63,-91.99C538.52,-85.83 517.74,-78.44 499,-72 484.83,-67.13 469.05,-61.88 455.83,-57.54"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="554.65,-95.35 565.24,-95.45 557.02,-88.77 554.65,-95.35"/>
 </g>
-<!-- Node12 -->
-<g id="node12" class="node">
-<title>Node12</title>
-<g id="a_node12"><a xlink:href="classScreen.html#a4243bc17596af96415b09ac48205676d" target="_top" xlink:title="Destructor for the Screen instance Will automatically clean up the associated ScreenRow list.">
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="classScreen.html#a4243bc17596af96415b09ac48205676d" target="_top" xlink:title="Destructor for the Screen instance Will automatically clean up the associated ScreenRow list.">
 <polygon fill="white" stroke="black" points="377,-0.5 377,-19.5 474,-19.5 474,-0.5 377,-0.5"/>
 <text text-anchor="middle" x="425.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Screen::~Screen</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node12 -->
-<g id="edge14" class="edge">
-<title>Node1&#45;&gt;Node12</title>
+<!-- Node1&#45;&gt;Node13 -->
+<g id="edge15" class="edge">
+<title>Node1&#45;&gt;Node13</title>
 <path fill="none" stroke="midnightblue" d="M575.43,-88.03C558.12,-70.73 529.02,-44.33 499,-29 491.24,-25.04 482.57,-21.85 474,-19.29"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="573.01,-90.57 582.51,-95.26 578.01,-85.67 573.01,-90.57"/>
 </g>
@@ -214,38 +214,53 @@ var sectionId = 'dynsection-2';
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge8" class="edge">
 <title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M341.72,-119.84C315.87,-118.54 289.27,-117.2 270.61,-116.26"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="341.79,-123.35 351.95,-120.35 342.14,-116.35 341.79,-123.35"/>
+<path fill="none" stroke="midnightblue" d="M341.72,-115.21C315.87,-112.47 289.27,-109.65 270.61,-107.67"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="341.64,-118.72 351.95,-116.3 342.38,-111.76 341.64,-118.72"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" target="_top" xlink:title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions.">
-<polygon fill="white" stroke="black" points="225.5,-57.5 225.5,-76.5 263.5,-76.5 263.5,-57.5 225.5,-57.5"/>
-<text text-anchor="middle" x="244.5" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">loop</text>
+<g id="a_node10"><a xlink:href="classController.html#a7d04c17913f04f99429aa29fa8505484" target="_top" xlink:title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,...">
+<polygon fill="white" stroke="black" points="192.5,-38.5 192.5,-57.5 296.5,-57.5 296.5,-38.5 192.5,-38.5"/>
+<text text-anchor="middle" x="244.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">Controller::update</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node10 -->
 <g id="edge12" class="edge">
 <title>Node9&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M363.06,-54.52C328.09,-58.23 286.77,-62.62 263.6,-65.08"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="363.63,-57.98 373.21,-53.44 362.89,-51.02 363.63,-57.98"/>
+<path fill="none" stroke="midnightblue" d="M347.32,-48C330.14,-48 312.35,-48 296.53,-48"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="347.34,-51.5 357.34,-48 347.34,-44.5 347.34,-51.5"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" target="_top" xlink:title="Ensure update() method correctly calls the mock callback.">
-<polygon fill="white" stroke="black" points="218.5,-19.5 218.5,-38.5 270.5,-38.5 270.5,-19.5 218.5,-19.5"/>
-<text text-anchor="middle" x="244.5" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00">TEST_F</text>
+<g id="a_node11"><a xlink:href="EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" target="_top" xlink:title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions.">
+<polygon fill="white" stroke="black" points="49.5,-57.5 49.5,-76.5 87.5,-76.5 87.5,-57.5 49.5,-57.5"/>
+<text text-anchor="middle" x="68.5" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">loop</text>
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node11 -->
+<!-- Node10&#45;&gt;Node11 -->
 <g id="edge13" class="edge">
-<title>Node9&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M363.17,-41.49C331.63,-38.14 294.9,-34.24 270.97,-31.7"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="362.89,-44.98 373.21,-42.56 363.63,-38.02 362.89,-44.98"/>
+<title>Node10&#45;&gt;Node11</title>
+<path fill="none" stroke="midnightblue" d="M182.09,-54.71C148.73,-58.35 109.87,-62.59 87.63,-65.02"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="182.67,-58.16 192.24,-53.6 181.91,-51.2 182.67,-58.16"/>
+</g>
+<!-- Node12 -->
+<g id="node12" class="node">
+<title>Node12</title>
+<g id="a_node12"><a xlink:href="test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" target="_top" xlink:title="Ensure update() method correctly calls the mock callback.">
+<polygon fill="white" stroke="black" points="42.5,-19.5 42.5,-38.5 94.5,-38.5 94.5,-19.5 42.5,-19.5"/>
+<text text-anchor="middle" x="68.5" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00">TEST_F</text>
+</a>
+</g>
+</g>
+<!-- Node10&#45;&gt;Node12 -->
+<g id="edge14" class="edge">
+<title>Node10&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M182.24,-41.31C152.2,-38.03 117.65,-34.26 94.8,-31.76"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="181.91,-44.8 192.24,-42.4 182.67,-37.84 181.91,-44.8"/>
 </g>
 </g>
 </svg>

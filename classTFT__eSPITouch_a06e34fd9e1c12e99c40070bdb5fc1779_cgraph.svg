@@ -94,33 +94,33 @@ var sectionId = 'dynsection-6';
 <path fill="none" stroke="midnightblue" d="M230.32,-247.81C252.64,-264.25 297.8,-297.5 324.61,-317.25"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="322.82,-320.27 332.95,-323.39 326.97,-314.64 322.82,-320.27"/>
 </g>
-<!-- Node9 -->
+<!-- Node14 -->
 <g id="node7" class="node">
-<title>Node9</title>
+<title>Node14</title>
 <g id="a_node7"><a xlink:href="classConfigurator.html#a82c65d6d040b717d64520903c788dd79" target="_top" xlink:title="Get the Controller instance for this Configurator.">
 <polygon fill="white" stroke="black" points="274,-228.5 274,-247.5 420,-247.5 420,-228.5 274,-228.5"/>
 <text text-anchor="middle" x="347" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">Configurator::getController</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node9 -->
+<!-- Node2&#45;&gt;Node14 -->
 <g id="edge6" class="edge">
-<title>Node2&#45;&gt;Node9</title>
+<title>Node2&#45;&gt;Node14</title>
 <path fill="none" stroke="midnightblue" d="M238.01,-238C245.48,-238 254.41,-238 263.89,-238"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="263.93,-241.5 273.93,-238 263.93,-234.5 263.93,-241.5"/>
 </g>
-<!-- Node10 -->
+<!-- Node15 -->
 <g id="node8" class="node">
-<title>Node10</title>
+<title>Node15</title>
 <g id="a_node8"><a xlink:href="classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" target="_top" xlink:title="Call all one&#45;shot initialisation or begin methods on startup.">
 <polygon fill="white" stroke="black" points="284.5,-152.5 284.5,-171.5 409.5,-171.5 409.5,-152.5 284.5,-152.5"/>
 <text text-anchor="middle" x="347" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">Configurator::initialise</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node10 -->
+<!-- Node2&#45;&gt;Node15 -->
 <g id="edge7" class="edge">
-<title>Node2&#45;&gt;Node10</title>
+<title>Node2&#45;&gt;Node15</title>
 <path fill="none" stroke="midnightblue" d="M233.34,-228.37C255.44,-215.35 295.06,-192.01 320.94,-176.76"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="322.96,-179.64 329.79,-171.55 319.4,-173.61 322.96,-179.64"/>
 </g>
@@ -139,153 +139,153 @@ var sectionId = 'dynsection-6';
 <path fill="none" stroke="midnightblue" d="M372.14,-342.59C393.83,-350.94 426.68,-362.94 456,-371 465.68,-373.66 476.02,-376.12 486.16,-378.32"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="485.72,-381.81 496.22,-380.44 487.16,-374.96 485.72,-381.81"/>
 </g>
-<!-- Node6 -->
+<!-- Node11 -->
 <g id="node5" class="node">
-<title>Node6</title>
+<title>Node11</title>
 <g id="a_node5"><a xlink:href="classDisplayManager.html#a270daf83b6af22558fde42034254b351" target="_top" xlink:title="Call the begin() method for all associated Display instances.">
 <polygon fill="white" stroke="red" points="468,-342.5 468,-361.5 635,-361.5 635,-342.5 468,-342.5"/>
 <text text-anchor="middle" x="551.5" y="-349.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisplayManager::startDisplays</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node6 -->
+<!-- Node3&#45;&gt;Node11 -->
 <g id="edge4" class="edge">
-<title>Node3&#45;&gt;Node6</title>
+<title>Node3&#45;&gt;Node11</title>
 <path fill="none" stroke="midnightblue" d="M396.25,-337.53C414.73,-339.26 436.49,-341.3 457.75,-343.3"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="457.51,-346.79 467.8,-344.24 458.17,-339.82 457.51,-346.79"/>
 </g>
-<!-- Node7 -->
+<!-- Node12 -->
 <g id="node6" class="node">
-<title>Node7</title>
+<title>Node12</title>
 <g id="a_node6"><a xlink:href="classInputManager.html#aa180ec01ef4c17f0f9a3d681dc99817c" target="_top" xlink:title="Start the configured input &#45; calls the InputInterface::begin() method.">
 <polygon fill="white" stroke="red" points="483,-304.5 483,-323.5 620,-323.5 620,-304.5 483,-304.5"/>
 <text text-anchor="middle" x="551.5" y="-311.5" font-family="Helvetica,sans-Serif" font-size="10.00">InputManager::startInput</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node7 -->
+<!-- Node3&#45;&gt;Node12 -->
 <g id="edge5" class="edge">
-<title>Node3&#45;&gt;Node7</title>
+<title>Node3&#45;&gt;Node12</title>
 <path fill="none" stroke="midnightblue" d="M396.25,-328.47C419.07,-326.33 446.9,-323.72 472.6,-321.31"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="473.08,-324.78 482.71,-320.36 472.43,-317.81 473.08,-324.78"/>
 </g>
-<!-- Node11 -->
+<!-- Node16 -->
 <g id="node9" class="node">
-<title>Node11</title>
+<title>Node16</title>
 <g id="a_node9"><a xlink:href="classDisplayManager.html#a9ade9b696372a53b8b716d29d7b53c70" target="_top" xlink:title="Parses the displays configured in myConfig.h and creates the list of displays.">
 <polygon fill="white" stroke="red" points="464,-266.5 464,-285.5 639,-285.5 639,-266.5 464,-266.5"/>
 <text text-anchor="middle" x="551.5" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisplayManager::createDisplays</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node11 -->
+<!-- Node15&#45;&gt;Node16 -->
 <g id="edge8" class="edge">
-<title>Node10&#45;&gt;Node11</title>
+<title>Node15&#45;&gt;Node16</title>
 <path fill="none" stroke="midnightblue" d="M361.2,-171.56C376,-182.47 400.47,-201.13 420,-219 437.16,-234.7 435.64,-245.74 456,-257 460.17,-259.31 464.59,-261.34 469.14,-263.12"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="468.05,-266.45 478.64,-266.46 470.36,-259.84 468.05,-266.45"/>
 </g>
-<!-- Node16 -->
+<!-- Node21 -->
 <g id="node10" class="node">
-<title>Node16</title>
+<title>Node21</title>
 <g id="a_node10"><a xlink:href="classInputManager.html#af956225a4057143bf0704781e036be09" target="_top" xlink:title="Call once to create the InputInterface derived input.">
 <polygon fill="white" stroke="red" points="478.5,-228.5 478.5,-247.5 624.5,-247.5 624.5,-228.5 478.5,-228.5"/>
 <text text-anchor="middle" x="551.5" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">InputManager::createInput</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node16 -->
+<!-- Node15&#45;&gt;Node21 -->
 <g id="edge9" class="edge">
-<title>Node10&#45;&gt;Node16</title>
+<title>Node15&#45;&gt;Node21</title>
 <path fill="none" stroke="midnightblue" d="M362.75,-171.55C382.98,-184.24 420.85,-206.49 456,-219 463.62,-221.71 471.73,-224.08 479.88,-226.13"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="479.27,-229.58 489.81,-228.48 480.88,-222.77 479.27,-229.58"/>
 </g>
-<!-- Node23 -->
+<!-- Node28 -->
 <g id="node11" class="node">
-<title>Node23</title>
+<title>Node28</title>
 <g id="a_node11"><a xlink:href="classDisplayManager.html#a0dcf69d16599029ba34bf31c0c666390" target="_top" xlink:title="Get a DisplayInterface derived instance by its ID.">
 <polygon fill="white" stroke="red" points="463.5,-190.5 463.5,-209.5 639.5,-209.5 639.5,-190.5 463.5,-190.5"/>
 <text text-anchor="middle" x="551.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisplayManager::getDisplayById</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node23 -->
+<!-- Node15&#45;&gt;Node28 -->
 <g id="edge10" class="edge">
-<title>Node10&#45;&gt;Node23</title>
+<title>Node15&#45;&gt;Node28</title>
 <path fill="none" stroke="midnightblue" d="M398.84,-171.54C426.4,-176.71 460.65,-183.14 489.63,-188.58"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="489.17,-192.05 499.64,-190.46 490.46,-185.17 489.17,-192.05"/>
 </g>
-<!-- Node24 -->
+<!-- Node29 -->
 <g id="node12" class="node">
-<title>Node24</title>
+<title>Node29</title>
 <g id="a_node12"><a xlink:href="classInputManager.html#a2672882f95872798fd07d4d98f82063b" target="_top" xlink:title="Get the configured InputInterface.">
 <polygon fill="white" stroke="black" points="486,-152.5 486,-171.5 617,-171.5 617,-152.5 486,-152.5"/>
 <text text-anchor="middle" x="551.5" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">InputManager::getInput</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node24 -->
+<!-- Node15&#45;&gt;Node29 -->
 <g id="edge11" class="edge">
-<title>Node10&#45;&gt;Node24</title>
+<title>Node15&#45;&gt;Node29</title>
 <path fill="none" stroke="midnightblue" d="M409.58,-162C430.37,-162 453.82,-162 475.53,-162"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="475.7,-165.5 485.7,-162 475.7,-158.5 475.7,-165.5"/>
 </g>
-<!-- Node25 -->
+<!-- Node30 -->
 <g id="node13" class="node">
-<title>Node25</title>
+<title>Node30</title>
 <g id="a_node13"><a xlink:href="classInputInterface.html#a150a075ce0c5a95dc4fd15ccd1933d26" target="_top" xlink:title="Test if this InputInterface requires a display instance &#45; needed for TFT_eSPI as it shares the instan...">
 <polygon fill="white" stroke="black" points="473,-114.5 473,-133.5 630,-133.5 630,-114.5 473,-114.5"/>
 <text text-anchor="middle" x="551.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">InputInterface::needsDisplay</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node25 -->
+<!-- Node15&#45;&gt;Node30 -->
 <g id="edge12" class="edge">
-<title>Node10&#45;&gt;Node25</title>
+<title>Node15&#45;&gt;Node30</title>
 <path fill="none" stroke="midnightblue" d="M398.84,-152.46C426.4,-147.29 460.65,-140.86 489.63,-135.42"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="490.46,-138.83 499.64,-133.54 489.17,-131.95 490.46,-138.83"/>
 </g>
-<!-- Node26 -->
+<!-- Node31 -->
 <g id="node14" class="node">
-<title>Node26</title>
+<title>Node31</title>
 <g id="a_node14"><a xlink:href="classInputManager.html#a27c7bc043eb9fbb8c7700624852220f6" target="_top" xlink:title="Set the display interface to retrieve required attributes &#45; note this should only be required for TFT...">
 <polygon fill="white" stroke="red" points="480.5,-76.5 480.5,-95.5 622.5,-95.5 622.5,-76.5 480.5,-76.5"/>
 <text text-anchor="middle" x="551.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">InputManager::setDisplay</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node26 -->
+<!-- Node15&#45;&gt;Node31 -->
 <g id="edge13" class="edge">
-<title>Node10&#45;&gt;Node26</title>
+<title>Node15&#45;&gt;Node31</title>
 <path fill="none" stroke="midnightblue" d="M362.75,-152.45C382.98,-139.76 420.85,-117.51 456,-105 463.62,-102.29 471.73,-99.92 479.88,-97.87"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="480.88,-101.23 489.81,-95.52 479.27,-94.42 480.88,-101.23"/>
 </g>
-<!-- Node29 -->
+<!-- Node34 -->
 <g id="node15" class="node">
-<title>Node29</title>
+<title>Node34</title>
 <g id="a_node15"><a xlink:href="classAtFinder.html#ac50442f56c76cd6bd05da52db7ba8910" target="_top" xlink:title="Set the logger instance to use for diagnostic logging.">
 <polygon fill="white" stroke="black" points="496,-38.5 496,-57.5 607,-57.5 607,-38.5 496,-38.5"/>
 <text text-anchor="middle" x="551.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">AtFinder::setLogger</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node29 -->
+<!-- Node15&#45;&gt;Node34 -->
 <g id="edge14" class="edge">
-<title>Node10&#45;&gt;Node29</title>
+<title>Node15&#45;&gt;Node34</title>
 <path fill="none" stroke="midnightblue" d="M355.79,-152.37C372.13,-132.87 412.14,-88.73 456,-67 465.32,-62.38 475.68,-58.89 486.03,-56.24"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="486.96,-59.62 495.92,-53.96 485.39,-52.8 486.96,-59.62"/>
 </g>
-<!-- Node30 -->
+<!-- Node35 -->
 <g id="node16" class="node">
-<title>Node30</title>
+<title>Node35</title>
 <g id="a_node16"><a xlink:href="classAtFinder.html#abadf56235ed457d74fff16dfdcd6d693" target="_top" xlink:title="Setup the AtFinder parser.">
 <polygon fill="white" stroke="black" points="506.5,-0.5 506.5,-19.5 596.5,-19.5 596.5,-0.5 506.5,-0.5"/>
 <text text-anchor="middle" x="551.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">AtFinder::setup</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node30 -->
+<!-- Node15&#45;&gt;Node35 -->
 <g id="edge15" class="edge">
-<title>Node10&#45;&gt;Node30</title>
+<title>Node15&#45;&gt;Node35</title>
 <path fill="none" stroke="midnightblue" d="M352.75,-152.39C365.58,-127.5 403.56,-60.69 456,-29 468.1,-21.69 482.51,-17.13 496.38,-14.31"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="497.11,-17.74 506.35,-12.55 495.89,-10.84 497.11,-17.74"/>
 </g>

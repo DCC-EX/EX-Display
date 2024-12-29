@@ -1,8 +1,12 @@
 <map id="Controller::begin" name="Controller::begin">
-<area shape="rect" id="node1" title="Call once to start displays and input." alt="" coords="5,56,136,83"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="184,5,439,32"/>
-<area shape="rect" id="node4" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="200,56,423,83"/>
-<area shape="rect" id="node5" href="$classInputManager.html#aa180ec01ef4c17f0f9a3d681dc99817c" title="Start the configured input &#45; calls the InputInterface::begin() method." alt="" coords="220,107,403,133"/>
-<area shape="rect" id="node3" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="487,31,676,57"/>
-<area shape="rect" id="node6" href="$classInputInterface.html#a3a54545cc1cd9a852ed6b598aea53b11" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="503,107,660,133"/>
+<area shape="rect" id="node1" title="Call once to start displays and input." alt="" coords="5,122,136,149"/>
+<area shape="rect" id="node2" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="184,71,439,98"/>
+<area shape="rect" id="node8" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="200,122,423,149"/>
+<area shape="rect" id="node9" href="$classInputManager.html#aa180ec01ef4c17f0f9a3d681dc99817c" title="Start the configured input &#45; calls the InputInterface::begin() method." alt="" coords="220,173,403,199"/>
+<area shape="rect" id="node3" href="$classDisplayManager.html#ab5225aac5f432dd65258e1d568bde88d" title="Manually deselects SPI displays that require manual selecting via the CS pin &#45; sets pin high." alt="" coords="513,5,711,47"/>
+<area shape="rect" id="node6" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="487,71,737,98"/>
+<area shape="rect" id="node7" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="517,122,707,149"/>
+<area shape="rect" id="node4" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="833,15,932,42"/>
+<area shape="rect" id="node5" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="785,67,980,94"/>
+<area shape="rect" id="node10" href="$classInputInterface.html#a3a54545cc1cd9a852ed6b598aea53b11" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="533,173,691,199"/>
 </map>

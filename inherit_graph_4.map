@@ -1,5 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="5,31,135,57"/>
+<area shape="rect" id="node1" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="5,56,135,83"/>
 <area shape="rect" id="node2" href="$classMockDisplay.html" title="Mock physical display class." alt="" coords="194,5,301,32"/>
-<area shape="rect" id="node3" href="$classTFT__eSPIDisplay.html" title="Display class for TFT_eSPI based displays." alt="" coords="183,56,312,83"/>
+<area shape="rect" id="node3" href="$classMockSPIDisplay.html" title="Mock physical display class for an SPI device Use this mock to test manual switching between SPI devi..." alt="" coords="184,56,311,83"/>
+<area shape="rect" id="node4" href="$classTFT__eSPIDisplay.html" title="Display class for TFT_eSPI based displays." alt="" coords="183,107,312,133"/>
 </map>

@@ -1,10 +1,10 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/test/mocks/MockInput.h" name="/home/runner/work/EX&#45;Display/EX&#45;Display/test/mocks/MockInput.h">
-<area shape="rect" id="node1" title=" " alt="" coords="197,5,376,61"/>
-<area shape="rect" id="node2" href="$InputInterface_8h.html" title=" " alt="" coords="149,109,275,136"/>
-<area shape="rect" id="node8" title=" " alt="" coords="299,109,426,136"/>
-<area shape="rect" id="node3" href="$CallbackInterface_8h.html" title=" " alt="" coords="82,184,230,211"/>
+<area shape="rect" id="node1" title=" " alt="" coords="279,5,457,61"/>
+<area shape="rect" id="node2" href="$InputInterface_8h.html" title=" " alt="" coords="197,109,323,136"/>
+<area shape="rect" id="node7" title=" " alt="" coords="305,408,431,435"/>
+<area shape="rect" id="node3" href="$CallbackInterface_8h.html" title=" " alt="" coords="74,184,222,211"/>
 <area shape="rect" id="node4" href="$InputActions_8h.html" title=" " alt="" coords="5,259,120,285"/>
-<area shape="rect" id="node5" href="$Logger_8h.html" title=" " alt="" coords="220,259,297,285"/>
-<area shape="rect" id="node7" href="$DisplayInterface_8h.html" title=" " alt="" coords="305,184,447,211"/>
-<area shape="rect" id="node6" href="$Arduino_8h.html" title=" " alt="" coords="161,333,245,360"/>
+<area shape="rect" id="node5" href="$Logger_8h.html" title=" " alt="" coords="221,259,299,285"/>
+<area shape="rect" id="node8" href="$DisplayInterface_8h.html" title=" " alt="" coords="297,184,439,211"/>
+<area shape="rect" id="node6" href="$Arduino_8h.html" title=" " alt="" coords="218,333,302,360"/>
 </map>
