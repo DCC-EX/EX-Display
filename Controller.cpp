@@ -171,6 +171,6 @@ void Controller::_selectNextScreen(DisplayInterface *display) {
     nextId = _screenManager->getNextScreen(screen)->getId();
   }
   display->setScreenId(nextId);
-  LOG(LogLevel::DEBUG, "Controller::_selectPreviousScreen: _displayId=%d|screenId=%d|nextId=%d", display->getId(),
+  LOG(LogLevel::DEBUG, "Controller::_selectNextScreen: _displayId=%d|screenId=%d|nextId=%d", display->getId(),
       screenId, nextId);
 }

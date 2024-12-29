@@ -66,7 +66,10 @@ public:
 
   /// @brief Set the Screen ID this display is currently displaying
   /// @param screenId Screen ID
-  void setScreenId(int screenId) { _screenId = screenId; }
+  void setScreenId(int screenId) {
+    _needsRedraw = true;
+    _screenId = screenId;
+  }
 
   /// @brief Get the Screen ID this display is currently displaing
   /// @return Screen ID
@@ -75,6 +78,14 @@ public:
   /// @brief Get the defined CS pin for this display to see if it needs manual SPI switching
   /// @return Pin number of the SPI CS pin for this display (default -1 for no switching)
   int getCSPin() { return _csPin; }
+
+  /// @brief Set the flag for whether this display needs redrawing or not - individual row updates are not affected
+  /// @param redraw true if entire redraw, otherwise false
+  void setNeedsRedraw(bool redraw) { _needsRedraw = redraw; }
+
+  /// @brief Test if this display needs an entire redraw
+  /// @return true|false
+  bool needsRedraw() { return _needsRedraw; }
 
   /// @brief Destructor for a DisplayInterface
   virtual ~DisplayInterface() = default;
@@ -107,6 +118,8 @@ protected:
   /// @brief If there are more than one SPI displays that libraries don't officially support, the CS pin can be provided
   /// to switch between them (default -1 disables this)
   int _csPin = -1;
+  /// @brief Flag that this display needs redrawing - needed for switching between screens
+  bool _needsRedraw = true;
 };
 
 #endif // DISPLAYINTERFACE_H

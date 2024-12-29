@@ -2,11 +2,14 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.14"
+#define VERSION "0.0.15"
 
+// 0.0.15 includes:
+//  - Fix missing redraw functionality when switching screens
 // 0.0.14 includes:
 //  - Major rewrite using OOP
 //  - Swap display/screen terminology - screen is logical from EX-CommandStation, display is physical
+//  - Basic function of a single screen 0 to a single display 0
 //  - Add tests
 // 0.0.13 includes:
 //  - Improved user configuration
