@@ -60,6 +60,9 @@ TEST_F(InputManagerTests, CreateMockInput) {
   // Start it
   inputManager->startInput();
 
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(input);
+
   // Clean up - the destructor should delete the MockInput also
   delete inputManager;
 }

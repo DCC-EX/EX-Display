@@ -51,6 +51,10 @@ TEST_F(ConfiguratorTests, CreateConfiguration) {
 
   // Validate the DisplayManager is created
   EXPECT_NE(configurator.getDisplayManager(), nullptr);
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&console);
+  testing::Mock::VerifyAndClearExpectations(&commandStation);
 }
 
 /// @brief Ensure the Configurator is created with the provided log level set

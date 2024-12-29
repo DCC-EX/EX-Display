@@ -66,7 +66,41 @@ void DisplayManager::displayStartupInfo(const char *version) {
     return;
   }
   for (auto *display = _firstDisplay; display; display = display->getNext()) {
+    // Select this SPI display if necessary
+    _selectSPIDisplay(display);
     display->displayStartupInfo(version);
+    // Deselect this SPI display if necessary
+    _deselectSPIDisplay(display);
+  }
+}
+
+void DisplayManager::update(ScreenManager *screenManager) {
+  // Do nothing if there is no ScreenManager with Screen info
+  if (screenManager == nullptr) {
+    return;
+  }
+  // Iterate through each display
+  for (auto *display = _firstDisplay; display; display = display->getNext()) {
+    // Select this SPI display if necessary
+    _selectSPIDisplay(display);
+    // If the screen ID for this display is invalid, default to the same ID
+    int screenId = display->getScreenId();
+    if (screenId == -1) {
+      screenId = display->getId();
+      display->setScreenId(screenId);
+    }
+    // Get the current screen for this display
+    Screen *screen = screenManager->getScreenById(screenId);
+    // If there is one, display the rows
+    if (screen) {
+      for (ScreenRow *row = screen->getFirstScreenRow(); row; row = row->getNext()) {
+        if (row->needsRedraw()) {
+          display->displayRow(row->getId(), row->getText(), false, 0);
+        }
+      }
+    }
+    // Deselect this SPI display if necessary
+    _deselectSPIDisplay(display);
   }
 }
 
@@ -95,4 +129,22 @@ DisplayManager::~DisplayManager() {
     _firstDisplay = nullptr;
   }
   _logger = nullptr;
+}
+
+void DisplayManager::_selectSPIDisplay(DisplayInterface *display) {
+  // If not set, don't do anything
+  if (display->getCSPin() == -1) {
+    return;
+  }
+  // Otherwise set CS pin low to select this screen
+  digitalWrite(display->getCSPin(), LOW);
+}
+
+void DisplayManager::_deselectSPIDisplay(DisplayInterface *display) {
+  // If not set, don't do anything
+  if (display->getCSPin() == -1) {
+    return;
+  }
+  // Otherwise set CS pin high to deselect this screen
+  digitalWrite(display->getCSPin(), HIGH);
 }

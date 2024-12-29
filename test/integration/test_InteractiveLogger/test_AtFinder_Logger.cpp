@@ -50,6 +50,9 @@ TEST_F(AtFinderLoggerIntegrationTests, IntegrationTest) {
 
   EXPECT_THAT(stream.buffer, testing::HasSubstr("[DEBUG] AtFinder::setup with _maxTextLength 100\r\n"));
 
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&stream);
+
   // Clean up
   AtFinder::cleanUp();
 }

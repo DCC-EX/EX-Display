@@ -119,6 +119,9 @@ TEST_F(ControllerInputActionTests, SwitchActiveScreen) {
 
   // Display0's screen ID should be unchanged at 8
   EXPECT_EQ(display0->getScreenId(), 8);
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(display0);
 }
 
 /// @brief This test ensures up/down buttons or touches scrolls the active screen

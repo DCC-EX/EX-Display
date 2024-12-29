@@ -60,6 +60,9 @@ TEST_F(LoggerTests, LogErrorMessage) {
 
   // Check the buffer to see if it contains this
   EXPECT_EQ(stream.buffer, expectedOutput);
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&stream);
 }
 
 TEST_F(LoggerTests, LogLevels) {
@@ -94,6 +97,9 @@ TEST_F(LoggerTests, LogLevels) {
   // However, we should always get a message even at none
   logger->log(LogLevel::MESSAGE, debugMessage);
   EXPECT_EQ(stream.buffer, "[MESSAGE] This is a debug message\r\n");
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&stream);
 }
 
 TEST_F(LoggerTests, TestMacroWithNullptr) {
@@ -131,6 +137,9 @@ TEST_F(LoggerTests, TestMacro) {
   // Now log as info, which shouldn't log
   LOG(LogLevel::INFO, "Encountered an error: %d - %s", errorNumber, errorMessage);
   EXPECT_EQ(stream.buffer, "");
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&stream);
 
   // Clean up
   delete _logger;

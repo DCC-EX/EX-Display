@@ -72,6 +72,10 @@ public:
   /// @return Screen ID
   int getScreenId() { return _screenId; }
 
+  /// @brief Get the defined CS pin for this display to see if it needs manual SPI switching
+  /// @return Pin number of the SPI CS pin for this display (default -1 for no switching)
+  int getCSPin() { return _csPin; }
+
   /// @brief Destructor for a DisplayInterface
   virtual ~DisplayInterface() = default;
 
@@ -100,6 +104,9 @@ protected:
   uint8_t _fontHeight = 0;
   /// @brief Calculated font width to determine column positioning
   uint8_t _fontWidth = 0;
+  /// @brief If there are more than one SPI displays that libraries don't officially support, the CS pin can be provided
+  /// to switch between them (default -1 disables this)
+  int _csPin = -1;
 };
 
 #endif // DISPLAYINTERFACE_H
