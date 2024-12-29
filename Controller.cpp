@@ -75,27 +75,8 @@ void Controller::update() {
 
   // Only process displays if there is a valid DisplayManager and ScreenManager, and any input is not calibrating
   if (_displayManager != nullptr && _screenManager != nullptr && !_pauseDisplayUpdates && !isCalibrating) {
-    // Iterate through each physical display, auto means we don't care about the type as we're using the interface
-    for (auto *display = _displayManager->getFirstDisplay(); display; display = display->getNext()) {
-      // If the screen ID is invalid, set it to the first screen ID if there is one, otherwise continue to next display
-      if (display->getScreenId() == -1) {
-        if (_screenManager->getFirstScreen() == nullptr) {
-          continue;
-        }
-        display->setScreenId(_screenManager->getFirstScreen()->getId());
-      }
-      // Get the screen for this display if it exists, otherwise continue to next display
-      Screen *screen = _screenManager->getScreenById(display->getScreenId());
-      if (screen == nullptr) {
-        continue;
-      }
-      // Display the rows needing to be updated
-      for (ScreenRow *row = screen->getFirstScreenRow(); row; row = row->getNext()) {
-        if (row->needsRedraw()) {
-          display->displayRow(row->getId(), row->getText(), false, 0);
-        }
-      }
-    }
+    // Get DisplayManager to update displays using ScreenManager
+    _displayManager->update(_screenManager);
   }
 }
 

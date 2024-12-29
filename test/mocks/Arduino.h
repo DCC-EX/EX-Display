@@ -15,12 +15,16 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/**
+ * @brief Mock Arduino.h to ensure source files requiring this still function
+ */
+
 #ifndef ARDUINO_H
 #define ARDUINO_H
 
-/// @brief Mock Arduino.h to define required types and methods to satisfy dependencies
 #include "Stream.h"
 #include <cstdarg>
+#include <gmock/gmock.h>
 #include <stdint.h>
 
 // Define states
@@ -38,9 +42,22 @@ typedef uint8_t byte;
 // Declare millis so it can be mocked/returned
 static unsigned long _currentMillis = 0;
 
+// Define a mock class to enable EXPECT_CALL tests against these
+class MockArduino {
+public:
+  MOCK_METHOD(void, mockPinMode, (int pin, int mode), ());
+  MOCK_METHOD(void, mockDigitalWrite, (int pin, int value), ());
+
+  // Set up a singleton instance for this class to work with gmock
+  static MockArduino &getInstance() {
+    static MockArduino instance;
+    return instance;
+  }
+};
+
 // Mock Arduino functions
-inline void pinMode(int pin, int mode) {}
-inline void digitalWrite(int pin, int value) {}
+inline void pinMode(int pin, int mode) { MockArduino::getInstance().mockPinMode(pin, mode); }
+inline void digitalWrite(int pin, int value) { MockArduino::getInstance().mockDigitalWrite(pin, value); }
 inline int digitalRead(int pin) { return 0; }
 inline void delay(unsigned long ms) {}
 inline unsigned long millis() { return _currentMillis; }

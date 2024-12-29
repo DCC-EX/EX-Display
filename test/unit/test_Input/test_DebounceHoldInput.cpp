@@ -46,6 +46,9 @@ TEST_F(DebounceHoldInputTests, TestSingleInputAction) {
 
   // Call check
   input.check();
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&callback);
 }
 
 /// @brief Test case for a press that should be debounced
@@ -86,6 +89,9 @@ TEST_F(DebounceHoldInputTests, TestDebouncedAction) {
   // Expect no callbacks
   EXPECT_CALL(callback, onInputAction(::testing::_)).Times(0);
   input.check();
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&callback);
 }
 
 /// @brief Test case for a button hold
@@ -123,6 +129,9 @@ TEST_F(DebounceHoldInputTests, TestHoldAction) {
 
   // Check it
   input.check();
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&callback);
 }
 
 /// @brief Test to validate debounce correctly ignores bouncy inputs
@@ -180,4 +189,7 @@ TEST_F(DebounceHoldInputTests, TestBouncyInput) {
   advanceMillis(60);
   input.setRawAction(InputAction::PRESS_NONE);
   input.check();
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&callback);
 }

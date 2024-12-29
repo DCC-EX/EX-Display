@@ -70,10 +70,16 @@ TEST_F(DisplayManagerTests, CreateDisplayList) {
   EXPECT_EQ(test, display2);
   EXPECT_EQ(test->getNext(), nullptr);
 
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(display0);
+  testing::Mock::VerifyAndClearExpectations(display1);
+  testing::Mock::VerifyAndClearExpectations(display2);
+
+  // Clean up
   delete displayManager;
 }
 
-
+/// @brief Validate displays can be retrieved by their ID
 TEST_F(DisplayManagerTests, GetDisplayById) {
   DisplayManager *displayManager = new DisplayManager();
   MockDisplay *display0 = new MockDisplay();
@@ -89,6 +95,11 @@ TEST_F(DisplayManagerTests, GetDisplayById) {
   EXPECT_EQ(displayManager->getDisplayById(0), display0);
   EXPECT_EQ(displayManager->getDisplayById(1), display1);
   EXPECT_EQ(displayManager->getDisplayById(2), display2);
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(display0);
+  testing::Mock::VerifyAndClearExpectations(display1);
+  testing::Mock::VerifyAndClearExpectations(display2);
 
   // Clean up
   delete displayManager;
@@ -114,6 +125,11 @@ TEST_F(DisplayManagerTests, StartDisplays) {
 
   // Call the method
   displayManager->startDisplays();
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(display0);
+  testing::Mock::VerifyAndClearExpectations(display1);
+  testing::Mock::VerifyAndClearExpectations(display2);
 
   // Clean up
   delete displayManager;
@@ -142,6 +158,11 @@ TEST_F(DisplayManagerTests, DisplayStartupInfo) {
 
   // Call the method
   displayManager->displayStartupInfo(version);
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(display0);
+  testing::Mock::VerifyAndClearExpectations(display1);
+  testing::Mock::VerifyAndClearExpectations(display2);
 
   // Clean up
   delete displayManager;

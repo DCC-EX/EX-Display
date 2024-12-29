@@ -123,6 +123,9 @@ TEST_F(ControllerDisplayUpdateTests, OneScreenOneDisplay) {
   EXPECT_STREQ(row->getText(), "Screen 0 row 5");
   EXPECT_EQ(row->getNext(), nullptr);
 
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(display0);
+
   // Clean up
   AtFinder::cleanUp();
 }

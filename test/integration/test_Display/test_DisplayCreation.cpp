@@ -15,7 +15,7 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "DisplayConfig.h"
+#include "myConfig.h"
 #include "test/mocks/MockDisplay.h"
 #include <gtest/gtest.h>
 

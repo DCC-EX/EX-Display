@@ -105,6 +105,9 @@ TEST_F(ControllerTests, TestUpdate) {
     controller->update();
   }
 
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&callback);
+
   // Clean up
   delete controller;
   AtFinder::cleanUp();
@@ -139,6 +142,9 @@ TEST_F(ControllerTests, TestInvalidUpdate) {
   for (size_t i = 0; i < strlen(sendCommandStation); i++) {
     controller->update();
   }
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&callback);
 
   // Clean up
   delete controller;

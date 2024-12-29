@@ -47,6 +47,9 @@ TEST_F(AtFinderTests, TestCallback) {
     AtFinder::processInputChar(inputText[i]);
   }
 
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&callback);
+
   // Clean up
   AtFinder::cleanUp();
 }
@@ -76,6 +79,9 @@ TEST_F(AtFinderTests, TestInvalidCommands) {
   for (size_t i = 0; i < strlen(invalidInput3); i++) {
     AtFinder::processInputChar(invalidInput3[i]);
   }
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&callback);
 
   // Clean up
   AtFinder::cleanUp();

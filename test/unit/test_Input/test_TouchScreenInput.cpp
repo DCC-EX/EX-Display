@@ -49,6 +49,9 @@ TEST_F(TouchScreenInputTests, TestAttributes) {
 
   EXPECT_TRUE(input.isCalibrating());
   EXPECT_EQ(input.needsDisplay(), 1);
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&input);
 }
 
 /// @brief Simple test to validate the formula for calculating the correct InputAction works
@@ -111,4 +114,7 @@ TEST_F(TouchScreenInputTests, ValidateAreaCalculation) {
   input.check();
   input.setTouch(199, 150);
   input.check();
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&callback);
 }

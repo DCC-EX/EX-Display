@@ -30,6 +30,18 @@ TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t te
   _tftInitialised = false;
 }
 
+TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour,
+                                 int csPin) {
+  _rotation = rotation;
+  _textSize = textSize;
+  _textColour = textColour;
+  _backgroundColour = backgroundColour;
+  _csPin = csPin;
+  _tft = new TFT_eSPI();
+  _gfxFont = TEXT_FONT;
+  _tftInitialised = false;
+}
+
 void TFT_eSPIDisplay::begin() {
   LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::begin[%d]()", _displayId);
   _tft->init();

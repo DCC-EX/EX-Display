@@ -45,6 +45,9 @@ TEST_F(InputInterfaceTests, TestSingleInputAction) {
 
   // Act
   input.check();
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&callback);
 }
 
 TEST_F(InputInterfaceTests, TestMultipleButtonPresses) {
@@ -65,6 +68,9 @@ TEST_F(InputInterfaceTests, TestMultipleButtonPresses) {
   input.check();
   input.check();
   input.check();
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&callback);
 }
 
 TEST_F(InputInterfaceTests, TestNoButtonPress) {
@@ -76,6 +82,9 @@ TEST_F(InputInterfaceTests, TestNoButtonPress) {
 
   // Act
   input.check();
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&callback);
 }
 
 TEST_F(InputInterfaceTests, TestAttributes) {
@@ -90,4 +99,7 @@ TEST_F(InputInterfaceTests, TestAttributes) {
 
   input.setNeedsDisplay(true);
   EXPECT_TRUE(input.needsDisplay());
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(&input);
 }

@@ -20,6 +20,7 @@
 
 #include "DisplayInterface.h"
 #include "Logger.h"
+#include "ScreenManager.h"
 
 /// @brief Manages all physical displays
 class DisplayManager {
@@ -41,6 +42,10 @@ public:
   /// @param version EX-Display version
   void displayStartupInfo(const char *version);
 
+  /// @brief Call this routinely to ensure all displays are updated with screens
+  /// @param screenManager Pointer to the ScreenManager instance
+  void update(ScreenManager *screenManager);
+
   /// @brief Get the first DisplayInterface derived instance in the list of displays
   /// @return Pointer to the first instance
   DisplayInterface *getFirstDisplay();
@@ -60,6 +65,14 @@ private:
   DisplayInterface *_firstDisplay;
   Logger *_logger;
   uint8_t _nextDisplayId;
+
+  /// @brief Manually selects SPI displays that require manual selecting via the CS pin - sets pin low
+  /// @param display Pointer to the DisplayInterface instance
+  void _selectSPIDisplay(DisplayInterface *display);
+
+  /// @brief Manually deselects SPI displays that require manual selecting via the CS pin - sets pin high
+  /// @param display Pointer to the DisplayInterface instance
+  void _deselectSPIDisplay(DisplayInterface *display);
 };
 
 #endif // DISPLAYMANAGER_H

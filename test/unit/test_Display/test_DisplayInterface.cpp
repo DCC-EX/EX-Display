@@ -48,6 +48,9 @@ TEST_F(DisplayInterfaceTests, TestBasicMethods) {
 
   // Screen ID this display is displaying should start at -1 (invalid)
   EXPECT_EQ(display->getScreenId(), -1);
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(display);
 }
 
 /// @brief Test DisplayInterface methods that should interact with a physical display
@@ -78,6 +81,9 @@ TEST_F(DisplayInterfaceTests, TestParameterMethods) {
   EXPECT_EQ(display->getScreenId(), 4);
   display->setScreenId(1);
   EXPECT_EQ(display->getScreenId(), 1);
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(display);
 }
 
 /// @brief Test to ensure the startup info sets the EX-Display version correctly
@@ -90,6 +96,9 @@ TEST_F(DisplayInterfaceTests, TestStartupInfo) {
 
   // Call it
   display->displayStartupInfo(VERSION);
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(display);
 }
 
 /// @brief Test a second display can be accessed via the first in a list
@@ -112,6 +121,10 @@ TEST_F(DisplayInterfaceTests, TestTwoDisplays) {
   // Add to the first and validate
   display->setNext(display2);
   EXPECT_EQ(display->getNext(), display2);
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(display);
+  testing::Mock::VerifyAndClearExpectations(display2);
 
   // Clean up
   delete display2;

@@ -44,8 +44,20 @@
 /// @brief Display class for TFT_eSPI based displays
 class TFT_eSPIDisplay : public DisplayInterface {
 public:
-  /// @brief Constructor for the TFT_eSPIDisplay
+  /// @brief Constructor for a TFT_eSPIDisplay instance
+  /// @param rotation
+  /// @param textSize
+  /// @param textColour
+  /// @param backgroundColour
   TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour);
+
+  /// @brief Alternate constructor for a TFT_eSPIDisplay instance to specify the CS pin to allow for two displays
+  /// @param rotation
+  /// @param textSize
+  /// @param textColour
+  /// @param backgroundColour
+  /// @param csPin
+  TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour, int csPin);
 
   /// @brief Perform any initial once off setup or configuration here and call only once
   void begin() override;
@@ -83,7 +95,7 @@ private:
   TFT_eSPI *_tft;
   const GFXfont *_gfxFont;
   bool _tftInitialised;
-
+  
   /// @brief Get the X/Y coordinates to draw the specified row, starting at the specified column
   /// @param row Row number
   /// @param column Column to start drawing at
