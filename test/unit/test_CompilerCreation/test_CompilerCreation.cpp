@@ -15,13 +15,8 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "DisplayManager.h"
-#include "test/mocks/MockDisplay.h"
-#include "test/mocks/MockSPIDisplay.h"
+#include "CreateUserDevices.h"
 #include <gtest/gtest.h>
-
-// Include CreateDeviceMacros last
-#include "CreateDeviceMacros.h"
 
 using namespace testing;
 

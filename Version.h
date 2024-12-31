@@ -6,6 +6,7 @@
 
 // 0.0.15 includes:
 //  - Fix missing redraw functionality when switching screens
+//  - Implemented myDevices.h to configure display devices via macros
 // 0.0.14 includes:
 //  - Major rewrite using OOP
 //  - Swap display/screen terminology - screen is logical from EX-CommandStation, display is physical

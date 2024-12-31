@@ -16,25 +16,25 @@
  */
 
 /**
- * @brief Preprocessor macros to create user specified devices from myDevices.h
+ * @brief Include this file in Configurator.h to ensure all user devices in myConfig.h are created
+ * 
  */
 
-#ifndef CREATEDEVICEMACROS_H
-#define CREATEDEVICEMACROS_H
+#ifndef CREATEUSERDEVICES_H
+#define CREATEUSERDEVICES_H
 
-#include "CreateDeviceMacroReset.h"
-#undef USER_DISPLAY
-#define USER_DISPLAY(type, params...) this->addDisplay(type::create(params));
-void DisplayManager::createDisplays() {
+// Always include DisplayManager and InputManager for both testing and running
+#include "DisplayManager.h"
+// #include "InputManager.h"
+
 #ifndef PIO_UNIT_TESTING
-#if __has_include("myDevices.h")
-#include "myDevices.h"
+#include "TFT_eSPIDisplay.h"
 #else
-#error No myDevices.h created, no displays or input devices available
-#endif // myDevices.h
-#else
-#include "test/mocks/MockMyDevices.h"
+#include "test/mocks/MockDisplay.h"
+#include "test/mocks/MockSPIDisplay.h"
 #endif // PIO_UNIT_TESTING
-}
 
-#endif // CREATEDEVICEMACROS_H
+// Include CreateDeviceMacros last to build the DisplayManager and InputManager implementation methods
+#include "CreateDeviceMacros.h"
+
+#endif // CREATEUSERDEVICES_H

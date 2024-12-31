@@ -3,6 +3,7 @@
 .DS_Store
 config.h
 myConfig.h
+myDevices.h
 build
 _build
 venv

@@ -18,6 +18,10 @@
 #include "Configurator.h"
 #include "AtFinder.h"
 
+#ifndef PIO_UNIT_TESTING
+#include "CreateUserDevices.h"
+#endif // PIO_UNIT_TESTING
+
 Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, LogLevel logLevel)
     : _consoleStream(consoleStream), _commandStationStream(commandStationStream) {
   _logger = new Logger(_consoleStream);

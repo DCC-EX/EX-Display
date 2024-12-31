@@ -19,8 +19,8 @@
  * @brief Cleans and resets CreateDevice macros
  */
 
-#undef DISPLAY
-#undef INPUT
+#undef USER_DISPLAY
+#undef USER_INPUT
 
-#define DISPLAY(type, params...)
-#define INPUT(type, params...)
+#define USER_DISPLAY(type, params...)
+#define USER_INPUT(type, params...)

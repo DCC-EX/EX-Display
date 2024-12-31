@@ -19,7 +19,7 @@
  * @brief Mock myConfig.h for use with testing device creation only
  */
 
-DISPLAY(MockDisplay)
-DISPLAY(MockSPIDisplay, 22)
-DISPLAY(MockSPIDisplay, 23)
-INPUT(MockInput, 1)
+USER_DISPLAY(MockDisplay)
+USER_DISPLAY(MockSPIDisplay, 22)
+USER_DISPLAY(MockSPIDisplay, 23)
+USER_INPUT(MockInput, 1)

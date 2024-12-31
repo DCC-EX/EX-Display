@@ -42,14 +42,6 @@ void DisplayManager::addDisplay(DisplayInterface *display) {
   current->setNext(display);
 }
 
-// COMPILER_CREATE
-// void DisplayManager::createDisplays() {
-// #ifndef PIO_UNIT_TESTING // Cannot create physical displays with Platform IO testing
-//   TFT_eSPIDisplay *tft = new TFT_eSPIDisplay(1, 1, TFT_WHITE, TFT_BLACK);
-//   addDisplay(tft);
-// #endif // PIO_UNIT_TESTING
-// }
-
 void DisplayManager::startDisplays() {
   LOG(LogLevel::DEBUG, "DisplayManager::startDisplays()");
   if (_firstDisplay == nullptr) {
