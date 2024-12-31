@@ -30,13 +30,11 @@ public:
   InputManager();
 
   /// @brief Call once to create the InputInterface derived input
-  /// @param callback CallbackInterface derived instance to call back to when user interacts with the input
-  void createInput(CallbackInterface *callback);
+  void createInput();
 
   /// @brief Set the InputInterface
   /// @param input Pointer to the InputInterface
-  /// @param callback CallbackInterface derived instance to call back to when user interacts with the input
-  void addInput(InputInterface *input, CallbackInterface *callback);
+  void addInput(InputInterface *input);
 
   /// @brief Get the configured InputInterface
   /// @return Pointer to the input
@@ -54,6 +52,10 @@ public:
   /// @param logger Pointer to the Logger
   void setLogger(Logger *logger);
 
+  /// @brief Set the CallbackInterface derived instance for user input to use for callbacks
+  /// @param callback Pointer to the instance
+  void setCallback(CallbackInterface *callback);
+
   /// @brief Destructor for the InputManager
   ~InputManager();
 
@@ -61,6 +63,7 @@ private:
   DisplayInterface *_display;
   InputInterface *_input;
   Logger *_logger;
+  CallbackInterface *_callback;
 };
 
 #endif // INPUTMANAGER_H

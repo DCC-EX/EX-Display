@@ -15,31 +15,12 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MOCKINPUT_H
-#define MOCKINPUT_H
+/**
+ * @brief Cleans and resets CreateDevice macros
+ */
 
-#include "InputInterface.h"
-#include <gmock/gmock.h>
+#undef USER_DISPLAY
+#undef USER_INPUT
 
-/// @brief Mock physical input class
-class MockInput : public InputInterface {
-public:
-  MockInput() {}
-
-  MockInput(int needsDisplay) { _needsDisplay = needsDisplay; }
-
-  MOCK_METHOD(void, begin, (), (override));
-
-  MOCK_METHOD(void, check, (), (override));
-
-  void setIsCalibrating(bool isCalibrating) { _isCalibrating = isCalibrating; }
-
-  void setNeedsDisplay(int displayId) { _needsDisplay = displayId; }
-
-  static MockInput *create(int needsDisplay) {
-    MockInput *newInput = new MockInput(needsDisplay);
-    return newInput;
-  }
-};
-
-#endif // MOCKINPUT_H
+#define USER_DISPLAY(type, params...)
+#define USER_INPUT(type, params...)

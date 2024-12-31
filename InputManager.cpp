@@ -22,23 +22,9 @@
 #include "TFT_eSPITouch.h"
 #endif // PIO_UNIT_TESTING
 
-InputManager::InputManager() : _display(nullptr), _input(nullptr), _logger(nullptr) {}
+InputManager::InputManager() : _display(nullptr), _input(nullptr), _logger(nullptr), _callback(nullptr) {}
 
-void InputManager::createInput(CallbackInterface *callback) {
-  LOG(LogLevel::DEBUG, "InputManager::createInput()");
-// Do not load when testing, TFT_eSPI library is incompatible and will cause failures.
-#ifndef PIO_UNIT_TESTING
-  // Create TFT_eSPITouch instance here
-  TFT_eSPITouch *touch = new TFT_eSPITouch(0);
-  if (touch == nullptr) {
-    LOG(LogLevel::ERROR, "Failed to create TFT_eSPITouch instance");
-    return;
-  }
-  addInput(touch, callback);
-#endif // PIO_UNIT_TESTING
-}
-
-void InputManager::addInput(InputInterface *input, CallbackInterface *callback) {
+void InputManager::addInput(InputInterface *input) {
   LOG(LogLevel::DEBUG, "InputManager::addInput()");
   if (input == nullptr) {
     LOG(LogLevel::ERROR, "InputInterface doesn't exist, user input will not be available");
@@ -48,11 +34,11 @@ void InputManager::addInput(InputInterface *input, CallbackInterface *callback) 
   if (_logger) {
     _input->setLogger(_logger);
   }
-  if (callback == nullptr) {
+  if (_callback == nullptr) {
     LOG(LogLevel::ERROR, "InputInterface callback not set, user input will not be available");
     return;
   }
-  _input->setCallback(callback);
+  _input->setCallback(_callback);
 #ifdef DEBOUNCE_DELAY
   _input->setDebounceDelay(DEBOUNCE_DELAY);
 #endif // DEBOUNCE DELAY
@@ -79,6 +65,8 @@ void InputManager::startInput() {
 }
 
 void InputManager::setLogger(Logger *logger) { _logger = logger; }
+
+void InputManager::setCallback(CallbackInterface *callback) { _callback = callback; }
 
 InputManager::~InputManager() {
   if (_input != nullptr) {

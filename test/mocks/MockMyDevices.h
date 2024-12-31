@@ -15,18 +15,11 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "mockMyConfig.h"
-#include "test/mocks/MockDisplay.h"
-#include <gtest/gtest.h>
+/**
+ * @brief Mock myConfig.h for use with testing device creation only
+ */
 
-using namespace testing;
-
-class DisplayCreationTests : public Test {
-protected:
-  void SetUp() override {}
-
-  void TearDown() override {}
-};
-
-/// @brief Create a ScreenRow and check all attributes are valid
-TEST_F(DisplayCreationTests, CreateDisplay) {}
+USER_DISPLAY(MockDisplay)
+USER_DISPLAY(MockSPIDisplay, 22)
+USER_DISPLAY(MockSPIDisplay, 23)
+USER_INPUT(MockInput, 1)

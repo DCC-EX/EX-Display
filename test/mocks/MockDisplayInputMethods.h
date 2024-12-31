@@ -15,15 +15,15 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-/**
- * @brief This file simulates a user's myConfig.h containing mock display and input devices that are to be created by
- * the Configurator
- */
+#ifndef MOCKINPUTDISPLAYMETHODS_H
+#define MOCKINPUTDISPLAYMETHODS_H
 
-#ifndef MYCONFIG_H
-#define MYCONFIG_H
+// createDisplays() dummy implementation due to not using compiler to create them
+#include "DisplayManager.h"
+void DisplayManager::createDisplays() {}
 
-// TFT_DISPLAY()
+// createInput() dummy implementation due to not using compiler to create it
+#include "InputManager.h"
+void InputManager::createInput() {}
 
-
-#endif // MYCONFIG_H
+#endif // MOCKINPUTDISPLAYMETHODS_H

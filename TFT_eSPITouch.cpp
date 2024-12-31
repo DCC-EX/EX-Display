@@ -76,7 +76,6 @@ void TFT_eSPITouch::begin() {
       _isCalibrating = false;
     }
   }
-  // Need to calculate touch screen locations for inputs here
 }
 
 void TFT_eSPITouch::check() {
@@ -94,6 +93,11 @@ void TFT_eSPITouch::check() {
   if (_callback != nullptr && action != InputAction::PRESS_NONE) {
     _callback->onInputAction(action);
   }
+}
+
+TFT_eSPITouch *TFT_eSPITouch::create(int displayId) {
+  TFT_eSPITouch *newTouch = new TFT_eSPITouch(displayId);
+  return newTouch;
 }
 
 bool TFT_eSPITouch::_calibrated() {

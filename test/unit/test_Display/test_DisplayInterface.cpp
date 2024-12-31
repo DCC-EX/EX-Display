@@ -129,3 +129,26 @@ TEST_F(DisplayInterfaceTests, TestTwoDisplays) {
   // Clean up
   delete display2;
 }
+
+/// @brief Ensure the flag to redraw the entire screen is set when changing screens
+TEST_F(DisplayInterfaceTests, TestDisplayRedraw) {
+  // Expect screen ID starts with invalid -1 and needsRedraw is true
+  EXPECT_EQ(display->getScreenId(), -1);
+  EXPECT_TRUE(display->needsRedraw());
+
+  // Set a valid screen ID, validate it and that needsRedraw is true, and expect displayRow call
+  display->setScreenId(0);
+  EXPECT_EQ(display->getScreenId(), 0);
+  EXPECT_TRUE(display->needsRedraw());
+
+  // Now set it false and validate
+  display->setNeedsRedraw(false);
+  EXPECT_FALSE(display->needsRedraw());
+
+  // Now change screen and needsRedraw should be true again
+  display->setScreenId(1);
+  EXPECT_TRUE(display->needsRedraw());
+
+  // Verify all expectations were made
+  testing::Mock::VerifyAndClearExpectations(display);
+}

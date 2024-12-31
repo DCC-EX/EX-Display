@@ -38,7 +38,7 @@ protected:
   Controller *controller =
       new Controller(console, commandStation, displayManager, inputManager, screenManager, nullptr, 0);
 
-  void SetUp() override { inputManager->addInput(input, controller); }
+  void SetUp() override { inputManager->addInput(input); }
 
   void TearDown() override {
     delete controller;

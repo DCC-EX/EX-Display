@@ -32,7 +32,8 @@ public:
   /// @param display Pointer to the instance to add
   void addDisplay(DisplayInterface *display);
 
-  /// @brief Parses the displays configured in myConfig.h and creates the list of displays
+  /// @brief Parses the displays configured in myConfig.h and creates the list of displays (this is implemented in
+  /// CreateDeviceMacros.h, not DisplayManager.cpp)
   void createDisplays();
 
   /// @brief Call the begin() method for all associated Display instances
