@@ -1,0 +1,4 @@
+<map id="TFT_eSPITouch::create" name="TFT_eSPITouch::create">
+<area shape="rect" id="node1" title="Static method to enable the compiler to generate create commands from myDevices.h entries." alt="" coords="5,13,172,39"/>
+<area shape="rect" id="node2" href="$classTFT__eSPITouch.html#a9f736f89d56612481ce9bf5655ad0f15" title="Constructor for the TFT_eSPITouch instance." alt="" coords="220,5,368,47"/>
+</map>

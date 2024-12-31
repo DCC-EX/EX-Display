@@ -129,6 +129,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a99f118df7933707f23506e6c4138c8ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac">getCSPin</a> ()</td></tr>
 <tr class="memdesc:a99f118df7933707f23506e6c4138c8ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the defined CS pin for this display to see if it needs manual SPI switching.  <a href="classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac">More...</a><br /></td></tr>
 <tr class="separator:a99f118df7933707f23506e6c4138c8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30e1cc4bb075e2d2c52388d5e1e648f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9">setNeedsRedraw</a> (bool redraw)</td></tr>
+<tr class="memdesc:a30e1cc4bb075e2d2c52388d5e1e648f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the flag for whether this display needs redrawing or not - individual row updates are not affected.  <a href="classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9">More...</a><br /></td></tr>
+<tr class="separator:a30e1cc4bb075e2d2c52388d5e1e648f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8629d795eb21cea6a3c3411c7d9fafc3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3">needsRedraw</a> ()</td></tr>
+<tr class="memdesc:a8629d795eb21cea6a3c3411c7d9fafc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if this display needs an entire redraw.  <a href="classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3">More...</a><br /></td></tr>
+<tr class="separator:a8629d795eb21cea6a3c3411c7d9fafc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfc41efbd20bf7fe035cf6bc195faf38"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#adfc41efbd20bf7fe035cf6bc195faf38">~DisplayInterface</a> ()=default</td></tr>
 <tr class="memdesc:adfc41efbd20bf7fe035cf6bc195faf38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for a <a class="el" href="classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types.">DisplayInterface</a>.  <a href="classDisplayInterface.html#adfc41efbd20bf7fe035cf6bc195faf38">More...</a><br /></td></tr>
 <tr class="separator:adfc41efbd20bf7fe035cf6bc195faf38"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,6 +180,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a0d7067255c6434f7a626f3249f805193"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#a0d7067255c6434f7a626f3249f805193">_csPin</a> = -1</td></tr>
 <tr class="memdesc:a0d7067255c6434f7a626f3249f805193"><td class="mdescLeft">&#160;</td><td class="mdescRight">If there are more than one SPI displays that libraries don't officially support, the CS pin can be provided to switch between them (default -1 disables this)  <a href="classDisplayInterface.html#a0d7067255c6434f7a626f3249f805193">More...</a><br /></td></tr>
 <tr class="separator:a0d7067255c6434f7a626f3249f805193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe382b4a453b8403b7f145f36076571c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#abe382b4a453b8403b7f145f36076571c">_needsRedraw</a> = true</td></tr>
+<tr class="memdesc:abe382b4a453b8403b7f145f36076571c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag that this display needs redrawing - needed for switching between screens.  <a href="classDisplayInterface.html#abe382b4a453b8403b7f145f36076571c">More...</a><br /></td></tr>
+<tr class="separator:abe382b4a453b8403b7f145f36076571c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to abstract away all physical display implementation to enable multiple display types. </p>
@@ -545,6 +554,34 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a8629d795eb21cea6a3c3411c7d9fafc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8629d795eb21cea6a3c3411c7d9fafc3">&#9670;&nbsp;</a></span>needsRedraw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DisplayInterface::needsRedraw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Test if this display needs an entire redraw. </p>
+<dl class="section return"><dt>Returns</dt><dd>true|false </dd></dl>
+
+</div>
+</div>
 <a id="aa1d72bdfd3cf533bc3d910dab42b1e4d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa1d72bdfd3cf533bc3d910dab42b1e4d">&#9670;&nbsp;</a></span>setId()</h2>
 
@@ -579,7 +616,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayInterface_aa1d72bdfd3cf533bc3d910dab42b1e4d_icgraph.svg" width="100%" height="385"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classDisplayInterface_aa1d72bdfd3cf533bc3d910dab42b1e4d_icgraph.svg" width="555" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -619,9 +656,43 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayInterface_a4d4c3c663ad0e26cfb00e3a9d6dd687b_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classDisplayInterface_a4d4c3c663ad0e26cfb00e3a9d6dd687b_icgraph.svg" width="587" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
+
+</div>
+</div>
+<a id="a30e1cc4bb075e2d2c52388d5e1e648f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30e1cc4bb075e2d2c52388d5e1e648f9">&#9670;&nbsp;</a></span>setNeedsRedraw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisplayInterface::setNeedsRedraw </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>redraw</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the flag for whether this display needs redrawing or not - individual row updates are not affected. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">redraw</td><td>true if entire redraw, otherwise false </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -659,7 +730,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayInterface_ac8e3fa088bc342b97e6f04be999ea0d3_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classDisplayInterface_ac8e3fa088bc342b97e6f04be999ea0d3_icgraph.svg" width="574" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -895,6 +966,30 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Maximum row number (not count) that will fit on this display (based on font height, not pixels) </p>
+
+</div>
+</div>
+<a id="abe382b4a453b8403b7f145f36076571c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe382b4a453b8403b7f145f36076571c">&#9670;&nbsp;</a></span>_needsRedraw</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DisplayInterface::_needsRedraw = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag that this display needs redrawing - needed for switching between screens. </p>
 
 </div>
 </div>

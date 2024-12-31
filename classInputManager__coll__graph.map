@@ -1,7 +1,8 @@
 <map id="InputManager" name="InputManager">
-<area shape="rect" id="node1" title=" " alt="" coords="110,273,222,300"/>
-<area shape="rect" id="node2" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="110,184,223,211"/>
-<area shape="rect" id="node3" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="116,95,252,121"/>
-<area shape="rect" id="node4" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="26,5,93,32"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="276,95,406,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="91,363,203,389"/>
+<area shape="rect" id="node2" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="28,184,164,211"/>
+<area shape="rect" id="node5" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="164,273,277,300"/>
+<area shape="rect" id="node3" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="142,95,208,121"/>
+<area shape="rect" id="node6" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="290,184,420,211"/>
+<area shape="rect" id="node4" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="140,5,210,32"/>
 </map>

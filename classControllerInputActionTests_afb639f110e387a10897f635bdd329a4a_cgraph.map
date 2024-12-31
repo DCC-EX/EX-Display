@@ -1,6 +1,6 @@
 <map id="ControllerInputActionTests::SetUp" name="ControllerInputActionTests::SetUp">
 <area shape="rect" id="node1" title=" " alt="" coords="5,86,199,127"/>
-<area shape="rect" id="node2" href="$classInputManager.html#a3579aef6a242289012e5819b4be15e52" title="Set the InputInterface." alt="" coords="247,93,424,120"/>
+<area shape="rect" id="node2" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="247,93,424,120"/>
 <area shape="rect" id="node3" href="$classInputInterface.html#abae89c99e802186c05e97750e473dac1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="491,5,688,32"/>
 <area shape="rect" id="node4" href="$classInputInterface.html#a496b20fc72c9b458bc5b7b29bebfe672" title="Set the debounce delay." alt="" coords="486,57,693,98"/>
 <area shape="rect" id="node6" href="$classInputInterface.html#a9880a65f1358aa4f7880cddadf3ff846" title="Set the threshold for detecting an input is held." alt="" coords="472,123,707,149"/>

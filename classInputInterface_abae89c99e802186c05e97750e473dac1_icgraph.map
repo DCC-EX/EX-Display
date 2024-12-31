@@ -1,11 +1,9 @@
 <map id="InputInterface::setCallback" name="InputInterface::setCallback">
-<area shape="rect" id="node1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="693,156,891,183"/>
-<area shape="rect" id="node2" href="$classInputManager.html#a3579aef6a242289012e5819b4be15e52" title="Set the InputInterface." alt="" coords="465,64,643,91"/>
-<area shape="rect" id="node7" href="$classDebounceHoldInputTests.html#ac1f9bed57fb4e12ac48e79385ff321dd" title=" " alt="" coords="463,115,645,157"/>
-<area shape="rect" id="node8" href="$classInputInterfaceTests.html#ae2ea7ef1af24dceda678e3cc8953d006" title=" " alt="" coords="481,181,627,222"/>
-<area shape="rect" id="node9" href="$classTouchScreenInputTests.html#af56a96900180dde47c024979d931cf2e" title=" " alt="" coords="469,246,639,287"/>
-<area shape="rect" id="node3" href="$classInputManager.html#af956225a4057143bf0704781e036be09" title="Call once to create the InputInterface derived input." alt="" coords="220,5,415,32"/>
-<area shape="rect" id="node5" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="221,57,414,98"/>
-<area shape="rect" id="node6" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="283,123,352,149"/>
-<area shape="rect" id="node4" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="477,134,675,161"/>
+<area shape="rect" id="node2" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="249,42,427,69"/>
+<area shape="rect" id="node5" href="$classDebounceHoldInputTests.html#ac1f9bed57fb4e12ac48e79385ff321dd" title=" " alt="" coords="247,93,429,135"/>
+<area shape="rect" id="node6" href="$classInputInterfaceTests.html#ae2ea7ef1af24dceda678e3cc8953d006" title=" " alt="" coords="265,159,411,200"/>
+<area shape="rect" id="node7" href="$classTouchScreenInputTests.html#af56a96900180dde47c024979d931cf2e" title=" " alt="" coords="253,224,423,265"/>
+<area shape="rect" id="node3" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="5,5,199,47"/>
+<area shape="rect" id="node4" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="67,71,137,98"/>
 </map>

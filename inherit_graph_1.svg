@@ -52,39 +52,39 @@
 <!-- Node26 -->
 <g id="node4" class="node">
 <title>Node26</title>
-<g id="a_node4"><a xlink:href="classConfiguratorTests.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="102,-620.5 102,-639.5 203,-639.5 203,-620.5 102,-620.5"/>
-<text text-anchor="middle" x="152.5" y="-627.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfiguratorTests</text>
+<g id="a_node4"><a xlink:href="classCompilerCreationTests.html" target="_top" xlink:title="Test harness for creating user defined devices via the compiler macros This test harness uses devices...">
+<polygon fill="white" stroke="black" points="89,-620.5 89,-639.5 216,-639.5 216,-620.5 89,-620.5"/>
+<text text-anchor="middle" x="152.5" y="-627.5" font-family="Helvetica,sans-Serif" font-size="10.00">CompilerCreationTests</text>
 </a>
 </g>
 </g>
 <!-- Node23&#45;&gt;Node26 -->
 <g id="edge3" class="edge">
 <title>Node23&#45;&gt;Node26</title>
-<path fill="none" stroke="midnightblue" d="M20.55,-383.54C25.09,-436.04 40.16,-578.41 72,-611 79.93,-619.12 90.67,-624.02 101.69,-626.92"/>
+<path fill="none" stroke="midnightblue" d="M20.55,-383.54C25.09,-436.04 40.16,-578.41 72,-611 76.76,-615.87 82.53,-619.59 88.76,-622.4"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="24.03,-383.19 19.71,-373.51 17.05,-383.77 24.03,-383.19"/>
 </g>
 <!-- Node27 -->
 <g id="node5" class="node">
 <title>Node27</title>
-<g id="a_node5"><a xlink:href="classControllerDisplayUpdateTests.html" target="_top" xlink:title="Test harness for ensuring displays are updated when screen updates are received.">
-<polygon fill="white" stroke="black" points="72,-582.5 72,-601.5 233,-601.5 233,-582.5 72,-582.5"/>
-<text text-anchor="middle" x="152.5" y="-589.5" font-family="Helvetica,sans-Serif" font-size="10.00">ControllerDisplayUpdateTests</text>
+<g id="a_node5"><a xlink:href="classConfiguratorTests.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="102,-582.5 102,-601.5 203,-601.5 203,-582.5 102,-582.5"/>
+<text text-anchor="middle" x="152.5" y="-589.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfiguratorTests</text>
 </a>
 </g>
 </g>
 <!-- Node23&#45;&gt;Node27 -->
 <g id="edge4" class="edge">
 <title>Node23&#45;&gt;Node27</title>
-<path fill="none" stroke="midnightblue" d="M21.37,-383.57C27.43,-430.26 44.92,-546.29 72,-573 75.84,-576.79 80.29,-579.87 85.09,-582.37"/>
+<path fill="none" stroke="midnightblue" d="M21.37,-383.57C27.43,-430.26 44.92,-546.29 72,-573 80.08,-580.97 90.88,-585.82 101.9,-588.71"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="24.83,-383.01 20.11,-373.52 17.89,-383.88 24.83,-383.01"/>
 </g>
 <!-- Node28 -->
 <g id="node6" class="node">
 <title>Node28</title>
-<g id="a_node6"><a xlink:href="classControllerInputActionTests.html" target="_top" xlink:title="Test harness for input actions interacting with the Controller.">
-<polygon fill="white" stroke="black" points="80,-544.5 80,-563.5 225,-563.5 225,-544.5 80,-544.5"/>
-<text text-anchor="middle" x="152.5" y="-551.5" font-family="Helvetica,sans-Serif" font-size="10.00">ControllerInputActionTests</text>
+<g id="a_node6"><a xlink:href="classControllerDisplayUpdateTests.html" target="_top" xlink:title="Test harness for ensuring displays are updated when screen updates are received.">
+<polygon fill="white" stroke="black" points="72,-544.5 72,-563.5 233,-563.5 233,-544.5 72,-544.5"/>
+<text text-anchor="middle" x="152.5" y="-551.5" font-family="Helvetica,sans-Serif" font-size="10.00">ControllerDisplayUpdateTests</text>
 </a>
 </g>
 </g>
@@ -97,9 +97,9 @@
 <!-- Node29 -->
 <g id="node7" class="node">
 <title>Node29</title>
-<g id="a_node7"><a xlink:href="classControllerScreenCreation.html" target="_top" xlink:title="Test harness for ensuring displays are updated when screen updates are received.">
-<polygon fill="white" stroke="black" points="83,-506.5 83,-525.5 222,-525.5 222,-506.5 83,-506.5"/>
-<text text-anchor="middle" x="152.5" y="-513.5" font-family="Helvetica,sans-Serif" font-size="10.00">ControllerScreenCreation</text>
+<g id="a_node7"><a xlink:href="classControllerInputActionTests.html" target="_top" xlink:title="Test harness for input actions interacting with the Controller.">
+<polygon fill="white" stroke="black" points="80,-506.5 80,-525.5 225,-525.5 225,-506.5 80,-506.5"/>
+<text text-anchor="middle" x="152.5" y="-513.5" font-family="Helvetica,sans-Serif" font-size="10.00">ControllerInputActionTests</text>
 </a>
 </g>
 </g>
@@ -112,39 +112,39 @@
 <!-- Node30 -->
 <g id="node8" class="node">
 <title>Node30</title>
-<g id="a_node8"><a xlink:href="classControllerTests.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="108,-468.5 108,-487.5 197,-487.5 197,-468.5 108,-468.5"/>
-<text text-anchor="middle" x="152.5" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">ControllerTests</text>
+<g id="a_node8"><a xlink:href="classControllerScreenCreation.html" target="_top" xlink:title="Test harness for ensuring displays are updated when screen updates are received.">
+<polygon fill="white" stroke="black" points="83,-468.5 83,-487.5 222,-487.5 222,-468.5 83,-468.5"/>
+<text text-anchor="middle" x="152.5" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">ControllerScreenCreation</text>
 </a>
 </g>
 </g>
 <!-- Node23&#45;&gt;Node30 -->
 <g id="edge7" class="edge">
 <title>Node23&#45;&gt;Node30</title>
-<path fill="none" stroke="midnightblue" d="M24.56,-383.3C31.84,-405.05 46.76,-439.88 72,-459 82.29,-466.8 95.32,-471.45 107.82,-474.21"/>
+<path fill="none" stroke="midnightblue" d="M24.56,-383.3C31.84,-405.05 46.76,-439.88 72,-459 77.09,-462.86 82.85,-465.94 88.88,-468.41"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="27.83,-382.03 21.51,-373.53 21.15,-384.11 27.83,-382.03"/>
 </g>
 <!-- Node31 -->
 <g id="node9" class="node">
 <title>Node31</title>
-<g id="a_node9"><a xlink:href="classDebounceHoldInputTests.html" target="_top" xlink:title="Test harness for inputs utilising debounce and hold options.">
-<polygon fill="white" stroke="black" points="84,-430.5 84,-449.5 221,-449.5 221,-430.5 84,-430.5"/>
-<text text-anchor="middle" x="152.5" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00">DebounceHoldInputTests</text>
+<g id="a_node9"><a xlink:href="classControllerTests.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="108,-430.5 108,-449.5 197,-449.5 197,-430.5 108,-430.5"/>
+<text text-anchor="middle" x="152.5" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00">ControllerTests</text>
 </a>
 </g>
 </g>
 <!-- Node23&#45;&gt;Node31 -->
 <g id="edge8" class="edge">
 <title>Node23&#45;&gt;Node31</title>
-<path fill="none" stroke="midnightblue" d="M31.39,-382.19C41.01,-394.94 55.47,-411.36 72,-421 78.62,-424.86 85.98,-427.94 93.48,-430.39"/>
+<path fill="none" stroke="midnightblue" d="M31.39,-382.19C41.01,-394.94 55.47,-411.36 72,-421 82.79,-427.29 95.55,-431.51 107.66,-434.32"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="33.96,-379.78 25.27,-373.71 28.28,-383.87 33.96,-379.78"/>
 </g>
 <!-- Node32 -->
 <g id="node10" class="node">
 <title>Node32</title>
-<g id="a_node10"><a xlink:href="classDisplayCreationTests.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="93,-392.5 93,-411.5 212,-411.5 212,-392.5 93,-392.5"/>
-<text text-anchor="middle" x="152.5" y="-399.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisplayCreationTests</text>
+<g id="a_node10"><a xlink:href="classDebounceHoldInputTests.html" target="_top" xlink:title="Test harness for inputs utilising debounce and hold options.">
+<polygon fill="white" stroke="black" points="84,-392.5 84,-411.5 221,-411.5 221,-392.5 84,-392.5"/>
+<text text-anchor="middle" x="152.5" y="-399.5" font-family="Helvetica,sans-Serif" font-size="10.00">DebounceHoldInputTests</text>
 </a>
 </g>
 </g>

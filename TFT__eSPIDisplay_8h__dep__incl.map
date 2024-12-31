@@ -1,8 +1,11 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/TFT_eSPIDisplay.h" name="/home/runner/work/EX&#45;Display/EX&#45;Display/TFT_eSPIDisplay.h">
-<area shape="rect" id="node1" title=" " alt="" coords="233,5,410,61"/>
-<area shape="rect" id="node2" href="$DisplayManager_8cpp.html" title=" " alt="" coords="5,109,208,165"/>
-<area shape="rect" id="node3" href="$TFT__eSPIDisplay_8cpp.html" title=" " alt="" coords="233,109,410,165"/>
-<area shape="rect" id="node4" href="$TFT__eSPITouch_8h.html" title=" " alt="" coords="434,109,611,165"/>
-<area shape="rect" id="node5" href="$InputManager_8cpp.html" title=" " alt="" coords="263,221,534,262"/>
-<area shape="rect" id="node6" href="$TFT__eSPITouch_8cpp.html" title=" " alt="" coords="558,213,735,269"/>
+<area shape="rect" id="node1" title=" " alt="" coords="289,5,467,61"/>
+<area shape="rect" id="node2" href="$CreateUserDevices_8h.html" title=" " alt="" coords="161,213,387,269"/>
+<area shape="rect" id="node5" href="$DisplayManager_8cpp.html" title=" " alt="" coords="170,109,373,165"/>
+<area shape="rect" id="node6" href="$TFT__eSPIDisplay_8cpp.html" title=" " alt="" coords="397,109,575,165"/>
+<area shape="rect" id="node7" href="$TFT__eSPITouch_8h.html" title=" " alt="" coords="599,109,776,165"/>
+<area shape="rect" id="node3" href="$Configurator_8cpp.html" title=" " alt="" coords="5,332,265,373"/>
+<area shape="rect" id="node4" href="$test__CompilerCreation_8cpp.html" title=" " alt="" coords="289,317,536,388"/>
+<area shape="rect" id="node8" href="$InputManager_8cpp.html" title=" " alt="" coords="428,221,699,262"/>
+<area shape="rect" id="node9" href="$TFT__eSPITouch_8cpp.html" title=" " alt="" coords="723,213,900,269"/>
 </map>

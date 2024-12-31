@@ -67,7 +67,7 @@ var sectionId = 'dynsection-2';
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classInputManager.html#a3579aef6a242289012e5819b4be15e52" target="_top" xlink:title="Set the InputInterface.">
+<g id="a_node2"><a xlink:href="classInputManager.html#a46a2124eddfd8617124bc16670f09633" target="_top" xlink:title="Set the InputInterface.">
 <polygon fill="white" stroke="black" points="90,-76.5 90,-95.5 223,-95.5 223,-76.5 90,-76.5"/>
 <text text-anchor="middle" x="156.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">InputManager::addInput</text>
 </a>

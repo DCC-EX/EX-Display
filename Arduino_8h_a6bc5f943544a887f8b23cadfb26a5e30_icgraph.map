@@ -1,10 +1,9 @@
 <map id="delay" name="delay">
-<area shape="rect" id="node1" title=" " alt="" coords="772,46,831,73"/>
-<area shape="rect" id="node2" href="$classTFT__eSPITouch.html#ad71507c11a328924064e703daef05ada" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="473,5,724,47"/>
-<area shape="rect" id="node4" href="$classInputInterface.html#a496b20fc72c9b458bc5b7b29bebfe672" title="Set the debounce delay." alt="" coords="495,71,702,112"/>
-<area shape="rect" id="node3" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="256,13,417,39"/>
-<area shape="rect" id="node5" href="$classInputManager.html#a3579aef6a242289012e5819b4be15e52" title="Set the InputInterface." alt="" coords="248,78,425,105"/>
-<area shape="rect" id="node6" href="$classInputManager.html#af956225a4057143bf0704781e036be09" title="Call once to create the InputInterface derived input." alt="" coords="5,19,200,46"/>
-<area shape="rect" id="node7" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="6,71,199,112"/>
-<area shape="rect" id="node8" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="68,137,137,163"/>
+<area shape="rect" id="node1" title=" " alt="" coords="771,46,829,73"/>
+<area shape="rect" id="node2" href="$classTFT__eSPITouch.html#ad71507c11a328924064e703daef05ada" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="472,5,723,47"/>
+<area shape="rect" id="node4" href="$classInputInterface.html#a496b20fc72c9b458bc5b7b29bebfe672" title="Set the debounce delay." alt="" coords="494,71,701,112"/>
+<area shape="rect" id="node3" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="255,13,416,39"/>
+<area shape="rect" id="node5" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="247,78,424,105"/>
+<area shape="rect" id="node6" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="5,41,199,83"/>
+<area shape="rect" id="node7" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="67,107,137,134"/>
 </map>

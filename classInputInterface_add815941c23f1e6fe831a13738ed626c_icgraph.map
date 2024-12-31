@@ -1,8 +1,6 @@
 <map id="InputInterface::setLogger" name="InputInterface::setLogger">
-<area shape="rect" id="node1" title="Set the logger instance to use for diagnostic logging." alt="" coords="688,64,873,91"/>
-<area shape="rect" id="node2" href="$classInputManager.html#a3579aef6a242289012e5819b4be15e52" title="Set the InputInterface." alt="" coords="463,64,640,91"/>
-<area shape="rect" id="node3" href="$classInputManager.html#af956225a4057143bf0704781e036be09" title="Call once to create the InputInterface derived input." alt="" coords="220,5,415,32"/>
-<area shape="rect" id="node5" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="221,57,414,98"/>
-<area shape="rect" id="node6" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="283,123,352,149"/>
-<area shape="rect" id="node4" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node1" title="Set the logger instance to use for diagnostic logging." alt="" coords="472,42,657,69"/>
+<area shape="rect" id="node2" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="247,42,424,69"/>
+<area shape="rect" id="node3" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="5,5,199,47"/>
+<area shape="rect" id="node4" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="67,71,137,98"/>
 </map>

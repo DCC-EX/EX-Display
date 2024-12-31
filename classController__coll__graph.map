@@ -1,13 +1,13 @@
 <map id="Controller" name="Controller">
-<area shape="rect" id="node1" title="Class for the central controller for EX&#45;Display All application activities are controlled through thi..." alt="" coords="535,467,622,493"/>
-<area shape="rect" id="node2" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="1016,184,1152,211"/>
-<area shape="rect" id="node11" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="903,288,1017,315"/>
-<area shape="rect" id="node3" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="533,95,600,121"/>
-<area shape="rect" id="node5" href="$classScreenManager.html" title="Class to manage all EX&#45;Display screens." alt="" coords="303,377,425,404"/>
-<area shape="rect" id="node6" href="$classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li..." alt="" coords="331,288,397,315"/>
-<area shape="rect" id="node7" href="$classScreenRow.html" title=" " alt="" coords="358,184,453,211"/>
-<area shape="rect" id="node8" href="$classDisplayManager.html" title="Manages all physical displays." alt="" coords="515,288,643,315"/>
-<area shape="rect" id="node9" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="645,184,774,211"/>
-<area shape="rect" id="node10" href="$classInputManager.html" title=" " alt="" coords="764,377,876,404"/>
+<area shape="rect" id="node1" title="Class for the central controller for EX&#45;Display All application activities are controlled through thi..." alt="" coords="545,467,631,493"/>
+<area shape="rect" id="node2" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="1025,184,1161,211"/>
+<area shape="rect" id="node10" href="$classInputManager.html" title=" " alt="" coords="769,377,881,404"/>
+<area shape="rect" id="node11" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="909,288,1022,315"/>
+<area shape="rect" id="node3" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="512,95,579,121"/>
+<area shape="rect" id="node5" href="$classScreenManager.html" title="Class to manage all EX&#45;Display screens." alt="" coords="395,377,517,404"/>
+<area shape="rect" id="node6" href="$classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li..." alt="" coords="299,288,365,315"/>
+<area shape="rect" id="node7" href="$classScreenRow.html" title=" " alt="" coords="286,184,381,211"/>
+<area shape="rect" id="node8" href="$classDisplayManager.html" title="Manages all physical displays." alt="" coords="509,288,637,315"/>
+<area shape="rect" id="node9" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="690,184,819,211"/>
 <area shape="rect" id="node4" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="5,5,75,32"/>
 </map>

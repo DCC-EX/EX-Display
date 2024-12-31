@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['log_526',['log',['../classLogger.html#ae5a9b14599b11113ffc3354b893c5b7e',1,'Logger']]],
-  ['logger_527',['Logger',['../classLogger.html#a423c007120aa6afabd5d3599ad760c0d',1,'Logger']]],
-  ['loop_528',['loop',['../EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'EX-Display.ino']]]
+  ['log_538',['log',['../classLogger.html#ae5a9b14599b11113ffc3354b893c5b7e',1,'Logger']]],
+  ['logger_539',['Logger',['../classLogger.html#a423c007120aa6afabd5d3599ad760c0d',1,'Logger']]],
+  ['loop_540',['loop',['../EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'EX-Display.ino']]]
 ];

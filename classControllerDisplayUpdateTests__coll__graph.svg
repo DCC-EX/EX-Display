@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 901;
+var viewWidth = 906;
 var viewHeight = 452;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,13 +54,13 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>ControllerDisplayUpdateTests</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-448 897,-448 897,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-448 902,-448 902,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="Test harness for ensuring displays are updated when screen updates are received.">
-<polygon fill="#bfbfbf" stroke="black" points="220.5,-0.5 220.5,-19.5 381.5,-19.5 381.5,-0.5 220.5,-0.5"/>
-<text text-anchor="middle" x="301" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">ControllerDisplayUpdateTests</text>
+<polygon fill="#bfbfbf" stroke="black" points="338.5,-0.5 338.5,-19.5 499.5,-19.5 499.5,-0.5 338.5,-0.5"/>
+<text text-anchor="middle" x="419" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">ControllerDisplayUpdateTests</text>
 </a>
 </g>
 </g>
@@ -68,282 +68,289 @@ var sectionId = 'dynsection-1';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="0,-67.5 0,-86.5 36,-86.5 36,-67.5 0,-67.5"/>
-<text text-anchor="middle" x="18" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">Test</text>
+<polygon fill="white" stroke="#bfbfbf" points="116,-67.5 116,-86.5 152,-86.5 152,-67.5 116,-67.5"/>
+<text text-anchor="middle" x="134" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">Test</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M28.06,-58.92C33.53,-51.21 41.03,-42.78 50,-38 78.68,-22.74 158.32,-16.1 220.28,-13.21"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="25.08,-57.08 22.59,-67.38 30.96,-60.88 25.08,-57.08"/>
+<path fill="none" stroke="midnightblue" d="M144.05,-58.92C149.53,-51.21 157.02,-42.77 166,-38 195.01,-22.58 275.73,-15.96 338.27,-13.13"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="141.08,-57.08 138.59,-67.38 146.96,-60.88 141.08,-57.08"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="classController.html" target="_top" xlink:title="Class for the central controller for EX&#45;Display All application activities are controlled through thi...">
-<polygon fill="white" stroke="black" points="268.5,-67.5 268.5,-86.5 333.5,-86.5 333.5,-67.5 268.5,-67.5"/>
-<text text-anchor="middle" x="301" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">Controller</text>
+<polygon fill="white" stroke="black" points="386.5,-67.5 386.5,-86.5 451.5,-86.5 451.5,-67.5 386.5,-67.5"/>
+<text text-anchor="middle" x="419" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">Controller</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node1 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M301,-57.04C301,-44.67 301,-29.12 301,-19.63"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="297.5,-57.23 301,-67.23 304.5,-57.23 297.5,-57.23"/>
-<text text-anchor="middle" x="326" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00"> controller</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M419,-57.04C419,-44.67 419,-29.12 419,-19.63"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="415.5,-57.23 419,-67.23 422.5,-57.23 415.5,-57.23"/>
+<text text-anchor="middle" x="444" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00"> controller</text>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="classCallbackInterface.html" target="_top" xlink:title="Interface class to use for callbacks.">
-<polygon fill="white" stroke="black" points="217,-290.5 217,-309.5 319,-309.5 319,-290.5 217,-290.5"/>
-<text text-anchor="middle" x="268" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">CallbackInterface</text>
+<polygon fill="white" stroke="black" points="488,-290.5 488,-309.5 590,-309.5 590,-290.5 488,-290.5"/>
+<text text-anchor="middle" x="539" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">CallbackInterface</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node3 -->
 <g id="edge3" class="edge">
 <title>Node4&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M263.59,-280.24C257.09,-249.07 247.33,-184.99 263,-134 268.8,-115.13 283.35,-96.91 292.67,-86.61"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="260.2,-281.14 265.78,-290.15 267.04,-279.63 260.2,-281.14"/>
+<path fill="none" stroke="midnightblue" d="M534.82,-280.41C531.8,-266.97 527.64,-248.36 524,-232 511.46,-175.58 534.34,-148.25 496,-105 484.72,-92.28 467.1,-85.55 451.56,-81.99"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="531.44,-281.34 537.05,-290.33 538.27,-279.8 531.44,-281.34"/>
+</g>
+<!-- Node12 -->
+<g id="node11" class="node">
+<title>Node12</title>
+<g id="a_node11"><a xlink:href="classInputManager.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="382,-134.5 382,-153.5 466,-153.5 466,-134.5 382,-134.5"/>
+<text text-anchor="middle" x="424" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">InputManager</text>
+</a>
+</g>
+</g>
+<!-- Node4&#45;&gt;Node12 -->
+<g id="edge17" class="edge">
+<title>Node4&#45;&gt;Node12</title>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M543.16,-280.46C544.44,-271.05 544.68,-259.6 541,-250 522.85,-202.59 469.31,-168.65 441.39,-153.62"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="539.71,-279.88 541.36,-290.35 546.6,-281.14 539.71,-279.88"/>
+<text text-anchor="middle" x="555.5" y="-218.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _callback</text>
 </g>
 <!-- Node13 -->
 <g id="node12" class="node">
 <title>Node13</title>
 <g id="a_node12"><a xlink:href="classInputInterface.html" target="_top" xlink:title="Class to abstract away all physical input implementatio to enable multiple input types Default return...">
-<polygon fill="white" stroke="black" points="364.5,-211.5 364.5,-230.5 449.5,-230.5 449.5,-211.5 364.5,-211.5"/>
-<text text-anchor="middle" x="407" y="-218.5" font-family="Helvetica,sans-Serif" font-size="10.00">InputInterface</text>
+<polygon fill="white" stroke="black" points="396.5,-211.5 396.5,-230.5 481.5,-230.5 481.5,-211.5 396.5,-211.5"/>
+<text text-anchor="middle" x="439" y="-218.5" font-family="Helvetica,sans-Serif" font-size="10.00">InputInterface</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node13 -->
-<g id="edge18" class="edge">
+<g id="edge19" class="edge">
 <title>Node4&#45;&gt;Node13</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M283.43,-283.19C294.48,-272.61 310.14,-259.02 326,-250 340.74,-241.61 358.42,-235.14 373.49,-230.55"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="280.93,-280.74 276.27,-290.26 285.85,-285.73 280.93,-280.74"/>
-<text text-anchor="middle" x="350.5" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _callback</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M488.56,-286.86C479.7,-283.13 471.07,-278.28 464,-272 451.38,-260.78 444.36,-241.72 441.17,-230.65"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="487.61,-290.25 498.2,-290.5 490.08,-283.7 487.61,-290.25"/>
+<text text-anchor="middle" x="488.5" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _callback</text>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
 <g id="a_node5"><a xlink:href="classLogger.html" target="_top" xlink:title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe...">
-<polygon fill="white" stroke="black" points="288,-357.5 288,-376.5 338,-376.5 338,-357.5 288,-357.5"/>
-<text text-anchor="middle" x="313" y="-364.5" font-family="Helvetica,sans-Serif" font-size="10.00">Logger</text>
+<polygon fill="white" stroke="black" points="405,-357.5 405,-376.5 455,-376.5 455,-357.5 405,-357.5"/>
+<text text-anchor="middle" x="430" y="-364.5" font-family="Helvetica,sans-Serif" font-size="10.00">Logger</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node4 -->
 <g id="edge4" class="edge">
 <title>Node5&#45;&gt;Node4</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M301.16,-348.9C292.42,-336.27 280.88,-319.6 273.97,-309.63"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="298.36,-351 306.93,-357.23 304.12,-347.02 298.36,-351"/>
-<text text-anchor="middle" x="314" y="-331" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M453.57,-351.94C475.16,-339.07 506.42,-320.43 524.53,-309.63"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="451.5,-349.11 444.7,-357.23 455.08,-355.12 451.5,-349.11"/>
+<text text-anchor="middle" x="511" y="-331" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="classScreenManager.html" target="_top" xlink:title="Class to manage all EX&#45;Display screens.">
-<polygon fill="white" stroke="black" points="24,-172.5 24,-191.5 116,-191.5 116,-172.5 24,-172.5"/>
-<text text-anchor="middle" x="70" y="-179.5" font-family="Helvetica,sans-Serif" font-size="10.00">ScreenManager</text>
+<polygon fill="white" stroke="black" points="592,-172.5 592,-191.5 684,-191.5 684,-172.5 592,-172.5"/>
+<text text-anchor="middle" x="638" y="-179.5" font-family="Helvetica,sans-Serif" font-size="10.00">ScreenManager</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node7 -->
 <g id="edge10" class="edge">
 <title>Node5&#45;&gt;Node7</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M277.43,-365.09C204.95,-362.36 44.38,-351.66 13,-310 -16.66,-270.62 37.14,-213.36 60.23,-191.72"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="277.75,-368.6 287.86,-365.44 277.99,-361.6 277.75,-368.6"/>
-<text text-anchor="middle" x="33" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M465.48,-364.38C504.18,-360.62 565.12,-348.5 599,-310 630.39,-274.33 636.51,-213.83 637.71,-191.56"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="464.87,-360.92 455.19,-365.23 465.45,-367.89 464.87,-360.92"/>
+<text text-anchor="middle" x="632" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="classScreen.html" target="_top" xlink:title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">
-<polygon fill="white" stroke="red" points="62,-290.5 62,-309.5 112,-309.5 112,-290.5 62,-290.5"/>
-<text text-anchor="middle" x="87" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">Screen</text>
+<polygon fill="white" stroke="red" points="684,-290.5 684,-309.5 734,-309.5 734,-290.5 684,-290.5"/>
+<text text-anchor="middle" x="709" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">Screen</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node8 -->
 <g id="edge9" class="edge">
 <title>Node5&#45;&gt;Node8</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M277.42,-365.92C240.39,-364.64 181.44,-359.19 135,-339 119.01,-332.05 103.81,-318.41 94.95,-309.5"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="277.62,-369.42 287.71,-366.19 277.8,-362.43 277.62,-369.42"/>
-<text text-anchor="middle" x="155" y="-331" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M465.34,-365.46C507.81,-363.91 580.73,-358.36 640,-339 661.06,-332.12 683.1,-318.73 696.44,-309.83"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="465.12,-361.97 455.23,-365.78 465.34,-368.97 465.12,-361.97"/>
+<text text-anchor="middle" x="683" y="-331" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
 </g>
 <!-- Node10 -->
 <g id="node9" class="node">
 <title>Node10</title>
 <g id="a_node9"><a xlink:href="classDisplayManager.html" target="_top" xlink:title="Manages all physical displays.">
-<polygon fill="white" stroke="black" points="444,-172.5 444,-191.5 540,-191.5 540,-172.5 444,-172.5"/>
-<text text-anchor="middle" x="492" y="-179.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisplayManager</text>
+<polygon fill="white" stroke="black" points="94,-172.5 94,-191.5 190,-191.5 190,-172.5 94,-172.5"/>
+<text text-anchor="middle" x="142" y="-179.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisplayManager</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node10 -->
 <g id="edge12" class="edge">
 <title>Node5&#45;&gt;Node10</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M348.6,-363.25C409.32,-357.71 528.61,-342.82 552,-310 580.87,-269.49 525.63,-212.9 501.99,-191.58"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="347.99,-359.79 338.33,-364.15 348.6,-366.77 347.99,-359.79"/>
-<text text-anchor="middle" x="579" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M394.62,-364.12C338.38,-360.76 231.36,-352.76 196,-339 175.54,-331.04 167.04,-328.98 156,-310 133.26,-270.88 137.87,-213.46 140.68,-191.75"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="394.64,-367.62 404.82,-364.71 395.04,-360.64 394.64,-367.62"/>
+<text text-anchor="middle" x="176" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
 </g>
 <!-- Node11 -->
 <g id="node10" class="node">
 <title>Node11</title>
 <g id="a_node10"><a xlink:href="classDisplayInterface.html" target="_top" xlink:title="Class to abstract away all physical display implementation to enable multiple display types.">
-<polygon fill="white" stroke="black" points="337.5,-290.5 337.5,-309.5 434.5,-309.5 434.5,-290.5 337.5,-290.5"/>
-<text text-anchor="middle" x="386" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisplayInterface</text>
+<polygon fill="white" stroke="black" points="247.5,-290.5 247.5,-309.5 344.5,-309.5 344.5,-290.5 247.5,-290.5"/>
+<text text-anchor="middle" x="296" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisplayInterface</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node11 -->
 <g id="edge14" class="edge">
 <title>Node5&#45;&gt;Node11</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M330.57,-350.36C344.92,-337.58 364.67,-319.99 376.31,-309.63"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="327.99,-347.97 322.85,-357.23 332.64,-353.2 327.99,-347.97"/>
-<text text-anchor="middle" x="374" y="-331" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
-</g>
-<!-- Node12 -->
-<g id="node11" class="node">
-<title>Node12</title>
-<g id="a_node11"><a xlink:href="classInputManager.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="272,-134.5 272,-153.5 356,-153.5 356,-134.5 272,-134.5"/>
-<text text-anchor="middle" x="314" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">InputManager</text>
-</a>
-</g>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M403.08,-352.94C376.54,-340.07 336.73,-320.76 313.87,-309.67"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="401.68,-356.15 412.21,-357.37 404.74,-349.85 401.68,-356.15"/>
+<text text-anchor="middle" x="391" y="-331" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
 </g>
 <!-- Node5&#45;&gt;Node12 -->
-<g id="edge21" class="edge">
+<g id="edge22" class="edge">
 <title>Node5&#45;&gt;Node12</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M279.95,-353.61C236.46,-335.18 167.96,-297.54 190,-250 212.07,-202.4 267.53,-168.54 296.21,-153.58"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="278.76,-356.91 289.34,-357.46 281.41,-350.43 278.76,-356.91"/>
-<text text-anchor="middle" x="210" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M394.77,-365.49C337.76,-362.42 228.16,-346.64 193,-272 155.41,-192.2 305.38,-160.57 381.78,-149.81"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="394.62,-368.98 404.77,-365.92 394.93,-361.99 394.62,-368.98"/>
+<text text-anchor="middle" x="213" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
 </g>
 <!-- Node5&#45;&gt;Node13 -->
-<g id="edge19" class="edge">
+<g id="edge20" class="edge">
 <title>Node5&#45;&gt;Node13</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M348.24,-362.96C387.34,-357.92 450.41,-344.66 492,-310 506.66,-297.78 507.42,-290.53 512,-272 514.35,-262.51 517.96,-257.75 512,-250 504.21,-239.86 475.25,-232.61 449.72,-228.03"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="347.64,-359.5 338.12,-364.15 348.46,-366.45 347.64,-359.5"/>
-<text text-anchor="middle" x="528" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M431.16,-347.38C433.13,-315.97 437.02,-253.63 438.46,-230.71"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="427.67,-347.22 430.54,-357.42 434.65,-347.66 427.67,-347.22"/>
+<text text-anchor="middle" x="454" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _logger</text>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="classStream.html" target="_top" xlink:title="Class to mock the basic Stream function equivalent of the Arduino framework.">
-<polygon fill="white" stroke="black" points="638,-424.5 638,-443.5 690,-443.5 690,-424.5 638,-424.5"/>
-<text text-anchor="middle" x="664" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00">Stream</text>
+<polygon fill="white" stroke="black" points="404,-424.5 404,-443.5 456,-443.5 456,-424.5 404,-424.5"/>
+<text text-anchor="middle" x="430" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00">Stream</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node1 -->
-<g id="edge26" class="edge">
+<g id="edge27" class="edge">
 <title>Node6&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M700.22,-431.63C742.29,-427.86 806,-414.49 806,-368 806,-368 806,-368 806,-76 806,-33.74 524.15,-18.34 381.58,-13.26"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="699.75,-428.15 690.04,-432.39 700.28,-435.13 699.75,-428.15"/>
-<text text-anchor="middle" x="849.5" y="-224" font-family="Helvetica,sans-Serif" font-size="10.00"> commandStation</text>
-<text text-anchor="middle" x="849.5" y="-213" font-family="Helvetica,sans-Serif" font-size="10.00">console</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M466.21,-430.61C561.34,-423.84 811,-402.76 811,-368 811,-368 811,-368 811,-76 811,-44.74 614.5,-25.16 499.75,-16.39"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="465.92,-427.12 456.19,-431.31 466.41,-434.1 465.92,-427.12"/>
+<text text-anchor="middle" x="854.5" y="-224" font-family="Helvetica,sans-Serif" font-size="10.00"> commandStation</text>
+<text text-anchor="middle" x="854.5" y="-213" font-family="Helvetica,sans-Serif" font-size="10.00">console</text>
 </g>
 <!-- Node6&#45;&gt;Node3 -->
-<g id="edge23" class="edge">
+<g id="edge24" class="edge">
 <title>Node6&#45;&gt;Node3</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M664,-414.13C664,-401.16 664,-383.54 664,-368 664,-368 664,-368 664,-143 664,-97.11 612.59,-115.86 568,-105 485.16,-84.83 384.32,-79.7 333.54,-78.41"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="660.5,-414.17 664,-424.17 667.5,-414.17 660.5,-414.17"/>
-<text text-anchor="middle" x="727.5" y="-264" font-family="Helvetica,sans-Serif" font-size="10.00"> _commandStationStream</text>
-<text text-anchor="middle" x="727.5" y="-253" font-family="Helvetica,sans-Serif" font-size="10.00">_consoleStream</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M393.75,-431.32C290.12,-426.03 0,-407.69 0,-368 0,-368 0,-368 0,-143 0,-103.94 288.02,-84.97 386.47,-79.62"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="393.59,-434.81 403.75,-431.82 393.94,-427.82 393.59,-434.81"/>
+<text text-anchor="middle" x="63.5" y="-264" font-family="Helvetica,sans-Serif" font-size="10.00"> _commandStationStream</text>
+<text text-anchor="middle" x="63.5" y="-253" font-family="Helvetica,sans-Serif" font-size="10.00">_consoleStream</text>
 </g>
 <!-- Node6&#45;&gt;Node5 -->
 <g id="edge5" class="edge">
 <title>Node6&#45;&gt;Node5</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M628.05,-426.34C556.92,-413.17 399.76,-384.07 338.32,-372.69"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="627.43,-429.79 637.9,-428.17 628.71,-422.91 627.43,-429.79"/>
-<text text-anchor="middle" x="548" y="-398" font-family="Helvetica,sans-Serif" font-size="10.00"> _outputStream</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M430,-414.04C430,-401.67 430,-386.12 430,-376.63"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="426.5,-414.23 430,-424.23 433.5,-414.23 426.5,-414.23"/>
+<text text-anchor="middle" x="468" y="-398" font-family="Helvetica,sans-Serif" font-size="10.00"> _outputStream</text>
 </g>
 <!-- Node7&#45;&gt;Node1 -->
-<g id="edge24" class="edge">
+<g id="edge25" class="edge">
 <title>Node7&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M74.59,-162.62C79.6,-145.79 89.12,-121.13 105,-105 150.8,-58.48 224.21,-31.9 266.99,-19.56"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="71.18,-161.8 71.92,-172.37 77.93,-163.65 71.18,-161.8"/>
-<text text-anchor="middle" x="144.5" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"> screenManager</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M622.39,-165.06C594.32,-136.97 532.68,-77.86 473,-38 462.37,-30.9 449.6,-24.43 439.16,-19.61"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="620.16,-167.78 629.69,-172.42 625.14,-162.86 620.16,-167.78"/>
+<text text-anchor="middle" x="608.5" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"> screenManager</text>
 </g>
 <!-- Node7&#45;&gt;Node3 -->
 <g id="edge6" class="edge">
 <title>Node7&#45;&gt;Node3</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M90.64,-166.61C105.56,-156.61 126.45,-143.45 146,-134 188.25,-113.58 239.98,-96.34 271.7,-86.59"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="88.49,-163.84 82.19,-172.36 92.42,-169.63 88.49,-163.84"/>
-<text text-anchor="middle" x="188" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _screenManager</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M641.32,-162.21C643.2,-144.9 642.76,-119.73 628,-105 603.85,-80.9 503.96,-77.59 451.51,-77.56"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="637.83,-161.87 639.87,-172.26 644.76,-162.86 637.83,-161.87"/>
+<text text-anchor="middle" x="684" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _screenManager</text>
 </g>
 <!-- Node8&#45;&gt;Node7 -->
 <g id="edge7" class="edge">
 <title>Node8&#45;&gt;Node7</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M84.27,-280.37C80.53,-254.86 73.98,-210.12 71.25,-191.5"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="80.81,-280.89 85.72,-290.28 87.74,-279.88 80.81,-280.89"/>
-<text text-anchor="middle" x="114.5" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _firstScreen</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M698.43,-281.72C682.97,-256.48 654.81,-210.46 643.21,-191.5"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="695.46,-283.58 703.66,-290.28 701.43,-279.92 695.46,-283.58"/>
+<text text-anchor="middle" x="722.5" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _firstScreen</text>
 </g>
 <!-- Node8&#45;&gt;Node8 -->
 <g id="edge8" class="edge">
 <title>Node8&#45;&gt;Node8</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M122.45,-305.25C127,-304.34 130,-302.59 130,-300 130,-295.75 121.91,-293.76 112.18,-294.02"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="121.91,-301.78 112.18,-305.98 122.4,-308.77 121.91,-301.78"/>
-<text text-anchor="middle" x="145.5" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _next</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M744.45,-305.25C749,-304.34 752,-302.59 752,-300 752,-295.75 743.91,-293.76 734.18,-294.02"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="743.91,-301.78 734.18,-305.98 744.4,-308.77 743.91,-301.78"/>
+<text text-anchor="middle" x="767.5" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _next</text>
 </g>
 <!-- Node10&#45;&gt;Node1 -->
-<g id="edge25" class="edge">
+<g id="edge26" class="edge">
 <title>Node10&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M496.4,-162.52C497.6,-153.45 497.51,-142.64 493,-134 459.36,-69.62 375.3,-34.34 330.38,-19.52"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="492.94,-161.99 494.52,-172.47 499.82,-163.29 492.94,-161.99"/>
-<text text-anchor="middle" x="523" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"> displayManager</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M159.12,-165.13C177.15,-148.86 206.8,-123.43 235,-105 291.46,-68.11 364.23,-34.71 398.9,-19.57"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="156.28,-162.97 151.25,-172.3 161,-168.15 156.28,-162.97"/>
+<text text-anchor="middle" x="276" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"> displayManager</text>
 </g>
 <!-- Node10&#45;&gt;Node3 -->
 <g id="edge11" class="edge">
 <title>Node10&#45;&gt;Node3</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M434.14,-169.41C424.08,-165.63 414.22,-160.62 406,-154 386.46,-138.27 397.27,-121.05 378,-105 365.37,-94.48 348.38,-87.95 333.57,-83.96"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="433.21,-172.79 443.8,-172.67 435.45,-166.16 433.21,-172.79"/>
-<text text-anchor="middle" x="449.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _displayManager</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M174.71,-168.84C231.52,-147.71 347.04,-104.76 396.12,-86.51"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="173.29,-165.63 165.14,-172.4 175.73,-172.19 173.29,-165.63"/>
+<text text-anchor="middle" x="305.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _displayManager</text>
 </g>
 <!-- Node11&#45;&gt;Node10 -->
 <g id="edge13" class="edge">
 <title>Node11&#45;&gt;Node10</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M408.8,-284.78C414.33,-280.91 420.07,-276.53 425,-272 452.62,-246.61 476.86,-208.59 486.97,-191.66"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="406.79,-281.91 400.42,-290.38 410.68,-287.73 406.79,-281.91"/>
-<text text-anchor="middle" x="477" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _firstDisplay</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M275.49,-284.28C270.34,-280.4 264.89,-276.14 260,-272 249.21,-262.85 247.92,-258.99 237,-250 209.26,-227.17 174.17,-203.7 155.36,-191.51"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="273.59,-287.23 283.72,-290.35 277.75,-281.6 273.59,-287.23"/>
+<text text-anchor="middle" x="292" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _firstDisplay</text>
 </g>
 <!-- Node11&#45;&gt;Node11 -->
 <g id="edge15" class="edge">
 <title>Node11&#45;&gt;Node11</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M444.88,-304.58C449.59,-303.58 452.5,-302.05 452.5,-300 452.5,-296.72 445.04,-294.78 434.71,-294.19"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="444.22,-301.13 434.71,-305.81 445.06,-308.08 444.22,-301.13"/>
-<text text-anchor="middle" x="468" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _next</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M354.88,-304.58C359.59,-303.58 362.5,-302.05 362.5,-300 362.5,-296.72 355.04,-294.78 344.71,-294.19"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="354.22,-301.13 344.71,-305.81 355.06,-308.08 354.22,-301.13"/>
+<text text-anchor="middle" x="378" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _next</text>
 </g>
 <!-- Node11&#45;&gt;Node12 -->
-<g id="edge22" class="edge">
+<g id="edge23" class="edge">
 <title>Node11&#45;&gt;Node12</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M367.79,-284.08C346.59,-266.5 314.05,-238.82 311,-232 299.15,-205.51 306.76,-169.82 311.31,-153.63"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="365.6,-286.81 375.54,-290.47 370.06,-281.41 365.6,-286.81"/>
-<text text-anchor="middle" x="333" y="-218.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _display</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M314.82,-283.38C318.22,-279.9 321.48,-276.04 324,-272 339.33,-247.44 327.65,-233.89 344,-210 361.18,-184.9 390.82,-164.47 408.8,-153.58"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="312.33,-280.92 307.4,-290.3 317.1,-286.04 312.33,-280.92"/>
+<text text-anchor="middle" x="366" y="-218.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _display</text>
 </g>
 <!-- Node11&#45;&gt;Node13 -->
-<g id="edge20" class="edge">
+<g id="edge21" class="edge">
 <title>Node11&#45;&gt;Node13</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M380.13,-280.47C378.12,-271.06 377.23,-259.61 381,-250 384.01,-242.34 390.2,-235.53 395.79,-230.55"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="376.81,-281.6 382.77,-290.35 383.57,-279.79 376.81,-281.6"/>
-<text text-anchor="middle" x="403" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _display</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M325.23,-286.03C333.21,-281.98 341.68,-277.2 349,-272 360.54,-263.81 360.16,-257.75 372,-250 384.45,-241.85 399.65,-235.27 412.43,-230.54"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="323.64,-282.91 316.17,-290.43 326.69,-289.21 323.64,-282.91"/>
+<text text-anchor="middle" x="394" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _display</text>
 </g>
 <!-- Node12&#45;&gt;Node3 -->
 <g id="edge16" class="edge">
 <title>Node12&#45;&gt;Node3</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M304.86,-125.03C303.7,-122.08 302.68,-119 302,-116 299.76,-106.09 299.85,-94.35 300.28,-86.57"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="301.75,-126.65 309.09,-134.3 308.12,-123.75 301.75,-126.65"/>
-<text text-anchor="middle" x="340" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"> _inputManager</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M420.87,-123.86C420.53,-121.22 420.22,-118.55 420,-116 419.13,-106.01 418.94,-94.48 418.93,-86.77"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="417.45,-124.66 422.39,-134.03 424.38,-123.62 417.45,-124.66"/>
+<text text-anchor="middle" x="458" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"> _inputManager</text>
 </g>
 <!-- Node13&#45;&gt;Node12 -->
-<g id="edge17" class="edge">
+<g id="edge18" class="edge">
 <title>Node13&#45;&gt;Node12</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M388.31,-204.93C369.15,-189.48 340.03,-165.99 324.54,-153.5"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="386.35,-207.84 396.33,-211.4 390.74,-202.39 386.35,-207.84"/>
-<text text-anchor="middle" x="389" y="-179.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _input</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M435.29,-201.47C432.23,-186.15 428.02,-165.09 425.7,-153.5"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="431.89,-202.28 437.28,-211.4 438.75,-200.9 431.89,-202.28"/>
+<text text-anchor="middle" x="450" y="-179.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _input</text>
 </g>
 </g>
 </svg>

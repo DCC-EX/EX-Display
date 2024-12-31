@@ -1,0 +1,4 @@
+<map id="TFT_eSPIDisplay::TFT_eSPIDisplay" name="TFT_eSPIDisplay::TFT_eSPIDisplay">
+<area shape="rect" id="node1" title="Constructor for a TFT_eSPIDisplay instance." alt="" coords="231,5,389,47"/>
+<area shape="rect" id="node2" href="$classTFT__eSPIDisplay.html#ae5424c54801b412b9406d51c441ed1a8" title="Static method to enable the compiler to generate create commands from myDevices.h entries." alt="" coords="5,13,183,39"/>
+</map>

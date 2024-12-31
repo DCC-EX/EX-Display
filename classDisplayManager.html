@@ -92,7 +92,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a14afc225d393f7224bfa0474338d39f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a <a class="el" href="classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types.">DisplayInterface</a> derived instance to the list of displays.  <a href="classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3">More...</a><br /></td></tr>
 <tr class="separator:a14afc225d393f7224bfa0474338d39f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ade9b696372a53b8b716d29d7b53c70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayManager.html#a9ade9b696372a53b8b716d29d7b53c70">createDisplays</a> ()</td></tr>
-<tr class="memdesc:a9ade9b696372a53b8b716d29d7b53c70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the displays configured in myConfig.h and creates the list of displays.  <a href="classDisplayManager.html#a9ade9b696372a53b8b716d29d7b53c70">More...</a><br /></td></tr>
+<tr class="memdesc:a9ade9b696372a53b8b716d29d7b53c70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the displays configured in myConfig.h and creates the list of displays (this is implemented in <a class="el" href="CreateDeviceMacros_8h.html">CreateDeviceMacros.h</a>, not <a class="el" href="DisplayManager_8cpp.html">DisplayManager.cpp</a>)  <a href="classDisplayManager.html#a9ade9b696372a53b8b716d29d7b53c70">More...</a><br /></td></tr>
 <tr class="separator:a9ade9b696372a53b8b716d29d7b53c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a270daf83b6af22558fde42034254b351"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayManager.html#a270daf83b6af22558fde42034254b351">startDisplays</a> ()</td></tr>
 <tr class="memdesc:a270daf83b6af22558fde42034254b351"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the begin() method for all associated Display instances.  <a href="classDisplayManager.html#a270daf83b6af22558fde42034254b351">More...</a><br /></td></tr>
@@ -306,7 +306,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_a14afc225d393f7224bfa0474338d39f3_icgraph.svg" width="100%" height="385"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classDisplayManager_a14afc225d393f7224bfa0474338d39f3_icgraph.svg" width="338" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -327,17 +327,11 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Parses the displays configured in myConfig.h and creates the list of displays. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_a9ade9b696372a53b8b716d29d7b53c70_cgraph.svg" width="100%" height="442"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<p>Parses the displays configured in myConfig.h and creates the list of displays (this is implemented in <a class="el" href="CreateDeviceMacros_8h.html">CreateDeviceMacros.h</a>, not <a class="el" href="DisplayManager_8cpp.html">DisplayManager.cpp</a>) </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_a9ade9b696372a53b8b716d29d7b53c70_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_a9ade9b696372a53b8b716d29d7b53c70_icgraph.svg" width="100%" height="385"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -610,7 +604,9 @@ Here is the caller graph for this function:</div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/EX-Display/EX-Display/<a class="el" href="DisplayManager_8h_source.html">DisplayManager.h</a></li>
+<li>/home/runner/work/EX-Display/EX-Display/<a class="el" href="CreateDeviceMacros_8h_source.html">CreateDeviceMacros.h</a></li>
 <li>/home/runner/work/EX-Display/EX-Display/<a class="el" href="DisplayManager_8cpp.html">DisplayManager.cpp</a></li>
+<li>/home/runner/work/EX-Display/EX-Display/test/mocks/<a class="el" href="MockDisplayInputMethods_8h_source.html">MockDisplayInputMethods.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
