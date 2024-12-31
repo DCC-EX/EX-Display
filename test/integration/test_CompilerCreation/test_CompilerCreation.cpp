@@ -16,6 +16,7 @@
  */
 
 #include "CreateUserDevices.h"
+#include "test/mocks/MockCallback.h"
 #include <gtest/gtest.h>
 
 using namespace testing;
@@ -29,10 +30,13 @@ protected:
   void TearDown() override {}
 };
 
-/// @brief Ensure displays are created and all attributes are valid
-TEST_F(CompilerCreationTests, CreateDisplays) {
-  // Create DisplayManager instance and create displays
+/// @brief Ensure devices are created and all attributes are valid
+TEST_F(CompilerCreationTests, CreateDevices) {
+  // Create instances, displays, and input
   DisplayManager *displayManager = new DisplayManager();
+  MockCallback *callback = new MockCallback();
+  InputManager *inputManager = new InputManager();
+  inputManager->setCallback(callback);
   displayManager->createDisplays();
 
   // Ensure three displays have been created with correct IDs and attributes
@@ -66,18 +70,39 @@ TEST_F(CompilerCreationTests, CreateDisplays) {
 
   displayManager->startDisplays();
 
+  // Now create the input
+  inputManager->createInput();
+
+  // Bail out if the input isn't created successfully, otherwise use it
+  ASSERT_NE(inputManager->getInput(), nullptr);
+  MockInput *input = static_cast<MockInput *>(inputManager->getInput());
+
+  // begin() should be called once when started
+  EXPECT_CALL(*input, begin()).Times(1);
+  inputManager->startInput();
+
+  // Expect check() to be called once
+  // When called, this simulates a user selecting up
+  EXPECT_CALL(*input, check()).WillOnce(Invoke([callback]() {
+    // Simulate a button press by calling the callback
+    callback->onInputAction(InputAction::PRESS_UP);
+  }));
+
+  // Expect onInputAction to be called with PRESS_UP
+  EXPECT_CALL(*callback, onInputAction(InputAction::PRESS_UP)).Times(1);
+
+  // Act
+  input->check();
+
   // Verify all expectations
   testing::Mock::VerifyAndClearExpectations(display0);
   testing::Mock::VerifyAndClearExpectations(display1);
   testing::Mock::VerifyAndClearExpectations(display2);
+  testing::Mock::VerifyAndClearExpectations(callback);
+  testing::Mock::VerifyAndClearExpectations(input);
 
   // Clean up
   delete displayManager;
+  delete inputManager;
+  delete callback;
 }
-
-/// @brief Ensure input is created and all attributes are valid
-// TEST_F(CompilerCreationTests, CreateInput) {
-//   // Create DisplayManager and InputManager instances as our mock needs a display instance
-//   DisplayManager *displayManager = new DisplayManager();
-//   InputManager *inputManager = new InputManager();
-// }

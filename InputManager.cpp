@@ -22,21 +22,7 @@
 #include "TFT_eSPITouch.h"
 #endif // PIO_UNIT_TESTING
 
-InputManager::InputManager() : _display(nullptr), _input(nullptr), _logger(nullptr) {}
-
-void InputManager::createInput() {
-  LOG(LogLevel::DEBUG, "InputManager::createInput()");
-// Do not load when testing, TFT_eSPI library is incompatible and will cause failures.
-#ifndef PIO_UNIT_TESTING
-  // Create TFT_eSPITouch instance here
-  TFT_eSPITouch *touch = new TFT_eSPITouch(0);
-  if (touch == nullptr) {
-    LOG(LogLevel::ERROR, "Failed to create TFT_eSPITouch instance");
-    return;
-  }
-  addInput(touch);
-#endif // PIO_UNIT_TESTING
-}
+InputManager::InputManager() : _display(nullptr), _input(nullptr), _logger(nullptr), _callback(nullptr) {}
 
 void InputManager::addInput(InputInterface *input) {
   LOG(LogLevel::DEBUG, "InputManager::addInput()");

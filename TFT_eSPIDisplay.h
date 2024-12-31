@@ -88,7 +88,7 @@ public:
   /// @return true|false
   bool tftInitialised();
 
-  /// @brief Static method to enable the compiler to generate create commands from myConfig.h entries
+  /// @brief Static method to enable the compiler to generate create commands from myDevices.h entries
   /// @return Pointer to a new TFT_eSPIDisplay instance
   static TFT_eSPIDisplay *create(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour,
                                  int csPin = -1);

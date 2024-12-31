@@ -15,10 +15,7 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-// createDisplays() dummy implementation due to not using compiler to create them
-#include "DisplayManager.h"
-void DisplayManager::createDisplays() {}
-
+#include "test/mocks/MockDisplayInputMethods.h"
 #include <gtest/gtest.h>
 
 int main(int argc, char **argv) {

@@ -15,31 +15,15 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MOCKINPUT_H
-#define MOCKINPUT_H
+#ifndef MOCKINPUTDISPLAYMETHODS_H
+#define MOCKINPUTDISPLAYMETHODS_H
 
-#include "InputInterface.h"
-#include <gmock/gmock.h>
+// createDisplays() dummy implementation due to not using compiler to create them
+#include "DisplayManager.h"
+void DisplayManager::createDisplays() {}
 
-/// @brief Mock physical input class
-class MockInput : public InputInterface {
-public:
-  MockInput() {}
+// createInput() dummy implementation due to not using compiler to create it
+#include "InputManager.h"
+void InputManager::createInput() {}
 
-  MockInput(int needsDisplay) { _needsDisplay = needsDisplay; }
-
-  MOCK_METHOD(void, begin, (), (override));
-
-  MOCK_METHOD(void, check, (), (override));
-
-  void setIsCalibrating(bool isCalibrating) { _isCalibrating = isCalibrating; }
-
-  void setNeedsDisplay(int displayId) { _needsDisplay = displayId; }
-
-  static MockInput *create(int needsDisplay) {
-    MockInput *newInput = new MockInput(needsDisplay);
-    return newInput;
-  }
-};
-
-#endif // MOCKINPUT_H
+#endif // MOCKINPUTDISPLAYMETHODS_H

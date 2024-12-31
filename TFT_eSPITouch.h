@@ -41,6 +41,11 @@ public:
   /// Any actions should call the callback set in the _callback attribute
   void check() override;
 
+  /// @brief Static method to enable the compiler to generate create commands from myDevices.h entries
+  /// @param displayId ID of the display to retrieve the TFT_eSPI instance from
+  /// @return Pointer to the new TFT_eSPITouch instance
+  static TFT_eSPITouch *create(int displayId);
+
 private:
   TFT_eSPI *_tft;
   const char _calibrationFile[20];

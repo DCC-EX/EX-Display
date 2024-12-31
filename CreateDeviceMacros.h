@@ -22,10 +22,27 @@
 #ifndef CREATEDEVICEMACROS_H
 #define CREATEDEVICEMACROS_H
 
+// Process USER_DISPLAY entries
 #include "CreateDeviceMacroReset.h"
 #undef USER_DISPLAY
 #define USER_DISPLAY(type, params...) this->addDisplay(type::create(params));
 void DisplayManager::createDisplays() {
+#ifndef PIO_UNIT_TESTING
+#if __has_include("myDevices.h")
+#include "myDevices.h"
+#else
+#error No myDevices.h created, no displays or input devices available
+#endif // myDevices.h
+#else
+#include "test/mocks/MockMyDevices.h"
+#endif // PIO_UNIT_TESTING
+}
+
+// Process USER_INPUT entry
+#include "CreateDeviceMacroReset.h"
+#undef USER_INPUT
+#define USER_INPUT(type, params...) this->addInput(type::create(params));
+void InputManager::createInput() {
 #ifndef PIO_UNIT_TESTING
 #if __has_include("myDevices.h")
 #include "myDevices.h"
