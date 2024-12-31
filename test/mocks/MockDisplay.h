@@ -33,6 +33,11 @@ public:
   MOCK_METHOD(void, clearRow, (uint8_t row), (override));
 
   MOCK_METHOD(void, displayStartupInfo, (const char *version), (override));
+
+  static MockDisplay *create() {
+    MockDisplay *newDisplay = new MockDisplay();
+    return newDisplay;
+  }
 };
 
 #endif // MOCKDISPLAY_H

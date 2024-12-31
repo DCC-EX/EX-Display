@@ -15,18 +15,13 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "mockMyConfig.h"
-#include "test/mocks/MockDisplay.h"
+// createDisplays() dummy implementation due to not using compiler to create them
+#include "DisplayManager.h"
+void DisplayManager::createDisplays() {}
+
 #include <gtest/gtest.h>
 
-using namespace testing;
-
-class DisplayCreationTests : public Test {
-protected:
-  void SetUp() override {}
-
-  void TearDown() override {}
-};
-
-/// @brief Create a ScreenRow and check all attributes are valid
-TEST_F(DisplayCreationTests, CreateDisplay) {}
+int main(int argc, char **argv) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}

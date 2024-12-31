@@ -15,26 +15,11 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MOCKINPUT_H
-#define MOCKINPUT_H
+/**
+ * @brief Mock myConfig.h for use with testing device creation only
+ */
 
-#include "InputInterface.h"
-#include <gmock/gmock.h>
-
-/// @brief Mock physical input class
-class MockInput : public InputInterface {
-public:
-  MockInput() {}
-
-  MockInput(int needsDisplay) { _needsDisplay = needsDisplay; }
-
-  MOCK_METHOD(void, begin, (), (override));
-
-  MOCK_METHOD(void, check, (), (override));
-
-  void setIsCalibrating(bool isCalibrating) { _isCalibrating = isCalibrating; }
-
-  void setNeedsDisplay(int displayId) { _needsDisplay = displayId; }
-};
-
-#endif // MOCKINPUT_H
+DISPLAY(MockDisplay)
+DISPLAY(MockSPIDisplay, 22)
+DISPLAY(MockSPIDisplay, 23)
+INPUT(MockInput, 1)

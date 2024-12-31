@@ -15,26 +15,26 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MOCKINPUT_H
-#define MOCKINPUT_H
+/**
+ * @brief Preprocessor macros to create user specified devices from myConfig.h
+ */
 
-#include "InputInterface.h"
-#include <gmock/gmock.h>
+#ifndef CREATEDEVICEMACROS_H
+#define CREATEDEVICEMACROS_H
 
-/// @brief Mock physical input class
-class MockInput : public InputInterface {
-public:
-  MockInput() {}
+#include "CreateDeviceMacroReset.h"
+#undef DISPLAY
+#define DISPLAY(type, params...) this->addDisplay(type::create(params));
+void DisplayManager::createDisplays() {
+#ifndef PIO_UNIT_TESTING
+#if __has_include("myConfig.h")
+#include "myConfig.h"
+#else
+#error No myConfig.h created, no displays or input devices available
+#endif // myConfig.h
+#else
+#include "test/mocks/MockMyConfig.h"
+#endif // PIO_UNIT_TESTING
+}
 
-  MockInput(int needsDisplay) { _needsDisplay = needsDisplay; }
-
-  MOCK_METHOD(void, begin, (), (override));
-
-  MOCK_METHOD(void, check, (), (override));
-
-  void setIsCalibrating(bool isCalibrating) { _isCalibrating = isCalibrating; }
-
-  void setNeedsDisplay(int displayId) { _needsDisplay = displayId; }
-};
-
-#endif // MOCKINPUT_H
+#endif // CREATEDEVICEMACROS_H

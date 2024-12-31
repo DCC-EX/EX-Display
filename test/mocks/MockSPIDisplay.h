@@ -39,6 +39,11 @@ public:
   MOCK_METHOD(void, clearRow, (uint8_t row), (override));
 
   MOCK_METHOD(void, displayStartupInfo, (const char *version), (override));
+
+  static MockSPIDisplay *create(int csPin = -1) {
+    MockSPIDisplay *newDisplay = new MockSPIDisplay(csPin);
+    return newDisplay;
+  }
 };
 
 #endif // MOCKSPIDISPLAY_H

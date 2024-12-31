@@ -15,15 +15,13 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-/**
- * @brief This file simulates a user's myConfig.h containing mock display and input devices that are to be created by
- * the Configurator
- */
+// createDisplays() dummy implementation due to not using compiler to create them
+#include "DisplayManager.h"
+void DisplayManager::createDisplays() {}
 
-#ifndef MYCONFIG_H
-#define MYCONFIG_H
+#include <gtest/gtest.h>
 
-// TFT_DISPLAY()
-
-
-#endif // MYCONFIG_H
+int main(int argc, char **argv) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}
