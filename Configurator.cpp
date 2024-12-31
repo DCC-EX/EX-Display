@@ -41,7 +41,8 @@ void Configurator::initialise() {
   AtFinder::setup(100, _controller);       // Setup AtFinder to call back to Controller
   AtFinder::setLogger(_logger);            // Set the AtFinder logger for debug etc.
   _displayManager->createDisplays();       // Create user defined displays from myConfig.h
-  _inputManager->createInput(_controller); // Create user defined input from myConfig.h
+  _inputManager->setCallback(_controller); // Input uses the Controller for callbacks
+  _inputManager->createInput();            // Create user defined input from myConfig.h
   // If the user defined input requires a display instance, set it
   if (_inputManager->getInput() != nullptr && _inputManager->getInput()->needsDisplay() != -1) {
     uint8_t displayId = _inputManager->getInput()->needsDisplay();

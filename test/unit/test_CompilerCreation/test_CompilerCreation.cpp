@@ -29,7 +29,7 @@ protected:
   void TearDown() override {}
 };
 
-/// @brief user devices and ensure all attributes are valid
+/// @brief Ensure displays are created and all attributes are valid
 TEST_F(CompilerCreationTests, CreateDisplays) {
   // Create DisplayManager instance and create displays
   DisplayManager *displayManager = new DisplayManager();
@@ -74,3 +74,10 @@ TEST_F(CompilerCreationTests, CreateDisplays) {
   // Clean up
   delete displayManager;
 }
+
+/// @brief Ensure input is created and all attributes are valid
+// TEST_F(CompilerCreationTests, CreateInput) {
+//   // Create DisplayManager and InputManager instances as our mock needs a display instance
+//   DisplayManager *displayManager = new DisplayManager();
+//   InputManager *inputManager = new InputManager();
+// }

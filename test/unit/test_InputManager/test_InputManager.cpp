@@ -51,7 +51,7 @@ TEST_F(InputManagerTests, CreateMockInput) {
   EXPECT_EQ(inputManager->getInput(), nullptr);
 
   // Set the input and validate it can be retrieved
-  inputManager->addInput(input, nullptr);
+  inputManager->addInput(input);
   EXPECT_NE(inputManager->getInput(), nullptr);
 
   // Expect the input's begin() method should be called once when starting

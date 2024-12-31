@@ -2,11 +2,13 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.15"
+#define VERSION "0.0.16"
 
+// 0.0.16 includes:
+//  - Add configuration of input device via macro USER_INPUT()
 // 0.0.15 includes:
 //  - Fix missing redraw functionality when switching screens
-//  - Implemented myDevices.h to configure display devices via macros
+//  - Implemented myDevices.h to configure display devices via macro USER_DISPLAY()
 // 0.0.14 includes:
 //  - Major rewrite using OOP
 //  - Swap display/screen terminology - screen is logical from EX-CommandStation, display is physical
