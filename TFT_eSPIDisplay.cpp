@@ -121,6 +121,12 @@ TFT_eSPI *TFT_eSPIDisplay::getTFT_eSPIInstance() {
 bool TFT_eSPIDisplay::tftInitialised() { return _tftInitialised; }
 
 TFT_eSPIDisplay *TFT_eSPIDisplay::create(uint8_t rotation, uint8_t textSize, uint16_t textColour,
+                                         uint16_t backgroundColour) {
+  TFT_eSPIDisplay *newDisplay = new TFT_eSPIDisplay(rotation, textSize, textColour, backgroundColour);
+  return newDisplay;
+}
+
+TFT_eSPIDisplay *TFT_eSPIDisplay::create(uint8_t rotation, uint8_t textSize, uint16_t textColour,
                                          uint16_t backgroundColour, int csPin) {
   TFT_eSPIDisplay *newDisplay = new TFT_eSPIDisplay(rotation, textSize, textColour, backgroundColour, csPin);
   return newDisplay;

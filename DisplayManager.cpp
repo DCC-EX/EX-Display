@@ -48,7 +48,9 @@ void DisplayManager::startDisplays() {
     return;
   }
   for (auto *display = _firstDisplay; display; display = display->getNext()) {
+    _selectSPIDisplay(display);
     display->begin();
+    _deselectSPIDisplay(display);
   }
 }
 
