@@ -86,6 +86,10 @@ TEST_F(ControllerInputActionTests, SwitchActiveScreen) {
       .WillOnce(Invoke([this]() { controller->onInputAction(InputAction::PRESS_RIGHT); })) // Second press right
       .WillOnce(Return()); // Last will have no return with no input
 
+  // Everytime a display switches screens, a redraw should trigger clearScreen()
+  // Therefore we expect this to be called 6 times - 1 to start, then one with each switch
+  EXPECT_CALL(*display0, clearScreen()).Times(6);
+  
   // Expect a single controller->update() should now ensure display is set to screen 0 (first)
   controller->update();
   EXPECT_EQ(display0->getScreenId(), 0);

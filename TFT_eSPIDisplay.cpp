@@ -56,9 +56,11 @@ void TFT_eSPIDisplay::begin() {
   _maxColumn = _tft->width() / _fontWidth;
   LOG(LogLevel::DEBUG,
       "TFT_eSPIDisplay[%d] settings: "
-      "_textSize=%d|_rotation=%d|_textColour=0x%04X|_backgroundColour=0x%04X|_fontHeight=%d|_fontWidth=%d|_maxRow=%d|_"
+      "_textSize=%d|_rotation=%d|_textColour=0x%04X|_backgroundColour=0x%04X|_csPin=%d|_fontHeight=%d|_fontWidth=%d|_"
+      "maxRow=%d|_"
       "maxColumn=%d",
-      _displayId, _textSize, _rotation, _textColour, _backgroundColour, _fontHeight, _fontWidth, _maxRow, _maxColumn);
+      _displayId, _textSize, _rotation, _textColour, _backgroundColour, _csPin, _fontHeight, _fontWidth, _maxRow,
+      _maxColumn);
   _tft->fillScreen(_backgroundColour);
 }
 

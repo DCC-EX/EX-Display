@@ -68,6 +68,16 @@ TEST_F(CompilerCreationTests, CreateDevices) {
   EXPECT_CALL(*display1, begin()).Times(1);
   EXPECT_CALL(*display2, begin()).Times(1);
 
+  // MockSPIDisplay instances should cause mockPinMode and mockDigitalWrite calls
+  // display1
+  EXPECT_CALL(MockArduino::getInstance(), mockPinMode(22, OUTPUT)).Times(1);
+  EXPECT_CALL(MockArduino::getInstance(), mockDigitalWrite(22, LOW)).Times(1);
+  EXPECT_CALL(MockArduino::getInstance(), mockDigitalWrite(22, HIGH)).Times(1);
+  // display2
+  EXPECT_CALL(MockArduino::getInstance(), mockPinMode(23, OUTPUT)).Times(1);
+  EXPECT_CALL(MockArduino::getInstance(), mockDigitalWrite(23, LOW)).Times(1);
+  EXPECT_CALL(MockArduino::getInstance(), mockDigitalWrite(23, HIGH)).Times(1);
+
   displayManager->startDisplays();
 
   // Now create the input

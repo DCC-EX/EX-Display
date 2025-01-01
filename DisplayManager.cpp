@@ -48,9 +48,10 @@ void DisplayManager::startDisplays() {
     return;
   }
   for (auto *display = _firstDisplay; display; display = display->getNext()) {
+    // If display's CS pin is defined, set the pin mode and select the display
+    _setSPIDisplayCSPin(display);
     _selectSPIDisplay(display);
     display->begin();
-    _deselectSPIDisplay(display);
   }
 }
 
@@ -64,8 +65,6 @@ void DisplayManager::displayStartupInfo(const char *version) {
     // Select this SPI display if necessary
     _selectSPIDisplay(display);
     display->displayStartupInfo(version);
-    // Deselect this SPI display if necessary
-    _deselectSPIDisplay(display);
   }
 }
 
@@ -102,8 +101,6 @@ void DisplayManager::update(ScreenManager *screenManager) {
       // Now we've redrawn, clear the flag
       display->setNeedsRedraw(false);
     }
-    // Deselect this SPI display if necessary
-    _deselectSPIDisplay(display);
   }
 }
 
@@ -134,20 +131,29 @@ DisplayManager::~DisplayManager() {
   _logger = nullptr;
 }
 
-void DisplayManager::_selectSPIDisplay(DisplayInterface *display) {
+void DisplayManager::_setSPIDisplayCSPin(DisplayInterface *display) {
   // If not set, don't do anything
   if (display->getCSPin() == -1) {
     return;
   }
-  // Otherwise set CS pin low to select this screen
-  digitalWrite(display->getCSPin(), LOW);
+  // Set the pin to output mode
+  pinMode(display->getCSPin(), OUTPUT);
 }
 
-void DisplayManager::_deselectSPIDisplay(DisplayInterface *display) {
+void DisplayManager::_selectSPIDisplay(DisplayInterface *display) {
   // If not set, don't do anything
-  if (display->getCSPin() == -1) {
+  int csPin = display->getCSPin();
+  if (csPin == -1) {
     return;
   }
-  // Otherwise set CS pin high to deselect this screen
-  digitalWrite(display->getCSPin(), HIGH);
+  // First every other display needs to be disabled
+  for (DisplayInterface *other = _firstDisplay; other; other = other->getNext()) {
+    if (other != display) {
+      if (other->getCSPin() != -1) {
+        digitalWrite(other->getCSPin(), HIGH);
+      }
+    }
+  }
+  // Otherwise set CS pin low to select this screen
+  digitalWrite(csPin, LOW);
 }
