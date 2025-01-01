@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['debounceholdinputtests_378',['DebounceHoldInputTests',['../classDebounceHoldInputTests.html',1,'']]],
-  ['displayinterface_379',['DisplayInterface',['../classDisplayInterface.html',1,'']]],
-  ['displayinterfacetests_380',['DisplayInterfaceTests',['../classDisplayInterfaceTests.html',1,'']]],
-  ['displaymanager_381',['DisplayManager',['../classDisplayManager.html',1,'']]],
-  ['displaymanagertests_382',['DisplayManagerTests',['../classDisplayManagerTests.html',1,'']]],
-  ['displaymanualspiswitchingtests_383',['DisplayManualSPISwitchingTests',['../classDisplayManualSPISwitchingTests.html',1,'']]],
-  ['displayscreentests_384',['DisplayScreenTests',['../classDisplayScreenTests.html',1,'']]]
+  ['debounceholdinputtests_380',['DebounceHoldInputTests',['../classDebounceHoldInputTests.html',1,'']]],
+  ['displayinterface_381',['DisplayInterface',['../classDisplayInterface.html',1,'']]],
+  ['displayinterfacetests_382',['DisplayInterfaceTests',['../classDisplayInterfaceTests.html',1,'']]],
+  ['displaymanager_383',['DisplayManager',['../classDisplayManager.html',1,'']]],
+  ['displaymanagertests_384',['DisplayManagerTests',['../classDisplayManagerTests.html',1,'']]],
+  ['displaymanualspiswitchingtests_385',['DisplayManualSPISwitchingTests',['../classDisplayManualSPISwitchingTests.html',1,'']]],
+  ['displayscreentests_386',['DisplayScreenTests',['../classDisplayScreenTests.html',1,'']]]
 ];

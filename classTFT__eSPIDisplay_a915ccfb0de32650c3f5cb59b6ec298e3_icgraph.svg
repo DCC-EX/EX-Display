@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classTFT__eSPIDisplay.html#ae5424c54801b412b9406d51c441ed1a8" target="_top" xlink:title="Static method to enable the compiler to generate create commands from myDevices.h entries.">
+<g id="a_node2"><a xlink:href="classTFT__eSPIDisplay.html#a444de3d2997ba98cf705a6cd60ea70cf" target="_top" xlink:title="Static method to enable the compiler to generate create commands from myDevices.h entries.">
 <polygon fill="white" stroke="black" points="0,-6 0,-25 133,-25 133,-6 0,-6"/>
 <text text-anchor="middle" x="66.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">TFT_eSPIDisplay::create</text>
 </a>

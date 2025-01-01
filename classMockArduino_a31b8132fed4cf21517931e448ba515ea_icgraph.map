@@ -1,10 +1,11 @@
 <map id="MockArduino::getInstance" name="MockArduino::getInstance">
-<area shape="rect" id="node1" title=" " alt="" coords="753,93,944,119"/>
-<area shape="rect" id="node2" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="607,42,705,69"/>
-<area shape="rect" id="node7" href="$Arduino_8h.html#ac7bdb53335528ad073ca13eb2b1bdc00" title=" " alt="" coords="617,93,695,119"/>
-<area shape="rect" id="node8" href="$test__DisplayManualSPISwitching_8cpp.html#a928ab800b1e1899f185fb572718ec014" title="Test that SPI displays can be switched manually if their library doesn&#39;t support it (eg...." alt="" coords="621,143,691,170"/>
-<area shape="rect" id="node3" href="$classDisplayManager.html#ab5225aac5f432dd65258e1d568bde88d" title="Manually deselects SPI displays that require manual selecting via the CS pin &#45; sets pin high." alt="" coords="334,5,533,47"/>
-<area shape="rect" id="node6" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="308,71,559,98"/>
-<area shape="rect" id="node4" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="5,15,260,42"/>
-<area shape="rect" id="node5" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="42,67,223,94"/>
+<area shape="rect" id="node1" title=" " alt="" coords="753,107,944,133"/>
+<area shape="rect" id="node2" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="607,56,705,83"/>
+<area shape="rect" id="node8" href="$Arduino_8h.html#ac7bdb53335528ad073ca13eb2b1bdc00" title=" " alt="" coords="617,107,695,133"/>
+<area shape="rect" id="node9" href="$test__DisplayManualSPISwitching_8cpp.html#a928ab800b1e1899f185fb572718ec014" title="Test that SPI displays can be switched manually if their library doesn&#39;t support it (eg...." alt="" coords="621,157,691,184"/>
+<area shape="rect" id="node3" href="$classDisplayManager.html#ab5225aac5f432dd65258e1d568bde88d" title="Manually deselects SPI displays that require manual selecting via the CS pin &#45; sets pin high." alt="" coords="334,19,533,61"/>
+<area shape="rect" id="node7" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="308,85,559,112"/>
+<area shape="rect" id="node4" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="5,5,260,32"/>
+<area shape="rect" id="node5" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="21,56,244,83"/>
+<area shape="rect" id="node6" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="42,107,223,133"/>
 </map>

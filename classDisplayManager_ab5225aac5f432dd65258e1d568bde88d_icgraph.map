@@ -1,11 +1,13 @@
 <map id="DisplayManager::_deselectSPIDisplay" name="DisplayManager::_deselectSPIDisplay">
-<area shape="rect" id="node1" title="Manually deselects SPI displays that require manual selecting via the CS pin &#45; sets pin high." alt="" coords="612,74,811,115"/>
+<area shape="rect" id="node1" title="Manually deselects SPI displays that require manual selecting via the CS pin &#45; sets pin high." alt="" coords="612,99,811,141"/>
 <area shape="rect" id="node2" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="309,56,564,83"/>
-<area shape="rect" id="node6" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="346,107,527,133"/>
-<area shape="rect" id="node3" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="127,5,257,32"/>
-<area shape="rect" id="node5" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="157,56,227,83"/>
-<area shape="rect" id="node4" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="11,5,69,32"/>
-<area shape="rect" id="node7" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="123,107,261,133"/>
-<area shape="rect" id="node8" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="15,81,65,108"/>
-<area shape="rect" id="node9" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="5,132,75,159"/>
+<area shape="rect" id="node6" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="325,107,548,133"/>
+<area shape="rect" id="node8" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="346,157,527,184"/>
+<area shape="rect" id="node3" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="127,56,257,83"/>
+<area shape="rect" id="node5" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="157,5,227,32"/>
+<area shape="rect" id="node4" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="11,56,69,83"/>
+<area shape="rect" id="node7" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="157,107,227,133"/>
+<area shape="rect" id="node9" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="123,157,261,184"/>
+<area shape="rect" id="node10" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="15,132,65,159"/>
+<area shape="rect" id="node11" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="5,183,75,209"/>
 </map>
