@@ -1,9 +1,10 @@
 <map id="DisplayManager::startDisplays" name="DisplayManager::startDisplays">
-<area shape="rect" id="node1" title="Call the begin() method for all associated Display instances." alt="" coords="5,64,228,91"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#ab5225aac5f432dd65258e1d568bde88d" title="Manually deselects SPI displays that require manual selecting via the CS pin &#45; sets pin high." alt="" coords="302,57,501,98"/>
-<area shape="rect" id="node6" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="276,5,527,32"/>
-<area shape="rect" id="node7" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="307,123,496,149"/>
-<area shape="rect" id="node3" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="623,8,721,35"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="575,60,769,87"/>
-<area shape="rect" id="node4" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="817,8,1008,35"/>
+<area shape="rect" id="node1" title="Call the begin() method for all associated Display instances." alt="" coords="5,56,228,83"/>
+<area shape="rect" id="node2" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="276,56,527,83"/>
+<area shape="rect" id="node6" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="577,5,767,32"/>
+<area shape="rect" id="node7" href="$classDisplayManager.html#aac782a88d4d491444b6eb7b6fa30645d" title="Set the chip select pin state for any display that has it set." alt="" coords="285,107,517,149"/>
+<area shape="rect" id="node3" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="623,56,721,83"/>
+<area shape="rect" id="node5" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="575,107,769,133"/>
+<area shape="rect" id="node4" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="817,107,1008,133"/>
+<area shape="rect" id="node8" href="$Arduino_8h.html#ac7bdb53335528ad073ca13eb2b1bdc00" title=" " alt="" coords="633,157,711,184"/>
 </map>

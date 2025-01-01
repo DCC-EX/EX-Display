@@ -1,0 +1,6 @@
+<map id="DisplayManager::_setSPIDisplayCSPin" name="DisplayManager::_setSPIDisplayCSPin">
+<area shape="rect" id="node1" title="Set the chip select pin state for any display that has it set." alt="" coords="5,23,237,65"/>
+<area shape="rect" id="node2" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="285,5,480,32"/>
+<area shape="rect" id="node3" href="$Arduino_8h.html#ac7bdb53335528ad073ca13eb2b1bdc00" title=" " alt="" coords="343,56,422,83"/>
+<area shape="rect" id="node4" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="528,56,719,83"/>
+</map>

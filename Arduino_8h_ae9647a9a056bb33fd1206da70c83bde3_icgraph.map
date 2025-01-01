@@ -1,12 +1,11 @@
 <map id="digitalWrite" name="digitalWrite">
 <area shape="rect" id="node1" title=" " alt="" coords="793,107,892,133"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#ab5225aac5f432dd65258e1d568bde88d" title="Manually deselects SPI displays that require manual selecting via the CS pin &#45; sets pin high." alt="" coords="521,70,719,111"/>
-<area shape="rect" id="node10" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="495,136,745,163"/>
-<area shape="rect" id="node3" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="192,107,447,133"/>
-<area shape="rect" id="node6" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="208,56,431,83"/>
+<area shape="rect" id="node2" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="495,107,745,133"/>
+<area shape="rect" id="node3" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="192,56,447,83"/>
+<area shape="rect" id="node6" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="208,107,431,133"/>
 <area shape="rect" id="node8" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="229,157,410,184"/>
 <area shape="rect" id="node4" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="9,56,140,83"/>
-<area shape="rect" id="node5" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="40,107,109,133"/>
-<area shape="rect" id="node7" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="40,5,109,32"/>
+<area shape="rect" id="node5" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="40,5,109,32"/>
+<area shape="rect" id="node7" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="40,107,109,133"/>
 <area shape="rect" id="node9" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="5,157,144,184"/>
 </map>
