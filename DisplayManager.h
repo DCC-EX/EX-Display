@@ -67,13 +67,13 @@ private:
   Logger *_logger;
   uint8_t _nextDisplayId;
 
+  /// @brief Set the chip select pin state for any display that has it set
+  /// @param display Pointer to the DisplayInterface instance
+  void _setSPIDisplayCSPin(DisplayInterface *display);
+
   /// @brief Manually selects SPI displays that require manual selecting via the CS pin - sets pin low
   /// @param display Pointer to the DisplayInterface instance
   void _selectSPIDisplay(DisplayInterface *display);
-
-  /// @brief Manually deselects SPI displays that require manual selecting via the CS pin - sets pin high
-  /// @param display Pointer to the DisplayInterface instance
-  void _deselectSPIDisplay(DisplayInterface *display);
 };
 
 #endif // DISPLAYMANAGER_H

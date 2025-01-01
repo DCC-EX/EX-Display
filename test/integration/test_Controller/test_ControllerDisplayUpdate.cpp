@@ -62,6 +62,8 @@ TEST_F(ControllerDisplayUpdateTests, OneScreenOneDisplay) {
   // Ensure the buffer contains it as expected
   EXPECT_THAT(commandStation.buffer, testing::HasSubstr(screen0row0));
 
+  // We should always get a clearScreen() first when a display needs redrawing
+  EXPECT_CALL(*display0, clearScreen()).Times(1);
   // Set up expectation that our display will have displayRow(uint8_t row, const char *text, bool underlined, uint8_t
   // column) called once for each row
   EXPECT_CALL(*display0, displayRow(Truly([=](uint8_t row) { return row == 0; }), StrEq("Screen 0 row 0"),

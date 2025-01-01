@@ -2,8 +2,10 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.16"
+#define VERSION "0.0.17"
 
+// 0.0.17 includes:
+//  - Improved experimental support for multiple TFT_eSPI instances
 // 0.0.16 includes:
 //  - Add configuration of input device via macro USER_INPUT()
 // 0.0.15 includes:

@@ -53,6 +53,9 @@ TEST_F(DisplayScreenTests, CreateDisplay) {
   screenManager->updateScreen(0);
   EXPECT_EQ(screenManager->getFirstScreen()->getId(), 0);
 
+  // First update of a display with a screen should cause a clearScreen() call
+  EXPECT_CALL(*display0, clearScreen()).Times(1);
+
   // Call controller->update() and display should still have the first screen ID
   displayManager->update(screenManager);
   EXPECT_EQ(display0->getScreenId(), 0);
@@ -88,6 +91,10 @@ TEST_F(DisplayScreenTests, UpdateDisplays) {
                                     Truly([=](bool underline) { return underline == false; }),
                                     Truly([=](int column) { return column == 0; })))
       .Times(1);
+
+  // First update of a display with a screen should cause a clearScreen() call
+  EXPECT_CALL(*display0, clearScreen()).Times(1);
+  EXPECT_CALL(*display1, clearScreen()).Times(1);
 
   // Call update
   displayManager->update(screenManager);
