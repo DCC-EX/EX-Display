@@ -1,0 +1,7 @@
+<map id="DisplayManager::_setupAllSPICSPins" name="DisplayManager::_setupAllSPICSPins">
+<area shape="rect" id="node1" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="5,49,201,90"/>
+<area shape="rect" id="node2" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="295,5,393,32"/>
+<area shape="rect" id="node4" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="249,56,439,83"/>
+<area shape="rect" id="node5" href="$Arduino_8h.html#ac7bdb53335528ad073ca13eb2b1bdc00" title=" " alt="" coords="305,107,383,133"/>
+<area shape="rect" id="node3" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="487,56,677,83"/>
+</map>

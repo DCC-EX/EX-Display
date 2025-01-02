@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['initialise_543',['initialise',['../classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61',1,'Configurator']]],
-  ['inputmanager_544',['InputManager',['../classInputManager.html#a8be46886da639b26d67181c29dab6d6c',1,'InputManager']]],
-  ['iscalibrating_545',['isCalibrating',['../classInputInterface.html#af4e357d021d6ff950b6c8497734dcd75',1,'InputInterface']]]
+  ['initialise_544',['initialise',['../classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61',1,'Configurator']]],
+  ['inputmanager_545',['InputManager',['../classInputManager.html#a8be46886da639b26d67181c29dab6d6c',1,'InputManager']]],
+  ['iscalibrating_546',['isCalibrating',['../classInputInterface.html#af4e357d021d6ff950b6c8497734dcd75',1,'InputInterface']]]
 ];

@@ -67,6 +67,7 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classTFT__eSPIDisplay-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TFT_eSPIDisplay Class Reference</div>  </div>
@@ -174,11 +175,14 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aae98b4f8665805bc89d52729644aeb83"><td class="memItemLeft" align="right" valign="top">TFT_eSPI *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#aae98b4f8665805bc89d52729644aeb83">_tft</a></td></tr>
-<tr class="separator:aae98b4f8665805bc89d52729644aeb83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a765c041043734c08096ca3250c31038a"><td class="memItemLeft" align="right" valign="top">const GFXfont *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#a765c041043734c08096ca3250c31038a">_gfxFont</a></td></tr>
 <tr class="separator:a765c041043734c08096ca3250c31038a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af07739c58ac25c421b8d2edc96d8104e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#af07739c58ac25c421b8d2edc96d8104e">_tftInitialised</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a575e4f6003d301fbb635e40098970f6c"><td class="memItemLeft" align="right" valign="top">static TFT_eSPI *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#a575e4f6003d301fbb635e40098970f6c">_tft</a> = nullptr</td></tr>
+<tr class="separator:a575e4f6003d301fbb635e40098970f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af07739c58ac25c421b8d2edc96d8104e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#af07739c58ac25c421b8d2edc96d8104e">_tftInitialised</a> = false</td></tr>
 <tr class="separator:af07739c58ac25c421b8d2edc96d8104e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -885,8 +889,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aae98b4f8665805bc89d52729644aeb83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae98b4f8665805bc89d52729644aeb83">&#9670;&nbsp;</a></span>_tft</h2>
+<a id="a575e4f6003d301fbb635e40098970f6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a575e4f6003d301fbb635e40098970f6c">&#9670;&nbsp;</a></span>_tft</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -895,12 +899,12 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TFT_eSPI* TFT_eSPIDisplay::_tft</td>
+          <td class="memname">TFT_eSPI * TFT_eSPIDisplay::_tft = nullptr</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -917,12 +921,12 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool TFT_eSPIDisplay::_tftInitialised</td>
+          <td class="memname">bool TFT_eSPIDisplay::_tftInitialised = false</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

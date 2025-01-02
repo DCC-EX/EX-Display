@@ -1,19 +1,19 @@
 <map id="loop" name="loop">
-<area shape="rect" id="node1" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="5,199,56,225"/>
-<area shape="rect" id="node2" href="$classConfigurator.html#a82c65d6d040b717d64520903c788dd79" title="Get the Controller instance for this Configurator." alt="" coords="104,173,299,200"/>
-<area shape="rect" id="node3" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="132,224,271,251"/>
+<area shape="rect" id="node1" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="5,157,56,184"/>
+<area shape="rect" id="node2" href="$classConfigurator.html#a82c65d6d040b717d64520903c788dd79" title="Get the Controller instance for this Configurator." alt="" coords="104,132,299,159"/>
+<area shape="rect" id="node3" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="132,183,271,209"/>
 <area shape="rect" id="node4" href="$classStream.html#a630f7c449a9674857fae9a7016d93dbe" title="Check number of characters available in the buffer." alt="" coords="379,5,517,32"/>
-<area shape="rect" id="node5" href="$classDisplayManager.html#a6ba13ae541760736e37f1f85477985a7" title="Get the first DisplayInterface derived instance in the list of displays." alt="" coords="355,57,541,98"/>
-<area shape="rect" id="node6" href="$classInputManager.html#a2672882f95872798fd07d4d98f82063b" title="Get the configured InputInterface." alt="" coords="361,123,535,149"/>
-<area shape="rect" id="node7" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="896,325,1085,352"/>
-<area shape="rect" id="node8" href="$classInputInterface.html#af4e357d021d6ff950b6c8497734dcd75" title="Test if this InputInterface is undergoing calibration as required by touch screens." alt="" coords="347,224,549,251"/>
-<area shape="rect" id="node9" href="$Arduino_8h.html#a6ff7f2532a22366f0013bc41397129fd" title=" " alt="" coords="419,275,477,301"/>
-<area shape="rect" id="node10" href="$classAtFinder.html#a76f0a4563646bfdcd04820845d440c01" title="Call this as often as possible with a streaming input (eg. Serial.read())" alt="" coords="349,325,547,352"/>
-<area shape="rect" id="node12" href="$classStream.html#a654017caec3e3feeba5feb346d83c7bb" title="Read a character from the buffer." alt="" coords="395,376,501,403"/>
-<area shape="rect" id="node13" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="357,427,539,453"/>
-<area shape="rect" id="node11" href="$classCallbackInterface.html#aba96f818abe5d19945217275bdbe6b67" title="Method to implement updating a screen." alt="" coords="651,259,795,301"/>
-<area shape="rect" id="node14" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="597,376,848,403"/>
-<area shape="rect" id="node15" href="$classScreen.html#a0bf66c3d7a47302ecb77113f3eacc422" title="Get the first ScreenRow instance in the list." alt="" coords="625,427,820,453"/>
-<area shape="rect" id="node16" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="646,477,799,504"/>
-<area shape="rect" id="node17" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="610,528,835,555"/>
+<area shape="rect" id="node5" href="$classDisplayManager.html#ac007625bc3dc91b4a7f22238226f37ea" title="Clear all displays." alt="" coords="355,259,541,301"/>
+<area shape="rect" id="node8" href="$classInputManager.html#a2672882f95872798fd07d4d98f82063b" title="Get the configured InputInterface." alt="" coords="361,107,535,133"/>
+<area shape="rect" id="node9" href="$classInputInterface.html#af4e357d021d6ff950b6c8497734dcd75" title="Test if this InputInterface is undergoing calibration as required by touch screens." alt="" coords="347,157,549,184"/>
+<area shape="rect" id="node10" href="$Arduino_8h.html#a6ff7f2532a22366f0013bc41397129fd" title=" " alt="" coords="419,208,477,235"/>
+<area shape="rect" id="node11" href="$classAtFinder.html#a76f0a4563646bfdcd04820845d440c01" title="Call this as often as possible with a streaming input (eg. Serial.read())" alt="" coords="349,56,547,83"/>
+<area shape="rect" id="node13" href="$classStream.html#a654017caec3e3feeba5feb346d83c7bb" title="Read a character from the buffer." alt="" coords="395,325,501,352"/>
+<area shape="rect" id="node14" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="357,376,539,403"/>
+<area shape="rect" id="node6" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="597,275,848,301"/>
+<area shape="rect" id="node7" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="896,275,1085,301"/>
+<area shape="rect" id="node12" href="$classCallbackInterface.html#aba96f818abe5d19945217275bdbe6b67" title="Method to implement updating a screen." alt="" coords="651,49,795,90"/>
+<area shape="rect" id="node15" href="$classScreen.html#a0bf66c3d7a47302ecb77113f3eacc422" title="Get the first ScreenRow instance in the list." alt="" coords="625,376,820,403"/>
+<area shape="rect" id="node16" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="646,427,799,453"/>
+<area shape="rect" id="node17" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="610,477,835,504"/>
 </map>

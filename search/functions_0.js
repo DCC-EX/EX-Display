@@ -11,6 +11,6 @@ var searchData=
   ['_5fselectnextscreen_488',['_selectNextScreen',['../classController.html#aa981e303ca83593ffb34db49c7d73cc6',1,'Controller']]],
   ['_5fselectpreviousscreen_489',['_selectPreviousScreen',['../classController.html#a3e02f73e534a929849f981ec892b4f54',1,'Controller']]],
   ['_5fselectspidisplay_490',['_selectSPIDisplay',['../classDisplayManager.html#abcac9213f163018979f2a226ecf53882',1,'DisplayManager']]],
-  ['_5fsetspidisplaycspin_491',['_setSPIDisplayCSPin',['../classDisplayManager.html#aac782a88d4d491444b6eb7b6fa30645d',1,'DisplayManager']]],
+  ['_5fsetupallspicspins_491',['_setupAllSPICSPins',['../classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f',1,'DisplayManager']]],
   ['_5fsetupspiffs_492',['_setupSPIFFS',['../classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779',1,'TFT_eSPITouch']]]
 ];

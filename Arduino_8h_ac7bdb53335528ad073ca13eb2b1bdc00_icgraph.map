@@ -1,6 +1,6 @@
 <map id="pinMode" name="pinMode">
-<area shape="rect" id="node1" title=" " alt="" coords="735,31,813,57"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#aac782a88d4d491444b6eb7b6fa30645d" title="Set the chip select pin state for any display that has it set." alt="" coords="455,23,687,65"/>
+<area shape="rect" id="node1" title=" " alt="" coords="699,31,777,57"/>
+<area shape="rect" id="node2" href="$classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="455,23,651,65"/>
 <area shape="rect" id="node3" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="184,31,407,57"/>
 <area shape="rect" id="node4" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="5,5,136,32"/>
 <area shape="rect" id="node5" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="36,56,105,83"/>

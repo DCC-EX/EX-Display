@@ -1,18 +1,20 @@
 <map id="DisplayInterface::getNext" name="DisplayInterface::getNext">
-<area shape="rect" id="node1" title="Get the next DisplayInterface derived instance in the list." alt="" coords="939,180,1128,207"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="640,79,891,105"/>
-<area shape="rect" id="node3" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="337,28,592,55"/>
-<area shape="rect" id="node7" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="353,79,576,105"/>
-<area shape="rect" id="node8" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="171,129,241,156"/>
-<area shape="rect" id="node9" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="374,231,555,257"/>
-<area shape="rect" id="node10" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="137,256,275,283"/>
-<area shape="rect" id="node11" href="$classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="661,332,870,359"/>
-<area shape="rect" id="node13" href="$classDisplayManager.html#a0dcf69d16599029ba34bf31c0c666390" title="Get a DisplayInterface derived instance by its ID." alt="" coords="347,180,582,207"/>
-<area shape="rect" id="node16" href="$classDisplayManager.html#ae4c9d79e08490e64602cf562a16d8834" title="Destructor for the DisplayManager." alt="" coords="667,383,863,425"/>
-<area shape="rect" id="node4" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="141,79,271,105"/>
-<area shape="rect" id="node6" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="171,28,241,55"/>
-<area shape="rect" id="node5" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="11,104,69,131"/>
-<area shape="rect" id="node12" href="$test__DisplayManager_8cpp.html#a8db4cc07d4e89d899e0a75ca521f9229" title="Create a list of mock displays and validate they are created and operate correctly." alt="" coords="430,332,499,359"/>
-<area shape="rect" id="node14" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="123,180,289,207"/>
-<area shape="rect" id="node15" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="5,180,75,207"/>
+<area shape="rect" id="node1" title="Get the next DisplayInterface derived instance in the list." alt="" coords="939,241,1128,268"/>
+<area shape="rect" id="node2" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="640,60,891,86"/>
+<area shape="rect" id="node3" href="$classDisplayManager.html#ac007625bc3dc91b4a7f22238226f37ea" title="Clear all displays." alt="" coords="372,78,557,119"/>
+<area shape="rect" id="node5" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="337,161,592,188"/>
+<area shape="rect" id="node9" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="374,26,555,53"/>
+<area shape="rect" id="node10" href="$classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="667,263,863,304"/>
+<area shape="rect" id="node11" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="353,270,576,297"/>
+<area shape="rect" id="node12" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="171,329,241,356"/>
+<area shape="rect" id="node13" href="$classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="661,430,870,457"/>
+<area shape="rect" id="node15" href="$classDisplayManager.html#a0dcf69d16599029ba34bf31c0c666390" title="Get a DisplayInterface derived instance by its ID." alt="" coords="347,380,582,406"/>
+<area shape="rect" id="node18" href="$classDisplayManager.html#ae4c9d79e08490e64602cf562a16d8834" title="Destructor for the DisplayManager." alt="" coords="667,482,863,523"/>
+<area shape="rect" id="node4" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="137,56,275,82"/>
+<area shape="rect" id="node6" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="141,270,271,297"/>
+<area shape="rect" id="node8" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="171,161,241,188"/>
+<area shape="rect" id="node7" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="11,300,69,326"/>
+<area shape="rect" id="node14" href="$test__DisplayManager_8cpp.html#a8db4cc07d4e89d899e0a75ca521f9229" title="Create a list of mock displays and validate they are created and operate correctly." alt="" coords="430,430,499,457"/>
+<area shape="rect" id="node16" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="123,380,289,406"/>
+<area shape="rect" id="node17" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="5,380,75,406"/>
 </map>

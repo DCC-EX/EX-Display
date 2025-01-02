@@ -1,0 +1,8 @@
+<map id="DisplayManager::clearAllDisplays" name="DisplayManager::clearAllDisplays">
+<area shape="rect" id="node1" title="Clear all displays." alt="" coords="5,74,191,115"/>
+<area shape="rect" id="node2" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="239,56,489,83"/>
+<area shape="rect" id="node6" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="540,107,729,133"/>
+<area shape="rect" id="node3" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="585,5,684,32"/>
+<area shape="rect" id="node5" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="537,56,732,83"/>
+<area shape="rect" id="node4" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="780,5,971,32"/>
+</map>

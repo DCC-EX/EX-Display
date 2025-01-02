@@ -97,6 +97,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a270daf83b6af22558fde42034254b351"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayManager.html#a270daf83b6af22558fde42034254b351">startDisplays</a> ()</td></tr>
 <tr class="memdesc:a270daf83b6af22558fde42034254b351"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the begin() method for all associated Display instances.  <a href="classDisplayManager.html#a270daf83b6af22558fde42034254b351">More...</a><br /></td></tr>
 <tr class="separator:a270daf83b6af22558fde42034254b351"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac007625bc3dc91b4a7f22238226f37ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayManager.html#ac007625bc3dc91b4a7f22238226f37ea">clearAllDisplays</a> ()</td></tr>
+<tr class="memdesc:ac007625bc3dc91b4a7f22238226f37ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all displays.  <a href="classDisplayManager.html#ac007625bc3dc91b4a7f22238226f37ea">More...</a><br /></td></tr>
+<tr class="separator:ac007625bc3dc91b4a7f22238226f37ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0e0e26134a34beeb30e27c00b8e829f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f">displayStartupInfo</a> (const char *version)</td></tr>
 <tr class="memdesc:aa0e0e26134a34beeb30e27c00b8e829f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the displayStartupInfo of all Display instances to display the version.  <a href="classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f">More...</a><br /></td></tr>
 <tr class="separator:aa0e0e26134a34beeb30e27c00b8e829f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,9 +121,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aac782a88d4d491444b6eb7b6fa30645d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayManager.html#aac782a88d4d491444b6eb7b6fa30645d">_setSPIDisplayCSPin</a> (<a class="el" href="classDisplayInterface.html">DisplayInterface</a> *display)</td></tr>
-<tr class="memdesc:aac782a88d4d491444b6eb7b6fa30645d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the chip select pin state for any display that has it set.  <a href="classDisplayManager.html#aac782a88d4d491444b6eb7b6fa30645d">More...</a><br /></td></tr>
-<tr class="separator:aac782a88d4d491444b6eb7b6fa30645d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33f6184fa8292c66a6cd2f05f264ef0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f">_setupAllSPICSPins</a> ()</td></tr>
+<tr class="memdesc:a33f6184fa8292c66a6cd2f05f264ef0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the chip select pin state for all displays that have it set and select them.  <a href="classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f">More...</a><br /></td></tr>
+<tr class="separator:a33f6184fa8292c66a6cd2f05f264ef0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcac9213f163018979f2a226ecf53882"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayManager.html#abcac9213f163018979f2a226ecf53882">_selectSPIDisplay</a> (<a class="el" href="classDisplayInterface.html">DisplayInterface</a> *display)</td></tr>
 <tr class="memdesc:abcac9213f163018979f2a226ecf53882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually selects SPI displays that require manual selecting via the CS pin - sets pin low.  <a href="classDisplayManager.html#abcac9213f163018979f2a226ecf53882">More...</a><br /></td></tr>
 <tr class="separator:abcac9213f163018979f2a226ecf53882"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,14 +225,14 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_abcac9213f163018979f2a226ecf53882_icgraph.svg" width="100%" height="461"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_abcac9213f163018979f2a226ecf53882_icgraph.svg" width="100%" height="445"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
 </div>
 </div>
-<a id="aac782a88d4d491444b6eb7b6fa30645d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac782a88d4d491444b6eb7b6fa30645d">&#9670;&nbsp;</a></span>_setSPIDisplayCSPin()</h2>
+<a id="a33f6184fa8292c66a6cd2f05f264ef0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33f6184fa8292c66a6cd2f05f264ef0f">&#9670;&nbsp;</a></span>_setupAllSPICSPins()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -238,10 +241,9 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void DisplayManager::_setSPIDisplayCSPin </td>
+          <td class="memname">void DisplayManager::_setupAllSPICSPins </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classDisplayInterface.html">DisplayInterface</a> *&#160;</td>
-          <td class="paramname"><em>display</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -252,23 +254,17 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Set the chip select pin state for any display that has it set. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">display</td><td>Pointer to the <a class="el" href="classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types.">DisplayInterface</a> instance </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Set the chip select pin state for all displays that have it set and select them. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_aac782a88d4d491444b6eb7b6fa30645d_cgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_a33f6184fa8292c66a6cd2f05f264ef0f_cgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_aac782a88d4d491444b6eb7b6fa30645d_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_a33f6184fa8292c66a6cd2f05f264ef0f_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -307,6 +303,37 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classDisplayManager_a14afc225d393f7224bfa0474338d39f3_icgraph.svg" width="338" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac007625bc3dc91b4a7f22238226f37ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac007625bc3dc91b4a7f22238226f37ea">&#9670;&nbsp;</a></span>clearAllDisplays()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisplayManager::clearAllDisplays </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear all displays. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_ac007625bc3dc91b4a7f22238226f37ea_cgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classDisplayManager_ac007625bc3dc91b4a7f22238226f37ea_icgraph.svg" width="500" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -428,7 +455,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classDisplayManager_a6ba13ae541760736e37f1f85477985a7_icgraph.svg" width="546" height="164"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classDisplayManager_a6ba13ae541760736e37f1f85477985a7_icgraph.svg" width="428" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -485,7 +512,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_a270daf83b6af22558fde42034254b351_cgraph.svg" width="100%" height="442"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDisplayManager_a270daf83b6af22558fde42034254b351_cgraph.svg" width="100%" height="405"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <div class="dynheader">
