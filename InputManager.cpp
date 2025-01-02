@@ -45,6 +45,9 @@ void InputManager::addInput(InputInterface *input) {
 #ifdef HOLD_THRESHOLD
   _input->setHoldThreshold(HOLD_THRESHOLD);
 #endif // HOLD_THRESHOLD
+#ifdef FORCE_CALIBRATION
+  _input->forceCalibration();
+#endif // FORCE_CALIBRATION
 }
 
 InputInterface *InputManager::getInput() { return _input; }

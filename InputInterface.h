@@ -63,6 +63,9 @@ public:
   /// @param threshold Threshold in milliseconds (default 500ms)
   void setHoldThreshold(unsigned long threshold);
 
+  /// @brief Force a touch screen into calibration mode, even if existing calibration is valid
+  void forceCalibration();
+
   /// @brief Destructor for an InputInterface
   virtual ~InputInterface() = default;
 
@@ -89,6 +92,8 @@ protected:
   InputAction _lastAction = InputAction::PRESS_NONE;
   /// @brief Flag to help determining if input is held
   bool _isHolding = false;
+  /// @brief Flag to force calibration for touch screens if it's required
+  bool _forceCalibration = false;
 
   /// @brief Call this from the derived class' check() method to debounce and detect if the input is a hold vs. press
   /// @param currentAction The InputAction needing to be interpreted

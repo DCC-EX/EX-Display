@@ -37,6 +37,8 @@ void InputInterface::setDebounceDelay(unsigned long delay) { _debounceDelay = de
 
 void InputInterface::setHoldThreshold(unsigned long threshold) { _holdThreshold = threshold; }
 
+void InputInterface::forceCalibration() { _forceCalibration = true; }
+
 InputAction InputInterface::_debounceOrHeld(InputAction currentAction) {
   // Record the current time for comparisons
   unsigned long currentTime = millis();

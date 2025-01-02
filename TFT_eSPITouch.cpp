@@ -101,6 +101,9 @@ TFT_eSPITouch *TFT_eSPITouch::create(int displayId) {
 }
 
 bool TFT_eSPITouch::_calibrated() {
+  if (_forceCalibration) {
+    return false;
+  }
   uint16_t calibrationData[5];
   File file = SPIFFS.open(_calibrationFile, "r");
   if (!file) {

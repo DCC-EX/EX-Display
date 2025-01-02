@@ -46,3 +46,8 @@
  * @brief Option to change how long the EX-Display version is displayed, in milliseconds.
  */
 // #define STARTUP_INFO_DELAY 3000    // default is 3 seconds/3000ms - Increase/decrease if desired
+
+/**
+ * @brief Option to force a touch screen to enter calibration mode even if the current calibration is valid
+ */
+// #define FORCE_CALIBRATION
