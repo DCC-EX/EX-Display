@@ -1,8 +1,9 @@
 <map id="InputManager::addInput" name="InputManager::addInput">
-<area shape="rect" id="node1" title="Set the InputInterface." alt="" coords="5,93,183,120"/>
-<area shape="rect" id="node2" href="$classInputInterface.html#abae89c99e802186c05e97750e473dac1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="249,5,447,32"/>
-<area shape="rect" id="node3" href="$classInputInterface.html#a496b20fc72c9b458bc5b7b29bebfe672" title="Set the debounce delay." alt="" coords="245,57,451,98"/>
-<area shape="rect" id="node5" href="$classInputInterface.html#a9880a65f1358aa4f7880cddadf3ff846" title="Set the threshold for detecting an input is held." alt="" coords="231,123,465,149"/>
-<area shape="rect" id="node6" href="$classInputInterface.html#add815941c23f1e6fe831a13738ed626c" title="Set the logger instance to use for diagnostic logging." alt="" coords="255,173,441,200"/>
-<area shape="rect" id="node4" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="513,64,572,91"/>
+<area shape="rect" id="node1" title="Set the InputInterface." alt="" coords="5,115,183,141"/>
+<area shape="rect" id="node2" href="$classInputInterface.html#a82a2a78aaac60b714145da645febe052" title="Force a touch screen into calibration mode, even if existing calibration is valid." alt="" coords="235,5,461,32"/>
+<area shape="rect" id="node3" href="$classInputInterface.html#abae89c99e802186c05e97750e473dac1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="249,56,447,83"/>
+<area shape="rect" id="node4" href="$classInputInterface.html#a496b20fc72c9b458bc5b7b29bebfe672" title="Set the debounce delay." alt="" coords="245,107,451,149"/>
+<area shape="rect" id="node6" href="$classInputInterface.html#a9880a65f1358aa4f7880cddadf3ff846" title="Set the threshold for detecting an input is held." alt="" coords="231,173,465,200"/>
+<area shape="rect" id="node7" href="$classInputInterface.html#add815941c23f1e6fe831a13738ed626c" title="Set the logger instance to use for diagnostic logging." alt="" coords="255,224,441,251"/>
+<area shape="rect" id="node5" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="513,115,572,141"/>
 </map>

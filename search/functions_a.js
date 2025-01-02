@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['oninputaction_552',['onInputAction',['../classCallbackInterface.html#a0050e0aa32d6f53635dd19462ab5153f',1,'CallbackInterface::onInputAction()'],['../classController.html#af9c9f10320fb7770553156da4d164e64',1,'Controller::onInputAction()']]]
+  ['needsdisplay_554',['needsDisplay',['../classInputInterface.html#a150a075ce0c5a95dc4fd15ccd1933d26',1,'InputInterface']]],
+  ['needsredraw_555',['needsRedraw',['../classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3',1,'DisplayInterface::needsRedraw()'],['../classScreenRow.html#a38198d853b8d89ec4a90fa0d801e58c1',1,'ScreenRow::needsRedraw()']]]
 ];
