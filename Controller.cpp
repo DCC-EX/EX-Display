@@ -35,7 +35,7 @@ Controller::Controller(Stream *consoleStream, Stream *commandStationStream, Disp
 void Controller::begin() {
   _displayManager->startDisplays(); // Start displays
   _inputManager->startInput();      // Start input
-  LOG(LogLevel::MESSAGE, "EX-Display version %s", VERSION);
+  LOG(LogLevel::LOG_MESSAGE, "EX-Display version %s", VERSION);
   _displayManager->displayStartupInfo(VERSION); // Display version info
 }
 
@@ -54,7 +54,7 @@ void Controller::update() {
   // Configurator
   // When the time has passed, turn the pause of and clear each display to enable normal display operation
   if (_pauseDisplayUpdates && millis() > _pauseDisplayUpdatesUntil) {
-    LOG(LogLevel::DEBUG, "_pauseDisplayUpdatesUntil time exceeded, resume display updates");
+    LOG(LogLevel::LOG_DEBUG, "_pauseDisplayUpdatesUntil time exceeded, resume display updates");
     _pauseDisplayUpdatesUntil = 0;
     _pauseDisplayUpdates = false;
     _displayManager->clearAllDisplays();
@@ -79,9 +79,9 @@ void Controller::update() {
 }
 
 void Controller::updateScreen(uint8_t screenId, uint8_t row, const char *text) {
-  LOG(LogLevel::DEBUG, "Controller::updateScreen(%d, %d, %s)", screenId, row, text);
+  LOG(LogLevel::LOG_DEBUG, "Controller::updateScreen(%d, %d, %s)", screenId, row, text);
   if (_screenManager == nullptr) {
-    LOG(LogLevel::DEBUG, "Controller::_screenManager == nullptr");
+    LOG(LogLevel::LOG_DEBUG, "Controller::_screenManager == nullptr");
     return;
   }
   Screen *screen = _screenManager->updateScreen(screenId);
@@ -91,7 +91,7 @@ void Controller::updateScreen(uint8_t screenId, uint8_t row, const char *text) {
 }
 
 void Controller::onInputAction(InputAction action) {
-  LOG(LogLevel::DEBUG, "Controller::onInputAction(%d)", action);
+  LOG(LogLevel::LOG_DEBUG, "Controller::onInputAction(%d)", action);
   // No inputs are valid if there are no displays or screens, so just bail out
   if (_displayManager == nullptr || _screenManager == nullptr || _displayManager->getFirstDisplay() == nullptr ||
       _screenManager->getFirstScreen() == nullptr) {
@@ -101,33 +101,33 @@ void Controller::onInputAction(InputAction action) {
   switch (action) {
   // Left press selects the previous screen for display
   case InputAction::PRESS_LEFT: {
-    LOG(LogLevel::DEBUG, "Controller::onInputAction(InputAction::PRESS_LEFT)");
+    LOG(LogLevel::LOG_DEBUG, "Controller::onInputAction(InputAction::PRESS_LEFT)");
     _selectPreviousScreen(display);
     break;
   }
   // Right press selects the next screen for display
   case InputAction::PRESS_RIGHT: {
-    LOG(LogLevel::DEBUG, "Controller::onInputAction(InputAction::PRESS_RIGHT)");
+    LOG(LogLevel::LOG_DEBUG, "Controller::onInputAction(InputAction::PRESS_RIGHT)");
     _selectNextScreen(display);
     break;
   }
   // Up scrolls the screen up one row
   case InputAction::PRESS_UP: {
-    LOG(LogLevel::DEBUG, "Controller::onInputAction(InputAction::PRESS_UP)");
+    LOG(LogLevel::LOG_DEBUG, "Controller::onInputAction(InputAction::PRESS_UP)");
     break;
   }
   // Down scrolls the screen down one row
   case InputAction::PRESS_DOWN: {
-    LOG(LogLevel::DEBUG, "Controller::onInputAction(InputAction::PRESS_DOWN)");
+    LOG(LogLevel::LOG_DEBUG, "Controller::onInputAction(InputAction::PRESS_DOWN)");
     break;
   }
   // Centre moves input control to the next display - does nothing until multiple displays are supported
   case InputAction::PRESS_CENTRE: {
-    LOG(LogLevel::DEBUG, "Controller::onInputAction(InputAction::PRESS_CENTRE)");
+    LOG(LogLevel::LOG_DEBUG, "Controller::onInputAction(InputAction::PRESS_CENTRE)");
     break;
   }
   default: {
-    LOG(LogLevel::DEBUG, "Controller::onInputAction(Unknown)");
+    LOG(LogLevel::LOG_DEBUG, "Controller::onInputAction(Unknown)");
     break;
   }
   }
@@ -153,7 +153,7 @@ void Controller::_selectPreviousScreen(DisplayInterface *display) {
     previousId = _screenManager->getPreviousScreen(screen)->getId();
   }
   display->setScreenId(previousId);
-  LOG(LogLevel::DEBUG, "Controller::_selectPreviousScreen: _displayId=%d|screenId=%d|previousId=%d", display->getId(),
+  LOG(LogLevel::LOG_DEBUG, "Controller::_selectPreviousScreen: _displayId=%d|screenId=%d|previousId=%d", display->getId(),
       screenId, previousId);
 }
 
@@ -169,6 +169,6 @@ void Controller::_selectNextScreen(DisplayInterface *display) {
     nextId = _screenManager->getNextScreen(screen)->getId();
   }
   display->setScreenId(nextId);
-  LOG(LogLevel::DEBUG, "Controller::_selectNextScreen: _displayId=%d|screenId=%d|nextId=%d", display->getId(),
+  LOG(LogLevel::LOG_DEBUG, "Controller::_selectNextScreen: _displayId=%d|screenId=%d|nextId=%d", display->getId(),
       screenId, nextId);
 }

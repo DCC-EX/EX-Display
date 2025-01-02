@@ -41,11 +41,11 @@ protected:
 
 TEST_F(LoggerTests, SetLogLevel) {
   // Check the default level is warn
-  EXPECT_EQ(logger->getLogLevel(), LogLevel::WARN);
+  EXPECT_EQ(logger->getLogLevel(), LogLevel::LOG_WARN);
 
   // Set debug and validate
-  logger->setLogLevel(LogLevel::DEBUG);
-  EXPECT_EQ(logger->getLogLevel(), LogLevel::DEBUG);
+  logger->setLogLevel(LogLevel::LOG_DEBUG);
+  EXPECT_EQ(logger->getLogLevel(), LogLevel::LOG_DEBUG);
 }
 
 TEST_F(LoggerTests, LogErrorMessage) {
@@ -53,7 +53,7 @@ TEST_F(LoggerTests, LogErrorMessage) {
   const char *errorMessage = "Unknown error";
   int errorNumber = 2;
   // Log this as an error
-  logger->log(LogLevel::ERROR, "Encountered an error: %d - %s", errorNumber, errorMessage);
+  logger->log(LogLevel::LOG_ERROR, "Encountered an error: %d - %s", errorNumber, errorMessage);
 
   // Construct expected output
   std::string expectedOutput = "[ERROR] Encountered an error: 2 - Unknown error\r\n";
@@ -71,31 +71,31 @@ TEST_F(LoggerTests, LogLevels) {
   const char *debugMessage = "This is a debug message";
 
   // Expect no output for a debug message with default warning, then output at debug level
-  logger->log(LogLevel::DEBUG, debugMessage);
+  logger->log(LogLevel::LOG_DEBUG, debugMessage);
   EXPECT_EQ(stream.buffer, "");
   stream.clear();
-  logger->setLogLevel(LogLevel::DEBUG);
-  logger->log(LogLevel::DEBUG, debugMessage);
+  logger->setLogLevel(LogLevel::LOG_DEBUG);
+  logger->log(LogLevel::LOG_DEBUG, debugMessage);
   EXPECT_EQ(stream.buffer, "[DEBUG] This is a debug message\r\n");
   stream.clear();
 
   // Should not get the debug message at info, but we should get error
-  logger->setLogLevel(LogLevel::INFO);
-  logger->log(LogLevel::DEBUG, debugMessage);
+  logger->setLogLevel(LogLevel::LOG_INFO);
+  logger->log(LogLevel::LOG_DEBUG, debugMessage);
   EXPECT_EQ(stream.buffer, "");
   stream.clear();
-  logger->log(LogLevel::ERROR, errorMessage);
+  logger->log(LogLevel::LOG_ERROR, errorMessage);
   EXPECT_EQ(stream.buffer, "[ERROR] This is an error\r\n");
   stream.clear();
 
   // We should not get an error message with log level none
-  logger->setLogLevel(LogLevel::NONE);
-  logger->log(LogLevel::ERROR, errorMessage);
+  logger->setLogLevel(LogLevel::LOG_NONE);
+  logger->log(LogLevel::LOG_ERROR, errorMessage);
   EXPECT_EQ(stream.buffer, "");
   stream.clear();
 
   // However, we should always get a message even at none
-  logger->log(LogLevel::MESSAGE, debugMessage);
+  logger->log(LogLevel::LOG_MESSAGE, debugMessage);
   EXPECT_EQ(stream.buffer, "[MESSAGE] This is a debug message\r\n");
 
   // Verify all expectations were made
@@ -107,7 +107,7 @@ TEST_F(LoggerTests, TestMacroWithNullptr) {
   Logger *_logger = nullptr;
 
   // Error default level, so this would normally log
-  LOG(LogLevel::ERROR, "Test message");
+  LOG(LogLevel::LOG_ERROR, "Test message");
 
   // Clean up
   delete _logger;
@@ -125,7 +125,7 @@ TEST_F(LoggerTests, TestMacro) {
   Logger *_logger = new Logger(&stream);
 
   // Log this as an error
-  LOG(LogLevel::ERROR, "Encountered an error: %d - %s", errorNumber, errorMessage);
+  LOG(LogLevel::LOG_ERROR, "Encountered an error: %d - %s", errorNumber, errorMessage);
 
   // Construct expected output
   std::string expectedOutput = "[ERROR] Encountered an error: 2 - Unknown error\r\n";
@@ -135,7 +135,7 @@ TEST_F(LoggerTests, TestMacro) {
   stream.clear();
 
   // Now log as info, which shouldn't log
-  LOG(LogLevel::INFO, "Encountered an error: %d - %s", errorNumber, errorMessage);
+  LOG(LogLevel::LOG_INFO, "Encountered an error: %d - %s", errorNumber, errorMessage);
   EXPECT_EQ(stream.buffer, "");
 
   // Verify all expectations were made

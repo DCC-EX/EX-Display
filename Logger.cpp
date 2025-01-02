@@ -17,7 +17,7 @@
 
 #include "Logger.h"
 
-Logger::Logger(Stream *outputStream) : _outputStream(outputStream), _currentLevel(LogLevel::WARN) {}
+Logger::Logger(Stream *outputStream) : _outputStream(outputStream), _currentLevel(LogLevel::LOG_WARN) {}
 
 void Logger::setLogLevel(LogLevel logLevel) { _currentLevel = logLevel; }
 
@@ -28,19 +28,19 @@ void Logger::log(LogLevel logLevel, const char *format, ...) {
     // Setup the prefix
     const char *prefix;
     switch (logLevel) {
-    case LogLevel::MESSAGE:
+    case LogLevel::LOG_MESSAGE:
       prefix = "[MESSAGE] ";
       break;
-    case LogLevel::ERROR:
+    case LogLevel::LOG_ERROR:
       prefix = "[ERROR] ";
       break;
-    case LogLevel::WARN:
+    case LogLevel::LOG_WARN:
       prefix = "[WARN] ";
       break;
-    case LogLevel::INFO:
+    case LogLevel::LOG_INFO:
       prefix = "[INFO] ";
       break;
-    case LogLevel::DEBUG:
+    case LogLevel::LOG_DEBUG:
       prefix = "[DEBUG] ";
       break;
     default:

@@ -31,7 +31,7 @@ public:
   /// @param consoleStream Pointer to the Stream for console interaction
   /// @param commandStationStream Pointer to the Stream for the CommandStation connection
   /// @param logLevel LogLevel to set (default WARN)
-  Configurator(Stream *consoleStream, Stream *commandStationStream, LogLevel logLevel = LogLevel::WARN);
+  Configurator(Stream *consoleStream, Stream *commandStationStream, LogLevel logLevel = LogLevel::LOG_WARN);
 
   /// @brief Call all one-shot initialisation or begin methods on startup
   void initialise();

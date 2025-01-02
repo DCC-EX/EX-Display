@@ -50,7 +50,7 @@ void Configurator::initialise() {
     if (display != nullptr) {
       _inputManager->setDisplay(display);
     } else {
-      LOG(LogLevel::ERROR, "Could not get display ID %d required by the input, user input not available", displayId);
+      LOG(LogLevel::LOG_ERROR, "Could not get display ID %d required by the input, user input not available", displayId);
     }
   }
 }

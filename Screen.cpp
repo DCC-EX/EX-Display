@@ -29,7 +29,7 @@ void Screen::updateScreenRow(uint8_t screenRowId, const char *text) {
   if (text == nullptr) {
     return;
   }
-  LOG(LogLevel::DEBUG, "Screen::updateScreenRow[%d](%d, %s)", _screenId, screenRowId, text);
+  LOG(LogLevel::LOG_DEBUG, "Screen::updateScreenRow[%d](%d, %s)", _screenId, screenRowId, text);
   // Check if it exists already
   ScreenRow *updateRow = getScreenRowById(screenRowId);
   // If not, create and add to the list unless this is supposed to delete it with ""
@@ -78,7 +78,7 @@ Screen::~Screen() {
 }
 
 void Screen::_addScreenRow(uint8_t screenRowId, const char *text) {
-  LOG(LogLevel::DEBUG, "Screen::_addScreenRow(%d, %s)", screenRowId, text);
+  LOG(LogLevel::LOG_DEBUG, "Screen::_addScreenRow(%d, %s)", screenRowId, text);
   ScreenRow *newRow = new ScreenRow(screenRowId);
   newRow->setText(text);
   if (_logger != nullptr) {
@@ -102,7 +102,7 @@ void Screen::_deleteScreenRow(ScreenRow *screenRow) {
   if (screenRow == nullptr) {
     return;
   }
-  LOG(LogLevel::DEBUG, "Screen::_deleteScreenRow() - ID: %d", screenRow->getId());
+  LOG(LogLevel::LOG_DEBUG, "Screen::_deleteScreenRow() - ID: %d", screenRow->getId());
   // If it's the first in the list, shuffle to next, delete, and done
   if (_firstScreenRow == screenRow) {
     ScreenRow *deleteRow = _firstScreenRow;

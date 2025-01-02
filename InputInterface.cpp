@@ -30,7 +30,7 @@ void InputInterface::setDisplay(DisplayInterface *display) {
     return;
   }
   _display = display;
-  LOG(LogLevel::DEBUG, "DisplayInterface::setDisplay() - display ID %d", _display->getId());
+  LOG(LogLevel::LOG_DEBUG, "DisplayInterface::setDisplay() - display ID %d", _display->getId());
 }
 
 void InputInterface::setDebounceDelay(unsigned long delay) { _debounceDelay = delay; }
@@ -48,12 +48,12 @@ InputAction InputInterface::_debounceOrHeld(InputAction currentAction) {
     // If we're going from some action to none and not holding, then it must've been a press
     if ((currentTime - _lastDebounceTime) > _debounceDelay && currentAction == InputAction::PRESS_NONE && !_isHolding) {
       returnAction = _lastAction;
-      LOG(LogLevel::DEBUG, "InputInterface::_debounceOrHeld() - press detected: %d", returnAction);
+      LOG(LogLevel::LOG_DEBUG, "InputInterface::_debounceOrHeld() - press detected: %d", returnAction);
     }
     _lastDebounceTime = currentTime;
     _lastAction = currentAction;
     _isHolding = false;
-    LOG(LogLevel::DEBUG, "InputInterface::_debounceOrHeld() - action changed, resetting");
+    LOG(LogLevel::LOG_DEBUG, "InputInterface::_debounceOrHeld() - action changed, resetting");
     return returnAction;
   }
   // Check if the debounce time has been exceeded
@@ -63,7 +63,7 @@ InputAction InputInterface::_debounceOrHeld(InputAction currentAction) {
       if (!_isHolding) {
         // Flag that we're holding, and change from PRESS to HOLD
         _isHolding = true;
-        LOG(LogLevel::DEBUG, "InputInterface::_debounceOrHeld() - hold detected: %d", currentAction);
+        LOG(LogLevel::LOG_DEBUG, "InputInterface::_debounceOrHeld() - hold detected: %d", currentAction);
         switch (currentAction) {
         case InputAction::PRESS_UP:
           returnAction = InputAction::HOLD_UP;
@@ -91,7 +91,7 @@ InputAction InputInterface::_debounceOrHeld(InputAction currentAction) {
 }
 
 InputAction InputInterface::_calculateInputAction(int touchX, int touchY, int displayWidth, int displayHeight) {
-  LOG(LogLevel::DEBUG, "InputInterface::_calculateInputAction(%d, %d, %d, %d)", touchX, touchY, displayWidth,
+  LOG(LogLevel::LOG_DEBUG, "InputInterface::_calculateInputAction(%d, %d, %d, %d)", touchX, touchY, displayWidth,
       displayHeight);
   InputAction action = InputAction::PRESS_NONE;
   int thirdWidth = displayWidth / 3;

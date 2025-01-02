@@ -20,11 +20,11 @@
 
 // Give log defines their values before user config
 #include "Logger.h"
-#define LOG_NONE LogLevel::NONE
-#define LOG_ERROR LogLevel::ERROR
-#define LOG_WARN LogLevel::WARN
-#define LOG_INFO LogLevel::INFO
-#define LOG_DEBUG LogLevel::DEBUG
+#define LOG_NONE LOG_NONE
+#define LOG_ERROR LOG_ERROR
+#define LOG_WARN LOG_WARN
+#define LOG_INFO LOG_INFO
+#define LOG_DEBUG LOG_DEBUG
 
 #ifndef PIO_UNIT_TESTING // Don't warn or use user config when testing
 // Incude user's myConfig.h if it exists.

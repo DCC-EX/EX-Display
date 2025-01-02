@@ -2,8 +2,10 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.19"
+#define VERSION "0.0.20"
 
+// 0.0.20 includes:
+//  - Update log levels with LOG_ preface to avoid STM32 framework conflicts for ERROR
 // 0.0.19 includes:
 //  - Resolved multiple TFT_eSPI screens not operating independently by using static TFT_eSPI instance
 // 0.0.18 includes:

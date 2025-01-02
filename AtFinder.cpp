@@ -50,7 +50,7 @@ void AtFinder::setup(uint8_t maxTextLength, CallbackInterface *callback) {
   _maxTextLength = maxTextLength;
   _text = (char *)malloc(_maxTextLength + 1);
   _callback = callback;
-  LOG(LogLevel::DEBUG, "AtFinder::setup with _maxTextLength %d", _maxTextLength);
+  LOG(LogLevel::LOG_DEBUG, "AtFinder::setup with _maxTextLength %d", _maxTextLength);
 }
 
 void AtFinder::processInputChar(char hot) {

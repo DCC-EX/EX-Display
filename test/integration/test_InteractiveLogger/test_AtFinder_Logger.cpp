@@ -40,7 +40,7 @@ protected:
 
 TEST_F(AtFinderLoggerIntegrationTests, IntegrationTest) {
   // Set logging to debug
-  logger->setLogLevel(LogLevel::DEBUG);
+  logger->setLogLevel(LogLevel::LOG_DEBUG);
 
   // Set AtFinder logger
   AtFinder::setLogger(logger);

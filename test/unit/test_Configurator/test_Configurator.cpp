@@ -64,11 +64,11 @@ TEST_F(ConfiguratorTests, SetLogLevel) {
   Stream commandStation;
 
   // Create a Configurator using these and a log level of debug
-  Configurator configurator(&console, &commandStation, LogLevel::DEBUG);
+  Configurator configurator(&console, &commandStation, LogLevel::LOG_DEBUG);
 
   // Validate logger is set to DEBUG
   Logger *logger = configurator.getLogger();
-  EXPECT_EQ(logger->getLogLevel(), LogLevel::DEBUG);
+  EXPECT_EQ(logger->getLogLevel(), LogLevel::LOG_DEBUG);
 }
 
 /// @brief Ensure the Configurator is created and all attributes are as expected
@@ -85,7 +85,7 @@ TEST_F(ConfiguratorTests, TestInitialisation) {
 
   EXPECT_EQ(configurator->getConsoleStream(), &console);
   EXPECT_EQ(configurator->getCommandStationStream(), &commandStation);
-  EXPECT_EQ(configurator->getLogger()->getLogLevel(), LogLevel::WARN);
+  EXPECT_EQ(configurator->getLogger()->getLogLevel(), LogLevel::LOG_WARN);
   EXPECT_NE(configurator->getDisplayManager(), nullptr);
   EXPECT_NE(configurator->getInputManager(), nullptr);
   EXPECT_NE(configurator->getScreenManager(), nullptr);

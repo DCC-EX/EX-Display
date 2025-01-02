@@ -25,9 +25,9 @@
 InputManager::InputManager() : _display(nullptr), _input(nullptr), _logger(nullptr), _callback(nullptr) {}
 
 void InputManager::addInput(InputInterface *input) {
-  LOG(LogLevel::DEBUG, "InputManager::addInput()");
+  LOG(LogLevel::LOG_DEBUG, "InputManager::addInput()");
   if (input == nullptr) {
-    LOG(LogLevel::ERROR, "InputInterface doesn't exist, user input will not be available");
+    LOG(LogLevel::LOG_ERROR, "InputInterface doesn't exist, user input will not be available");
     return;
   }
   _input = input;
@@ -35,7 +35,7 @@ void InputManager::addInput(InputInterface *input) {
     _input->setLogger(_logger);
   }
   if (_callback == nullptr) {
-    LOG(LogLevel::ERROR, "InputInterface callback not set, user input will not be available");
+    LOG(LogLevel::LOG_ERROR, "InputInterface callback not set, user input will not be available");
     return;
   }
   _input->setCallback(_callback);
@@ -56,12 +56,12 @@ void InputManager::setDisplay(DisplayInterface *display) {
   if (display == nullptr || _input == nullptr) {
     return;
   }
-  LOG(LogLevel::DEBUG, "InputManager::setDisplay() - display ID %d", display->getId());
+  LOG(LogLevel::LOG_DEBUG, "InputManager::setDisplay() - display ID %d", display->getId());
   _input->setDisplay(display);
 }
 
 void InputManager::startInput() {
-  LOG(LogLevel::DEBUG, "InputManager::startInput()");
+  LOG(LogLevel::LOG_DEBUG, "InputManager::startInput()");
   if (_input != nullptr) {
     _input->begin();
   }

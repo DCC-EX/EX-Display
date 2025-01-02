@@ -21,7 +21,7 @@ ScreenManager::ScreenManager() : _firstScreen(nullptr), _logger(nullptr) {}
 
 Screen *ScreenManager::updateScreen(uint8_t screenId) {
   // If the screen doesn't exist, create and add to list
-  LOG(LogLevel::DEBUG, "ScreenManager::addScreen(%d)", screenId);
+  LOG(LogLevel::LOG_DEBUG, "ScreenManager::addScreen(%d)", screenId);
   if (getScreenById(screenId) == nullptr) {
     Screen *newScreen = new Screen(screenId);
     if (_logger != nullptr) {

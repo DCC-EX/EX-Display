@@ -37,7 +37,7 @@ void ScreenRow::setText(const char *text) {
   _text = new char[strlen(text) + 1];
   strcpy(_text, text);
   _needsRedraw = true;
-  LOG(LogLevel::DEBUG, "ScreenRow::setText(%s)", _text);
+  LOG(LogLevel::LOG_DEBUG, "ScreenRow::setText(%s)", _text);
 }
 
 const char *ScreenRow::getText() {

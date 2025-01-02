@@ -23,7 +23,7 @@
 DisplayManager::DisplayManager() : _firstDisplay(nullptr), _logger(nullptr), _nextDisplayId(0) {}
 
 void DisplayManager::addDisplay(DisplayInterface *display) {
-  LOG(LogLevel::DEBUG, "DisplayManager::addDisplay()");
+  LOG(LogLevel::LOG_DEBUG, "DisplayManager::addDisplay()");
   if (display == nullptr) {
     return;
   }
@@ -43,7 +43,7 @@ void DisplayManager::addDisplay(DisplayInterface *display) {
 }
 
 void DisplayManager::startDisplays() {
-  LOG(LogLevel::DEBUG, "DisplayManager::startDisplays()");
+  LOG(LogLevel::LOG_DEBUG, "DisplayManager::startDisplays()");
   if (_firstDisplay == nullptr) {
     return;
   }
@@ -54,7 +54,7 @@ void DisplayManager::startDisplays() {
 }
 
 void DisplayManager::clearAllDisplays() {
-  LOG(LogLevel::DEBUG, "DisplayManager::clearAllDisplays()");
+  LOG(LogLevel::LOG_DEBUG, "DisplayManager::clearAllDisplays()");
   if (_firstDisplay == nullptr) {
     return;
   }
@@ -66,7 +66,7 @@ void DisplayManager::clearAllDisplays() {
 }
 
 void DisplayManager::displayStartupInfo(const char *version) {
-  LOG(LogLevel::DEBUG, "DisplayManager::displayStartupInfo(%s)", version);
+  LOG(LogLevel::LOG_DEBUG, "DisplayManager::displayStartupInfo(%s)", version);
   // Do nothing if we don't have a DisplayManager or any displays
   if (_firstDisplay == nullptr) {
     return;

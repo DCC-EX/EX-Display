@@ -48,7 +48,7 @@ TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t te
 }
 
 void TFT_eSPIDisplay::begin() {
-  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::begin[%d]()", _displayId);
+  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::begin[%d]()", _displayId);
   if (!_tftInitialised) {
     _tft->init();
     _tftInitialised = true;
@@ -61,7 +61,7 @@ void TFT_eSPIDisplay::begin() {
   _fontWidth = _tft->textWidth("A");
   _maxRow = _tft->height() / _fontHeight;
   _maxColumn = _tft->width() / _fontWidth;
-  LOG(LogLevel::DEBUG,
+  LOG(LogLevel::LOG_DEBUG,
       "TFT_eSPIDisplay[%d] settings: "
       "_textSize=%d|_rotation=%d|_textColour=0x%04X|_backgroundColour=0x%04X|_csPin=%d|_fontHeight=%d|_fontWidth=%d|_"
       "maxRow=%d|_"
@@ -72,7 +72,7 @@ void TFT_eSPIDisplay::begin() {
 }
 
 void TFT_eSPIDisplay::clearScreen() {
-  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::clearScreen[%d]() - colour 0x%04X", _displayId, _backgroundColour);
+  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::clearScreen[%d]() - colour 0x%04X", _displayId, _backgroundColour);
   _tft->fillScreen(_backgroundColour);
 }
 
@@ -83,10 +83,10 @@ void TFT_eSPIDisplay::displayRow(uint8_t row, const char *text, bool underlined,
   int32_t x = 0;
   int32_t y = 0;
   _getRowPosition(column, row, x, y);
-  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::displayRow[%d](%d, %s, %d, %d) at X=%d|Y=%d", _displayId, row, text,
+  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::displayRow[%d](%d, %s, %d, %d) at X=%d|Y=%d", _displayId, row, text,
       underlined, column, x, y);
   _tft->setTextColor(_textColour);
-  LOG(LogLevel::DEBUG, "setTextColour(0x%04X)", _textColour);
+  LOG(LogLevel::LOG_DEBUG, "setTextColour(0x%04X)", _textColour);
   if (column == 0) {
     clearRow(row);
   }
@@ -94,7 +94,7 @@ void TFT_eSPIDisplay::displayRow(uint8_t row, const char *text, bool underlined,
 }
 
 void TFT_eSPIDisplay::clearRow(uint8_t row) {
-  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::clearRow[%d](%d)", _displayId, row);
+  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::clearRow[%d](%d)", _displayId, row);
   int32_t x = 0;
   int32_t y = 0;
   _getRowPosition(0, row, x, y);
@@ -102,7 +102,7 @@ void TFT_eSPIDisplay::clearRow(uint8_t row) {
 }
 
 void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
-  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::displayStartupInfo[%d](%s)", _displayId, version);
+  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::displayStartupInfo[%d](%s)", _displayId, version);
   _tft->fillScreen(0xFFFF);
   int32_t x = 0;
   int32_t y = 0;
@@ -123,7 +123,7 @@ void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
 }
 
 TFT_eSPI *TFT_eSPIDisplay::getTFT_eSPIInstance() {
-  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::getTFT_eSPIInstance[%d]", _displayId);
+  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::getTFT_eSPIInstance[%d]", _displayId);
   return _tft;
 }
 
@@ -147,10 +147,10 @@ TFT_eSPIDisplay::~TFT_eSPIDisplay() {
 }
 
 void TFT_eSPIDisplay::_getRowPosition(uint8_t column, uint8_t row, int32_t &x, int32_t &y) {
-  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::_getRowPosition[%d](%d, %d, %d, %d)", _displayId, column, row, x, y);
+  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::_getRowPosition[%d](%d, %d, %d, %d)", _displayId, column, row, x, y);
   x = column * _fontWidth;
   y = (row * _fontHeight);
-  LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::_getRowPosition[%d] x=%d|_fontWidth=%d|y=%d|_fontHeight=%d", _displayId, x,
+  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::_getRowPosition[%d] x=%d|_fontWidth=%d|y=%d|_fontHeight=%d", _displayId, x,
       _fontWidth, y, _fontHeight);
 }
 
