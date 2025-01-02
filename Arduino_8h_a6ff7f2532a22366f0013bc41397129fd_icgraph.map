@@ -1,7 +1,7 @@
 <map id="millis" name="millis">
 <area shape="rect" id="node1" title=" " alt="" coords="471,181,529,208"/>
 <area shape="rect" id="node2" href="$classInputInterface.html#afefc70fa413062a1df8e7950f1afc564" title="Call this from the derived class&#39; check() method to debounce and detect if the input is a hold vs...." alt="" coords="232,57,423,98"/>
-<area shape="rect" id="node6" href="$classConfigurator.html#a533d6d81029fd0f3e79466a2a340f877" title="Constructor for this Configurator." alt="" coords="232,123,423,149"/>
+<area shape="rect" id="node6" href="$classConfigurator.html#a74bea48b6837fd297b7a3a78de73c8c5" title="Constructor for this Configurator." alt="" coords="232,123,423,149"/>
 <area shape="rect" id="node7" href="$classDebounceHoldInputTests.html#ac1f9bed57fb4e12ac48e79385ff321dd" title=" " alt="" coords="236,174,419,215"/>
 <area shape="rect" id="node8" href="$classTouchScreenInputTests.html#af56a96900180dde47c024979d931cf2e" title=" " alt="" coords="243,239,412,281"/>
 <area shape="rect" id="node9" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="258,305,397,332"/>
