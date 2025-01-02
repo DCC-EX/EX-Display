@@ -57,9 +57,7 @@ void Controller::update() {
     LOG(LogLevel::DEBUG, "_pauseDisplayUpdatesUntil time exceeded, resume display updates");
     _pauseDisplayUpdatesUntil = 0;
     _pauseDisplayUpdates = false;
-    for (auto *display = _displayManager->getFirstDisplay(); display; display = display->getNext()) {
-      display->clearScreen();
-    }
+    _displayManager->clearAllDisplays();
   }
 
   // Process user input provided there is a valid InputManager and InputInterface

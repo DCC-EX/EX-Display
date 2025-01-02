@@ -39,6 +39,9 @@ public:
   /// @brief Call the begin() method for all associated Display instances
   void startDisplays();
 
+  /// @brief Clear all displays
+  void clearAllDisplays();
+
   /// @brief Calls the displayStartupInfo of all Display instances to display the version
   /// @param version EX-Display version
   void displayStartupInfo(const char *version);
@@ -67,9 +70,8 @@ private:
   Logger *_logger;
   uint8_t _nextDisplayId;
 
-  /// @brief Set the chip select pin state for any display that has it set
-  /// @param display Pointer to the DisplayInterface instance
-  void _setSPIDisplayCSPin(DisplayInterface *display);
+  /// @brief Set the chip select pin state for all displays that have it set and select them
+  void _setupAllSPICSPins();
 
   /// @brief Manually selects SPI displays that require manual selecting via the CS pin - sets pin low
   /// @param display Pointer to the DisplayInterface instance

@@ -20,14 +20,18 @@
 // Do not load when testing, TFT_eSPI library is incompatible and will cause failures.
 #ifndef PIO_UNIT_TESTING
 
+TFT_eSPI *TFT_eSPIDisplay::_tft = nullptr;
+bool TFT_eSPIDisplay::_tftInitialised = false;
+
 TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour) {
   _rotation = rotation;
   _textSize = textSize;
   _textColour = textColour;
   _backgroundColour = backgroundColour;
-  _tft = new TFT_eSPI();
+  if (_tft == nullptr) {
+    _tft = new TFT_eSPI();
+  }
   _gfxFont = TEXT_FONT;
-  _tftInitialised = false;
 }
 
 TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour,
@@ -37,15 +41,18 @@ TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t te
   _textColour = textColour;
   _backgroundColour = backgroundColour;
   _csPin = csPin;
-  _tft = new TFT_eSPI();
+  if (_tft == nullptr) {
+    _tft = new TFT_eSPI();
+  }
   _gfxFont = TEXT_FONT;
-  _tftInitialised = false;
 }
 
 void TFT_eSPIDisplay::begin() {
   LOG(LogLevel::DEBUG, "TFT_eSPIDisplay::begin[%d]()", _displayId);
-  _tft->init();
-  _tftInitialised = true;
+  if (!_tftInitialised) {
+    _tft->init();
+    _tftInitialised = true;
+  }
   _tft->setTextSize(_textSize);
   _tft->setRotation(_rotation);
   _tft->setTextColor(_textColour);

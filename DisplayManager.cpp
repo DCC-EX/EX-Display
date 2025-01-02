@@ -47,11 +47,21 @@ void DisplayManager::startDisplays() {
   if (_firstDisplay == nullptr) {
     return;
   }
+  _setupAllSPICSPins();
   for (auto *display = _firstDisplay; display; display = display->getNext()) {
-    // If display's CS pin is defined, set the pin mode and select the display
-    _setSPIDisplayCSPin(display);
-    _selectSPIDisplay(display);
     display->begin();
+  }
+}
+
+void DisplayManager::clearAllDisplays() {
+  LOG(LogLevel::DEBUG, "DisplayManager::clearAllDisplays()");
+  if (_firstDisplay == nullptr) {
+    return;
+  }
+  for (auto *display = _firstDisplay; display; display = display->getNext()) {
+    // Select this SPI display if necessary
+    _selectSPIDisplay(display);
+    display->clearScreen();
   }
 }
 
@@ -131,13 +141,18 @@ DisplayManager::~DisplayManager() {
   _logger = nullptr;
 }
 
-void DisplayManager::_setSPIDisplayCSPin(DisplayInterface *display) {
-  // If not set, don't do anything
-  if (display->getCSPin() == -1) {
-    return;
+void DisplayManager::_setupAllSPICSPins() {
+  for (DisplayInterface *display = _firstDisplay; display; display = display->getNext()) {
+    int csPin = display->getCSPin();
+    // If not set, don't do anything and move to the next display
+    if (csPin == -1) {
+      continue;
+    }
+    // Set the pin to output mode
+    pinMode(csPin, OUTPUT);
+    // Then enable the display ready for _tft->init()
+    digitalWrite(csPin, LOW);
   }
-  // Set the pin to output mode
-  pinMode(display->getCSPin(), OUTPUT);
 }
 
 void DisplayManager::_selectSPIDisplay(DisplayInterface *display) {

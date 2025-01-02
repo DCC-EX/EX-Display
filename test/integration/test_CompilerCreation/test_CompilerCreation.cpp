@@ -72,14 +72,12 @@ TEST_F(CompilerCreationTests, CreateDevices) {
   // display1
   EXPECT_CALL(MockArduino::getInstance(), mockPinMode(22, OUTPUT)).Times(1);
   EXPECT_CALL(MockArduino::getInstance(), mockDigitalWrite(22, LOW)).Times(1);
-  EXPECT_CALL(MockArduino::getInstance(), mockDigitalWrite(22, HIGH)).Times(1);
   // display2
   EXPECT_CALL(MockArduino::getInstance(), mockPinMode(23, OUTPUT)).Times(1);
   EXPECT_CALL(MockArduino::getInstance(), mockDigitalWrite(23, LOW)).Times(1);
-  EXPECT_CALL(MockArduino::getInstance(), mockDigitalWrite(23, HIGH)).Times(1);
 
   displayManager->startDisplays();
-
+  
   // Now create the input
   inputManager->createInput();
 
@@ -110,6 +108,7 @@ TEST_F(CompilerCreationTests, CreateDevices) {
   testing::Mock::VerifyAndClearExpectations(display2);
   testing::Mock::VerifyAndClearExpectations(callback);
   testing::Mock::VerifyAndClearExpectations(input);
+  testing::Mock::VerifyAndClearExpectations(&MockArduino::getInstance());
 
   // Clean up
   delete displayManager;

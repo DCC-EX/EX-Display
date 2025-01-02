@@ -110,9 +110,9 @@ public:
   ~TFT_eSPIDisplay() override;
 
 private:
-  TFT_eSPI *_tft;
+  static TFT_eSPI *_tft;
   const GFXfont *_gfxFont;
-  bool _tftInitialised;
+  static bool _tftInitialised;
 
   /// @brief Get the X/Y coordinates to draw the specified row, starting at the specified column
   /// @param row Row number

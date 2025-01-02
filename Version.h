@@ -2,8 +2,10 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.18"
+#define VERSION "0.0.19"
 
+// 0.0.19 includes:
+//  - Resolved multiple TFT_eSPI screens not operating independently by using static TFT_eSPI instance
 // 0.0.18 includes:
 //  - Added ability to force touchscreen calibration if required
 // 0.0.17 includes:
