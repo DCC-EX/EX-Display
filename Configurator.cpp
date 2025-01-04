@@ -38,8 +38,9 @@ Configurator::Configurator(Stream *consoleStream, Stream *commandStationStream, 
 }
 
 void Configurator::initialise() {
-  AtFinder::setup(100, _controller);       // Setup AtFinder to call back to Controller
+  LOG(LogLevel::LOG_DEBUG, "Configurator::initialise()");
   AtFinder::setLogger(_logger);            // Set the AtFinder logger for debug etc.
+  AtFinder::setup(100, _controller);       // Setup AtFinder to call back to Controller
   _displayManager->createDisplays();       // Create user defined displays from myConfig.h
   _inputManager->setCallback(_controller); // Input uses the Controller for callbacks
   _inputManager->createInput();            // Create user defined input from myConfig.h
