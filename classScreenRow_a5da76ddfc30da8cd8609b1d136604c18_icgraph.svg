@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" target="_top" xlink:title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly.">
+<g id="a_node2"><a xlink:href="test__ControllerDisplayUpdate_8cpp.html#af7a73dc328bc3f14a231b3d577180628" target="_top" xlink:title="Test to ensure a mock display correctly receives screen updates from the Controller.">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-19.5 52,-19.5 52,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="26" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">TEST_F</text>
 </a>

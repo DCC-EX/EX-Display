@@ -159,7 +159,7 @@ var sectionId = 'dynsection-7';
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="test__Screen_8cpp.html#a680e2c57d51963c79048644663f58770" target="_top" xlink:title="Create a Screen and check all attributes are valid.">
+<g id="a_node11"><a xlink:href="test__ControllerDisplayUpdate_8cpp.html#af7a73dc328bc3f14a231b3d577180628" target="_top" xlink:title="Test to ensure a mock display correctly receives screen updates from the Controller.">
 <polygon fill="white" stroke="black" points="639.5,-0.5 639.5,-19.5 691.5,-19.5 691.5,-0.5 639.5,-0.5"/>
 <text text-anchor="middle" x="665.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">TEST_F</text>
 </a>

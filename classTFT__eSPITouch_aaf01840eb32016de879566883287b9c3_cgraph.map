@@ -10,9 +10,9 @@
 <area shape="rect" id="node17" href="$classTFT__eSPIDisplay.html#ab3084ef6b927bc9dbc0991088dda2c6c" title="Get the TFT_eSPI instance created by this instance &#45; needed for the touch interface." alt="" coords="250,377,430,418"/>
 <area shape="rect" id="node18" href="$classTFT__eSPIDisplay.html#ad4f7da2ea80e0fd0206c84f4a787bfb2" title="Test if the TFT_eSPI instance has been initialised &#45; needed for the touch interface." alt="" coords="233,443,447,469"/>
 <area shape="rect" id="node5" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="590,107,649,133"/>
-<area shape="rect" id="node6" href="$classTFT__eSPIDisplay.html#a89e4a05e804059583a6d07f2efadc839" title="Display a row of text on the display." alt="" coords="514,157,725,184"/>
+<area shape="rect" id="node6" href="$classTFT__eSPIDisplay.html#a18b84c77677d72c6515d0cd45e9c65ae" title="Display a row of text on the display." alt="" coords="514,157,725,184"/>
 <area shape="rect" id="node7" href="$classTFT__eSPIDisplay.html#afcbf3673396a684fd540bc75214719a3" title="Get the X/Y coordinates to draw the specified row, starting at the specified column." alt="" coords="1017,125,1209,166"/>
-<area shape="rect" id="node8" href="$classTFT__eSPIDisplay.html#aac207d0a3d33da4ad5989d1f63d87a9f" title="Clear the specified row." alt="" coords="773,157,969,184"/>
+<area shape="rect" id="node8" href="$classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda" title="Clear the specified row." alt="" coords="773,157,969,184"/>
 <area shape="rect" id="node11" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="590,241,649,268"/>
 <area shape="rect" id="node12" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="806,208,937,235"/>
 <area shape="rect" id="node13" href="$classConfigurator.html#a82c65d6d040b717d64520903c788dd79" title="Get the Controller instance for this Configurator." alt="" coords="774,259,969,285"/>

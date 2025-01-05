@@ -1,7 +1,8 @@
 <map id="TFT_eSPIDisplay::_getRowPosition" name="TFT_eSPIDisplay::_getRowPosition">
-<area shape="rect" id="node1" title="Get the X/Y coordinates to draw the specified row, starting at the specified column." alt="" coords="807,49,999,90"/>
-<area shape="rect" id="node2" href="$classTFT__eSPIDisplay.html#aac207d0a3d33da4ad5989d1f63d87a9f" title="Clear the specified row." alt="" coords="563,5,759,32"/>
-<area shape="rect" id="node3" href="$classTFT__eSPIDisplay.html#a89e4a05e804059583a6d07f2efadc839" title="Display a row of text on the display." alt="" coords="304,31,515,57"/>
-<area shape="rect" id="node5" href="$classTFT__eSPIDisplay.html#aa1f86437ebb95745bdf69be9142ef26b" title="Display the startup screen with software version." alt="" coords="569,107,752,149"/>
-<area shape="rect" id="node4" href="$classTFT__eSPITouch.html#ad71507c11a328924064e703daef05ada" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="5,23,256,65"/>
+<area shape="rect" id="node1" title="Get the X/Y coordinates to draw the specified row, starting at the specified column." alt="" coords="807,64,999,105"/>
+<area shape="rect" id="node2" href="$classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda" title="Clear the specified row." alt="" coords="563,21,759,47"/>
+<area shape="rect" id="node3" href="$classTFT__eSPIDisplay.html#a18b84c77677d72c6515d0cd45e9c65ae" title="Display a row of text on the display." alt="" coords="304,46,515,73"/>
+<area shape="rect" id="node6" href="$classTFT__eSPIDisplay.html#aa1f86437ebb95745bdf69be9142ef26b" title="Display the startup screen with software version." alt="" coords="569,123,752,164"/>
+<area shape="rect" id="node4" href="$classTFT__eSPITouch.html#ad71507c11a328924064e703daef05ada" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="5,5,256,47"/>
+<area shape="rect" id="node5" href="$classTFT__eSPIDisplay.html#ac4c657d18bcd4dae193f5fd906411dcf" title="Display the specified Screen on this display." alt="" coords="39,71,222,112"/>
 </map>

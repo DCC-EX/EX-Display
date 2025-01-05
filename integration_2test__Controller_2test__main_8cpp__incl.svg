@@ -86,7 +86,7 @@
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="DisplayInterface_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="134.51,-56.5 134.51,-75.5 240.51,-75.5 240.51,-56.5 134.51,-56.5"/>
+<polygon fill="white" stroke="red" points="134.51,-56.5 134.51,-75.5 240.51,-75.5 240.51,-56.5 134.51,-56.5"/>
 <text text-anchor="middle" x="187.51" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisplayInterface.h</text>
 </a>
 </g>
@@ -112,18 +112,18 @@
 <path fill="none" stroke="midnightblue" d="M61.47,-112.49C30,-101.23 -15.18,-79.97 5.51,-56 39.35,-16.8 196.26,-11.15 270.88,-10.73"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="271.28,-14.23 281.27,-10.7 271.26,-7.23 271.28,-14.23"/>
 </g>
-<!-- Node12 -->
+<!-- Node14 -->
 <g id="node6" class="node">
-<title>Node12</title>
+<title>Node14</title>
 <g id="a_node6"><a xlink:href="ScreenManager_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="red" points="15.01,-56.5 15.01,-75.5 116.01,-75.5 116.01,-56.5 15.01,-56.5"/>
 <text text-anchor="middle" x="65.51" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">ScreenManager.h</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node12 -->
+<!-- Node3&#45;&gt;Node14 -->
 <g id="edge6" class="edge">
-<title>Node3&#45;&gt;Node12</title>
+<title>Node3&#45;&gt;Node14</title>
 <path fill="none" stroke="midnightblue" d="M84.71,-112.08C81.6,-104.77 77.09,-94.18 73.22,-85.1"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="76.38,-83.58 69.24,-75.75 69.94,-86.32 76.38,-83.58"/>
 </g>

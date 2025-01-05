@@ -52,7 +52,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classTFT__eSPIDisplay.html#a89e4a05e804059583a6d07f2efadc839" target="_top" xlink:title="Display a row of text on the display.">
+<g id="a_node4"><a xlink:href="classTFT__eSPIDisplay.html#a18b84c77677d72c6515d0cd45e9c65ae" target="_top" xlink:title="Display a row of text on the display.">
 <polygon fill="white" stroke="black" points="224.5,-19.5 224.5,-38.5 382.5,-38.5 382.5,-19.5 224.5,-19.5"/>
 <text text-anchor="middle" x="303.5" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00">TFT_eSPIDisplay::displayRow</text>
 </a>
@@ -83,7 +83,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classTFT__eSPIDisplay.html#aac207d0a3d33da4ad5989d1f63d87a9f" target="_top" xlink:title="Clear the specified row.">
+<g id="a_node6"><a xlink:href="classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda" target="_top" xlink:title="Clear the specified row.">
 <polygon fill="white" stroke="black" points="419,-0.5 419,-19.5 566,-19.5 566,-0.5 419,-0.5"/>
 <text text-anchor="middle" x="492.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">TFT_eSPIDisplay::clearRow</text>
 </a>

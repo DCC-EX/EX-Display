@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="5,49,256,90"/>
 <area shape="rect" id="node2" href="$classTFT__eSPIDisplay.html#af7bbb772e597d3431656ccd32d73bdf5" title="Clear the entire screen." alt="" coords="304,5,516,32"/>
 <area shape="rect" id="node3" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="381,56,439,83"/>
-<area shape="rect" id="node4" href="$classTFT__eSPIDisplay.html#a89e4a05e804059583a6d07f2efadc839" title="Display a row of text on the display." alt="" coords="305,107,515,133"/>
+<area shape="rect" id="node4" href="$classTFT__eSPIDisplay.html#a18b84c77677d72c6515d0cd45e9c65ae" title="Display a row of text on the display." alt="" coords="305,107,515,133"/>
 <area shape="rect" id="node5" href="$classTFT__eSPIDisplay.html#afcbf3673396a684fd540bc75214719a3" title="Get the X/Y coordinates to draw the specified row, starting at the specified column." alt="" coords="808,99,1000,141"/>
-<area shape="rect" id="node6" href="$classTFT__eSPIDisplay.html#aac207d0a3d33da4ad5989d1f63d87a9f" title="Clear the specified row." alt="" coords="564,132,760,159"/>
+<area shape="rect" id="node6" href="$classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda" title="Clear the specified row." alt="" coords="564,132,760,159"/>
 </map>

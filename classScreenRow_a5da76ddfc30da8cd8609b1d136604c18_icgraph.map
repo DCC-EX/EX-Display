@@ -1,4 +1,4 @@
 <map id="ScreenRow::getText" name="ScreenRow::getText">
 <area shape="rect" id="node1" title="Get the text associated with this ScreenRow." alt="" coords="123,5,272,32"/>
-<area shape="rect" id="node2" href="$test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly." alt="" coords="5,5,75,32"/>
+<area shape="rect" id="node2" href="$test__ControllerDisplayUpdate_8cpp.html#af7a73dc328bc3f14a231b3d577180628" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="5,5,75,32"/>
 </map>

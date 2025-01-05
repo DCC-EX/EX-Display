@@ -105,12 +105,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af7bbb772e597d3431656ccd32d73bdf5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#af7bbb772e597d3431656ccd32d73bdf5">clearScreen</a> () override</td></tr>
 <tr class="memdesc:af7bbb772e597d3431656ccd32d73bdf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the entire screen.  <a href="classTFT__eSPIDisplay.html#af7bbb772e597d3431656ccd32d73bdf5">More...</a><br /></td></tr>
 <tr class="separator:af7bbb772e597d3431656ccd32d73bdf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89e4a05e804059583a6d07f2efadc839"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#a89e4a05e804059583a6d07f2efadc839">displayRow</a> (uint8_t row, const char *text, bool underlined=false, uint8_t column=0) override</td></tr>
-<tr class="memdesc:a89e4a05e804059583a6d07f2efadc839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display a row of text on the display.  <a href="classTFT__eSPIDisplay.html#a89e4a05e804059583a6d07f2efadc839">More...</a><br /></td></tr>
-<tr class="separator:a89e4a05e804059583a6d07f2efadc839"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac207d0a3d33da4ad5989d1f63d87a9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#aac207d0a3d33da4ad5989d1f63d87a9f">clearRow</a> (uint8_t row) override</td></tr>
-<tr class="memdesc:aac207d0a3d33da4ad5989d1f63d87a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the specified row.  <a href="classTFT__eSPIDisplay.html#aac207d0a3d33da4ad5989d1f63d87a9f">More...</a><br /></td></tr>
-<tr class="separator:aac207d0a3d33da4ad5989d1f63d87a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c657d18bcd4dae193f5fd906411dcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#ac4c657d18bcd4dae193f5fd906411dcf">displayScreen</a> (<a class="el" href="classScreen.html">Screen</a> *screen) override</td></tr>
+<tr class="memdesc:ac4c657d18bcd4dae193f5fd906411dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the specified <a class="el" href="classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">Screen</a> on this display.  <a href="classTFT__eSPIDisplay.html#ac4c657d18bcd4dae193f5fd906411dcf">More...</a><br /></td></tr>
+<tr class="separator:ac4c657d18bcd4dae193f5fd906411dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18b84c77677d72c6515d0cd45e9c65ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#a18b84c77677d72c6515d0cd45e9c65ae">displayRow</a> (uint8_t row, const char *text, bool underlined=false, uint8_t column=0)</td></tr>
+<tr class="memdesc:a18b84c77677d72c6515d0cd45e9c65ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display a row of text on the display.  <a href="classTFT__eSPIDisplay.html#a18b84c77677d72c6515d0cd45e9c65ae">More...</a><br /></td></tr>
+<tr class="separator:a18b84c77677d72c6515d0cd45e9c65ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d8317643dddb535369abd48de8bdbda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda">clearRow</a> (uint8_t row)</td></tr>
+<tr class="memdesc:a0d8317643dddb535369abd48de8bdbda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the specified row.  <a href="classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda">More...</a><br /></td></tr>
+<tr class="separator:a0d8317643dddb535369abd48de8bdbda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1f86437ebb95745bdf69be9142ef26b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPIDisplay.html#aa1f86437ebb95745bdf69be9142ef26b">displayStartupInfo</a> (const char *version) override</td></tr>
 <tr class="memdesc:aa1f86437ebb95745bdf69be9142ef26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the startup screen with software version.  <a href="classTFT__eSPIDisplay.html#aa1f86437ebb95745bdf69be9142ef26b">More...</a><br /></td></tr>
 <tr class="separator:aa1f86437ebb95745bdf69be9142ef26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -436,7 +439,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_afcbf3673396a684fd540bc75214719a3_icgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_afcbf3673396a684fd540bc75214719a3_icgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -477,14 +480,11 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aac207d0a3d33da4ad5989d1f63d87a9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac207d0a3d33da4ad5989d1f63d87a9f">&#9670;&nbsp;</a></span>clearRow()</h2>
+<a id="a0d8317643dddb535369abd48de8bdbda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d8317643dddb535369abd48de8bdbda">&#9670;&nbsp;</a></span>clearRow()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void TFT_eSPIDisplay::clearRow </td>
@@ -494,11 +494,6 @@ Here is the caller graph for this function:</div>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Clear the specified row. </p>
@@ -508,18 +503,16 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-
-<p>Implements <a class="el" href="classDisplayInterface.html#a643a736d07e527f5974b935fa662ae5b">DisplayInterface</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_aac207d0a3d33da4ad5989d1f63d87a9f_cgraph.svg" width="447" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_a0d8317643dddb535369abd48de8bdbda_cgraph.svg" width="447" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_aac207d0a3d33da4ad5989d1f63d87a9f_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_a0d8317643dddb535369abd48de8bdbda_icgraph.svg" width="100%" height="388"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -554,7 +547,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_af7bbb772e597d3431656ccd32d73bdf5_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_af7bbb772e597d3431656ccd32d73bdf5_icgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -699,14 +692,11 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a89e4a05e804059583a6d07f2efadc839"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89e4a05e804059583a6d07f2efadc839">&#9670;&nbsp;</a></span>displayRow()</h2>
+<a id="a18b84c77677d72c6515d0cd45e9c65ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18b84c77677d72c6515d0cd45e9c65ae">&#9670;&nbsp;</a></span>displayRow()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void TFT_eSPIDisplay::displayRow </td>
@@ -738,11 +728,6 @@ Here is the call graph for this function:</div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Display a row of text on the display. </p>
@@ -755,18 +740,58 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-
-<p>Implements <a class="el" href="classDisplayInterface.html#abd551a29e28da89c7913f0c7ae8690a0">DisplayInterface</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_a89e4a05e804059583a6d07f2efadc839_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_a18b84c77677d72c6515d0cd45e9c65ae_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_a89e4a05e804059583a6d07f2efadc839_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_a18b84c77677d72c6515d0cd45e9c65ae_icgraph.svg" width="100%" height="388"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac4c657d18bcd4dae193f5fd906411dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4c657d18bcd4dae193f5fd906411dcf">&#9670;&nbsp;</a></span>displayScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TFT_eSPIDisplay::displayScreen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> *&#160;</td>
+          <td class="paramname"><em>screen</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Display the specified <a class="el" href="classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">Screen</a> on this display. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">screen</td><td>Pointer to the <a class="el" href="classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">Screen</a> to display </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classDisplayInterface.html#ae2d4b5715d06e83332465ea09d803e7c">DisplayInterface</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classTFT__eSPIDisplay_ac4c657d18bcd4dae193f5fd906411dcf_cgraph.svg" width="100%" height="442"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 

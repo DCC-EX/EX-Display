@@ -6,7 +6,7 @@
 <area shape="rect" id="node6" href="$classScreenManager.html#a38890def1478514514341039b83299ef" title="Get the next screen in the list (sorted by ID)" alt="" coords="500,221,727,248"/>
 <area shape="rect" id="node8" href="$classScreenManager.html#a64ecbfb9232d4051a75ff5abea58ba6d" title="Get the previous screen in the list (sorted by ID)" alt="" coords="509,155,717,196"/>
 <area shape="rect" id="node10" href="$classScreenManager.html#acd4f0a92975819547a21bfc7d6320f6d" title="Get the lowest Screen ID in the list." alt="" coords="777,209,1009,236"/>
-<area shape="rect" id="node11" href="$test__Screen_8cpp.html#a680e2c57d51963c79048644663f58770" title="Create a Screen and check all attributes are valid." alt="" coords="858,310,927,337"/>
+<area shape="rect" id="node11" href="$test__ControllerDisplayUpdate_8cpp.html#af7a73dc328bc3f14a231b3d577180628" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="858,310,927,337"/>
 <area shape="rect" id="node3" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,86,189,113"/>
 <area shape="rect" id="node9" href="$test__ScreenManager_8cpp.html#ab5ada86d9042a1a62ed2251d66d84ef3" title="Create a list of Screens with ScreenManager." alt="" coords="579,104,648,130"/>
 <area shape="rect" id="node7" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="310,221,379,248"/>

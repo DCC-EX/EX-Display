@@ -96,12 +96,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab38bc07dac9e61a2d2d94079a1a8be83"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#ab38bc07dac9e61a2d2d94079a1a8be83">clearScreen</a> ()=0</td></tr>
 <tr class="memdesc:ab38bc07dac9e61a2d2d94079a1a8be83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the entire screen.  <a href="classDisplayInterface.html#ab38bc07dac9e61a2d2d94079a1a8be83">More...</a><br /></td></tr>
 <tr class="separator:ab38bc07dac9e61a2d2d94079a1a8be83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd551a29e28da89c7913f0c7ae8690a0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#abd551a29e28da89c7913f0c7ae8690a0">displayRow</a> (uint8_t row, const char *text, bool underlined=false, uint8_t column=0)=0</td></tr>
-<tr class="memdesc:abd551a29e28da89c7913f0c7ae8690a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display a row of text on the display.  <a href="classDisplayInterface.html#abd551a29e28da89c7913f0c7ae8690a0">More...</a><br /></td></tr>
-<tr class="separator:abd551a29e28da89c7913f0c7ae8690a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a643a736d07e527f5974b935fa662ae5b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#a643a736d07e527f5974b935fa662ae5b">clearRow</a> (uint8_t row)=0</td></tr>
-<tr class="memdesc:a643a736d07e527f5974b935fa662ae5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the specified row.  <a href="classDisplayInterface.html#a643a736d07e527f5974b935fa662ae5b">More...</a><br /></td></tr>
-<tr class="separator:a643a736d07e527f5974b935fa662ae5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d4b5715d06e83332465ea09d803e7c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#ae2d4b5715d06e83332465ea09d803e7c">displayScreen</a> (<a class="el" href="classScreen.html">Screen</a> *screen)=0</td></tr>
+<tr class="memdesc:ae2d4b5715d06e83332465ea09d803e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the specified <a class="el" href="classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">Screen</a> on this display.  <a href="classDisplayInterface.html#ae2d4b5715d06e83332465ea09d803e7c">More...</a><br /></td></tr>
+<tr class="separator:ae2d4b5715d06e83332465ea09d803e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e3aa7a73f848b93f870765c30628c27"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayInterface.html#a8e3aa7a73f848b93f870765c30628c27">displayStartupInfo</a> (const char *version)=0</td></tr>
 <tr class="memdesc:a8e3aa7a73f848b93f870765c30628c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the startup screen with software version.  <a href="classDisplayInterface.html#a8e3aa7a73f848b93f870765c30628c27">More...</a><br /></td></tr>
 <tr class="separator:a8e3aa7a73f848b93f870765c30628c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -250,42 +247,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a643a736d07e527f5974b935fa662ae5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a643a736d07e527f5974b935fa662ae5b">&#9670;&nbsp;</a></span>clearRow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void DisplayInterface::clearRow </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>row</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Clear the specified row. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">row</td><td>Row number as specified in the SCREEN() command (not pixels) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="classTFT__eSPIDisplay.html#aac207d0a3d33da4ad5989d1f63d87a9f">TFT_eSPIDisplay</a>.</p>
-
-</div>
-</div>
 <a id="ab38bc07dac9e61a2d2d94079a1a8be83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab38bc07dac9e61a2d2d94079a1a8be83">&#9670;&nbsp;</a></span>clearScreen()</h2>
 
@@ -321,8 +282,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="abd551a29e28da89c7913f0c7ae8690a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd551a29e28da89c7913f0c7ae8690a0">&#9670;&nbsp;</a></span>displayRow()</h2>
+<a id="ae2d4b5715d06e83332465ea09d803e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d4b5715d06e83332465ea09d803e7c">&#9670;&nbsp;</a></span>displayScreen()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -331,33 +292,11 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void DisplayInterface::displayRow </td>
+          <td class="memname">virtual void DisplayInterface::displayScreen </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>row</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> *&#160;</td>
+          <td class="paramname"><em>screen</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>underlined</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>column</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -367,18 +306,15 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Display a row of text on the display. </p>
+<p>Display the specified <a class="el" href="classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">Screen</a> on this display. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">row</td><td>Row number as specified in the SCREEN() command (not pixels) </td></tr>
-    <tr><td class="paramname">text</td><td>Text to be displayed on this row </td></tr>
-    <tr><td class="paramname">underlined</td><td>(Optional) Flag to underline this row - default false </td></tr>
-    <tr><td class="paramname">column</td><td>Column number to start displaying at (based on text width, not pixels) </td></tr>
+    <tr><td class="paramname">screen</td><td>Pointer to the <a class="el" href="classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">Screen</a> to display </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classTFT__eSPIDisplay.html#a89e4a05e804059583a6d07f2efadc839">TFT_eSPIDisplay</a>.</p>
+<p>Implemented in <a class="el" href="classTFT__eSPIDisplay.html#ac4c657d18bcd4dae193f5fd906411dcf">TFT_eSPIDisplay</a>.</p>
 
 </div>
 </div>

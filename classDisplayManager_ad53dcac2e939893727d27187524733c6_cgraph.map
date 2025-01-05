@@ -1,12 +1,10 @@
 <map id="DisplayManager::update" name="DisplayManager::update">
-<area shape="rect" id="node1" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="5,157,187,184"/>
+<area shape="rect" id="node1" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="5,107,187,133"/>
 <area shape="rect" id="node2" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="235,56,485,83"/>
 <area shape="rect" id="node6" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="536,107,725,133"/>
-<area shape="rect" id="node7" href="$classScreen.html#a0bf66c3d7a47302ecb77113f3eacc422" title="Get the first ScreenRow instance in the list." alt="" coords="263,157,457,184"/>
-<area shape="rect" id="node8" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="283,208,437,235"/>
-<area shape="rect" id="node9" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="247,259,473,285"/>
+<area shape="rect" id="node7" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="247,157,473,184"/>
 <area shape="rect" id="node3" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="581,5,680,32"/>
 <area shape="rect" id="node5" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="533,56,728,83"/>
 <area shape="rect" id="node4" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="776,5,967,32"/>
-<area shape="rect" id="node10" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="567,259,694,285"/>
+<area shape="rect" id="node8" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="567,157,694,184"/>
 </map>

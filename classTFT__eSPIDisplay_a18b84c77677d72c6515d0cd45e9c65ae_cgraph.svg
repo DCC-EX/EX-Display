@@ -83,7 +83,7 @@ var sectionId = 'dynsection-10';
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classTFT__eSPIDisplay.html#aac207d0a3d33da4ad5989d1f63d87a9f" target="_top" xlink:title="Clear the specified row.">
+<g id="a_node3"><a xlink:href="classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda" target="_top" xlink:title="Clear the specified row.">
 <polygon fill="white" stroke="black" points="194,-0.5 194,-19.5 341,-19.5 341,-0.5 194,-0.5"/>
 <text text-anchor="middle" x="267.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">TFT_eSPIDisplay::clearRow</text>
 </a>
@@ -135,7 +135,7 @@ var sectionId = 'dynsection-10';
         </g>
         <svg viewBox="0 0 15 15" width="100%" height="30px" preserveAspectRatio="xMaxYMin meet">
          <g id="arrow_out" transform="scale(0.3 0.3)">
-          <a xlink:href="classTFT__eSPIDisplay_a89e4a05e804059583a6d07f2efadc839_cgraph_org.svg" target="_base">
+          <a xlink:href="classTFT__eSPIDisplay_a18b84c77677d72c6515d0cd45e9c65ae_cgraph_org.svg" target="_base">
            <rect id="button" ry="5" rx="5" y="6" x="6" height="38" width="38"
                 fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width="1.0"/>
            <path id="arrow"

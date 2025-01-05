@@ -1,5 +1,5 @@
 <map id="TFT_eSPIDisplay::displayRow" name="TFT_eSPIDisplay::displayRow">
 <area shape="rect" id="node1" title="Display a row of text on the display." alt="" coords="5,13,216,39"/>
 <area shape="rect" id="node2" href="$classTFT__eSPIDisplay.html#afcbf3673396a684fd540bc75214719a3" title="Get the X/Y coordinates to draw the specified row, starting at the specified column." alt="" coords="508,5,700,47"/>
-<area shape="rect" id="node3" href="$classTFT__eSPIDisplay.html#aac207d0a3d33da4ad5989d1f63d87a9f" title="Clear the specified row." alt="" coords="264,38,460,65"/>
+<area shape="rect" id="node3" href="$classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda" title="Clear the specified row." alt="" coords="264,38,460,65"/>
 </map>

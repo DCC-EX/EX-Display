@@ -1,5 +1,9 @@
 <map id="TEST_F" name="TEST_F">
-<area shape="rect" id="node1" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="5,31,75,57"/>
-<area shape="rect" id="node2" href="$classAtFinder.html#ada7a2ab3b409d525ffa704badf4b4dd1" title="Clean up memory allocations used by AtFinder." alt="" coords="123,5,260,32"/>
-<area shape="rect" id="node3" href="$classAtFinder.html#abadf56235ed457d74fff16dfdcd6d693" title="Setup the AtFinder parser." alt="" coords="131,56,251,83"/>
+<area shape="rect" id="node1" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="5,132,75,159"/>
+<area shape="rect" id="node2" href="$classAtFinder.html#ada7a2ab3b409d525ffa704badf4b4dd1" title="Clean up memory allocations used by AtFinder." alt="" coords="131,5,268,32"/>
+<area shape="rect" id="node3" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="146,56,253,83"/>
+<area shape="rect" id="node4" href="$classScreenRow.html#a4c72ef81c0dde9c008c946625fdce36b" title="Get the ID of this ScreenRow." alt="" coords="132,107,267,133"/>
+<area shape="rect" id="node5" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="123,157,276,184"/>
+<area shape="rect" id="node6" href="$classScreenRow.html#a5da76ddfc30da8cd8609b1d136604c18" title="Get the text associated with this ScreenRow." alt="" coords="125,208,274,235"/>
+<area shape="rect" id="node7" href="$classAtFinder.html#abadf56235ed457d74fff16dfdcd6d693" title="Setup the AtFinder parser." alt="" coords="139,259,259,285"/>
 </map>

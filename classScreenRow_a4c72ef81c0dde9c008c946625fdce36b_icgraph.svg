@@ -82,7 +82,7 @@ var sectionId = 'dynsection-1';
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" target="_top" xlink:title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly.">
+<g id="a_node6"><a xlink:href="test__ControllerDisplayUpdate_8cpp.html#af7a73dc328bc3f14a231b3d577180628" target="_top" xlink:title="Test to ensure a mock display correctly receives screen updates from the Controller.">
 <polygon fill="white" stroke="black" points="399,-0.5 399,-19.5 451,-19.5 451,-0.5 399,-0.5"/>
 <text text-anchor="middle" x="425" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">TEST_F</text>
 </a>
