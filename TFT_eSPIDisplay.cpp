@@ -76,6 +76,21 @@ void TFT_eSPIDisplay::clearScreen() {
   _tft->fillScreen(_backgroundColour);
 }
 
+void TFT_eSPIDisplay::displayScreen(Screen *screen) {
+  // If this display needs redrawing, clear first then process rows
+  // Must set a local redraw flag here so we can clear the instance for next time
+  if (_needsRedraw) {
+    clearScreen();
+  }
+  for (ScreenRow *row = screen->getFirstScreenRow(); row; row = row->getNext()) {
+    if (row->needsRedraw() || _needsRedraw) {
+      displayRow(row->getId(), row->getText(), false, 0);
+    }
+  }
+  // Now we've redrawn, clear the flag
+  _needsRedraw = false;
+}
+
 void TFT_eSPIDisplay::displayRow(uint8_t row, const char *text, bool underlined, uint8_t column) {
   if (text == nullptr) {
     return;

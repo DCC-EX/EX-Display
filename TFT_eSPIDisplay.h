@@ -65,16 +65,20 @@ public:
   /// @brief Clear the entire screen
   void clearScreen() override;
 
+  /// @brief Display the specified Screen on this display
+  /// @param screen Pointer to the Screen to display
+  void displayScreen(Screen *screen) override;
+
   /// @brief Display a row of text on the display
   /// @param row Row number as specified in the SCREEN() command (not pixels)
   /// @param text Text to be displayed on this row
   /// @param underlined (Optional) Flag to underline this row - default false
   /// @param column (Optional) Column to start displaying the text, column being width of a character (not pixels)
-  void displayRow(uint8_t row, const char *text, bool underlined = false, uint8_t column = 0) override;
+  void displayRow(uint8_t row, const char *text, bool underlined = false, uint8_t column = 0);
 
   /// @brief Clear the specified row
   /// @param row Row number as specified in the SCREEN() command (not pixels)
-  void clearRow(uint8_t row) override;
+  void clearRow(uint8_t row);
 
   /// @brief Display the startup screen with software version
   /// @param version EX-Display version

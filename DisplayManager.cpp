@@ -95,21 +95,9 @@ void DisplayManager::update(ScreenManager *screenManager) {
     }
     // Get the current screen for this display
     Screen *screen = screenManager->getScreenById(screenId);
-    // If there is one, display the rows
+    // If there is one, display it
     if (screen) {
-      // If this display needs redrawing, clear first then process rows
-      // Must set a local redraw flag here so we can clear the instance for next time
-      bool redraw = display->needsRedraw();
-      if (redraw) {
-        display->clearScreen();
-      }
-      for (ScreenRow *row = screen->getFirstScreenRow(); row; row = row->getNext()) {
-        if (row->needsRedraw() || redraw) {
-          display->displayRow(row->getId(), row->getText(), false, 0);
-        }
-      }
-      // Now we've redrawn, clear the flag
-      display->setNeedsRedraw(false);
+      display->displayScreen(screen);
     }
   }
 }

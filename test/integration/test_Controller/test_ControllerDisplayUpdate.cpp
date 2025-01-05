@@ -62,14 +62,10 @@ TEST_F(ControllerDisplayUpdateTests, OneScreenOneDisplay) {
   // Ensure the buffer contains it as expected
   EXPECT_THAT(commandStation.buffer, testing::HasSubstr(screen0row0));
 
-  // We should always get a clearScreen() first when a display needs redrawing
-  EXPECT_CALL(*display0, clearScreen()).Times(1);
-  // Set up expectation that our display will have displayRow(uint8_t row, const char *text, bool underlined, uint8_t
-  // column) called once for each row
-  EXPECT_CALL(*display0, displayRow(Truly([=](uint8_t row) { return row == 0; }), StrEq("Screen 0 row 0"),
-                                    Truly([=](bool underlined) { return underlined == false; }),
-                                    Truly([=](uint8_t column) { return column == 0; })))
-      .Times(1);
+  // Expect displayScreen to be called for every character going through the buffer
+  EXPECT_CALL(*display0, displayScreen(Truly([=](Screen *displayScreen) {
+    return displayScreen->getId() == 0;
+  }))).Times(47);
 
   for (size_t i = 0; i < strlen(screen0row0); i++) {
     controller->update();
@@ -86,13 +82,6 @@ TEST_F(ControllerDisplayUpdateTests, OneScreenOneDisplay) {
   // Ensure the buffer contains it as expected
   EXPECT_THAT(commandStation.buffer, testing::HasSubstr(screen0row2));
 
-  // Set up expectation that our display will have displayRow(uint8_t row, const char *text, bool underlined, uint8_t
-  // column) called once for each row
-  EXPECT_CALL(*display0, displayRow(Truly([=](uint8_t row) { return row == 2; }), StrEq("Screen 0 row 2"),
-                                    Truly([=](bool underlined) { return underlined == false; }),
-                                    Truly([=](uint8_t column) { return column == 0; })))
-      .Times(1);
-
   for (size_t i = 0; i < strlen(screen0row2); i++) {
     controller->update();
   }
@@ -102,13 +91,6 @@ TEST_F(ControllerDisplayUpdateTests, OneScreenOneDisplay) {
 
   // Ensure the buffer contains it as expected
   EXPECT_THAT(commandStation.buffer, testing::HasSubstr(screen0row5));
-
-  // Set up expectation that our display will have displayRow(uint8_t row, const char *text, bool underlined, uint8_t
-  // column) called once for each row
-  EXPECT_CALL(*display0, displayRow(Truly([=](uint8_t row) { return row == 5; }), StrEq("Screen 0 row 5"),
-                                    Truly([=](bool underlined) { return underlined == false; }),
-                                    Truly([=](uint8_t column) { return column == 0; })))
-      .Times(1);
 
   for (size_t i = 0; i < strlen(screen0row5); i++) {
     controller->update();
