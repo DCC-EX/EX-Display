@@ -53,8 +53,10 @@ TEST_F(DisplayScreenTests, CreateDisplay) {
   screenManager->updateScreen(0);
   EXPECT_EQ(screenManager->getFirstScreen()->getId(), 0);
 
-  // First update of a display with a screen should cause a clearScreen() call
-  EXPECT_CALL(*display0, clearScreen()).Times(1);
+  // An update should call displayScreen() for the display
+  EXPECT_CALL(*display0, displayScreen(Truly([=](Screen *displayScreen) {
+    return displayScreen->getId() == 0;
+  }))).Times(1);
 
   // Call controller->update() and display should still have the first screen ID
   displayManager->update(screenManager);
@@ -82,19 +84,9 @@ TEST_F(DisplayScreenTests, UpdateDisplays) {
   screenManager->getScreenById(0)->updateScreenRow(0, "Screen 0 row 0");
   screenManager->getScreenById(1)->updateScreenRow(0, "Screen 1 row 0");
 
-  // When calling displayManager->update(screenManager), both displays should have update called
-  EXPECT_CALL(*display0, displayRow(Truly([=](int row) { return row == 0; }), StrEq("Screen 0 row 0"),
-                                    Truly([=](bool underline) { return underline == false; }),
-                                    Truly([=](int column) { return column == 0; })))
-      .Times(1);
-  EXPECT_CALL(*display1, displayRow(Truly([=](int row) { return row == 0; }), StrEq("Screen 1 row 0"),
-                                    Truly([=](bool underline) { return underline == false; }),
-                                    Truly([=](int column) { return column == 0; })))
-      .Times(1);
-
-  // First update of a display with a screen should cause a clearScreen() call
-  EXPECT_CALL(*display0, clearScreen()).Times(1);
-  EXPECT_CALL(*display1, clearScreen()).Times(1);
+  // When calling displayManager->update(screenManager), both displays should have displayScreen called
+  EXPECT_CALL(*display0, displayScreen(Truly([=](Screen *screen) { return screen->getId() == 0; }))).Times(1);
+  EXPECT_CALL(*display1, displayScreen(Truly([=](Screen *screen) { return screen->getId() == 1; }))).Times(1);
 
   // Call update
   displayManager->update(screenManager);

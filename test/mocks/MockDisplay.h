@@ -19,6 +19,7 @@
 #define MOCKDISPLAY_H
 
 #include "DisplayInterface.h"
+#include "Screen.h"
 #include <gmock/gmock.h>
 
 /// @brief Mock physical display class
@@ -28,9 +29,7 @@ public:
 
   MOCK_METHOD(void, clearScreen, (), (override));
 
-  MOCK_METHOD(void, displayRow, (uint8_t row, const char *text, bool underlined, uint8_t column), (override));
-
-  MOCK_METHOD(void, clearRow, (uint8_t row), (override));
+  MOCK_METHOD(void, displayScreen, (Screen *screen), (override));
 
   MOCK_METHOD(void, displayStartupInfo, (const char *version), (override));
 

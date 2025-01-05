@@ -19,6 +19,7 @@
 #define DISPLAYINTERFACE_H
 
 #include "Logger.h"
+#include "Screen.h"
 
 /// @brief Class to abstract away all physical display implementation to enable multiple display types
 class DisplayInterface {
@@ -29,16 +30,9 @@ public:
   /// @brief Clear the entire screen
   virtual void clearScreen() = 0;
 
-  /// @brief Display a row of text on the display
-  /// @param row Row number as specified in the SCREEN() command (not pixels)
-  /// @param text Text to be displayed on this row
-  /// @param underlined (Optional) Flag to underline this row - default false
-  /// @param column Column number to start displaying at (based on text width, not pixels)
-  virtual void displayRow(uint8_t row, const char *text, bool underlined = false, uint8_t column = 0) = 0;
-
-  /// @brief Clear the specified row
-  /// @param row Row number as specified in the SCREEN() command (not pixels)
-  virtual void clearRow(uint8_t row) = 0;
+  /// @brief Display the specified Screen on this display
+  /// @param screen Pointer to the Screen to display
+  virtual void displayScreen(Screen *screen) = 0;
 
   /// @brief Display the startup screen with software version
   /// @param version EX-Display version

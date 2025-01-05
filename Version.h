@@ -2,8 +2,11 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.20"
+#define VERSION "0.0.21"
 
+// 0.0.21 includes:
+//  - Refactor DisplayInterface to accept an entire Screen to display to let the derived classes control the entire
+//    physical display process
 // 0.0.20 includes:
 //  - Update log levels with LOG_ preface to avoid STM32 framework conflicts for ERROR
 // 0.0.19 includes:

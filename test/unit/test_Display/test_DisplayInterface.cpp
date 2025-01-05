@@ -15,6 +15,7 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "Screen.h"
 #include "Version.h"
 #include "test/mocks/MockDisplay.h"
 #include <gtest/gtest.h>
@@ -55,26 +56,15 @@ TEST_F(DisplayInterfaceTests, TestBasicMethods) {
 
 /// @brief Test DisplayInterface methods that should interact with a physical display
 TEST_F(DisplayInterfaceTests, TestParameterMethods) {
-  // Test methods requiring SCREEN() parameters
-  int expectRow = 2;
-  const char *expectRowText = "This is text for row 2";
-  bool expectUnderline = true;
-  int expectColumn = 1;
+  // Create a screen with nothing in it
+  Screen *screen = new Screen(0);
 
-  // Setup the expected displayRow call to validate parameters are received and called only once
-  EXPECT_CALL(*display, displayRow(Truly([=](int row) { return row == expectRow; }), StrEq(expectRowText),
-                                   Truly([=](bool underline) { return underline == expectUnderline; }),
-                                   Truly([=](int column) { return column == expectColumn; })))
-      .Times(1);
+  // Setup displayScreen expectation
+  EXPECT_CALL(*display, displayScreen(Truly([=](Screen *displayScreen) {
+    return displayScreen->getId() == 0;
+  }))).Times(1);
 
-  // Call the method that should trigger displayRow
-  display->displayRow(2, "This is text for row 2", true, 1);
-
-  // Setup the expected clearRow call
-  EXPECT_CALL(*display, clearRow(Truly([=](int row) { return row == expectRow; }))).Times(1);
-
-  // Call it
-  display->clearRow(2);
+  display->displayScreen(screen);
 
   // Make sure the screen ID is updated
   display->setScreenId(4);
@@ -84,6 +74,9 @@ TEST_F(DisplayInterfaceTests, TestParameterMethods) {
 
   // Verify all expectations were made
   testing::Mock::VerifyAndClearExpectations(display);
+
+  // Clean up
+  delete screen;
 }
 
 /// @brief Test to ensure the startup info sets the EX-Display version correctly

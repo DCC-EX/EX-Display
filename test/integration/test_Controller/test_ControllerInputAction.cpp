@@ -86,13 +86,19 @@ TEST_F(ControllerInputActionTests, SwitchActiveScreen) {
       .WillOnce(Invoke([this]() { controller->onInputAction(InputAction::PRESS_RIGHT); })) // Second press right
       .WillOnce(Return()); // Last will have no return with no input
 
-  // Everytime a display switches screens, a redraw should trigger clearScreen()
-  // Therefore we expect this to be called 6 times - 1 to start, then one with each switch
-  EXPECT_CALL(*display0, clearScreen()).Times(6);
-  
+  // First update should mean display screen 0
+  EXPECT_CALL(*display0, displayScreen(Truly([=](Screen *displayScreen) {
+    return displayScreen->getId() == 0;
+  }))).Times(1);
+
   // Expect a single controller->update() should now ensure display is set to screen 0 (first)
   controller->update();
   EXPECT_EQ(display0->getScreenId(), 0);
+
+  // Next update after left press should mean display screen 8
+  EXPECT_CALL(*display0, displayScreen(Truly([=](Screen *displayScreen) {
+    return displayScreen->getId() == 8;
+  }))).Times(1);
 
   // Now controller->update() should action the left press
   controller->update();
@@ -100,11 +106,21 @@ TEST_F(ControllerInputActionTests, SwitchActiveScreen) {
   // Display0's screen ID should now be 8
   EXPECT_EQ(display0->getScreenId(), 8);
 
+  // Next left press should mean display screen 2
+  EXPECT_CALL(*display0, displayScreen(Truly([=](Screen *displayScreen) {
+    return displayScreen->getId() == 2;
+  }))).Times(1);
+
   // Now call controller->update() should action the left press
   controller->update();
 
   // Display0's screen ID should now be 2
   EXPECT_EQ(display0->getScreenId(), 2);
+
+  // Next left press should mean display screen 0 again
+  EXPECT_CALL(*display0, displayScreen(Truly([=](Screen *displayScreen) {
+    return displayScreen->getId() == 0;
+  }))).Times(1);
 
   // Now call controller->update() should action the left press
   controller->update();
@@ -112,12 +128,25 @@ TEST_F(ControllerInputActionTests, SwitchActiveScreen) {
   // Display0's screen ID should now be 0
   EXPECT_EQ(display0->getScreenId(), 0);
 
+  // Now the right presses should show 2 then 8
+  EXPECT_CALL(*display0, displayScreen(Truly([=](Screen *displayScreen) {
+    return displayScreen->getId() == 2;
+  }))).Times(1);
+  EXPECT_CALL(*display0, displayScreen(Truly([=](Screen *displayScreen) {
+    return displayScreen->getId() == 8;
+  }))).Times(1);
+
   // Call controller->update() twice
   controller->update();
   controller->update();
 
   // Display0's screen ID should now be 8
   EXPECT_EQ(display0->getScreenId(), 8);
+
+  // Final update should be showing 8 again
+  EXPECT_CALL(*display0, displayScreen(Truly([=](Screen *displayScreen) {
+    return displayScreen->getId() == 8;
+  }))).Times(1);
 
   controller->update();
 
