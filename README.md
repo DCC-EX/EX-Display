@@ -4,25 +4,25 @@ A project for multiple displays connected to EX-CommandStation.
 
 The aim is to extend the current JMRI type virtual screen functionality to be displayed on additional microcontrollers with attached screens by using the `SCREEN(screen, row, "Message")` EXRAIL command.
 
-There will be support for displaying output for multiple logical displays on one single physical screen, as well as displaying output on multiple physical screens.
+There will be support for displaying output for multiple logical screens on one single physical display in addition to supporting multiple physical displays.
 
 ## Terminology - Display vs. Screen
 
-In the context of this project, the term "screen" is used when referring to a physical screen connected to a microcontroller to display information. This aligns with the use of the `SCREEN()` EXRAIL command, as it is designed to display information on a screen.
+In the context of this project, the term "display" is used when referring to a physical display connected to a microcontroller to display information.
 
-The term "display" refers to a logical representation of a physical screen, enabling one physical screen to be used to dislay information from one or more EXRAIL defined screens.
+The term "screen" refers to a logical representation of what EX-CommandStation is expecting to display via the EXRAIL ``SCREEN(...)`` command.
 
-## Supported Screen Types
+A logical "screen" is associated with a physical "display", with EX-Display controlling that association and ensuring EXRAIL ``SCREEN(...)`` commands are displayed on the correct physical display.
 
-It is possible to use any physical screen that is supported by either the MCUFRIEND_kbv or TFT_eSPI libraries.
+## Supported Display Types
 
-In addition, it is also possible to use OLEDs based on either the SSD1306 or SH1106 drivers.
+EX-Display is written in a way to allow implementation of any physical display and its associated display library by using interface classes to abstract the logic away from the required library details.
 
-### Device limitations
+<!-- ### Device limitations
 
 In its current form, it is only possible to configure one physical screen due to the way the config.h file has been implemented, however the classes have been written to facilitate multiple physical screens, and multiple input methods in future.
 
-**However** there are conflicts between the MCUFRIEND_kbv and TFT_eSPI libraries that mean when we do support multiple physical screens, we will not be able to have a mix of MCUFRIEND_kbv and TFT_eSPI types.
+**However** there are conflicts between the MCUFRIEND_kbv and TFT_eSPI libraries that mean when we do support multiple physical screens, we will not be able to have a mix of MCUFRIEND_kbv and TFT_eSPI types. -->
 
 ## Configuration
 
@@ -62,9 +62,10 @@ This example displays the text "Yellow" on the first row of the first screen wit
 
 If you wish to have a coloured line that is also underlined, do it like this:
 
-```
+``` cpp
 SCREEN(0, 0, "#0xFFE0#0x0000#")
 SCREEN(0, 0, "__This is now yellow and underlined")
+```
 
 ### Horizontal Line
 

@@ -2,8 +2,29 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.13"
+#define VERSION "0.0.21"
 
+// 0.0.21 includes:
+//  - Refactor DisplayInterface to accept an entire Screen to display to let the derived classes control the entire
+//    physical display process
+// 0.0.20 includes:
+//  - Update log levels with LOG_ preface to avoid STM32 framework conflicts for ERROR
+// 0.0.19 includes:
+//  - Resolved multiple TFT_eSPI screens not operating independently by using static TFT_eSPI instance
+// 0.0.18 includes:
+//  - Added ability to force touchscreen calibration if required
+// 0.0.17 includes:
+//  - Improved experimental support for multiple TFT_eSPI instances
+// 0.0.16 includes:
+//  - Add configuration of input device via macro USER_INPUT()
+// 0.0.15 includes:
+//  - Fix missing redraw functionality when switching screens
+//  - Implemented myDevices.h to configure display devices via macro USER_DISPLAY()
+// 0.0.14 includes:
+//  - Major rewrite using OOP
+//  - Swap display/screen terminology - screen is logical from EX-CommandStation, display is physical
+//  - Basic function of a single screen 0 to a single display 0
+//  - Add tests
 // 0.0.13 includes:
 //  - Improved user configuration
 //  - Swap OLED support to use SSD1306_Ascii

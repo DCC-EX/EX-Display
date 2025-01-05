@@ -1,161 +1,54 @@
-#include "AtFinder.h"
-#include "Defines.h"
-#include "DisplayFunctions.h"
-#include "version.h"
-#include <Arduino.h>
+/*
+ *  © 2024 Peter Cole
+ *
+ *  This is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  It is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
-bool StartupPhase = true;
-unsigned long timestamp = 0;
-long screencount = 0;
+/**
+ * @mainpage EX-Display - a project for multiple displays connected to EX-CommandStation
+ *
+ * @section intro_sec Introduction
+ * EX-Display enables one or more displays to be connected to EX-CommandStation via a serial connection, and emulating 
+ * JMRI's virtual screen capability.
+ * 
+ * @section Details
+ */
 
-#if SCREEN_TYPE == MCU
-#include "MCUFriendScreen.h"
-MCUFRIEND_kbv tft;
-auto *screen = new MCUFriendScreen(tft);
-#ifdef USE_TOUCH
-#include "AdafruitTouch.h"
-TouchScreen touchScreen = TouchScreen(XP, YP, XM, YM, 300);
-auto *input = new AdafruitTouch(touchScreen);
-#endif
-#elif SCREEN_TYPE == TFT
-#include "TFT_eSPIScreen.h"
-#if defined(USE_TOUCH)
-#include "TFT_eSPITouch.h"
-auto *input = new TFT_eSPITouch(tft);
-#endif
-#elif SCREEN_TYPE == OLED
-#include "OLEDScreen.h"
-// Adafruit_SSD1306 oled = Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
-#endif
+#ifndef PIO_UNIT_TESTING
 
-#if defined(USE_BUTTONS)
-#include "PushButton.h"
-auto *input = new PushButton(LEFT_BUTTON, RIGHT_BUTTON, CENTRE_BUTTON, UP_BUTTON, DOWN_BUTTON);
-#endif
+#include "Configurator.h"
 
+/// @brief Create the Configurator instance to configure EX-Display
+/// @param console Pointer to the console stream - defaults to Serial, customise in myConfig.h
+/// @param commandStation Pointer to the CommandStation connection stream - default depends on platform, customise in
+/// myConfig.h
+/// @param logLevel Sets the log level for the application - defaults to WARN, customise in myConfig.h
+Configurator *configurator = new Configurator(&CONSOLE_STREAM, &COMMANDSTATION_STREAM, LOG_LEVEL);
+
+/// @brief Main setup method, initialise Configurator here
 void setup() {
-#if defined(DISABLE_SECOND_TFT) // Workaround for second TFT not controlled yet
-  pinMode(22, OUTPUT);
-  pinMode(16, OUTPUT);
-  digitalWrite(22, HIGH);
-  digitalWrite(16, HIGH);
-#endif
-  CONSOLE.begin(115200);
-  CS_LISTEN.begin(115200); // Start Serial1 for listening to messages
-
-  CONSOLE.print(F("EX-Display v"));
-  CONSOLE.println(VERSION);
-
-#ifdef NEEDS_OLED
-  Wire.begin();
-#endif
-
-  // Setup our physical screens first - required before adding displays
-#if defined(NEEDS_TFT)
-  auto *screen = new TFT_eSPIScreen();
-#elif defined(NEEDS_MCU)
-  auto *screen = new MCUFriendScreen();
-#elif defined(NEEDS_OLED)
-  auto *screen = new OLEDScreen(SCREEN_WIDTH, SCREEN_HEIGHT);
-#endif
-  screen->setupScreen(SCREEN_ROTATION, TEXT_SIZE, BACKGROUND_COLOUR)
-      ->addDisplay(DISPLAY_1_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
-      ->addDisplay(DISPLAY_2_ID, TEXT_COLOUR, BACKGROUND_COLOUR)
-      ->addDisplay(DISPLAY_3_ID, TEXT_COLOUR, BACKGROUND_COLOUR);
-
-  // Tell AtFinder our maximum supported text length,
-  // and how to call back when found.
-  AtFinder::setup(100, updateDisplayRow);
-
-  // Create display instances
-  for (LogicalDisplay *display = screen->getFirstDisplay(); display; display = display->getNext()) {
-    CONSOLE.print(F("Display ID|Max Rows|Max Columns: "));
-    CONSOLE.print(display->getDisplayNumber());
-    CONSOLE.print(F("|"));
-    CONSOLE.print(screen->getMaxRows());
-    CONSOLE.print(F("|"));
-    CONSOLE.println(display->getMaxRowLength());
-  }
-
-  screen->writeRow(0, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, "EX-Display", false);
-  screen->writeRow(1, 0, TEXT_COLOUR, BACKGROUND_COLOUR, 0, VERSION, false);
-
-  delay(2000);
-
-  screen->clearScreen(BACKGROUND_COLOUR);
-
-  timestamp = millis();
-
-#if defined(USE_TOUCH) || defined(USE_BUTTONS)
-  input->setScreen(screen);
-  input->begin();
-#endif
-
-  CONSOLE.println(F("End of Setup"));
+  CONSOLE_STREAM.begin(115200);
+  COMMANDSTATION_STREAM.begin(115200);
+  configurator->initialise();
+  Controller *controller = configurator->getController();
+  controller->begin();
 }
 
+/// @brief Main loop, simply calls controller->update() to manage all interactions
 void loop() {
-
-  // Check if we are in the startup phase
-  // This phase inhibits screen drawing until the startup messages are
-  // issued by the CS
-  if (StartupPhase) {
-    if ((millis() - timestamp) >= STARTUP_TIME) {
-      StartupPhase = false;
-      screencount = millis();
-    }
-  }
-
-  // each byte received form serial is passed to the parse
-  if (CS_LISTEN.available()) {
-    AtFinder::processInputChar(CS_LISTEN.read());
-  }
-  // you can display all rows by sending <@ 255 0 "">
-  // No data incoming so see if we need to display anything
-  // DISABLE IN STARTUPPHASE
-  else {
-    if (!StartupPhase) {
-      updateScreen();
-#if defined(USE_TOUCH) || defined(USE_BUTTONS)
-      ButtonResult inputButton = input->processInput();
-      switch (inputButton.button) {
-      case LeftButton:
-        CONSOLE.print(F("Left button state: "));
-        CONSOLE.println(inputButton.state);
-        if (inputButton.state == Pressed)
-          screen->switchToPreviousDisplay();
-        break;
-
-      case RightButton:
-        CONSOLE.print(F("Right button state: "));
-        CONSOLE.println(inputButton.state);
-        if (inputButton.state == Pressed)
-          screen->switchToNextDisplay();
-        break;
-
-      case CentreButton:
-        CONSOLE.print(F("Centre button state: "));
-        CONSOLE.println(inputButton.state);
-        break;
-
-      case UpButton:
-        CONSOLE.print(F("Up button state: "));
-        CONSOLE.println(inputButton.state);
-        if (inputButton.state == Pressed)
-          screen->getActiveDisplay()->scrollUp();
-        break;
-
-      case DownButton:
-        CONSOLE.print(F("Down button state: "));
-        CONSOLE.println(inputButton.state);
-        if (inputButton.state == Pressed)
-          screen->getActiveDisplay()->scrollDown();
-        break;
-
-      default:
-        break;
-      }
-#endif
-    }
-  }
+  Controller *controller = configurator->getController();
+  controller->update();
 }
+
+#endif // PIO_UNIT_TEST

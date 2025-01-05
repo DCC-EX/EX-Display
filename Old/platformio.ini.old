@@ -1,0 +1,173 @@
+; PlatformIO Project Configuration File
+;
+;   Build options: build flags, source filter
+;   Upload options: custom upload port, speed and extra flags
+;   Library options: dependencies, extra library storages
+;   Advanced options: extra scripting
+;
+; Please visit documentation for the other options and examples
+; https://docs.platformio.org/page/projectconf.html
+
+[platformio]
+default_envs = 
+	mega2560
+	uno
+	ESP32
+	Nucleo-F411RE
+	Nucleo-F446RE
+src_dir = .
+include_dir = .
+
+[env]
+build_flags = 
+	-Wall
+	-std=c++17
+lib_deps = 
+	prenticedavid/MCUFRIEND_kbv@^3.1.0-Beta
+	adafruit/Adafruit GFX Library@^1.11.9
+	bodmer/TFT_eSPI
+	adafruit/Adafruit TouchScreen@^1.1.5
+	greiman/SSD1306Ascii@^1.3.5
+
+[env:mega2560]
+platform = atmelavr
+board = megaatmega2560
+framework = arduino
+lib_deps = 
+	${env.lib_deps}
+build_flags = 
+	${env.build_flags}
+monitor_speed = 115200
+monitor_echo = yes
+
+[env:uno]
+platform = atmelavr
+board = uno
+framework = arduino
+lib_deps = 
+	${env.lib_deps}
+build_flags = 
+	${env.build_flags}
+	-D SERIAL_RX_BUFFER_SIZE=256
+monitor_speed = 115200
+monitor_echo = yes
+
+[env:ESP32]
+platform = espressif32
+board = esp32dev
+framework = arduino
+lib_deps = 
+	${env.lib_deps}
+build_flags = 
+	${env.build_flags}
+	-DUSER_SETUP_LOADED=1
+	-DST7796_DRIVER=1
+	-DTFT_SDA_READ=1
+	-DTFT_BL=5
+	-DTFT_MISO=19
+	-DTFT_MOSI=23
+	-DTFT_SCLK=18
+	-DTFT_CS=15
+	-DTFT_DC=2
+	-DTFT_RST=4
+	-DTOUCH_CS=22
+	-DLOAD_GLCD=1
+	-DLOAD_FONT2=1
+	-DLOAD_FONT4=1
+	-DLOAD_FONT6=1
+	-DLOAD_FONT7=1
+	-DLOAD_FONT8=1
+	-DLOAD_GFXFF=1
+	-DSMOOTH_FONT=1
+	-DSPI_FREQUENCY=28000000
+	-DSPI_TOUCH_FREQUENCY=2500000
+monitor_speed = 115200
+monitor_echo = yes
+
+[env:ESP32-RPi]
+platform = espressif32
+board = esp32dev
+framework = arduino
+lib_deps = 
+	${env.lib_deps}
+build_flags = 
+	${env.build_flags}
+	-DUSER_SETUP_LOADED=1
+	-DRPI_DISPLAY_TYPE=1
+	-DILI9486_DRIVER=1
+	-DTFT_MISO=23
+	-DTFT_MOSI=19
+	-DTFT_SCLK=18
+	-DTFT_CS=15
+	-DTFT_DC=2
+	-DTFT_RST=4
+	-DTOUCH_CS=21
+	-DLOAD_GLCD=1
+	-DLOAD_FONT2=1
+	-DLOAD_FONT4=1
+	-DLOAD_FONT6=1
+	-DLOAD_FONT7=1
+	-DLOAD_FONT8=1
+	-DLOAD_GFXFF=1
+	-DSMOOTH_FONT=1
+	-DSPI_FREQUENCY=26000000
+	-DSPI_TOUCH_FREQUENCY=2500000
+monitor_speed = 115200
+monitor_echo = yes
+
+[env:Wemos_D1_Mini32]
+platform = espressif32
+board = wemos_d1_mini32
+framework = arduino
+lib_deps = 
+	${env.lib_deps}
+build_flags = 
+	${env.build_flags}
+	-DUSER_SETUP_LOADED=1
+	-DRPI_DISPLAY_TYPE=1
+	-DILI9486_DRIVER=1
+	-DTFT_MISO=23
+	-DTFT_MOSI=19
+	-DTFT_SCLK=18
+	-DTFT_CS=15
+	-DTFT_DC=2
+	-DTFT_RST=4
+	-DTOUCH_CS=22
+	-DLOAD_GLCD=1
+	-DLOAD_FONT2=1
+	-DLOAD_FONT4=1
+	-DLOAD_FONT6=1
+	-DLOAD_FONT7=1
+	-DLOAD_FONT8=1
+	-DLOAD_GFXFF=1
+	-DSMOOTH_FONT=1
+	-DSPI_FREQUENCY=26000000
+	-DSPI_TOUCH_FREQUENCY=2500000
+monitor_speed = 115200
+monitor_echo = yes
+
+[env:Nucleo-F446RE]
+platform = ststm32
+board = nucleo_f446re
+framework = arduino
+lib_deps = 
+	${env.lib_deps}
+upload_protocol = stlink
+build_flags = 
+	${env.build_flags}
+	-std=c++17 -Os -g2
+monitor_speed = 115200
+monitor_echo = yes
+
+[env:Nucleo-F411RE]
+platform = ststm32
+board = nucleo_f411re
+framework = arduino
+lib_deps = 
+	${env.lib_deps}
+upload_protocol = stlink
+build_flags = 
+	${env.build_flags}
+	-std=c++17 -Os -g2
+monitor_speed = 115200
+monitor_echo = yes
