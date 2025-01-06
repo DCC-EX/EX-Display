@@ -109,12 +109,15 @@ Application Architecture</h1>
 Testing</h2>
 <p>Where possible, unit and integration tests have been written using PlatformIO and GoogleTest to validate that the various methods and classes continue to do what they're supposed to do, and also to prevent causing memory leaks and calls to undefined objects and so forth.</p>
 <p>The various display and input device libraries typically are not compatible with the native environment the PlatformIO tests run in, so there are no tests written for the implemented display and input classes, but these are mocked instead. See <a class="el" href="classMockDisplay.html">MockDisplay</a>, <a class="el" href="classMockSPIDisplay.html">MockSPIDisplay</a>, <a class="el" href="classMockInput.html">MockInput</a>, and <a class="el" href="classMockButtonInput.html">MockButtonInput</a> for examples of these. Also note the mention of needing include guards for this as per <a class="el" href="index.html#adding_types">Adding Display and Input Types</a>.</p>
-<p>All tests are run when pushing or merging to both the main and devel branches, and can be run locally with PlatformIO also:</p>
-<div class="fragment"><div class="line">pio test -e native_test</div>
-<div class="line">pio test -e native_test_windows</div>
+<p>All tests are run when pushing or merging to both the main and devel branches, and can be run locally with PlatformIO also using the following commands. The verbose output is recommended to review the test output.</p>
+<div class="fragment"><div class="line">pio test -e native_test -v</div>
+<div class="line">pio test -e native_test_windows -v</div>
 </div><!-- fragment --><p>Note that due to issues with the sanitizers that check from memory leaks and undefined references not being available on Windows, you must use the second option for local testing, and there is no way to validate that memory leaks have been introduce, or undefined references are being called. It is best to run these tests on Linux, and on Windows this can be accomplished by using Windows Subsystem for Linux.</p>
 <p>The best approach when adding new functionality is to write the test first, and then ensure the code to support the feature makes the test succeed.</p>
-<h1><a class="anchor" id="adding_types"></a>
+<p>When writing and running tests, cleaning up between test runs is often required, and is recommended to be done prior to pushing to the main or devel branches just to ensure all is good. This can be done with this command:</p>
+<div class="fragment"><div class="line">pio run -t clean -e native_test</div>
+<div class="line">pio run -t clean -e native_test_windows</div>
+</div><!-- fragment --><h1><a class="anchor" id="adding_types"></a>
 Adding Display and Input Types</h1>
 <p>As mentioned in the <a class="el" href="index.html#application_architecture">Application Architecture</a>, both displays and inputs are derived from the appropriate interface class to enable multiple different types to be made available for users to configure and use.</p>
 <p>When adding either display or input classes, be sure to add include guards around the derived class to prevent causing errors when running PlatformIO tests, as these are typically not compatible with the native environment that the tests run in.</p>
