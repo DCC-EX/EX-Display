@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classControllerInputActionTests.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,7 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pro-methods">Protected Member Functions</a> &#124;
@@ -71,20 +91,20 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Test harness for input actions interacting with the <a class="el" href="classController.html" title="Class for the central controller for EX-Display All application activities are controlled through thi...">Controller</a>.  
+<p>Test harness for input actions interacting with the <a class="el" href="classController.html" title="Class for the central controller for EX-Display. All application activities are controlled through th...">Controller</a>.  
  <a href="classControllerInputActionTests.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ControllerInputActionTests:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classControllerInputActionTests__inherit__graph.svg" width="204" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for ControllerInputActionTests:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classControllerInputActionTests__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -111,7 +131,7 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:aaa37785702c25627b386dcc78a88d8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Test harness for input actions interacting with the <a class="el" href="classController.html" title="Class for the central controller for EX-Display All application activities are controlled through thi...">Controller</a>. </p>
+<div class="textblock"><p>Test harness for input actions interacting with the <a class="el" href="classController.html" title="Class for the central controller for EX-Display. All application activities are controlled through th...">Controller</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afb639f110e387a10897f635bdd329a4a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb639f110e387a10897f635bdd329a4a">&#9670;&nbsp;</a></span>SetUp()</h2>
@@ -240,7 +260,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassControllerInputActionTests_html_a8afb0fec991d662cfa7ff3c74859ff66"><div class="ttname"><a href="classControllerInputActionTests.html#a8afb0fec991d662cfa7ff3c74859ff66">ControllerInputActionTests::console</a></div><div class="ttdeci">Stream * console</div><div class="ttdef"><b>Definition:</b> test_ControllerInputAction.cpp:33</div></div>
 <div class="ttc" id="aclassControllerInputActionTests_html_ac0de89490887aa71f758499a6218aa20"><div class="ttname"><a href="classControllerInputActionTests.html#ac0de89490887aa71f758499a6218aa20">ControllerInputActionTests::inputManager</a></div><div class="ttdeci">InputManager * inputManager</div><div class="ttdef"><b>Definition:</b> test_ControllerInputAction.cpp:36</div></div>
 <div class="ttc" id="aclassControllerInputActionTests_html_ad73c52eb0f103876641ce6245545fb12"><div class="ttname"><a href="classControllerInputActionTests.html#ad73c52eb0f103876641ce6245545fb12">ControllerInputActionTests::commandStation</a></div><div class="ttdeci">Stream * commandStation</div><div class="ttdef"><b>Definition:</b> test_ControllerInputAction.cpp:34</div></div>
-<div class="ttc" id="aclassController_html"><div class="ttname"><a href="classController.html">Controller</a></div><div class="ttdoc">Class for the central controller for EX-Display All application activities are controlled through thi...</div><div class="ttdef"><b>Definition:</b> Controller.h:30</div></div>
+<div class="ttc" id="aclassController_html"><div class="ttname"><a href="classController.html">Controller</a></div><div class="ttdoc">Class for the central controller for EX-Display. All application activities are controlled through th...</div><div class="ttdef"><b>Definition:</b> Controller.h:31</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -336,9 +356,13 @@ Here is the call graph for this function:</div>
 <li>/home/runner/work/EX-Display/EX-Display/test/integration/test_Controller/<a class="el" href="test__ControllerInputAction_8cpp.html">test_ControllerInputAction.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classControllerInputActionTests.html">ControllerInputActionTests</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

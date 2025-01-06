@@ -1,7 +1,7 @@
 <map id="ControllerDisplayUpdateTests" name="ControllerDisplayUpdateTests">
 <area shape="rect" id="node1" title="Test harness for ensuring displays are updated when screen updates are received." alt="" coords="457,571,671,597"/>
 <area shape="rect" id="node2" title=" " alt="" coords="160,481,208,508"/>
-<area shape="rect" id="node3" href="$classController.html" title="Class for the central controller for EX&#45;Display All application activities are controlled through thi..." alt="" coords="521,481,607,508"/>
+<area shape="rect" id="node3" href="$classController.html" title="Class for the central controller for EX&#45;Display. All application activities are controlled through th..." alt="" coords="521,481,607,508"/>
 <area shape="rect" id="node4" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="656,184,792,211"/>
 <area shape="rect" id="node11" href="$classInputManager.html" title=" " alt="" coords="515,392,627,419"/>
 <area shape="rect" id="node12" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="534,289,647,316"/>

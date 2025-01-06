@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classController.html" target="_top" xlink:title="Class for the central controller for EX&#45;Display All application activities are controlled through thi...">
+<g id="a_node2"><a xlink:href="classController.html" target="_top" xlink:title="Class for the central controller for EX&#45;Display. All application activities are controlled through th...">
 <polygon fill="white" stroke="black" points="367.74,-67.5 367.74,-86.5 432.74,-86.5 432.74,-67.5 367.74,-67.5"/>
 <text text-anchor="middle" x="400.24" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">Controller</text>
 </a>

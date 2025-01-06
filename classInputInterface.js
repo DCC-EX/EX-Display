@@ -1,0 +1,27 @@
+var classInputInterface =
+[
+    [ "~InputInterface", "classInputInterface.html#ae6556ad621b37585df6c6c48a56045be", null ],
+    [ "_calculateInputAction", "classInputInterface.html#ae67f527b0f8a78a1d30a2d4e10977eea", null ],
+    [ "_debounceOrHeld", "classInputInterface.html#afefc70fa413062a1df8e7950f1afc564", null ],
+    [ "begin", "classInputInterface.html#a3a54545cc1cd9a852ed6b598aea53b11", null ],
+    [ "check", "classInputInterface.html#af9d686f4c5cfdf8a5ffbc278eaa06f98", null ],
+    [ "forceCalibration", "classInputInterface.html#a82a2a78aaac60b714145da645febe052", null ],
+    [ "isCalibrating", "classInputInterface.html#af4e357d021d6ff950b6c8497734dcd75", null ],
+    [ "needsDisplay", "classInputInterface.html#a150a075ce0c5a95dc4fd15ccd1933d26", null ],
+    [ "setCallback", "classInputInterface.html#abae89c99e802186c05e97750e473dac1", null ],
+    [ "setDebounceDelay", "classInputInterface.html#a496b20fc72c9b458bc5b7b29bebfe672", null ],
+    [ "setDisplay", "classInputInterface.html#a8835a0d2c51926d4636f239d888a8e71", null ],
+    [ "setHoldThreshold", "classInputInterface.html#a9880a65f1358aa4f7880cddadf3ff846", null ],
+    [ "setLogger", "classInputInterface.html#add815941c23f1e6fe831a13738ed626c", null ],
+    [ "_callback", "classInputInterface.html#ae064eff7cf910e32f0ca098b00541cbf", null ],
+    [ "_debounceDelay", "classInputInterface.html#ae3d29b5d0c1685b2067c92b5db13a045", null ],
+    [ "_display", "classInputInterface.html#a061b4d02d1594403b2925aa415fe2413", null ],
+    [ "_forceCalibration", "classInputInterface.html#a4fd7a8d5626b7fb8be30242f25ad8214", null ],
+    [ "_holdThreshold", "classInputInterface.html#a9cf514a0f870a3388a6cf0ae5661c43a", null ],
+    [ "_isCalibrating", "classInputInterface.html#a7fb0363876f6c890c0ac92b5f6dcbdcf", null ],
+    [ "_isHolding", "classInputInterface.html#a1e1e6815b18f96cebc58d685a67c3b0e", null ],
+    [ "_lastAction", "classInputInterface.html#a8a95027f2e306a1bb3cecc77a7bb9790", null ],
+    [ "_lastDebounceTime", "classInputInterface.html#ade893767759e0021a5febf5a003ad2c2", null ],
+    [ "_logger", "classInputInterface.html#a5da75dde9210fba56b7fb1086051dc77", null ],
+    [ "_needsDisplay", "classInputInterface.html#ad4e4ecbcbe1771ea9c652d25f8588eec", null ]
+];

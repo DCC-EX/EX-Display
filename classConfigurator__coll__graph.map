@@ -1,6 +1,6 @@
 <map id="Configurator" name="Configurator">
 <area shape="rect" id="node1" title=" " alt="" coords="618,571,721,597"/>
-<area shape="rect" id="node2" href="$classController.html" title="Class for the central controller for EX&#45;Display All application activities are controlled through thi..." alt="" coords="496,481,582,508"/>
+<area shape="rect" id="node2" href="$classController.html" title="Class for the central controller for EX&#45;Display. All application activities are controlled through th..." alt="" coords="496,481,582,508"/>
 <area shape="rect" id="node3" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="367,184,503,211"/>
 <area shape="rect" id="node10" href="$classInputManager.html" title=" " alt="" coords="339,392,451,419"/>
 <area shape="rect" id="node11" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="126,289,240,316"/>

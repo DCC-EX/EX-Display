@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EX-Display: EX-Display - a project for multiple displays connected to EX-CommandStation</title>
+<title>EX-Display: EX-Display - a project for extending EX-CommandStation displays and screens</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -63,19 +83,84 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">EX-Display - a project for multiple displays connected to EX-CommandStation </div>  </div>
+<div class="title">EX-Display - a project for extending EX-CommandStation displays and screens </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
 Introduction</h1>
-<p>EX-Display enables one or more displays to be connected to EX-CommandStation via a serial connection, and emulating JMRI's virtual screen capability.</p>
-<h1><a class="anchor" id="Details"></a>
+<p>EX-Display enables one or more physical displays to be connected to EX-CommandStation via a serial connection to take advantage of the EXRAIL SCREEN() command to display various user-generated information.</p>
+<p>This can also be used to remotely display the EX-CommandStation serial logs.</p>
+<h1><a class="anchor" id="details"></a>
 Details</h1>
+<p>This software has been written to be extensible in order to work with various different types of microcontrollers, display libraries, and input devices.</p>
+<p>One important note is that EXRAIL SCREEN() commands are only published to the EX-CommandStation serial console, and therefore you will need to connect the appropriate EX-Display device UART's Rx pin to the first EX-CommandStation UART's Tx pin. These commands cannot be received on additional serial ports, nor over WiFi.</p>
+<p>Sensible defaults have been chosen for different platforms, for example, by default Serial2 on Espressif ESP32 platforms will be used for the connection to EX-CommandStation, whereas on a Nucleo F411RE, this will be Serial6.</p>
+<p>EX-Display looks for serial input in this format: </p><div class="fragment"><div class="line">&lt;@ screen row <span class="stringliteral">&quot;text&quot;</span>&gt;</div>
+</div><!-- fragment --><p>For general user configuration options, refer to <a class="el" href="myConfig_8example_8h.html">myConfig.example.h</a>, and for configuring devices, refer to <a class="el" href="myDevices_8example_8h.html">myDevices.example.h</a>.</p>
+<p>The sensible defaults for the different platforms and so forth are in <a class="el" href="Defines_8h.html">Defines.h</a>, with sensible defaults for each device being located in the appropriate header file, for example <a class="el" href="TFT__eSPIDisplay_8h.html">TFT_eSPIDisplay.h</a>.</p>
+<h1><a class="anchor" id="application_architecture"></a>
+Application Architecture</h1>
+<p>The application has been written in a way that all configuration of user devices and preferences, and all instance instantiation is performed by what is called the <a class="el" href="classConfigurator.html">Configurator</a>, see <a class="el" href="Configurator_8h.html">Configurator.h</a>.</p>
+<p>Once all user configuration, devices, and the various instances are instantiated, the <a class="el" href="classController.html" title="Class for the central controller for EX-Display. All application activities are controlled through th...">Controller</a> takes care of initialising those. It is then responsible for reading input from EX-CommandStation and the user input device, and directing these to the <a class="el" href="classScreenManager.html" title="Class to manage all EX-Display screens.">ScreenManager</a> or <a class="el" href="classDisplayManager.html" title="Manages all physical displays.">DisplayManager</a> as appropriate, see <a class="el" href="Controller_8h.html">Controller.h</a>.</p>
+<p>All <a class="el" href="classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">Screen</a> input is directed to the <a class="el" href="classScreenManager.html" title="Class to manage all EX-Display screens.">ScreenManager</a> to manage the content including interpretation of the various attributes affecting what the <a class="el" href="classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">Screen</a> is expected to look like, see <a class="el" href="ScreenManager_8h.html">ScreenManager.h</a>. Each <a class="el" href="classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">Screen</a> is representative of the output from EX-CommandStation only, and has no involvement on what is physically displayed.</p>
+<p>The <a class="el" href="classDisplayManager.html" title="Manages all physical displays.">DisplayManager</a> (see <a class="el" href="DisplayManager_8h.html">DisplayManager.h</a>) is responsible for creating user display instances and directing which <a class="el" href="classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">Screen</a> a Display should be displaying, with physical displays implemented by a class deriving from the <a class="el" href="classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types.">DisplayInterface</a> class (see <a class="el" href="DisplayInterface_8h.html">DisplayInterface.h</a>). This enables support for various different display libraries and associated devices and keeps those abstracted from the <a class="el" href="classDisplayManager.html" title="Manages all physical displays.">DisplayManager</a> to prevent conflicts.</p>
+<p>Likewise, the <a class="el" href="classInputManager.html">InputManager</a> (see <a class="el" href="InputManager_8h.html">InputManager.h</a>) is responsible for creating the user input instance, with this instance using a callback to the <a class="el" href="classController.html" title="Class for the central controller for EX-Display. All application activities are controlled through th...">Controller</a> to action user input. The user input classes are derived from the <a class="el" href="classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return...">InputInterface</a> class (see <a class="el" href="InputInterface_8h.html">InputInterface.h</a>) to abstract to support various different input types without conflicts.</p>
+<h2><a class="anchor" id="testing"></a>
+Testing</h2>
+<p>Where possible, unit and integration tests have been written using PlatformIO and GoogleTest to validate that the various methods and classes continue to do what they're supposed to do, and also to prevent causing memory leaks and calls to undefined objects and so forth.</p>
+<p>The various display and input device libraries typically are not compatible with the native environment the PlatformIO tests run in, so there are no tests written for the implemented display and input classes, but these are mocked instead. See <a class="el" href="classMockDisplay.html">MockDisplay</a>, <a class="el" href="classMockSPIDisplay.html">MockSPIDisplay</a>, <a class="el" href="classMockInput.html">MockInput</a>, and <a class="el" href="classMockButtonInput.html">MockButtonInput</a> for examples of these. Also note the mention of needing include guards for this as per <a class="el" href="index.html#adding_types">Adding Display and Input Types</a>.</p>
+<p>All tests are run when pushing or merging to both the main and devel branches, and can be run locally with PlatformIO also:</p>
+<div class="fragment"><div class="line">pio test -e native_test</div>
+<div class="line">pio test -e native_test_windows</div>
+</div><!-- fragment --><p>Note that due to issues with the sanitizers that check from memory leaks and undefined references not being available on Windows, you must use the second option for local testing, and there is no way to validate that memory leaks have been introduce, or undefined references are being called. It is best to run these tests on Linux, and on Windows this can be accomplished by using Windows Subsystem for Linux.</p>
+<p>The best approach when adding new functionality is to write the test first, and then ensure the code to support the feature makes the test succeed.</p>
+<h1><a class="anchor" id="adding_types"></a>
+Adding Display and Input Types</h1>
+<p>As mentioned in the <a class="el" href="index.html#application_architecture">Application Architecture</a>, both displays and inputs are derived from the appropriate interface class to enable multiple different types to be made available for users to configure and use.</p>
+<p>When adding either display or input classes, be sure to add include guards around the derived class to prevent causing errors when running PlatformIO tests, as these are typically not compatible with the native environment that the tests run in.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#ifndef NEWDISPLAYTYPE_H</span></div>
+<div class="line"><span class="preprocessor">#define NEWDISPLAYTYPE_H</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#ifndef PIO_UNIT_TESTING </span><span class="comment">// Do not compile when testing, likely to cause test failures</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>MyNewDisplay : <span class="keyword">public</span> <a class="code" href="classDisplayInterface.html">DisplayInterface</a> {</div>
+<div class="line">...</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#endif </span><span class="comment">// PIO_UNIT_TESTING</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#endif </span><span class="comment">// NEWDISPLAYTYPE_H</span></div>
+<div class="ttc" id="aclassDisplayInterface_html"><div class="ttname"><a href="classDisplayInterface.html">DisplayInterface</a></div><div class="ttdoc">Class to abstract away all physical display implementation to enable multiple display types.</div><div class="ttdef"><b>Definition:</b> DisplayInterface.h:25</div></div>
+</div><!-- fragment --><p>Further to this, all display and input classes must define one or more public static methods to call the constructor to enable the device creation to be added to either the <a class="el" href="classDisplayManager.html" title="Manages all physical displays.">DisplayManager</a> or <a class="el" href="classInputManager.html">InputManager</a> creation methods during compilation. If there are overloaded constructors, each must be matched by an equivalent static create method. Refer to <a class="el" href="TFT__eSPIDisplay_8h.html">TFT_eSPIDisplay.h</a> for an example of this. This create method must return a pointer to the new instance to support this.</p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>MyNewDisplay : <span class="keyword">public</span> <a class="code" href="classDisplayInterface.html">DisplayInterface</a> {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">MyNewDisplay(uint16_t textColour, uint16_t backgroundColour) {...}</div>
+<div class="line"> </div>
+<div class="line">MyNewDisplay(uint16_t textColour, uint16_t backgroundColour, <span class="keywordtype">int</span> param) {...}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> MyNewDisplay *create(uint16_t textColour, uint16_t backgroundColour) {...}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> MyNewDisplay *create(uint16_t textColour, uint16_t backgroundColour, <span class="keywordtype">int</span> param) {...}</div>
+<div class="line">};</div>
+</div><!-- fragment --><h2><a class="anchor" id="adding_displays"></a>
+Adding Displays</h2>
+<p>The purpose of the display classes is to implement the <a class="el" href="classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types.">DisplayInterface</a> using display libraries to work with user display devices, with the first of these being <a class="el" href="classTFT__eSPIDisplay.html" title="Display class for TFT_eSPI based displays.">TFT_eSPIDisplay</a> to implement using the TFT_eSPI library.</p>
+<p>Each additional display class must implement all virtual methods of the <a class="el" href="classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types.">DisplayInterface</a> class, and is responsible for all visual display of the <a class="el" href="classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li...">Screen</a> instance that is to be displayed.</p>
+<p>As mentioned in the above section, be sure to add static create methods to allow these to be defined in the user's myDevices.h file.</p>
+<p>Further to this, any font or colour definitions related to the specific display class or library must be defined in that device's header file only, do not add these to <a class="el" href="Defines_8h.html">Defines.h</a> to ensure there are no possible conflicts with other display classes or libraries.</p>
+<h2><a class="anchor" id="adding_inputs"></a>
+Adding Inputs</h2>
+<p>Similar to the display classes, the input classes are also to implement the <a class="el" href="classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return...">InputInterface</a> class to work with various user input methods. The first of these is the <a class="el" href="classTFT__eSPITouch.html" title="Display class for TFT_eSPI touch screens.">TFT_eSPITouch</a> class to implement touch screen support with the TFT_eSPI library.</p>
+<p>In this instance, this input method must share the same TFT_eSPI instance as the display, and the <a class="el" href="classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return...">InputInterface</a> has the _needsDisplay parameter available to allow specifying the display instance to retrieve the TFT_eSPI instance from. The method public getTFT_eSPInstance() has been added to allow the TFT_eSPIInput class to retrieve this instance within the begin() method. See <a class="el" href="classTFT__eSPITouch.html">TFT_eSPITouch</a> to see how this is implemented.</p>
+<p>Each input class must implement the virtual methods of the <a class="el" href="classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return...">InputInterface</a> class, and the check() method will callback to the <a class="el" href="classController.html" title="Class for the central controller for EX-Display. All application activities are controlled through th...">Controller</a> class to provide the appropriate InputAction type that the user has selected. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <map id="Controller" name="Controller">
-<area shape="rect" id="node1" title="Class for the central controller for EX&#45;Display All application activities are controlled through thi..." alt="" coords="545,467,631,493"/>
+<area shape="rect" id="node1" title="Class for the central controller for EX&#45;Display. All application activities are controlled through th..." alt="" coords="545,467,631,493"/>
 <area shape="rect" id="node2" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="1025,184,1161,211"/>
 <area shape="rect" id="node10" href="$classInputManager.html" title=" " alt="" coords="769,377,881,404"/>
 <area shape="rect" id="node11" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="909,288,1022,315"/>
