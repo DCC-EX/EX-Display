@@ -1,6 +1,23 @@
+/*
+ *  © 2024 Chris Harlow
+ *  © 2024 Peter Cole
+ *
+ *  This is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  It is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #include "AtFinder.h"
 #include <Arduino.h>
-
 
 /* This is a finite state automation (FSA) to recognize a dccex output message
 in the format <@ screenid screenrow "text">.
@@ -14,25 +31,26 @@ At any given time, the state is one of the enum values.
 Within each state, the parsed character is either used as appropriate or ignored
 and the state may or may not change to a different state.  */
 
-DISPLAY_CALLBACK AtFinder::callback = nullptr;
-uint8_t AtFinder::maxTextLength = 0;
-char *AtFinder::text = nullptr;
+uint8_t AtFinder::_maxTextLength = 0;
+char *AtFinder::_text = nullptr;
+CallbackInterface *AtFinder::_callback = nullptr;
+Logger *AtFinder::_logger = nullptr;
 
 // Set maximum accepted length of "text". Longer texts will be trimmed.
 // Set callback function that will be called when message detected.
 
 // Note: the code is safe if setup is not called before use because the
-// code can not reach the text handling or callback states. 
+// code can not reach the text handling or callback states.
 // If the sketch has no reference to the setup function at all,
 // then compiler constant propagation is smart enough to realise
 // that it can never reach the text handling states, and thus
 // the entire function has no effect and is eliminated from the link.
 
-
-void AtFinder::setup(uint8_t _maxTextLength, DISPLAY_CALLBACK _callback) {
-  maxTextLength = _maxTextLength;
-  text = (char *)malloc(maxTextLength + 1);
-  callback = _callback;
+void AtFinder::setup(uint8_t maxTextLength, CallbackInterface *callback) {
+  _maxTextLength = maxTextLength;
+  _text = (char *)malloc(_maxTextLength + 1);
+  _callback = callback;
+  LOG(LogLevel::LOG_DEBUG, "AtFinder::setup with _maxTextLength %d", _maxTextLength);
 }
 
 void AtFinder::processInputChar(char hot) {
@@ -57,7 +75,7 @@ void AtFinder::processInputChar(char hot) {
       state = SET_OPCODE;
     return;
   case SET_OPCODE: // waiting for opcode
-    state = (hot == '@' && callback) ? SKIP_SPACES1 : FIND_START;
+    state = (hot == '@' && _callback) ? SKIP_SPACES1 : FIND_START;
     return;
   case SKIP_SPACES1: // skip spaces to screen id
     if (hot == ' ')
@@ -82,7 +100,7 @@ void AtFinder::processInputChar(char hot) {
     screenRow = 0;
     state = BUILD_ROW;
     [[fallthrough]]; // character will be reinterpreted
-  case BUILD_ROW:   // building screen row
+  case BUILD_ROW:    // building screen row
     if (hot == ' ') {
       state = SKIP_SPACES3;
       return;
@@ -105,14 +123,24 @@ void AtFinder::processInputChar(char hot) {
   case COPY_TEXT: // copying text to buffer
     if (hot == '"') {
       // end of text found
-      text[textLength] = 0;
-      if (callback)
-        callback(screenId, screenRow, text); // ET PHONE HOME!
+      _text[textLength] = 0;
+      if (_callback) {
+        _callback->updateScreen(screenId, screenRow, _text);
+      }
       state = FIND_START;
       return;
     }
-    if (textLength < maxTextLength)
-      text[textLength++] = hot;
+    if (textLength < _maxTextLength)
+      _text[textLength++] = hot;
     return;
   }
 }
+
+void AtFinder::cleanUp() {
+  free(AtFinder::_text);
+  AtFinder::_text = nullptr;
+  AtFinder::_callback = nullptr;
+  AtFinder::_logger = nullptr;
+}
+
+void AtFinder::setLogger(Logger *logger) { _logger = logger; }

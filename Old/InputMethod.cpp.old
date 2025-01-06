@@ -1,0 +1,85 @@
+#include "Defines.h"
+#include "InputMethod.h"
+
+InputMethod::InputMethod() {
+  _screen = nullptr;
+  for (ButtonName b = LeftButton; b < NoButton; b = static_cast<ButtonName>(static_cast<uint8_t>(b) + 1)) {
+    _buttons[b]._lastDebounceTime = 0;
+    _buttons[b]._buttonHoldStartTime = 0;
+    _buttons[b]._buttonState = false;
+    _buttons[b]._lastButtonState = false;
+  }
+}
+
+ButtonResult InputMethod::processInput() {
+  unsigned long currentTime = millis();
+  ButtonResult result = {NoButton, None};
+
+  for (ButtonName b = LeftButton; b < NoButton; b = static_cast<ButtonName>(static_cast<uint8_t>(b) + 1)) {
+    bool rawState = _readRawInput(b);
+    Button &btn = _buttons[b];
+    if (rawState != btn._lastButtonState) {
+      btn._lastDebounceTime = currentTime;
+    }
+    if ((currentTime - btn._lastDebounceTime) > _debounceDelay) {
+      if (rawState != btn._buttonState) {
+        btn._buttonState = rawState;
+        if (btn._buttonState) {
+          btn._buttonHoldStartTime = currentTime;
+          result = {b, Pressed};
+        } else {
+          result = {b, Released};us
+        }
+      } else if (btn._buttonState && (currentTime - btn._buttonHoldStartTime) > _holdThreshold) {
+        result = {b, Held};
+      }
+    }
+    btn._lastButtonState = rawState;
+    if (result.state != None) {
+      break;
+    }
+  }
+  return result;
+}
+
+void InputMethod::setScreen(PhysicalScreen *screen) { _screen = screen; }
+
+#ifdef USE_TOUCH
+void InputMethod::_calculateButtons() {
+  // Left third of full screen height is left button, right third right button
+  // Upper third of centre section is up button, lower third down button
+  // Centre third of centre section is centre button
+  _buttons[LeftButton].xStart = 0;
+  _buttons[LeftButton].xEnd = _screen->getWidth() / 3;
+  _buttons[LeftButton].yStart = 0;
+  _buttons[LeftButton].yEnd = _screen->getHeight();
+  _buttons[UpButton].xStart = _buttons[LeftButton].xEnd + 1;
+  _buttons[UpButton].xEnd = (_screen->getWidth() / 3) + _buttons[LeftButton].xEnd;
+  _buttons[UpButton].yStart = 0;
+  _buttons[UpButton].yEnd = (_screen->getHeight() / 3);
+  _buttons[CentreButton].xStart = _buttons[UpButton].xStart;
+  _buttons[CentreButton].xEnd = _buttons[UpButton].xEnd;
+  _buttons[CentreButton].yStart = _buttons[UpButton].yEnd + 1;
+  _buttons[CentreButton].yEnd = (_screen->getHeight() / 3) + _buttons[UpButton].yEnd;
+  _buttons[DownButton].xStart = _buttons[UpButton].xStart;
+  _buttons[DownButton].xEnd = _buttons[UpButton].xEnd;
+  _buttons[DownButton].yStart = _buttons[CentreButton].yEnd + 1;
+  _buttons[DownButton].yEnd = _screen->getHeight();
+  _buttons[RightButton].xStart = _buttons[CentreButton].xEnd + 1;
+  _buttons[RightButton].xEnd = _screen->getWidth();
+  _buttons[RightButton].yStart = 0;
+  _buttons[RightButton].yEnd = _screen->getHeight();
+  for (ButtonName b = LeftButton; b < NoButton; b = static_cast<ButtonName>(static_cast<uint8_t>(b) + 1)) {
+    CONSOLE.print(F("Button|xStart|xEnd|yStart|yEnd: "));
+    CONSOLE.print(b);
+    CONSOLE.print(F("|"));
+    CONSOLE.print(_buttons[b].xStart);
+    CONSOLE.print(F("|"));
+    CONSOLE.print(_buttons[b].xEnd);
+    CONSOLE.print(F("|"));
+    CONSOLE.print(_buttons[b].yStart);
+    CONSOLE.print(F("|"));
+    CONSOLE.println(_buttons[b].yEnd);
+  }
+}
+#endif
