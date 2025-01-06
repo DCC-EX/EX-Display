@@ -25,18 +25,19 @@
 #include "ScreenManager.h"
 #include <Arduino.h>
 
-/// @brief Class for the central controller for EX-Display
-/// All application activities are controlled through this class to manage screens, displays, and user input
+/// @brief Class for the central controller for EX-Display.
+/// All application activities are controlled through this class to manage screens, displays, and user input. All
+/// devices have their begin or init type methods called from Controller::begin().
 class Controller : public CallbackInterface {
 public:
-  /// @brief
-  /// @param consoleStream
-  /// @param commandStationStream
-  /// @param displayManager
-  /// @param inputManager
-  /// @param screenManager
-  /// @param logger
-  /// @param pauseDisplayUpdatesUntil
+  /// @brief Constructor for this Controller
+  /// @param consoleStream Pointer to the Stream for console interactions and log output
+  /// @param commandStationStream Pointer to the incoming Stream connected to EX-CommandStation
+  /// @param displayManager Pointer to the DisplayManager instance
+  /// @param inputManager Pointer to the InputManager instance
+  /// @param screenManager Pointer to the ScreenManager instance
+  /// @param logger Pointer to the Logger instance
+  /// @param pauseDisplayUpdatesUntil Time in milliseconds the EX-Display version will be displayed until
   Controller(Stream *consoleStream, Stream *commandStationStream, DisplayManager *displayManager,
              InputManager *inputManager, ScreenManager *screenManager, Logger *logger,
              unsigned long pauseDisplayUpdatesUntil = 0);
