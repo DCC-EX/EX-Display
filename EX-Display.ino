@@ -80,11 +80,11 @@
  * these. Also note the mention of needing include guards for this as per @ref adding_types.
  *
  * All tests are run when pushing or merging to both the main and devel branches, and can be run locally with PlatformIO
- * also:
+ * also using the following commands. The verbose output is recommended to review the test output.
  *
  * @code
- * pio test -e native_test
- * pio test -e native_test_windows
+ * pio test -e native_test -v
+ * pio test -e native_test_windows -v
  * @endcode
  *
  * Note that due to issues with the sanitizers that check from memory leaks and undefined references not being available
@@ -94,6 +94,14 @@
  *
  * The best approach when adding new functionality is to write the test first, and then ensure the code to support the
  * feature makes the test succeed.
+ *
+ * When writing and running tests, cleaning up between test runs is often required, and is recommended to be done prior
+ * to pushing to the main or devel branches just to ensure all is good. This can be done with this command:
+ *
+ * @code
+ * pio run -t clean -e native_test
+ * pio run -t clean -e native_test_windows
+ * @endcode
  *
  * @section adding_types Adding Display and Input Types
  * As mentioned in the @ref application_architecture, both displays and inputs are derived from the appropriate
