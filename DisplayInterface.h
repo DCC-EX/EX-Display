@@ -1,4 +1,5 @@
 /*
+ *  © 2025 Peter Cole
  *  © 2024 Peter Cole
  *
  *  This is free software: you can redistribute it and/or modify
@@ -40,51 +41,57 @@ public:
 
   /// @brief Set the next DisplayInterface derived instance in the list
   /// @param display Pointer to the next instance
-  void setNext(DisplayInterface *display) { _next = display; }
+  void setNext(DisplayInterface *display);
 
   /// @brief Get the next DisplayInterface derived instance in the list
   /// @return Pointer to the next instance
-  DisplayInterface *getNext() { return _next; }
+  DisplayInterface *getNext();
 
   /// @brief Set the logger instance to use for diagnostic logging
   /// @param logger Pointer to the Logger instance to use
-  void setLogger(Logger *logger) { _logger = logger; }
+  void setLogger(Logger *logger);
 
   /// @brief Set the ID for this display instance
   /// @param displayId ID of this display
-  void setId(uint8_t displayId) { _displayId = displayId; }
+  void setId(uint8_t displayId);
 
   /// @brief Get the ID of this display instance
   /// @return ID of this display
-  uint8_t getId() { return _displayId; }
+  uint8_t getId();
 
   /// @brief Set the Screen ID this display is currently displaying
   /// @param screenId Screen ID
-  void setScreenId(int screenId) {
-    _needsRedraw = true;
-    _screenId = screenId;
-  }
+  void setScreenId(int screenId);
 
   /// @brief Get the Screen ID this display is currently displaing
   /// @return Screen ID
-  int getScreenId() { return _screenId; }
+  int getScreenId();
 
   /// @brief Get the defined CS pin for this display to see if it needs manual SPI switching
   /// @return Pin number of the SPI CS pin for this display (default -1 for no switching)
-  int getCSPin() { return _csPin; }
+  int getCSPin();
 
   /// @brief Set the flag for whether this display needs redrawing or not - individual row updates are not affected
   /// @param redraw true if entire redraw, otherwise false
-  void setNeedsRedraw(bool redraw) { _needsRedraw = redraw; }
+  void setNeedsRedraw(bool redraw);
 
   /// @brief Test if this display needs an entire redraw
   /// @return true|false
-  bool needsRedraw() { return _needsRedraw; }
+  bool needsRedraw();
 
   /// @brief Destructor for a DisplayInterface
   virtual ~DisplayInterface() = default;
 
 protected:
+  /// @brief Structure for row attributes to keep these in a single byte
+  struct RowAttributes {
+    bool colourSet : 1;    /** This row needs specific colours */
+    bool isUnderlined : 1; /** This row needs to be underlined */
+    bool isLine : 1;       /** This row is a horizontal line */
+    bool alwaysTicker : 1; /** This row should always scroll horizontally */
+    bool neverTicker : 1;  /** This row should never scroll horizontally */
+  };
+
   /// @brief Pointer to the next DisplayInterface derived instance in the list
   DisplayInterface *_next = nullptr;
   /// @brief Default text colour for the display
