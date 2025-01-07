@@ -159,9 +159,10 @@ protected:
    * @brief Update the provided RowAttributes struct according to the provided modifier
    * @param attributes RowAttribute to be updated
    * @param modifier Modifier to apply
+   * @param colour If applied modifier is colour, set this 16bit colour, otherwise this is ignored
    * @return RowAttributes The updated struct
    */
-  static RowAttributes _setAttribute(RowAttributes attributes, char modifier);
+  static RowAttributes _setAttribute(RowAttributes attributes, char modifier, uint16_t colour = 0xFFFF);
 };
 
 #endif // DISPLAYINTERFACE_H

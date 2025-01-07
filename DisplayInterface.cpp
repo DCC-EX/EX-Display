@@ -64,23 +64,23 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
     FIND_MODIFIER,
   };
 
-  int textLength = strlen(text) + 1;  /** Length of the provided text, we can't return anything longer than this */
-  int textStart = 0;                  /** Starting index of text we need to return, enables subtracting modifiers */
-  char *returnedText;                 /** Text to return, will be sized with modifiers removed */
-  char check;                         /** Holds each char for checking */
-  stateMachine state = FIND_MODSTART; /** Start by looking for the first backtick */
+  size_t textLength = strlen(text) + 1; /** Length of the provided text, we can't return anything longer than this */
+  int textStart = 0;                    /** Starting index of text we need to return, enables subtracting modifiers */
+  char *returnedText = new char[textLength]; /** Text to return, sized same as text */
+  char check;                                /** Holds each char for checking */
+  stateMachine state = FIND_MODSTART;        /** Start by looking for the first backtick */
   RowAttributes attributes = {false, false, false,
                               false, false, 0xFFFF}; /** Set all attributes false to start with, and white text */
 
-  /** If our very first char is not a backtick, then we have no leading modifiers but may have embedded colours */
-  check = text[0];
-  if (check != '`') {
-    // state = FIND_COLOURSTART; /** Start by looking for a backtick ahead of # for colour */
-    display->displayFormattedRow(rowId, 0, attributes, text, false); /** For now we're not finding colours */
-  }
+  // /** If our very first char is not a backtick, then we have no leading modifiers but may have embedded colours */
+  // check = text[0];
+  // if (check != '`') {
+  //   // state = FIND_COLOURSTART; /** Start by looking for a backtick ahead of # for colour */
+  //   display->displayFormattedRow(rowId, 0, attributes, text, false); /** For now we're not finding colours */
+  // }
 
-  // Now iterate through the provided text to look for modifiers
-  for (int i = 0; i < textLength; i++) {
+  // Iterate through the provided text to look for leading modifiers
+  for (size_t i = 0; i < textLength; i++) {
     check = text[i];
     switch (state) {
     case FIND_MODSTART: { // If first backtick, look for a modifier next
@@ -94,13 +94,19 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
         attributes = _setAttribute(attributes, check);
         i++;
         state = FIND_MODSTART; // There may be more modifiers so look again
+        textStart = i + 1;     // Set the start of our text to the next char after the backtick
         continue;
       }
     }
     }
   }
+  // Now copy the appropriate chars to returnedText ready to call our method
+  size_t copyLength = textLength - textStart - 1;
+  strncpy(returnedText, text + textStart, copyLength);
+  returnedText[copyLength] = '\0';
   attributes = DisplayInterface::_sanitiseAttributes(attributes);
-  display->displayFormattedRow(rowId, 0, attributes, text, false);
+  display->displayFormattedRow(rowId, 0, attributes, returnedText, false);
+  delete[] returnedText;
 }
 
 RowAttributes DisplayInterface::_sanitiseAttributes(RowAttributes attributes) {
@@ -117,6 +123,7 @@ RowAttributes DisplayInterface::_sanitiseAttributes(RowAttributes attributes) {
 }
 
 bool DisplayInterface::_isModifier(char check) {
+  // Note while # is the modifier for colour, it is not a single char modifier and is dealt with separately
   if (check == '_' || check == '-' || check == '~' || check == '!') {
     return true;
   } else {
@@ -124,10 +131,11 @@ bool DisplayInterface::_isModifier(char check) {
   }
 }
 
-RowAttributes DisplayInterface::_setAttribute(RowAttributes attributes, char modifier) {
+RowAttributes DisplayInterface::_setAttribute(RowAttributes attributes, char modifier, uint16_t colour) {
   switch (modifier) {
   case '#':
     attributes.colourSet = true;
+    attributes.textColour = colour;
     break;
   case '_':
     attributes.isUnderlined = true;

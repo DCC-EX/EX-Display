@@ -52,9 +52,9 @@ MATCHER_P(ExpectedRowAttributes, expected, "") {
 }
 
 /**
- * @brief Test row formatting using modifiers
+ * @brief Test row formatting using no modifiers
  */
-TEST_F(DisplayFormattingTests, TestRowFormatting) {
+TEST_F(DisplayFormattingTests, TestNoModifiers) {
   // Set our expected attributes for the first test with no modifiers
   RowAttributes expectedAttributes = {false, false, false, false, false, 0xFFFF};
 
@@ -65,14 +65,40 @@ TEST_F(DisplayFormattingTests, TestRowFormatting) {
   const char *row0 = "Row 0, no attributes";
   display->displayRow(0, row0);
 
+  // Verify expectations
+  testing::Mock::VerifyAndClearExpectations(display);
+}
+
+/**
+ * @brief Test row formatting using underline modifier
+ */
+TEST_F(DisplayFormattingTests, TestUnderline) {
   // Test for basic underlined text on row 0, expected attributes should be:
-  expectedAttributes = {false, true, false, false, false, 0xFFFF};
+  RowAttributes expectedAttributes = {false, true, false, false, false, 0xFFFF};
   // Expect that displayFormattedRow is called once with these attributes
   EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
-                                            StrEq("`_`Underlined row 0"), Eq(false)))
+                                            StrEq("Underlined row 0"), Eq(false)))
       .Times(1);
   //
   const char *row0underlined = "`_`Underlined row 0";
+  display->displayRow(0, row0underlined);
+
+  // Verify expectations
+  testing::Mock::VerifyAndClearExpectations(display);
+}
+
+/**
+ * @brief Test row formatting using line modifier
+ */
+TEST_F(DisplayFormattingTests, TestLine) {
+  // Test for basic line text on row 0, expected attributes should be:
+  RowAttributes expectedAttributes = {false, false, true, false, false, 0xFFFF};
+  // Expect that displayFormattedRow is called once with these attributes
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("This should be ignored"), Eq(false)))
+      .Times(1);
+  //
+  const char *row0underlined = "`-`This should be ignored";
   display->displayRow(0, row0underlined);
 
   // Verify expectations
