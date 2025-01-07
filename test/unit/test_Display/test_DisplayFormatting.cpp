@@ -46,9 +46,9 @@ protected:
  * @brief Define a custom matcher for the RowAttributes struct
  */
 MATCHER_P(ExpectedRowAttributes, expected, "") {
-  return arg.isUnderlined == expected.isUnderlined && arg.isLine == expected.isLine &&
-         arg.alwaysTicker == expected.alwaysTicker && arg.neverTicker == expected.neverTicker &&
-         arg.textColour == expected.textColour;
+  return arg.colourSet == expected.colourSet && arg.isUnderlined == expected.isUnderlined &&
+         arg.isLine == expected.isLine && arg.alwaysTicker == expected.alwaysTicker &&
+         arg.neverTicker == expected.neverTicker && arg.textColour == expected.textColour;
 }
 
 /**
@@ -56,7 +56,7 @@ MATCHER_P(ExpectedRowAttributes, expected, "") {
  */
 TEST_F(DisplayFormattingTests, TestRowFormatting) {
   // Set our expected attributes for the first test with no modifiers
-  RowAttributes expectedAttributes = {false, false, false, false, 0xFFFF};
+  RowAttributes expectedAttributes = {false, false, false, false, false, 0xFFFF};
 
   // Test with no formatting
   EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
@@ -65,15 +65,16 @@ TEST_F(DisplayFormattingTests, TestRowFormatting) {
   const char *row0 = "Row 0, no attributes";
   display->displayRow(0, row0);
 
-  // Test for basic underlined text on row 0
-  // Expect that displayFormattedRow is called once with these arguments
-  // EXPECT_CALL(*display,
-  //             displayFormattedRow(Truly([=](uint8_t row) { return row == 0; }),
-  //                                 Truly([=](uint8_t column) { return column == 0; }),
-  //                                 Truly([=](RowAttributes attributes) { return attributes.isUnderlined; }),
-  //                                 StrEq("Underlined row 0"), Truly([=](bool append) { return append == false; })))
-  //     .Times(1);
-  // //
-  // const char *row0underlined = "`__`Underlined row 0";
-  // display->displayRow(0, row0underlined);
+  // Test for basic underlined text on row 0, expected attributes should be:
+  expectedAttributes = {false, true, false, false, false, 0xFFFF};
+  // Expect that displayFormattedRow is called once with these attributes
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("`_`Underlined row 0"), Eq(false)))
+      .Times(1);
+  //
+  const char *row0underlined = "`_`Underlined row 0";
+  display->displayRow(0, row0underlined);
+
+  // Verify expectations
+  testing::Mock::VerifyAndClearExpectations(display);
 }

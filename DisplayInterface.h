@@ -24,10 +24,11 @@
 
 /// @brief Structure for row attributes
 struct RowAttributes {
-  bool isUnderlined;   /** This row needs to be underlined */
-  bool isLine;         /** This row is a horizontal line */
-  bool alwaysTicker;   /** This row should always scroll horizontally */
-  bool neverTicker;    /** This row should never scroll horizontally */
+  bool colourSet;      /** This row has had a custom colour set, use textColour, set with '#' */
+  bool isUnderlined;   /** This row needs to be underlined, set with '_' */
+  bool isLine;         /** This row is a horizontal line, set with '-' */
+  bool alwaysTicker;   /** This row should always scroll horizontally, set with '~' */
+  bool neverTicker;    /** This row should never scroll horizontally, set with '!' */
   uint16_t textColour; /** 16bit colour for text */
 };
 
@@ -54,7 +55,8 @@ public:
   /// @param attributes RowAttributes structure containing modifier details
   /// @param text Text to display
   /// @param append Flag if this is appending to an existing row and should not clear the row first
-  virtual void displayFormattedRow(uint8_t row, uint8_t column, RowAttributes attributes, const char *text, bool append) = 0;
+  virtual void displayFormattedRow(uint8_t row, uint8_t column, RowAttributes attributes, const char *text,
+                                   bool append) = 0;
 
   /// @brief Set the next DisplayInterface derived instance in the list
   /// @param display Pointer to the next instance
@@ -135,6 +137,31 @@ protected:
   int _csPin = -1;
   /// @brief Flag that this display needs redrawing - needed for switching between screens
   bool _needsRedraw = true;
+
+  /**
+   * @brief Sanitise the provided struct of RowAttributes
+   * @details If isLine is set, all other attributes except colour are overridden to false. If both alwaysTicker and
+   * neverTicker are set, both will be set to false as they conflict.
+   * @param attributes RowAttributes struct to sanitise
+   * @return RowAttributes Sanitised struct according to the precedence rules
+   */
+  static RowAttributes _sanitiseAttributes(RowAttributes attributes);
+
+  /**
+   * @brief Validates the provided char is a valid modifier
+   * @param check Contains the char to be validated
+   * @return true If modifier is valid (_, -, ~, !, #)
+   * @return false If modifier is invalid
+   */
+  static bool _isModifier(char check);
+
+  /**
+   * @brief Update the provided RowAttributes struct according to the provided modifier
+   * @param attributes RowAttribute to be updated
+   * @param modifier Modifier to apply
+   * @return RowAttributes The updated struct
+   */
+  static RowAttributes _setAttribute(RowAttributes attributes, char modifier);
 };
 
 #endif // DISPLAYINTERFACE_H
