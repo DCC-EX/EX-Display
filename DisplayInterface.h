@@ -22,6 +22,15 @@
 #include "Logger.h"
 #include "Screen.h"
 
+/// @brief Structure for row attributes
+struct RowAttributes {
+  bool isUnderlined;   /** This row needs to be underlined */
+  bool isLine;         /** This row is a horizontal line */
+  bool alwaysTicker;   /** This row should always scroll horizontally */
+  bool neverTicker;    /** This row should never scroll horizontally */
+  uint16_t textColour; /** 16bit colour for text */
+};
+
 /// @brief Class to abstract away all physical display implementation to enable multiple display types
 class DisplayInterface {
 public:
@@ -38,6 +47,14 @@ public:
   /// @brief Display the startup screen with software version
   /// @param version EX-Display version
   virtual void displayStartupInfo(const char *version) = 0;
+
+  /// @brief Display a row using formatting modifiers
+  /// @param row Row ID to display
+  /// @param column Column at which to display text (not pixels)
+  /// @param attributes RowAttributes structure containing modifier details
+  /// @param text Text to display
+  /// @param append Flag if this is appending to an existing row and should not clear the row first
+  virtual void displayFormattedRow(uint8_t row, uint8_t column, RowAttributes attributes, const char *text, bool append) = 0;
 
   /// @brief Set the next DisplayInterface derived instance in the list
   /// @param display Pointer to the next instance
@@ -79,19 +96,16 @@ public:
   /// @return true|false
   bool needsRedraw();
 
+  /// @brief Static method to enable calling back to a derived class with a formatted row
+  /// @param display Derived instance containing the displayFormattedRow() method
+  /// @param row Row to display
+  /// @param text Text containing formatting
+  static void formatRow(DisplayInterface *display, int row, const char *text);
+
   /// @brief Destructor for a DisplayInterface
   virtual ~DisplayInterface() = default;
 
 protected:
-  /// @brief Structure for row attributes to keep these in a single byte
-  struct RowAttributes {
-    bool colourSet : 1;    /** This row needs specific colours */
-    bool isUnderlined : 1; /** This row needs to be underlined */
-    bool isLine : 1;       /** This row is a horizontal line */
-    bool alwaysTicker : 1; /** This row should always scroll horizontally */
-    bool neverTicker : 1;  /** This row should never scroll horizontally */
-  };
-
   /// @brief Pointer to the next DisplayInterface derived instance in the list
   DisplayInterface *_next = nullptr;
   /// @brief Default text colour for the display

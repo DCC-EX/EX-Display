@@ -1,5 +1,5 @@
 /*
- *  © 2024 Peter Cole
+ *  © 2025 Peter Cole
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -15,21 +15,16 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MOCKSPIDISPLAY_H
-#define MOCKSPIDISPLAY_H
+#ifndef MOCKCOLOURDISPLAY_H
+#define MOCKCOLOURDISPLAY_H
 
 #include "DisplayInterface.h"
+#include "Screen.h"
 #include <gmock/gmock.h>
 
-/// @brief Mock physical display class for an SPI device
-/// Use this mock to test manual switching between SPI devices
-/// Constructor with no CS pin should never switch, and one with the CS pin should always switch
-class MockSPIDisplay : public DisplayInterface {
+/// @brief Mock colour display class for format testing
+class MockColourDisplay : public DisplayInterface {
 public:
-  MockSPIDisplay() {}
-
-  MockSPIDisplay(int csPin) { _csPin = csPin; }
-
   MOCK_METHOD(void, begin, (), (override));
 
   MOCK_METHOD(void, clearScreen, (), (override));
@@ -38,13 +33,15 @@ public:
 
   MOCK_METHOD(void, displayStartupInfo, (const char *version), (override));
 
+  void displayRow(int row, const char *text) { formatRow(this, row, text); }
+
   MOCK_METHOD(void, displayFormattedRow,
               (uint8_t row, uint8_t column, RowAttributes attributes, const char *text, bool append), (override));
 
-  static MockSPIDisplay *create(int csPin = -1) {
-    MockSPIDisplay *newDisplay = new MockSPIDisplay(csPin);
+  static MockColourDisplay *create() {
+    MockColourDisplay *newDisplay = new MockColourDisplay();
     return newDisplay;
   }
 };
 
-#endif // MOCKSPIDISPLAY_H
+#endif // MOCKCOLOURDISPLAY_H

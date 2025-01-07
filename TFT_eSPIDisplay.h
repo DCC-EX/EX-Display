@@ -84,6 +84,14 @@ public:
   /// @param version EX-Display version
   void displayStartupInfo(const char *version) override;
 
+  /// @brief Display a row using formatting modifiers
+  /// @param row Row ID to display
+  /// @param column Column at which to display text (not pixels)
+  /// @param attributes RowAttributes structure containing modifier details
+  /// @param text Text to display
+  /// @param append Flag if this is appending to an existing row and should not clear the row first
+  virtual void displayFormattedRow(uint8_t row, uint8_t column, RowAttributes attributes, const char *text, bool append) override;
+
   /// @brief Get the TFT_eSPI instance created by this instance - needed for the touch interface
   /// @return Pointer to the TFT_eSPI instance
   TFT_eSPI *getTFT_eSPIInstance();

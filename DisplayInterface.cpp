@@ -39,3 +39,18 @@ int DisplayInterface::getCSPin() { return _csPin; }
 void DisplayInterface::setNeedsRedraw(bool redraw) { _needsRedraw = redraw; }
 
 bool DisplayInterface::needsRedraw() { return _needsRedraw; }
+
+void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const char *text) {
+  RowAttributes attributes = {false, false, false, false,
+                              0xFFFF}; /** We need to return RowAttributes, set them false to start with white text */
+  /** We're starting just looking for initial modifiers, no colours, so if our first char is not a ` then we have no
+   * modifier and should just call our display method with everything as is. */
+  int textLength = strlen(text) + 1;
+  for (int i = 0; i < textLength; i++) {
+    char check = text[i];
+    if (check != '`') {
+      display->displayFormattedRow(rowId, 0, attributes, text, false);
+      return;
+    }
+  }
+}

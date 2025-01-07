@@ -145,6 +145,3 @@ TEST_F(DisplayInterfaceTests, TestDisplayRedraw) {
   // Verify all expectations were made
   testing::Mock::VerifyAndClearExpectations(display);
 }
-
-/// @brief Ensure the method to extract row formatting works as expected
-TEST_F(DisplayInterfaceTests, TestRowFormatting) {}

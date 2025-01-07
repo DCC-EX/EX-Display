@@ -137,6 +137,9 @@ void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
   _tft->drawString(version, x, y);
 }
 
+void TFT_eSPIDisplay::displayFormattedRow(uint8_t row, uint8_t column, RowAttributes attributes, const char *text,
+                                          bool append) {}
+
 TFT_eSPI *TFT_eSPIDisplay::getTFT_eSPIInstance() {
   LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::getTFT_eSPIInstance[%d]", _displayId);
   return _tft;
