@@ -72,13 +72,6 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
   RowAttributes attributes = {false, false, false,
                               false, false, 0xFFFF}; /** Set all attributes false to start with, and white text */
 
-  // /** If our very first char is not a backtick, then we have no leading modifiers but may have embedded colours */
-  // check = text[0];
-  // if (check != '`') {
-  //   // state = FIND_COLOURSTART; /** Start by looking for a backtick ahead of # for colour */
-  //   display->displayFormattedRow(rowId, 0, attributes, text, false); /** For now we're not finding colours */
-  // }
-
   // Iterate through the provided text to look for leading modifiers
   for (size_t i = 0; i < textLength; i++) {
     check = text[i];
@@ -100,11 +93,17 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
     }
     }
   }
-  // Now copy the appropriate chars to returnedText ready to call our method
-  size_t copyLength = textLength - textStart - 1;
-  strncpy(returnedText, text + textStart, copyLength);
-  returnedText[copyLength] = '\0';
+  // Make sure our attributes are sane according to the rules
   attributes = DisplayInterface::_sanitiseAttributes(attributes);
+  // If we've set a horizontal line, we don't return text, just null terminator
+  if (attributes.isLine) {
+    returnedText[0] = '\0';
+  } else {
+    // Otherwise copy the appropriate chars to returnedText ready to call our method
+    size_t copyLength = textLength - textStart - 1;
+    strncpy(returnedText, text + textStart, copyLength);
+    returnedText[copyLength] = '\0';
+  }
   display->displayFormattedRow(rowId, 0, attributes, returnedText, false);
   delete[] returnedText;
 }
