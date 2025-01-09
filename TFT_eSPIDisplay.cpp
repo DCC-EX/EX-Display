@@ -84,7 +84,8 @@ void TFT_eSPIDisplay::displayScreen(Screen *screen) {
   }
   for (ScreenRow *row = screen->getFirstScreenRow(); row; row = row->getNext()) {
     if (row->needsRedraw() || _needsRedraw) {
-      displayRow(row->getId(), row->getText(), false, 0);
+      // displayRow(row->getId(), row->getText(), false, 0);
+      DisplayInterface::formatRow(this, row->getId(), row->getText());
     }
   }
   // Now we've redrawn, clear the flag
@@ -138,7 +139,11 @@ void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
 }
 
 void TFT_eSPIDisplay::displayFormattedRow(uint8_t row, uint8_t column, RowAttributes attributes, const char *text,
-                                          bool append) {}
+                                          bool append) {
+  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::displayFormattedRow(%d, %d, {%d, %d, %d, %d, %d, 0x%04X}, %s, %d)", row,
+      column, attributes.colourSet, attributes.isUnderlined, attributes.isLine, attributes.alwaysTicker,
+      attributes.neverTicker, attributes.textColour, append);
+}
 
 TFT_eSPI *TFT_eSPIDisplay::getTFT_eSPIInstance() {
   LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::getTFT_eSPIInstance[%d]", _displayId);

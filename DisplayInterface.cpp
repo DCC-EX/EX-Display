@@ -59,10 +59,7 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
   /**
    * @brief stateMachine enum allows us to iterate through each char of text and examine it byte by byte for modifiers.
    */
-  enum stateMachine : byte {
-    FIND_MODSTART,
-    FIND_MODIFIER,
-  };
+  enum stateMachine : byte { FIND_MODSTART, FIND_MODIFIER, BUILD_TEXT };
 
   size_t textLength = strlen(text) + 1; /** Length of the provided text, we can't return anything longer than this */
   int textStart = 0;                    /** Starting index of text we need to return, enables subtracting modifiers */
@@ -79,7 +76,7 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
     case FIND_MODSTART: { // If first backtick, look for a modifier next
       if (check == '`') {
         state = FIND_MODIFIER;
-        continue;
+        break;
       }
     }
     case FIND_MODIFIER: {
@@ -88,9 +85,19 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
         i++;
         state = FIND_MODSTART; // There may be more modifiers so look again
         textStart = i + 1;     // Set the start of our text to the next char after the backtick
-        continue;
+      } else {
+        state = BUILD_TEXT;
       }
+      break;
     }
+    case BUILD_TEXT: {
+      // If we're no longer looking for modifiers, continue to build the returned text
+      break;
+    }
+    }
+    // If we've flagged we've finished with modifiers, break out of the loop, no more to do
+    if (state == BUILD_TEXT) {
+      break;
     }
   }
   // Make sure our attributes are sane according to the rules

@@ -168,8 +168,8 @@ TEST_F(DisplayFormattingTests, TestAttributeSanitiser) {
   // Setting line + underline with text should result in:
   RowAttributes expectedAttributes = {false, false, true, false, false, 0xFFFF};
   // Expect that displayFormattedRow is called once with these attributes
-  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
-                                            StrEq(""), Eq(false)))
+  EXPECT_CALL(*display,
+              displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes), StrEq(""), Eq(false)))
       .Times(1);
 
   // Send line + underline
@@ -190,8 +190,8 @@ TEST_F(DisplayFormattingTests, TestAttributeSanitiser) {
   // Setting line + alwaysTicker - line should rule:
   expectedAttributes = {false, false, true, false, false, 0xFFFF};
   // Expect that displayFormattedRow is called once with these attributes
-  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
-                                            StrEq(""), Eq(false)))
+  EXPECT_CALL(*display,
+              displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes), StrEq(""), Eq(false)))
       .Times(1);
 
   // Send line + alwaysTicker
@@ -201,13 +201,56 @@ TEST_F(DisplayFormattingTests, TestAttributeSanitiser) {
   // Setting line + neverTicker - line should rule:
   expectedAttributes = {false, false, true, false, false, 0xFFFF};
   // Expect that displayFormattedRow is called once with these attributes
-  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
-                                            StrEq(""), Eq(false)))
+  EXPECT_CALL(*display,
+              displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes), StrEq(""), Eq(false)))
       .Times(1);
 
   // Send line + neverTicker
   const char *row0lineNeverTicker = "`!``-`Line attribute should rule";
   display->displayRow(0, row0lineNeverTicker);
+
+  // Verify expectations
+  testing::Mock::VerifyAndClearExpectations(display);
+}
+
+/**
+ * @brief Test various invalid modifiers and modifier positions and ensure they are ignored
+ */
+TEST_F(DisplayFormattingTests, TestInvalidModifiers) {
+  // Every call to display->displayRow() below should result in the exact same result of no modifiers set
+  RowAttributes expectedAttributes = {false, false, false, false, false, 0xFFFF};
+
+  // Expect that call using the default attributes and all invalid modifiers in with text
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("`1`Invalid modifier"), Eq(false)))
+      .Times(1);
+
+  // Send a single modifier
+  display->displayRow(0, "`1`Invalid modifier");
+
+  // Expect that call using the default attributes and all invalid modifiers in with text
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("Invalid `_` modifier position"), Eq(false)))
+      .Times(1);
+
+  // Send a single modifier
+  display->displayRow(0, "Invalid `_` modifier position");
+
+  // Combined valid modifiers are invalid
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("`_-`Invalid modifiers"), Eq(false)))
+      .Times(1);
+
+  // Send a single modifier
+  display->displayRow(0, "`_-`Invalid modifiers");
+
+  // Mdifiers at the end are invalid
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("End modifiers`_`"), Eq(false)))
+      .Times(1);
+
+  // Send a single modifier
+  display->displayRow(0, "End modifiers`_`");
 
   // Verify expectations
   testing::Mock::VerifyAndClearExpectations(display);
