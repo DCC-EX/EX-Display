@@ -25,27 +25,54 @@ bool TFT_eSPIDisplay::_tftInitialised = false;
 
 TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour) {
   _rotation = rotation;
-  _textSize = textSize;
+  //_textSize = textSize;
+  _textSize = 1; // default text size to save amending display routine.
   _textColour = textColour;
   _backgroundColour = backgroundColour;
   if (_tft == nullptr) {
     _tft = new TFT_eSPI();
   }
-  _gfxFont = TEXT_FONT;
+  switch (textSize) {
+    case 1:
+      _gfxFont = TEXT_FONT;
+      break;
+    case 2:
+      _gfxFont = ALTERNATE_FONT1;
+    case 3:
+      _gfxFont = ALTERNATE_FONT2;
+      break;
+    default:
+      _gfxFont = TEXT_FONT;
+      break;
+  }
 }
 
 TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour,
                                  int csPin) {
   _rotation = rotation;
-  _textSize = textSize;
+  _textSize = 1;    // default text size to save amending display routine.
   _textColour = textColour;
   _backgroundColour = backgroundColour;
   _csPin = csPin;
   if (_tft == nullptr) {
     _tft = new TFT_eSPI();
   }
-  _gfxFont = TEXT_FONT;
+  switch (textSize) {
+    case 1:
+      _gfxFont = TEXT_FONT;
+      break;
+    case 2:
+      _gfxFont = ALTERNATE_FONT1;
+    case 3:
+      _gfxFont = ALTERNATE_FONT2;
+      break;
+    default:
+      _gfxFont = TEXT_FONT;
+      break;
+  }
+  
 }
+
 
 void TFT_eSPIDisplay::begin() {
   LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::begin[%d]()", _displayId);
