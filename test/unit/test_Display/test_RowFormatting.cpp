@@ -33,7 +33,7 @@ using namespace testing;
  * The row formatting method must support changing colours inline with text, so there must be a return to indicate if
  * it's end of the text, or if the text should continue with a different colour at the next column position.
  */
-class DisplayFormattingTests : public Test {
+class RowFormattingTests : public Test {
 protected:
   MockColourDisplay *display;
 
@@ -54,7 +54,7 @@ MATCHER_P(ExpectedRowAttributes, expected, "") {
 /**
  * @brief Test row formatting using no modifiers
  */
-TEST_F(DisplayFormattingTests, TestNoModifiers) {
+TEST_F(RowFormattingTests, TestNoModifiers) {
   // Set our expected attributes for the first test with no modifiers
   RowAttributes expectedAttributes = {false, false, false, false, false, 0xFFFF};
 
@@ -72,7 +72,7 @@ TEST_F(DisplayFormattingTests, TestNoModifiers) {
 /**
  * @brief Test row formatting using underline modifier
  */
-TEST_F(DisplayFormattingTests, TestUnderline) {
+TEST_F(RowFormattingTests, TestUnderline) {
   // Test for basic underlined text on row 0, expected attributes should be:
   RowAttributes expectedAttributes = {false, true, false, false, false, 0xFFFF};
   // Expect that displayFormattedRow is called twice with these attributes to cover both tests
@@ -95,7 +95,7 @@ TEST_F(DisplayFormattingTests, TestUnderline) {
 /**
  * @brief Test row formatting using line modifier
  */
-TEST_F(DisplayFormattingTests, TestLine) {
+TEST_F(RowFormattingTests, TestLine) {
   // Test for basic line text on row 0, expected attributes should be:
   RowAttributes expectedAttributes = {false, false, true, false, false, 0xFFFF};
   // Expect that displayFormattedRow is called twice with these attributes to cover both tests
@@ -118,7 +118,7 @@ TEST_F(DisplayFormattingTests, TestLine) {
 /**
  * @brief Test row formatting using alwaysTicker modifier
  */
-TEST_F(DisplayFormattingTests, TestAlwaysTicker) {
+TEST_F(RowFormattingTests, TestAlwaysTicker) {
   // Test for basic line text on row 0, expected attributes should be:
   RowAttributes expectedAttributes = {false, false, false, true, false, 0xFFFF};
   // Expect that displayFormattedRow is called twice with these attributes to cover both tests
@@ -141,7 +141,7 @@ TEST_F(DisplayFormattingTests, TestAlwaysTicker) {
 /**
  * @brief Test row formatting using neverTicker modifier
  */
-TEST_F(DisplayFormattingTests, TestNeverTicker) {
+TEST_F(RowFormattingTests, TestNeverTicker) {
   // Test for basic line text on row 0, expected attributes should be:
   RowAttributes expectedAttributes = {false, false, false, false, true, 0xFFFF};
   // Expect that displayFormattedRow is called twice with these attributes to cover both tests
@@ -164,7 +164,7 @@ TEST_F(DisplayFormattingTests, TestNeverTicker) {
 /**
  * @brief Test row attribute santiser to ensure returned attributes are sane when combined
  */
-TEST_F(DisplayFormattingTests, TestAttributeSanitiser) {
+TEST_F(RowFormattingTests, TestAttributeSanitiser) {
   // Setting line + underline with text should result in:
   RowAttributes expectedAttributes = {false, false, true, false, false, 0xFFFF};
   // Expect that displayFormattedRow is called once with these attributes
@@ -216,7 +216,7 @@ TEST_F(DisplayFormattingTests, TestAttributeSanitiser) {
 /**
  * @brief Test various invalid modifiers and modifier positions and ensure they are ignored
  */
-TEST_F(DisplayFormattingTests, TestInvalidModifiers) {
+TEST_F(RowFormattingTests, TestInvalidModifiers) {
   // Every call to display->displayRow() below should result in the exact same result of no modifiers set
   RowAttributes expectedAttributes = {false, false, false, false, false, 0xFFFF};
 
@@ -251,6 +251,114 @@ TEST_F(DisplayFormattingTests, TestInvalidModifiers) {
 
   // Send a single modifier
   display->displayRow(0, "End modifiers`_`");
+
+  // Verify expectations
+  testing::Mock::VerifyAndClearExpectations(display);
+}
+
+/**
+ * @brief Test one row colour with no other modifiers
+ */
+TEST_F(RowFormattingTests, OneColour) {
+  // Test for basic line text on row 0, expected attributes should be:
+  RowAttributes expectedAttributes = {true, false, false, false, false, 0xFFE0};
+  // Expect that displayFormattedRow is called once with these attributes
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("This row should be yellow"), Eq(false)))
+      .Times(1);
+
+  // Send a single colour with no other modifiers
+  display->displayRow(0, "`#FFEE00`This row should be yellow");
+
+  // Verify expectations
+  testing::Mock::VerifyAndClearExpectations(display);
+}
+
+/**
+ * @brief Test one row colour with underline
+ */
+TEST_F(RowFormattingTests, OneColourUnderlined) {
+  // Test for basic line text on row 0, expected attributes should be:
+  RowAttributes expectedAttributes = {true, true, false, false, false, 0xFFE0};
+  // Expect that displayFormattedRow is called once with these attributes
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("This row should be yellow and underlined"), Eq(false)))
+      .Times(1);
+
+  // Send a single colour with underline modifier
+  display->displayRow(0, "`_``#FFEE00`This row should be yellow and underlined");
+
+  // Verify expectations
+  testing::Mock::VerifyAndClearExpectations(display);
+}
+
+/**
+ * @brief Test a coloured horizontal line
+ */
+TEST_F(RowFormattingTests, ColouredLine) {
+  // Test for basic line text on row 0, expected attributes should be:
+  RowAttributes expectedAttributes = {true, false, true, false, false, 0xFFE0};
+  // Expect that displayFormattedRow is called once with these attributes
+  EXPECT_CALL(*display,
+              displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes), StrEq(""), Eq(false)))
+      .Times(1);
+
+  // Send a single colour line modifier
+  display->displayRow(0, "`-``#FFEE00`This should be a yellow line, no text");
+
+  // Verify expectations
+  testing::Mock::VerifyAndClearExpectations(display);
+}
+
+/**
+ * @brief Test text with one colour change in the middle
+ */
+TEST_F(RowFormattingTests, OneColourChange) {
+  // Test for basic line text on row 0, expected attributes should be:
+  RowAttributes expectedAttributes = {true, false, false, false, false, 0xFFE0};
+  // Expect that displayFormattedRow is called once with these attributes
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("This row starts yellow "), Eq(false)))
+      .Times(1);
+
+  // It should be called a second time for the colour change - "t" in then should be column 23
+  expectedAttributes = {true, false, false, false, false, 0xFF00};
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(23), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("then ends red"), Eq(false)))
+      .Times(1);
+
+  // Send an initial and second colour modifier
+  display->displayRow(0, "`#FFEE00`This row starts yellow `#FF0000`then ends red");
+
+  // Verify expectations
+  testing::Mock::VerifyAndClearExpectations(display);
+}
+
+/**
+ * @brief Test text with two colour changes
+ */
+TEST_F(RowFormattingTests, TwoColourChanges) {
+  // Test for basic line text on row 0, expected attributes should be:
+  RowAttributes expectedAttributes = {true, false, false, false, false, 0xFFE0};
+  // Expect that displayFormattedRow is called once with these attributes
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("This row starts yellow "), Eq(false)))
+      .Times(1);
+
+  // It should be called a second time for the colour change - "t" in then should be column 23
+  expectedAttributes = {true, false, false, false, false, 0xFF00};
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(23), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq(",then goes red, "), Eq(false)))
+      .Times(1);
+
+  // It should be called a second time for the colour change - "t" in then should be column 23
+  expectedAttributes = {true, false, false, false, false, 0x0FF0};
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(39), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("and ends blue"), Eq(false)))
+      .Times(1);
+
+  // Send an initial and second colour modifier
+  display->displayRow(0, "`#FFEE00`This row starts yellow `#FF0000`,then goes red, `#00FF00`and ends blue");
 
   // Verify expectations
   testing::Mock::VerifyAndClearExpectations(display);
