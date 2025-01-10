@@ -84,7 +84,6 @@ void TFT_eSPIDisplay::displayScreen(Screen *screen) {
   }
   for (ScreenRow *row = screen->getFirstScreenRow(); row; row = row->getNext()) {
     if (row->needsRedraw() || _needsRedraw) {
-      // displayRow(row->getId(), row->getText(), false, 0);
       DisplayInterface::formatRow(this, row->getId(), row->getText());
     }
   }
@@ -92,25 +91,9 @@ void TFT_eSPIDisplay::displayScreen(Screen *screen) {
   _needsRedraw = false;
 }
 
-void TFT_eSPIDisplay::displayRow(uint8_t row, const char *text, bool underlined, uint8_t column) {
-  if (text == nullptr) {
-    return;
-  }
-  int32_t x = 0;
-  int32_t y = 0;
-  _getRowPosition(column, row, x, y);
-  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::displayRow[%d](%d, %s, %d, %d) at X=%d|Y=%d", _displayId, row, text,
-      underlined, column, x, y);
-  _tft->setTextColor(_textColour);
-  LOG(LogLevel::LOG_DEBUG, "setTextColour(0x%04X)", _textColour);
-  if (column == 0) {
-    clearRow(row);
-  }
-  _tft->drawString(text, x, y);
-}
-
 void TFT_eSPIDisplay::clearRow(uint8_t row) {
   LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::clearRow[%d](%d)", _displayId, row);
+  _tft->setFreeFont(_gfxFont);
   int32_t x = 0;
   int32_t y = 0;
   _getRowPosition(0, row, x, y);
@@ -119,6 +102,7 @@ void TFT_eSPIDisplay::clearRow(uint8_t row) {
 
 void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
   LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::displayStartupInfo[%d](%s)", _displayId, version);
+  _tft->setFreeFont(_gfxFont);
   _tft->fillScreen(0xFFFF);
   int32_t x = 0;
   int32_t y = 0;
@@ -142,7 +126,39 @@ void TFT_eSPIDisplay::displayFormattedRow(uint8_t row, uint8_t column, RowAttrib
                                           bool append) {
   LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::displayFormattedRow(%d, %d, {%d, %d, %d, %d, %d, 0x%04X}, %s, %d)", row,
       column, attributes.colourSet, attributes.isUnderlined, attributes.isLine, attributes.alwaysTicker,
-      attributes.neverTicker, attributes.textColour, append);
+      attributes.neverTicker, attributes.textColour, text, append);
+  if (text == nullptr) {
+    return;
+  }
+  _tft->setFreeFont(_gfxFont);
+  int32_t x = 0;
+  int32_t y = 0;
+  _getRowPosition(column, row, x, y);
+  uint16_t colour;
+  if (attributes.colourSet) { // Set custom colour if set
+    colour = attributes.textColour;
+  } else { // Otherwise use display default
+    colour = _textColour;
+  }
+  LOG(LogLevel::LOG_DEBUG, "setTextColour(0x%04X)", colour);
+  _tft->setTextColor(colour);
+  if (!append) { // If this isn't appending to existing text, clear the row first
+    clearRow(row);
+  }
+  if (attributes.isLine) { // Draw horizontal line if it is
+    int32_t x1 = 0;
+    int32_t x2 = _tft->width();
+    // Vertical start - half way up the font height
+    int32_t y1 = y + (_fontHeight / 2);
+    int32_t y2 = y1;
+    LOG(LogLevel::LOG_DEBUG, "drawLine(x1=%d, y1=%d, x2=%d, y2=%d, 0x%04X)", x1, y1, x2, y2, colour);
+    _tft->drawLine(x1, y1, x2, y2, colour);
+  } else { // Otherwise underline if flagged, and draw text
+    if (attributes.isUnderlined) {
+      _tft->drawLine(0, y + _fontHeight - 1, _tft->width(), y + _fontHeight - 1, colour);
+    }
+    _tft->drawString(text, x, y);
+  }
 }
 
 TFT_eSPI *TFT_eSPIDisplay::getTFT_eSPIInstance() {
