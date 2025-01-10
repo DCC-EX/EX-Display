@@ -23,7 +23,8 @@
 TFT_eSPI *TFT_eSPIDisplay::_tft = nullptr;
 bool TFT_eSPIDisplay::_tftInitialised = false;
 
-TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour) {
+//TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour) {
+TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, GFXfont textFont, uint16_t textColour, uint16_t backgroundColour) {
   _rotation = rotation;
   //_textSize = textSize;
   _textSize = 1; // default text size to save amending display routine.
@@ -32,22 +33,23 @@ TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t te
   if (_tft == nullptr) {
     _tft = new TFT_eSPI();
   }
-  switch (textSize) {
-    case 1:
-      _gfxFont = TEXT_FONT;
-      break;
-    case 2:
-      _gfxFont = ALTERNATE_FONT1;
-    case 3:
-      _gfxFont = ALTERNATE_FONT2;
-      break;
-    default:
-      _gfxFont = TEXT_FONT;
-      break;
-  }
+  _gfxFont = textFont;
+  // switch (textSize) {
+  //   case 1:
+  //     _gfxFont = TEXT_FONT;
+  //     break;
+  //   case 2:
+  //     _gfxFont = ALTERNATE_FONT1;
+  //   case 3:
+  //     _gfxFont = ALTERNATE_FONT2;
+  //     break;
+  //   default:
+  //     _gfxFont = TEXT_FONT;
+  //     break;
+  // }
 }
 
-TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour,
+TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, GFXfont textFont, uint16_t textColour, uint16_t backgroundColour,
                                  int csPin) {
   _rotation = rotation;
   _textSize = 1;    // default text size to save amending display routine.
@@ -57,19 +59,20 @@ TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t te
   if (_tft == nullptr) {
     _tft = new TFT_eSPI();
   }
-  switch (textSize) {
-    case 1:
-      _gfxFont = TEXT_FONT;
-      break;
-    case 2:
-      _gfxFont = ALTERNATE_FONT1;
-    case 3:
-      _gfxFont = ALTERNATE_FONT2;
-      break;
-    default:
-      _gfxFont = TEXT_FONT;
-      break;
-  }
+  _gfxFont = textFont;
+  // switch (textSize) {
+  //   case 1:
+  //     _gfxFont = TEXT_FONT;
+  //     break;
+  //   case 2:
+  //     _gfxFont = ALTERNATE_FONT1;
+  //   case 3:
+  //     _gfxFont = ALTERNATE_FONT2;
+  //     break;
+  //   default:
+  //     _gfxFont = TEXT_FONT;
+  //     break;
+  // }
   
 }
 
@@ -171,15 +174,20 @@ TFT_eSPI *TFT_eSPIDisplay::getTFT_eSPIInstance() {
 
 bool TFT_eSPIDisplay::tftInitialised() { return _tftInitialised; }
 
-TFT_eSPIDisplay *TFT_eSPIDisplay::create(uint8_t rotation, uint8_t textSize, uint16_t textColour,
+// TFT_eSPIDisplay *TFT_eSPIDisplay::create(uint8_t rotation, uint8_t textSize, uint16_t textColour,
+//                                          uint16_t backgroundColour) {
+//   TFT_eSPIDisplay *newDisplay = new TFT_eSPIDisplay(rotation, textSize, textColour, backgroundColour);
+//   return newDisplay;
+// }
+TFT_eSPIDisplay *TFT_eSPIDisplay::create(uint8_t rotation, GFXfont textFont, uint16_t textColour,
                                          uint16_t backgroundColour) {
-  TFT_eSPIDisplay *newDisplay = new TFT_eSPIDisplay(rotation, textSize, textColour, backgroundColour);
+  TFT_eSPIDisplay *newDisplay = new TFT_eSPIDisplay(rotation, textFont, textColour, backgroundColour);
   return newDisplay;
 }
 
-TFT_eSPIDisplay *TFT_eSPIDisplay::create(uint8_t rotation, uint8_t textSize, uint16_t textColour,
+TFT_eSPIDisplay *TFT_eSPIDisplay::create(uint8_t rotation, GFXfont textFont, uint16_t textColour,
                                          uint16_t backgroundColour, int csPin) {
-  TFT_eSPIDisplay *newDisplay = new TFT_eSPIDisplay(rotation, textSize, textColour, backgroundColour, csPin);
+  TFT_eSPIDisplay *newDisplay = new TFT_eSPIDisplay(rotation, textFont, textColour, backgroundColour, csPin);
   return newDisplay;
 }
 
