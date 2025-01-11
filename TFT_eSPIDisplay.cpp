@@ -23,7 +23,8 @@
 TFT_eSPI *TFT_eSPIDisplay::_tft = nullptr;
 bool TFT_eSPIDisplay::_tftInitialised = false;
 
-TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textFont, uint16_t textColour, uint16_t backgroundColour) {
+TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textFont, uint16_t textColour,
+                                 uint16_t backgroundColour) {
   _rotation = rotation;
   _textSize = 1; // default text size to save amending display routine.
   _textColour = textColour;
@@ -32,13 +33,12 @@ TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textFont, uint
     _tft = new TFT_eSPI();
   }
   _gfxFont = textFont;
-  
 }
 
-TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textFont, uint16_t textColour, uint16_t backgroundColour,
-                                 int csPin) {
+TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textFont, uint16_t textColour,
+                                 uint16_t backgroundColour, int csPin) {
   _rotation = rotation;
-  _textSize = 1;    // default text size to save amending display routine.
+  _textSize = 1; // default text size to save amending display routine.
   _textColour = textColour;
   _backgroundColour = backgroundColour;
   _csPin = csPin;
@@ -46,9 +46,7 @@ TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textFont, uint
     _tft = new TFT_eSPI();
   }
   _gfxFont = textFont;
-  
 }
-
 
 void TFT_eSPIDisplay::begin() {
   LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::begin[%d]()", _displayId);
@@ -98,6 +96,7 @@ void TFT_eSPIDisplay::displayRow(uint8_t row, const char *text, bool underlined,
   if (text == nullptr) {
     return;
   }
+  _tft->setFreeFont(_gfxFont);
   int32_t x = 0;
   int32_t y = 0;
   _getRowPosition(column, row, x, y);
@@ -121,6 +120,7 @@ void TFT_eSPIDisplay::clearRow(uint8_t row) {
 
 void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
   LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::displayStartupInfo[%d](%s)", _displayId, version);
+  _tft->setFreeFont(_gfxFont);
   _tft->fillScreen(0xFFFF);
   int32_t x = 0;
   int32_t y = 0;

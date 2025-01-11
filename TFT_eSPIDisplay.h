@@ -27,23 +27,23 @@
 #include <TFT_eSPI.h>
 
 // Define the standard fonts available for this display type
-// #define FONT_TFT_ESPI_SMALL &FreeMono9pt7b
-// #define FONT_TFT_ESPI_MEDIUM &FreeMono12pt7b
-// #define FONT_TFT_ESPI_LARGE &FreeMono18pt7b
-// #define FONT_TFT_ESPI_XLARGE &FreeMono24pt7b
-// #define FONT_TFT_ESPI_SMALL_SANS &FreeSans9pt7b
-// #define FONT_TFT_ESPI_MEDIUM_SANS &FreeSans12pt7b
-// #define FONT_TFT_ESPI_LARGE_SANS &FreeSans18pt7b
+#define FONT_TFT_ESPI_SMALL &FreeMono9pt7b
+#define FONT_TFT_ESPI_MEDIUM &FreeMono12pt7b
+#define FONT_TFT_ESPI_LARGE &FreeMono18pt7b
+#define FONT_TFT_ESPI_XLARGE &FreeMono24pt7b
+#define FONT_TFT_ESPI_SMALL_SANS &FreeSans9pt7b
+#define FONT_TFT_ESPI_MEDIUM_SANS &FreeSans12pt7b
+#define FONT_TFT_ESPI_LARGE_SANS &FreeSans18pt7b
 #define FONT_TFT_ESPI_XLARGE_SANS &FreeSans24pt7b
-//#define FONT_TFT_ESPI_MEDIUM_BOLD &FreeMonoBold12pt7b
-//#define FONT_TFT_ESPI_SERIF_BOLD_ITALIC &FreeSerifBoldItalic12pt7b
+#define FONT_TFT_ESPI_MEDIUM_BOLD &FreeMonoBold12pt7b
+#define FONT_TFT_ESPI_SERIF_BOLD_ITALIC &FreeSerifBoldItalic12pt7b
 
 // If not overridden by myConfig.h, set the font
 #ifndef TEXT_FONT
 #define TEXT_FONT FONT_TFT_ESPI_MEDIUM_BOLD
-#endif 
+#endif
 
-//#define LOCAL_FONT FONT_TFT
+// #define LOCAL_FONT FONT_TFT
 /// @brief Display class for TFT_eSPI based displays
 class TFT_eSPIDisplay : public DisplayInterface {
 public:
@@ -60,10 +60,8 @@ public:
   /// @param textColour Default 16bit text colour, refer to TFT_eSPI documentation for details
   /// @param backgroundColour Default 16bit background colour, refer to TFT_eSPI documentation for details
   /// @param csPin Pin this display's chip select (CS) pin is connected to to enable manual display switching
-  //TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour, int csPin);
-   TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textFont, uint16_t textColour, uint16_t backgroundColour, int csPin);
-  
-  
+  TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textFont, uint16_t textColour, uint16_t backgroundColour, int csPin);
+
   /// @brief Perform any initial once off setup or configuration here and call only once
   void begin() override;
 
@@ -103,8 +101,8 @@ public:
   /// @param textColour Default 16bit text colour, refer to TFT_eSPI documentation for details
   /// @param backgroundColour Default 16bit background colour, refer to TFT_eSPI documentation for details
   /// @return Pointer to a new TFT_eSPIDisplay instance
-  //static TFT_eSPIDisplay *create(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour);
-  static TFT_eSPIDisplay *create(uint8_t rotation, const GFXfont *textFont, uint16_t textColour, uint16_t backgroundColour);
+  static TFT_eSPIDisplay *create(uint8_t rotation, const GFXfont *textFont, uint16_t textColour,
+                                 uint16_t backgroundColour);
 
   /// @brief Alternate static method to enable the compiler to generate create commands from myDevices.h entries
   /// @param rotation rotation Rotation of the display, 0 - 3, refer to TFT_eSPI documentation for details
@@ -113,10 +111,8 @@ public:
   /// @param backgroundColour Default 16bit background colour, refer to TFT_eSPI documentation for details
   /// @param csPin Pin this display's chip select (CS) pin is connected to to enable manual display switching
   /// @return Pointer to a new TFT_eSPIDisplay instance
-  // static TFT_eSPIDisplay *create(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour,
-  //                                int csPin);
-  static TFT_eSPIDisplay *create(uint8_t rotation, const GFXfont *textFont, uint16_t textColour, uint16_t backgroundColour,
-  int csPin);
+  static TFT_eSPIDisplay *create(uint8_t rotation, const GFXfont *textFont, uint16_t textColour,
+                                 uint16_t backgroundColour, int csPin);
 
   /// @brief Destructor for the TFT_eSPIDisplay
   ~TFT_eSPIDisplay() override;
