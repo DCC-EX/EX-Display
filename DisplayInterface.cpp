@@ -51,11 +51,10 @@ bool DisplayInterface::needsRedraw() { return _needsRedraw; }
  * "`_``~`This row  is underlined, will always ticker, and `#FF0000`this bit of text is red"
  * "`!``_`This row is underlined, and will never ticker"
  * "`#FF0000`This row starts red, then goes `#FFFFFF`white"
- * @param display Derived instance containing the displayFormattedRow() method
  * @param row Row to display
  * @param text Text containing formatting
  */
-void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const char *text) {
+void DisplayInterface::formatRow(int rowId, const char *text) {
   /**
    * @brief stateMachine enum allows us to iterate through each char of text and examine it byte by byte for modifiers.
    */
@@ -114,7 +113,7 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
           //   copyLength = i - textStart;
           //   strncpy(textOnly, text + textStart, copyLength);
           //   textOnly[copyLength] = '\0';
-          //   display->displayFormattedRow(rowId, column, attributes, textOnly, append);
+          //   displayFormattedRow(rowId, column, attributes, textOnly, append);
           //   append = true;
           //   i += 8;
           // }
@@ -145,7 +144,7 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
     strncpy(textOnly, text + textStart, copyLength);
     textOnly[copyLength] = '\0';
   }
-  display->displayFormattedRow(rowId, column, attributes, textOnly, append);
+  displayFormattedRow(rowId, column, attributes, textOnly, append);
   delete[] textOnly;
 }
 

@@ -84,7 +84,7 @@ void TFT_eSPIDisplay::displayScreen(Screen *screen) {
   }
   for (ScreenRow *row = screen->getFirstScreenRow(); row; row = row->getNext()) {
     if (row->needsRedraw() || _needsRedraw) {
-      DisplayInterface::formatRow(this, row->getId(), row->getText());
+      formatRow(row->getId(), row->getText());
     }
   }
   // Now we've redrawn, clear the flag

@@ -99,10 +99,9 @@ public:
   bool needsRedraw();
 
   /// @brief Static method to enable calling back to a derived class with a formatted row
-  /// @param display Derived instance containing the displayFormattedRow() method
   /// @param row Row to display
   /// @param text Text containing formatting
-  static void formatRow(DisplayInterface *display, int row, const char *text);
+  void formatRow(int row, const char *text);
 
   /// @brief Destructor for a DisplayInterface
   virtual ~DisplayInterface() = default;
@@ -145,7 +144,7 @@ protected:
    * @param attributes RowAttributes struct to sanitise
    * @return RowAttributes Sanitised struct according to the precedence rules
    */
-  static RowAttributes _sanitiseAttributes(RowAttributes attributes);
+  RowAttributes _sanitiseAttributes(RowAttributes attributes);
 
   /**
    * @brief Validates the provided char is a valid modifier
@@ -153,7 +152,7 @@ protected:
    * @return true If modifier is valid (_, -, ~, !, #)
    * @return false If modifier is invalid
    */
-  static bool _isModifier(char check);
+  bool _isModifier(char check);
 
   /**
    * @brief Update the provided RowAttributes struct according to the provided modifier
@@ -162,7 +161,7 @@ protected:
    * @param colour If applied modifier is colour, set this 16bit colour, otherwise this is ignored
    * @return RowAttributes The updated struct
    */
-  static RowAttributes _setAttribute(RowAttributes attributes, char modifier, uint16_t colour = 0xFFFF);
+  RowAttributes _setAttribute(RowAttributes attributes, char modifier, uint16_t colour = 0xFFFF);
 
   /**
    * @brief Check if the provided string constant translates to a valid RGB colour code
@@ -170,14 +169,14 @@ protected:
    * @return true If valid - #000000 to #FFFFFF
    * @return false If invalid
    */
-  static bool _isRGB(const char *colour);
+  bool _isRGB(const char *colour);
 
   /**
    * @brief Convert the provided RGB colour code string constant to a uint16_t RGB565 colour
    * @param colour String constant containing the RGB colour code
    * @return uint16_t RGB565 colour code
    */
-  static uint16_t _convertRGBtoRGB565(const char *colour);
+  uint16_t _convertRGBtoRGB565(const char *colour);
 };
 
 #endif // DISPLAYINTERFACE_H

@@ -33,7 +33,7 @@ public:
 
   MOCK_METHOD(void, displayStartupInfo, (const char *version), (override));
 
-  void displayRow(int row, const char *text) { formatRow(this, row, text); }
+  void displayRow(int row, const char *text) { formatRow(row, text); }
 
   MOCK_METHOD(void, displayFormattedRow,
               (uint8_t row, uint8_t column, RowAttributes attributes, const char *text, bool append), (override));
