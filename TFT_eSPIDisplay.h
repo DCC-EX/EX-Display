@@ -60,7 +60,7 @@ public:
   /// @param textColour Default 16bit text colour, refer to TFT_eSPI documentation for details
   /// @param backgroundColour Default 16bit background colour, refer to TFT_eSPI documentation for details
   //TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour);
-  TFT_eSPIDisplay(uint8_t rotation, GFXfont *textfont, uint16_t textColour, uint16_t backgroundColour);
+  TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textfont, uint16_t textColour, uint16_t backgroundColour);
 
   /// @brief Alternate constructor for a TFT_eSPIDisplay instance to specify the CS pin to allow for two displays
   /// @param rotation Rotation of the display, 0 - 3, refer to TFT_eSPI documentation for details
@@ -69,7 +69,7 @@ public:
   /// @param backgroundColour Default 16bit background colour, refer to TFT_eSPI documentation for details
   /// @param csPin Pin this display's chip select (CS) pin is connected to to enable manual display switching
   //TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour, int csPin);
-   TFT_eSPIDisplay(uint8_t rotation, GFXfont *textfont, uint16_t textColour, uint16_t backgroundColour, int csPin);
+   TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textfont, uint16_t textColour, uint16_t backgroundColour, int csPin);
   
   
   /// @brief Perform any initial once off setup or configuration here and call only once
@@ -112,7 +112,7 @@ public:
   /// @param backgroundColour Default 16bit background colour, refer to TFT_eSPI documentation for details
   /// @return Pointer to a new TFT_eSPIDisplay instance
   //static TFT_eSPIDisplay *create(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour);
-  static TFT_eSPIDisplay *create(uint8_t rotation, GFXfont textFont, uint16_t textColour, uint16_t backgroundColour);
+  static TFT_eSPIDisplay *create(uint8_t rotation, const GFXfont *textFont, uint16_t textColour, uint16_t backgroundColour);
 
   /// @brief Alternate static method to enable the compiler to generate create commands from myDevices.h entries
   /// @param rotation rotation Rotation of the display, 0 - 3, refer to TFT_eSPI documentation for details
@@ -123,7 +123,7 @@ public:
   /// @return Pointer to a new TFT_eSPIDisplay instance
   // static TFT_eSPIDisplay *create(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour,
   //                                int csPin);
-  static TFT_eSPIDisplay *create(uint8_t rotation, GFXfont textFont, uint16_t textColour, uint16_t backgroundColour,
+  static TFT_eSPIDisplay *create(uint8_t rotation, const GFXfont *textFont, uint16_t textColour, uint16_t backgroundColour,
   int csPin);
 
   /// @brief Destructor for the TFT_eSPIDisplay
