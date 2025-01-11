@@ -59,13 +59,16 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
   /**
    * @brief stateMachine enum allows us to iterate through each char of text and examine it byte by byte for modifiers.
    */
-  enum stateMachine : byte { FIND_MODSTART, FIND_MODIFIER, BUILD_TEXT };
+  enum stateMachine : byte { FIND_MODSTART, FIND_MODIFIER, FIND_COLOURSTART, FIND_COLOUR, BUILD_TEXT };
 
-  size_t textLength = strlen(text) + 1; /** Length of the provided text, we can't return anything longer than this */
-  int textStart = 0;                    /** Starting index of text we need to return, enables subtracting modifiers */
-  char *returnedText = new char[textLength]; /** Text to return, sized same as text */
-  char check;                                /** Holds each char for checking */
-  stateMachine state = FIND_MODSTART;        /** Start by looking for the first backtick */
+  size_t textLength = strlen(text) + 1;  /** Length of the provided text, we can't return anything longer than this */
+  size_t textStart = 0;                  /** Starting index of text we need to return, enables subtracting modifiers */
+  size_t copyLength = 0;                 /** Size of text to copy into textOnly later */
+  int column = 0;                        /** Default start at column 0, update if colours are embedded */
+  bool append = false;                   /** Default is a new row, update if colours are embedded */
+  char *textOnly = new char[textLength]; /** Text only minus any modifiers, no bigger than provided size */
+  char check;                            /** Holds each char for checking */
+  stateMachine state = FIND_MODSTART;    /** Start by looking for the first backtick */
   RowAttributes attributes = {false, false, false,
                               false, false, 0xFFFF}; /** Set all attributes false to start with, and white text */
 
@@ -73,8 +76,8 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
   for (size_t i = 0; i < textLength; i++) {
     check = text[i];
     switch (state) {
-    case FIND_MODSTART: { // If first backtick, look for a modifier next
-      if (check == '`') {
+    case FIND_MODSTART: { // If first backtick, look for a modifier next, skip if using colour modifier
+      if (check == '`' && text[i + 1] != '#') {
         state = FIND_MODIFIER;
         break;
       }
@@ -86,9 +89,40 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
         state = FIND_MODSTART; // There may be more modifiers so look again
         textStart = i + 1;     // Set the start of our text to the next char after the backtick
       } else {
-        state = BUILD_TEXT;
+        state = FIND_COLOURSTART; // Now we've finished with modifiers, need to look for colours
       }
       break;
+    }
+    case FIND_COLOURSTART: {
+      if (check == '`') {
+        state = FIND_COLOUR;
+        break;
+      }
+    }
+    case FIND_COLOUR: {
+      if (check == '#' && text[i + 7] == '`') { // Look for valid colour size of #FFFFFF
+        char *rgb = new char[7];
+        strncpy(rgb, text + i + 1, 6); // Extract the RGB colour string
+        rgb[6] = '\0';
+        if (_isRGB(rgb)) { // If colour is valid, we need to convert to RGB565
+          uint16_t rgb565 = _convertRGBtoRGB565(rgb);
+          // if (i > textStart) { // If the colour is found after the start of our text...
+          //   // Calculate text length and copy the subtext so far
+          //   // Send that off with:
+          //   // display->displayFormattedRow(rowId, column, attributes, textSoFar, append);
+          //   // Set append flag because everything after that is appended
+          //   copyLength = i - textStart;
+          //   strncpy(textOnly, text + textStart, copyLength);
+          //   textOnly[copyLength] = '\0';
+          //   display->displayFormattedRow(rowId, column, attributes, textOnly, append);
+          //   append = true;
+          //   i += 8;
+          // }
+          textStart = i + 8;
+          attributes = _setAttribute(attributes, check, rgb565); // Set the colour and flag it
+        }
+        delete[] rgb;
+      }
     }
     case BUILD_TEXT: {
       // If we're no longer looking for modifiers, continue to build the returned text
@@ -104,15 +138,15 @@ void DisplayInterface::formatRow(DisplayInterface *display, int rowId, const cha
   attributes = DisplayInterface::_sanitiseAttributes(attributes);
   // If we've set a horizontal line, we don't return text, just null terminator
   if (attributes.isLine) {
-    returnedText[0] = '\0';
+    textOnly[0] = '\0';
   } else {
     // Otherwise copy the appropriate chars to returnedText ready to call our method
-    size_t copyLength = textLength - textStart - 1;
-    strncpy(returnedText, text + textStart, copyLength);
-    returnedText[copyLength] = '\0';
+    copyLength = textLength - textStart - 1;
+    strncpy(textOnly, text + textStart, copyLength);
+    textOnly[copyLength] = '\0';
   }
-  display->displayFormattedRow(rowId, 0, attributes, returnedText, false);
-  delete[] returnedText;
+  display->displayFormattedRow(rowId, column, attributes, textOnly, append);
+  delete[] textOnly;
 }
 
 RowAttributes DisplayInterface::_sanitiseAttributes(RowAttributes attributes) {
@@ -159,4 +193,24 @@ RowAttributes DisplayInterface::_setAttribute(RowAttributes attributes, char mod
     break;
   }
   return attributes;
+}
+
+bool DisplayInterface::_isRGB(const char *colour) {
+  bool isRGB = true;
+  for (size_t i = 0; i < 6; i++) {
+    // Iterate through the char array, valid chars are 0-9 and A-f
+    if ((colour[i] < '0' || colour[i] > '9') && (colour[i] < 'A' && colour[i] > 'F')) {
+      isRGB = false;
+    }
+  }
+  return isRGB;
+}
+
+uint16_t DisplayInterface::_convertRGBtoRGB565(const char *colour) {
+  uint16_t rgb565 = 0;
+  uint8_t r = strtol(colour, NULL, 16) >> 16;
+  uint8_t g = (strtol(colour, NULL, 16) >> 8) & 0xFF;
+  uint8_t b = strtol(colour, NULL, 16) & 0xFF;
+  rgb565 = ((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3);
+  return rgb565;
 }

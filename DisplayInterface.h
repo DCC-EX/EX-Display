@@ -163,6 +163,21 @@ protected:
    * @return RowAttributes The updated struct
    */
   static RowAttributes _setAttribute(RowAttributes attributes, char modifier, uint16_t colour = 0xFFFF);
+
+  /**
+   * @brief Check if the provided string constant translates to a valid RGB colour code
+   * @param colour String constant containing RGB colour codes to check
+   * @return true If valid - #000000 to #FFFFFF
+   * @return false If invalid
+   */
+  static bool _isRGB(const char *colour);
+
+  /**
+   * @brief Convert the provided RGB colour code string constant to a uint16_t RGB565 colour
+   * @param colour String constant containing the RGB colour code
+   * @return uint16_t RGB565 colour code
+   */
+  static uint16_t _convertRGBtoRGB565(const char *colour);
 };
 
 #endif // DISPLAYINTERFACE_H
