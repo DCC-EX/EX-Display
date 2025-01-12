@@ -58,7 +58,7 @@ void DisplayInterface::formatRow(int rowId, const char *text) {
   /**
    * @brief stateMachine enum allows us to iterate through each char of text and examine it byte by byte for modifiers.
    */
-  enum stateMachine : byte { FIND_MODSTART, FIND_MODIFIER, FIND_COLOURSTART, FIND_COLOUR, BUILD_TEXT };
+  enum stateMachine : byte { FIND_MODSTART, FIND_MODIFIER, FIND_COLOURSTART, FIND_COLOUR };
 
   size_t textLength = strlen(text) + 1;  /** Length of the provided text, we can't return anything longer than this */
   size_t textStart = 0;                  /** Starting index of text we need to return, enables subtracting modifiers */
@@ -82,7 +82,8 @@ void DisplayInterface::formatRow(int rowId, const char *text) {
       }
     }
     case FIND_MODIFIER: {
-      if (_isModifier(check) && text[i + 1] == '`') { // If modifier is valid and next char is backtick, set it
+      if (_isModifier(check) && text[i + 1] == '`' &&
+          (i + 1) <= textLength) { // If modifier is valid and next char is backtick, set it
         attributes = _setAttribute(attributes, check);
         i++;
         state = FIND_MODSTART; // There may be more modifiers so look again
@@ -99,38 +100,33 @@ void DisplayInterface::formatRow(int rowId, const char *text) {
       }
     }
     case FIND_COLOUR: {
-      if (check == '#' && text[i + 7] == '`') { // Look for valid colour size of #FFFFFF
+      if (check == '#' && text[i + 7] == '`' && (i + 7) <= textLength) { // Look for valid colour size of #FFFFFF
         char *rgb = new char[7];
         strncpy(rgb, text + i + 1, 6); // Extract the RGB colour string
         rgb[6] = '\0';
         if (_isRGB(rgb)) { // If colour is valid, we need to convert to RGB565
           uint16_t rgb565 = _convertRGBtoRGB565(rgb);
-          // if (i > textStart) { // If the colour is found after the start of our text...
-          //   // Calculate text length and copy the subtext so far
-          //   // Send that off with:
-          //   // display->displayFormattedRow(rowId, column, attributes, textSoFar, append);
-          //   // Set append flag because everything after that is appended
-          //   copyLength = i - textStart;
-          //   strncpy(textOnly, text + textStart, copyLength);
-          //   textOnly[copyLength] = '\0';
-          //   displayFormattedRow(rowId, column, attributes, textOnly, append);
-          //   append = true;
-          //   i += 8;
-          // }
+          if (i > (textStart + 1)) { // If the colour is found after the start of our text...
+            // Calculate text length and copy the subtext so far
+            // Send that off with:
+            // display->displayFormattedRow(rowId, column, attributes, textSoFar, append);
+            // Set append flag because everything after that is appended
+            copyLength = i - textStart - 1;
+            strncpy(textOnly, text + textStart, copyLength);
+            textOnly[copyLength] = '\0';
+            std::cout << "rowId|column|colour|textOnly|append: " << rowId << "|" << column << "|" << attributes.textColour << "|" << textOnly << "|" << append << std::endl;
+            displayFormattedRow(rowId, column, attributes, textOnly, append);
+            append = true;
+            column = 23;
+          }
           textStart = i + 8;
           attributes = _setAttribute(attributes, check, rgb565); // Set the colour and flag it
+          state = FIND_COLOURSTART;
         }
         delete[] rgb;
       }
-    }
-    case BUILD_TEXT: {
-      // If we're no longer looking for modifiers, continue to build the returned text
       break;
     }
-    }
-    // If we've flagged we've finished with modifiers, break out of the loop, no more to do
-    if (state == BUILD_TEXT) {
-      break;
     }
   }
   // Make sure our attributes are sane according to the rules
@@ -144,6 +140,7 @@ void DisplayInterface::formatRow(int rowId, const char *text) {
     strncpy(textOnly, text + textStart, copyLength);
     textOnly[copyLength] = '\0';
   }
+  std::cout << "rowId|column|atts|textOnly|append: " << rowId << "|" << column << "|" << attributes.textColour << "|" << textOnly << "|" << append << std::endl;
   displayFormattedRow(rowId, column, attributes, textOnly, append);
   delete[] textOnly;
 }
@@ -198,7 +195,7 @@ bool DisplayInterface::_isRGB(const char *colour) {
   bool isRGB = true;
   for (size_t i = 0; i < 6; i++) {
     // Iterate through the char array, valid chars are 0-9 and A-f
-    if ((colour[i] < '0' || colour[i] > '9') && (colour[i] < 'A' && colour[i] > 'F')) {
+    if ((colour[i] < '0' || colour[i] > '9') && (colour[i] < 'A' || colour[i] > 'F')) {
       isRGB = false;
     }
   }
