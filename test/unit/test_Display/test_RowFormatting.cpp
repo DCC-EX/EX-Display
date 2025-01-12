@@ -348,7 +348,7 @@ TEST_F(RowFormattingTests, OneColourChange) {
   // It should be called a second time for the colour change - "t" in then should be column 23
   expectedAttributes = {true, false, false, false, false, 0xF800};
   EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(23), ExpectedRowAttributes(expectedAttributes),
-                                            StrEq("then ends red"), Eq(false)))
+                                            StrEq("then ends red"), Eq(true)))
       .Times(1);
 
   // Send an initial and second colour modifier

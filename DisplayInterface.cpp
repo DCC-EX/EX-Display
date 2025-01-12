@@ -16,6 +16,7 @@
  */
 
 #include "DisplayInterface.h"
+#include <iomanip>
 
 void DisplayInterface::setNext(DisplayInterface *display) { _next = display; }
 
@@ -63,7 +64,8 @@ void DisplayInterface::formatRow(int rowId, const char *text) {
   size_t textLength = strlen(text) + 1;  /** Length of the provided text, we can't return anything longer than this */
   size_t textStart = 0;                  /** Starting index of text we need to return, enables subtracting modifiers */
   size_t copyLength = 0;                 /** Size of text to copy into textOnly later */
-  int column = 0;                        /** Default start at column 0, update if colours are embedded */
+  int column = 0;                        /** Default start at column 0, needs to be updated if appending */
+  int newColumn = 0;                     /** Column tracker incremented when not dealing with modifiers/colours */
   bool append = false;                   /** Default is a new row, update if colours are embedded */
   char *textOnly = new char[textLength]; /** Text only minus any modifiers, no bigger than provided size */
   char check;                            /** Holds each char for checking */
@@ -114,10 +116,11 @@ void DisplayInterface::formatRow(int rowId, const char *text) {
             copyLength = i - textStart - 1;
             strncpy(textOnly, text + textStart, copyLength);
             textOnly[copyLength] = '\0';
-            std::cout << "rowId|column|colour|textOnly|append: " << rowId << "|" << column << "|" << attributes.textColour << "|" << textOnly << "|" << append << std::endl;
+            if (append) {
+              column = newColumn;
+            }
             displayFormattedRow(rowId, column, attributes, textOnly, append);
             append = true;
-            column = 23;
           }
           textStart = i + 8;
           attributes = _setAttribute(attributes, check, rgb565); // Set the colour and flag it
@@ -140,7 +143,9 @@ void DisplayInterface::formatRow(int rowId, const char *text) {
     strncpy(textOnly, text + textStart, copyLength);
     textOnly[copyLength] = '\0';
   }
-  std::cout << "rowId|column|atts|textOnly|append: " << rowId << "|" << column << "|" << attributes.textColour << "|" << textOnly << "|" << append << std::endl;
+  if (append) {
+    column = newColumn;
+  }
   displayFormattedRow(rowId, column, attributes, textOnly, append);
   delete[] textOnly;
 }
