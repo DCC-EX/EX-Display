@@ -12,7 +12,7 @@ var searchData=
   ['display_20and_20input_20types_9',['Adding Display and Input Types',['../index.html#adding_types',1,'']]],
   ['display_20types_10',['Supported Display Types',['../md__2home_2runner_2work_2EX-Display_2EX-Display_2README.html#autotoc_md2',1,'']]],
   ['display_20vs_20screen_11',['Terminology - Display vs. Screen',['../md__2home_2runner_2work_2EX-Display_2EX-Display_2README.html#autotoc_md1',1,'']]],
-  ['displayformattedrow_12',['displayformattedrow',['../classDisplayInterface.html#a8e1258fa3f32baf1587b80354c8afdb3',1,'DisplayInterface::displayFormattedRow()'],['../classTFT__eSPIDisplay.html#a499be01f1e9668a576d3da61e4132950',1,'TFT_eSPIDisplay::displayFormattedRow()']]],
+  ['displayformattedrow_12',['displayformattedrow',['../classDisplayInterface.html#a8e1258fa3f32baf1587b80354c8afdb3',1,'DisplayInterface::displayFormattedRow()'],['../classTFT__eSPIDisplay.html#af54701b2ce8e0137aa4989c944d2c3a5',1,'TFT_eSPIDisplay::displayFormattedRow()']]],
   ['displayinterface_13',['DisplayInterface',['../classDisplayInterface.html',1,'']]],
   ['displayinterface_2ecpp_14',['DisplayInterface.cpp',['../DisplayInterface_8cpp.html',1,'']]],
   ['displayinterface_2eh_15',['DisplayInterface.h',['../DisplayInterface_8h.html',1,'']]],

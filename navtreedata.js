@@ -78,7 +78,7 @@ var NAVTREEINDEX =
 [
 "Arduino_8h.html",
 "classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9",
-"classTFT__eSPIDisplay.html#ab3084ef6b927bc9dbc0991088dda2c6c",
+"classTFT__eSPIDisplay.html#ab7db81e0c696ad849833528a4e1212df",
 "test__Logger_8cpp.html#a11624c6e67ff13100bf793695c4384ab"
 ];
 

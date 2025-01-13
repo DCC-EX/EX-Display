@@ -1,11 +1,13 @@
 <map id="DisplayInterface::_convertRGBtoRGB565" name="DisplayInterface::_convertRGBtoRGB565">
-<area shape="rect" id="Node000001" title="Convert the provided RGB colour code string constant to a uint16_t RGB565 colour." alt="" coords="771,37,941,77"/>
-<area shape="rect" id="Node000002" href="$classDisplayInterface.html#a1bc192c6854bae554c9aa09cd7122cdc" title="Static method to enable calling back to a derived class with a formatted row." alt="" coords="513,45,723,70"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="757,60,723,60,723,55,757,55"/>
+<area shape="rect" id="Node000001" title="Convert the provided RGB colour code string constant to a uint16_t RGB565 colour." alt="" coords="771,69,941,109"/>
+<area shape="rect" id="Node000002" href="$classDisplayInterface.html#a1bc192c6854bae554c9aa09cd7122cdc" title="Static method to enable calling back to a derived class with a formatted row." alt="" coords="513,77,723,102"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="757,92,723,92,723,87,757,87"/>
 <area shape="rect" id="Node000003" href="$classTFT__eSPITouch.html#ad71507c11a328924064e703daef05ada" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="215,5,465,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="499,46,465,42,466,37,500,41"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="548,76,427,48,428,43,549,71"/>
 <area shape="rect" id="Node000005" href="$classMockColourDisplay.html#a7a7cc60ede2112bade21499d1e7ce808" title=" " alt="" coords="263,69,417,109"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="500,74,418,83,417,78,499,68"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="499,92,417,92,417,87,499,87"/>
+<area shape="rect" id="Node000006" href="$classTFT__eSPIDisplay.html#ac4c657d18bcd4dae193f5fd906411dcf" title="Display the specified Screen on this display." alt="" coords="249,133,431,173"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="549,108,428,136,427,131,548,103"/>
 <area shape="rect" id="Node000004" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,13,167,38"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="201,28,167,28,167,23,201,23"/>
 </map>

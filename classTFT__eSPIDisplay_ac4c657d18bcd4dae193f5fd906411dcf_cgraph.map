@@ -1,0 +1,21 @@
+<map id="TFT_eSPIDisplay::displayScreen" name="TFT_eSPIDisplay::displayScreen">
+<area shape="rect" id="Node000001" title="Display the specified Screen on this display." alt="" coords="5,165,188,205"/>
+<area shape="rect" id="Node000002" href="$classTFT__eSPIDisplay.html#af7bbb772e597d3431656ccd32d73bdf5" title="Clear the entire screen." alt="" coords="236,123,448,149"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,164,264,149,265,154,189,170"/>
+<area shape="rect" id="Node000003" href="$classDisplayInterface.html#a1bc192c6854bae554c9aa09cd7122cdc" title="Static method to enable calling back to a derived class with a formatted row." alt="" coords="237,173,447,198"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,183,224,183,224,188,188,188"/>
+<area shape="rect" id="Node000010" href="$classScreen.html#a0bf66c3d7a47302ecb77113f3eacc422" title="Get the first ScreenRow instance in the list." alt="" coords="245,222,439,247"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="189,201,265,217,264,222,187,206"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#acde7922833a368ce3233fe4d721f838a" title="Convert the provided RGB colour code string constant to a uint16_t RGB565 colour." alt="" coords="503,5,673,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="426,170,446,158,458,146,464,134,470,109,476,82,483,69,494,55,500,51,503,55,498,59,487,72,481,84,475,110,469,136,462,149,450,162,429,175"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#ad8da5e63e3775f8f02b04636a9482d97" title="Validates the provided char is a valid modifier." alt="" coords="519,69,657,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="414,170,447,158,461,149,470,139,495,119,507,113,510,117,497,124,474,143,464,153,449,162,416,175"/>
+<area shape="rect" id="Node000006" href="$classDisplayInterface.html#ac5cc108ca1c1410a8321078b3868ed78" title="Check if the provided string constant translates to a valid RGB colour code." alt="" coords="519,133,657,173"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="440,170,505,161,506,167,440,175"/>
+<area shape="rect" id="Node000007" href="$classDisplayInterface.html#a96f1a22d4566a22aefd3b652808d9441" title="Sanitise the provided struct of RowAttributes." alt="" coords="516,197,660,237"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="440,195,502,204,502,209,440,201"/>
+<area shape="rect" id="Node000008" href="$classDisplayInterface.html#a652c6ce102531b9dd02fb960946987c8" title="Update the provided RowAttributes struct according to the provided modifier." alt="" coords="519,261,657,301"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="420,196,449,207,464,217,474,227,484,237,497,247,510,253,507,258,495,252,480,241,470,231,461,221,447,212,418,201"/>
+<area shape="rect" id="Node000009" href="$classDisplayInterface.html#a8e1258fa3f32baf1587b80354c8afdb3" title="Display a row using formatting modifiers." alt="" coords="496,325,680,365"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="431,196,450,207,462,220,469,233,475,260,481,286,487,299,498,311,503,316,500,320,494,315,483,302,476,288,470,261,464,235,458,223,446,211,428,200"/>
+</map>

@@ -243,11 +243,11 @@ var NAVTREEINDEX1 =
 "classStream.html#af919af747fb1d8a14826e41edfe184a2":[3,0,40,5],
 "classTFT__eSPIDisplay.html":[3,0,41],
 "classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda":[3,0,41,5],
-"classTFT__eSPIDisplay.html#a20c36a1e3b35fdad5a37e995a32a15fe":[3,0,41,8],
-"classTFT__eSPIDisplay.html#a499be01f1e9668a576d3da61e4132950":[3,0,41,9],
+"classTFT__eSPIDisplay.html#a4277492e5af7f907f49559e731f0ade6":[3,0,41,7],
 "classTFT__eSPIDisplay.html#a575e4f6003d301fbb635e40098970f6c":[3,0,41,15],
 "classTFT__eSPIDisplay.html#a765c041043734c08096ca3250c31038a":[3,0,41,14],
 "classTFT__eSPIDisplay.html#aa1f86437ebb95745bdf69be9142ef26b":[3,0,41,11],
 "classTFT__eSPIDisplay.html#aa2f66935506d5bb25d3301066548c461":[3,0,41,2],
-"classTFT__eSPIDisplay.html#aa5d66e170aeff54471a8732cf9f052ea":[3,0,41,0]
+"classTFT__eSPIDisplay.html#aa5d66e170aeff54471a8732cf9f052ea":[3,0,41,0],
+"classTFT__eSPIDisplay.html#ab3084ef6b927bc9dbc0991088dda2c6c":[3,0,41,12]
 };

@@ -1,14 +1,14 @@
 var NAVTREEINDEX2 =
 {
-"classTFT__eSPIDisplay.html#ab3084ef6b927bc9dbc0991088dda2c6c":[3,0,41,12],
 "classTFT__eSPIDisplay.html#ab7db81e0c696ad849833528a4e1212df":[3,0,41,4],
 "classTFT__eSPIDisplay.html#ac4c657d18bcd4dae193f5fd906411dcf":[3,0,41,10],
 "classTFT__eSPIDisplay.html#ad4f7da2ea80e0fd0206c84f4a787bfb2":[3,0,41,13],
+"classTFT__eSPIDisplay.html#ae251a98d7e081a585cc30258e20492dc":[3,0,41,8],
 "classTFT__eSPIDisplay.html#ae96e0e76775ddd4dbf2c657d78981fb2":[3,0,41,1],
 "classTFT__eSPIDisplay.html#af07739c58ac25c421b8d2edc96d8104e":[3,0,41,16],
+"classTFT__eSPIDisplay.html#af54701b2ce8e0137aa4989c944d2c3a5":[3,0,41,9],
 "classTFT__eSPIDisplay.html#af7bbb772e597d3431656ccd32d73bdf5":[3,0,41,6],
 "classTFT__eSPIDisplay.html#afcbf3673396a684fd540bc75214719a3":[3,0,41,3],
-"classTFT__eSPIDisplay.html#afd5659b6ae88657cad414b27dc9856a5":[3,0,41,7],
 "classTFT__eSPITouch.html":[3,0,42],
 "classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779":[3,0,42,4],
 "classTFT__eSPITouch.html#a30285f08f51221839e884ccdd9679105":[3,0,42,1],
