@@ -40,7 +40,7 @@
 
 // If not overridden by myConfig.h, set the font
 #ifndef TEXT_FONT
-#define TEXT_FONT FONT_TFT_ESPI_MEDIUM_BOLD
+#define TEXT_FONT FONT_TFT_ESPI_MEDIUM
 #endif
 
 // #define LOCAL_FONT FONT_TFT
