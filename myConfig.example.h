@@ -51,3 +51,11 @@
  * @brief Option to force a touch screen to enter calibration mode even if the current calibration is valid
  */
 // #define FORCE_CALIBRATION
+
+/**
+ * @brief Option provide an alternative option from the GFXFF FreeFonts that is not yet defined in the display type header file
+ * e.g. set the text font to Free Sans Bold Oblique 18pt high. - uncomment the line below
+ * which will replace the default definition or replace it with another.
+ */
+
+// #define TEXT_FONT &FreeSansBoldOblique18pt7b
