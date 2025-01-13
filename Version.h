@@ -2,8 +2,11 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.22"
+#define VERSION "0.0.23"
 
+// 0.0.23 includes:
+//  - Enable multiple fonts where multiple displays are defined - 1 font per display
+//  - Enable screen rotation on different displays with library limitation warnings
 // 0.0.22 includes:
 //  - Enable formatting rows with modifiers for underlining, horizontal lines, and text colours
 // 0.0.21 includes:
