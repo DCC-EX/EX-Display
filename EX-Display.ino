@@ -173,6 +173,84 @@
  *
  * Each input class must implement the virtual methods of the InputInterface class, and the check() method will callback
  * to the Controller class to provide the appropriate InputAction type that the user has selected.
+ *
+ * @section row_formatting Row Formatting
+ *
+ * It is possible to enable some limited formatting of the rows by using some modifiers and colour codes.
+ *
+ * The modifiers and colours can be combined in SCREEN() commands, provided that the modifiers are defined first, and
+ * then the colour. Colours can be embedded within the text for the row to enable multiple colours on the same row:
+ *
+ * @code {.cpp}
+ * SCREEN(0, 0, "`_``#0000FF`Screen 0 row 0 will be blue and underlined")
+ * SCREEN(0, 1, "`-`") // Screen 0 row 1 will be a horizontal line in the default colour
+ * SCREEN(0, 2, "Start with default colour, then show `#FF0000`red text")
+ * SCREEN(0, 3, "`#00FF00`Starts green, goes `#0000FF` blue, then finishes `#FFFF00`yellow")
+ * @endcode
+ *
+ * @subsection colour_modifier_reference Colour and Row Modifier Reference
+ *
+ * Colours used to modify the colour of text displayed on rows is in the standard 24bit web RGB format #FFFFFF. However,
+ * most Arduino libraries use 16bit RGB565 colours instead.
+ *
+ * To make things easier for users to use these colours, a number of defines can be added to their myAutomation.h in
+ * EX-CommandStation which can be concatenated in the SCREEN() commands. Note that at some point when EX-Display is
+ * released, these colours should be made available in EX-CommandStation without needing to manually add them to
+ * myAutomation.h.
+ *
+ * This is the list of colours for reference, including the resultant 16bit RGB565 hex colour code:
+ *
+ * @code {.cpp}
+ * #define EXD_BLACK "`#000000`"       // 0x0000
+ * #define EXD_NAVY "`#000080`"        // 0x000F
+ * #define EXD_DARKGREEN "`#007800`"   // 0x03E0
+ * #define EXD_DARKCYAN "`#007878`"    // 0x03EF
+ * #define EXD_MAROON "`#780000`"      // 0x7800
+ * #define EXD_PURPLE "`#780080`"      // 0x780F
+ * #define EXD_OLIVE "`#787800`"       // 0x7BE0
+ * #define EXD_LIGHTGREY "`#D6D6D6`"   // 0xD69A
+ * #define EXD_DARKGREY "`#787878`"    // 0x7BEF
+ * #define EXD_BLUE "`#0000FF`"        // 0x001F
+ * #define EXD_GREEN "`#00FF00`"       // 0x07E0
+ * #define EXD_CYAN "`#00FFFF`"        // 0x07FF
+ * #define EXD_RED "`#FF0000`"         // 0xF800
+ * #define EXD_MAGENTA "`#FF00FF`"     // 0xF81F
+ * #define EXD_YELLOW "`#FFFF00`"      // 0xFFE0
+ * #define EXD_WHITE "`#FFFFFF`"       // 0xFFFF
+ * #define EXD_ORANGE "`#FFA500`"      // 0xFDA0
+ * #define EXD_GREENYELLOW "`#B7FF00`" // 0xB7E0
+ * #define EXD_PINK "`#FFC0CB`"        // 0xFE19
+ * #define EXD_BROWN "`#996600`"       // 0x9A60
+ * #define EXD_GOLD "`#FFD700`"        // 0xFEA0
+ * #define EXD_SILVER "`#C6C6C6`"      // 0xC618
+ * #define EXD_SKYBLUE "`#87CEEB`"     // 0x867D
+ * #define EXD_VIOLET "`#9400D3`"      // 0x915C
+ * @endcode
+ *
+ * Further to this, the row modifiers can also be added to myAutomation.h to make the use of these easier also, and
+ * again should be added to EX-CommandStation in the future (note that while always and never ticker have modifiers,
+ * these are not currently implemented):
+ *
+ * @code {.cpp}
+ * #define UNDERLINE "`_`"  // Underlines the associated row
+ * #define LINE "`-`"       // Draws a horizontal line, no text is displayed on the row
+ * #define TICKER "`~`"     // Causes the associated row to always ticker (horizontal scrolling)
+ * #define NOTICKER "`!`"   // Prevents the associated row from running as a ticker
+ * @endcode
+ *
+ * @subsection using_concatenation Using Compiler Concatenation
+ *
+ * Rather than having to remember and use the correct modifiers and colour codes, it is possible to use the defines
+ * shared above when used in myAutomation.h (or when added to EX-CommandStation) in a way that the C++ compiler will
+ * concatenate these with the text in the SCREEN() command:
+ *
+ * @code {.cpp}
+ * SCREEN(0, 0, UNDERLINE EXD_BLUE "Screen 0 row 0 will be blue and underlined")
+ * SCREEN(0, 1, LINE) // Screen 0 row 1 will be a horizontal line in the default colour
+ * SCREEN(0, 2, "Start with default colour, then show " EXD_RED "red text")
+ * SCREEN(0, 3, EXD_GREEN "Starts green, goes " EXD_BLUE " blue, then finishes " EXD_YELLOW "yellow")
+ * @endcode
+ *
  */
 
 #ifndef PIO_UNIT_TESTING

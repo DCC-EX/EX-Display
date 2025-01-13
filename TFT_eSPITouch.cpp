@@ -154,10 +154,10 @@ bool TFT_eSPITouch::_setupSPIFFS() {
 
 void TFT_eSPITouch::_displayCalibrationError(TFT_eSPIDisplay *display) {
   display->clearScreen();
-  display->displayRow(0, "ERROR!");
-  display->displayRow(1, "TFT_eSPI touch input calibration failed");
-  display->displayRow(2, "Touch input will be unreliable");
-  display->displayRow(3, "Operation resumes in 5 seconds");
+  display->formatRow(0, "`_``#FF0000`ERROR!");
+  display->formatRow(1, "TFT_eSPI touch input calibration failed");
+  display->formatRow(2, "Touch input will be unreliable");
+  display->formatRow(3, "Operation resumes in 5 seconds");
   delay(5000);
   display->clearScreen();
 }
