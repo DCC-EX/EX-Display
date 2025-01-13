@@ -29,9 +29,12 @@ public:
 
   MOCK_METHOD(void, clearScreen, (), (override));
 
-  MOCK_METHOD(void, displayScreen, (Screen *screen), (override));
+  MOCK_METHOD(void, displayScreen, (Screen * screen), (override));
 
   MOCK_METHOD(void, displayStartupInfo, (const char *version), (override));
+
+  MOCK_METHOD(void, displayFormattedRow,
+              (uint8_t row, uint8_t column, RowAttributes attributes, const char *text, bool append), (override));
 
   static MockDisplay *create() {
     MockDisplay *newDisplay = new MockDisplay();

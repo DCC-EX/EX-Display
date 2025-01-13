@@ -2,8 +2,10 @@
 #define VERSION_H
 
 // Numeric version here: major.minor.patch
-#define VERSION "0.0.21"
+#define VERSION "0.0.22"
 
+// 0.0.22 includes:
+//  - Enable formatting rows with modifiers for underlining, horizontal lines, and text colours
 // 0.0.21 includes:
 //  - Refactor DisplayInterface to accept an entire Screen to display to let the derived classes control the entire
 //    physical display process

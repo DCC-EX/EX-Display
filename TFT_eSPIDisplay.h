@@ -69,13 +69,6 @@ public:
   /// @param screen Pointer to the Screen to display
   void displayScreen(Screen *screen) override;
 
-  /// @brief Display a row of text on the display
-  /// @param row Row number as specified in the SCREEN() command (not pixels)
-  /// @param text Text to be displayed on this row
-  /// @param underlined (Optional) Flag to underline this row - default false
-  /// @param column (Optional) Column to start displaying the text, column being width of a character (not pixels)
-  void displayRow(uint8_t row, const char *text, bool underlined = false, uint8_t column = 0);
-
   /// @brief Clear the specified row
   /// @param row Row number as specified in the SCREEN() command (not pixels)
   void clearRow(uint8_t row);
@@ -83,6 +76,15 @@ public:
   /// @brief Display the startup screen with software version
   /// @param version EX-Display version
   void displayStartupInfo(const char *version) override;
+
+  /// @brief Display a row using formatting modifiers
+  /// @param row Row ID to display
+  /// @param column Column at which to display text (not pixels)
+  /// @param attributes RowAttributes structure containing modifier details
+  /// @param text Text to display
+  /// @param append Flag if this is appending to an existing row and should not clear the row first
+  virtual void displayFormattedRow(uint8_t row, uint8_t column, RowAttributes attributes, const char *text,
+                                   bool append) override;
 
   /// @brief Get the TFT_eSPI instance created by this instance - needed for the touch interface
   /// @return Pointer to the TFT_eSPI instance

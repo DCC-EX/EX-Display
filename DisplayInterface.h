@@ -1,4 +1,5 @@
 /*
+ *  © 2025 Peter Cole
  *  © 2024 Peter Cole
  *
  *  This is free software: you can redistribute it and/or modify
@@ -21,6 +22,16 @@
 #include "Logger.h"
 #include "Screen.h"
 
+/// @brief Structure for row attributes
+struct RowAttributes {
+  bool colourSet;      /** This row has had a custom colour set, use textColour, set with '#' */
+  bool isUnderlined;   /** This row needs to be underlined, set with '_' */
+  bool isLine;         /** This row is a horizontal line, set with '-' */
+  bool alwaysTicker;   /** This row should always scroll horizontally, set with '~' */
+  bool neverTicker;    /** This row should never scroll horizontally, set with '!' */
+  uint16_t textColour; /** 16bit colour for text */
+};
+
 /// @brief Class to abstract away all physical display implementation to enable multiple display types
 class DisplayInterface {
 public:
@@ -38,48 +49,59 @@ public:
   /// @param version EX-Display version
   virtual void displayStartupInfo(const char *version) = 0;
 
+  /// @brief Display a row using formatting modifiers
+  /// @param row Row ID to display
+  /// @param column Column at which to display text (not pixels)
+  /// @param attributes RowAttributes structure containing modifier details
+  /// @param text Text to display
+  /// @param append Flag if this is appending to an existing row and should not clear the row first
+  virtual void displayFormattedRow(uint8_t row, uint8_t column, RowAttributes attributes, const char *text,
+                                   bool append) = 0;
+
   /// @brief Set the next DisplayInterface derived instance in the list
   /// @param display Pointer to the next instance
-  void setNext(DisplayInterface *display) { _next = display; }
+  void setNext(DisplayInterface *display);
 
   /// @brief Get the next DisplayInterface derived instance in the list
   /// @return Pointer to the next instance
-  DisplayInterface *getNext() { return _next; }
+  DisplayInterface *getNext();
 
   /// @brief Set the logger instance to use for diagnostic logging
   /// @param logger Pointer to the Logger instance to use
-  void setLogger(Logger *logger) { _logger = logger; }
+  void setLogger(Logger *logger);
 
   /// @brief Set the ID for this display instance
   /// @param displayId ID of this display
-  void setId(uint8_t displayId) { _displayId = displayId; }
+  void setId(uint8_t displayId);
 
   /// @brief Get the ID of this display instance
   /// @return ID of this display
-  uint8_t getId() { return _displayId; }
+  uint8_t getId();
 
   /// @brief Set the Screen ID this display is currently displaying
   /// @param screenId Screen ID
-  void setScreenId(int screenId) {
-    _needsRedraw = true;
-    _screenId = screenId;
-  }
+  void setScreenId(int screenId);
 
   /// @brief Get the Screen ID this display is currently displaing
   /// @return Screen ID
-  int getScreenId() { return _screenId; }
+  int getScreenId();
 
   /// @brief Get the defined CS pin for this display to see if it needs manual SPI switching
   /// @return Pin number of the SPI CS pin for this display (default -1 for no switching)
-  int getCSPin() { return _csPin; }
+  int getCSPin();
 
   /// @brief Set the flag for whether this display needs redrawing or not - individual row updates are not affected
   /// @param redraw true if entire redraw, otherwise false
-  void setNeedsRedraw(bool redraw) { _needsRedraw = redraw; }
+  void setNeedsRedraw(bool redraw);
 
   /// @brief Test if this display needs an entire redraw
   /// @return true|false
-  bool needsRedraw() { return _needsRedraw; }
+  bool needsRedraw();
+
+  /// @brief Static method to enable calling back to a derived class with a formatted row
+  /// @param row Row to display
+  /// @param text Text containing formatting
+  void formatRow(int row, const char *text);
 
   /// @brief Destructor for a DisplayInterface
   virtual ~DisplayInterface() = default;
@@ -114,6 +136,47 @@ protected:
   int _csPin = -1;
   /// @brief Flag that this display needs redrawing - needed for switching between screens
   bool _needsRedraw = true;
+
+  /**
+   * @brief Sanitise the provided struct of RowAttributes
+   * @details If isLine is set, all other attributes except colour are overridden to false. If both alwaysTicker and
+   * neverTicker are set, both will be set to false as they conflict.
+   * @param attributes RowAttributes struct to sanitise
+   * @return RowAttributes Sanitised struct according to the precedence rules
+   */
+  RowAttributes _sanitiseAttributes(RowAttributes attributes);
+
+  /**
+   * @brief Validates the provided char is a valid modifier
+   * @param check Contains the char to be validated
+   * @return true If modifier is valid (_, -, ~, !, #)
+   * @return false If modifier is invalid
+   */
+  bool _isModifier(char check);
+
+  /**
+   * @brief Update the provided RowAttributes struct according to the provided modifier
+   * @param attributes RowAttribute to be updated
+   * @param modifier Modifier to apply
+   * @param colour If applied modifier is colour, set this 16bit colour, otherwise this is ignored
+   * @return RowAttributes The updated struct
+   */
+  RowAttributes _setAttribute(RowAttributes attributes, char modifier, uint16_t colour = 0xFFFF);
+
+  /**
+   * @brief Check if the provided string constant translates to a valid RGB colour code
+   * @param colour String constant containing RGB colour codes to check
+   * @return true If valid - #000000 to #FFFFFF
+   * @return false If invalid
+   */
+  bool _isRGB(const char *colour);
+
+  /**
+   * @brief Convert the provided RGB colour code string constant to a uint16_t RGB565 colour
+   * @param colour String constant containing the RGB colour code
+   * @return uint16_t RGB565 colour code
+   */
+  uint16_t _convertRGBtoRGB565(const char *colour);
 };
 
 #endif // DISPLAYINTERFACE_H
