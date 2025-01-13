@@ -1,12 +1,14 @@
 var NAVTREEINDEX2 =
 {
+"classTFT__eSPIDisplay.html#ab3084ef6b927bc9dbc0991088dda2c6c":[3,0,41,12],
+"classTFT__eSPIDisplay.html#ab7db81e0c696ad849833528a4e1212df":[3,0,41,4],
 "classTFT__eSPIDisplay.html#ac4c657d18bcd4dae193f5fd906411dcf":[3,0,41,10],
 "classTFT__eSPIDisplay.html#ad4f7da2ea80e0fd0206c84f4a787bfb2":[3,0,41,13],
-"classTFT__eSPIDisplay.html#aefb5e78182e866b2bf6c71d890b7955e":[3,0,41,1],
+"classTFT__eSPIDisplay.html#ae96e0e76775ddd4dbf2c657d78981fb2":[3,0,41,1],
 "classTFT__eSPIDisplay.html#af07739c58ac25c421b8d2edc96d8104e":[3,0,41,16],
-"classTFT__eSPIDisplay.html#af54701b2ce8e0137aa4989c944d2c3a5":[3,0,41,9],
 "classTFT__eSPIDisplay.html#af7bbb772e597d3431656ccd32d73bdf5":[3,0,41,6],
 "classTFT__eSPIDisplay.html#afcbf3673396a684fd540bc75214719a3":[3,0,41,3],
+"classTFT__eSPIDisplay.html#afd5659b6ae88657cad414b27dc9856a5":[3,0,41,7],
 "classTFT__eSPITouch.html":[3,0,42],
 "classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779":[3,0,42,4],
 "classTFT__eSPITouch.html#a30285f08f51221839e884ccdd9679105":[3,0,42,1],
@@ -71,15 +73,15 @@ var NAVTREEINDEX2 =
 "dir_d0eb96cb207de86fc6c3fe55463d4c4e.html":[4,0,0,0,2],
 "dir_d18ecea1db5c8a0cb2a2f078b0a61021.html":[4,0,0,2,1],
 "files.html":[4,0],
-"functions.html":[3,3,0],
 "functions.html":[3,3,0,0],
+"functions.html":[3,3,0],
 "functions_a.html":[3,3,0,1],
 "functions_b.html":[3,3,0,2],
 "functions_c.html":[3,3,0,3],
 "functions_d.html":[3,3,0,4],
 "functions_f.html":[3,3,0,5],
-"functions_func.html":[3,3,1],
 "functions_func.html":[3,3,1,0],
+"functions_func.html":[3,3,1],
 "functions_func_a.html":[3,3,1,1],
 "functions_func_b.html":[3,3,1,2],
 "functions_func_c.html":[3,3,1,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "test__InputManager_8cpp.html":[4,0,0,2,6,0],
 "test__InputManager_8cpp.html#a27bbde065b428d0be138c73ae6cc27a4":[4,0,0,2,6,0,1],
 "test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47":[4,0,0,2,6,0,2],
-"test__Logger_8cpp.html":[4,0,0,2,4,1],
-"test__Logger_8cpp.html#a11624c6e67ff13100bf793695c4384ab":[4,0,0,2,4,1,2],
-"test__Logger_8cpp.html#a58a7070d166028c9379780b8f448dfd9":[4,0,0,2,4,1,4]
+"test__Logger_8cpp.html":[4,0,0,2,4,1]
 };

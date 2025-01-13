@@ -29,7 +29,7 @@ var searchData=
   ['text_26',['Underlined Text',['../md__2home_2runner_2work_2EX-Display_2EX-Display_2README.html#autotoc_md9',1,'']]],
   ['text_5ffont_27',['TEXT_FONT',['../TFT__eSPIDisplay_8h.html#a38aa45dc2dc96ef9f5368c4c5b968b0e',1,'TFT_eSPIDisplay.h']]],
   ['textcolour_28',['textColour',['../structRowAttributes.html#a884f1d23ff82aec77a96f973d25a10e0',1,'RowAttributes']]],
-  ['tft_5fespidisplay_29',['tft_espidisplay',['../classTFT__eSPIDisplay.html',1,'TFT_eSPIDisplay'],['../classTFT__eSPIDisplay.html#a915ccfb0de32650c3f5cb59b6ec298e3',1,'TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour)'],['../classTFT__eSPIDisplay.html#aefb5e78182e866b2bf6c71d890b7955e',1,'TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, uint8_t textSize, uint16_t textColour, uint16_t backgroundColour, int csPin)']]],
+  ['tft_5fespidisplay_29',['tft_espidisplay',['../classTFT__eSPIDisplay.html',1,'TFT_eSPIDisplay'],['../classTFT__eSPIDisplay.html#aa5d66e170aeff54471a8732cf9f052ea',1,'TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textFont, uint16_t textColour, uint16_t backgroundColour)'],['../classTFT__eSPIDisplay.html#ae96e0e76775ddd4dbf2c657d78981fb2',1,'TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textFont, uint16_t textColour, uint16_t backgroundColour, int csPin)']]],
   ['tft_5fespidisplay_2ecpp_30',['TFT_eSPIDisplay.cpp',['../TFT__eSPIDisplay_8cpp.html',1,'']]],
   ['tft_5fespidisplay_2eh_31',['TFT_eSPIDisplay.h',['../TFT__eSPIDisplay_8h.html',1,'']]],
   ['tft_5fespitouch_32',['tft_espitouch',['../classTFT__eSPITouch.html',1,'TFT_eSPITouch'],['../classTFT__eSPITouch.html#a9f736f89d56612481ce9bf5655ad0f15',1,'TFT_eSPITouch::TFT_eSPITouch()']]],

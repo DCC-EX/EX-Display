@@ -77,9 +77,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Arduino_8h.html",
-"classDisplayInterface.html#a4d4c3c663ad0e26cfb00e3a9d6dd687b",
-"classTFT__eSPIDisplay.html#ac4c657d18bcd4dae193f5fd906411dcf",
-"test__Logger_8cpp.html#a769fc87f0bec48821ab630231d6ba3fc"
+"classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9",
+"classTFT__eSPIDisplay.html#ab3084ef6b927bc9dbc0991088dda2c6c",
+"test__Logger_8cpp.html#a11624c6e67ff13100bf793695c4384ab"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

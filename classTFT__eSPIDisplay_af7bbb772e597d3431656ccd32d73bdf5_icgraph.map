@@ -1,10 +1,8 @@
 <map id="TFT_eSPIDisplay::clearScreen" name="TFT_eSPIDisplay::clearScreen">
-<area shape="rect" id="Node000001" title="Clear the entire screen." alt="" coords="513,70,725,95"/>
+<area shape="rect" id="Node000001" title="Clear the entire screen." alt="" coords="513,42,725,67"/>
 <area shape="rect" id="Node000002" href="$classTFT__eSPITouch.html#ad71507c11a328924064e703daef05ada" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="215,5,465,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="543,70,437,48,438,43,544,65"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="499,45,465,41,466,36,500,39"/>
 <area shape="rect" id="Node000003" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,42,167,67"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="500,79,167,62,167,56,500,74"/>
-<area shape="rect" id="Node000004" href="$classTFT__eSPIDisplay.html#ac4c657d18bcd4dae193f5fd906411dcf" title="Display the specified Screen on this display." alt="" coords="249,120,431,160"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="544,101,432,124,431,119,543,96"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="500,60,465,60,215,60,167,59,167,54,215,55,465,55,500,54"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="202,44,167,48,167,43,201,39"/>
 </map>
