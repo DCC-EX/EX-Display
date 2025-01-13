@@ -1,12 +1,27 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/test/unit/test_Display/test_DisplayInterface.cpp" name="/home/runner/work/EX&#45;Display/EX&#45;Display/test/unit/test_Display/test_DisplayInterface.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="130,5,309,76"/>
-<area shape="rect" id="node2" href="$Screen_8h.html" title=" " alt="" coords="5,273,84,300"/>
-<area shape="rect" id="node7" href="$Version_8h.html" title=" " alt="" coords="259,124,342,151"/>
-<area shape="rect" id="node8" href="$MockDisplay_8h.html" title=" " alt="" coords="43,124,235,151"/>
-<area shape="rect" id="node10" title=" " alt="" coords="366,124,470,151"/>
-<area shape="rect" id="node3" href="$ScreenRow_8h.html" title=" " alt="" coords="55,348,160,375"/>
-<area shape="rect" id="node5" href="$Arduino_8h.html" title=" " alt="" coords="103,497,187,524"/>
-<area shape="rect" id="node4" href="$Logger_8h.html" title=" " alt="" coords="145,423,222,449"/>
-<area shape="rect" id="node6" title=" " alt="" coords="121,572,248,599"/>
-<area shape="rect" id="node9" href="$DisplayInterface_8h.html" title=" " alt="" coords="82,199,223,225"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="130,5,309,75"/>
+<area shape="rect" id="Node000002" href="$Screen_8h.html" title=" " alt="" coords="5,269,84,295"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,60,103,70,76,84,53,102,34,124,21,157,21,192,27,227,37,256,32,258,22,228,15,193,16,156,29,121,49,98,73,80,101,66,129,55"/>
+<area shape="rect" id="Node000011" href="$Version_8h.html" title=" " alt="" coords="259,123,342,148"/>
+<area shape="poly" id="edge8_Node000001_Node000011" title=" " alt="" coords="251,73,283,110,279,114,247,77"/>
+<area shape="rect" id="Node000012" href="$MockDisplay_8h.html" title=" " alt="" coords="43,123,235,148"/>
+<area shape="poly" id="edge9_Node000001_Node000012" title=" " alt="" coords="192,77,160,114,156,110,188,73"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="366,123,470,148"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="292,72,382,114,380,119,290,77"/>
+<area shape="rect" id="Node000003" href="$ScreenRow_8h.html" title=" " alt="" coords="55,343,160,368"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="57,293,90,330,86,334,53,297"/>
+<area shape="rect" id="Node000005" href="$Arduino_8h.html" title=" " alt="" coords="103,489,187,515"/>
+<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="44,296,40,329,41,348,45,367,60,400,80,431,123,478,119,482,76,434,55,403,39,369,35,349,35,328,39,295"/>
+<area shape="rect" id="Node000004" href="$Logger_8h.html" title=" " alt="" coords="145,416,222,441"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="121,366,163,405,159,408,118,370"/>
+<area shape="poly" id="edge6_Node000003_Node000005" title=" " alt="" coords="113,368,141,475,136,477,108,369"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="179,443,160,479,155,476,175,440"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="121,563,248,588"/>
+<area shape="poly" id="edge5_Node000005_Node000007" title=" " alt="" coords="154,514,174,549,169,552,149,516"/>
+<area shape="poly" id="edge13_Node000012_Node000002" title=" " alt="" coords="122,150,96,170,72,197,59,227,51,256,46,255,54,225,68,195,93,166,119,146"/>
+<area shape="poly" id="edge14_Node000012_Node000007" title=" " alt="" coords="170,146,205,165,237,194,252,216,260,235,263,281,263,430,258,466,244,500,225,530,207,554,203,551,221,527,239,498,253,465,258,430,258,281,254,236,247,218,233,198,202,170,168,150"/>
+<area shape="rect" id="Node000013" href="$DisplayInterface_8h.html" title=" " alt="" coords="82,196,223,221"/>
+<area shape="poly" id="edge10_Node000012_Node000013" title=" " alt="" coords="144,148,151,182,145,183,139,149"/>
+<area shape="poly" id="edge12_Node000013_Node000002" title=" " alt="" coords="137,224,75,264,72,259,134,219"/>
+<area shape="poly" id="edge11_Node000013_Node000004" title=" " alt="" coords="157,221,182,402,177,403,152,222"/>
 </map>

@@ -1,7 +1,14 @@
 <map id="InputInterface" name="InputInterface">
-<area shape="rect" id="node1" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="88,273,201,300"/>
-<area shape="rect" id="node2" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="76,184,212,211"/>
-<area shape="rect" id="node3" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="111,95,178,121"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="237,184,366,211"/>
-<area shape="rect" id="node4" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="110,5,179,32"/>
+<area shape="rect" id="Node000001" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="88,269,201,295"/>
+<area shape="rect" id="Node000002" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="76,181,212,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,221,147,269,142,269,142,221"/>
+<area shape="rect" id="Node000003" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="111,93,178,119"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="99,122,51,145,30,162,13,183,8,197,10,210,18,222,31,233,65,253,103,267,101,272,63,258,28,238,14,226,5,212,3,197,9,180,26,158,48,141,96,117"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="147,133,147,181,142,181,142,133"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="237,181,366,207"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="179,123,282,179,279,183,176,128"/>
+<area shape="rect" id="Node000004" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="110,5,179,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="147,45,147,93,142,93,142,45"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="272,216,216,248,169,272,167,267,214,243,270,211"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="382,186,393,194,385,202,367,204,366,199,383,197,388,194,379,190"/>
 </map>

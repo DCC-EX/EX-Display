@@ -1,4 +1,5 @@
 <map id="DisplayManager::~DisplayManager" name="DisplayManager::~DisplayManager">
-<area shape="rect" id="node1" title="Destructor for the DisplayManager." alt="" coords="5,5,201,47"/>
-<area shape="rect" id="node2" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="249,13,439,39"/>
+<area shape="rect" id="Node000001" title="Destructor for the DisplayManager." alt="" coords="5,5,201,45"/>
+<area shape="rect" id="Node000002" href="$classDisplayInterface.html#aedd1018ddee5891bee744cdeac36fe96" title="Get the next DisplayInterface derived instance in the list." alt="" coords="249,13,439,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,23,235,23,235,28,201,28"/>
 </map>

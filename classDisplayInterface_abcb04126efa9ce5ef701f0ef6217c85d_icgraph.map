@@ -1,4 +1,7 @@
 <map id="DisplayInterface::begin" name="DisplayInterface::begin">
-<area shape="rect" id="node1" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="123,5,296,32"/>
-<area shape="rect" id="node2" href="$test__DisplayInterface_8cpp.html#aa023f143e38a3052f9e71534ff19f5f9" title="Test a second display can be accessed via the first in a list." alt="" coords="5,5,75,32"/>
+<area shape="rect" id="Node000001" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="123,31,296,56"/>
+<area shape="rect" id="Node000002" href="$test__DisplayInterface_8cpp.html#a808c480e56eba164d533510e6128726f" title="Test basic DisplayInterface methods." alt="" coords="5,5,75,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,31,74,26,75,20,111,26"/>
+<area shape="rect" id="Node000003" href="$test__DisplayInterface_8cpp.html#aa023f143e38a3052f9e71534ff19f5f9" title="Test a second display can be accessed via the first in a list." alt="" coords="5,55,75,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,60,75,65,74,60,108,55"/>
 </map>

@@ -1,8 +1,15 @@
 <map id="AtFinderLoggerIntegrationTests" name="AtFinderLoggerIntegrationTests">
-<area shape="rect" id="node1" title="Test harness integration testing of ConsoleInput and Logger classes." alt="" coords="39,363,230,404"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,273,53,300"/>
-<area shape="rect" id="node3" href="$classMockCallback.html" title="Mock class to test callbacks." alt="" coords="222,273,335,300"/>
-<area shape="rect" id="node4" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="216,184,352,211"/>
-<area shape="rect" id="node5" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="145,95,212,121"/>
-<area shape="rect" id="node6" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="77,5,147,32"/>
+<area shape="rect" id="Node000001" title="Test harness integration testing of ConsoleInput and Logger classes." alt="" coords="39,357,230,397"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,269,53,295"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,304,74,331,105,355,102,359,70,335,44,307"/>
+<area shape="rect" id="Node000003" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="77,5,147,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,44,97,73,93,105,93,283,96,303,103,323,122,356,117,358,98,325,91,305,88,284,88,105,92,72,100,43"/>
+<area shape="rect" id="Node000004" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="145,93,212,119"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="132,40,171,91,167,94,127,43"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="177,133,140,357,135,357,172,132"/>
+<area shape="rect" id="Node000006" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="216,181,352,207"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="205,125,271,179,268,183,202,129"/>
+<area shape="rect" id="Node000005" href="$classMockCallback.html" title="Mock class to test callbacks." alt="" coords="222,269,335,295"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="251,304,165,359,163,355,248,300"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="285,221,282,269,277,269,280,220"/>
 </map>

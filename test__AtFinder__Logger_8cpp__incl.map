@@ -1,12 +1,29 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/test/integration/test_InteractiveLogger/test_AtFinder_Logger.cpp" name="/home/runner/work/EX&#45;Display/EX&#45;Display/test/integration/test_InteractiveLogger/test_AtFinder_Logger.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="232,5,479,76"/>
-<area shape="rect" id="node2" href="$AtFinder_8h.html" title=" " alt="" coords="231,124,317,151"/>
-<area shape="rect" id="node5" href="$Logger_8h.html" title=" " alt="" coords="291,273,369,300"/>
-<area shape="rect" id="node7" href="$Stream_8h.html" title=" " alt="" coords="252,423,333,449"/>
-<area shape="rect" id="node9" href="$MockCallback_8h.html" title=" " alt="" coords="5,124,207,151"/>
-<area shape="rect" id="node10" title=" " alt="" coords="443,124,547,151"/>
-<area shape="rect" id="node3" href="$CallbackInterface_8h.html" title=" " alt="" coords="68,199,216,225"/>
-<area shape="rect" id="node6" href="$Arduino_8h.html" title=" " alt="" coords="212,348,296,375"/>
-<area shape="rect" id="node4" href="$InputActions_8h.html" title=" " alt="" coords="51,273,166,300"/>
-<area shape="rect" id="node8" title=" " alt="" coords="151,497,277,524"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="232,5,479,75"/>
+<area shape="rect" id="Node000002" href="$AtFinder_8h.html" title=" " alt="" coords="231,123,317,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="328,77,295,114,291,110,324,73"/>
+<area shape="rect" id="Node000005" href="$Logger_8h.html" title=" " alt="" coords="291,269,369,295"/>
+<area shape="poly" id="edge12_Node000001_Node000005" title=" " alt="" coords="354,75,335,255,330,255,349,75"/>
+<area shape="rect" id="Node000007" href="$Stream_8h.html" title=" " alt="" coords="252,416,333,441"/>
+<area shape="poly" id="edge16_Node000001_Node000007" title=" " alt="" coords="374,74,397,135,405,171,409,207,409,283,406,304,400,323,379,359,351,388,324,410,320,406,347,384,374,355,395,321,401,303,403,283,403,207,400,172,392,136,369,76"/>
+<area shape="rect" id="Node000012" href="$MockCallback_8h.html" title=" " alt="" coords="5,123,207,148"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="266,77,151,120,149,115,264,72"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="443,123,547,148"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="407,73,468,113,465,117,404,77"/>
+<area shape="rect" id="Node000003" href="$CallbackInterface_8h.html" title=" " alt="" coords="68,196,216,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="254,150,177,192,174,187,252,146"/>
+<area shape="poly" id="edge10_Node000002_Node000005" title=" " alt="" coords="281,147,323,256,318,257,276,149"/>
+<area shape="rect" id="Node000006" href="$Arduino_8h.html" title=" " alt="" coords="212,343,296,368"/>
+<area shape="poly" id="edge11_Node000002_Node000006" title=" " alt="" coords="276,149,259,329,254,328,270,148"/>
+<area shape="rect" id="Node000004" href="$InputActions_8h.html" title=" " alt="" coords="51,269,166,295"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="139,223,122,258,117,256,134,221"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="173,219,287,262,286,267,171,224"/>
+<area shape="poly" id="edge9_Node000003_Node000006" title=" " alt="" coords="153,220,239,330,235,334,149,223"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="320,297,278,335,275,331,316,293"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="263,367,282,403,278,405,258,370"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="151,489,277,515"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="253,369,223,477,218,475,248,368"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="282,443,239,482,235,478,278,439"/>
+<area shape="poly" id="edge14_Node000012_Node000003" title=" " alt="" coords="114,147,132,182,128,185,110,150"/>
+<area shape="poly" id="edge15_Node000012_Node000008" title=" " alt="" coords="94,150,71,172,46,203,25,240,19,260,17,281,17,356,20,381,30,402,45,421,64,438,109,465,156,483,154,488,107,469,61,442,41,425,25,405,15,382,11,357,11,281,14,259,20,238,41,200,67,168,90,146"/>
 </map>

@@ -2,63 +2,40 @@ var files_dup =
 [
     [ "test", "dir_13e138d54eb8818da29c3992edef070a.html", "dir_13e138d54eb8818da29c3992edef070a" ],
     [ "AtFinder.cpp", "AtFinder_8cpp.html", null ],
-    [ "AtFinder.h", "AtFinder_8h.html", [
-      [ "AtFinder", "classAtFinder.html", "classAtFinder" ]
-    ] ],
-    [ "CallbackInterface.h", "CallbackInterface_8h.html", [
-      [ "CallbackInterface", "classCallbackInterface.html", "classCallbackInterface" ]
-    ] ],
+    [ "AtFinder.h", "AtFinder_8h.html", "AtFinder_8h" ],
+    [ "CallbackInterface.h", "CallbackInterface_8h.html", "CallbackInterface_8h" ],
     [ "Configurator.cpp", "Configurator_8cpp.html", null ],
-    [ "Configurator.h", "Configurator_8h.html", [
-      [ "Configurator", "classConfigurator.html", "classConfigurator" ]
-    ] ],
+    [ "Configurator.h", "Configurator_8h.html", "Configurator_8h" ],
     [ "Controller.cpp", "Controller_8cpp.html", null ],
-    [ "Controller.h", "Controller_8h.html", [
-      [ "Controller", "classController.html", "classController" ]
-    ] ],
+    [ "Controller.h", "Controller_8h.html", "Controller_8h" ],
     [ "CreateDeviceMacroReset.h", "CreateDeviceMacroReset_8h.html", "CreateDeviceMacroReset_8h" ],
     [ "CreateDeviceMacros.h", "CreateDeviceMacros_8h.html", "CreateDeviceMacros_8h" ],
     [ "CreateUserDevices.h", "CreateUserDevices_8h.html", null ],
     [ "Defines.h", "Defines_8h.html", "Defines_8h" ],
-    [ "DisplayInterface.h", "DisplayInterface_8h.html", [
-      [ "DisplayInterface", "classDisplayInterface.html", "classDisplayInterface" ]
-    ] ],
+    [ "DisplayInterface.cpp", "DisplayInterface_8cpp.html", null ],
+    [ "DisplayInterface.h", "DisplayInterface_8h.html", "DisplayInterface_8h" ],
     [ "DisplayManager.cpp", "DisplayManager_8cpp.html", null ],
-    [ "DisplayManager.h", "DisplayManager_8h.html", [
-      [ "DisplayManager", "classDisplayManager.html", "classDisplayManager" ]
-    ] ],
+    [ "DisplayManager.h", "DisplayManager_8h.html", "DisplayManager_8h" ],
     [ "conf.py", "conf_8py.html", "conf_8py" ],
     [ "EX-Display.ino", "EX-Display_8ino.html", "EX-Display_8ino" ],
     [ "InputActions.h", "InputActions_8h.html", "InputActions_8h" ],
     [ "InputInterface.cpp", "InputInterface_8cpp.html", null ],
-    [ "InputInterface.h", "InputInterface_8h.html", [
-      [ "InputInterface", "classInputInterface.html", "classInputInterface" ]
-    ] ],
+    [ "InputInterface.h", "InputInterface_8h.html", "InputInterface_8h" ],
     [ "InputManager.cpp", "InputManager_8cpp.html", null ],
-    [ "InputManager.h", "InputManager_8h.html", [
-      [ "InputManager", "classInputManager.html", "classInputManager" ]
-    ] ],
+    [ "InputManager.h", "InputManager_8h.html", "InputManager_8h" ],
     [ "Logger.cpp", "Logger_8cpp.html", null ],
     [ "Logger.h", "Logger_8h.html", "Logger_8h" ],
     [ "myConfig.example.h", "myConfig_8example_8h.html", null ],
     [ "myDevices.example.h", "myDevices_8example_8h.html", null ],
     [ "Screen.cpp", "Screen_8cpp.html", null ],
-    [ "Screen.h", "Screen_8h.html", [
-      [ "Screen", "classScreen.html", "classScreen" ]
-    ] ],
+    [ "Screen.h", "Screen_8h.html", "Screen_8h" ],
     [ "ScreenManager.cpp", "ScreenManager_8cpp.html", null ],
-    [ "ScreenManager.h", "ScreenManager_8h.html", [
-      [ "ScreenManager", "classScreenManager.html", "classScreenManager" ]
-    ] ],
+    [ "ScreenManager.h", "ScreenManager_8h.html", "ScreenManager_8h" ],
     [ "ScreenRow.cpp", "ScreenRow_8cpp.html", null ],
-    [ "ScreenRow.h", "ScreenRow_8h.html", [
-      [ "ScreenRow", "classScreenRow.html", "classScreenRow" ]
-    ] ],
+    [ "ScreenRow.h", "ScreenRow_8h.html", "ScreenRow_8h" ],
     [ "TFT_eSPIDisplay.cpp", "TFT__eSPIDisplay_8cpp.html", null ],
     [ "TFT_eSPIDisplay.h", "TFT__eSPIDisplay_8h.html", "TFT__eSPIDisplay_8h" ],
     [ "TFT_eSPITouch.cpp", "TFT__eSPITouch_8cpp.html", null ],
-    [ "TFT_eSPITouch.h", "TFT__eSPITouch_8h.html", [
-      [ "TFT_eSPITouch", "classTFT__eSPITouch.html", "classTFT__eSPITouch" ]
-    ] ],
+    [ "TFT_eSPITouch.h", "TFT__eSPITouch_8h.html", "TFT__eSPITouch_8h" ],
     [ "Version.h", "Version_8h.html", "Version_8h" ]
 ];

@@ -1,6 +1,9 @@
 <map id="InputInterface::setDebounceDelay" name="InputInterface::setDebounceDelay">
-<area shape="rect" id="node1" title="Set the debounce delay." alt="" coords="472,35,679,76"/>
-<area shape="rect" id="node2" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="247,42,424,69"/>
-<area shape="rect" id="node3" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="5,5,199,47"/>
-<area shape="rect" id="node4" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="67,71,137,98"/>
+<area shape="rect" id="Node000001" title="Set the debounce delay." alt="" coords="472,35,679,75"/>
+<area shape="rect" id="Node000002" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="247,42,424,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="458,57,424,57,424,52,458,52"/>
+<area shape="rect" id="Node000003" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="5,5,199,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,44,199,40,199,35,233,39"/>
+<area shape="rect" id="Node000004" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="67,70,137,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="233,70,137,81,137,76,232,64"/>
 </map>

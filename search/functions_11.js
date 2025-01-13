@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['_7ecallbackinterface_593',['~CallbackInterface',['../classCallbackInterface.html#a3d214f09a6692ed5d3ab8b027e416991',1,'CallbackInterface']]],
-  ['_7econfigurator_594',['~Configurator',['../classConfigurator.html#a746eb3439c34f99927d46eff5722a93a',1,'Configurator']]],
-  ['_7econtroller_595',['~Controller',['../classController.html#a8351d2a68600034af0dbd1834bb21374',1,'Controller']]],
-  ['_7edisplayinterface_596',['~DisplayInterface',['../classDisplayInterface.html#adfc41efbd20bf7fe035cf6bc195faf38',1,'DisplayInterface']]],
-  ['_7edisplaymanager_597',['~DisplayManager',['../classDisplayManager.html#ae4c9d79e08490e64602cf562a16d8834',1,'DisplayManager']]],
-  ['_7einputinterface_598',['~InputInterface',['../classInputInterface.html#ae6556ad621b37585df6c6c48a56045be',1,'InputInterface']]],
-  ['_7einputmanager_599',['~InputManager',['../classInputManager.html#af518290877dd183606709d5852db5491',1,'InputManager']]],
-  ['_7escreen_600',['~Screen',['../classScreen.html#a4243bc17596af96415b09ac48205676d',1,'Screen']]],
-  ['_7escreenmanager_601',['~ScreenManager',['../classScreenManager.html#a515ec6aabc9fefe3c1cfbe734877da1e',1,'ScreenManager']]],
-  ['_7escreenrow_602',['~ScreenRow',['../classScreenRow.html#a84eb10f055c8fde9ead6b67a0429e4fd',1,'ScreenRow']]],
-  ['_7etft_5fespidisplay_603',['~TFT_eSPIDisplay',['../classTFT__eSPIDisplay.html#aa2f66935506d5bb25d3301066548c461',1,'TFT_eSPIDisplay']]]
+  ['_7ecallbackinterface_0',['~CallbackInterface',['../classCallbackInterface.html#a3d214f09a6692ed5d3ab8b027e416991',1,'CallbackInterface']]],
+  ['_7econfigurator_1',['~Configurator',['../classConfigurator.html#a746eb3439c34f99927d46eff5722a93a',1,'Configurator']]],
+  ['_7econtroller_2',['~Controller',['../classController.html#a8351d2a68600034af0dbd1834bb21374',1,'Controller']]],
+  ['_7edisplayinterface_3',['~DisplayInterface',['../classDisplayInterface.html#adfc41efbd20bf7fe035cf6bc195faf38',1,'DisplayInterface']]],
+  ['_7edisplaymanager_4',['~DisplayManager',['../classDisplayManager.html#ae4c9d79e08490e64602cf562a16d8834',1,'DisplayManager']]],
+  ['_7einputinterface_5',['~InputInterface',['../classInputInterface.html#ae6556ad621b37585df6c6c48a56045be',1,'InputInterface']]],
+  ['_7einputmanager_6',['~InputManager',['../classInputManager.html#af518290877dd183606709d5852db5491',1,'InputManager']]],
+  ['_7escreen_7',['~Screen',['../classScreen.html#a4243bc17596af96415b09ac48205676d',1,'Screen']]],
+  ['_7escreenmanager_8',['~ScreenManager',['../classScreenManager.html#a515ec6aabc9fefe3c1cfbe734877da1e',1,'ScreenManager']]],
+  ['_7escreenrow_9',['~ScreenRow',['../classScreenRow.html#a84eb10f055c8fde9ead6b67a0429e4fd',1,'ScreenRow']]],
+  ['_7etft_5fespidisplay_10',['~TFT_eSPIDisplay',['../classTFT__eSPIDisplay.html#aa2f66935506d5bb25d3301066548c461',1,'TFT_eSPIDisplay']]]
 ];

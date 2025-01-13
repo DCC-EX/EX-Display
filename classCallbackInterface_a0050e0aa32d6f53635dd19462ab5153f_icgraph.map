@@ -1,7 +1,11 @@
 <map id="CallbackInterface::onInputAction" name="CallbackInterface::onInputAction">
-<area shape="rect" id="node1" title="Method to implement to respond to an input action." alt="" coords="232,86,376,127"/>
-<area shape="rect" id="node2" href="$classMockButtonInput.html#aff7bf3f4782dc8dd912f94be30b006e8" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="5,5,184,32"/>
-<area shape="rect" id="node3" href="$classMockTouchScreenInput.html#afd6a598f9008cc810597db1db68aa6c0" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="9,57,180,98"/>
-<area shape="rect" id="node4" href="$classTFT__eSPITouch.html#afd86f481b8789120fe1fa9357f183741" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="13,123,176,149"/>
-<area shape="rect" id="node5" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="60,173,129,200"/>
+<area shape="rect" id="Node000001" title="Method to implement to respond to an input action." alt="" coords="232,85,376,125"/>
+<area shape="rect" id="Node000002" href="$classMockButtonInput.html#aff7bf3f4782dc8dd912f94be30b006e8" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="5,5,184,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,80,183,46,146,33,148,28,185,41,257,76"/>
+<area shape="rect" id="Node000003" href="$classMockTouchScreenInput.html#afd6a598f9008cc810597db1db68aa6c0" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="9,55,180,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="218,95,180,90,180,85,218,90"/>
+<area shape="rect" id="Node000004" href="$classTFT__eSPITouch.html#afd86f481b8789120fe1fa9357f183741" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="13,120,176,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="218,119,176,124,176,119,218,114"/>
+<area shape="rect" id="Node000005" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="60,169,129,195"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="249,133,185,159,130,176,129,171,183,154,247,128"/>
 </map>

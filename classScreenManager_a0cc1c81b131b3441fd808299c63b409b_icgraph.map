@@ -1,16 +1,40 @@
 <map id="ScreenManager::getScreenById" name="ScreenManager::getScreenById">
-<area shape="rect" id="node1" title="Get the Screen with the specified ID." alt="" coords="775,162,1000,188"/>
-<area shape="rect" id="node2" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="237,19,452,46"/>
-<area shape="rect" id="node4" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="247,121,443,162"/>
-<area shape="rect" id="node5" href="$classScreenManager.html#a38890def1478514514341039b83299ef" title="Get the next screen in the list (sorted by ID)" alt="" coords="500,44,727,71"/>
-<area shape="rect" id="node7" href="$classScreenManager.html#a64ecbfb9232d4051a75ff5abea58ba6d" title="Get the previous screen in the list (sorted by ID)" alt="" coords="509,96,717,137"/>
-<area shape="rect" id="node8" href="$test__ScreenManager_8cpp.html#ab5ada86d9042a1a62ed2251d66d84ef3" title="Create a list of Screens with ScreenManager." alt="" coords="310,212,379,239"/>
-<area shape="rect" id="node9" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="523,314,704,340"/>
-<area shape="rect" id="node13" href="$classScreenManager.html#a760f0b958985e3c29f5a3efc81367f89" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="503,263,723,290"/>
-<area shape="rect" id="node3" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,74,189,100"/>
-<area shape="rect" id="node6" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="310,70,379,96"/>
-<area shape="rect" id="node10" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="275,314,414,340"/>
-<area shape="rect" id="node11" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="72,339,123,366"/>
-<area shape="rect" id="node12" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="63,288,132,315"/>
-<area shape="rect" id="node14" href="$classController.html#a908f5f6c24239286e29d4761da509963" title="Method to implement updating a screen." alt="" coords="253,263,436,290"/>
+<area shape="rect" id="Node000001" title="Get the Screen with the specified ID." alt="" coords="775,180,1000,205"/>
+<area shape="rect" id="Node000002" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="237,40,452,65"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="869,169,846,136,813,97,773,60,726,32,681,18,633,10,585,8,538,11,451,25,384,42,383,37,450,19,537,5,585,3,634,5,682,13,728,27,776,56,817,93,850,133,873,166"/>
+<area shape="rect" id="Node000004" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="247,90,443,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="847,176,791,153,726,134,653,121,578,114,443,110,443,104,578,109,654,116,727,128,793,148,849,171"/>
+<area shape="rect" id="Node000005" href="$classScreenManager.html#a38890def1478514514341039b83299ef" title="Get the next screen in the list (sorted by ID)" alt="" coords="500,42,727,68"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="858,174,799,131,726,90,671,70,673,65,728,85,802,127,861,169"/>
+<area shape="rect" id="Node000006" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="310,182,379,208"/>
+<area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="761,197,727,198,380,198,380,193,727,192,761,192"/>
+<area shape="rect" id="Node000007" href="$classScreenManager.html#a64ecbfb9232d4051a75ff5abea58ba6d" title="Get the previous screen in the list (sorted by ID)" alt="" coords="509,143,717,183"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="761,182,717,177,718,172,761,176"/>
+<area shape="rect" id="Node000008" href="$test__ScreenManager_8cpp.html#ab5ada86d9042a1a62ed2251d66d84ef3" title="Create a list of Screens with ScreenManager." alt="" coords="310,309,379,334"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="863,216,804,259,767,281,728,298,680,311,631,320,533,330,445,331,380,328,380,322,445,325,532,325,630,315,679,306,726,293,765,276,801,255,860,212"/>
+<area shape="rect" id="Node000009" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="523,360,704,385"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="869,217,811,280,771,314,728,343,680,362,678,357,725,338,768,309,807,276,865,214"/>
+<area shape="rect" id="Node000014" href="$classScreenManager.html#a760f0b958985e3c29f5a3efc81367f89" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="503,258,723,284"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="831,212,727,242,660,261,659,256,726,237,829,206"/>
+<area shape="rect" id="Node000003" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,69,189,94"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,69,190,74,189,68,224,64"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="233,100,189,95,190,89,234,95"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="487,56,452,56,452,51,487,51"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="578,77,453,144,373,185,371,180,451,139,576,72"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="498,143,442,132,443,127,499,138"/>
+<area shape="poly" id="edge10_Node000007_Node000006" title=" " alt="" coords="496,180,380,194,379,188,495,174"/>
+<area shape="rect" id="Node000010" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="275,360,414,385"/>
+<area shape="poly" id="edge14_Node000009_Node000010" title=" " alt="" coords="509,375,414,375,414,370,509,370"/>
+<area shape="rect" id="Node000011" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="72,310,123,336"/>
+<area shape="poly" id="edge15_Node000010_Node000011" title=" " alt="" coords="266,360,123,331,124,325,267,354"/>
+<area shape="rect" id="Node000012" href="$test__Controller_8cpp.html#a75631fe386e9be5e2118adf3f01653ee" title="Ensure update() method correctly ignores an invalid stream input." alt="" coords="63,360,132,385"/>
+<area shape="poly" id="edge16_Node000010_Node000012" title=" " alt="" coords="262,375,132,375,132,370,262,370"/>
+<area shape="rect" id="Node000013" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="63,409,132,434"/>
+<area shape="poly" id="edge17_Node000010_Node000013" title=" " alt="" coords="268,390,133,418,132,412,267,385"/>
+<area shape="poly" id="edge20_Node000014_Node000006" title=" " alt="" coords="554,257,379,207,380,202,555,252"/>
+<area shape="poly" id="edge19_Node000014_Node000008" title=" " alt="" coords="532,289,380,318,379,313,531,284"/>
+<area shape="rect" id="Node000015" href="$classController.html#a908f5f6c24239286e29d4761da509963" title="Method to implement updating a screen." alt="" coords="253,258,436,284"/>
+<area shape="poly" id="edge21_Node000014_Node000015" title=" " alt="" coords="489,274,436,274,436,268,489,268"/>
+<area shape="rect" id="Node000016" href="$test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly." alt="" coords="63,258,132,284"/>
+<area shape="poly" id="edge22_Node000015_Node000016" title=" " alt="" coords="240,274,132,274,132,268,240,268"/>
 </map>

@@ -1,8 +1,15 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/test/unit/test_Screen/test_Screen.cpp" name="/home/runner/work/EX&#45;Display/EX&#45;Display/test/unit/test_Screen/test_Screen.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="63,5,302,61"/>
-<area shape="rect" id="node2" href="$Screen_8h.html" title=" " alt="" coords="86,109,165,136"/>
-<area shape="rect" id="node6" title=" " alt="" coords="189,109,293,136"/>
-<area shape="rect" id="node3" href="$ScreenRow_8h.html" title=" " alt="" coords="27,184,133,211"/>
-<area shape="rect" id="node5" href="$Arduino_8h.html" title=" " alt="" coords="78,333,162,360"/>
-<area shape="rect" id="node4" href="$Logger_8h.html" title=" " alt="" coords="5,259,83,285"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="63,5,302,60"/>
+<area shape="rect" id="Node000002" href="$Screen_8h.html" title=" " alt="" coords="86,108,165,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,62,143,98,139,95,163,59"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="189,108,293,133"/>
+<area shape="poly" id="edge7_Node000001_Node000011" title=" " alt="" coords="203,59,228,95,224,98,198,62"/>
+<area shape="rect" id="Node000003" href="$ScreenRow_8h.html" title=" " alt="" coords="27,181,133,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,135,97,171,92,168,116,132"/>
+<area shape="rect" id="Node000005" href="$Arduino_8h.html" title=" " alt="" coords="78,328,162,353"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="133,133,147,181,149,218,145,255,131,316,126,314,140,254,143,218,141,182,128,134"/>
+<area shape="rect" id="Node000004" href="$Logger_8h.html" title=" " alt="" coords="5,255,83,280"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="76,208,58,244,54,241,72,206"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="86,206,116,314,111,315,81,208"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="58,278,99,317,96,320,54,282"/>
 </map>

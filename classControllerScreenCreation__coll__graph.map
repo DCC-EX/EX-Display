@@ -1,14 +1,44 @@
 <map id="ControllerScreenCreation" name="ControllerScreenCreation">
-<area shape="rect" id="node1" title="Test harness for ensuring displays are updated when screen updates are received." alt="" coords="647,571,833,597"/>
-<area shape="rect" id="node2" title=" " alt="" coords="563,481,611,508"/>
-<area shape="rect" id="node3" href="$classController.html" title="Class for the central controller for EX&#45;Display. All application activities are controlled through th..." alt="" coords="635,481,722,508"/>
-<area shape="rect" id="node4" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="465,184,601,211"/>
-<area shape="rect" id="node11" href="$classInputManager.html" title=" " alt="" coords="353,392,465,419"/>
-<area shape="rect" id="node12" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="353,289,466,316"/>
-<area shape="rect" id="node5" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="401,95,468,121"/>
-<area shape="rect" id="node7" href="$classScreenManager.html" title="Class to manage all EX&#45;Display screens." alt="" coords="692,341,815,368"/>
-<area shape="rect" id="node8" href="$classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li..." alt="" coords="625,184,692,211"/>
-<area shape="rect" id="node9" href="$classDisplayManager.html" title="Manages all physical displays." alt="" coords="5,289,133,316"/>
-<area shape="rect" id="node10" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="94,184,223,211"/>
-<area shape="rect" id="node6" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="889,5,959,32"/>
+<area shape="rect" id="Node000001" title="Test harness for ensuring displays are updated when screen updates are received." alt="" coords="119,552,305,577"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,464,53,489"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,499,59,514,73,526,102,540,132,549,131,555,100,545,71,530,55,518,42,503"/>
+<area shape="rect" id="Node000003" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="157,5,227,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,39,129,51,111,66,98,84,93,105,93,478,100,503,118,523,143,538,169,549,167,554,140,543,115,527,96,506,88,478,88,104,93,81,107,62,126,46,146,34"/>
+<area shape="rect" id="Node000007" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="713,93,780,119"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="240,24,713,97,713,102,240,29"/>
+<area shape="rect" id="Node000008" href="$classController.html" title="Class for the central controller for EX&#45;Display. All application activities are controlled through th..." alt="" coords="602,464,689,489"/>
+<area shape="poly" id="edge15_Node000008_Node000003" title=" " alt="" coords="190,45,185,89,185,145,195,204,205,232,220,258,259,305,306,344,358,378,412,405,466,427,518,444,602,465,601,470,516,449,465,432,410,410,355,382,303,349,255,309,215,262,200,235,190,206,180,145,180,88,185,44"/>
+<area shape="rect" id="Node000004" href="$classScreenManager.html" title="Class to manage all EX&#45;Display screens." alt="" coords="952,376,1075,401"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1010,416,1004,430,994,442,935,483,880,508,828,520,776,524,664,522,600,523,527,531,305,557,305,552,526,525,600,518,664,517,776,519,827,515,878,502,932,478,990,438,999,427,1006,414"/>
+<area shape="poly" id="edge29_Node000008_Node000004" title=" " alt="" coords="957,408,881,428,826,443,689,470,688,465,825,437,879,423,956,402"/>
+<area shape="rect" id="Node000005" href="$classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li..." alt="" coords="1068,286,1135,311"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1082,323,1027,378,1023,374,1078,319"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="1150,289,1158,292,1161,299,1153,308,1135,310,1135,304,1151,303,1156,298,1154,296,1148,294"/>
+<area shape="rect" id="Node000006" href="$classScreenRow.html" title=" " alt="" coords="1054,181,1149,207"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="1104,221,1104,286,1099,286,1099,221"/>
+<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="1164,185,1175,194,1167,202,1149,205,1149,199,1165,197,1170,194,1161,190"/>
+<area shape="poly" id="edge11_Node000004_Node000007" title=" " alt="" coords="795,108,836,114,882,127,927,148,965,180,982,204,995,231,1011,287,1016,339,1017,376,1011,376,1011,339,1005,288,990,232,977,206,961,183,924,153,880,132,835,120,794,113"/>
+<area shape="poly" id="edge10_Node000005_Node000007" title=" " alt="" coords="794,104,901,105,1033,115,1097,124,1154,138,1199,156,1215,167,1228,180,1232,198,1230,223,1218,261,1200,277,1179,288,1136,298,1134,293,1177,283,1197,273,1214,259,1225,222,1227,199,1223,183,1212,171,1196,160,1152,143,1096,129,1032,120,901,111,794,109"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="794,108,925,119,989,128,1036,140,1067,158,1091,179,1088,183,1064,163,1034,145,988,134,924,124,794,113"/>
+<area shape="rect" id="Node000009" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="420,181,556,207"/>
+<area shape="poly" id="edge14_Node000009_Node000007" title=" " alt="" coords="699,109,619,117,575,127,533,145,512,163,497,183,493,179,508,159,531,140,573,122,618,111,699,104"/>
+<area shape="rect" id="Node000010" href="$classDisplayManager.html" title="Manages all physical displays." alt="" coords="851,286,979,311"/>
+<area shape="poly" id="edge20_Node000010_Node000007" title=" " alt="" coords="794,119,844,143,868,159,890,180,906,206,915,236,918,286,913,286,909,237,901,208,886,183,865,164,841,147,792,124"/>
+<area shape="rect" id="Node000011" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="682,181,811,207"/>
+<area shape="poly" id="edge19_Node000011_Node000007" title=" " alt="" coords="749,133,749,181,744,181,744,133"/>
+<area shape="rect" id="Node000012" href="$classInputManager.html" title=" " alt="" coords="529,376,641,401"/>
+<area shape="poly" id="edge27_Node000012_Node000007" title=" " alt="" coords="700,113,623,120,535,133,456,153,428,167,410,183,398,208,394,231,398,252,408,273,424,293,445,313,493,350,518,363,543,373,541,378,515,368,491,354,441,317,420,297,404,276,393,254,388,231,392,206,406,180,425,163,454,148,534,127,622,114,699,107"/>
+<area shape="rect" id="Node000013" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="555,286,669,311"/>
+<area shape="poly" id="edge25_Node000013_Node000007" title=" " alt="" coords="702,123,656,146,635,162,618,183,608,209,606,238,612,285,606,286,600,238,603,208,614,180,631,159,653,141,699,118"/>
+<area shape="poly" id="edge12_Node000001_Node000008" title=" " alt="" coords="589,492,270,555,269,549,588,487"/>
+<area shape="poly" id="edge13_Node000008_Node000009" title=" " alt="" coords="570,201,656,213,689,220,707,229,713,257,716,312,710,379,702,412,690,441,680,455,667,466,664,462,676,451,686,439,697,410,705,378,711,312,708,257,703,232,688,225,655,218,569,206"/>
+<area shape="poly" id="edge28_Node000012_Node000009" title=" " alt="" coords="481,220,472,265,472,289,480,312,495,333,514,350,556,374,554,378,511,354,491,336,475,315,467,290,466,264,476,219"/>
+<area shape="poly" id="edge24_Node000013_Node000009" title=" " alt="" coords="497,219,506,240,519,258,540,273,564,283,562,288,537,278,515,262,501,242,492,221"/>
+<area shape="poly" id="edge16_Node000008_Node000010" title=" " alt="" coords="892,323,820,380,727,442,677,466,674,462,724,438,817,375,889,318"/>
+<area shape="poly" id="edge17_Node000010_Node000011" title=" " alt="" coords="771,214,823,258,879,284,877,288,820,262,768,218"/>
+<area shape="poly" id="edge18_Node000011_Node000011" title=" " alt="" coords="827,186,838,194,830,202,812,204,811,199,828,197,833,194,824,190"/>
+<area shape="poly" id="edge22_Node000012_Node000011" title=" " alt="" coords="752,221,751,241,745,261,719,302,683,335,645,361,613,378,610,374,643,356,680,331,714,298,740,259,745,240,746,220"/>
+<area shape="poly" id="edge26_Node000013_Node000011" title=" " alt="" coords="717,216,692,233,626,288,623,284,689,229,714,212"/>
+<area shape="poly" id="edge21_Node000008_Node000012" title=" " alt="" coords="584,415,589,439,600,452,615,462,612,466,597,456,584,441,579,416"/>
+<area shape="poly" id="edge23_Node000012_Node000013" title=" " alt="" coords="607,325,591,376,586,375,602,324"/>
 </map>

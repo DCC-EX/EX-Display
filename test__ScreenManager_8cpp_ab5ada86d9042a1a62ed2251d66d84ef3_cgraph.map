@@ -1,11 +1,24 @@
 <map id="TEST_F" name="TEST_F">
-<area shape="rect" id="node1" title="Create a list of Screens with ScreenManager." alt="" coords="5,132,75,159"/>
-<area shape="rect" id="node2" href="$classScreenManager.html#a110a39ff303b98b6d308518a9d6da8ff" title="Get the first Screen instance in the list." alt="" coords="129,5,353,32"/>
-<area shape="rect" id="node3" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="466,56,573,83"/>
-<area shape="rect" id="node4" href="$classScreenManager.html#a6cc01abb59037b653ca45f130c83c9b3" title="Get the highest Screen ID in the list." alt="" coords="123,107,359,133"/>
-<area shape="rect" id="node5" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="680,183,807,209"/>
-<area shape="rect" id="node6" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="407,208,632,235"/>
-<area shape="rect" id="node7" href="$classScreenManager.html#a760f0b958985e3c29f5a3efc81367f89" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="131,259,351,285"/>
-<area shape="rect" id="node8" href="$classScreen.html#a3f87fd3cb0de678a506d26c44c79df5f" title="Set the Logger instance." alt="" coords="450,309,589,336"/>
-<area shape="rect" id="node9" href="$classScreen.html#a73bbfda08cbc10369ba075e765c8b18a" title="Set the next Screen instance in the list." alt="" coords="457,360,582,387"/>
+<area shape="rect" id="Node000001" title="Create a list of Screens with ScreenManager." alt="" coords="5,132,75,157"/>
+<area shape="rect" id="Node000002" href="$classScreenManager.html#a110a39ff303b98b6d308518a9d6da8ff" title="Get the first Screen instance in the list." alt="" coords="129,5,353,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,130,76,89,97,67,121,48,153,33,155,37,124,52,101,71,80,93,51,133"/>
+<area shape="rect" id="Node000003" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="466,56,573,81"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="55,129,85,109,122,91,210,71,299,61,383,58,452,61,452,66,383,64,299,66,210,76,124,97,88,114,58,134"/>
+<area shape="rect" id="Node000004" href="$classScreenManager.html#a6cc01abb59037b653ca45f130c83c9b3" title="Get the highest Screen ID in the list." alt="" coords="123,107,359,132"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="75,138,126,131,127,136,75,143"/>
+<area shape="rect" id="Node000005" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="680,183,807,208"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="75,144,666,187,666,193,75,150"/>
+<area shape="rect" id="Node000006" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="407,208,632,233"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="61,155,90,172,123,186,191,202,261,213,393,221,393,226,261,218,190,208,122,191,87,177,58,160"/>
+<area shape="rect" id="Node000007" href="$classScreenManager.html#a760f0b958985e3c29f5a3efc81367f89" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="131,259,351,284"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="51,156,80,197,101,219,124,237,155,252,153,257,121,242,97,222,76,200,47,159"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="311,104,452,78,453,83,312,109"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="359,117,491,126,563,135,633,149,671,160,705,175,703,179,669,165,631,154,562,140,491,131,359,123"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="632,205,666,201,666,207,632,211"/>
+<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="351,271,486,265,560,256,631,242,671,229,706,212,709,217,673,234,633,247,560,262,486,271,351,277"/>
+<area shape="poly" id="edge11_Node000007_Node000006" title=" " alt="" coords="311,256,435,233,436,238,312,261"/>
+<area shape="rect" id="Node000008" href="$classScreen.html#a3f87fd3cb0de678a506d26c44c79df5f" title="Set the Logger instance." alt="" coords="450,309,589,335"/>
+<area shape="poly" id="edge12_Node000007_Node000008" title=" " alt="" coords="312,281,437,304,436,310,311,287"/>
+<area shape="rect" id="Node000009" href="$classScreen.html#a73bbfda08cbc10369ba075e765c8b18a" title="Set the next Screen instance in the list." alt="" coords="457,359,582,384"/>
+<area shape="poly" id="edge13_Node000007_Node000009" title=" " alt="" coords="267,282,330,312,408,343,444,354,442,359,406,349,328,317,265,286"/>
 </map>

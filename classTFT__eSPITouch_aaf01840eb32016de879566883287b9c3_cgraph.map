@@ -1,20 +1,46 @@
 <map id="TFT_eSPITouch::begin" name="TFT_eSPITouch::begin">
-<area shape="rect" id="node1" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,224,167,251"/>
-<area shape="rect" id="node2" href="$classTFT__eSPITouch.html#a30285f08f51221839e884ccdd9679105" title="Test if valid calibration data is available for this touch interface." alt="" coords="241,5,439,32"/>
-<area shape="rect" id="node3" href="$classTFT__eSPITouch.html#ad71507c11a328924064e703daef05ada" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="215,107,465,149"/>
-<area shape="rect" id="node4" href="$classTFT__eSPIDisplay.html#af7bbb772e597d3431656ccd32d73bdf5" title="Clear the entire screen." alt="" coords="513,56,725,83"/>
-<area shape="rect" id="node9" href="$classTFT__eSPITouch.html#a68e426669d88922d6c9e761b53558257" title="Run the TFT_eSPI calibration sequence." alt="" coords="231,173,449,200"/>
-<area shape="rect" id="node10" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="235,224,445,251"/>
-<area shape="rect" id="node15" href="$classTFT__eSPIDisplay.html#ab7db81e0c696ad849833528a4e1212df" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="254,275,426,301"/>
-<area shape="rect" id="node16" href="$classDisplayInterface.html#a3649a768b8ca59c3070f56aed1fe42c2" title="Get the ID of this display instance." alt="" coords="255,325,425,352"/>
-<area shape="rect" id="node17" href="$classTFT__eSPIDisplay.html#ab3084ef6b927bc9dbc0991088dda2c6c" title="Get the TFT_eSPI instance created by this instance &#45; needed for the touch interface." alt="" coords="250,377,430,418"/>
-<area shape="rect" id="node18" href="$classTFT__eSPIDisplay.html#ad4f7da2ea80e0fd0206c84f4a787bfb2" title="Test if the TFT_eSPI instance has been initialised &#45; needed for the touch interface." alt="" coords="233,443,447,469"/>
-<area shape="rect" id="node5" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="590,107,649,133"/>
-<area shape="rect" id="node6" href="$classTFT__eSPIDisplay.html#a18b84c77677d72c6515d0cd45e9c65ae" title="Display a row of text on the display." alt="" coords="514,157,725,184"/>
-<area shape="rect" id="node7" href="$classTFT__eSPIDisplay.html#afcbf3673396a684fd540bc75214719a3" title="Get the X/Y coordinates to draw the specified row, starting at the specified column." alt="" coords="1017,125,1209,166"/>
-<area shape="rect" id="node8" href="$classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda" title="Clear the specified row." alt="" coords="773,157,969,184"/>
-<area shape="rect" id="node11" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="590,241,649,268"/>
-<area shape="rect" id="node12" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="806,208,937,235"/>
-<area shape="rect" id="node13" href="$classConfigurator.html#a82c65d6d040b717d64520903c788dd79" title="Get the Controller instance for this Configurator." alt="" coords="774,259,969,285"/>
-<area shape="rect" id="node14" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="788,309,955,336"/>
+<area shape="rect" id="Node000001" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,270,167,295"/>
+<area shape="rect" id="Node000002" href="$classTFT__eSPITouch.html#a30285f08f51221839e884ccdd9679105" title="Test if valid calibration data is available for this touch interface." alt="" coords="241,55,439,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,269,106,234,132,188,168,139,189,117,213,98,242,83,244,88,216,102,193,121,172,143,137,191,111,237,95,271"/>
+<area shape="rect" id="Node000003" href="$classTFT__eSPITouch.html#ad71507c11a328924064e703daef05ada" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="215,156,465,196"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="104,268,152,237,214,206,234,198,236,203,216,210,155,241,107,272"/>
+<area shape="rect" id="Node000004" href="$classTFT__eSPIDisplay.html#af7bbb772e597d3431656ccd32d73bdf5" title="Clear the entire screen." alt="" coords="513,106,725,131"/>
+<area shape="poly" id="edge19_Node000001_Node000004" title=" " alt="" coords="92,268,110,240,137,205,172,169,213,142,251,126,289,115,369,102,447,99,517,102,517,107,447,104,370,107,291,120,252,132,216,146,175,174,141,208,114,243,97,271"/>
+<area shape="rect" id="Node000013" href="$classTFT__eSPITouch.html#a68e426669d88922d6c9e761b53558257" title="Run the TFT_eSPI calibration sequence." alt="" coords="231,221,449,246"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="150,267,214,255,259,246,260,251,215,260,151,273"/>
+<area shape="rect" id="Node000014" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="235,270,445,295"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="167,280,221,280,221,285,167,285"/>
+<area shape="rect" id="Node000041" href="$classTFT__eSPIDisplay.html#ab7db81e0c696ad849833528a4e1212df" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="254,319,426,345"/>
+<area shape="poly" id="edge18_Node000001_Node000041" title=" " alt="" coords="153,293,261,314,260,319,152,298"/>
+<area shape="rect" id="Node000037" href="$classDisplayInterface.html#a3649a768b8ca59c3070f56aed1fe42c2" title="Get the ID of this display instance." alt="" coords="255,369,425,394"/>
+<area shape="poly" id="edge20_Node000001_Node000037" title=" " alt="" coords="107,293,155,324,216,354,245,363,243,368,214,358,152,328,104,298"/>
+<area shape="rect" id="Node000042" href="$classTFT__eSPIDisplay.html#ab3084ef6b927bc9dbc0991088dda2c6c" title="Get the TFT_eSPI instance created by this instance &#45; needed for the touch interface." alt="" coords="250,419,430,459"/>
+<area shape="poly" id="edge21_Node000001_Node000042" title=" " alt="" coords="99,294,146,347,179,377,216,403,238,413,236,418,213,408,175,381,142,351,95,297"/>
+<area shape="rect" id="Node000043" href="$classTFT__eSPIDisplay.html#ad4f7da2ea80e0fd0206c84f4a787bfb2" title="Test if the TFT_eSPI instance has been initialised &#45; needed for the touch interface." alt="" coords="233,483,447,509"/>
+<area shape="poly" id="edge22_Node000001_Node000043" title=" " alt="" coords="95,295,110,330,135,378,171,427,192,450,216,468,228,476,226,480,213,473,189,454,167,431,131,381,105,332,90,297"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="438,153,543,132,544,137,439,159"/>
+<area shape="rect" id="Node000005" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="590,155,649,181"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="465,170,576,167,576,172,466,175"/>
+<area shape="rect" id="Node000006" href="$classDisplayInterface.html#a1bc192c6854bae554c9aa09cd7122cdc" title="Static method to enable calling back to a derived class with a formatted row." alt="" coords="515,205,724,230"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="466,192,520,200,519,205,465,197"/>
+<area shape="rect" id="Node000007" href="$classDisplayInterface.html#acde7922833a368ce3233fe4d721f838a" title="Convert the provided RGB colour code string constant to a uint16_t RGB565 colour." alt="" coords="785,5,956,45"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="705,202,724,190,737,174,744,159,747,125,751,91,758,73,771,56,776,51,780,55,775,59,762,75,756,92,753,126,749,160,741,177,727,194,708,207"/>
+<area shape="rect" id="Node000008" href="$classDisplayInterface.html#ad8da5e63e3775f8f02b04636a9482d97" title="Validates the provided char is a valid modifier." alt="" coords="802,69,939,109"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="699,202,724,190,740,174,747,156,755,138,772,119,788,109,791,113,775,123,760,140,752,158,744,177,727,194,702,207"/>
+<area shape="rect" id="Node000009" href="$classDisplayInterface.html#ac5cc108ca1c1410a8321078b3868ed78" title="Check if the provided string constant translates to a valid RGB colour code." alt="" coords="802,133,939,173"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="674,202,725,189,788,173,789,178,726,195,675,207"/>
+<area shape="rect" id="Node000010" href="$classDisplayInterface.html#a96f1a22d4566a22aefd3b652808d9441" title="Sanitise the provided struct of RowAttributes." alt="" coords="799,197,943,237"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="724,215,785,215,785,220,724,220"/>
+<area shape="rect" id="Node000011" href="$classDisplayInterface.html#a652c6ce102531b9dd02fb960946987c8" title="Update the provided RowAttributes struct according to the provided modifier." alt="" coords="802,261,939,301"/>
+<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="671,228,790,258,788,263,670,233"/>
+<area shape="rect" id="Node000012" href="$classDisplayInterface.html#a8e1258fa3f32baf1587b80354c8afdb3" title="Display a row using formatting modifiers." alt="" coords="779,325,963,365"/>
+<area shape="poly" id="edge11_Node000006_Node000012" title=" " alt="" coords="639,228,698,268,775,311,791,318,789,323,772,316,695,272,636,232"/>
+<area shape="rect" id="Node000015" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="590,414,649,439"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="435,293,466,304,506,326,542,352,598,402,595,406,539,356,503,330,464,309,433,298"/>
+<area shape="rect" id="Node000016" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="805,390,936,415"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="648,421,792,407,792,413,649,427"/>
+<area shape="rect" id="Node000028" href="$classConfigurator.html#a82c65d6d040b717d64520903c788dd79" title="Get the Controller instance for this Configurator." alt="" coords="773,439,968,465"/>
+<area shape="poly" id="edge16_Node000015_Node000028" title=" " alt="" coords="649,427,759,438,759,443,648,432"/>
+<area shape="rect" id="Node000029" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="787,489,954,514"/>
+<area shape="poly" id="edge17_Node000015_Node000029" title=" " alt="" coords="650,434,774,475,803,483,802,488,773,480,648,439"/>
 </map>

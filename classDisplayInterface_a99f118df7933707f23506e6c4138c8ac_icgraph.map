@@ -1,11 +1,23 @@
 <map id="DisplayInterface::getCSPin" name="DisplayInterface::getCSPin">
-<area shape="rect" id="node1" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="793,97,988,123"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="495,71,745,98"/>
-<area shape="rect" id="node9" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="585,122,655,149"/>
-<area shape="rect" id="node3" href="$classDisplayManager.html#ac007625bc3dc91b4a7f22238226f37ea" title="Clear all displays." alt="" coords="227,5,412,47"/>
-<area shape="rect" id="node5" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="192,122,447,149"/>
-<area shape="rect" id="node8" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="229,71,410,98"/>
-<area shape="rect" id="node4" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="5,30,144,57"/>
-<area shape="rect" id="node6" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="9,97,140,123"/>
-<area shape="rect" id="node7" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="40,147,109,174"/>
+<area shape="rect" id="Node000001" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="793,170,988,195"/>
+<area shape="rect" id="Node000002" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="495,95,745,121"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="829,169,666,123,668,118,831,164"/>
+<area shape="rect" id="Node000014" href="$test__DisplayManualSPISwitching_8cpp.html#a928ab800b1e1899f185fb572718ec014" title="Test that SPI displays can be switched manually if their library doesn&#39;t support it (eg...." alt="" coords="40,170,109,195"/>
+<area shape="poly" id="edge11_Node000001_Node000014" title=" " alt="" coords="780,185,109,185,109,180,780,180"/>
+<area shape="rect" id="Node000016" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="585,221,655,246"/>
+<area shape="poly" id="edge10_Node000001_Node000016" title=" " alt="" coords="809,201,655,230,654,224,808,195"/>
+<area shape="rect" id="Node000003" href="$classDisplayManager.html#ac007625bc3dc91b4a7f22238226f37ea" title="Clear all displays." alt="" coords="227,5,412,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="563,94,446,60,401,48,402,43,447,55,565,89"/>
+<area shape="rect" id="Node000008" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="192,119,447,145"/>
+<area shape="poly" id="edge4_Node000002_Node000008" title=" " alt="" coords="481,122,447,124,447,119,481,116"/>
+<area shape="rect" id="Node000015" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="229,70,410,95"/>
+<area shape="poly" id="edge8_Node000002_Node000015" title=" " alt="" coords="481,99,410,93,410,88,481,94"/>
+<area shape="rect" id="Node000004" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="5,18,144,43"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="213,30,144,32,144,26,213,25"/>
+<area shape="rect" id="Node000009" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="9,71,140,97"/>
+<area shape="poly" id="edge5_Node000008_Node000009" title=" " alt="" coords="240,119,140,99,141,94,241,114"/>
+<area shape="rect" id="Node000013" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="40,121,109,146"/>
+<area shape="poly" id="edge6_Node000008_Node000013" title=" " alt="" coords="178,135,109,136,109,130,178,130"/>
+<area shape="poly" id="edge7_Node000008_Node000014" title=" " alt="" coords="244,150,110,178,109,173,243,145"/>
+<area shape="poly" id="edge9_Node000015_Node000004" title=" " alt="" coords="239,70,191,60,130,46,131,41,193,55,241,65"/>
 </map>

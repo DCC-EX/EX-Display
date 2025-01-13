@@ -1,4 +1,5 @@
 <map id="Controller::_selectNextScreen" name="Controller::_selectNextScreen">
-<area shape="rect" id="node1" title="Selects the next screen for the selected display." alt="" coords="237,5,452,32"/>
-<area shape="rect" id="node2" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,5,189,32"/>
+<area shape="rect" id="Node000001" title="Selects the next screen for the selected display." alt="" coords="237,5,452,31"/>
+<area shape="rect" id="Node000002" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,5,189,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,21,189,21,189,15,224,15"/>
 </map>

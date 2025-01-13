@@ -1,3 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classDisplayManager.html" title="Manages all physical displays." alt="" coords="5,5,133,32"/>
+<area shape="rect" id="Node000000" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="5,80,119,105"/>
+<area shape="rect" id="Node000001" href="$classMockButtonInput.html" title="Mock button input class using debounce and hold methods Use setRawAction() to simulate what a button ..." alt="" coords="185,5,319,31"/>
+<area shape="poly" id="edge7_Node000000_Node000001" title=" " alt="" coords="97,71,166,40,200,28,201,33,168,44,99,76"/>
+<area shape="rect" id="Node000002" href="$classMockInput.html" title="Mock physical input class." alt="" coords="207,55,297,80"/>
+<area shape="poly" id="edge8_Node000000_Node000002" title=" " alt="" coords="132,81,206,71,207,76,133,86"/>
+<area shape="rect" id="Node000003" href="$classMockTouchScreenInput.html" title="Mock touch screen input class using debounce and hold methods and calculating touch position to deter..." alt="" coords="167,104,337,129"/>
+<area shape="poly" id="edge9_Node000000_Node000003" title=" " alt="" coords="133,99,167,103,166,109,132,104"/>
+<area shape="rect" id="Node000004" href="$classTFT__eSPITouch.html" title="Display class for TFT_eSPI touch screens." alt="" coords="193,153,311,179"/>
+<area shape="poly" id="edge10_Node000000_Node000004" title=" " alt="" coords="101,109,168,138,205,151,203,156,166,143,99,114"/>
 </map>

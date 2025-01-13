@@ -1,5 +1,8 @@
 <map id="DisplayInterface" name="DisplayInterface">
-<area shape="rect" id="node1" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="5,184,135,211"/>
-<area shape="rect" id="node2" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="37,95,103,121"/>
-<area shape="rect" id="node3" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="35,5,105,32"/>
+<area shape="rect" id="Node000001" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="5,181,135,207"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="150,186,161,194,153,202,135,204,135,199,151,197,156,194,147,190"/>
+<area shape="rect" id="Node000002" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="37,93,103,119"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="73,133,73,181,67,181,67,133"/>
+<area shape="rect" id="Node000003" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="35,5,105,31"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="73,45,73,93,67,93,67,45"/>
 </map>

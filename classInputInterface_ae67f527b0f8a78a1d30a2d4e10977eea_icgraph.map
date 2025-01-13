@@ -1,5 +1,7 @@
 <map id="InputInterface::_calculateInputAction" name="InputInterface::_calculateInputAction">
-<area shape="rect" id="node1" title="This method is designed to take an input from a touch screen display and determine which &quot;button&quot; has..." alt="" coords="224,35,411,76"/>
-<area shape="rect" id="node2" href="$classMockTouchScreenInput.html#afd6a598f9008cc810597db1db68aa6c0" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="5,5,176,47"/>
-<area shape="rect" id="node3" href="$classTFT__eSPITouch.html#afd86f481b8789120fe1fa9357f183741" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="9,71,172,98"/>
+<area shape="rect" id="Node000001" title="This method is designed to take an input from a touch screen display and determine which &quot;button&quot; has..." alt="" coords="224,35,411,75"/>
+<area shape="rect" id="Node000002" href="$classMockTouchScreenInput.html#afd6a598f9008cc810597db1db68aa6c0" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="5,5,176,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,43,176,39,177,34,211,38"/>
+<area shape="rect" id="Node000003" href="$classTFT__eSPITouch.html#afd86f481b8789120fe1fa9357f183741" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="9,70,172,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,71,172,75,172,70,210,65"/>
 </map>

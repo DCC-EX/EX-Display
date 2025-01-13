@@ -1,7 +1,12 @@
 <map id="DisplayManager::_setupAllSPICSPins" name="DisplayManager::_setupAllSPICSPins">
-<area shape="rect" id="node1" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="5,49,201,90"/>
-<area shape="rect" id="node2" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="295,5,393,32"/>
-<area shape="rect" id="node4" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="249,56,439,83"/>
-<area shape="rect" id="node5" href="$Arduino_8h.html#ac7bdb53335528ad073ca13eb2b1bdc00" title=" " alt="" coords="305,107,383,133"/>
-<area shape="rect" id="node3" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="487,56,677,83"/>
+<area shape="rect" id="Node000001" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="5,47,201,87"/>
+<area shape="rect" id="Node000002" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="295,5,393,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,45,280,28,281,33,202,50"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#aedd1018ddee5891bee744cdeac36fe96" title="Get the next DisplayInterface derived instance in the list." alt="" coords="249,55,439,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="201,65,235,65,235,70,201,70"/>
+<area shape="rect" id="Node000005" href="$Arduino_8h.html#ac7bdb53335528ad073ca13eb2b1bdc00" title=" " alt="" coords="305,104,383,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="202,85,292,103,291,109,201,90"/>
+<area shape="rect" id="Node000003" href="$classMockArduino.html#a6dee256b5b61eb81e51fae11584f5951" title=" " alt="" coords="487,55,677,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="394,25,507,49,506,54,393,31"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="383,106,506,80,507,86,384,111"/>
 </map>

@@ -1,6 +1,11 @@
 <map id="TEST_F" name="TEST_F">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,75,83"/>
-<area shape="rect" id="node2" href="$classAtFinder.html#ada7a2ab3b409d525ffa704badf4b4dd1" title="Clean up memory allocations used by AtFinder." alt="" coords="128,5,265,32"/>
-<area shape="rect" id="node3" href="$classAtFinder.html#ac50442f56c76cd6bd05da52db7ba8910" title="Set the logger instance to use for diagnostic logging." alt="" coords="123,56,271,83"/>
-<area shape="rect" id="node4" href="$classAtFinder.html#abadf56235ed457d74fff16dfdcd6d693" title="Setup the AtFinder parser." alt="" coords="137,107,257,133"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,75,105"/>
+<area shape="rect" id="Node000002" href="$classAtFinder.html#ada7a2ab3b409d525ffa704badf4b4dd1" title="Clean up memory allocations used by AtFinder." alt="" coords="130,5,267,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,77,121,40,138,33,140,38,124,44,61,82"/>
+<area shape="rect" id="Node000003" href="$classAtFinder.html#ac50442f56c76cd6bd05da52db7ba8910" title="Set the logger instance to use for diagnostic logging." alt="" coords="125,55,273,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="74,85,110,79,111,84,75,90"/>
+<area shape="rect" id="Node000004" href="$classLogger.html#a76962587ace804ef14f24f7220a4a688" title="Set the log level." alt="" coords="123,104,275,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="75,95,109,100,109,106,74,100"/>
+<area shape="rect" id="Node000005" href="$classAtFinder.html#abadf56235ed457d74fff16dfdcd6d693" title="Setup the AtFinder parser." alt="" coords="139,153,259,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="62,103,124,138,143,146,141,151,121,143,59,108"/>
 </map>

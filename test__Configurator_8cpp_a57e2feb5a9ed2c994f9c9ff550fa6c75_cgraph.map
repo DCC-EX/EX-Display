@@ -1,7 +1,11 @@
 <map id="TEST_F" name="TEST_F">
-<area shape="rect" id="node1" title="Ensure the Configurator can be created successfully." alt="" coords="5,107,75,134"/>
-<area shape="rect" id="node2" href="$classConfigurator.html#ab7f0f6bdc7ee5395be5aa8432cde12a4" title="Get the CommandStation connection Stream instance for this configurator." alt="" coords="123,5,321,47"/>
-<area shape="rect" id="node3" href="$classConfigurator.html#ab92df2c113b8696167a3208edd45d1ca" title="Get the console Stream instance for this configurator." alt="" coords="131,71,313,112"/>
-<area shape="rect" id="node4" href="$classConfigurator.html#a82c65d6d040b717d64520903c788dd79" title="Get the Controller instance for this Configurator." alt="" coords="125,137,319,163"/>
-<area shape="rect" id="node5" href="$classConfigurator.html#a8d1bb9bee243e4b5e1a6c1e51ffde53f" title="Get the DisplayManager instance for this Configurator." alt="" coords="132,188,312,229"/>
+<area shape="rect" id="Node000001" title="Ensure the Configurator can be created successfully." alt="" coords="5,106,75,131"/>
+<area shape="rect" id="Node000002" href="$classConfigurator.html#ab7f0f6bdc7ee5395be5aa8432cde12a4" title="Get the CommandStation connection Stream instance for this configurator." alt="" coords="123,5,321,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,104,84,79,121,55,136,48,138,53,124,60,87,84,57,108"/>
+<area shape="rect" id="Node000003" href="$classConfigurator.html#ab92df2c113b8696167a3208edd45d1ca" title="Get the console Stream instance for this configurator." alt="" coords="131,69,313,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="75,111,117,104,117,109,75,116"/>
+<area shape="rect" id="Node000004" href="$classConfigurator.html#a82c65d6d040b717d64520903c788dd79" title="Get the Controller instance for this Configurator." alt="" coords="125,134,319,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="75,121,127,129,126,135,75,127"/>
+<area shape="rect" id="Node000005" href="$classConfigurator.html#a8d1bb9bee243e4b5e1a6c1e51ffde53f" title="Get the DisplayManager instance for this Configurator." alt="" coords="132,184,312,224"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="60,129,124,168,143,177,141,181,121,173,57,134"/>
 </map>

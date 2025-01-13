@@ -1,5 +1,7 @@
 <map id="CallbackInterface" name="CallbackInterface">
-<area shape="rect" id="node1" title="Interface class to use for callbacks." alt="" coords="5,184,141,211"/>
-<area shape="rect" id="node2" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="40,95,107,121"/>
-<area shape="rect" id="node3" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="39,5,108,32"/>
+<area shape="rect" id="Node000001" title="Interface class to use for callbacks." alt="" coords="5,181,141,207"/>
+<area shape="rect" id="Node000002" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="40,93,107,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,133,76,181,71,181,71,133"/>
+<area shape="rect" id="Node000003" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="39,5,108,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="76,45,76,93,71,93,71,45"/>
 </map>

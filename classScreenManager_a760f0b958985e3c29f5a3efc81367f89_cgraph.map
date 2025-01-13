@@ -1,7 +1,12 @@
 <map id="ScreenManager::updateScreen" name="ScreenManager::updateScreen">
-<area shape="rect" id="node1" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="5,56,225,83"/>
-<area shape="rect" id="node2" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="547,5,673,32"/>
-<area shape="rect" id="node3" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="273,31,499,57"/>
-<area shape="rect" id="node4" href="$classScreen.html#a3f87fd3cb0de678a506d26c44c79df5f" title="Set the Logger instance." alt="" coords="317,81,455,108"/>
-<area shape="rect" id="node5" href="$classScreen.html#a73bbfda08cbc10369ba075e765c8b18a" title="Set the next Screen instance in the list." alt="" coords="323,132,449,159"/>
+<area shape="rect" id="Node000001" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="5,56,225,81"/>
+<area shape="rect" id="Node000002" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="547,5,673,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,53,204,32,273,15,341,8,411,5,533,9,533,14,411,10,342,13,274,21,205,37,148,58"/>
+<area shape="rect" id="Node000003" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="273,31,499,56"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,56,260,52,260,58,226,61"/>
+<area shape="rect" id="Node000004" href="$classScreen.html#a3f87fd3cb0de678a506d26c44c79df5f" title="Set the Logger instance." alt="" coords="317,80,455,105"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="226,76,303,83,303,88,225,81"/>
+<area shape="rect" id="Node000005" href="$classScreen.html#a73bbfda08cbc10369ba075e765c8b18a" title="Set the next Screen instance in the list." alt="" coords="323,129,449,155"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="156,79,274,114,312,124,311,129,273,119,155,84"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="498,28,532,24,533,29,499,33"/>
 </map>

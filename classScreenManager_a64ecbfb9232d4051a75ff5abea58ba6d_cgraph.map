@@ -1,8 +1,18 @@
 <map id="ScreenManager::getPreviousScreen" name="ScreenManager::getPreviousScreen">
-<area shape="rect" id="node1" title="Get the previous screen in the list (sorted by ID)" alt="" coords="5,75,213,116"/>
-<area shape="rect" id="node2" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="555,32,662,58"/>
-<area shape="rect" id="node3" href="$classScreenManager.html#a6cc01abb59037b653ca45f130c83c9b3" title="Get the highest Screen ID in the list." alt="" coords="261,82,497,109"/>
-<area shape="rect" id="node4" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="545,108,672,134"/>
-<area shape="rect" id="node5" href="$classScreenManager.html#acd4f0a92975819547a21bfc7d6320f6d" title="Get the lowest Screen ID in the list." alt="" coords="263,32,495,58"/>
-<area shape="rect" id="node6" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="267,133,492,160"/>
+<area shape="rect" id="Node000001" title="Get the previous screen in the list (sorted by ID)" alt="" coords="5,74,213,114"/>
+<area shape="rect" id="Node000002" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="555,32,662,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,72,194,41,227,27,261,17,326,5,379,3,498,17,550,26,549,32,497,22,378,9,327,10,262,22,229,32,197,46,142,76"/>
+<area shape="rect" id="Node000003" href="$classScreenManager.html#a6cc01abb59037b653ca45f130c83c9b3" title="Get the highest Screen ID in the list." alt="" coords="261,81,497,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,91,248,91,248,97,214,97"/>
+<area shape="rect" id="Node000004" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="545,105,672,131"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="142,112,197,142,229,156,262,166,327,179,379,184,431,179,497,166,537,153,573,135,576,140,539,158,498,171,432,184,379,189,327,185,261,171,227,161,194,147,140,117"/>
+<area shape="rect" id="Node000005" href="$classScreenManager.html#acd4f0a92975819547a21bfc7d6320f6d" title="Get the lowest Screen ID in the list." alt="" coords="263,32,495,57"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="213,73,295,57,296,63,214,78"/>
+<area shape="rect" id="Node000006" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="267,131,492,156"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="214,111,296,126,295,131,213,116"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="439,79,497,66,542,56,543,62,498,71,440,84"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="498,104,532,107,531,113,498,109"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="496,42,542,42,542,47,496,47"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="455,55,498,66,572,97,570,102,496,71,454,60"/>
+<area shape="poly" id="edge10_Node000006_Node000004" title=" " alt="" coords="492,128,531,124,532,129,492,134"/>
 </map>

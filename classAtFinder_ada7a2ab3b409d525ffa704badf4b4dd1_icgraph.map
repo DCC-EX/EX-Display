@@ -1,5 +1,17 @@
 <map id="AtFinder::cleanUp" name="AtFinder::cleanUp">
-<area shape="rect" id="node1" title="Clean up memory allocations used by AtFinder." alt="" coords="255,31,392,57"/>
-<area shape="rect" id="node2" href="$test__ControllerDisplayUpdate_8cpp.html#af7a73dc328bc3f14a231b3d577180628" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="71,5,141,32"/>
-<area shape="rect" id="node3" href="$classConfigurator.html#a746eb3439c34f99927d46eff5722a93a" title="Destructor for the Configurator." alt="" coords="5,56,207,83"/>
+<area shape="rect" id="Node000001" title="Clean up memory allocations used by AtFinder." alt="" coords="255,153,392,179"/>
+<area shape="rect" id="Node000002" href="$test__AtFinder__Logger_8cpp.html#a3d5173d99541d49d8f78c0815d09ae95" title=" " alt="" coords="71,5,141,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="304,144,263,93,236,66,205,44,173,31,140,24,141,19,175,26,208,40,239,62,267,89,308,140"/>
+<area shape="rect" id="Node000003" href="$test__AtFinder_8cpp.html#ac066b1d7fc9dcc0efc8d8f2ab1f78f81" title=" " alt="" coords="71,55,141,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="294,147,254,119,206,94,173,83,140,75,141,70,174,77,208,89,256,115,297,143"/>
+<area shape="rect" id="Node000004" href="$test__AtFinder_8cpp.html#a6e3a6f9f055cce99e71f21132466245e" title=" " alt="" coords="71,104,141,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="253,153,140,127,142,122,254,148"/>
+<area shape="rect" id="Node000005" href="$test__ControllerDisplayUpdate_8cpp.html#af7a73dc328bc3f14a231b3d577180628" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="71,153,141,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="241,169,141,169,141,163,241,163"/>
+<area shape="rect" id="Node000006" href="$test__Controller_8cpp.html#a75631fe386e9be5e2118adf3f01653ee" title="Ensure update() method correctly ignores an invalid stream input." alt="" coords="71,203,141,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="254,184,142,210,140,205,253,179"/>
+<area shape="rect" id="Node000007" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="71,252,141,277"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="297,189,256,216,208,242,174,254,141,261,140,256,172,248,206,237,253,212,294,184"/>
+<area shape="rect" id="Node000008" href="$classConfigurator.html#a746eb3439c34f99927d46eff5722a93a" title="Destructor for the Configurator." alt="" coords="5,301,207,327"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="308,192,267,242,239,269,208,291,179,304,177,299,205,286,236,265,263,239,304,188"/>
 </map>

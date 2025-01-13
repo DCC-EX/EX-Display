@@ -1,6 +1,11 @@
 <map id="Stream::available" name="Stream::available">
-<area shape="rect" id="node1" title="Check number of characters available in the buffer." alt="" coords="309,31,447,57"/>
-<area shape="rect" id="node2" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="123,31,261,57"/>
-<area shape="rect" id="node3" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="15,5,65,32"/>
-<area shape="rect" id="node4" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="5,56,75,83"/>
+<area shape="rect" id="Node000001" title="Check number of characters available in the buffer." alt="" coords="309,55,447,80"/>
+<area shape="rect" id="Node000002" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="123,55,261,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="295,70,261,70,261,65,295,65"/>
+<area shape="rect" id="Node000003" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="15,5,65,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="138,53,65,29,66,23,140,48"/>
+<area shape="rect" id="Node000004" href="$test__Controller_8cpp.html#a75631fe386e9be5e2118adf3f01653ee" title="Ensure update() method correctly ignores an invalid stream input." alt="" coords="5,55,75,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="109,70,75,70,75,65,109,65"/>
+<area shape="rect" id="Node000005" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="5,104,75,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="140,87,76,108,74,103,139,82"/>
 </map>

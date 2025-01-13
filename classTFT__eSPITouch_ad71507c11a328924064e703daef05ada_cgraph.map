@@ -1,8 +1,21 @@
 <map id="TFT_eSPITouch::_displayCalibrationError" name="TFT_eSPITouch::_displayCalibrationError">
-<area shape="rect" id="node1" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="5,49,256,90"/>
-<area shape="rect" id="node2" href="$classTFT__eSPIDisplay.html#af7bbb772e597d3431656ccd32d73bdf5" title="Clear the entire screen." alt="" coords="304,5,516,32"/>
-<area shape="rect" id="node3" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="381,56,439,83"/>
-<area shape="rect" id="node4" href="$classTFT__eSPIDisplay.html#a18b84c77677d72c6515d0cd45e9c65ae" title="Display a row of text on the display." alt="" coords="305,107,515,133"/>
-<area shape="rect" id="node5" href="$classTFT__eSPIDisplay.html#afcbf3673396a684fd540bc75214719a3" title="Get the X/Y coordinates to draw the specified row, starting at the specified column." alt="" coords="808,99,1000,141"/>
-<area shape="rect" id="node6" href="$classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda" title="Clear the specified row." alt="" coords="564,132,760,159"/>
+<area shape="rect" id="Node000001" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="5,116,256,156"/>
+<area shape="rect" id="Node000002" href="$classTFT__eSPIDisplay.html#af7bbb772e597d3431656ccd32d73bdf5" title="Clear the entire screen." alt="" coords="304,74,516,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,113,324,99,325,104,245,119"/>
+<area shape="rect" id="Node000003" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="381,123,439,149"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="256,133,367,133,367,139,256,139"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#a1bc192c6854bae554c9aa09cd7122cdc" title="Static method to enable calling back to a derived class with a formatted row." alt="" coords="305,173,515,198"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="245,153,325,168,324,173,244,159"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#acde7922833a368ce3233fe4d721f838a" title="Convert the provided RGB colour code string constant to a uint16_t RGB565 colour." alt="" coords="571,5,741,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="494,170,514,158,526,146,532,134,538,109,544,82,551,69,562,55,568,51,571,55,566,59,555,72,549,84,543,110,537,136,530,149,518,162,497,175"/>
+<area shape="rect" id="Node000006" href="$classDisplayInterface.html#ad8da5e63e3775f8f02b04636a9482d97" title="Validates the provided char is a valid modifier." alt="" coords="587,69,725,109"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="482,170,515,158,529,149,538,139,563,119,575,113,578,117,565,124,542,143,532,153,517,162,484,175"/>
+<area shape="rect" id="Node000007" href="$classDisplayInterface.html#ac5cc108ca1c1410a8321078b3868ed78" title="Check if the provided string constant translates to a valid RGB colour code." alt="" coords="587,133,725,173"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="508,170,573,161,574,167,508,175"/>
+<area shape="rect" id="Node000008" href="$classDisplayInterface.html#a96f1a22d4566a22aefd3b652808d9441" title="Sanitise the provided struct of RowAttributes." alt="" coords="584,197,728,237"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="508,195,570,204,570,209,508,201"/>
+<area shape="rect" id="Node000009" href="$classDisplayInterface.html#a652c6ce102531b9dd02fb960946987c8" title="Update the provided RowAttributes struct according to the provided modifier." alt="" coords="587,261,725,301"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="441,196,565,247,584,254,582,259,563,252,439,201"/>
+<area shape="rect" id="Node000010" href="$classDisplayInterface.html#a8e1258fa3f32baf1587b80354c8afdb3" title="Display a row using formatting modifiers." alt="" coords="564,325,748,365"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="425,196,483,251,522,283,565,311,577,317,575,322,563,316,519,287,479,255,422,200"/>
 </map>

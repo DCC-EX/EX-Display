@@ -1,4 +1,7 @@
 <map id="Logger::setLogLevel" name="Logger::setLogLevel">
-<area shape="rect" id="node1" title="Set the log level." alt="" coords="244,5,396,32"/>
-<area shape="rect" id="node2" href="$classConfigurator.html#a74bea48b6837fd297b7a3a78de73c8c5" title="Constructor for this Configurator." alt="" coords="5,5,196,32"/>
+<area shape="rect" id="Node000001" title="Set the log level." alt="" coords="244,31,396,56"/>
+<area shape="rect" id="Node000002" href="$classConfigurator.html#a74bea48b6837fd297b7a3a78de73c8c5" title="Constructor for this Configurator." alt="" coords="5,5,196,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,36,196,32,196,26,230,30"/>
+<area shape="rect" id="Node000003" href="$test__AtFinder__Logger_8cpp.html#a3d5173d99541d49d8f78c0815d09ae95" title=" " alt="" coords="66,55,135,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,56,136,66,136,61,230,51"/>
 </map>

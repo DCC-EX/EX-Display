@@ -1,8 +1,17 @@
 <map id="CallbackInterface::updateScreen" name="CallbackInterface::updateScreen">
-<area shape="rect" id="node1" title="Method to implement updating a screen." alt="" coords="555,23,699,65"/>
-<area shape="rect" id="node2" href="$classAtFinder.html#a76f0a4563646bfdcd04820845d440c01" title="Call this as often as possible with a streaming input (eg. Serial.read())" alt="" coords="309,31,507,57"/>
-<area shape="rect" id="node3" href="$test__AtFinder_8cpp.html#ac066b1d7fc9dcc0efc8d8f2ab1f78f81" title=" " alt="" coords="157,5,227,32"/>
-<area shape="rect" id="node4" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="123,56,261,83"/>
-<area shape="rect" id="node5" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="15,31,65,57"/>
-<area shape="rect" id="node6" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="5,81,75,108"/>
+<area shape="rect" id="Node000001" title="Method to implement updating a screen." alt="" coords="555,47,699,87"/>
+<area shape="rect" id="Node000002" href="$classAtFinder.html#a76f0a4563646bfdcd04820845d440c01" title="Call this as often as possible with a streaming input (eg. Serial.read())" alt="" coords="309,55,507,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="541,70,507,70,507,65,541,65"/>
+<area shape="rect" id="Node000003" href="$test__AtFinder_8cpp.html#ac066b1d7fc9dcc0efc8d8f2ab1f78f81" title=" " alt="" coords="157,5,227,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="338,54,226,28,227,23,339,49"/>
+<area shape="rect" id="Node000004" href="$test__AtFinder_8cpp.html#a6e3a6f9f055cce99e71f21132466245e" title=" " alt="" coords="157,55,227,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="295,70,227,70,227,65,295,65"/>
+<area shape="rect" id="Node000005" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="123,104,261,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="339,86,249,107,248,101,338,80"/>
+<area shape="rect" id="Node000006" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="15,55,65,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="138,102,65,78,66,73,140,97"/>
+<area shape="rect" id="Node000007" href="$test__Controller_8cpp.html#a75631fe386e9be5e2118adf3f01653ee" title="Ensure update() method correctly ignores an invalid stream input." alt="" coords="5,104,75,129"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="109,119,75,119,75,114,109,114"/>
+<area shape="rect" id="Node000008" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="5,153,75,179"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="140,136,76,157,74,152,139,131"/>
 </map>

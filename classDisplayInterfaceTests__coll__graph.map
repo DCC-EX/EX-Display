@@ -1,7 +1,12 @@
 <map id="DisplayInterfaceTests" name="DisplayInterfaceTests">
-<area shape="rect" id="node1" title="Test harness for physical display interface tests." alt="" coords="5,260,168,287"/>
-<area shape="rect" id="node2" title=" " alt="" coords="27,171,75,197"/>
-<area shape="rect" id="node3" href="$classMockDisplay.html" title="Mock physical display class." alt="" coords="99,171,205,197"/>
-<area shape="rect" id="node4" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="87,95,217,121"/>
-<area shape="rect" id="node5" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="119,5,185,32"/>
+<area shape="rect" id="Node000001" title="Test harness for physical display interface tests." alt="" coords="5,256,168,281"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="27,168,75,193"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,205,84,254,79,256,58,207"/>
+<area shape="rect" id="Node000003" href="$classMockDisplay.html" title="Mock physical display class." alt="" coords="99,168,205,193"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,206,98,257,94,254,133,203"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="87,93,217,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="155,133,155,168,149,168,149,133"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="232,98,243,106,235,113,217,115,217,110,233,108,238,106,229,103"/>
+<area shape="rect" id="Node000005" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="119,5,185,31"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="155,45,155,93,149,93,149,45"/>
 </map>

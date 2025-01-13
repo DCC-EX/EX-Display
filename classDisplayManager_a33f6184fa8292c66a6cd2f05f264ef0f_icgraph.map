@@ -1,7 +1,13 @@
 <map id="DisplayManager::_setupAllSPICSPins" name="DisplayManager::_setupAllSPICSPins">
-<area shape="rect" id="node1" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="561,23,757,65"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="291,31,513,57"/>
-<area shape="rect" id="node3" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="112,5,243,32"/>
-<area shape="rect" id="node5" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="143,56,212,83"/>
-<area shape="rect" id="node4" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="5,5,64,32"/>
+<area shape="rect" id="Node000001" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="561,47,757,87"/>
+<area shape="rect" id="Node000002" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="291,55,513,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="547,70,514,70,514,65,547,65"/>
+<area shape="rect" id="Node000003" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="112,5,243,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="330,54,235,33,237,28,331,49"/>
+<area shape="rect" id="Node000007" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="143,55,212,80"/>
+<area shape="poly" id="edge4_Node000002_Node000007" title=" " alt="" coords="277,70,212,70,212,65,277,65"/>
+<area shape="rect" id="Node000008" href="$test__DisplayManager_8cpp.html#a95f97074a82f0e3d901808635e654d9a" title="Validate the startDisplays() method correctly calls all display begin() methods." alt="" coords="143,104,212,129"/>
+<area shape="poly" id="edge5_Node000002_Node000008" title=" " alt="" coords="331,86,213,112,212,107,330,80"/>
+<area shape="rect" id="Node000004" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="5,5,64,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="98,21,64,21,64,15,98,15"/>
 </map>

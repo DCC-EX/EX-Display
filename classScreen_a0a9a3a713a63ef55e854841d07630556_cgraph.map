@@ -1,11 +1,23 @@
 <map id="Screen::updateScreenRow" name="Screen::updateScreenRow">
-<area shape="rect" id="node1" title="Update the specified ScreenRow, or create it if it doesn&#39;t exist This will automatically maintain the..." alt="" coords="5,132,196,159"/>
-<area shape="rect" id="node2" href="$classScreen.html#a1a1f735d2c573b460813e1ba0667b649" title="Add a new ScreenRow to the list." alt="" coords="253,157,431,184"/>
-<area shape="rect" id="node6" href="$classScreenRow.html#a0d6afc0a69cc0abc42e1dd362e3e0832" title="Set the text associated with this ScreenRow." alt="" coords="497,208,645,235"/>
-<area shape="rect" id="node7" href="$classScreen.html#a43263117dfffa210ccd83b6cd12e0732" title="Delete the specified ScreenRow and update the list accordingly." alt="" coords="245,56,439,83"/>
-<area shape="rect" id="node9" href="$classScreen.html#a1545b68b9bd38176d171d769f3f3c7f3" title="Get the ScreenRow instance at the specified ID." alt="" coords="244,107,440,133"/>
-<area shape="rect" id="node3" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="494,56,647,83"/>
-<area shape="rect" id="node4" href="$classScreenRow.html#a51f874b0a3ca8fce7152755cdc849d01" title="Set the Logger instance." alt="" coords="488,157,653,184"/>
-<area shape="rect" id="node5" href="$classScreenRow.html#a11c13ad781e5bfe79ebd74462d6cedc0" title="Set the next ScreenRow instance in the list." alt="" coords="495,107,647,133"/>
-<area shape="rect" id="node8" href="$classScreenRow.html#a4c72ef81c0dde9c008c946625fdce36b" title="Get the ID of this ScreenRow." alt="" coords="503,5,638,32"/>
+<area shape="rect" id="Node000001" title="Update the specified ScreenRow, or create it if it doesn&#39;t exist This will automatically maintain the..." alt="" coords="5,128,196,153"/>
+<area shape="rect" id="Node000002" href="$classScreen.html#a1a1f735d2c573b460813e1ba0667b649" title="Add a new ScreenRow to the list." alt="" coords="253,152,431,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,147,240,152,239,157,196,153"/>
+<area shape="rect" id="Node000006" href="$classScreenRow.html#a0d6afc0a69cc0abc42e1dd362e3e0832" title="Set the text associated with this ScreenRow." alt="" coords="497,203,645,228"/>
+<area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="133,151,184,170,245,187,369,205,483,212,482,217,368,210,243,193,183,176,131,156"/>
+<area shape="rect" id="Node000007" href="$classScreen.html#a43263117dfffa210ccd83b6cd12e0732" title="Delete the specified ScreenRow and update the list accordingly." alt="" coords="245,53,439,79"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="134,125,243,87,271,80,272,85,245,93,136,130"/>
+<area shape="rect" id="Node000009" href="$classScreen.html#a1545b68b9bd38176d171d769f3f3c7f3" title="Get the ScreenRow instance at the specified ID." alt="" coords="244,103,440,128"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="196,128,230,124,231,130,197,133"/>
+<area shape="rect" id="Node000003" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="494,55,647,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="413,149,439,138,453,127,462,115,471,102,487,89,498,83,501,88,489,94,475,105,466,118,457,131,441,143,415,154"/>
+<area shape="rect" id="Node000004" href="$classScreenRow.html#a51f874b0a3ca8fce7152755cdc849d01" title="Set the Logger instance." alt="" coords="488,153,653,179"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="431,163,474,163,474,168,431,168"/>
+<area shape="rect" id="Node000005" href="$classScreenRow.html#a11c13ad781e5bfe79ebd74462d6cedc0" title="Set the next ScreenRow instance in the list." alt="" coords="495,104,647,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="403,149,495,130,497,135,404,155"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="401,175,500,197,499,202,400,180"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="440,64,480,64,480,69,440,69"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="401,76,500,98,499,104,400,81"/>
+<area shape="rect" id="Node000008" href="$classScreenRow.html#a4c72ef81c0dde9c008c946625fdce36b" title="Get the ID of this ScreenRow." alt="" coords="503,5,638,31"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="403,51,495,31,497,36,404,56"/>
+<area shape="poly" id="edge11_Node000009_Node000003" title=" " alt="" coords="403,100,495,80,497,86,404,105"/>
 </map>

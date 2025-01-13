@@ -1,6 +1,9 @@
 <map id="InputInterface::_debounceOrHeld" name="InputInterface::_debounceOrHeld">
-<area shape="rect" id="node1" title="Call this from the derived class&#39; check() method to debounce and detect if the input is a hold vs...." alt="" coords="232,57,423,98"/>
-<area shape="rect" id="node2" href="$classMockButtonInput.html#aff7bf3f4782dc8dd912f94be30b006e8" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="5,5,184,32"/>
-<area shape="rect" id="node3" href="$classMockTouchScreenInput.html#afd6a598f9008cc810597db1db68aa6c0" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="9,57,180,98"/>
-<area shape="rect" id="node4" href="$classTFT__eSPITouch.html#afd86f481b8789120fe1fa9357f183741" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="13,123,176,149"/>
+<area shape="rect" id="Node000001" title="Call this from the derived class&#39; check() method to debounce and detect if the input is a hold vs...." alt="" coords="232,55,423,95"/>
+<area shape="rect" id="Node000002" href="$classMockButtonInput.html#aff7bf3f4782dc8dd912f94be30b006e8" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="5,5,184,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,55,146,33,148,28,233,49"/>
+<area shape="rect" id="Node000003" href="$classMockTouchScreenInput.html#afd6a598f9008cc810597db1db68aa6c0" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="9,55,180,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="218,78,180,78,180,73,218,73"/>
+<area shape="rect" id="Node000004" href="$classTFT__eSPITouch.html#afd86f481b8789120fe1fa9357f183741" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="13,120,176,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="233,101,148,123,146,117,232,96"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['project_693',['project',['../namespaceconf.html#a45653c983098153b78e33600e39230eb',1,'conf']]]
+  ['neverticker_0',['neverTicker',['../structRowAttributes.html#ad11483dc856ba1455741ee61107c06d7',1,'RowAttributes']]]
 ];

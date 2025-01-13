@@ -1,0 +1,5 @@
+<map id="Controller::updateScreen" name="Controller::updateScreen">
+<area shape="rect" id="Node000001" title="Method to implement updating a screen." alt="" coords="123,5,305,31"/>
+<area shape="rect" id="Node000002" href="$test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly." alt="" coords="5,5,75,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,21,75,21,75,15,109,15"/>
+</map>

@@ -1,6 +1,9 @@
 <map id="TEST_F" name="TEST_F">
-<area shape="rect" id="node1" title="Create a Screen and check all attributes are valid." alt="" coords="5,56,75,83"/>
-<area shape="rect" id="node2" href="$classScreen.html#a0bf66c3d7a47302ecb77113f3eacc422" title="Get the first ScreenRow instance in the list." alt="" coords="123,5,317,32"/>
-<area shape="rect" id="node3" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="167,56,273,83"/>
-<area shape="rect" id="node4" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="157,107,283,133"/>
+<area shape="rect" id="Node000001" title="Create a Screen and check all attributes are valid." alt="" coords="5,55,75,80"/>
+<area shape="rect" id="Node000002" href="$classScreen.html#a0bf66c3d7a47302ecb77113f3eacc422" title="Get the first ScreenRow instance in the list." alt="" coords="123,5,317,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,54,122,39,151,32,153,37,123,45,76,59"/>
+<area shape="rect" id="Node000003" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="167,55,273,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="75,65,153,65,153,70,75,70"/>
+<area shape="rect" id="Node000004" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="157,104,283,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="76,75,123,89,157,98,156,103,122,94,74,80"/>
 </map>

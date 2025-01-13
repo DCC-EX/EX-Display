@@ -1,0 +1,12 @@
+<map id="RowFormattingTests" name="RowFormattingTests">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,256,160,281"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="37,168,85,193"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,206,82,255,77,256,65,207"/>
+<area shape="rect" id="Node000003" href="$classMockColourDisplay.html" title="Mock colour display class for format testing." alt="" coords="110,168,258,193"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,204,98,257,95,253,158,200"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="119,93,249,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="187,133,187,168,181,168,181,133"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="264,98,275,106,267,113,249,115,249,110,265,108,270,106,261,103"/>
+<area shape="rect" id="Node000005" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="151,5,217,31"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="187,45,187,93,181,93,181,45"/>
+</map>

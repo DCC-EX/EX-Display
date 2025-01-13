@@ -1,5 +1,7 @@
 <map id="setup" name="setup">
-<area shape="rect" id="node1" title="Main setup method, initialise Configurator here." alt="" coords="473,5,532,32"/>
-<area shape="rect" id="node2" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="215,5,425,32"/>
-<area shape="rect" id="node3" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,5,167,32"/>
+<area shape="rect" id="Node000001" title="Main setup method, initialise Configurator here." alt="" coords="473,5,532,31"/>
+<area shape="rect" id="Node000002" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="215,5,425,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="460,21,425,21,425,15,460,15"/>
+<area shape="rect" id="Node000003" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,5,167,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,21,167,21,167,15,201,15"/>
 </map>

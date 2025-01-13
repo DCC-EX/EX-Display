@@ -1,6 +1,9 @@
 <map id="Screen::_deleteScreenRow" name="Screen::_deleteScreenRow">
-<area shape="rect" id="node1" title="Delete the specified ScreenRow and update the list accordingly." alt="" coords="5,56,200,83"/>
-<area shape="rect" id="node2" href="$classScreenRow.html#a4c72ef81c0dde9c008c946625fdce36b" title="Get the ID of this ScreenRow." alt="" coords="257,5,392,32"/>
-<area shape="rect" id="node3" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="248,56,401,83"/>
-<area shape="rect" id="node4" href="$classScreenRow.html#a11c13ad781e5bfe79ebd74462d6cedc0" title="Set the next ScreenRow instance in the list." alt="" coords="249,107,401,133"/>
+<area shape="rect" id="Node000001" title="Delete the specified ScreenRow and update the list accordingly." alt="" coords="5,55,200,80"/>
+<area shape="rect" id="Node000002" href="$classScreenRow.html#a4c72ef81c0dde9c008c946625fdce36b" title="Get the ID of this ScreenRow." alt="" coords="257,5,392,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,52,253,31,254,36,161,57"/>
+<area shape="rect" id="Node000003" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="248,55,401,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,65,234,65,234,70,200,70"/>
+<area shape="rect" id="Node000004" href="$classScreenRow.html#a11c13ad781e5bfe79ebd74462d6cedc0" title="Set the next ScreenRow instance in the list." alt="" coords="249,104,401,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="161,77,254,98,253,104,160,83"/>
 </map>

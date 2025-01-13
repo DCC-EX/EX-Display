@@ -1,9 +1,15 @@
 <map id="delay" name="delay">
-<area shape="rect" id="node1" title=" " alt="" coords="771,46,829,73"/>
-<area shape="rect" id="node2" href="$classTFT__eSPITouch.html#ad71507c11a328924064e703daef05ada" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="472,5,723,47"/>
-<area shape="rect" id="node4" href="$classInputInterface.html#a496b20fc72c9b458bc5b7b29bebfe672" title="Set the debounce delay." alt="" coords="494,71,701,112"/>
-<area shape="rect" id="node3" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="255,13,416,39"/>
-<area shape="rect" id="node5" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="247,78,424,105"/>
-<area shape="rect" id="node6" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="5,41,199,83"/>
-<area shape="rect" id="node7" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="67,107,137,134"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="771,45,829,70"/>
+<area shape="rect" id="Node000002" href="$classTFT__eSPITouch.html#ad71507c11a328924064e703daef05ada" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="472,5,723,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="757,53,723,48,723,43,758,48"/>
+<area shape="rect" id="Node000004" href="$classInputInterface.html#a496b20fc72c9b458bc5b7b29bebfe672" title="Set the debounce delay." alt="" coords="494,69,701,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="757,67,701,76,700,70,756,61"/>
+<area shape="rect" id="Node000003" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="255,13,416,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="458,28,416,28,416,23,458,23"/>
+<area shape="rect" id="Node000005" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="247,77,424,102"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="480,92,424,92,424,87,480,87"/>
+<area shape="rect" id="Node000006" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="5,40,199,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="232,79,199,75,199,70,233,74"/>
+<area shape="rect" id="Node000007" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="67,105,137,130"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="233,104,137,116,137,111,232,99"/>
 </map>

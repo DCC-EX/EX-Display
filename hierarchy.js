@@ -7,6 +7,7 @@ var hierarchy =
     ] ],
     [ "Configurator", "classConfigurator.html", null ],
     [ "DisplayInterface", "classDisplayInterface.html", [
+      [ "MockColourDisplay", "classMockColourDisplay.html", null ],
       [ "MockDisplay", "classMockDisplay.html", null ],
       [ "MockSPIDisplay", "classMockSPIDisplay.html", null ],
       [ "TFT_eSPIDisplay", "classTFT__eSPIDisplay.html", null ]
@@ -21,6 +22,7 @@ var hierarchy =
     [ "InputManager", "classInputManager.html", null ],
     [ "Logger", "classLogger.html", null ],
     [ "MockArduino", "classMockArduino.html", null ],
+    [ "RowAttributes", "structRowAttributes.html", null ],
     [ "Screen", "classScreen.html", null ],
     [ "ScreenManager", "classScreenManager.html", null ],
     [ "ScreenRow", "classScreenRow.html", null ],
@@ -42,6 +44,7 @@ var hierarchy =
       [ "InputInterfaceTests", "classInputInterfaceTests.html", null ],
       [ "InputManagerTests", "classInputManagerTests.html", null ],
       [ "LoggerTests", "classLoggerTests.html", null ],
+      [ "RowFormattingTests", "classRowFormattingTests.html", null ],
       [ "ScreenManagerTests", "classScreenManagerTests.html", null ],
       [ "ScreenTests", "classScreenTests.html", null ],
       [ "TouchScreenInputTests", "classTouchScreenInputTests.html", null ]

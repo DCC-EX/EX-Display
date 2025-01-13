@@ -1,7 +1,5 @@
 <map id="TFT_eSPIDisplay::clearRow" name="TFT_eSPIDisplay::clearRow">
-<area shape="rect" id="node1" title="Clear the specified row." alt="" coords="772,46,968,73"/>
-<area shape="rect" id="node2" href="$classTFT__eSPIDisplay.html#a18b84c77677d72c6515d0cd45e9c65ae" title="Display a row of text on the display." alt="" coords="513,46,724,73"/>
-<area shape="rect" id="node3" href="$classTFT__eSPITouch.html#ad71507c11a328924064e703daef05ada" title="Display calibration error on screen and pause for 5 seconds." alt="" coords="215,5,465,47"/>
-<area shape="rect" id="node5" href="$classTFT__eSPIDisplay.html#ac4c657d18bcd4dae193f5fd906411dcf" title="Display the specified Screen on this display." alt="" coords="249,71,431,112"/>
-<area shape="rect" id="node4" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,13,167,39"/>
+<area shape="rect" id="Node000001" title="Clear the specified row." alt="" coords="236,13,432,38"/>
+<area shape="rect" id="Node000002" href="$classTFT__eSPIDisplay.html#af54701b2ce8e0137aa4989c944d2c3a5" title="Display a row using formatting modifiers." alt="" coords="5,5,188,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,28,188,28,188,23,222,23"/>
 </map>

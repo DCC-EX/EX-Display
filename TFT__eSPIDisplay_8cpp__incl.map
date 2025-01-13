@@ -1,10 +1,18 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/TFT_eSPIDisplay.cpp" name="/home/runner/work/EX&#45;Display/EX&#45;Display/TFT_eSPIDisplay.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="155,5,333,61"/>
-<area shape="rect" id="node2" href="$TFT__eSPIDisplay_8h.html" title=" " alt="" coords="175,109,313,136"/>
-<area shape="rect" id="node3" href="$Defines_8h.html" title=" " alt="" coords="5,184,88,211"/>
-<area shape="rect" id="node5" href="$DisplayInterface_8h.html" title=" " alt="" coords="112,184,253,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="278,184,333,211"/>
-<area shape="rect" id="node8" title=" " alt="" coords="357,184,449,211"/>
-<area shape="rect" id="node4" href="$Logger_8h.html" title=" " alt="" coords="25,259,103,285"/>
-<area shape="rect" id="node6" href="$Screen_8h.html" title=" " alt="" coords="143,259,222,285"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="155,5,333,60"/>
+<area shape="rect" id="Node000002" href="$TFT__eSPIDisplay_8h.html" title=" " alt="" coords="175,108,313,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,60,247,94,241,94,241,60"/>
+<area shape="rect" id="Node000003" href="$Defines_8h.html" title=" " alt="" coords="5,181,88,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="213,136,93,179,91,174,211,131"/>
+<area shape="rect" id="Node000011" href="$DisplayInterface_8h.html" title=" " alt="" coords="112,181,253,207"/>
+<area shape="poly" id="edge4_Node000002_Node000011" title=" " alt="" coords="236,135,204,173,200,169,232,132"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="278,181,333,207"/>
+<area shape="poly" id="edge7_Node000002_Node000014" title=" " alt="" coords="256,132,288,169,284,173,252,135"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="357,181,449,207"/>
+<area shape="poly" id="edge8_Node000002_Node000015" title=" " alt="" coords="271,131,365,173,363,178,268,136"/>
+<area shape="rect" id="Node000004" href="$Logger_8h.html" title=" " alt="" coords="25,255,103,280"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="52,206,61,241,55,242,47,208"/>
+<area shape="poly" id="edge5_Node000011_Node000004" title=" " alt="" coords="165,209,97,250,94,245,162,204"/>
+<area shape="rect" id="Node000012" href="$Screen_8h.html" title=" " alt="" coords="143,255,222,280"/>
+<area shape="poly" id="edge6_Node000011_Node000012" title=" " alt="" coords="185,207,185,241,180,241,180,207"/>
 </map>

@@ -1,9 +1,15 @@
 <map id="TEST_F" name="TEST_F">
-<area shape="rect" id="node1" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="5,132,75,159"/>
-<area shape="rect" id="node2" href="$classAtFinder.html#ada7a2ab3b409d525ffa704badf4b4dd1" title="Clean up memory allocations used by AtFinder." alt="" coords="131,5,268,32"/>
-<area shape="rect" id="node3" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="146,56,253,83"/>
-<area shape="rect" id="node4" href="$classScreenRow.html#a4c72ef81c0dde9c008c946625fdce36b" title="Get the ID of this ScreenRow." alt="" coords="132,107,267,133"/>
-<area shape="rect" id="node5" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="123,157,276,184"/>
-<area shape="rect" id="node6" href="$classScreenRow.html#a5da76ddfc30da8cd8609b1d136604c18" title="Get the text associated with this ScreenRow." alt="" coords="125,208,274,235"/>
-<area shape="rect" id="node7" href="$classAtFinder.html#abadf56235ed457d74fff16dfdcd6d693" title="Setup the AtFinder parser." alt="" coords="139,259,259,285"/>
+<area shape="rect" id="Node000001" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="5,129,75,155"/>
+<area shape="rect" id="Node000002" href="$classAtFinder.html#ada7a2ab3b409d525ffa704badf4b4dd1" title="Clean up memory allocations used by AtFinder." alt="" coords="131,5,268,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,128,75,85,96,61,121,40,131,34,133,39,124,44,100,65,79,88,51,131"/>
+<area shape="rect" id="Node000003" href="$classScreen.html#ad70000886e796b4444e3cdf5e38f6169" title="Get the ID for this screen instance." alt="" coords="146,55,253,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="58,127,121,89,138,82,140,87,124,94,61,131"/>
+<area shape="rect" id="Node000004" href="$classScreenRow.html#a4c72ef81c0dde9c008c946625fdce36b" title="Get the ID of this ScreenRow." alt="" coords="132,104,267,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="75,134,118,127,119,132,75,139"/>
+<area shape="rect" id="Node000005" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="123,153,276,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="75,145,110,150,109,155,75,150"/>
+<area shape="rect" id="Node000006" href="$classScreenRow.html#a5da76ddfc30da8cd8609b1d136604c18" title="Get the text associated with this ScreenRow." alt="" coords="125,203,274,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="62,153,124,188,143,196,141,201,122,192,59,157"/>
+<area shape="rect" id="Node000007" href="$classAtFinder.html#abadf56235ed457d74fff16dfdcd6d693" title="Setup the AtFinder parser." alt="" coords="139,252,259,277"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="51,153,80,194,100,217,124,237,136,244,134,249,121,242,97,221,76,198,46,156"/>
 </map>

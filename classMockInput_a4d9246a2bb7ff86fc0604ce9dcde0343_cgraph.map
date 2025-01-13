@@ -1,4 +1,5 @@
 <map id="MockInput::MockInput" name="MockInput::MockInput">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,172,32"/>
-<area shape="rect" id="node2" href="$classInputInterface.html#a150a075ce0c5a95dc4fd15ccd1933d26" title="Test if this InputInterface requires a display instance &#45; needed for TFT_eSPI as it shares the instan..." alt="" coords="220,5,429,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,172,31"/>
+<area shape="rect" id="Node000002" href="$classInputInterface.html#a150a075ce0c5a95dc4fd15ccd1933d26" title="Test if this InputInterface requires a display instance &#45; needed for TFT_eSPI as it shares the instan..." alt="" coords="220,5,429,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,15,206,15,206,21,172,21"/>
 </map>

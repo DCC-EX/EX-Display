@@ -1,19 +1,35 @@
 <map id="TFT_eSPITouch::_setupSPIFFS" name="TFT_eSPITouch::_setupSPIFFS">
-<area shape="rect" id="node1" title="Ensure SPIFFS filesystem is up and running." alt="" coords="5,221,216,248"/>
-<area shape="rect" id="node2" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="264,221,323,248"/>
-<area shape="rect" id="node3" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="403,81,533,108"/>
-<area shape="rect" id="node7" href="$classConfigurator.html#a82c65d6d040b717d64520903c788dd79" title="Get the Controller instance for this Configurator." alt="" coords="371,221,565,248"/>
-<area shape="rect" id="node8" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="385,335,551,361"/>
-<area shape="rect" id="node4" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="613,5,868,32"/>
-<area shape="rect" id="node5" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="629,56,852,83"/>
-<area shape="rect" id="node6" href="$classInputManager.html#aa180ec01ef4c17f0f9a3d681dc99817c" title="Start the configured input &#45; calls the InputInterface::begin() method." alt="" coords="649,107,832,133"/>
-<area shape="rect" id="node9" href="$classDisplayManager.html#a9ade9b696372a53b8b716d29d7b53c70" title="Parses the displays configured in myConfig.h and creates the list of displays (this is implemented in..." alt="" coords="624,157,857,184"/>
-<area shape="rect" id="node10" href="$classInputManager.html#a3307bd524c644992394b1f74ad9c1433" title="Call once to create the InputInterface derived input." alt="" coords="643,208,838,235"/>
-<area shape="rect" id="node11" href="$classDisplayManager.html#a0dcf69d16599029ba34bf31c0c666390" title="Get a DisplayInterface derived instance by its ID." alt="" coords="623,259,858,285"/>
-<area shape="rect" id="node12" href="$classInputManager.html#a2672882f95872798fd07d4d98f82063b" title="Get the configured InputInterface." alt="" coords="653,309,828,336"/>
-<area shape="rect" id="node13" href="$classInputInterface.html#a150a075ce0c5a95dc4fd15ccd1933d26" title="Test if this InputInterface requires a display instance &#45; needed for TFT_eSPI as it shares the instan..." alt="" coords="636,360,845,387"/>
-<area shape="rect" id="node14" href="$classInputManager.html#a085a9206b827e9666b798cb8706c20c5" title="Set the CallbackInterface derived instance for user input to use for callbacks." alt="" coords="643,411,839,437"/>
-<area shape="rect" id="node15" href="$classInputManager.html#a27c7bc043eb9fbb8c7700624852220f6" title="Set the display interface to retrieve required attributes &#45; note this should only be required for TFT..." alt="" coords="646,461,835,488"/>
-<area shape="rect" id="node16" href="$classAtFinder.html#ac50442f56c76cd6bd05da52db7ba8910" title="Set the logger instance to use for diagnostic logging." alt="" coords="667,512,815,539"/>
-<area shape="rect" id="node17" href="$classAtFinder.html#abadf56235ed457d74fff16dfdcd6d693" title="Setup the AtFinder parser." alt="" coords="681,563,801,589"/>
+<area shape="rect" id="Node000001" title="Ensure SPIFFS filesystem is up and running." alt="" coords="5,215,216,240"/>
+<area shape="rect" id="Node000002" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="264,215,323,240"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,225,250,225,250,230,216,230"/>
+<area shape="rect" id="Node000003" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="403,80,533,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="310,212,438,112,441,116,313,217"/>
+<area shape="rect" id="Node000015" href="$classConfigurator.html#a82c65d6d040b717d64520903c788dd79" title="Get the Controller instance for this Configurator." alt="" coords="371,215,565,240"/>
+<area shape="poly" id="edge6_Node000002_Node000015" title=" " alt="" coords="323,225,357,225,357,230,323,230"/>
+<area shape="rect" id="Node000016" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="385,325,551,351"/>
+<area shape="poly" id="edge7_Node000002_Node000016" title=" " alt="" coords="316,238,437,315,434,320,313,242"/>
+<area shape="rect" id="Node000004" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="613,5,868,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="501,77,613,39,649,31,650,36,614,45,502,82"/>
+<area shape="rect" id="Node000010" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="629,55,852,80"/>
+<area shape="poly" id="edge4_Node000003_Node000010" title=" " alt="" coords="533,84,615,76,616,82,534,89"/>
+<area shape="rect" id="Node000013" href="$classInputManager.html#aa180ec01ef4c17f0f9a3d681dc99817c" title="Start the configured input &#45; calls the InputInterface::begin() method." alt="" coords="649,104,832,129"/>
+<area shape="poly" id="edge5_Node000003_Node000013" title=" " alt="" coords="534,96,636,105,635,110,533,101"/>
+<area shape="rect" id="Node000017" href="$classDisplayManager.html#a9ade9b696372a53b8b716d29d7b53c70" title="Parses the displays configured in myConfig.h and creates the list of displays (this is implemented in..." alt="" coords="624,153,857,179"/>
+<area shape="poly" id="edge8_Node000016_Node000017" title=" " alt="" coords="483,323,521,291,563,250,576,232,585,217,595,202,612,188,623,182,626,186,615,192,599,205,589,219,581,235,567,253,524,295,487,327"/>
+<area shape="rect" id="Node000018" href="$classInputManager.html#a3307bd524c644992394b1f74ad9c1433" title="Call once to create the InputInterface derived input." alt="" coords="643,203,838,228"/>
+<area shape="poly" id="edge9_Node000016_Node000018" title=" " alt="" coords="482,323,537,280,573,257,612,237,634,229,636,234,614,242,576,261,540,285,485,327"/>
+<area shape="rect" id="Node000019" href="$classDisplayManager.html#a0dcf69d16599029ba34bf31c0c666390" title="Get a DisplayInterface derived instance by its ID." alt="" coords="623,252,858,277"/>
+<area shape="poly" id="edge10_Node000016_Node000019" title=" " alt="" coords="501,323,613,286,649,277,651,283,614,291,503,328"/>
+<area shape="rect" id="Node000020" href="$classInputManager.html#a2672882f95872798fd07d4d98f82063b" title="Get the configured InputInterface." alt="" coords="653,301,828,327"/>
+<area shape="poly" id="edge11_Node000016_Node000020" title=" " alt="" coords="551,328,639,320,640,326,552,333"/>
+<area shape="rect" id="Node000021" href="$classInputInterface.html#a150a075ce0c5a95dc4fd15ccd1933d26" title="Test if this InputInterface requires a display instance &#45; needed for TFT_eSPI as it shares the instan..." alt="" coords="636,351,845,376"/>
+<area shape="poly" id="edge12_Node000016_Node000021" title=" " alt="" coords="552,343,622,350,622,355,551,348"/>
+<area shape="rect" id="Node000022" href="$classInputManager.html#a085a9206b827e9666b798cb8706c20c5" title="Set the CallbackInterface derived instance for user input to use for callbacks." alt="" coords="643,400,839,425"/>
+<area shape="poly" id="edge13_Node000016_Node000022" title=" " alt="" coords="504,348,614,385,655,395,654,400,613,390,502,353"/>
+<area shape="rect" id="Node000023" href="$classInputManager.html#a27c7bc043eb9fbb8c7700624852220f6" title="Set the display interface to retrieve required attributes &#45; note this should only be required for TFT..." alt="" coords="646,449,835,475"/>
+<area shape="poly" id="edge14_Node000016_Node000023" title=" " alt="" coords="485,349,540,391,576,415,614,434,640,443,638,448,612,439,573,419,537,396,482,353"/>
+<area shape="rect" id="Node000026" href="$classAtFinder.html#ac50442f56c76cd6bd05da52db7ba8910" title="Set the logger instance to use for diagnostic logging." alt="" coords="667,499,815,524"/>
+<area shape="poly" id="edge15_Node000016_Node000026" title=" " alt="" coords="480,349,531,415,570,452,615,484,654,499,652,504,612,488,567,456,527,418,476,352"/>
+<area shape="rect" id="Node000027" href="$classAtFinder.html#abadf56235ed457d74fff16dfdcd6d693" title="Setup the AtFinder parser." alt="" coords="681,548,801,573"/>
+<area shape="poly" id="edge16_Node000016_Node000027" title=" " alt="" coords="477,350,495,387,524,437,564,490,588,513,615,533,640,545,668,553,666,558,638,550,612,538,585,517,560,493,520,440,490,389,472,352"/>
 </map>

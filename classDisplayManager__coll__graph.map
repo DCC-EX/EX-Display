@@ -1,6 +1,11 @@
 <map id="DisplayManager" name="DisplayManager">
-<area shape="rect" id="node1" title="Manages all physical displays." alt="" coords="5,273,133,300"/>
-<area shape="rect" id="node2" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="36,95,103,121"/>
-<area shape="rect" id="node4" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="126,184,255,211"/>
-<area shape="rect" id="node3" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="35,5,104,32"/>
+<area shape="rect" id="Node000001" title="Manages all physical displays." alt="" coords="5,269,133,295"/>
+<area shape="rect" id="Node000002" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="126,181,255,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,217,87,271,84,267,161,213"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="271,186,282,194,274,202,256,204,255,199,272,197,277,194,268,190"/>
+<area shape="rect" id="Node000003" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="36,93,103,119"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="68,133,65,168,64,207,70,269,65,269,59,207,59,167,63,132"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="99,125,176,179,173,183,96,129"/>
+<area shape="rect" id="Node000004" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="35,5,104,31"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="72,45,72,93,67,93,67,45"/>
 </map>

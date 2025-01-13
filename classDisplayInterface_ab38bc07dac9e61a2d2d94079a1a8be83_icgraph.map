@@ -1,4 +1,5 @@
 <map id="DisplayInterface::clearScreen" name="DisplayInterface::clearScreen">
-<area shape="rect" id="node1" title="Clear the entire screen." alt="" coords="123,5,336,32"/>
-<area shape="rect" id="node2" href="$test__DisplayInterface_8cpp.html#aa023f143e38a3052f9e71534ff19f5f9" title="Test a second display can be accessed via the first in a list." alt="" coords="5,5,75,32"/>
+<area shape="rect" id="Node000001" title="Clear the entire screen." alt="" coords="123,5,336,31"/>
+<area shape="rect" id="Node000002" href="$test__DisplayInterface_8cpp.html#aa023f143e38a3052f9e71534ff19f5f9" title="Test a second display can be accessed via the first in a list." alt="" coords="5,5,75,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,21,75,21,75,15,109,15"/>
 </map>

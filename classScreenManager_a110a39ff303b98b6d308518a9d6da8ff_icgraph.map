@@ -1,7 +1,17 @@
 <map id="ScreenManager::getFirstScreen" name="ScreenManager::getFirstScreen">
-<area shape="rect" id="node1" title="Get the first Screen instance in the list." alt="" coords="500,85,724,112"/>
-<area shape="rect" id="node2" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="237,5,452,32"/>
-<area shape="rect" id="node3" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,56,189,83"/>
-<area shape="rect" id="node4" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="247,107,443,149"/>
-<area shape="rect" id="node5" href="$test__ScreenManager_8cpp.html#ae55072e56d85f84bd4a955ec7340bdd1" title="Create a ScreenManager." alt="" coords="310,173,379,200"/>
+<area shape="rect" id="Node000001" title="Get the first Screen instance in the list." alt="" coords="500,143,724,168"/>
+<area shape="rect" id="Node000002" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="237,5,452,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="582,136,524,94,451,52,398,33,400,28,453,48,527,90,586,132"/>
+<area shape="rect" id="Node000003" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,56,189,81"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="571,139,515,116,451,97,384,84,315,77,189,70,190,65,315,71,384,79,453,91,517,111,573,134"/>
+<area shape="rect" id="Node000004" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="247,106,443,146"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="486,144,443,139,443,134,487,139"/>
+<area shape="rect" id="Node000005" href="$test__ScreenManager_8cpp.html#ab5ada86d9042a1a62ed2251d66d84ef3" title="Create a list of Screens with ScreenManager." alt="" coords="310,171,379,196"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="487,171,380,182,379,177,486,166"/>
+<area shape="rect" id="Node000006" href="$test__ScreenManager_8cpp.html#ae55072e56d85f84bd4a955ec7340bdd1" title="Create a ScreenManager." alt="" coords="310,220,379,245"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="562,175,453,210,380,228,379,223,451,205,561,170"/>
+<area shape="rect" id="Node000007" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="310,269,379,295"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="585,179,526,220,453,259,416,272,380,280,379,274,414,266,451,254,524,215,582,174"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="269,36,161,59,159,53,268,31"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="244,105,152,84,153,79,245,100"/>
 </map>

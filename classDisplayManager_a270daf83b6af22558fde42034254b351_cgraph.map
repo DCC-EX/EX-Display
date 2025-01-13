@@ -1,8 +1,15 @@
 <map id="DisplayManager::startDisplays" name="DisplayManager::startDisplays">
-<area shape="rect" id="node1" title="Call the begin() method for all associated Display instances." alt="" coords="5,83,228,109"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="276,46,472,87"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="520,108,709,135"/>
-<area shape="rect" id="node3" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="565,5,664,32"/>
-<area shape="rect" id="node6" href="$Arduino_8h.html#ac7bdb53335528ad073ca13eb2b1bdc00" title=" " alt="" coords="575,56,654,83"/>
-<area shape="rect" id="node4" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="757,31,948,57"/>
+<area shape="rect" id="Node000001" title="Call the begin() method for all associated Display instances." alt="" coords="5,81,228,107"/>
+<area shape="rect" id="Node000002" href="$classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="276,45,472,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,79,262,75,263,80,229,84"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#aedd1018ddee5891bee744cdeac36fe96" title="Get the next DisplayInterface derived instance in the list." alt="" coords="520,105,709,131"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="229,97,506,110,506,115,228,102"/>
+<area shape="rect" id="Node000003" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="565,5,664,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="472,43,551,28,552,33,473,48"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="465,82,544,100,543,105,464,87"/>
+<area shape="rect" id="Node000006" href="$Arduino_8h.html#ac7bdb53335528ad073ca13eb2b1bdc00" title=" " alt="" coords="575,55,654,80"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="472,63,561,64,561,69,472,68"/>
+<area shape="rect" id="Node000004" href="$classMockArduino.html#a6dee256b5b61eb81e51fae11584f5951" title=" " alt="" coords="757,31,948,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="664,21,744,29,743,34,664,26"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="654,61,743,52,744,57,655,66"/>
 </map>

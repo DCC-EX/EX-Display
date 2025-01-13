@@ -1,4 +1,5 @@
 <map id="AtFinderLoggerIntegrationTests::SetUp" name="AtFinderLoggerIntegrationTests::SetUp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,196,47"/>
-<area shape="rect" id="node2" href="$classStream.html#a897312f6c06c2b06b4bb2f37f07bbe92" title="Clear the buffer." alt="" coords="244,13,353,39"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,196,45"/>
+<area shape="rect" id="Node000002" href="$classStream.html#a897312f6c06c2b06b4bb2f37f07bbe92" title="Clear the buffer." alt="" coords="244,13,353,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,23,230,23,230,28,196,28"/>
 </map>

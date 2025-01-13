@@ -1,7 +1,13 @@
 <map id="pinMode" name="pinMode">
-<area shape="rect" id="node1" title=" " alt="" coords="699,31,777,57"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="455,23,651,65"/>
-<area shape="rect" id="node3" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="184,31,407,57"/>
-<area shape="rect" id="node4" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="5,5,136,32"/>
-<area shape="rect" id="node5" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="36,56,105,83"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="699,55,777,80"/>
+<area shape="rect" id="Node000002" href="$classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="455,47,651,87"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="685,70,651,70,651,65,685,65"/>
+<area shape="rect" id="Node000003" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="184,55,407,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="441,70,407,70,407,65,441,65"/>
+<area shape="rect" id="Node000004" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="5,5,136,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="223,54,129,33,130,28,224,49"/>
+<area shape="rect" id="Node000008" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="36,55,105,80"/>
+<area shape="poly" id="edge4_Node000003_Node000008" title=" " alt="" coords="170,70,105,70,105,65,170,65"/>
+<area shape="rect" id="Node000009" href="$test__DisplayManager_8cpp.html#a95f97074a82f0e3d901808635e654d9a" title="Validate the startDisplays() method correctly calls all display begin() methods." alt="" coords="36,104,105,129"/>
+<area shape="poly" id="edge5_Node000003_Node000009" title=" " alt="" coords="224,86,106,112,105,107,223,80"/>
 </map>

@@ -1,9 +1,16 @@
 <map id="TEST_F" name="TEST_F">
-<area shape="rect" id="node1" title="Validate displays can be retrieved by their ID." alt="" coords="5,31,75,57"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="135,56,345,83"/>
-<area shape="rect" id="node7" href="$classDisplayManager.html#a0dcf69d16599029ba34bf31c0c666390" title="Get a DisplayInterface derived instance by its ID." alt="" coords="123,5,357,32"/>
-<area shape="rect" id="node3" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="411,5,601,32"/>
-<area shape="rect" id="node4" href="$classDisplayInterface.html#aa1d72bdfd3cf533bc3d910dab42b1e4d" title="Set the ID for this display instance." alt="" coords="421,56,591,83"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#a4d4c3c663ad0e26cfb00e3a9d6dd687b" title="Set the logger instance to use for diagnostic logging." alt="" coords="405,107,607,133"/>
-<area shape="rect" id="node6" href="$classDisplayInterface.html#ac8e3fa088bc342b97e6f04be999ea0d3" title="Set the next DisplayInterface derived instance in the list." alt="" coords="412,157,600,184"/>
+<area shape="rect" id="Node000001" title="Validate displays can be retrieved by their ID." alt="" coords="5,31,75,56"/>
+<area shape="rect" id="Node000002" href="$classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="135,55,345,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,45,122,50,122,56,74,50"/>
+<area shape="rect" id="Node000007" href="$classDisplayManager.html#a0dcf69d16599029ba34bf31c0c666390" title="Get a DisplayInterface derived instance by its ID." alt="" coords="123,5,357,31"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="74,36,126,30,127,35,75,42"/>
+<area shape="rect" id="Node000003" href="$classDisplayInterface.html#aedd1018ddee5891bee744cdeac36fe96" title="Get the next DisplayInterface derived instance in the list." alt="" coords="411,5,601,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="309,52,423,31,424,36,310,57"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#aa1d72bdfd3cf533bc3d910dab42b1e4d" title="Set the ID for this display instance." alt="" coords="421,55,591,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="345,65,407,65,407,70,345,70"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#a4d4c3c663ad0e26cfb00e3a9d6dd687b" title="Set the logger instance to use for diagnostic logging." alt="" coords="405,104,607,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="310,77,424,99,423,104,309,83"/>
+<area shape="rect" id="Node000006" href="$classDisplayInterface.html#ac8e3fa088bc342b97e6f04be999ea0d3" title="Set the next DisplayInterface derived instance in the list." alt="" coords="412,153,600,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="267,78,329,108,406,139,431,147,430,152,404,145,327,113,265,83"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="358,15,398,15,398,21,358,21"/>
 </map>

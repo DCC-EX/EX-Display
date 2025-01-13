@@ -1,5 +1,7 @@
 <map id="DebounceHoldInputTests::SetUp" name="DebounceHoldInputTests::SetUp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,23,188,65"/>
-<area shape="rect" id="node2" href="$Arduino_8h.html#a6ff7f2532a22366f0013bc41397129fd" title=" " alt="" coords="305,5,364,32"/>
-<area shape="rect" id="node3" href="$classInputInterface.html#abae89c99e802186c05e97750e473dac1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="236,56,433,83"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,188,63"/>
+<area shape="rect" id="Node000002" href="$Arduino_8h.html#a6ff7f2532a22366f0013bc41397129fd" title=" " alt="" coords="305,5,364,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,31,291,20,292,25,189,36"/>
+<area shape="rect" id="Node000003" href="$classInputInterface.html#abae89c99e802186c05e97750e473dac1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="236,55,433,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,50,223,53,222,59,188,55"/>
 </map>

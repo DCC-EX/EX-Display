@@ -1,4 +1,5 @@
 <map id="MockSPIDisplay::MockSPIDisplay" name="MockSPIDisplay::MockSPIDisplay">
-<area shape="rect" id="node1" title=" " alt="" coords="228,5,465,32"/>
-<area shape="rect" id="node2" href="$classMockSPIDisplay.html#a2cbe667cd20872c7e003044d85baf917" title=" " alt="" coords="5,5,180,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="228,5,465,31"/>
+<area shape="rect" id="Node000002" href="$classMockSPIDisplay.html#a74bd43946fddc204d272673f3e178dde" title=" " alt="" coords="5,5,180,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,21,180,21,180,15,214,15"/>
 </map>

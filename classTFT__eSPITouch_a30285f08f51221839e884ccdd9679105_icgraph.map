@@ -1,4 +1,5 @@
 <map id="TFT_eSPITouch::_calibrated" name="TFT_eSPITouch::_calibrated">
-<area shape="rect" id="node1" title="Test if valid calibration data is available for this touch interface." alt="" coords="215,5,412,32"/>
-<area shape="rect" id="node2" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,5,167,32"/>
+<area shape="rect" id="Node000001" title="Test if valid calibration data is available for this touch interface." alt="" coords="215,5,412,31"/>
+<area shape="rect" id="Node000002" href="$classTFT__eSPITouch.html#aaf01840eb32016de879566883287b9c3" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="5,5,167,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,21,167,21,167,15,201,15"/>
 </map>

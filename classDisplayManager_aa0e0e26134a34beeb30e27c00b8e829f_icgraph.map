@@ -1,7 +1,13 @@
 <map id="DisplayManager::displayStartupInfo" name="DisplayManager::displayStartupInfo">
-<area shape="rect" id="node1" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="549,31,804,57"/>
-<area shape="rect" id="node2" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="371,5,501,32"/>
-<area shape="rect" id="node5" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="401,56,471,83"/>
-<area shape="rect" id="node3" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="264,5,323,32"/>
-<area shape="rect" id="node4" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="5,5,216,32"/>
+<area shape="rect" id="Node000001" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="549,55,804,80"/>
+<area shape="rect" id="Node000002" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="371,5,501,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="600,54,498,33,499,28,601,49"/>
+<area shape="rect" id="Node000006" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="401,55,471,80"/>
+<area shape="poly" id="edge4_Node000001_Node000006" title=" " alt="" coords="536,70,471,70,471,65,536,65"/>
+<area shape="rect" id="Node000007" href="$test__DisplayManualSPISwitching_8cpp.html#a928ab800b1e1899f185fb572718ec014" title="Test that SPI displays can be switched manually if their library doesn&#39;t support it (eg...." alt="" coords="401,104,471,129"/>
+<area shape="poly" id="edge5_Node000001_Node000007" title=" " alt="" coords="601,85,471,112,470,107,600,80"/>
+<area shape="rect" id="Node000003" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="264,5,323,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="357,21,323,21,323,15,357,15"/>
+<area shape="rect" id="Node000004" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="5,5,216,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="250,21,216,21,216,15,250,15"/>
 </map>

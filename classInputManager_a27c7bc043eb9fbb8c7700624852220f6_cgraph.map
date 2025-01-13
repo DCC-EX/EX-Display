@@ -1,5 +1,8 @@
 <map id="InputManager::setDisplay" name="InputManager::setDisplay">
-<area shape="rect" id="node1" title="Set the display interface to retrieve required attributes &#45; note this should only be required for TFT..." alt="" coords="5,5,195,32"/>
-<area shape="rect" id="node2" href="$classDisplayInterface.html#a3649a768b8ca59c3070f56aed1fe42c2" title="Get the ID of this display instance." alt="" coords="481,5,652,32"/>
-<area shape="rect" id="node3" href="$classInputInterface.html#a8835a0d2c51926d4636f239d888a8e71" title="Set the DisplayInterface for this input if required." alt="" coords="243,31,433,57"/>
+<area shape="rect" id="Node000001" title="Set the display interface to retrieve required attributes &#45; note this should only be required for TFT..." alt="" coords="5,5,195,31"/>
+<area shape="rect" id="Node000002" href="$classDisplayInterface.html#a3649a768b8ca59c3070f56aed1fe42c2" title="Get the ID of this display instance." alt="" coords="481,5,652,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,15,467,15,467,21,195,21"/>
+<area shape="rect" id="Node000003" href="$classInputInterface.html#a8835a0d2c51926d4636f239d888a8e71" title="Set the DisplayInterface for this input if required." alt="" coords="243,31,433,56"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,25,230,29,229,34,194,31"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="434,30,467,26,468,32,434,35"/>
 </map>

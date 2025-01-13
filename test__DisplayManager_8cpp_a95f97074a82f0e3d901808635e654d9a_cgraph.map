@@ -1,12 +1,23 @@
 <map id="TEST_F" name="TEST_F">
-<area shape="rect" id="node1" title="Validate the startDisplays() method correctly calls all display begin() methods." alt="" coords="5,138,75,165"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="129,88,339,114"/>
-<area shape="rect" id="node7" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="123,189,345,216"/>
-<area shape="rect" id="node3" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="643,189,832,216"/>
-<area shape="rect" id="node4" href="$classDisplayInterface.html#aa1d72bdfd3cf533bc3d910dab42b1e4d" title="Set the ID for this display instance." alt="" coords="409,37,579,64"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#a4d4c3c663ad0e26cfb00e3a9d6dd687b" title="Set the logger instance to use for diagnostic logging." alt="" coords="393,88,595,114"/>
-<area shape="rect" id="node6" href="$classDisplayInterface.html#ac8e3fa088bc342b97e6f04be999ea0d3" title="Set the next DisplayInterface derived instance in the list." alt="" coords="400,138,588,165"/>
-<area shape="rect" id="node8" href="$classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="396,240,592,282"/>
-<area shape="rect" id="node9" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="688,244,787,270"/>
-<area shape="rect" id="node10" href="$Arduino_8h.html#ac7bdb53335528ad073ca13eb2b1bdc00" title=" " alt="" coords="698,294,777,321"/>
+<area shape="rect" id="Node000001" title="Validate the startDisplays() method correctly calls all display begin() methods." alt="" coords="5,137,75,163"/>
+<area shape="rect" id="Node000002" href="$classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="129,87,339,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,139,171,113,172,118,76,144"/>
+<area shape="rect" id="Node000007" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="123,187,345,212"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="76,156,171,181,170,186,74,161"/>
+<area shape="rect" id="Node000003" href="$classDisplayInterface.html#aedd1018ddee5891bee744cdeac36fe96" title="Get the next DisplayInterface derived instance in the list." alt="" coords="643,187,832,212"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="254,84,314,52,355,35,400,19,449,8,499,3,549,7,596,22,620,36,642,54,679,95,708,137,727,173,722,176,703,140,675,98,638,58,617,41,594,27,547,12,499,8,450,13,402,24,357,40,317,57,257,89"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#aa1d72bdfd3cf533bc3d910dab42b1e4d" title="Set the ID for this display instance." alt="" coords="409,37,579,63"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="301,84,412,63,413,68,302,89"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#a4d4c3c663ad0e26cfb00e3a9d6dd687b" title="Set the logger instance to use for diagnostic logging." alt="" coords="393,87,595,112"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="339,97,380,97,380,102,339,102"/>
+<area shape="rect" id="Node000006" href="$classDisplayInterface.html#ac8e3fa088bc342b97e6f04be999ea0d3" title="Set the next DisplayInterface derived instance in the list." alt="" coords="400,136,588,161"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="302,110,413,131,412,136,301,115"/>
+<area shape="poly" id="edge11_Node000007_Node000003" title=" " alt="" coords="346,197,629,197,629,202,346,202"/>
+<area shape="rect" id="Node000008" href="$classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="396,237,592,277"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="293,210,390,231,389,236,292,215"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="579,234,669,213,670,218,580,239"/>
+<area shape="rect" id="Node000009" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="688,240,787,265"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="592,252,674,251,675,256,592,258"/>
+<area shape="rect" id="Node000011" href="$Arduino_8h.html#ac7bdb53335528ad073ca13eb2b1bdc00" title=" " alt="" coords="698,289,777,315"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="593,272,685,290,684,295,592,278"/>
 </map>

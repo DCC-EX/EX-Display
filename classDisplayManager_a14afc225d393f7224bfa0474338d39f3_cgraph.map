@@ -1,7 +1,11 @@
 <map id="DisplayManager::addDisplay" name="DisplayManager::addDisplay">
-<area shape="rect" id="node1" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="5,81,215,108"/>
-<area shape="rect" id="node2" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="269,5,458,32"/>
-<area shape="rect" id="node3" href="$classDisplayInterface.html#aa1d72bdfd3cf533bc3d910dab42b1e4d" title="Set the ID for this display instance." alt="" coords="279,56,448,83"/>
-<area shape="rect" id="node4" href="$classDisplayInterface.html#a4d4c3c663ad0e26cfb00e3a9d6dd687b" title="Set the logger instance to use for diagnostic logging." alt="" coords="263,107,464,133"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#ac8e3fa088bc342b97e6f04be999ea0d3" title="Set the next DisplayInterface derived instance in the list." alt="" coords="269,157,457,184"/>
+<area shape="rect" id="Node000001" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="5,80,215,105"/>
+<area shape="rect" id="Node000002" href="$classDisplayInterface.html#aedd1018ddee5891bee744cdeac36fe96" title="Get the next DisplayInterface derived instance in the list." alt="" coords="269,5,458,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,77,262,39,292,31,293,37,263,45,147,82"/>
+<area shape="rect" id="Node000003" href="$classDisplayInterface.html#aa1d72bdfd3cf533bc3d910dab42b1e4d" title="Set the ID for this display instance." alt="" coords="279,55,448,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,80,264,75,265,80,215,85"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#a4d4c3c663ad0e26cfb00e3a9d6dd687b" title="Set the logger instance to use for diagnostic logging." alt="" coords="263,104,464,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="215,100,249,103,249,109,214,105"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#ac8e3fa088bc342b97e6f04be999ea0d3" title="Set the next DisplayInterface derived instance in the list." alt="" coords="269,153,457,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="151,103,263,138,297,147,296,152,262,143,149,108"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="TFT_eSPIDisplay" name="TFT_eSPIDisplay">
-<area shape="rect" id="node1" title="Display class for TFT_eSPI based displays." alt="" coords="5,80,135,107"/>
-<area shape="rect" id="node2" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="5,5,135,32"/>
+<area shape="rect" id="Node000001" title="Display class for TFT_eSPI based displays." alt="" coords="5,79,135,104"/>
+<area shape="rect" id="Node000002" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="5,5,135,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,44,73,79,67,79,67,44"/>
 </map>

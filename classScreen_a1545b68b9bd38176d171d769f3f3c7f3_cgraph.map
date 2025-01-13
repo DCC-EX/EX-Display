@@ -1,4 +1,5 @@
 <map id="Screen::getScreenRowById" name="Screen::getScreenRowById">
-<area shape="rect" id="node1" title="Get the ScreenRow instance at the specified ID." alt="" coords="5,5,201,32"/>
-<area shape="rect" id="node2" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="249,5,403,32"/>
+<area shape="rect" id="Node000001" title="Get the ScreenRow instance at the specified ID." alt="" coords="5,5,201,31"/>
+<area shape="rect" id="Node000002" href="$classScreenRow.html#aa8df6843233ea45caf26773d140ce4b8" title="Get the next ScreenRow instance in the list." alt="" coords="249,5,403,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,15,236,15,236,21,202,21"/>
 </map>

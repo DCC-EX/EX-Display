@@ -1,13 +1,25 @@
 <map id="millis" name="millis">
-<area shape="rect" id="node1" title=" " alt="" coords="471,181,529,208"/>
-<area shape="rect" id="node2" href="$classInputInterface.html#afefc70fa413062a1df8e7950f1afc564" title="Call this from the derived class&#39; check() method to debounce and detect if the input is a hold vs...." alt="" coords="232,57,423,98"/>
-<area shape="rect" id="node6" href="$classConfigurator.html#a74bea48b6837fd297b7a3a78de73c8c5" title="Constructor for this Configurator." alt="" coords="232,123,423,149"/>
-<area shape="rect" id="node7" href="$classDebounceHoldInputTests.html#ac1f9bed57fb4e12ac48e79385ff321dd" title=" " alt="" coords="236,174,419,215"/>
-<area shape="rect" id="node8" href="$classTouchScreenInputTests.html#af56a96900180dde47c024979d931cf2e" title=" " alt="" coords="243,239,412,281"/>
-<area shape="rect" id="node9" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="258,305,397,332"/>
-<area shape="rect" id="node3" href="$classMockButtonInput.html#aff7bf3f4782dc8dd912f94be30b006e8" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="5,5,184,32"/>
-<area shape="rect" id="node4" href="$classMockTouchScreenInput.html#afd6a598f9008cc810597db1db68aa6c0" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="9,57,180,98"/>
-<area shape="rect" id="node5" href="$classTFT__eSPITouch.html#afd86f481b8789120fe1fa9357f183741" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="13,123,176,149"/>
-<area shape="rect" id="node10" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="69,280,120,307"/>
-<area shape="rect" id="node11" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="60,331,129,357"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="471,177,529,203"/>
+<area shape="rect" id="Node000002" href="$classInputInterface.html#afefc70fa413062a1df8e7950f1afc564" title="Call this from the derived class&#39; check() method to debounce and detect if the input is a hold vs...." alt="" coords="232,55,423,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="480,168,454,137,421,110,399,98,402,93,424,105,458,134,484,164"/>
+<area shape="rect" id="Node000006" href="$classConfigurator.html#a74bea48b6837fd297b7a3a78de73c8c5" title="Constructor for this Configurator." alt="" coords="232,120,423,145"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="458,174,422,161,380,148,382,143,424,155,459,169"/>
+<area shape="rect" id="Node000007" href="$classDebounceHoldInputTests.html#ac1f9bed57fb4e12ac48e79385ff321dd" title=" " alt="" coords="236,170,419,210"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="457,193,419,193,419,187,457,187"/>
+<area shape="rect" id="Node000008" href="$classTouchScreenInputTests.html#af56a96900180dde47c024979d931cf2e" title=" " alt="" coords="243,234,412,274"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="459,210,424,224,390,236,389,231,422,220,457,205"/>
+<area shape="rect" id="Node000009" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="258,299,397,324"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="488,216,462,253,444,272,424,288,398,301,395,296,421,284,440,268,457,250,483,213"/>
+<area shape="rect" id="Node000003" href="$classMockButtonInput.html#aff7bf3f4782dc8dd912f94be30b006e8" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="5,5,184,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,55,146,33,148,28,233,49"/>
+<area shape="rect" id="Node000004" href="$classMockTouchScreenInput.html#afd6a598f9008cc810597db1db68aa6c0" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="9,55,180,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="218,78,180,78,180,73,218,73"/>
+<area shape="rect" id="Node000005" href="$classTFT__eSPITouch.html#afd86f481b8789120fe1fa9357f183741" title="Call this method at least once per main loop to monitor for input actions Any actions should call the..." alt="" coords="13,120,176,145"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="233,101,148,123,146,117,232,96"/>
+<area shape="rect" id="Node000010" href="$EX-Display_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="Main loop, simply calls controller&#45;&gt;update() to manage all interactions." alt="" coords="69,249,120,275"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="253,298,120,270,121,265,254,293"/>
+<area shape="rect" id="Node000011" href="$test__Controller_8cpp.html#a75631fe386e9be5e2118adf3f01653ee" title="Ensure update() method correctly ignores an invalid stream input." alt="" coords="60,299,129,324"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="244,314,130,314,130,309,244,309"/>
+<area shape="rect" id="Node000012" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="60,348,129,373"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="254,329,130,356,129,351,253,324"/>
 </map>

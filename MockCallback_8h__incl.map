@@ -1,8 +1,15 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/test/mocks/MockCallback.h" name="/home/runner/work/EX&#45;Display/EX&#45;Display/test/mocks/MockCallback.h">
-<area shape="rect" id="node1" title=" " alt="" coords="157,5,336,61"/>
-<area shape="rect" id="node2" href="$CallbackInterface_8h.html" title=" " alt="" coords="117,109,265,136"/>
-<area shape="rect" id="node6" title=" " alt="" coords="206,333,333,360"/>
-<area shape="rect" id="node3" href="$InputActions_8h.html" title=" " alt="" coords="5,184,120,211"/>
-<area shape="rect" id="node4" href="$Logger_8h.html" title=" " alt="" coords="144,184,221,211"/>
-<area shape="rect" id="node5" href="$Arduino_8h.html" title=" " alt="" coords="187,259,271,285"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="157,5,336,60"/>
+<area shape="rect" id="Node000002" href="$CallbackInterface_8h.html" title=" " alt="" coords="117,108,265,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,62,208,98,204,95,227,59"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="206,328,333,353"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="262,59,279,107,288,155,292,193,292,232,287,280,279,315,274,314,281,280,286,231,287,194,283,156,273,109,257,61"/>
+<area shape="rect" id="Node000003" href="$InputActions_8h.html" title=" " alt="" coords="5,181,120,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="171,136,97,177,95,172,169,131"/>
+<area shape="rect" id="Node000004" href="$Logger_8h.html" title=" " alt="" coords="144,181,221,207"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="192,134,188,168,183,168,187,133"/>
+<area shape="rect" id="Node000005" href="$Arduino_8h.html" title=" " alt="" coords="187,255,271,280"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="204,132,222,153,236,181,240,212,238,241,232,241,235,212,231,182,217,156,200,135"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="193,206,216,242,212,245,188,208"/>
+<area shape="poly" id="edge5_Node000005_Node000007" title=" " alt="" coords="238,279,258,315,254,317,234,282"/>
 </map>

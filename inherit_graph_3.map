@@ -1,3 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classConfigurator.html" title=" " alt="" coords="5,5,108,32"/>
+<area shape="rect" id="Node000000" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="5,80,135,105"/>
+<area shape="rect" id="Node000001" href="$classMockColourDisplay.html" title="Mock colour display class for format testing." alt="" coords="183,5,331,31"/>
+<area shape="poly" id="edge3_Node000000_Node000001" title=" " alt="" coords="108,72,182,40,213,28,215,33,184,44,111,76"/>
+<area shape="rect" id="Node000002" href="$classMockDisplay.html" title="Mock physical display class." alt="" coords="203,55,310,80"/>
+<area shape="poly" id="edge4_Node000000_Node000002" title=" " alt="" coords="148,79,203,72,204,77,149,85"/>
+<area shape="rect" id="Node000003" href="$classMockSPIDisplay.html" title="Mock physical display class for an SPI device Use this mock to test manual switching between SPI devi..." alt="" coords="193,104,320,129"/>
+<area shape="poly" id="edge5_Node000000_Node000003" title=" " alt="" coords="149,100,193,106,193,111,148,105"/>
+<area shape="rect" id="Node000004" href="$classTFT__eSPIDisplay.html" title="Display class for TFT_eSPI based displays." alt="" coords="192,153,321,179"/>
+<area shape="poly" id="edge6_Node000000_Node000004" title=" " alt="" coords="113,108,184,138,218,151,216,156,182,143,111,113"/>
 </map>

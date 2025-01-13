@@ -1,4 +1,5 @@
 <map id="pinMode" name="pinMode">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,84,32"/>
-<area shape="rect" id="node2" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="132,5,323,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,84,31"/>
+<area shape="rect" id="Node000002" href="$classMockArduino.html#a6dee256b5b61eb81e51fae11584f5951" title=" " alt="" coords="132,5,323,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,15,119,15,119,21,84,21"/>
 </map>

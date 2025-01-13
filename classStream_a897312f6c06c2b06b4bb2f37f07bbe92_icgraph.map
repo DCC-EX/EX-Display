@@ -1,5 +1,7 @@
 <map id="Stream::clear" name="Stream::clear">
-<area shape="rect" id="node1" title="Clear the buffer." alt="" coords="244,42,353,69"/>
-<area shape="rect" id="node2" href="$classAtFinderLoggerIntegrationTests.html#ad4b780edabdbf2d905412419ef04ac77" title=" " alt="" coords="5,5,196,47"/>
-<area shape="rect" id="node3" href="$classLoggerTests.html#ad6cbbc8a5d3d6b60bac72be26ea69b6f" title=" " alt="" coords="27,71,174,98"/>
+<area shape="rect" id="Node000001" title="Clear the buffer." alt="" coords="244,42,353,67"/>
+<area shape="rect" id="Node000002" href="$classAtFinderLoggerIntegrationTests.html#ad4b780edabdbf2d905412419ef04ac77" title=" " alt="" coords="5,5,196,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,47,196,42,197,37,231,42"/>
+<area shape="rect" id="Node000003" href="$classLoggerTests.html#ad6cbbc8a5d3d6b60bac72be26ea69b6f" title=" " alt="" coords="27,70,174,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,67,175,75,174,70,230,62"/>
 </map>

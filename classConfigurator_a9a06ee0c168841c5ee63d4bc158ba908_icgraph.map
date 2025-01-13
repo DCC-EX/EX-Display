@@ -1,4 +1,5 @@
 <map id="Configurator::getScreenManager" name="Configurator::getScreenManager">
-<area shape="rect" id="node1" title="Get the ScreenManager instance for this Configurator." alt="" coords="123,5,355,32"/>
-<area shape="rect" id="node2" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="5,5,75,32"/>
+<area shape="rect" id="Node000001" title="Get the ScreenManager instance for this Configurator." alt="" coords="123,5,355,31"/>
+<area shape="rect" id="Node000002" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="5,5,75,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,21,75,21,75,15,109,15"/>
 </map>

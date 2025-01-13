@@ -1,0 +1,58 @@
+<map id="DisplayInterface::getNext" name="DisplayInterface::getNext">
+<area shape="rect" id="Node000001" title="Get the next DisplayInterface derived instance in the list." alt="" coords="939,268,1128,293"/>
+<area shape="rect" id="Node000002" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="640,109,891,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1011,259,959,207,926,180,889,156,839,137,841,132,892,152,929,175,963,203,1014,256"/>
+<area shape="rect" id="Node000003" href="$classDisplayManager.html#ac007625bc3dc91b4a7f22238226f37ea" title="Clear all displays." alt="" coords="372,9,557,49"/>
+<area shape="poly" id="edge22_Node000001_Node000003" title=" " alt="" coords="1022,255,1005,211,977,156,939,103,916,79,889,60,850,41,808,26,764,17,720,11,634,9,558,15,557,10,634,4,720,6,765,11,809,21,852,36,892,56,919,75,943,99,982,154,1010,209,1027,253"/>
+<area shape="rect" id="Node000008" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="337,129,592,155"/>
+<area shape="poly" id="edge23_Node000001_Node000008" title=" " alt="" coords="993,265,944,244,890,225,805,202,719,183,564,157,565,152,720,178,806,197,891,219,946,239,995,260"/>
+<area shape="rect" id="Node000015" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="374,73,555,99"/>
+<area shape="poly" id="edge33_Node000001_Node000015" title=" " alt="" coords="1019,256,1000,219,972,175,935,132,913,114,889,99,843,80,793,67,742,61,692,58,597,64,520,76,519,71,596,59,692,53,743,55,794,62,844,75,892,94,916,109,939,128,976,171,1005,216,1024,254"/>
+<area shape="rect" id="Node000016" href="$classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="667,261,863,301"/>
+<area shape="poly" id="edge11_Node000001_Node000016" title=" " alt="" coords="925,283,863,283,863,278,925,278"/>
+<area shape="rect" id="Node000017" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="353,277,576,303"/>
+<area shape="poly" id="edge30_Node000001_Node000017" title=" " alt="" coords="975,299,891,315,821,322,765,323,640,315,546,305,547,300,640,310,766,317,820,316,890,310,974,294"/>
+<area shape="rect" id="Node000018" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="171,425,241,451"/>
+<area shape="poly" id="edge31_Node000001_Node000018" title=" " alt="" coords="1008,304,957,342,925,360,892,375,800,404,704,424,608,438,515,445,352,448,241,443,241,438,352,443,515,440,608,432,703,419,798,399,890,370,923,355,954,337,1005,300"/>
+<area shape="rect" id="Node000020" href="$classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="360,220,569,245"/>
+<area shape="poly" id="edge16_Node000001_Node000020" title=" " alt="" coords="972,267,890,251,721,237,569,234,569,229,722,232,891,246,973,262"/>
+<area shape="rect" id="Node000023" href="$classDisplayManager.html#a0dcf69d16599029ba34bf31c0c666390" title="Get a DisplayInterface derived instance by its ID." alt="" coords="347,376,582,401"/>
+<area shape="poly" id="edge24_Node000001_Node000023" title=" " alt="" coords="986,300,891,329,730,359,583,379,582,374,730,354,890,323,984,295"/>
+<area shape="rect" id="Node000026" href="$test__DisplayInterface_8cpp.html#aa023f143e38a3052f9e71534ff19f5f9" title="Test a second display can be accessed via the first in a list." alt="" coords="731,477,800,503"/>
+<area shape="poly" id="edge32_Node000001_Node000026" title=" " alt="" coords="1021,307,1001,342,972,383,935,425,892,460,846,481,801,490,800,485,844,475,889,456,931,421,967,380,996,339,1017,305"/>
+<area shape="rect" id="Node000027" href="$classDisplayManager.html#ae4c9d79e08490e64602cf562a16d8834" title="Destructor for the DisplayManager." alt="" coords="667,527,863,567"/>
+<area shape="poly" id="edge34_Node000001_Node000027" title=" " alt="" coords="1026,308,1009,354,981,410,942,468,919,495,892,518,865,533,862,528,889,513,915,491,938,465,976,408,1004,351,1021,306"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="718,107,591,63,549,51,550,46,593,58,719,102"/>
+<area shape="poly" id="edge4_Node000002_Node000008" title=" " alt="" coords="626,134,593,136,592,131,626,129"/>
+<area shape="poly" id="edge9_Node000002_Node000015" title=" " alt="" coords="645,110,555,100,556,94,646,105"/>
+<area shape="rect" id="Node000004" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="137,23,275,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="359,34,276,36,276,31,358,29"/>
+<area shape="rect" id="Node000009" href="$classController.html#a1cc0b87ab9e07d21ab47d294aa5bf607" title="Call once to start displays and input." alt="" coords="141,179,271,204"/>
+<area shape="poly" id="edge5_Node000008_Node000009" title=" " alt="" coords="384,160,272,182,271,176,383,155"/>
+<area shape="rect" id="Node000013" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="171,80,241,105"/>
+<area shape="poly" id="edge7_Node000008_Node000013" title=" " alt="" coords="384,129,240,102,241,97,385,124"/>
+<area shape="rect" id="Node000014" href="$test__DisplayManualSPISwitching_8cpp.html#a928ab800b1e1899f185fb572718ec014" title="Test that SPI displays can be switched manually if their library doesn&#39;t support it (eg...." alt="" coords="171,129,241,155"/>
+<area shape="poly" id="edge8_Node000008_Node000014" title=" " alt="" coords="324,145,241,145,241,139,324,139"/>
+<area shape="rect" id="Node000010" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="11,253,69,279"/>
+<area shape="poly" id="edge6_Node000009_Node000010" title=" " alt="" coords="141,211,124,218,89,236,60,256,57,251,87,232,122,213,139,206"/>
+<area shape="poly" id="edge10_Node000015_Node000004" title=" " alt="" coords="385,73,271,51,272,45,386,68"/>
+<area shape="poly" id="edge12_Node000016_Node000017" title=" " alt="" coords="654,287,576,289,576,284,654,281"/>
+<area shape="poly" id="edge13_Node000017_Node000009" title=" " alt="" coords="378,276,336,259,321,249,311,238,302,228,288,218,262,207,264,202,291,213,306,224,315,234,325,245,339,254,380,271"/>
+<area shape="poly" id="edge14_Node000017_Node000018" title=" " alt="" coords="427,311,383,336,339,367,316,392,306,404,291,416,266,428,242,435,240,430,264,423,288,412,303,400,312,389,336,363,381,332,424,307"/>
+<area shape="rect" id="Node000019" href="$test__DisplayManager_8cpp.html#a95f97074a82f0e3d901808635e654d9a" title="Validate the startDisplays() method correctly calls all display begin() methods." alt="" coords="171,277,241,303"/>
+<area shape="poly" id="edge15_Node000017_Node000019" title=" " alt="" coords="340,293,241,293,241,287,340,287"/>
+<area shape="poly" id="edge18_Node000020_Node000013" title=" " alt="" coords="420,217,378,195,336,168,321,155,312,142,303,130,288,119,264,108,240,101,242,96,266,103,291,114,306,127,316,139,325,151,339,164,381,191,422,212"/>
+<area shape="poly" id="edge21_Node000020_Node000014" title=" " alt="" coords="419,217,288,169,240,154,242,149,290,164,421,212"/>
+<area shape="poly" id="edge20_Node000020_Node000019" title=" " alt="" coords="394,251,241,285,240,280,392,246"/>
+<area shape="rect" id="Node000021" href="$test__DisplayManager_8cpp.html#a8db4cc07d4e89d899e0a75ca521f9229" title="Create a list of mock displays and validate they are created and operate correctly." alt="" coords="171,228,241,253"/>
+<area shape="poly" id="edge17_Node000020_Node000021" title=" " alt="" coords="346,239,241,242,241,237,346,234"/>
+<area shape="rect" id="Node000022" href="$test__DisplayManager_8cpp.html#a086adee0e0e3565707e01f5b61e29dff" title="Validate displays can be retrieved by their ID." alt="" coords="171,327,241,352"/>
+<area shape="poly" id="edge19_Node000020_Node000022" title=" " alt="" coords="374,252,339,267,324,278,315,291,306,304,291,316,266,328,242,336,240,330,264,323,288,312,302,300,311,288,320,275,336,262,372,247"/>
+<area shape="poly" id="edge28_Node000023_Node000018" title=" " alt="" coords="385,407,241,434,240,429,384,401"/>
+<area shape="poly" id="edge29_Node000023_Node000022" title=" " alt="" coords="384,376,240,348,241,343,385,371"/>
+<area shape="rect" id="Node000024" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="123,376,289,401"/>
+<area shape="poly" id="edge25_Node000023_Node000024" title=" " alt="" coords="334,391,290,391,290,386,334,386"/>
+<area shape="poly" id="edge26_Node000024_Node000010" title=" " alt="" coords="132,373,121,367,96,347,75,323,46,281,51,278,79,320,100,343,124,362,134,368"/>
+<area shape="rect" id="Node000025" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="5,376,75,401"/>
+<area shape="poly" id="edge27_Node000024_Node000025" title=" " alt="" coords="109,391,75,391,75,386,109,386"/>
+</map>

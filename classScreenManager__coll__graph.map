@@ -1,6 +1,13 @@
 <map id="ScreenManager" name="ScreenManager">
-<area shape="rect" id="node1" title="Class to manage all EX&#45;Display screens." alt="" coords="5,273,128,300"/>
-<area shape="rect" id="node2" href="$classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li..." alt="" coords="77,184,144,211"/>
-<area shape="rect" id="node3" href="$classScreenRow.html" title=" " alt="" coords="189,95,283,121"/>
-<area shape="rect" id="node4" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="77,5,144,32"/>
+<area shape="rect" id="Node000001" title="Class to manage all EX&#45;Display screens." alt="" coords="5,269,128,295"/>
+<area shape="rect" id="Node000002" href="$classScreen.html" title="Class for each screen as received from the EXRAIL SCREEN() command Each Screen instance contains a li..." alt="" coords="77,181,144,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,220,75,270,70,268,96,218"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="159,184,167,188,171,194,162,203,145,205,144,199,160,198,165,194,164,192,157,189"/>
+<area shape="rect" id="Node000003" href="$classScreenRow.html" title=" " alt="" coords="189,93,283,119"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="209,129,129,183,126,179,206,124"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="298,97,310,106,302,114,284,117,283,111,299,109,305,106,296,102"/>
+<area shape="rect" id="Node000004" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="77,5,144,31"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="98,44,74,89,55,143,51,179,54,214,66,268,60,270,48,215,46,178,49,142,69,87,93,41"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="113,44,113,181,108,181,108,44"/>
+<area shape="poly" id="edge5_Node000003_Node000004" title=" " alt="" coords="140,36,220,91,217,95,137,41"/>
 </map>

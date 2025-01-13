@@ -1,6 +1,11 @@
 <map id="DisplayInterface" name="DisplayInterface">
-<area shape="rect" id="node1" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="135,5,265,32"/>
-<area shape="rect" id="node2" href="$classMockDisplay.html" title="Mock physical display class." alt="" coords="5,80,112,107"/>
-<area shape="rect" id="node3" href="$classMockSPIDisplay.html" title="Mock physical display class for an SPI device Use this mock to test manual switching between SPI devi..." alt="" coords="137,80,263,107"/>
-<area shape="rect" id="node4" href="$classTFT__eSPIDisplay.html" title="Display class for TFT_eSPI based displays." alt="" coords="287,80,417,107"/>
+<area shape="rect" id="Node000001" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="237,5,367,31"/>
+<area shape="rect" id="Node000002" href="$classMockColourDisplay.html" title="Mock colour display class for format testing." alt="" coords="5,79,153,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="254,37,116,81,115,76,253,32"/>
+<area shape="rect" id="Node000003" href="$classMockDisplay.html" title="Mock physical display class." alt="" coords="178,79,285,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="283,43,245,80,241,77,279,39"/>
+<area shape="rect" id="Node000004" href="$classMockSPIDisplay.html" title="Mock physical display class for an SPI device Use this mock to test manual switching between SPI devi..." alt="" coords="309,79,436,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="325,39,363,77,359,80,321,43"/>
+<area shape="rect" id="Node000005" href="$classTFT__eSPIDisplay.html" title="Display class for TFT_eSPI based displays." alt="" coords="460,79,589,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="351,32,489,76,488,81,350,37"/>
 </map>

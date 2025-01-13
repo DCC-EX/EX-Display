@@ -1,9 +1,15 @@
 <map id="InputInterface::needsDisplay" name="InputInterface::needsDisplay">
-<area shape="rect" id="node1" title="Test if this InputInterface requires a display instance &#45; needed for TFT_eSPI as it shares the instan..." alt="" coords="596,56,805,83"/>
-<area shape="rect" id="node2" href="$classMockInput.html#ae8aca21d98600dfcd7620a76e01a9d5d" title=" " alt="" coords="395,5,534,32"/>
-<area shape="rect" id="node3" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="381,56,548,83"/>
-<area shape="rect" id="node7" href="$classMockInput.html#a4d9246a2bb7ff86fc0604ce9dcde0343" title=" " alt="" coords="381,107,548,133"/>
-<area shape="rect" id="node4" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="269,31,328,57"/>
-<area shape="rect" id="node6" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="264,81,333,108"/>
-<area shape="rect" id="node5" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="5,31,216,57"/>
+<area shape="rect" id="Node000001" title="Test if this InputInterface requires a display instance &#45; needed for TFT_eSPI as it shares the instan..." alt="" coords="596,55,805,80"/>
+<area shape="rect" id="Node000002" href="$classMockInput.html#a328849b1e16df4c24c989b644ffb01d2" title=" " alt="" coords="395,5,534,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="625,54,526,33,527,28,626,49"/>
+<area shape="rect" id="Node000003" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="381,55,548,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="582,70,548,70,548,65,582,65"/>
+<area shape="rect" id="Node000008" href="$classMockInput.html#a4d9246a2bb7ff86fc0604ce9dcde0343" title=" " alt="" coords="381,104,548,129"/>
+<area shape="poly" id="edge6_Node000001_Node000008" title=" " alt="" coords="626,85,527,107,526,101,625,80"/>
+<area shape="rect" id="Node000004" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="269,31,328,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="367,56,328,50,329,45,368,51"/>
+<area shape="rect" id="Node000007" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="264,80,333,105"/>
+<area shape="poly" id="edge5_Node000003_Node000007" title=" " alt="" coords="368,85,334,90,333,85,367,80"/>
+<area shape="rect" id="Node000005" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="5,31,216,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="256,46,216,46,216,41,256,41"/>
 </map>

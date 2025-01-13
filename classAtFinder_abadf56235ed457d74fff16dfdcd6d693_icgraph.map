@@ -1,8 +1,23 @@
 <map id="AtFinder::setup" name="AtFinder::setup">
-<area shape="rect" id="node1" title="Setup the AtFinder parser." alt="" coords="596,56,716,83"/>
-<area shape="rect" id="node2" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="381,31,548,57"/>
-<area shape="rect" id="node6" href="$test__ControllerDisplayUpdate_8cpp.html#af7a73dc328bc3f14a231b3d577180628" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="430,81,499,108"/>
-<area shape="rect" id="node3" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="269,5,328,32"/>
-<area shape="rect" id="node5" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="264,56,333,83"/>
-<area shape="rect" id="node4" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="5,5,216,32"/>
+<area shape="rect" id="Node000001" title="Setup the AtFinder parser." alt="" coords="596,177,716,203"/>
+<area shape="rect" id="Node000002" href="$classConfigurator.html#a25ee5e1b0a64d971232d6ecaaadd5d61" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="381,29,548,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="638,167,600,117,575,90,547,68,524,57,526,52,549,64,579,87,604,113,642,164"/>
+<area shape="rect" id="Node000007" href="$test__AtFinder__Logger_8cpp.html#a3d5173d99541d49d8f78c0815d09ae95" title=" " alt="" coords="430,79,499,104"/>
+<area shape="poly" id="edge5_Node000001_Node000007" title=" " alt="" coords="627,171,590,144,547,119,499,102,500,97,549,114,593,140,630,167"/>
+<area shape="rect" id="Node000008" href="$test__AtFinder_8cpp.html#ac066b1d7fc9dcc0efc8d8f2ab1f78f81" title=" " alt="" coords="430,128,499,153"/>
+<area shape="poly" id="edge6_Node000001_Node000008" title=" " alt="" coords="592,176,499,152,500,147,594,171"/>
+<area shape="rect" id="Node000009" href="$test__AtFinder_8cpp.html#a6e3a6f9f055cce99e71f21132466245e" title=" " alt="" coords="430,177,499,203"/>
+<area shape="poly" id="edge7_Node000001_Node000009" title=" " alt="" coords="582,193,500,193,500,187,582,187"/>
+<area shape="rect" id="Node000010" href="$test__ControllerDisplayUpdate_8cpp.html#af7a73dc328bc3f14a231b3d577180628" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="430,227,499,252"/>
+<area shape="poly" id="edge8_Node000001_Node000010" title=" " alt="" coords="594,209,500,233,499,228,592,204"/>
+<area shape="rect" id="Node000011" href="$test__Controller_8cpp.html#a75631fe386e9be5e2118adf3f01653ee" title="Ensure update() method correctly ignores an invalid stream input." alt="" coords="430,276,499,301"/>
+<area shape="poly" id="edge9_Node000001_Node000011" title=" " alt="" coords="631,213,594,241,549,267,501,284,499,279,547,262,591,237,628,209"/>
+<area shape="rect" id="Node000012" href="$test__Controller_8cpp.html#abb9ca06c0e9bafef1a891dd9d22bd84d" title="Ensure update() method correctly calls the mock callback." alt="" coords="430,325,499,351"/>
+<area shape="poly" id="edge10_Node000001_Node000012" title=" " alt="" coords="642,216,604,267,579,293,549,316,525,328,500,335,499,330,523,323,547,312,575,290,600,263,638,213"/>
+<area shape="rect" id="Node000003" href="$EX-Display_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Main setup method, initialise Configurator here." alt="" coords="269,5,328,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="367,31,328,25,329,20,368,25"/>
+<area shape="rect" id="Node000006" href="$test__Configurator_8cpp.html#a90ba0264a5f676876816cf7411508ac9" title="Ensure the Configurator is created and all attributes are as expected." alt="" coords="264,55,333,80"/>
+<area shape="poly" id="edge4_Node000002_Node000006" title=" " alt="" coords="368,59,334,65,333,59,367,54"/>
+<area shape="rect" id="Node000004" href="$classTFT__eSPITouch.html#a06e34fd9e1c12e99c40070bdb5fc1779" title="Ensure SPIFFS filesystem is up and running." alt="" coords="5,5,216,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="256,21,216,21,216,15,256,15"/>
 </map>

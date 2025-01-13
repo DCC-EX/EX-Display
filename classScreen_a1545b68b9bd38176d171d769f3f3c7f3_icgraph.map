@@ -1,7 +1,22 @@
 <map id="Screen::getScreenRowById" name="Screen::getScreenRowById">
-<area shape="rect" id="node1" title="Get the ScreenRow instance at the specified ID." alt="" coords="475,31,671,57"/>
-<area shape="rect" id="node2" href="$test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly." alt="" coords="297,5,366,32"/>
-<area shape="rect" id="node3" href="$classScreen.html#a0a9a3a713a63ef55e854841d07630556" title="Update the specified ScreenRow, or create it if it doesn&#39;t exist This will automatically maintain the..." alt="" coords="236,56,427,83"/>
-<area shape="rect" id="node4" href="$test__Screen_8cpp.html#a9da657726211d6af0e63eaab94ad162f" title="Create a screen with associated row list and ensure rows are accessible by ID." alt="" coords="62,31,131,57"/>
-<area shape="rect" id="node5" href="$classController.html#a908f5f6c24239286e29d4761da509963" title="Method to implement updating a screen." alt="" coords="5,81,188,108"/>
+<area shape="rect" id="Node000001" title="Get the ScreenRow instance at the specified ID." alt="" coords="592,119,788,144"/>
+<area shape="rect" id="Node000002" href="$test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly." alt="" coords="5,68,75,94"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="651,115,601,92,543,72,427,36,333,13,288,9,240,10,186,18,124,33,87,50,58,70,55,66,84,45,122,28,185,12,239,4,288,3,334,8,428,31,545,66,603,87,653,110"/>
+<area shape="rect" id="Node000003" href="$test__Screen_8cpp.html#a1803655bda263555436ec633fd3297da" title="Create a screen with associated row list and check all attributes are valid." alt="" coords="179,43,249,68"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="619,119,544,104,378,79,249,62,249,57,379,73,544,98,620,113"/>
+<area shape="rect" id="Node000004" href="$test__Screen_8cpp.html#aa85ee31e3fe94a4539ca065e4d9f412c" title="Validate rows are deleted when setting text to &quot;&quot;." alt="" coords="179,94,249,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="578,128,249,111,249,105,578,123"/>
+<area shape="rect" id="Node000005" href="$test__Screen_8cpp.html#a9da657726211d6af0e63eaab94ad162f" title="Create a screen with associated row list and ensure rows are accessible by ID." alt="" coords="179,195,249,220"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="646,152,598,169,545,184,462,197,379,205,249,210,249,205,379,200,461,192,543,178,596,164,645,147"/>
+<area shape="rect" id="Node000006" href="$test__Screen_8cpp.html#af450f2926aeb50c83ec7af1fe7d97a15" title="Validate that rows are to be redrawn by default, and not after retrieving text." alt="" coords="179,244,249,270"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="660,154,608,185,545,213,463,234,380,248,249,259,249,254,380,243,462,229,543,208,606,180,658,150"/>
+<area shape="rect" id="Node000007" href="$classScreen.html#a0a9a3a713a63ef55e854841d07630556" title="Update the specified ScreenRow, or create it if it doesn&#39;t exist This will automatically maintain the..." alt="" coords="353,144,544,170"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="579,146,544,150,544,144,578,141"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="414,140,363,111,304,84,248,66,250,61,306,79,366,106,417,135"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="375,144,248,116,249,111,376,139"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="376,175,249,203,248,198,375,170"/>
+<area shape="poly" id="edge10_Node000007_Node000006" title=" " alt="" coords="417,179,366,208,306,236,250,253,248,247,304,231,363,203,414,175"/>
+<area shape="rect" id="Node000008" href="$classController.html#a908f5f6c24239286e29d4761da509963" title="Method to implement updating a screen." alt="" coords="123,144,305,170"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="340,160,305,160,305,154,340,154"/>
+<area shape="poly" id="edge12_Node000008_Node000002" title=" " alt="" coords="148,143,122,133,87,115,58,96,61,92,90,110,124,128,149,138"/>
 </map>

@@ -1,13 +1,27 @@
 <map id="TEST_F" name="TEST_F">
-<area shape="rect" id="node1" title="Test that SPI displays can be switched manually if their library doesn&#39;t support it (eg...." alt="" coords="5,269,75,296"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="145,92,355,118"/>
-<area shape="rect" id="node7" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="123,244,377,270"/>
-<area shape="rect" id="node10" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="967,294,1157,321"/>
-<area shape="rect" id="node11" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="724,294,919,321"/>
-<area shape="rect" id="node3" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="727,193,916,220"/>
-<area shape="rect" id="node4" href="$classDisplayInterface.html#aa1d72bdfd3cf533bc3d910dab42b1e4d" title="Set the ID for this display instance." alt="" coords="466,41,635,68"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#a4d4c3c663ad0e26cfb00e3a9d6dd687b" title="Set the logger instance to use for diagnostic logging." alt="" coords="450,92,651,118"/>
-<area shape="rect" id="node6" href="$classDisplayInterface.html#ac8e3fa088bc342b97e6f04be999ea0d3" title="Set the next DisplayInterface derived instance in the list." alt="" coords="457,142,645,169"/>
-<area shape="rect" id="node8" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="425,244,676,270"/>
-<area shape="rect" id="node9" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="772,244,871,270"/>
+<area shape="rect" id="Node000001" title="Test that SPI displays can be switched manually if their library doesn&#39;t support it (eg...." alt="" coords="5,267,75,292"/>
+<area shape="rect" id="Node000002" href="$classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="145,91,355,116"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,265,221,124,225,128,58,269"/>
+<area shape="rect" id="Node000007" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="123,242,377,267"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="75,273,131,266,131,271,75,278"/>
+<area shape="rect" id="Node000010" href="$classMockArduino.html#a6dee256b5b61eb81e51fae11584f5951" title=" " alt="" coords="967,292,1157,318"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="75,285,123,293,346,321,520,337,695,340,918,326,986,317,986,323,919,332,695,345,520,343,345,326,122,298,74,290"/>
+<area shape="rect" id="Node000011" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="724,291,919,316"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="75,278,710,298,710,303,75,283"/>
+<area shape="rect" id="Node000003" href="$classDisplayInterface.html#aedd1018ddee5891bee744cdeac36fe96" title="Get the next DisplayInterface derived instance in the list." alt="" coords="727,191,916,216"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="273,88,343,54,391,35,445,19,503,7,562,3,621,8,677,27,701,41,724,58,761,99,791,141,811,177,806,180,786,144,757,102,720,62,698,45,675,31,620,14,562,8,504,12,447,24,393,40,345,59,275,93"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#aa1d72bdfd3cf533bc3d910dab42b1e4d" title="Set the ID for this display instance." alt="" coords="466,42,635,67"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="328,88,459,67,459,72,329,94"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#a4d4c3c663ad0e26cfb00e3a9d6dd687b" title="Set the logger instance to use for diagnostic logging." alt="" coords="450,91,651,116"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="355,101,436,101,436,106,355,106"/>
+<area shape="rect" id="Node000006" href="$classDisplayInterface.html#ac8e3fa088bc342b97e6f04be999ea0d3" title="Set the next DisplayInterface derived instance in the list." alt="" coords="457,140,645,166"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="329,114,459,135,459,141,328,119"/>
+<area shape="poly" id="edge12_Node000007_Node000003" title=" " alt="" coords="329,239,425,226,576,214,713,206,713,211,576,219,426,232,329,244"/>
+<area shape="rect" id="Node000008" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="425,242,676,267"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="378,252,411,252,411,257,378,257"/>
+<area shape="poly" id="edge11_Node000008_Node000003" title=" " alt="" coords="619,239,739,216,740,222,620,244"/>
+<area shape="rect" id="Node000009" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="772,242,871,267"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="676,252,758,252,758,257,676,257"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="621,264,738,286,737,291,621,270"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="871,262,988,287,987,292,870,267"/>
 </map>

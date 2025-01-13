@@ -1,8 +1,13 @@
 <map id="TEST_F" name="TEST_F">
-<area shape="rect" id="node1" title="Test a second display can be accessed via the first in a list." alt="" coords="5,107,75,133"/>
-<area shape="rect" id="node2" href="$classDisplayInterface.html#abcb04126efa9ce5ef701f0ef6217c85d" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="143,5,316,32"/>
-<area shape="rect" id="node3" href="$classDisplayInterface.html#ab38bc07dac9e61a2d2d94079a1a8be83" title="Clear the entire screen." alt="" coords="123,56,336,83"/>
-<area shape="rect" id="node4" href="$classDisplayInterface.html#a3649a768b8ca59c3070f56aed1fe42c2" title="Get the ID of this display instance." alt="" coords="144,107,315,133"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="135,157,324,184"/>
-<area shape="rect" id="node6" href="$classDisplayInterface.html#aa1d72bdfd3cf533bc3d910dab42b1e4d" title="Set the ID for this display instance." alt="" coords="145,208,314,235"/>
+<area shape="rect" id="Node000001" title="Test a second display can be accessed via the first in a list." alt="" coords="5,104,75,129"/>
+<area shape="rect" id="Node000002" href="$classDisplayInterface.html#abcb04126efa9ce5ef701f0ef6217c85d" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="143,5,316,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,102,79,71,121,40,136,33,139,38,124,44,83,75,53,106"/>
+<area shape="rect" id="Node000003" href="$classDisplayInterface.html#ab38bc07dac9e61a2d2d94079a1a8be83" title="Clear the entire screen." alt="" coords="123,55,336,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="74,103,122,89,154,81,156,86,123,94,76,108"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#a3649a768b8ca59c3070f56aed1fe42c2" title="Get the ID of this display instance." alt="" coords="144,104,315,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="75,114,130,114,130,119,75,119"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#aedd1018ddee5891bee744cdeac36fe96" title="Get the next DisplayInterface derived instance in the list." alt="" coords="135,153,324,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="76,124,123,138,160,147,159,153,122,143,74,130"/>
+<area shape="rect" id="Node000006" href="$classDisplayInterface.html#aa1d72bdfd3cf533bc3d910dab42b1e4d" title="Set the ID for this display instance." alt="" coords="145,203,314,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="54,128,83,158,124,188,143,196,141,201,121,192,80,162,50,132"/>
 </map>

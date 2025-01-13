@@ -1,18 +1,36 @@
 <map id="Controller::update" name="Controller::update">
-<area shape="rect" id="node1" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="5,199,144,225"/>
-<area shape="rect" id="node2" href="$classStream.html#a630f7c449a9674857fae9a7016d93dbe" title="Check number of characters available in the buffer." alt="" coords="225,5,362,32"/>
-<area shape="rect" id="node3" href="$classDisplayManager.html#ac007625bc3dc91b4a7f22238226f37ea" title="Clear all displays." alt="" coords="201,57,386,98"/>
-<area shape="rect" id="node8" href="$classInputManager.html#a2672882f95872798fd07d4d98f82063b" title="Get the configured InputInterface." alt="" coords="206,173,381,200"/>
-<area shape="rect" id="node9" href="$classInputInterface.html#af4e357d021d6ff950b6c8497734dcd75" title="Test if this InputInterface is undergoing calibration as required by touch screens." alt="" coords="192,224,395,251"/>
-<area shape="rect" id="node10" href="$Arduino_8h.html#a6ff7f2532a22366f0013bc41397129fd" title=" " alt="" coords="264,275,323,301"/>
-<area shape="rect" id="node11" href="$classAtFinder.html#a76f0a4563646bfdcd04820845d440c01" title="Call this as often as possible with a streaming input (eg. Serial.read())" alt="" coords="195,325,392,352"/>
-<area shape="rect" id="node13" href="$classStream.html#a654017caec3e3feeba5feb346d83c7bb" title="Read a character from the buffer." alt="" coords="240,376,347,403"/>
-<area shape="rect" id="node14" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="203,123,384,149"/>
-<area shape="rect" id="node4" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="443,123,693,149"/>
-<area shape="rect" id="node7" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="744,60,933,87"/>
-<area shape="rect" id="node5" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="789,161,888,188"/>
-<area shape="rect" id="node6" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="741,111,936,137"/>
-<area shape="rect" id="node12" href="$classCallbackInterface.html#aba96f818abe5d19945217275bdbe6b67" title="Method to implement updating a screen." alt="" coords="496,318,640,359"/>
-<area shape="rect" id="node15" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="455,199,681,225"/>
-<area shape="rect" id="node16" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="775,212,902,239"/>
+<area shape="rect" id="Node000001" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="5,195,144,220"/>
+<area shape="rect" id="Node000002" href="$classStream.html#a630f7c449a9674857fae9a7016d93dbe" title="Check number of characters available in the buffer." alt="" coords="225,5,362,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,193,94,162,118,121,150,78,190,41,211,30,213,35,194,46,154,81,122,124,99,164,84,195"/>
+<area shape="rect" id="Node000003" href="$classDisplayManager.html#ac007625bc3dc91b4a7f22238226f37ea" title="Clear all displays." alt="" coords="201,55,386,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="86,193,129,150,159,126,191,105,204,98,206,103,193,110,162,130,133,154,89,196"/>
+<area shape="rect" id="Node000009" href="$classInputManager.html#a2672882f95872798fd07d4d98f82063b" title="Get the configured InputInterface." alt="" coords="206,169,381,195"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="144,197,192,191,193,196,145,202"/>
+<area shape="rect" id="Node000010" href="$classInputInterface.html#af4e357d021d6ff950b6c8497734dcd75" title="Test if this InputInterface is undergoing calibration as required by touch screens." alt="" coords="192,219,395,244"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="145,212,178,216,178,221,144,218"/>
+<area shape="rect" id="Node000011" href="$Arduino_8h.html#a6ff7f2532a22366f0013bc41397129fd" title=" " alt="" coords="264,268,323,293"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="105,218,193,253,251,269,250,274,191,258,103,223"/>
+<area shape="rect" id="Node000012" href="$classAtFinder.html#a76f0a4563646bfdcd04820845d440c01" title="Call this as often as possible with a streaming input (eg. Serial.read())" alt="" coords="195,317,392,343"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="89,218,132,260,162,283,193,302,212,311,210,315,191,307,159,287,129,264,86,222"/>
+<area shape="rect" id="Node000014" href="$classStream.html#a654017caec3e3feeba5feb346d83c7bb" title="Read a character from the buffer." alt="" coords="240,367,347,392"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="85,219,124,284,156,322,193,353,228,368,225,373,191,358,152,325,120,287,80,222"/>
+<area shape="rect" id="Node000015" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="203,120,384,145"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="101,192,191,154,217,146,219,151,193,159,103,197"/>
+<area shape="rect" id="Node000004" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="443,120,693,145"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="387,92,494,115,493,120,386,97"/>
+<area shape="rect" id="Node000008" href="$classDisplayInterface.html#aedd1018ddee5891bee744cdeac36fe96" title="Get the next DisplayInterface derived instance in the list." alt="" coords="744,57,933,83"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="386,64,443,61,568,58,693,61,730,62,730,67,693,66,568,63,443,66,386,69"/>
+<area shape="rect" id="Node000005" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="789,156,888,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="664,143,776,158,775,163,663,148"/>
+<area shape="rect" id="Node000007" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="741,107,936,132"/>
+<area shape="poly" id="edge5_Node000004_Node000007" title=" " alt="" coords="693,124,728,122,728,127,694,129"/>
+<area shape="poly" id="edge6_Node000004_Node000008" title=" " alt="" coords="623,117,769,83,770,89,624,123"/>
+<area shape="rect" id="Node000013" href="$classCallbackInterface.html#aba96f818abe5d19945217275bdbe6b67" title="Method to implement updating a screen." alt="" coords="496,310,640,350"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="392,327,482,327,482,333,392,333"/>
+<area shape="poly" id="edge15_Node000015_Node000004" title=" " alt="" coords="384,130,429,130,429,135,384,135"/>
+<area shape="poly" id="edge16_Node000015_Node000008" title=" " alt="" coords="362,117,442,105,593,88,730,75,731,81,593,93,443,110,363,123"/>
+<area shape="rect" id="Node000016" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="455,193,681,219"/>
+<area shape="poly" id="edge17_Node000015_Node000016" title=" " alt="" coords="350,143,395,154,512,187,511,192,394,159,349,148"/>
+<area shape="rect" id="Node000017" href="$classScreen.html#af743df653d024c7571e596772009216d" title="Get the next Screen instance in the list." alt="" coords="775,205,902,231"/>
+<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="681,208,762,212,762,217,681,214"/>
 </map>

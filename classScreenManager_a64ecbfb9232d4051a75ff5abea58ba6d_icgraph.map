@@ -1,6 +1,9 @@
 <map id="ScreenManager::getPreviousScreen" name="ScreenManager::getPreviousScreen">
-<area shape="rect" id="node1" title="Get the previous screen in the list (sorted by ID)" alt="" coords="481,35,689,76"/>
-<area shape="rect" id="node2" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="237,5,433,47"/>
-<area shape="rect" id="node4" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="301,71,370,98"/>
-<area shape="rect" id="node3" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,13,189,39"/>
+<area shape="rect" id="Node000001" title="Get the previous screen in the list (sorted by ID)" alt="" coords="481,35,689,75"/>
+<area shape="rect" id="Node000002" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="237,5,433,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="468,44,433,39,434,34,468,38"/>
+<area shape="rect" id="Node000004" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="301,70,370,95"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="468,70,370,82,370,76,467,65"/>
+<area shape="rect" id="Node000003" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,13,189,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,28,189,28,189,23,224,23"/>
 </map>

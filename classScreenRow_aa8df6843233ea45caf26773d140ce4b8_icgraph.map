@@ -1,13 +1,40 @@
 <map id="ScreenRow::getNext" name="ScreenRow::getNext">
-<area shape="rect" id="node1" title="Get the next ScreenRow instance in the list." alt="" coords="719,144,872,171"/>
-<area shape="rect" id="node2" href="$classScreen.html#a1a1f735d2c573b460813e1ba0667b649" title="Add a new ScreenRow to the list." alt="" coords="484,5,661,32"/>
-<area shape="rect" id="node6" href="$classScreen.html#a43263117dfffa210ccd83b6cd12e0732" title="Delete the specified ScreenRow and update the list accordingly." alt="" coords="475,56,670,83"/>
-<area shape="rect" id="node7" href="$classTFT__eSPIDisplay.html#ac4c657d18bcd4dae193f5fd906411dcf" title="Display the specified Screen on this display." alt="" coords="481,107,664,149"/>
-<area shape="rect" id="node8" href="$classScreen.html#a1545b68b9bd38176d171d769f3f3c7f3" title="Get the ScreenRow instance at the specified ID." alt="" coords="475,173,671,200"/>
-<area shape="rect" id="node10" href="$test__ControllerDisplayUpdate_8cpp.html#af7a73dc328bc3f14a231b3d577180628" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="538,224,607,251"/>
-<area shape="rect" id="node11" href="$classScreen.html#a4243bc17596af96415b09ac48205676d" title="Destructor for the Screen instance Will automatically clean up the associated ScreenRow list." alt="" coords="508,275,637,301"/>
-<area shape="rect" id="node3" href="$classScreen.html#a0a9a3a713a63ef55e854841d07630556" title="Update the specified ScreenRow, or create it if it doesn&#39;t exist This will automatically maintain the..." alt="" coords="236,56,427,83"/>
-<area shape="rect" id="node4" href="$test__Screen_8cpp.html#a9da657726211d6af0e63eaab94ad162f" title="Create a screen with associated row list and ensure rows are accessible by ID." alt="" coords="62,31,131,57"/>
-<area shape="rect" id="node5" href="$classController.html#a908f5f6c24239286e29d4761da509963" title="Method to implement updating a screen." alt="" coords="5,81,188,108"/>
-<area shape="rect" id="node9" href="$test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly." alt="" coords="297,173,366,200"/>
+<area shape="rect" id="Node000001" title="Get the next ScreenRow instance in the list." alt="" coords="836,292,989,317"/>
+<area shape="rect" id="Node000002" href="$classScreen.html#a1a1f735d2c573b460813e1ba0667b649" title="Add a new ScreenRow to the list." alt="" coords="601,265,779,291"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="822,297,779,291,779,286,822,291"/>
+<area shape="rect" id="Node000004" href="$test__Screen_8cpp.html#a1803655bda263555436ec633fd3297da" title="Create a screen with associated row list and check all attributes are valid." alt="" coords="179,64,249,89"/>
+<area shape="poly" id="edge21_Node000001_Node000004" title=" " alt="" coords="896,282,852,218,822,184,787,155,718,118,643,91,566,75,489,66,415,63,349,65,249,74,249,69,348,60,415,58,489,61,567,70,645,86,720,113,789,151,825,180,856,215,900,279"/>
+<area shape="rect" id="Node000005" href="$test__Screen_8cpp.html#aa85ee31e3fe94a4539ca065e4d9f412c" title="Validate rows are deleted when setting text to &quot;&quot;." alt="" coords="179,13,249,39"/>
+<area shape="poly" id="edge22_Node000001_Node000005" title=" " alt="" coords="901,280,886,239,862,190,829,140,809,118,786,99,754,78,719,60,645,34,567,18,490,10,416,8,349,11,249,23,249,17,349,6,416,3,490,5,568,12,646,29,721,56,756,73,790,95,813,114,833,137,867,187,891,237,906,278"/>
+<area shape="rect" id="Node000006" href="$test__Screen_8cpp.html#a9da657726211d6af0e63eaab94ad162f" title="Create a screen with associated row list and ensure rows are accessible by ID." alt="" coords="179,267,249,292"/>
+<area shape="poly" id="edge23_Node000001_Node000006" title=" " alt="" coords="823,309,609,308,353,298,248,287,249,282,354,293,609,303,823,304"/>
+<area shape="rect" id="Node000009" href="$test__ControllerScreenCreation_8cpp.html#a9b3c4848f918df987352646ef615b8bb" title="Validates that the Controller&#45;&gt;updateScreen() method creates a screen and updates rows correctly." alt="" coords="5,216,75,241"/>
+<area shape="poly" id="edge19_Node000001_Node000009" title=" " alt="" coords="847,323,710,348,623,358,526,364,425,364,322,356,219,337,122,306,98,293,78,276,49,244,53,240,82,273,101,289,124,301,221,332,322,351,425,359,526,359,622,353,709,342,846,318"/>
+<area shape="rect" id="Node000010" href="$classScreen.html#a43263117dfffa210ccd83b6cd12e0732" title="Delete the specified ScreenRow and update the list accordingly." alt="" coords="593,216,787,241"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="871,289,787,255,748,244,750,239,789,250,873,284"/>
+<area shape="rect" id="Node000011" href="$classScreen.html#a1545b68b9bd38176d171d769f3f3c7f3" title="Get the ScreenRow instance at the specified ID." alt="" coords="592,165,788,191"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="888,284,844,244,787,206,755,193,757,188,789,201,847,240,892,280"/>
+<area shape="rect" id="Node000012" href="$test__ControllerDisplayUpdate_8cpp.html#af7a73dc328bc3f14a231b3d577180628" title="Test to ensure a mock display correctly receives screen updates from the Controller." alt="" coords="655,419,725,444"/>
+<area shape="poly" id="edge18_Node000001_Node000012" title=" " alt="" coords="889,329,845,366,789,402,757,416,725,426,724,421,755,411,787,397,841,362,886,325"/>
+<area shape="rect" id="Node000013" href="$test__Screen_8cpp.html#ad93d273cb56a1558983e815333e2bbf7" title="Create a ScreenRow and check all attributes are valid." alt="" coords="655,468,725,493"/>
+<area shape="poly" id="edge20_Node000001_Node000013" title=" " alt="" coords="900,331,857,396,826,430,789,459,757,473,725,480,724,475,756,468,787,455,822,426,853,392,896,328"/>
+<area shape="rect" id="Node000014" href="$classScreen.html#a4243bc17596af96415b09ac48205676d" title="Destructor for the Screen instance Will automatically clean up the associated ScreenRow list." alt="" coords="625,517,755,543"/>
+<area shape="poly" id="edge24_Node000001_Node000014" title=" " alt="" coords="905,331,890,371,865,419,832,467,790,508,756,524,754,519,786,504,828,464,861,416,885,369,900,329"/>
+<area shape="rect" id="Node000003" href="$classScreen.html#a0a9a3a713a63ef55e854841d07630556" title="Update the specified ScreenRow, or create it if it doesn&#39;t exist This will automatically maintain the..." alt="" coords="353,216,544,241"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="613,265,511,244,512,239,614,260"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="415,211,234,92,237,88,418,207"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="432,205,411,171,382,130,346,89,304,54,277,41,248,33,250,28,279,36,307,49,350,85,386,126,416,168,436,202"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="376,247,249,275,248,270,375,242"/>
+<area shape="rect" id="Node000007" href="$test__Screen_8cpp.html#af450f2926aeb50c83ec7af1fe7d97a15" title="Validate that rows are to be redrawn by default, and not after retrieving text." alt="" coords="179,165,249,191"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="375,216,248,188,249,183,376,211"/>
+<area shape="rect" id="Node000008" href="$classController.html#a908f5f6c24239286e29d4761da509963" title="Method to implement updating a screen." alt="" coords="123,216,305,241"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="340,231,305,231,305,226,340,226"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="109,231,75,231,75,226,109,226"/>
+<area shape="poly" id="edge10_Node000010_Node000003" title=" " alt="" coords="579,231,544,231,544,226,579,226"/>
+<area shape="poly" id="edge17_Node000011_Node000003" title=" " alt="" coords="616,196,510,219,509,214,615,191"/>
+<area shape="poly" id="edge13_Node000011_Node000004" title=" " alt="" coords="655,161,604,134,543,111,462,94,379,84,249,79,249,74,380,79,462,89,545,106,606,129,658,156"/>
+<area shape="poly" id="edge14_Node000011_Node000005" title=" " alt="" coords="664,159,611,117,578,96,543,79,463,54,381,39,306,32,249,29,249,24,307,26,381,34,464,49,545,74,580,92,614,113,667,154"/>
+<area shape="poly" id="edge15_Node000011_Node000006" title=" " alt="" coords="609,198,593,206,579,218,571,231,561,244,545,255,506,270,465,281,383,291,307,292,249,287,249,282,307,286,382,286,464,276,505,265,543,250,558,240,566,228,575,214,591,201,607,193"/>
+<area shape="poly" id="edge16_Node000011_Node000007" title=" " alt="" coords="578,181,249,181,249,175,578,175"/>
+<area shape="poly" id="edge12_Node000011_Node000009" title=" " alt="" coords="634,164,536,141,474,131,406,123,335,120,263,123,192,135,124,155,101,168,81,184,52,218,48,214,77,181,98,163,122,150,191,129,262,118,335,115,406,118,474,125,537,136,636,159"/>
 </map>

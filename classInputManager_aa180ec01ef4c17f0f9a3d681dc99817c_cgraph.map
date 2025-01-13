@@ -1,4 +1,5 @@
 <map id="InputManager::startInput" name="InputManager::startInput">
-<area shape="rect" id="node1" title="Start the configured input &#45; calls the InputInterface::begin() method." alt="" coords="5,5,188,32"/>
-<area shape="rect" id="node2" href="$classInputInterface.html#a3a54545cc1cd9a852ed6b598aea53b11" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="236,5,393,32"/>
+<area shape="rect" id="Node000001" title="Start the configured input &#45; calls the InputInterface::begin() method." alt="" coords="5,5,188,31"/>
+<area shape="rect" id="Node000002" href="$classInputInterface.html#a3a54545cc1cd9a852ed6b598aea53b11" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="236,5,393,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,15,222,15,222,21,188,21"/>
 </map>

@@ -1,4 +1,9 @@
 <map id="advanceMillis" name="advanceMillis">
-<area shape="rect" id="node1" title=" " alt="" coords="123,5,235,32"/>
-<area shape="rect" id="node2" href="$test__DebounceHoldInput_8cpp.html#a28ab7fdb40f716308255945d5c64e002" title="Test case for a press that should be debounced." alt="" coords="5,5,75,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="123,55,235,80"/>
+<area shape="rect" id="Node000002" href="$test__DebounceHoldInput_8cpp.html#a6f653cba82f9bdea3dac3fae6075b62a" title="Test to validate debounce correctly ignores bouncy inputs." alt="" coords="5,5,75,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,53,74,33,76,28,131,48"/>
+<area shape="rect" id="Node000003" href="$test__DebounceHoldInput_8cpp.html#a28ab7fdb40f716308255945d5c64e002" title="Test case for a press that should be debounced." alt="" coords="5,55,75,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,70,75,70,75,65,109,65"/>
+<area shape="rect" id="Node000004" href="$test__DebounceHoldInput_8cpp.html#a6742805f3f44e3b19f3d5a47bb0d4905" title="Test case for a button hold." alt="" coords="5,104,75,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="131,87,76,107,74,102,129,82"/>
 </map>

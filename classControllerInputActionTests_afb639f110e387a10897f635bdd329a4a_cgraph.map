@@ -1,10 +1,17 @@
 <map id="ControllerInputActionTests::SetUp" name="ControllerInputActionTests::SetUp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,107,199,149"/>
-<area shape="rect" id="node2" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="247,115,424,141"/>
-<area shape="rect" id="node3" href="$classInputInterface.html#a82a2a78aaac60b714145da645febe052" title="Force a touch screen into calibration mode, even if existing calibration is valid." alt="" coords="477,5,702,32"/>
-<area shape="rect" id="node4" href="$classInputInterface.html#abae89c99e802186c05e97750e473dac1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="491,56,688,83"/>
-<area shape="rect" id="node5" href="$classInputInterface.html#a496b20fc72c9b458bc5b7b29bebfe672" title="Set the debounce delay." alt="" coords="486,107,693,149"/>
-<area shape="rect" id="node7" href="$classInputInterface.html#a9880a65f1358aa4f7880cddadf3ff846" title="Set the threshold for detecting an input is held." alt="" coords="472,173,707,200"/>
-<area shape="rect" id="node8" href="$classInputInterface.html#add815941c23f1e6fe831a13738ed626c" title="Set the logger instance to use for diagnostic logging." alt="" coords="497,224,682,251"/>
-<area shape="rect" id="node6" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="755,115,813,141"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,105,199,145"/>
+<area shape="rect" id="Node000002" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="247,112,424,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,122,233,122,233,127,199,127"/>
+<area shape="rect" id="Node000003" href="$classInputInterface.html#a82a2a78aaac60b714145da645febe052" title="Force a touch screen into calibration mode, even if existing calibration is valid." alt="" coords="477,5,702,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="352,110,403,75,471,40,494,32,496,37,473,44,406,79,355,114"/>
+<area shape="rect" id="Node000004" href="$classInputInterface.html#abae89c99e802186c05e97750e473dac1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="491,55,688,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="389,109,471,90,515,80,516,85,473,95,390,115"/>
+<area shape="rect" id="Node000005" href="$classInputInterface.html#a496b20fc72c9b458bc5b7b29bebfe672" title="Set the debounce delay." alt="" coords="486,105,693,145"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="424,122,472,122,472,127,424,127"/>
+<area shape="rect" id="Node000007" href="$classInputInterface.html#a9880a65f1358aa4f7880cddadf3ff846" title="Set the threshold for detecting an input is held." alt="" coords="472,169,707,195"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="390,135,473,154,516,164,515,169,471,159,389,140"/>
+<area shape="rect" id="Node000008" href="$classInputInterface.html#add815941c23f1e6fe831a13738ed626c" title="Set the logger instance to use for diagnostic logging." alt="" coords="497,219,682,244"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="355,135,406,169,473,204,501,213,499,218,471,208,404,174,352,140"/>
+<area shape="rect" id="Node000006" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="755,112,813,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="693,122,741,122,741,127,693,127"/>
 </map>

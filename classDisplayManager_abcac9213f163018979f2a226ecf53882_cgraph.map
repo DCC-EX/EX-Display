@@ -1,7 +1,11 @@
 <map id="DisplayManager::_selectSPIDisplay" name="DisplayManager::_selectSPIDisplay">
-<area shape="rect" id="node1" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="5,56,256,83"/>
-<area shape="rect" id="node2" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="352,5,451,32"/>
-<area shape="rect" id="node4" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="304,56,499,83"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="307,107,496,133"/>
-<area shape="rect" id="node3" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="547,5,737,32"/>
+<area shape="rect" id="Node000001" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="5,55,256,80"/>
+<area shape="rect" id="Node000002" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="352,5,451,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,52,338,27,339,32,201,57"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="304,55,499,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="256,65,290,65,290,70,256,70"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#aedd1018ddee5891bee744cdeac36fe96" title="Get the next DisplayInterface derived instance in the list." alt="" coords="307,104,496,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="201,77,318,99,317,104,201,83"/>
+<area shape="rect" id="Node000003" href="$classMockArduino.html#a6dee256b5b61eb81e51fae11584f5951" title=" " alt="" coords="547,5,737,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="451,15,533,15,533,21,451,21"/>
 </map>

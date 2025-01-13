@@ -1,7 +1,11 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/CreateDeviceMacroReset.h" name="/home/runner/work/EX&#45;Display/EX&#45;Display/CreateDeviceMacroReset.h">
-<area shape="rect" id="node1" title=" " alt="" coords="153,5,395,61"/>
-<area shape="rect" id="node2" href="$CreateDeviceMacros_8h.html" title=" " alt="" coords="153,109,395,165"/>
-<area shape="rect" id="node3" href="$CreateUserDevices_8h.html" title=" " alt="" coords="161,213,387,269"/>
-<area shape="rect" id="node4" href="$Configurator_8cpp.html" title=" " alt="" coords="5,332,265,373"/>
-<area shape="rect" id="node5" href="$test__CompilerCreation_8cpp.html" title=" " alt="" coords="289,317,536,388"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="153,5,395,60"/>
+<area shape="rect" id="Node000002" href="$CreateDeviceMacros_8h.html" title=" " alt="" coords="153,108,395,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="277,74,277,108,271,108,271,74"/>
+<area shape="rect" id="Node000003" href="$CreateUserDevices_8h.html" title=" " alt="" coords="161,211,387,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="277,176,277,211,271,211,271,176"/>
+<area shape="rect" id="Node000004" href="$Configurator_8cpp.html" title=" " alt="" coords="5,328,265,368"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="231,276,161,330,158,326,228,272"/>
+<area shape="rect" id="Node000005" href="$test__CompilerCreation_8cpp.html" title=" " alt="" coords="289,313,536,383"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="320,272,371,311,367,315,317,276"/>
 </map>

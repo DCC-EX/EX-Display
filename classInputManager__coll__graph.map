@@ -1,8 +1,19 @@
 <map id="InputManager" name="InputManager">
-<area shape="rect" id="node1" title=" " alt="" coords="91,363,203,389"/>
-<area shape="rect" id="node2" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="28,184,164,211"/>
-<area shape="rect" id="node5" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="164,273,277,300"/>
-<area shape="rect" id="node3" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="142,95,208,121"/>
-<area shape="rect" id="node6" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="290,184,420,211"/>
-<area shape="rect" id="node4" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="140,5,210,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="141,357,253,383"/>
+<area shape="rect" id="Node000002" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="30,181,159,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,219,117,255,136,293,162,328,187,355,183,359,158,332,131,296,112,257,99,221"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="175,186,186,194,178,202,160,204,159,199,176,197,181,194,172,190"/>
+<area shape="rect" id="Node000005" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="205,269,318,295"/>
+<area shape="poly" id="edge9_Node000005_Node000002" title=" " alt="" coords="131,211,240,267,238,271,128,215"/>
+<area shape="rect" id="Node000003" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="195,93,261,119"/>
+<area shape="poly" id="edge10_Node000001_Node000003" title=" " alt="" coords="182,112,140,117,95,130,53,151,35,165,20,183,9,209,13,235,28,261,52,285,114,326,171,355,169,360,111,331,49,289,24,264,8,237,4,209,15,180,31,162,50,146,94,125,139,112,181,106"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="200,128,114,183,112,179,197,124"/>
+<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="236,132,255,230,262,269,257,270,250,231,230,133"/>
+<area shape="rect" id="Node000006" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="351,181,487,207"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="267,122,394,179,392,184,265,127"/>
+<area shape="rect" id="Node000004" href="$classStream.html" title="Class to mock the basic Stream function equivalent of the Arduino framework." alt="" coords="193,5,263,31"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="231,45,231,93,225,93,225,45"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="247,307,209,358,204,355,243,304"/>
+<area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="413,221,398,247,372,278,348,298,285,336,233,360,231,355,283,331,344,294,368,274,394,244,408,218"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="373,214,332,233,277,271,274,267,330,228,371,209"/>
 </map>

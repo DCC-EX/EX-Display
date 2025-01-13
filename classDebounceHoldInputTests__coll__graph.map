@@ -1,10 +1,21 @@
 <map id="DebounceHoldInputTests" name="DebounceHoldInputTests">
-<area shape="rect" id="node1" title="Test harness for inputs utilising debounce and hold options." alt="" coords="10,375,193,401"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,285,53,312"/>
-<area shape="rect" id="node3" href="$classMockCallback.html" title="Mock class to test callbacks." alt="" coords="50,235,163,261"/>
-<area shape="rect" id="node4" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="65,95,201,121"/>
-<area shape="rect" id="node7" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="193,184,306,211"/>
-<area shape="rect" id="node5" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="216,5,283,32"/>
-<area shape="rect" id="node8" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="327,95,457,121"/>
-<area shape="rect" id="node6" href="$classMockButtonInput.html" title="Mock button input class using debounce and hold methods Use setRawAction() to simulate what a button ..." alt="" coords="184,285,317,312"/>
+<area shape="rect" id="Node000001" title="Test harness for inputs utilising debounce and hold options." alt="" coords="10,368,193,393"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,280,53,305"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,314,93,366,89,369,46,318"/>
+<area shape="rect" id="Node000003" href="$classMockButtonInput.html" title="Mock button input class using debounce and hold methods Use setRawAction() to simulate what a button ..." alt="" coords="184,280,317,305"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,315,123,370,120,365,218,310"/>
+<area shape="rect" id="Node000004" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="193,181,306,207"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="252,220,253,280,248,280,247,220"/>
+<area shape="rect" id="Node000005" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="65,93,201,119"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="147,129,167,155,188,169,210,179,208,184,185,174,164,159,142,133"/>
+<area shape="rect" id="Node000009" href="$classMockCallback.html" title="Mock class to test callbacks." alt="" coords="50,231,163,256"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="131,133,112,231,106,230,126,132"/>
+<area shape="rect" id="Node000006" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="216,5,283,31"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="252,44,252,181,247,181,247,44"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="209,39,179,57,159,76,143,95,139,91,155,72,176,53,206,34"/>
+<area shape="rect" id="Node000008" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="327,93,457,119"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="281,35,374,91,371,95,279,40"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="363,128,270,183,267,179,360,123"/>
+<area shape="poly" id="edge8_Node000008_Node000008" title=" " alt="" coords="472,98,483,106,475,114,457,116,457,111,473,109,478,106,469,102"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="108,270,104,368,99,368,103,269"/>
 </map>

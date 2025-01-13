@@ -1,0 +1,15 @@
+<map id="DisplayInterface::formatRow" name="DisplayInterface::formatRow">
+<area shape="rect" id="Node000001" title="Static method to enable calling back to a derived class with a formatted row." alt="" coords="5,173,215,198"/>
+<area shape="rect" id="Node000002" href="$classDisplayInterface.html#acde7922833a368ce3233fe4d721f838a" title="Convert the provided RGB colour code string constant to a uint16_t RGB565 colour." alt="" coords="269,5,440,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,170,179,116,218,84,261,55,273,49,276,53,264,60,221,88,182,120,125,174"/>
+<area shape="rect" id="Node000003" href="$classDisplayInterface.html#ad8da5e63e3775f8f02b04636a9482d97" title="Validates the provided char is a valid modifier." alt="" coords="286,69,423,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,170,262,119,281,112,283,117,264,124,141,175"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#ac5cc108ca1c1410a8321078b3868ed78" title="Check if the provided string constant translates to a valid RGB colour code." alt="" coords="286,133,423,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="207,170,272,161,273,167,208,175"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#a96f1a22d4566a22aefd3b652808d9441" title="Sanitise the provided struct of RowAttributes." alt="" coords="283,197,427,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="208,195,269,204,269,209,207,201"/>
+<area shape="rect" id="Node000006" href="$classDisplayInterface.html#a652c6ce102531b9dd02fb960946987c8" title="Update the provided RowAttributes struct according to the provided modifier." alt="" coords="286,261,423,301"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="141,196,264,247,283,254,281,259,262,252,139,201"/>
+<area shape="rect" id="Node000007" href="$classDisplayInterface.html#a8e1258fa3f32baf1587b80354c8afdb3" title="Display a row using formatting modifiers." alt="" coords="263,325,447,365"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="125,196,182,251,221,283,264,311,276,317,273,322,261,316,218,287,179,255,122,200"/>
+</map>

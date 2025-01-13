@@ -1,15 +1,28 @@
 <map id="Configurator::initialise" name="Configurator::initialise">
-<area shape="rect" id="node1" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="5,208,172,235"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#a9ade9b696372a53b8b716d29d7b53c70" title="Parses the displays configured in myConfig.h and creates the list of displays (this is implemented in..." alt="" coords="221,5,454,32"/>
-<area shape="rect" id="node3" href="$classInputManager.html#a3307bd524c644992394b1f74ad9c1433" title="Call once to create the InputInterface derived input." alt="" coords="240,56,435,83"/>
-<area shape="rect" id="node4" href="$classDisplayManager.html#a0dcf69d16599029ba34bf31c0c666390" title="Get a DisplayInterface derived instance by its ID." alt="" coords="220,107,455,133"/>
-<area shape="rect" id="node6" href="$classInputManager.html#a2672882f95872798fd07d4d98f82063b" title="Get the configured InputInterface." alt="" coords="250,157,425,184"/>
-<area shape="rect" id="node7" href="$classInputInterface.html#a150a075ce0c5a95dc4fd15ccd1933d26" title="Test if this InputInterface requires a display instance &#45; needed for TFT_eSPI as it shares the instan..." alt="" coords="233,208,442,235"/>
-<area shape="rect" id="node8" href="$classInputManager.html#a085a9206b827e9666b798cb8706c20c5" title="Set the CallbackInterface derived instance for user input to use for callbacks." alt="" coords="239,259,435,285"/>
-<area shape="rect" id="node9" href="$classInputManager.html#a27c7bc043eb9fbb8c7700624852220f6" title="Set the display interface to retrieve required attributes &#45; note this should only be required for TFT..." alt="" coords="243,309,432,336"/>
-<area shape="rect" id="node12" href="$classAtFinder.html#ac50442f56c76cd6bd05da52db7ba8910" title="Set the logger instance to use for diagnostic logging." alt="" coords="263,360,411,387"/>
-<area shape="rect" id="node13" href="$classAtFinder.html#abadf56235ed457d74fff16dfdcd6d693" title="Setup the AtFinder parser." alt="" coords="277,411,397,437"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="503,107,693,133"/>
-<area shape="rect" id="node10" href="$classDisplayInterface.html#a3649a768b8ca59c3070f56aed1fe42c2" title="Get the ID of this display instance." alt="" coords="741,309,912,336"/>
-<area shape="rect" id="node11" href="$classInputInterface.html#a8835a0d2c51926d4636f239d888a8e71" title="Set the DisplayInterface for this input if required." alt="" coords="503,335,693,361"/>
+<area shape="rect" id="Node000001" title="Call all one&#45;shot initialisation or begin methods on startup." alt="" coords="5,203,172,228"/>
+<area shape="rect" id="Node000002" href="$classDisplayManager.html#a9ade9b696372a53b8b716d29d7b53c70" title="Parses the displays configured in myConfig.h and creates the list of displays (this is implemented in..." alt="" coords="221,5,454,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,201,110,168,137,124,173,78,218,40,229,34,232,39,222,44,177,82,141,127,115,171,98,204"/>
+<area shape="rect" id="Node000003" href="$classInputManager.html#a3307bd524c644992394b1f74ad9c1433" title="Call once to create the InputInterface derived input." alt="" coords="240,55,435,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="97,201,145,146,180,115,219,89,234,82,236,87,221,94,183,119,149,150,101,204"/>
+<area shape="rect" id="Node000004" href="$classDisplayManager.html#a0dcf69d16599029ba34bf31c0c666390" title="Get a DisplayInterface derived instance by its ID." alt="" coords="220,104,455,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="107,200,156,169,219,138,243,130,245,135,221,143,158,174,109,205"/>
+<area shape="rect" id="Node000006" href="$classInputManager.html#a2672882f95872798fd07d4d98f82063b" title="Get the configured InputInterface." alt="" coords="250,153,425,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="153,200,259,179,260,184,154,205"/>
+<area shape="rect" id="Node000007" href="$classInputInterface.html#a150a075ce0c5a95dc4fd15ccd1933d26" title="Test if this InputInterface requires a display instance &#45; needed for TFT_eSPI as it shares the instan..." alt="" coords="233,203,442,228"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="172,213,219,213,219,218,172,218"/>
+<area shape="rect" id="Node000008" href="$classInputManager.html#a085a9206b827e9666b798cb8706c20c5" title="Set the CallbackInterface derived instance for user input to use for callbacks." alt="" coords="239,252,435,277"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="154,225,260,247,259,252,153,231"/>
+<area shape="rect" id="Node000009" href="$classInputManager.html#a27c7bc043eb9fbb8c7700624852220f6" title="Set the display interface to retrieve required attributes &#45; note this should only be required for TFT..." alt="" coords="243,301,432,327"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="110,226,159,256,221,286,250,295,248,301,219,291,156,261,107,230"/>
+<area shape="rect" id="Node000012" href="$classAtFinder.html#ac50442f56c76cd6bd05da52db7ba8910" title="Set the logger instance to use for diagnostic logging." alt="" coords="263,351,411,376"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="101,227,149,281,183,312,221,337,251,349,249,354,219,342,180,316,145,285,97,230"/>
+<area shape="rect" id="Node000013" href="$classAtFinder.html#abadf56235ed457d74fff16dfdcd6d693" title="Setup the AtFinder parser." alt="" coords="277,400,397,425"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="98,227,115,260,141,304,177,349,221,386,242,397,264,403,263,409,240,402,219,391,173,353,137,307,110,263,93,230"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#aedd1018ddee5891bee744cdeac36fe96" title="Get the next DisplayInterface derived instance in the list." alt="" coords="503,104,693,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="455,114,490,114,490,119,455,119"/>
+<area shape="rect" id="Node000010" href="$classDisplayInterface.html#a3649a768b8ca59c3070f56aed1fe42c2" title="Get the ID of this display instance." alt="" coords="741,301,912,327"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="433,311,728,311,728,317,433,317"/>
+<area shape="rect" id="Node000011" href="$classInputInterface.html#a8835a0d2c51926d4636f239d888a8e71" title="Set the DisplayInterface for this input if required." alt="" coords="503,327,693,352"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="432,321,489,326,489,331,432,326"/>
+<area shape="poly" id="edge11_Node000011_Node000010" title=" " alt="" coords="694,326,727,322,728,328,694,331"/>
 </map>

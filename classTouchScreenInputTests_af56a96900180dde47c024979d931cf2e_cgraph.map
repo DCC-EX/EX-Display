@@ -1,5 +1,7 @@
 <map id="TouchScreenInputTests::SetUp" name="TouchScreenInputTests::SetUp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,23,175,65"/>
-<area shape="rect" id="node2" href="$Arduino_8h.html#a6ff7f2532a22366f0013bc41397129fd" title=" " alt="" coords="292,5,351,32"/>
-<area shape="rect" id="node3" href="$classInputInterface.html#abae89c99e802186c05e97750e473dac1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="223,56,420,83"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,175,63"/>
+<area shape="rect" id="Node000002" href="$Arduino_8h.html#a6ff7f2532a22366f0013bc41397129fd" title=" " alt="" coords="292,5,351,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,31,278,20,279,25,175,37"/>
+<area shape="rect" id="Node000003" href="$classInputInterface.html#abae89c99e802186c05e97750e473dac1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="223,55,420,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,49,209,53,209,58,175,55"/>
 </map>

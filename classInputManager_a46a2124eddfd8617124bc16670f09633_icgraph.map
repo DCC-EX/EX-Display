@@ -1,5 +1,7 @@
 <map id="InputManager::addInput" name="InputManager::addInput">
-<area shape="rect" id="node1" title="Set the InputInterface." alt="" coords="247,42,424,69"/>
-<area shape="rect" id="node2" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="5,5,199,47"/>
-<area shape="rect" id="node3" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="67,71,137,98"/>
+<area shape="rect" id="Node000001" title="Set the InputInterface." alt="" coords="247,42,424,67"/>
+<area shape="rect" id="Node000002" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="5,5,199,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,44,199,40,199,35,233,39"/>
+<area shape="rect" id="Node000003" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="67,70,137,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,70,137,81,137,76,232,64"/>
 </map>

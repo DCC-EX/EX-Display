@@ -1,9 +1,16 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/Logger.h" name="/home/runner/work/EX&#45;Display/EX&#45;Display/Logger.h">
-<area shape="rect" id="node1" title=" " alt="" coords="92,5,301,47"/>
-<area shape="rect" id="node2" href="$Arduino_8h.html" title=" " alt="" coords="155,95,239,121"/>
-<area shape="rect" id="node3" href="$Stream_8h.html" title=" " alt="" coords="107,169,188,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,244,132,271"/>
-<area shape="rect" id="node6" title=" " alt="" coords="212,169,283,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="307,169,377,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="157,244,215,271"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="92,5,301,45"/>
+<area shape="rect" id="Node000002" href="$Arduino_8h.html" title=" " alt="" coords="155,93,239,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,46,199,79,194,79,194,46"/>
+<area shape="rect" id="Node000003" href="$Stream_8h.html" title=" " alt="" coords="107,167,188,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,121,165,157,161,154,186,117"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,240,132,265"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="165,121,129,140,111,153,96,168,81,197,74,227,69,226,76,195,92,165,108,149,126,135,163,116"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="212,167,283,192"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="207,117,233,154,229,157,203,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="307,167,377,192"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="221,116,307,158,305,163,219,121"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="136,194,93,233,90,229,133,190"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="157,240,215,265"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="156,191,176,227,171,229,151,194"/>
 </map>

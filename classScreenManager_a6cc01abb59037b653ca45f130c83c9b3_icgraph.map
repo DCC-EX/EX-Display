@@ -1,10 +1,20 @@
 <map id="ScreenManager::getMaxScreenId" name="ScreenManager::getMaxScreenId">
-<area shape="rect" id="node1" title="Get the highest Screen ID in the list." alt="" coords="775,89,1011,116"/>
-<area shape="rect" id="node2" href="$classScreenManager.html#a38890def1478514514341039b83299ef" title="Get the next screen in the list (sorted by ID)" alt="" coords="500,31,727,57"/>
-<area shape="rect" id="node6" href="$classScreenManager.html#a64ecbfb9232d4051a75ff5abea58ba6d" title="Get the previous screen in the list (sorted by ID)" alt="" coords="509,82,717,123"/>
-<area shape="rect" id="node8" href="$test__ScreenManager_8cpp.html#ab5ada86d9042a1a62ed2251d66d84ef3" title="Create a list of Screens with ScreenManager." alt="" coords="579,148,648,175"/>
-<area shape="rect" id="node3" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="237,5,452,32"/>
-<area shape="rect" id="node5" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="310,56,379,83"/>
-<area shape="rect" id="node4" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,60,189,87"/>
-<area shape="rect" id="node7" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="247,107,443,149"/>
+<area shape="rect" id="Node000001" title="Get the highest Screen ID in the list." alt="" coords="775,85,1011,111"/>
+<area shape="rect" id="Node000002" href="$classScreenManager.html#a38890def1478514514341039b83299ef" title="Get the next screen in the list (sorted by ID)" alt="" coords="500,5,727,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="834,84,726,53,659,33,660,28,727,47,836,79"/>
+<area shape="rect" id="Node000005" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="310,56,379,81"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="761,94,379,73,380,68,761,88"/>
+<area shape="rect" id="Node000006" href="$classScreenManager.html#a64ecbfb9232d4051a75ff5abea58ba6d" title="Get the previous screen in the list (sorted by ID)" alt="" coords="509,106,717,146"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="761,114,718,118,717,113,761,109"/>
+<area shape="rect" id="Node000008" href="$test__ScreenManager_8cpp.html#ab5ada86d9042a1a62ed2251d66d84ef3" title="Create a list of Screens with ScreenManager." alt="" coords="579,171,648,196"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="848,118,727,161,649,179,648,174,726,155,846,113"/>
+<area shape="rect" id="Node000003" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="237,7,452,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="487,21,452,21,452,16,487,16"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="532,36,380,65,379,60,531,31"/>
+<area shape="rect" id="Node000004" href="$classController.html#af9c9f10320fb7770553156da4d164e64" title="Method to implement to respond to an input action." alt="" coords="5,60,189,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="272,38,157,63,156,57,271,32"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="505,106,379,79,380,73,506,101"/>
+<area shape="rect" id="Node000007" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="247,106,443,146"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="496,129,443,129,443,123,496,123"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="238,106,156,88,157,83,239,101"/>
 </map>

@@ -1,0 +1,17 @@
+<map id="MockColourDisplay::displayRow" name="MockColourDisplay::displayRow">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,165,160,205"/>
+<area shape="rect" id="Node000002" href="$classDisplayInterface.html#a1bc192c6854bae554c9aa09cd7122cdc" title="Static method to enable calling back to a derived class with a formatted row." alt="" coords="208,173,417,198"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,183,194,183,194,188,160,188"/>
+<area shape="rect" id="Node000003" href="$classDisplayInterface.html#acde7922833a368ce3233fe4d721f838a" title="Convert the provided RGB colour code string constant to a uint16_t RGB565 colour." alt="" coords="472,5,643,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="324,170,381,116,421,84,464,55,476,49,479,53,467,60,424,88,385,120,328,174"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#ad8da5e63e3775f8f02b04636a9482d97" title="Validates the provided char is a valid modifier." alt="" coords="489,69,626,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="342,170,464,119,484,112,486,117,466,124,344,175"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#ac5cc108ca1c1410a8321078b3868ed78" title="Check if the provided string constant translates to a valid RGB colour code." alt="" coords="489,133,626,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="410,170,475,161,475,167,410,175"/>
+<area shape="rect" id="Node000006" href="$classDisplayInterface.html#a96f1a22d4566a22aefd3b652808d9441" title="Sanitise the provided struct of RowAttributes." alt="" coords="485,197,629,237"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="410,195,472,204,471,209,410,201"/>
+<area shape="rect" id="Node000007" href="$classDisplayInterface.html#a652c6ce102531b9dd02fb960946987c8" title="Update the provided RowAttributes struct according to the provided modifier." alt="" coords="489,261,626,301"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="344,196,466,247,486,254,484,259,464,252,342,201"/>
+<area shape="rect" id="Node000008" href="$classDisplayInterface.html#a8e1258fa3f32baf1587b80354c8afdb3" title="Display a row using formatting modifiers." alt="" coords="465,325,649,365"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="328,196,385,251,424,283,467,311,479,317,476,322,464,316,421,287,381,255,324,200"/>
+</map>

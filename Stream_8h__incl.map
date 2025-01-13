@@ -1,5 +1,7 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/test/mocks/Stream.h" name="/home/runner/work/EX&#45;Display/EX&#45;Display/test/mocks/Stream.h">
-<area shape="rect" id="node1" title=" " alt="" coords="38,5,217,61"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,109,132,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="157,109,215,136"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="38,5,217,60"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,108,132,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,62,86,98,82,95,107,59"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="157,108,215,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,59,173,95,168,98,143,62"/>
 </map>

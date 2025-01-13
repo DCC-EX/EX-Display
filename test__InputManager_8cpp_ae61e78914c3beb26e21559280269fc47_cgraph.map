@@ -1,13 +1,23 @@
 <map id="TEST_F" name="TEST_F">
-<area shape="rect" id="node1" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="5,195,75,221"/>
-<area shape="rect" id="node2" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="125,144,303,171"/>
-<area shape="rect" id="node9" href="$classInputManager.html#a2672882f95872798fd07d4d98f82063b" title="Get the configured InputInterface." alt="" coords="127,195,301,221"/>
-<area shape="rect" id="node10" href="$classInputManager.html#aa180ec01ef4c17f0f9a3d681dc99817c" title="Start the configured input &#45; calls the InputInterface::begin() method." alt="" coords="123,245,305,272"/>
-<area shape="rect" id="node3" href="$classInputInterface.html#a82a2a78aaac60b714145da645febe052" title="Force a touch screen into calibration mode, even if existing calibration is valid." alt="" coords="358,5,583,32"/>
-<area shape="rect" id="node4" href="$classInputInterface.html#abae89c99e802186c05e97750e473dac1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="372,56,569,83"/>
-<area shape="rect" id="node5" href="$classInputInterface.html#a496b20fc72c9b458bc5b7b29bebfe672" title="Set the debounce delay." alt="" coords="367,107,574,149"/>
-<area shape="rect" id="node7" href="$classInputInterface.html#a9880a65f1358aa4f7880cddadf3ff846" title="Set the threshold for detecting an input is held." alt="" coords="353,173,588,200"/>
-<area shape="rect" id="node8" href="$classInputInterface.html#add815941c23f1e6fe831a13738ed626c" title="Set the logger instance to use for diagnostic logging." alt="" coords="378,224,563,251"/>
-<area shape="rect" id="node6" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="636,115,695,141"/>
-<area shape="rect" id="node11" href="$classInputInterface.html#a3a54545cc1cd9a852ed6b598aea53b11" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="392,275,549,301"/>
+<area shape="rect" id="Node000001" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="5,191,75,216"/>
+<area shape="rect" id="Node000002" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="125,141,303,167"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,191,122,177,153,168,155,173,123,182,76,196"/>
+<area shape="rect" id="Node000009" href="$classInputManager.html#a2672882f95872798fd07d4d98f82063b" title="Get the configured InputInterface." alt="" coords="127,191,301,216"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="75,201,113,201,113,206,75,206"/>
+<area shape="rect" id="Node000010" href="$classInputManager.html#aa180ec01ef4c17f0f9a3d681dc99817c" title="Start the configured input &#45; calls the InputInterface::begin() method." alt="" coords="123,240,305,265"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="76,212,123,226,151,234,149,239,122,231,74,217"/>
+<area shape="rect" id="Node000003" href="$classInputInterface.html#a82a2a78aaac60b714145da645febe052" title="Force a touch screen into calibration mode, even if existing calibration is valid." alt="" coords="358,5,583,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="225,139,277,90,313,63,352,40,370,32,372,37,355,44,316,67,280,94,229,143"/>
+<area shape="rect" id="Node000004" href="$classInputInterface.html#abae89c99e802186c05e97750e473dac1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="372,55,569,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="239,139,291,114,352,90,386,81,388,86,354,95,293,119,241,144"/>
+<area shape="rect" id="Node000005" href="$classInputInterface.html#a496b20fc72c9b458bc5b7b29bebfe672" title="Set the debounce delay." alt="" coords="367,105,574,145"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="302,141,353,135,354,141,303,147"/>
+<area shape="rect" id="Node000007" href="$classInputInterface.html#a9880a65f1358aa4f7880cddadf3ff846" title="Set the threshold for detecting an input is held." alt="" coords="353,169,588,195"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="303,161,341,165,341,170,302,166"/>
+<area shape="rect" id="Node000008" href="$classInputInterface.html#add815941c23f1e6fe831a13738ed626c" title="Set the logger instance to use for diagnostic logging." alt="" coords="378,219,563,244"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="270,164,306,177,331,191,354,205,378,213,377,218,352,210,328,196,304,182,268,169"/>
+<area shape="rect" id="Node000006" href="$Arduino_8h.html#a6bc5f943544a887f8b23cadfb26a5e30" title=" " alt="" coords="636,112,695,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="574,122,622,122,622,127,574,127"/>
+<area shape="rect" id="Node000011" href="$classInputInterface.html#a3a54545cc1cd9a852ed6b598aea53b11" title="Perform any initial once off setup or configuration here and call only once." alt="" coords="392,268,549,293"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="306,260,379,268,378,273,305,265"/>
 </map>

@@ -1,35 +1,79 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/ScreenManager.h" name="/home/runner/work/EX&#45;Display/EX&#45;Display/ScreenManager.h">
-<area shape="rect" id="node1" title=" " alt="" coords="1345,5,1612,47"/>
-<area shape="rect" id="node2" href="$Configurator_8h.html" title=" " alt="" coords="547,347,792,388"/>
-<area shape="rect" id="node6" href="$Controller_8h.html" title=" " alt="" coords="445,228,675,269"/>
-<area shape="rect" id="node8" href="$test__ControllerDisplayUpdate_8cpp.html" title=" " alt="" coords="277,332,523,403"/>
-<area shape="rect" id="node9" href="$test__ControllerInputAction_8cpp.html" title=" " alt="" coords="1101,332,1323,403"/>
-<area shape="rect" id="node10" href="$test__ControllerScreenCreation_8cpp.html" title=" " alt="" coords="5,332,253,403"/>
-<area shape="rect" id="node11" href="$test__Controller_8cpp.html" title=" " alt="" coords="1347,332,1527,403"/>
-<area shape="rect" id="node12" href="$DisplayManager_8h.html" title=" " alt="" coords="1239,102,1441,158"/>
-<area shape="rect" id="node16" href="$test__DisplayScreens_8cpp.html" title=" " alt="" coords="3021,213,3206,284"/>
-<area shape="rect" id="node32" href="$ScreenManager_8cpp.html" title=" " alt="" coords="1738,109,2019,151"/>
-<area shape="rect" id="node33" href="$test__ScreenManager_8cpp.html" title=" " alt="" coords="2043,95,2231,165"/>
-<area shape="rect" id="node3" href="$Configurator_8cpp.html" title=" " alt="" coords="1207,465,1467,507"/>
-<area shape="rect" id="node4" href="$EX-Display_8ino.html" title=" " alt="" coords="484,458,655,514"/>
-<area shape="rect" id="node5" href="$test__Configurator_8cpp.html" title=" " alt="" coords="679,451,857,521"/>
-<area shape="rect" id="node7" href="$Controller_8cpp.html" title=" " alt="" coords="817,347,1061,388"/>
-<area shape="rect" id="node13" href="$CreateUserDevices_8h.html" title=" " alt="" coords="1687,221,1913,277"/>
-<area shape="rect" id="node15" href="$DisplayManager_8cpp.html" title=" " alt="" coords="1308,221,1511,277"/>
-<area shape="rect" id="node17" href="$MockDisplayInputMethods_8h.html" title=" " alt="" coords="2737,221,2996,277"/>
-<area shape="rect" id="node30" href="$test__DisplayManager_8cpp.html" title=" " alt="" coords="750,213,943,284"/>
-<area shape="rect" id="node31" href="$test__DisplayManualSPISwitching_8cpp.html" title=" " alt="" coords="967,213,1233,284"/>
-<area shape="rect" id="node14" href="$test__CompilerCreation_8cpp.html" title=" " alt="" coords="1602,332,1849,403"/>
-<area shape="rect" id="node18" href="$integration_2test__Controller_2test__main_8cpp.html" title=" " alt="" coords="1873,332,2071,403"/>
-<area shape="rect" id="node19" href="$integration_2test__Display_2test__main_8cpp.html" title=" " alt="" coords="2095,332,2278,403"/>
-<area shape="rect" id="node20" href="$integration_2test__InteractiveLogger_2test__main_8cpp.html" title=" " alt="" coords="2302,332,2549,403"/>
-<area shape="rect" id="node21" href="$unit_2test__Configurator_2test__main_8cpp.html" title=" " alt="" coords="2573,332,2752,403"/>
-<area shape="rect" id="node22" href="$unit_2test__Controller_2test__main_8cpp.html" title=" " alt="" coords="2777,332,2957,403"/>
-<area shape="rect" id="node23" href="$unit_2test__Display_2test__main_8cpp.html" title=" " alt="" coords="2981,332,3160,403"/>
-<area shape="rect" id="node24" href="$unit_2test__DisplayManager_2test__main_8cpp.html" title=" " alt="" coords="3185,332,3378,403"/>
-<area shape="rect" id="node25" href="$unit_2test__Infrastructure_2test__main_8cpp.html" title=" " alt="" coords="3403,332,3581,403"/>
-<area shape="rect" id="node26" href="$unit_2test__Input_2test__main_8cpp.html" title=" " alt="" coords="3605,339,3821,395"/>
-<area shape="rect" id="node27" href="$unit_2test__InputManager_2test__main_8cpp.html" title=" " alt="" coords="3845,332,4024,403"/>
-<area shape="rect" id="node28" href="$unit_2test__Screen_2test__main_8cpp.html" title=" " alt="" coords="4048,339,4275,395"/>
-<area shape="rect" id="node29" href="$unit_2test__ScreenManager_2test__main_8cpp.html" title=" " alt="" coords="4299,332,4487,403"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1345,5,1612,45"/>
+<area shape="rect" id="Node000002" href="$Configurator_8h.html" title=" " alt="" coords="547,343,792,383"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1332,32,1097,44,961,56,826,74,697,97,583,127,535,146,494,166,460,188,435,212,425,229,422,245,426,261,435,278,456,291,498,307,603,340,602,345,496,312,454,296,431,282,421,263,417,245,420,227,431,209,457,184,491,161,533,141,582,122,696,92,825,68,961,51,1096,39,1332,27"/>
+<area shape="rect" id="Node000006" href="$Controller_8h.html" title=" " alt="" coords="445,225,675,265"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1381,51,1071,121,686,213,630,228,628,223,685,208,1070,116,1380,46"/>
+<area shape="rect" id="Node000008" href="$test__ControllerDisplayUpdate_8cpp.html" title=" " alt="" coords="277,328,523,397"/>
+<area shape="poly" id="edge39_Node000001_Node000008" title=" " alt="" coords="1331,33,1102,41,844,53,619,72,540,83,494,96,457,118,432,141,414,171,397,211,390,241,388,272,394,328,389,328,383,272,385,240,392,210,409,168,428,138,454,114,492,91,539,78,619,66,843,48,1102,35,1331,28"/>
+<area shape="rect" id="Node000009" href="$test__ControllerInputAction_8cpp.html" title=" " alt="" coords="1101,328,1323,397"/>
+<area shape="poly" id="edge40_Node000001_Node000009" title=" " alt="" coords="1500,56,1523,104,1543,163,1548,194,1547,225,1540,255,1525,282,1504,303,1484,316,1462,322,1440,324,1392,323,1365,325,1335,331,1324,333,1323,328,1334,325,1364,320,1392,318,1440,319,1461,317,1482,311,1501,299,1521,278,1535,253,1542,224,1542,194,1538,164,1519,106,1495,59"/>
+<area shape="rect" id="Node000010" href="$test__ControllerScreenCreation_8cpp.html" title=" " alt="" coords="5,328,253,397"/>
+<area shape="poly" id="edge41_Node000001_Node000010" title=" " alt="" coords="1331,33,1084,41,799,54,551,72,463,83,412,96,369,118,328,145,255,209,196,275,154,329,150,326,192,271,251,206,325,141,366,113,410,91,462,78,550,67,799,49,1084,36,1331,28"/>
+<area shape="rect" id="Node000011" href="$test__Controller_8cpp.html" title=" " alt="" coords="1347,328,1527,397"/>
+<area shape="poly" id="edge43_Node000001_Node000011" title=" " alt="" coords="1531,51,1552,69,1569,92,1575,111,1575,127,1569,163,1569,224,1564,251,1550,281,1528,308,1502,330,1498,326,1525,304,1546,279,1559,249,1563,224,1564,162,1570,127,1570,112,1564,95,1548,73,1527,55"/>
+<area shape="rect" id="Node000012" href="$DisplayManager_8h.html" title=" " alt="" coords="1239,101,1441,155"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="1443,56,1378,103,1375,98,1440,51"/>
+<area shape="rect" id="Node000016" href="$test__DisplayScreens_8cpp.html" title=" " alt="" coords="3021,211,3206,280"/>
+<area shape="poly" id="edge42_Node000001_Node000016" title=" " alt="" coords="1576,47,1624,66,1670,91,1688,110,1698,129,1708,146,1727,160,1760,171,1812,179,1960,191,2150,197,2362,199,2766,199,2918,202,3008,208,3021,211,3020,216,3008,213,2918,207,2766,204,2362,204,2150,202,1960,196,1811,185,1759,176,1724,165,1704,149,1693,131,1684,113,1666,95,1622,70,1574,52"/>
+<area shape="rect" id="Node000032" href="$ScreenManager_8cpp.html" title=" " alt="" coords="1738,108,2019,148"/>
+<area shape="poly" id="edge38_Node000001_Node000032" title=" " alt="" coords="1567,46,1805,105,1803,111,1566,51"/>
+<area shape="rect" id="Node000033" href="$test__ScreenManager_8cpp.html" title=" " alt="" coords="2043,93,2231,163"/>
+<area shape="poly" id="edge44_Node000001_Node000033" title=" " alt="" coords="1626,34,1820,55,1926,71,2031,91,2043,94,2042,99,2030,96,1926,76,1819,61,1626,40"/>
+<area shape="rect" id="Node000003" href="$Configurator_8cpp.html" title=" " alt="" coords="1207,460,1467,500"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="754,383,805,395,1016,432,1207,460,1207,465,1016,437,803,400,752,389"/>
+<area shape="rect" id="Node000004" href="$EX-Display_8ino.html" title=" " alt="" coords="484,453,655,507"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="646,395,594,454,590,451,642,391"/>
+<area shape="rect" id="Node000005" href="$test__Configurator_8cpp.html" title=" " alt="" coords="679,445,857,515"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="697,391,741,444,737,447,692,395"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="589,273,653,341,649,344,585,277"/>
+<area shape="rect" id="Node000007" href="$Controller_8cpp.html" title=" " alt="" coords="817,343,1061,383"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="635,267,878,340,876,345,634,272"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="524,276,448,330,445,326,521,271"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="669,265,738,277,905,300,979,309,1072,325,1101,331,1100,336,1072,331,978,315,905,305,737,283,668,271"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="477,271,254,331,253,326,476,266"/>
+<area shape="poly" id="edge11_Node000006_Node000011" title=" " alt="" coords="663,265,738,277,828,287,905,292,1037,295,1168,301,1245,310,1335,325,1348,328,1346,333,1334,331,1244,315,1168,306,1037,300,905,298,828,293,737,283,662,271"/>
+<area shape="poly" id="edge13_Node000012_Node000002" title=" " alt="" coords="1225,142,934,172,807,192,763,203,739,213,712,242,693,277,681,313,675,343,669,342,676,312,688,275,707,239,736,208,762,197,806,187,934,167,1224,136"/>
+<area shape="poly" id="edge14_Node000012_Node000006" title=" " alt="" coords="1225,142,980,170,837,189,694,213,629,228,628,223,693,208,836,184,980,164,1225,137"/>
+<area shape="poly" id="edge19_Node000012_Node000008" title=" " alt="" coords="1225,135,1012,143,765,157,649,168,550,180,475,195,450,204,435,213,416,237,405,268,400,299,400,328,394,327,395,298,400,266,411,235,432,209,448,199,474,190,549,175,648,162,764,152,1012,137,1225,130"/>
+<area shape="poly" id="edge20_Node000012_Node000009" title=" " alt="" coords="1321,169,1233,329,1228,327,1317,166"/>
+<area shape="poly" id="edge35_Node000012_Node000011" title=" " alt="" coords="1455,154,1494,177,1511,192,1525,209,1534,228,1536,245,1525,281,1509,308,1488,330,1484,326,1505,304,1520,279,1531,244,1529,229,1520,212,1507,195,1491,181,1453,159"/>
+<area shape="rect" id="Node000013" href="$CreateUserDevices_8h.html" title=" " alt="" coords="1687,218,1913,273"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="1455,155,1696,215,1695,221,1454,160"/>
+<area shape="rect" id="Node000015" href="$DisplayManager_8cpp.html" title=" " alt="" coords="1308,218,1511,273"/>
+<area shape="poly" id="edge18_Node000012_Node000015" title=" " alt="" coords="1365,166,1396,216,1391,219,1360,168"/>
+<area shape="poly" id="edge21_Node000012_Node000016" title=" " alt="" coords="1455,140,1682,160,1811,166,1972,169,2346,173,2720,182,2880,192,3008,208,3021,211,3020,216,3008,213,2879,198,2719,187,2346,178,1972,174,1811,171,1681,165,1455,145"/>
+<area shape="rect" id="Node000017" href="$MockDisplayInputMethods_8h.html" title=" " alt="" coords="2737,218,2996,273"/>
+<area shape="poly" id="edge22_Node000012_Node000017" title=" " alt="" coords="1455,139,1682,160,2272,204,2737,234,2737,239,2271,209,1681,165,1455,144"/>
+<area shape="rect" id="Node000030" href="$test__DisplayManager_8cpp.html" title=" " alt="" coords="750,211,943,280"/>
+<area shape="poly" id="edge36_Node000012_Node000030" title=" " alt="" coords="1225,153,1095,180,955,213,944,216,943,211,954,208,1094,175,1224,148"/>
+<area shape="rect" id="Node000031" href="$test__DisplayManualSPISwitching_8cpp.html" title=" " alt="" coords="967,211,1233,280"/>
+<area shape="poly" id="edge37_Node000012_Node000031" title=" " alt="" coords="1274,164,1171,213,1169,208,1272,159"/>
+<area shape="poly" id="edge16_Node000013_Node000003" title=" " alt="" coords="1687,280,1637,301,1591,330,1575,347,1566,364,1557,381,1540,399,1510,420,1477,437,1411,462,1409,457,1475,432,1507,415,1537,395,1553,378,1562,361,1571,344,1588,326,1635,297,1685,275"/>
+<area shape="rect" id="Node000014" href="$test__CompilerCreation_8cpp.html" title=" " alt="" coords="1602,328,1849,397"/>
+<area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="1778,285,1750,329,1745,326,1773,283"/>
+<area shape="rect" id="Node000018" href="$integration_2test__Controller_2test__main_8cpp.html" title=" " alt="" coords="1873,328,2071,397"/>
+<area shape="poly" id="edge23_Node000017_Node000018" title=" " alt="" coords="2724,256,2588,265,2427,280,2254,302,2083,331,2071,333,2070,328,2082,325,2254,296,2427,275,2588,260,2723,251"/>
+<area shape="rect" id="Node000019" href="$integration_2test__Display_2test__main_8cpp.html" title=" " alt="" coords="2095,328,2278,397"/>
+<area shape="poly" id="edge24_Node000017_Node000019" title=" " alt="" coords="2724,262,2518,289,2403,307,2290,331,2279,333,2278,328,2289,325,2402,302,2517,283,2723,257"/>
+<area shape="rect" id="Node000020" href="$integration_2test__InteractiveLogger_2test__main_8cpp.html" title=" " alt="" coords="2302,328,2549,397"/>
+<area shape="poly" id="edge25_Node000017_Node000020" title=" " alt="" coords="2754,279,2549,332,2548,327,2753,274"/>
+<area shape="rect" id="Node000021" href="$unit_2test__Configurator_2test__main_8cpp.html" title=" " alt="" coords="2573,328,2752,397"/>
+<area shape="poly" id="edge26_Node000017_Node000021" title=" " alt="" coords="2810,282,2724,330,2721,325,2807,277"/>
+<area shape="rect" id="Node000022" href="$unit_2test__Controller_2test__main_8cpp.html" title=" " alt="" coords="2777,328,2957,397"/>
+<area shape="poly" id="edge27_Node000017_Node000022" title=" " alt="" coords="2869,286,2869,328,2864,328,2864,286"/>
+<area shape="rect" id="Node000023" href="$unit_2test__Display_2test__main_8cpp.html" title=" " alt="" coords="2981,328,3160,397"/>
+<area shape="poly" id="edge28_Node000017_Node000023" title=" " alt="" coords="2926,277,3012,325,3010,330,2923,282"/>
+<area shape="rect" id="Node000024" href="$unit_2test__DisplayManager_2test__main_8cpp.html" title=" " alt="" coords="3185,328,3378,397"/>
+<area shape="poly" id="edge29_Node000017_Node000024" title=" " alt="" coords="2982,274,3173,325,3185,329,3183,334,3171,331,2980,279"/>
+<area shape="rect" id="Node000025" href="$unit_2test__Infrastructure_2test__main_8cpp.html" title=" " alt="" coords="3403,328,3581,397"/>
+<area shape="poly" id="edge30_Node000017_Node000025" title=" " alt="" coords="2987,273,3010,277,3117,292,3201,299,3285,306,3391,325,3403,328,3402,333,3390,331,3284,312,3200,304,3116,298,3009,283,2986,278"/>
+<area shape="rect" id="Node000026" href="$unit_2test__Input_2test__main_8cpp.html" title=" " alt="" coords="3605,335,3821,390"/>
+<area shape="poly" id="edge31_Node000017_Node000026" title=" " alt="" coords="2984,273,3010,277,3098,289,3173,295,3302,299,3430,304,3506,312,3594,325,3628,333,3627,338,3593,331,3505,317,3430,310,3302,305,3173,301,3097,294,3009,283,2983,278"/>
+<area shape="rect" id="Node000027" href="$unit_2test__InputManager_2test__main_8cpp.html" title=" " alt="" coords="3845,328,4024,397"/>
+<area shape="poly" id="edge32_Node000017_Node000027" title=" " alt="" coords="2983,273,3010,277,3134,292,3241,297,3422,295,3510,294,3604,296,3710,306,3834,325,3845,328,3844,333,3833,331,3709,311,3603,302,3510,299,3422,301,3241,303,3134,297,3009,283,2982,278"/>
+<area shape="rect" id="Node000028" href="$unit_2test__Screen_2test__main_8cpp.html" title=" " alt="" coords="4048,335,4275,390"/>
+<area shape="poly" id="edge33_Node000017_Node000028" title=" " alt="" coords="2982,273,3010,277,3165,295,3297,302,3414,302,3523,299,3632,296,3749,297,3881,306,4036,325,4073,333,4072,338,4036,331,3881,311,3749,303,3632,301,3523,304,3414,307,3297,307,3165,300,3009,283,2981,278"/>
+<area shape="rect" id="Node000029" href="$unit_2test__ScreenManager_2test__main_8cpp.html" title=" " alt="" coords="4299,328,4487,397"/>
+<area shape="poly" id="edge34_Node000017_Node000029" title=" " alt="" coords="2981,273,3010,277,3203,297,3368,303,3513,300,3649,294,3785,288,3930,288,4094,299,4287,325,4299,328,4298,333,4286,331,4094,304,3930,293,3785,293,3649,299,3513,306,3368,309,3203,302,3009,283,2980,278"/>
 </map>

@@ -1,7 +1,11 @@
 <map id="InputInterface" name="InputInterface">
-<area shape="rect" id="node1" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="229,5,342,32"/>
-<area shape="rect" id="node2" href="$classMockButtonInput.html" title="Mock button input class using debounce and hold methods Use setRawAction() to simulate what a button ..." alt="" coords="5,80,139,107"/>
-<area shape="rect" id="node3" href="$classMockInput.html" title="Mock physical input class." alt="" coords="163,80,253,107"/>
-<area shape="rect" id="node4" href="$classMockTouchScreenInput.html" title="Mock touch screen input class using debounce and hold methods and calculating touch position to deter..." alt="" coords="277,80,448,107"/>
-<area shape="rect" id="node5" href="$classTFT__eSPITouch.html" title="Display class for TFT_eSPI touch screens." alt="" coords="472,80,589,107"/>
+<area shape="rect" id="Node000001" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="229,5,342,31"/>
+<area shape="rect" id="Node000002" href="$classMockButtonInput.html" title="Mock button input class using debounce and hold methods Use setRawAction() to simulate what a button ..." alt="" coords="5,79,139,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,37,107,81,106,76,237,32"/>
+<area shape="rect" id="Node000003" href="$classMockInput.html" title="Mock physical input class." alt="" coords="163,79,253,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="265,42,222,80,219,76,261,38"/>
+<area shape="rect" id="Node000004" href="$classMockTouchScreenInput.html" title="Mock touch screen input class using debounce and hold methods and calculating touch position to deter..." alt="" coords="277,79,448,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="310,38,352,76,348,80,306,42"/>
+<area shape="rect" id="Node000005" href="$classTFT__eSPITouch.html" title="Display class for TFT_eSPI touch screens." alt="" coords="472,79,589,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="338,32,492,76,490,81,337,37"/>
 </map>

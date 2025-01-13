@@ -1,18 +1,51 @@
 <map id="Screen::getNext" name="Screen::getNext">
-<area shape="rect" id="node1" title="Get the next Screen instance in the list." alt="" coords="833,183,960,209"/>
-<area shape="rect" id="node2" href="$classScreenManager.html#a6cc01abb59037b653ca45f130c83c9b3" title="Get the highest Screen ID in the list." alt="" coords="546,107,782,133"/>
-<area shape="rect" id="node3" href="$classScreenManager.html#a38890def1478514514341039b83299ef" title="Get the next screen in the list (sorted by ID)" alt="" coords="268,23,495,49"/>
-<area shape="rect" id="node6" href="$classScreenManager.html#a64ecbfb9232d4051a75ff5abea58ba6d" title="Get the previous screen in the list (sorted by ID)" alt="" coords="277,74,485,115"/>
-<area shape="rect" id="node9" href="$classScreenManager.html#acd4f0a92975819547a21bfc7d6320f6d" title="Get the lowest Screen ID in the list." alt="" coords="548,5,780,32"/>
-<area shape="rect" id="node10" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="551,208,777,235"/>
-<area shape="rect" id="node13" href="$classScreenManager.html#a760f0b958985e3c29f5a3efc81367f89" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="271,393,491,420"/>
-<area shape="rect" id="node15" href="$test__Screen_8cpp.html#a680e2c57d51963c79048644663f58770" title="Create a Screen and check all attributes are valid." alt="" coords="629,309,699,336"/>
-<area shape="rect" id="node16" href="$classScreenManager.html#a515ec6aabc9fefe3c1cfbe734877da1e" title="Destructor for the ScreenManager." alt="" coords="543,360,785,387"/>
-<area shape="rect" id="node8" href="$test__ScreenManager_8cpp.html#ab5ada86d9042a1a62ed2251d66d84ef3" title="Create a list of Screens with ScreenManager." alt="" coords="78,292,147,319"/>
-<area shape="rect" id="node4" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="5,99,220,125"/>
-<area shape="rect" id="node5" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="78,23,147,49"/>
-<area shape="rect" id="node7" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="15,201,211,242"/>
-<area shape="rect" id="node11" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="291,343,472,369"/>
-<area shape="rect" id="node12" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="43,343,182,369"/>
-<area shape="rect" id="node14" href="$classController.html#a908f5f6c24239286e29d4761da509963" title="Method to implement updating a screen." alt="" coords="21,393,204,420"/>
+<area shape="rect" id="Node000001" title="Get the next Screen instance in the list." alt="" coords="833,254,960,279"/>
+<area shape="rect" id="Node000002" href="$classScreenManager.html#a6cc01abb59037b653ca45f130c83c9b3" title="Get the highest Screen ID in the list." alt="" coords="546,178,782,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="853,251,784,225,718,205,719,200,786,220,855,246"/>
+<area shape="rect" id="Node000003" href="$classScreenManager.html#a38890def1478514514341039b83299ef" title="Get the next screen in the list (sorted by ID)" alt="" coords="268,178,495,203"/>
+<area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="819,258,542,217,467,206,467,200,543,212,820,252"/>
+<area shape="rect" id="Node000006" href="$test__ScreenManager_8cpp.html#a339218e57c67512f1332ef94ac1b9fb8" title="Validate that previous screen is a lower ID, and next is a higher ID, wrapping around the list." alt="" coords="78,127,147,152"/>
+<area shape="poly" id="edge30_Node000001_Node000006" title=" " alt="" coords="886,241,873,202,852,156,823,110,804,90,784,72,746,49,712,35,680,27,649,25,580,26,494,25,379,10,330,10,269,25,224,46,184,75,127,129,123,125,180,71,221,42,267,20,329,5,380,4,495,20,580,21,649,19,681,22,714,30,749,45,787,68,808,86,827,107,857,153,878,200,891,239"/>
+<area shape="rect" id="Node000007" href="$classScreenManager.html#a64ecbfb9232d4051a75ff5abea58ba6d" title="Get the previous screen in the list (sorted by ID)" alt="" coords="277,62,485,102"/>
+<area shape="poly" id="edge15_Node000001_Node000007" title=" " alt="" coords="883,242,868,211,847,176,819,142,784,115,749,98,711,86,633,71,556,67,486,70,485,64,556,61,633,65,713,80,751,93,787,111,822,138,851,173,873,209,888,240"/>
+<area shape="rect" id="Node000009" href="$test__ScreenManager_8cpp.html#ab5ada86d9042a1a62ed2251d66d84ef3" title="Create a list of Screens with ScreenManager." alt="" coords="78,482,147,507"/>
+<area shape="poly" id="edge29_Node000001_Node000009" title=" " alt="" coords="893,293,880,337,860,391,829,446,810,472,787,494,722,543,660,581,600,608,540,623,478,627,414,620,344,601,267,573,250,562,241,548,233,535,219,523,183,508,147,501,148,495,185,503,221,519,237,532,246,545,254,558,269,568,345,596,414,614,479,621,539,618,598,603,658,577,719,539,784,490,806,468,825,443,855,389,875,335,887,292"/>
+<area shape="rect" id="Node000010" href="$classScreenManager.html#acd4f0a92975819547a21bfc7d6320f6d" title="Get the lowest Screen ID in the list." alt="" coords="548,126,780,151"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="875,245,836,204,811,184,784,167,748,153,750,148,787,163,814,180,839,200,879,241"/>
+<area shape="rect" id="Node000011" href="$classScreenManager.html#a0cc1c81b131b3441fd808299c63b409b" title="Get the Screen with the specified ID." alt="" coords="551,279,777,304"/>
+<area shape="poly" id="edge16_Node000001_Node000011" title=" " alt="" coords="820,277,777,282,777,277,819,272"/>
+<area shape="rect" id="Node000017" href="$classScreenManager.html#a760f0b958985e3c29f5a3efc81367f89" title="Update a Screen, adds a new one if it doesn&#39;t exist." alt="" coords="271,532,491,558"/>
+<area shape="poly" id="edge32_Node000001_Node000017" title=" " alt="" coords="869,289,806,335,715,396,609,460,496,517,442,535,440,530,494,512,606,455,713,392,803,331,866,285"/>
+<area shape="rect" id="Node000020" href="$test__Screen_8cpp.html#a680e2c57d51963c79048644663f58770" title="Create a Screen and check all attributes are valid." alt="" coords="629,634,699,659"/>
+<area shape="poly" id="edge31_Node000001_Node000020" title=" " alt="" coords="898,293,893,358,877,445,863,491,844,537,819,579,787,616,767,630,744,640,700,648,699,643,743,635,765,626,784,612,815,576,839,534,858,490,872,444,888,357,892,293"/>
+<area shape="rect" id="Node000021" href="$classScreenManager.html#a515ec6aabc9fefe3c1cfbe734877da1e" title="Destructor for the ScreenManager." alt="" coords="543,683,785,708"/>
+<area shape="poly" id="edge33_Node000001_Node000021" title=" " alt="" coords="894,293,881,380,858,494,827,603,808,645,787,673,771,685,768,680,783,670,803,642,822,601,853,492,876,379,889,293"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="532,193,495,193,495,188,532,188"/>
+<area shape="poly" id="edge9_Node000002_Node000006" title=" " alt="" coords="574,178,494,168,298,151,148,144,148,138,298,146,495,162,574,173"/>
+<area shape="poly" id="edge5_Node000002_Node000007" title=" " alt="" coords="569,176,541,165,526,154,516,144,507,133,493,123,453,105,455,100,496,119,511,130,520,140,530,150,544,160,571,171"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="624,211,464,295,365,354,270,422,256,435,247,447,237,459,221,471,184,486,148,494,147,488,183,481,219,467,233,456,243,444,252,431,266,418,362,350,461,290,622,206"/>
+<area shape="rect" id="Node000004" href="$classController.html#aa981e303ca83593ffb34db49c7d73cc6" title="Selects the next screen for the selected display." alt="" coords="5,308,220,334"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="346,212,221,275,145,310,142,306,219,271,343,207"/>
+<area shape="poly" id="edge4_Node000003_Node000006" title=" " alt="" coords="299,178,147,149,148,143,300,172"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="274,108,148,135,147,130,273,103"/>
+<area shape="rect" id="Node000008" href="$classController.html#a3e02f73e534a929849f981ec892b4f54" title="Selects the previous screen for the selected display." alt="" coords="15,221,211,261"/>
+<area shape="poly" id="edge6_Node000007_Node000008" title=" " alt="" coords="336,112,149,223,146,218,333,107"/>
+<area shape="poly" id="edge11_Node000010_Node000003" title=" " alt="" coords="581,156,451,180,450,175,580,151"/>
+<area shape="poly" id="edge13_Node000010_Node000006" title=" " alt="" coords="633,120,571,83,533,66,494,53,431,39,381,34,331,38,269,53,228,68,189,89,131,129,128,125,186,84,225,63,267,48,330,33,381,29,432,34,495,48,535,61,573,78,635,115"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="585,125,482,105,483,100,586,120"/>
+<area shape="poly" id="edge19_Node000011_Node000003" title=" " alt="" coords="582,278,541,262,517,243,493,225,442,205,444,200,496,220,520,239,544,257,584,273"/>
+<area shape="poly" id="edge17_Node000011_Node000004" title=" " alt="" coords="547,308,495,313,352,320,220,323,220,318,351,315,494,308,547,303"/>
+<area shape="poly" id="edge22_Node000011_Node000006" title=" " alt="" coords="583,279,267,217,193,186,134,155,137,150,195,181,269,212,584,274"/>
+<area shape="poly" id="edge20_Node000011_Node000007" title=" " alt="" coords="626,274,585,248,541,216,517,192,493,167,411,105,414,100,496,163,520,188,544,212,588,244,629,270"/>
+<area shape="poly" id="edge18_Node000011_Node000008" title=" " alt="" coords="537,285,268,262,211,256,211,251,268,257,538,280"/>
+<area shape="poly" id="edge21_Node000011_Node000009" title=" " alt="" coords="644,317,562,408,522,450,496,471,450,489,401,501,352,508,303,511,214,510,147,502,148,497,215,504,303,506,351,503,400,496,448,484,493,467,518,446,558,404,640,313"/>
+<area shape="rect" id="Node000012" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="291,431,472,456"/>
+<area shape="poly" id="edge23_Node000011_Node000012" title=" " alt="" coords="640,315,577,365,537,391,496,414,443,433,441,428,494,409,535,386,574,360,637,311"/>
+<area shape="poly" id="edge25_Node000011_Node000017" title=" " alt="" coords="642,316,595,365,545,426,532,451,525,473,515,494,496,515,460,535,457,530,493,511,511,491,520,471,527,449,540,423,591,361,638,312"/>
+<area shape="rect" id="Node000013" href="$classController.html#a7d04c17913f04f99429aa29fa8505484" title="Processes all ongoing activities, monitoring streams, receiving user input, updates displays,..." alt="" coords="43,431,182,456"/>
+<area shape="poly" id="edge24_Node000012_Node000013" title=" " alt="" coords="277,446,182,446,182,441,277,441"/>
+<area shape="poly" id="edge27_Node000017_Node000006" title=" " alt="" coords="335,528,298,504,280,489,266,470,248,434,240,401,239,369,242,338,244,308,243,277,236,245,218,210,203,192,184,177,145,155,148,150,187,173,206,189,222,207,241,243,249,277,250,308,247,339,244,369,245,400,253,433,270,467,284,485,301,500,338,524"/>
+<area shape="poly" id="edge26_Node000017_Node000009" title=" " alt="" coords="299,532,147,503,148,498,300,527"/>
+<area shape="rect" id="Node000018" href="$classController.html#a908f5f6c24239286e29d4761da509963" title="Method to implement updating a screen." alt="" coords="21,532,204,558"/>
+<area shape="poly" id="edge28_Node000017_Node000018" title=" " alt="" coords="257,548,204,548,204,542,257,542"/>
 </map>

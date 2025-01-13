@@ -1,0 +1,26 @@
+<map id="MockArduino::getInstance" name="MockArduino::getInstance">
+<area shape="rect" id="Node000001" title=" " alt="" coords="871,197,1061,222"/>
+<area shape="rect" id="Node000002" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="724,119,823,145"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="920,194,805,147,807,142,922,189"/>
+<area shape="rect" id="Node000015" href="$test__DisplayManualSPISwitching_8cpp.html#a928ab800b1e1899f185fb572718ec014" title="Test that SPI displays can be switched manually if their library doesn&#39;t support it (eg...." alt="" coords="5,121,75,146"/>
+<area shape="poly" id="edge13_Node000001_Node000015" title=" " alt="" coords="857,212,711,210,527,202,325,186,122,159,74,147,76,142,123,153,325,180,527,196,711,204,857,207"/>
+<area shape="rect" id="Node000019" href="$test__CompilerCreation_8cpp.html#a484c00ac396e82066ad78a3641a34a4f" title="Ensure devices are created and all attributes are valid." alt="" coords="5,258,75,283"/>
+<area shape="poly" id="edge12_Node000001_Node000019" title=" " alt="" coords="926,230,877,248,823,264,714,283,602,294,490,299,383,299,198,290,75,278,75,272,198,284,384,293,490,293,601,288,713,277,822,259,876,243,924,225"/>
+<area shape="rect" id="Node000021" href="$Arduino_8h.html#ac7bdb53335528ad073ca13eb2b1bdc00" title=" " alt="" coords="734,225,813,250"/>
+<area shape="poly" id="edge10_Node000001_Node000021" title=" " alt="" coords="865,227,813,234,813,229,865,221"/>
+<area shape="rect" id="Node000003" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="425,95,676,121"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="710,128,668,123,669,118,711,123"/>
+<area shape="rect" id="Node000017" href="$classDisplayManager.html#a33f6184fa8292c66a6cd2f05f264ef0f" title="Set the chip select pin state for all displays that have it set and select them." alt="" coords="453,220,649,260"/>
+<area shape="poly" id="edge7_Node000002_Node000017" title=" " alt="" coords="735,153,594,222,592,217,732,149"/>
+<area shape="rect" id="Node000004" href="$classDisplayManager.html#ac007625bc3dc91b4a7f22238226f37ea" title="Clear all displays." alt="" coords="157,5,343,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="494,94,377,60,331,48,333,43,378,55,496,89"/>
+<area shape="rect" id="Node000009" href="$classDisplayManager.html#aa0e0e26134a34beeb30e27c00b8e829f" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="123,70,377,95"/>
+<area shape="poly" id="edge4_Node000003_Node000009" title=" " alt="" coords="411,99,378,96,378,91,412,94"/>
+<area shape="rect" id="Node000016" href="$classDisplayManager.html#ad53dcac2e939893727d27187524733c6" title="Call this routinely to ensure all displays are updated with screens." alt="" coords="159,119,341,145"/>
+<area shape="poly" id="edge6_Node000003_Node000016" title=" " alt="" coords="412,122,341,127,341,122,412,116"/>
+<area shape="poly" id="edge5_Node000009_Node000015" title=" " alt="" coords="161,101,123,109,75,124,74,119,122,104,160,95"/>
+<area shape="rect" id="Node000018" href="$classDisplayManager.html#a270daf83b6af22558fde42034254b351" title="Call the begin() method for all associated Display instances." alt="" coords="139,230,361,255"/>
+<area shape="poly" id="edge8_Node000017_Node000018" title=" " alt="" coords="439,244,362,244,362,239,439,238"/>
+<area shape="poly" id="edge9_Node000018_Node000019" title=" " alt="" coords="142,260,75,269,75,263,141,255"/>
+<area shape="poly" id="edge11_Node000021_Node000017" title=" " alt="" coords="720,241,649,241,649,236,720,235"/>
+</map>

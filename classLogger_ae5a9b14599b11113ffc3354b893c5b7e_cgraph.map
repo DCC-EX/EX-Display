@@ -1,4 +1,5 @@
 <map id="Logger::log" name="Logger::log">
-<area shape="rect" id="node1" title="Log a message for the specified log level." alt="" coords="5,5,100,32"/>
-<area shape="rect" id="node2" href="$classStream.html#a7bf16803ea843a11ecc4529005ea0b84" title="Println method." alt="" coords="148,5,267,32"/>
+<area shape="rect" id="Node000001" title="Log a message for the specified log level." alt="" coords="5,5,100,31"/>
+<area shape="rect" id="Node000002" href="$classStream.html#a7bf16803ea843a11ecc4529005ea0b84" title="Println method." alt="" coords="148,5,267,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,15,134,15,134,21,100,21"/>
 </map>

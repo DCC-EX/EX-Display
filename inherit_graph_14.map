@@ -1,0 +1,43 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,490,53,515"/>
+<area shape="rect" id="Node000001" href="$classAtFinderLoggerIntegrationTests.html" title="Test harness integration testing of ConsoleInput and Logger classes." alt="" coords="113,5,304,45"/>
+<area shape="poly" id="edge11_Node000000_Node000001" title=" " alt="" coords="29,476,33,384,44,258,53,195,65,137,80,89,99,56,113,44,116,48,103,59,85,91,70,138,58,196,49,259,38,384,34,477"/>
+<area shape="rect" id="Node000002" href="$classAtFinderTests.html" title=" " alt="" coords="154,70,263,95"/>
+<area shape="poly" id="edge12_Node000000_Node000002" title=" " alt="" coords="29,476,34,392,46,281,67,175,81,133,99,105,124,88,153,80,155,86,127,93,103,109,86,136,72,176,51,282,40,393,34,476"/>
+<area shape="rect" id="Node000003" href="$classCompilerCreationTests.html" title="Test harness for creating user defined devices via the compiler macros This test harness uses devices..." alt="" coords="124,119,293,145"/>
+<area shape="poly" id="edge13_Node000000_Node000003" title=" " alt="" coords="30,476,37,402,49,305,70,214,83,179,99,154,122,139,125,143,103,158,88,181,75,216,55,306,42,402,35,476"/>
+<area shape="rect" id="Node000004" href="$classConfiguratorTests.html" title=" " alt="" coords="141,169,276,194"/>
+<area shape="poly" id="edge14_Node000000_Node000004" title=" " alt="" coords="31,476,39,412,53,330,73,254,85,224,99,203,119,190,140,182,142,187,121,195,103,207,90,227,78,256,58,331,44,412,36,477"/>
+<area shape="rect" id="Node000005" href="$classControllerDisplayUpdateTests.html" title="Test harness for ensuring displays are updated when screen updates are received." alt="" coords="101,218,316,243"/>
+<area shape="poly" id="edge15_Node000000_Node000005" title=" " alt="" coords="27,476,30,428,40,368,61,306,78,278,100,253,115,241,119,246,103,257,82,281,66,308,45,369,35,428,33,476"/>
+<area shape="rect" id="Node000006" href="$classControllerInputActionTests.html" title="Test harness for input actions interacting with the Controller." alt="" coords="112,267,305,293"/>
+<area shape="poly" id="edge16_Node000000_Node000006" title=" " alt="" coords="30,475,35,437,47,390,67,343,82,321,100,302,117,290,120,295,103,306,86,324,72,345,52,392,40,438,35,476"/>
+<area shape="rect" id="Node000007" href="$classControllerScreenCreation.html" title="Test harness for ensuring displays are updated when screen updates are received." alt="" coords="116,317,301,342"/>
+<area shape="poly" id="edge17_Node000000_Node000007" title=" " alt="" coords="33,476,41,447,54,413,73,380,100,351,118,340,121,344,103,355,78,383,59,415,46,449,38,477"/>
+<area shape="rect" id="Node000008" href="$classControllerTests.html" title=" " alt="" coords="149,366,268,391"/>
+<area shape="poly" id="edge18_Node000000_Node000008" title=" " alt="" coords="39,476,63,437,80,417,100,400,123,389,148,381,150,387,125,394,103,405,84,421,68,440,44,479"/>
+<area shape="rect" id="Node000009" href="$classDebounceHoldInputTests.html" title="Test harness for inputs utilising debounce and hold options." alt="" coords="117,415,300,441"/>
+<area shape="poly" id="edge19_Node000000_Node000009" title=" " alt="" coords="54,479,100,450,132,438,134,443,102,454,57,484"/>
+<area shape="rect" id="Node000010" href="$classDisplayInterfaceTests.html" title="Test harness for physical display interface tests." alt="" coords="127,465,290,490"/>
+<area shape="poly" id="edge20_Node000000_Node000010" title=" " alt="" coords="67,495,127,486,127,491,67,500"/>
+<area shape="rect" id="Node000011" href="$classDisplayManagerTests.html" title="Test harness for testing DisplayManager." alt="" coords="128,514,289,539"/>
+<area shape="poly" id="edge21_Node000000_Node000011" title=" " alt="" coords="67,505,128,513,128,519,67,510"/>
+<area shape="rect" id="Node000012" href="$classDisplayManualSPISwitchingTests.html" title="Test harness for testing DisplayManager." alt="" coords="107,564,310,604"/>
+<area shape="poly" id="edge22_Node000000_Node000012" title=" " alt="" coords="59,521,103,548,135,562,133,566,100,553,56,526"/>
+<area shape="rect" id="Node000013" href="$classDisplayScreenTests.html" title="Test harness for testing DisplayManager." alt="" coords="135,629,283,654"/>
+<area shape="poly" id="edge23_Node000000_Node000013" title=" " alt="" coords="42,527,65,572,82,595,103,614,136,629,133,634,100,618,78,598,61,575,37,529"/>
+<area shape="rect" id="Node000014" href="$classInputInterfaceTests.html" title="Test harness for input interface tests." alt="" coords="135,678,282,703"/>
+<area shape="poly" id="edge24_Node000000_Node000014" title=" " alt="" coords="37,528,45,560,57,596,76,633,103,663,119,673,136,680,134,685,116,678,100,667,72,636,52,598,39,561,32,529"/>
+<area shape="rect" id="Node000015" href="$classInputManagerTests.html" title="Test harness for input interface tests." alt="" coords="136,727,281,753"/>
+<area shape="poly" id="edge25_Node000000_Node000015" title=" " alt="" coords="34,529,39,570,50,620,71,670,85,693,103,713,119,723,137,731,135,736,116,728,100,717,81,696,66,672,45,621,34,571,29,530"/>
+<area shape="rect" id="Node000016" href="$classLoggerTests.html" title=" " alt="" coords="159,777,258,802"/>
+<area shape="poly" id="edge26_Node000000_Node000016" title=" " alt="" coords="32,529,34,579,43,642,52,675,65,707,82,736,103,762,129,778,160,786,158,791,127,783,100,766,77,739,60,709,47,677,38,643,29,580,27,530"/>
+<area shape="rect" id="Node000017" href="$classRowFormattingTests.html" title=" " alt="" coords="131,826,286,851"/>
+<area shape="poly" id="edge27_Node000000_Node000017" title=" " alt="" coords="36,529,44,596,57,681,77,760,90,791,103,812,117,822,132,829,130,834,114,826,99,815,85,794,72,762,52,682,38,597,30,529"/>
+<area shape="rect" id="Node000018" href="$classScreenManagerTests.html" title=" " alt="" coords="131,875,287,901"/>
+<area shape="poly" id="edge28_Node000000_Node000018" title=" " alt="" coords="35,528,41,605,54,705,74,800,88,836,103,861,116,871,132,878,129,883,113,876,99,864,83,839,69,801,49,706,36,606,30,529"/>
+<area shape="rect" id="Node000019" href="$classScreenTests.html" title=" " alt="" coords="159,925,258,950"/>
+<area shape="poly" id="edge29_Node000000_Node000019" title=" " alt="" coords="34,529,39,615,51,730,71,839,86,882,103,910,129,927,160,935,159,940,127,932,99,914,81,884,66,841,45,730,34,615,29,529"/>
+<area shape="rect" id="Node000020" href="$classTouchScreenInputTests.html" title="Test harness for touch screen inputs requiring calculation of where the user has touched to be conver..." alt="" coords="124,974,293,999"/>
+<area shape="poly" id="edge30_Node000000_Node000020" title=" " alt="" coords="34,529,37,625,47,754,56,819,68,879,84,927,103,960,125,975,122,979,99,963,79,929,63,880,51,820,42,755,32,625,28,529"/>
+</map>

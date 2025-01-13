@@ -1,8 +1,14 @@
 <map id="DisplayManager::displayStartupInfo" name="DisplayManager::displayStartupInfo">
-<area shape="rect" id="node1" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="5,81,260,108"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="308,56,559,83"/>
-<area shape="rect" id="node6" href="$classDisplayInterface.html#aa869afa166e1d7f231549e3b93f7bef5" title="Get the next DisplayInterface derived instance in the list." alt="" coords="609,107,799,133"/>
-<area shape="rect" id="node3" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="655,5,753,32"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="607,56,801,83"/>
-<area shape="rect" id="node4" href="$classMockArduino.html#a31b8132fed4cf21517931e448ba515ea" title=" " alt="" coords="849,5,1040,32"/>
+<area shape="rect" id="Node000001" title="Calls the displayStartupInfo of all Display instances to display the version." alt="" coords="5,79,260,104"/>
+<area shape="rect" id="Node000002" href="$classDisplayManager.html#abcac9213f163018979f2a226ecf53882" title="Manually selects SPI displays that require manual selecting via the CS pin &#45; sets pin low." alt="" coords="308,53,559,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,78,294,75,295,80,261,83"/>
+<area shape="rect" id="Node000006" href="$classDisplayInterface.html#aedd1018ddee5891bee744cdeac36fe96" title="Get the next DisplayInterface derived instance in the list." alt="" coords="609,104,799,129"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="260,94,595,109,595,115,260,100"/>
+<area shape="rect" id="Node000003" href="$Arduino_8h.html#ae9647a9a056bb33fd1206da70c83bde3" title=" " alt="" coords="655,5,753,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="505,51,641,26,642,32,506,56"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#a99f118df7933707f23506e6c4138c8ac" title="Get the defined CS pin for this display to see if it needs manual SPI switching." alt="" coords="607,55,801,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="559,64,593,64,593,69,559,69"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="502,76,623,99,622,104,501,81"/>
+<area shape="rect" id="Node000004" href="$classMockArduino.html#a6dee256b5b61eb81e51fae11584f5951" title=" " alt="" coords="849,5,1040,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="753,15,835,15,835,21,753,21"/>
 </map>

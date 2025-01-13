@@ -9,7 +9,7 @@ var classTFT__eSPIDisplay =
     [ "clearScreen", "classTFT__eSPIDisplay.html#af7bbb772e597d3431656ccd32d73bdf5", null ],
     [ "create", "classTFT__eSPIDisplay.html#a444de3d2997ba98cf705a6cd60ea70cf", null ],
     [ "create", "classTFT__eSPIDisplay.html#a79809a7e975e97ea27f6e713ace5b32e", null ],
-    [ "displayRow", "classTFT__eSPIDisplay.html#a18b84c77677d72c6515d0cd45e9c65ae", null ],
+    [ "displayFormattedRow", "classTFT__eSPIDisplay.html#af54701b2ce8e0137aa4989c944d2c3a5", null ],
     [ "displayScreen", "classTFT__eSPIDisplay.html#ac4c657d18bcd4dae193f5fd906411dcf", null ],
     [ "displayStartupInfo", "classTFT__eSPIDisplay.html#aa1f86437ebb95745bdf69be9142ef26b", null ],
     [ "getTFT_eSPIInstance", "classTFT__eSPIDisplay.html#ab3084ef6b927bc9dbc0991088dda2c6c", null ],

@@ -1,9 +1,15 @@
 <map id="InputInterface::setCallback" name="InputInterface::setCallback">
-<area shape="rect" id="node1" title="Set the instance for callbacks when users trigger an input action." alt="" coords="477,134,675,161"/>
-<area shape="rect" id="node2" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="249,42,427,69"/>
-<area shape="rect" id="node5" href="$classDebounceHoldInputTests.html#ac1f9bed57fb4e12ac48e79385ff321dd" title=" " alt="" coords="247,93,429,135"/>
-<area shape="rect" id="node6" href="$classInputInterfaceTests.html#ae2ea7ef1af24dceda678e3cc8953d006" title=" " alt="" coords="265,159,411,200"/>
-<area shape="rect" id="node7" href="$classTouchScreenInputTests.html#af56a96900180dde47c024979d931cf2e" title=" " alt="" coords="253,224,423,265"/>
-<area shape="rect" id="node3" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="5,5,199,47"/>
-<area shape="rect" id="node4" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="67,71,137,98"/>
+<area shape="rect" id="Node000001" title="Set the instance for callbacks when users trigger an input action." alt="" coords="477,130,675,155"/>
+<area shape="rect" id="Node000002" href="$classInputManager.html#a46a2124eddfd8617124bc16670f09633" title="Set the InputInterface." alt="" coords="249,41,427,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="535,127,428,81,388,69,390,63,430,76,537,122"/>
+<area shape="rect" id="Node000005" href="$classDebounceHoldInputTests.html#ac1f9bed57fb4e12ac48e79385ff321dd" title=" " alt="" coords="247,91,429,131"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="468,131,429,126,430,120,468,126"/>
+<area shape="rect" id="Node000006" href="$classInputInterfaceTests.html#ae2ea7ef1af24dceda678e3cc8953d006" title=" " alt="" coords="265,155,411,195"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="468,160,412,167,411,162,467,155"/>
+<area shape="rect" id="Node000007" href="$classTouchScreenInputTests.html#af56a96900180dde47c024979d931cf2e" title=" " alt="" coords="253,219,423,259"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="536,164,430,209,399,221,397,216,428,204,534,159"/>
+<area shape="rect" id="Node000003" href="$classControllerInputActionTests.html#afb639f110e387a10897f635bdd329a4a" title=" " alt="" coords="5,5,199,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,44,198,39,199,34,236,39"/>
+<area shape="rect" id="Node000004" href="$test__InputManager_8cpp.html#ae61e78914c3beb26e21559280269fc47" title="Test to ensure an input can be set, retrieved, and started with the InputManager." alt="" coords="67,70,137,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="236,69,137,81,137,76,235,63"/>
 </map>

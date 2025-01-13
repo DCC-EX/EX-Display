@@ -1,10 +1,21 @@
 <map id="TouchScreenInputTests" name="TouchScreenInputTests">
-<area shape="rect" id="node1" title="Test harness for touch screen inputs requiring calculation of where the user has touched to be conver..." alt="" coords="17,375,186,401"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,285,53,312"/>
-<area shape="rect" id="node3" href="$classMockCallback.html" title="Mock class to test callbacks." alt="" coords="54,235,167,261"/>
-<area shape="rect" id="node4" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="83,95,219,121"/>
-<area shape="rect" id="node7" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="210,184,323,211"/>
-<area shape="rect" id="node5" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="233,5,300,32"/>
-<area shape="rect" id="node8" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="345,95,474,121"/>
-<area shape="rect" id="node6" href="$classMockTouchScreenInput.html" title="Mock touch screen input class using debounce and hold methods and calculating touch position to deter..." alt="" coords="184,285,355,312"/>
+<area shape="rect" id="Node000001" title="Test harness for touch screen inputs requiring calculation of where the user has touched to be conver..." alt="" coords="17,368,186,393"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,280,53,305"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,314,93,366,89,369,46,318"/>
+<area shape="rect" id="Node000003" href="$classMockTouchScreenInput.html" title="Mock touch screen input class using debounce and hold methods and calculating touch position to deter..." alt="" coords="184,280,355,305"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,314,125,370,123,365,233,309"/>
+<area shape="rect" id="Node000004" href="$classInputInterface.html" title="Class to abstract away all physical input implementatio to enable multiple input types Default return..." alt="" coords="210,181,323,207"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="270,220,272,280,266,280,265,221"/>
+<area shape="rect" id="Node000005" href="$classCallbackInterface.html" title="Interface class to use for callbacks." alt="" coords="83,93,219,119"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="164,129,184,155,205,169,227,179,225,184,202,174,181,159,160,133"/>
+<area shape="rect" id="Node000009" href="$classMockCallback.html" title="Mock class to test callbacks." alt="" coords="54,231,167,256"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="146,133,117,231,112,230,141,131"/>
+<area shape="rect" id="Node000006" href="$classLogger.html" title="Class to enable simple logging to a Stream object with different log levels This enables embedding pe..." alt="" coords="233,5,300,31"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="269,44,269,181,264,181,264,44"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="226,39,196,57,176,76,161,95,157,91,172,72,193,53,223,34"/>
+<area shape="rect" id="Node000008" href="$classDisplayInterface.html" title="Class to abstract away all physical display implementation to enable multiple display types." alt="" coords="345,93,474,119"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="299,35,391,91,389,95,296,40"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="380,128,287,183,285,179,377,123"/>
+<area shape="poly" id="edge8_Node000008_Node000008" title=" " alt="" coords="489,98,501,106,492,114,475,116,474,111,490,109,495,106,486,102"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="112,270,105,368,99,368,106,269"/>
 </map>

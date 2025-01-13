@@ -1,14 +1,41 @@
 <map id="/home/runner/work/EX&#45;Display/EX&#45;Display/Controller.h" name="/home/runner/work/EX&#45;Display/EX&#45;Display/Controller.h">
-<area shape="rect" id="node1" title=" " alt="" coords="471,5,701,47"/>
-<area shape="rect" id="node2" href="$CallbackInterface_8h.html" title=" " alt="" coords="635,244,783,271"/>
-<area shape="rect" id="node4" href="$Logger_8h.html" title=" " alt="" coords="423,319,501,345"/>
-<area shape="rect" id="node5" href="$Arduino_8h.html" title=" " alt="" coords="552,393,636,420"/>
-<area shape="rect" id="node6" href="$DisplayManager_8h.html" title=" " alt="" coords="110,169,249,196"/>
-<area shape="rect" id="node9" href="$ScreenManager_8h.html" title=" " alt="" coords="5,244,140,271"/>
-<area shape="rect" id="node10" href="$InputManager_8h.html" title=" " alt="" coords="411,95,534,121"/>
-<area shape="rect" id="node3" href="$InputActions_8h.html" title=" " alt="" coords="543,319,658,345"/>
-<area shape="rect" id="node7" href="$DisplayInterface_8h.html" title=" " alt="" coords="215,244,357,271"/>
-<area shape="rect" id="node8" href="$Screen_8h.html" title=" " alt="" coords="247,319,325,345"/>
-<area shape="rect" id="node11" href="$Defines_8h.html" title=" " alt="" coords="374,169,457,196"/>
-<area shape="rect" id="node12" href="$InputInterface_8h.html" title=" " alt="" coords="481,169,606,196"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="471,5,701,45"/>
+<area shape="rect" id="Node000002" href="$CallbackInterface_8h.html" title=" " alt="" coords="635,240,783,265"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="616,43,642,65,664,92,682,126,695,163,708,226,703,227,690,164,677,128,660,95,638,69,613,48"/>
+<area shape="rect" id="Node000004" href="$Logger_8h.html" title=" " alt="" coords="423,313,501,339"/>
+<area shape="poly" id="edge25_Node000001_Node000004" title=" " alt="" coords="599,44,613,74,625,111,629,153,627,173,620,193,596,231,565,263,530,289,499,309,496,304,527,285,561,259,592,228,616,191,622,172,624,153,620,113,608,76,594,47"/>
+<area shape="rect" id="Node000005" href="$Arduino_8h.html" title=" " alt="" coords="552,387,636,412"/>
+<area shape="poly" id="edge27_Node000001_Node000005" title=" " alt="" coords="674,43,725,62,773,90,793,107,809,128,820,151,823,178,823,254,819,283,806,308,786,330,762,348,705,374,650,391,649,385,704,369,759,343,782,326,801,305,814,282,818,254,818,178,814,153,805,131,790,111,770,94,723,67,672,48"/>
+<area shape="rect" id="Node000011" href="$DisplayManager_8h.html" title=" " alt="" coords="110,167,249,192"/>
+<area shape="poly" id="edge6_Node000001_Node000011" title=" " alt="" coords="533,48,400,96,222,164,220,159,398,91,531,43"/>
+<area shape="rect" id="Node000015" href="$ScreenManager_8h.html" title=" " alt="" coords="5,240,140,265"/>
+<area shape="poly" id="edge26_Node000001_Node000015" title=" " alt="" coords="472,31,381,42,281,66,231,84,183,106,139,134,100,168,90,181,84,196,77,227,71,226,79,195,86,179,96,165,136,130,181,102,229,79,279,61,380,37,471,26"/>
+<area shape="rect" id="Node000016" href="$InputManager_8h.html" title=" " alt="" coords="411,93,534,119"/>
+<area shape="poly" id="edge14_Node000001_Node000016" title=" " alt="" coords="560,48,502,87,499,83,557,43"/>
+<area shape="rect" id="Node000003" href="$InputActions_8h.html" title=" " alt="" coords="543,313,658,339"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="693,268,631,308,628,303,690,263"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="670,268,515,312,513,307,668,263"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="708,266,695,301,672,340,650,363,627,381,623,377,647,359,668,337,690,299,703,264"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="484,336,562,378,559,382,482,341"/>
+<area shape="poly" id="edge11_Node000011_Node000004" title=" " alt="" coords="182,192,186,228,193,247,205,263,239,282,293,297,410,316,409,322,292,302,237,287,202,267,189,250,181,229,176,193"/>
+<area shape="rect" id="Node000012" href="$DisplayInterface_8h.html" title=" " alt="" coords="215,240,357,265"/>
+<area shape="poly" id="edge7_Node000011_Node000012" title=" " alt="" coords="198,190,259,230,256,235,195,194"/>
+<area shape="poly" id="edge12_Node000011_Node000015" title=" " alt="" coords="164,194,103,235,100,230,161,190"/>
+<area shape="poly" id="edge8_Node000012_Node000004" title=" " alt="" coords="315,263,421,306,419,310,313,268"/>
+<area shape="rect" id="Node000013" href="$Screen_8h.html" title=" " alt="" coords="247,313,325,339"/>
+<area shape="poly" id="edge9_Node000012_Node000013" title=" " alt="" coords="289,266,289,300,283,300,283,266"/>
+<area shape="poly" id="edge10_Node000013_Node000005" title=" " alt="" coords="326,334,539,383,538,388,325,339"/>
+<area shape="poly" id="edge13_Node000015_Node000013" title=" " alt="" coords="108,263,239,306,238,311,106,268"/>
+<area shape="poly" id="edge15_Node000016_Node000002" title=" " alt="" coords="512,116,564,136,619,164,659,196,692,228,688,231,656,200,617,169,562,141,510,121"/>
+<area shape="poly" id="edge24_Node000016_Node000004" title=" " alt="" coords="430,121,393,139,377,152,364,168,357,186,358,205,364,224,374,242,404,276,436,303,432,307,400,280,370,246,359,226,352,206,352,186,360,165,373,148,390,135,427,116"/>
+<area shape="poly" id="edge18_Node000016_Node000012" title=" " alt="" coords="412,121,363,139,340,152,320,168,302,197,292,227,287,226,297,195,316,165,337,148,361,134,410,116"/>
+<area shape="rect" id="Node000017" href="$Defines_8h.html" title=" " alt="" coords="374,167,457,192"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="465,121,435,158,431,154,461,117"/>
+<area shape="rect" id="Node000018" href="$InputInterface_8h.html" title=" " alt="" coords="481,167,606,192"/>
+<area shape="poly" id="edge19_Node000016_Node000018" title=" " alt="" coords="486,117,524,155,520,159,482,121"/>
+<area shape="poly" id="edge17_Node000017_Node000004" title=" " alt="" coords="422,192,457,299,451,301,417,193"/>
+<area shape="poly" id="edge20_Node000018_Node000002" title=" " alt="" coords="571,190,670,232,668,237,569,194"/>
+<area shape="poly" id="edge22_Node000018_Node000003" title=" " alt="" coords="551,191,594,299,589,301,546,193"/>
+<area shape="poly" id="edge23_Node000018_Node000004" title=" " alt="" coords="539,194,478,303,473,300,534,191"/>
+<area shape="poly" id="edge21_Node000018_Node000012" title=" " alt="" coords="503,195,341,239,340,234,501,189"/>
 </map>

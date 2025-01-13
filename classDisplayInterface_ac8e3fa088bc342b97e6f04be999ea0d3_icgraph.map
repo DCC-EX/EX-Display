@@ -1,5 +1,15 @@
 <map id="DisplayInterface::setNext" name="DisplayInterface::setNext">
-<area shape="rect" id="node1" title="Set the next DisplayInterface derived instance in the list." alt="" coords="380,5,568,32"/>
-<area shape="rect" id="node2" href="$classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="123,5,332,32"/>
-<area shape="rect" id="node3" href="$test__DisplayManager_8cpp.html#a8db4cc07d4e89d899e0a75ca521f9229" title="Create a list of mock displays and validate they are created and operate correctly." alt="" coords="5,5,75,32"/>
+<area shape="rect" id="Node000001" title="Set the next DisplayInterface derived instance in the list." alt="" coords="380,104,568,129"/>
+<area shape="rect" id="Node000002" href="$classDisplayManager.html#a14afc225d393f7224bfa0474338d39f3" title="Add a DisplayInterface derived instance to the list of displays." alt="" coords="123,104,332,129"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="366,119,332,119,332,114,366,114"/>
+<area shape="rect" id="Node000003" href="$test__DisplayManager_8cpp.html#a8db4cc07d4e89d899e0a75ca521f9229" title="Create a list of mock displays and validate they are created and operate correctly." alt="" coords="5,5,75,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="189,100,64,33,67,29,191,95"/>
+<area shape="rect" id="Node000004" href="$test__DisplayManager_8cpp.html#ad108e01a79b7f75a831a955e93bb9176" title="Validate the displayStartupInfo() method correct calls all display methods." alt="" coords="5,55,75,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="165,103,74,79,75,74,166,98"/>
+<area shape="rect" id="Node000005" href="$test__DisplayManager_8cpp.html#a086adee0e0e3565707e01f5b61e29dff" title="Validate displays can be retrieved by their ID." alt="" coords="5,104,75,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="109,119,75,119,75,114,109,114"/>
+<area shape="rect" id="Node000006" href="$test__DisplayManager_8cpp.html#a95f97074a82f0e3d901808635e654d9a" title="Validate the startDisplays() method correctly calls all display begin() methods." alt="" coords="5,153,75,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="166,135,75,160,74,154,165,130"/>
+<area shape="rect" id="Node000007" href="$test__DisplayManualSPISwitching_8cpp.html#a928ab800b1e1899f185fb572718ec014" title="Test that SPI displays can be switched manually if their library doesn&#39;t support it (eg...." alt="" coords="5,203,75,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="191,138,67,205,64,200,189,133"/>
 </map>
