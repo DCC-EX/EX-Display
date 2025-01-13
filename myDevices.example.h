@@ -31,23 +31,45 @@
 /**
  * Display devices using the TFT_eSPI display library
  *
- * USER_DISPLAY(TFT_eSPIDisplay, rotation, text size, text colour, background colour, *chip select pin)
+ * USER_DISPLAY(TFT_eSPIDisplay, rotation, text font, text colour, background colour, *chip select pin)
  *
- * Example for a single display with rotation set to 1, text size 1, white text colour, and black background colour
- * Omit the final chip select pin parameter for a single display
- * USER_DISPLAY(TFT_eSPIDisplay, 1, 1, TFT_WHITE, TFT_BLACK)
+ * Example for a single display with rotation set to 1, text font FreeMono12pt7b, white text colour, and black background colour
+ * Omit the final chip select pin parameter for a single display.
+ * TEXT_FONT is a default font provided in the display header file and is set to FONT_TFT_ESPI_MEDIUM i.e. FreeMono12pt7b.
+ * If a defferent font is requires substitute the font define for TEXT_FONT in the example below.
+ * USER_DISPLAY(TFT_eSPIDisplay, 1, TEXT_FONT, TFT_WHITE, TFT_BLACK)
  *
  * Example for two displays as above, but specifying the chip select pin to manually switch the displays
  * This is necessary as the TFT_eSPI library doesn't directly support multiple displays
- * USER_DISPLAY(TFT_eSPIDisplay, 1, 1, TFT_WHITE, TFT_BLACK, 15)
- * USER_DISPLAY(TFT_eSPIDisplay, 1, 1, TFT_WHITE, TFT_BLACK, 16)
+ * USER_DISPLAY(TFT_eSPIDisplay, 1, TEXT_FONT, TFT_WHITE, TFT_BLACK, 15)
+ * USER_DISPLAY(TFT_eSPIDisplay, 1, TEXT_FONT, TFT_WHITE, TFT_BLACK, 16)
+ * 
+ * The available fonts that are defined for use are listed at the top of the appropriate display header file 
+ * In the case of TFT_eSPI screens that is TFT_eSPIDisplay.h.  These are a selection of fonts that have been define from the 
+ * library GFXFF FreeFonts.
+ * 
+ * If you wish to use a font that is not defined in the header file, it is possible to add an elternative (see config.example.h)
  * 
  * Uncomment and edit one or more lines below as required for your setup.
  */
 
-// USER_DISPLAY(TFT_eSPIDisplay, 1, 1, TFT_WHITE, TFT_BLACK)
-// USER_DISPLAY(TFT_eSPIDisplay, 1, 1, TFT_WHITE, TFT_BLACK, 15)
-// USER_DISPLAY(TFT_eSPIDisplay, 1, 1, TFT_WHITE, TFT_BLACK, 16)
+// USER_DISPLAY(TFT_eSPIDisplay, 1, TEXT_FONT, TFT_WHITE, TFT_BLACK)
+// USER_DISPLAY(TFT_eSPIDisplay, 1, TEXT_FONT, TFT_WHITE, TFT_BLACK, 15)
+// USER_DISPLAY(TFT_eSPIDisplay, 1, 1TEXT_FONT, TFT_WHITE, TFT_BLACK, 16)
+
+/**
+* If using multiple displays on a processor that can support this, it is possible to set a specific font for each screen.
+* The following three lines give an example that has been tested with three SPI displays on an ESP32.  Each display is
+* configured with a different font from the list available.
+* Note that each screen has been given a different orientation.  This works to a point but has a limitation imposed by the
+* library.  Orientations 180 degrees opposed work OK, but an orientation 90 degrees to the first will not have the background
+* rendered correctly i.e the height and width attributes do not adjust.
+* If using mixed orientations its best to use 0 & 2 or 1 & 3.
+*
+* USER_DISPLAY(TFT_eSPIDisplay, 1, FONT_TFT_ESPI_SMALL, TFT_WHITE, TFT_BLACK, 12)
+* USER_DISPLAY(TFT_eSPIDisplay, 2, FONT_TFT_ESPI_SERIF_BOLD_ITALIC, TFT_WHITE, TFT_BLUE, 13)
+* USER_DISPLAY(TFT_eSPIDisplay, 3, FONT_TFT_ESPI_LARGE, TFT_WHITE, TFT_RED, 14)
+*/
 
 /**
  * Display devices using the MCUFRIEND_kbv display library
