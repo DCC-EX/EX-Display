@@ -389,6 +389,30 @@ TEST_F(RowFormattingTests, OneColourChange) {
 // }
 
 /**
+ * @brief Test redundant colour change - two changes, no text between
+ */
+TEST_F(RowFormattingTests, RedundantColourChange) {
+  // Test for basic line text on row 0, expected attributes should be:
+  RowAttributes expectedAttributes = {true, false, false, false, false, 0xFFE0};
+  // Expect that displayFormattedRow is called once with these attributes
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(0), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("This row starts yellow "), Eq(false)))
+      .Times(1);
+
+  // It should be called a second time for the colour change - "t" in then should be column 23
+  expectedAttributes = {true, false, false, false, false, 0xF800};
+  EXPECT_CALL(*display, displayFormattedRow(Eq(0), Eq(23), ExpectedRowAttributes(expectedAttributes),
+                                            StrEq("then ends red"), Eq(true)))
+      .Times(1);
+
+  // Send an initial and second colour modifier
+  display->displayRow(0, "`#FFFF00`This row starts yellow `#00FF00``#FF0000`then ends red");
+
+  // Verify expectations
+  testing::Mock::VerifyAndClearExpectations(display);
+}
+
+/**
  * @brief Test invalid colour codes and position vs. modifier
  */
 TEST_F(RowFormattingTests, TestInvalidColours) {

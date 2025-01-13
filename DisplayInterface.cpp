@@ -65,7 +65,6 @@ void DisplayInterface::formatRow(int rowId, const char *text) {
   size_t textStart = 0;                  /** Starting index of text we need to return, enables subtracting modifiers */
   size_t copyLength = 0;                 /** Size of text to copy into textOnly later */
   int column = 0;                        /** Default start at column 0, needs to be updated if appending */
-  int newColumn = 0;                     /** Column tracker incremented when not dealing with modifiers/colours */
   bool append = false;                   /** Default is a new row, update if colours are embedded */
   char *textOnly = new char[textLength]; /** Text only minus any modifiers, no bigger than provided size */
   char check;                            /** Holds each char for checking */
@@ -116,11 +115,9 @@ void DisplayInterface::formatRow(int rowId, const char *text) {
             copyLength = i - textStart - 1;
             strncpy(textOnly, text + textStart, copyLength);
             textOnly[copyLength] = '\0';
-            if (append) {
-              column = newColumn;
-            }
             displayFormattedRow(rowId, column, attributes, textOnly, append);
             append = true;
+            column += copyLength;
           }
           textStart = i + 8;
           attributes = _setAttribute(attributes, check, rgb565); // Set the colour and flag it
@@ -136,15 +133,13 @@ void DisplayInterface::formatRow(int rowId, const char *text) {
   attributes = DisplayInterface::_sanitiseAttributes(attributes);
   // If we've set a horizontal line, we don't return text, just null terminator
   if (attributes.isLine) {
+    column = 0;
     textOnly[0] = '\0';
   } else {
     // Otherwise copy the appropriate chars to returnedText ready to call our method
     copyLength = textLength - textStart - 1;
     strncpy(textOnly, text + textStart, copyLength);
     textOnly[copyLength] = '\0';
-  }
-  if (append) {
-    column = newColumn;
   }
   displayFormattedRow(rowId, column, attributes, textOnly, append);
   delete[] textOnly;
