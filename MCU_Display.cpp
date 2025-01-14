@@ -1,5 +1,6 @@
 /*
  *  © 2024 Peter Cole
+ *  © 2025 Colin Murdoch
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -15,43 +16,36 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "TFT_eSPIDisplay.h"
+#include "MCU_Display.h"
 
 // Do not load when testing, TFT_eSPI library is incompatible and will cause failures.
 #ifndef PIO_UNIT_TESTING
 
-TFT_eSPI *TFT_eSPIDisplay::_tft = nullptr;
-bool TFT_eSPIDisplay::_tftInitialised = false;
+MCUFRIEND_kbv *MCU_Display::_tft = nullptr;  // set up a tft instance with  the MCUFRIEND drivers
+TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
+bool MCU_Display::_tftInitialised = false;
 
-TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textFont, uint16_t textColour,
+MCU_Display::MCU_Display(uint8_t rotation, const GFXfont *textFont, uint16_t textColour,
                                  uint16_t backgroundColour) {
   _rotation = rotation;
   _textSize = 1; // default text size to save amending display routine.
   _textColour = textColour;
   _backgroundColour = backgroundColour;
   if (_tft == nullptr) {
-    _tft = new TFT_eSPI();
+    _tft = new MCUFRIEND_kbv();
   }
   _gfxFont = textFont;
 }
 
-TFT_eSPIDisplay::TFT_eSPIDisplay(uint8_t rotation, const GFXfont *textFont, uint16_t textColour,
-                                 uint16_t backgroundColour, int csPin) {
-  _rotation = rotation;
-  _textSize = 1; // default text size to save amending display routine.
-  _textColour = textColour;
-  _backgroundColour = backgroundColour;
-  _csPin = csPin;
-  if (_tft == nullptr) {
-    _tft = new TFT_eSPI();
-  }
-  _gfxFont = textFont;
-}
-
-void TFT_eSPIDisplay::begin() {
-  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::begin[%d]()", _displayId);
+MCU_Display::begin() {
+  LOG(LogLevel::LOG_DEBUG, "MCU_Display::begin[%d]()", _displayId);
   if (!_tftInitialised) {
-    _tft->init();
+    uint16_t ID = _tft->readID();
+    // Serial.print("TFT ID = 0x");
+    // Serial.println(ID, HEX);
+    // Serial.println("Calibrate for your Touch Panel");
+    if (ID == 0xD3D3) ID = 0x9486; // write-only shield
+    _tft->begin(ID);
     _tftInitialised = true;
   }
   _tft->setTextSize(_textSize);
@@ -63,21 +57,22 @@ void TFT_eSPIDisplay::begin() {
   _maxRow = _tft->height() / _fontHeight;
   _maxColumn = _tft->width() / _fontWidth;
   LOG(LogLevel::LOG_DEBUG,
-      "TFT_eSPIDisplay[%d] settings: "
+      "MCU_Display[%d] settings: "
       "_textSize=%d|_rotation=%d|_textColour=0x%04X|_backgroundColour=0x%04X|_csPin=%d|_fontHeight=%d|_fontWidth=%d|_"
       "maxRow=%d|_"
       "maxColumn=%d",
       _displayId, _textSize, _rotation, _textColour, _backgroundColour, _csPin, _fontHeight, _fontWidth, _maxRow,
       _maxColumn);
   _tft->fillScreen(_backgroundColour);
+
 }
 
-void TFT_eSPIDisplay::clearScreen() {
-  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::clearScreen[%d]() - colour 0x%04X", _displayId, _backgroundColour);
+void MCU_Display::clearScreen() {
+  LOG(LogLevel::LOG_DEBUG, "MCU_Display::clearScreen[%d]() - colour 0x%04X", _displayId, _backgroundColour);
   _tft->fillScreen(_backgroundColour);
 }
 
-void TFT_eSPIDisplay::displayScreen(Screen *screen) {
+void MCU_Display::displayScreen(Screen *screen) {
   // If this display needs redrawing, clear first then process rows
   // Must set a local redraw flag here so we can clear the instance for next time
   if (_needsRedraw) {
@@ -92,8 +87,8 @@ void TFT_eSPIDisplay::displayScreen(Screen *screen) {
   _needsRedraw = false;
 }
 
-void TFT_eSPIDisplay::clearRow(uint8_t row) {
-  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::clearRow[%d](%d)", _displayId, row);
+void MCU_Display::clearRow(uint8_t row) {
+  LOG(LogLevel::LOG_DEBUG, "MCU_Display::clearRow[%d](%d)", _displayId, row);
   _tft->setFreeFont(_gfxFont);
   int32_t x = 0;
   int32_t y = 0;
@@ -101,8 +96,8 @@ void TFT_eSPIDisplay::clearRow(uint8_t row) {
   _tft->fillRect(x, y, _tft->width(), _fontHeight, _backgroundColour);
 }
 
-void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
-  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::displayStartupInfo[%d](%s)", _displayId, version);
+void MCU_Display::displayStartupInfo(const char *version) {
+  LOG(LogLevel::LOG_DEBUG, "MCU_Display::displayStartupInfo[%d](%s)", _displayId, version);
   _tft->setRotation(_rotation);
   _tft->setFreeFont(_gfxFont);
   _tft->fillScreen(0xFFFF);
@@ -124,9 +119,9 @@ void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
   _tft->drawString(version, x, y);
 }
 
-void TFT_eSPIDisplay::displayFormattedRow(uint8_t row, uint8_t column, RowAttributes attributes, const char *text,
+void MCU_Display::displayFormattedRow(uint8_t row, uint8_t column, RowAttributes attributes, const char *text,
                                           bool append) {
-  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::displayFormattedRow(%d, %d, {%d, %d, %d, %d, %d, 0x%04X}, %s, %d)", row,
+  LOG(LogLevel::LOG_DEBUG, "MCU_Display::displayFormattedRow(%d, %d, {%d, %d, %d, %d, %d, 0x%04X}, %s, %d)", row,
       column, attributes.colourSet, attributes.isUnderlined, attributes.isLine, attributes.alwaysTicker,
       attributes.neverTicker, attributes.textColour, text, append);
   if (text == nullptr) {
@@ -163,36 +158,30 @@ void TFT_eSPIDisplay::displayFormattedRow(uint8_t row, uint8_t column, RowAttrib
   }
 }
 
-TFT_eSPI *TFT_eSPIDisplay::getTFT_eSPIInstance() {
-  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::getTFT_eSPIInstance[%d]", _displayId);
+TFT_eSPI *MCU_Display::getTFT_eSPIInstance() {
+  LOG(LogLevel::LOG_DEBUG, "MCU_Display::getTFT_eSPIInstance[%d]", _displayId);
   return _tft;
 }
 
-bool TFT_eSPIDisplay::tftInitialised() { return _tftInitialised; }
+bool MCU_Display::tftInitialised() { return _tftInitialised; }
 
-TFT_eSPIDisplay *TFT_eSPIDisplay::create(uint8_t rotation, const GFXfont *textFont, uint16_t textColour,
+MCU_Display *MCU_Display::create(uint8_t rotation, const GFXfont *textFont, uint16_t textColour,
                                          uint16_t backgroundColour) {
-  TFT_eSPIDisplay *newDisplay = new TFT_eSPIDisplay(rotation, textFont, textColour, backgroundColour);
+  MCU_Display *newDisplay = new MCU_Display(rotation, textFont, textColour, backgroundColour);
   return newDisplay;
 }
 
-TFT_eSPIDisplay *TFT_eSPIDisplay::create(uint8_t rotation, const GFXfont *textFont, uint16_t textColour,
-                                         uint16_t backgroundColour, int csPin) {
-  TFT_eSPIDisplay *newDisplay = new TFT_eSPIDisplay(rotation, textFont, textColour, backgroundColour, csPin);
-  return newDisplay;
-}
-
-TFT_eSPIDisplay::~TFT_eSPIDisplay() {
+MCU_Display::~MCU_Display() {
   delete _tft;
   _tft = nullptr;
 }
 
-void TFT_eSPIDisplay::_getRowPosition(uint8_t column, uint8_t row, int32_t &x, int32_t &y) {
-  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::_getRowPosition[%d](%d, %d, %d, %d)", _displayId, column, row, x, y);
+void MCU_Display::_getRowPosition(uint8_t column, uint8_t row, int32_t &x, int32_t &y) {
+  LOG(LogLevel::LOG_DEBUG, "MCU_Display::_getRowPosition[%d](%d, %d, %d, %d)", _displayId, column, row, x, y);
   x = column * _fontWidth;
   y = (row * _fontHeight);
-  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::_getRowPosition[%d] x=%d|_fontWidth=%d|y=%d|_fontHeight=%d", _displayId, x,
+  LOG(LogLevel::LOG_DEBUG, "MCU_Display::_getRowPosition[%d] x=%d|_fontWidth=%d|y=%d|_fontHeight=%d", _displayId, x,
       _fontWidth, y, _fontHeight);
 }
 
-#endif // PIO_UNIT_TESTING
+#endif //PIO_UNIT_TESTING
