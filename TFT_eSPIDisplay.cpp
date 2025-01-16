@@ -14,6 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
+#ifdef NEEDS_TFT  // only load this code if we are dealing with SPI displays & TFT_eSPI library
 
 #include "TFT_eSPIDisplay.h"
 
@@ -196,3 +197,5 @@ void TFT_eSPIDisplay::_getRowPosition(uint8_t column, uint8_t row, int32_t &x, i
 }
 
 #endif // PIO_UNIT_TESTING
+
+#endif // NEEDS_TFT

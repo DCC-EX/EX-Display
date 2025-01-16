@@ -15,6 +15,8 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#ifdef NEEDS_TFT
+
 // Do not load when testing, TFT_eSPI library is incompatible and will cause failures.
 #ifndef PIO_UNIT_TESTING
 
@@ -163,3 +165,5 @@ void TFT_eSPITouch::_displayCalibrationError(TFT_eSPIDisplay *display) {
 }
 
 #endif // PIO_UNIT_TESTING
+
+#endif //NEEDS_TFT

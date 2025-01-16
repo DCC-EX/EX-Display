@@ -15,6 +15,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
+#ifdef NEEDS_MCU // only load this for Shield Display with MCUFRIEND library - AVR
 
 #include "MCU_Display.h"
 
@@ -185,3 +186,5 @@ void MCU_Display::_getRowPosition(uint8_t column, uint8_t row, int32_t &x, int32
 }
 
 #endif //PIO_UNIT_TESTING
+
+#endif // NEEDS_MCU

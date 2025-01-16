@@ -14,6 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
+#ifdef NEEDS_TFT // Only load this code for SPI displays and TFT_eSPI library
 
 #ifndef TFT_ESPIDISPLAY_H
 #define TFT_ESPIDISPLAY_H
@@ -135,3 +136,5 @@ private:
 #endif // PIO_UNIT_TESTING
 
 #endif // TFT_ESPIDISPLAY_H
+
+#endif // NEEDS_TFT

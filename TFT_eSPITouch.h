@@ -14,6 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
+#ifdef NEEDS_TFT
 
 #ifndef TFT_ESPITOUCH_H
 #define TFT_ESPITOUCH_H
@@ -70,3 +71,5 @@ private:
 #endif // PIO_UNIT_TESTING
 
 #endif // TFT_ESPITOUCH_H
+
+#endif // NEEDS_TFT

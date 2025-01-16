@@ -16,6 +16,8 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#ifdef NEEDS_MCU
+
 #ifndef MCU_DISPLAY_H
 #define MCU_DISPLAY_H
 
@@ -47,6 +49,7 @@
 #ifndef TEXT_FONT
 #define TEXT_FONT FONT_MCU_MEDIUM_BOLD
 #endif
+
 
 // ALL Touch panels and wiring is DIFFERENT
 // copy-paste results from TouchScreen_Calibr_native.ino
@@ -130,3 +133,5 @@ private:
 #endif // PIO_UNIT_TESTING
 
 #endif // MCU_DISPLAY_H
+
+#endif // NEEDS_MCU
