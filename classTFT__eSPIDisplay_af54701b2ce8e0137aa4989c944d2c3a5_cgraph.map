@@ -1,7 +1,8 @@
 <map id="TFT_eSPIDisplay::displayFormattedRow" name="TFT_eSPIDisplay::displayFormattedRow">
-<area shape="rect" id="Node000001" title="Display a row using formatting modifiers." alt="" coords="5,35,188,75"/>
-<area shape="rect" id="Node000002" href="$classTFT__eSPIDisplay.html#afcbf3673396a684fd540bc75214719a3" title="Get the X/Y coordinates to draw the specified row, starting at the specified column." alt="" coords="238,5,430,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,41,224,36,225,42,188,46"/>
-<area shape="rect" id="Node000003" href="$classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda" title="Clear the specified row." alt="" coords="236,70,432,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,63,223,67,222,72,188,68"/>
+<area shape="rect" id="Node000001" title="Display a row using formatting modifiers." alt="" coords="5,5,188,45"/>
+<area shape="rect" id="Node000002" href="$classTFT__eSPIDisplay.html#afcbf3673396a684fd540bc75214719a3" title="Get the X/Y coordinates to draw the specified row, starting at the specified column." alt="" coords="480,5,672,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,23,466,23,466,28,188,28"/>
+<area shape="rect" id="Node000003" href="$classTFT__eSPIDisplay.html#a0d8317643dddb535369abd48de8bdbda" title="Clear the specified row." alt="" coords="236,38,432,63"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,32,223,36,222,41,188,38"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="432,38,466,34,467,39,433,43"/>
 </map>
