@@ -92,27 +92,7 @@ void TFT_eSPIDisplay::displayScreen(Screen *screen) {
   _needsRedraw = false;
 }
 
-<<<<<<< HEAD
-=======
-void TFT_eSPIDisplay::displayRow(uint8_t row, const char *text, bool underlined, uint8_t column) {
-  if (text == nullptr) {
-    return;
-  }
-  _tft->setFreeFont(_gfxFont);
-  int32_t x = 0;
-  int32_t y = 0;
-  _getRowPosition(column, row, x, y);
-  LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::displayRow[%d](%d, %s, %d, %d) at X=%d|Y=%d", _displayId, row, text,
-      underlined, column, x, y);
-  _tft->setTextColor(_textColour);
-  LOG(LogLevel::LOG_DEBUG, "setTextColour(0x%04X)", _textColour);
-  if (column == 0) {
-    clearRow(row);
-  }
-  _tft->drawString(text, x, y);
-}
 
->>>>>>> Multi-Font
 void TFT_eSPIDisplay::clearRow(uint8_t row) {
   LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::clearRow[%d](%d)", _displayId, row);
   _tft->setFreeFont(_gfxFont);
@@ -124,10 +104,7 @@ void TFT_eSPIDisplay::clearRow(uint8_t row) {
 
 void TFT_eSPIDisplay::displayStartupInfo(const char *version) {
   LOG(LogLevel::LOG_DEBUG, "TFT_eSPIDisplay::displayStartupInfo[%d](%s)", _displayId, version);
-<<<<<<< HEAD
-=======
   _tft->setRotation(_rotation);
->>>>>>> Multi-Font
   _tft->setFreeFont(_gfxFont);
   _tft->fillScreen(0xFFFF);
   int32_t x = 0;
