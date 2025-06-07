@@ -1,0 +1,175 @@
+// CHris Harlow Notes
+//
+
+// I think your state machine should look like this. Assuming you fill in the "emit" 
+// functions to emit chars or attributes to the display
+
+
+// Iterate through the provided text to look for leading modifiers
+  enum stateMachine : byte { FIND_MODSTART, FIND_MODIFIER, READ_COLOUR, READ_BACKGROUND };
+  size_t plain_text_start = 0;
+  int32_t colour = 0;
+  stateMachine state = FIND_MODSTART; /** Start by looking for the first backtick */
+  auto textLength = strlen(text);
+  for (size_t i = 0; i <= textLength; i++) { // loop includes null byte
+    auto check = text[i];
+    switch (state) {
+    case FIND_MODSTART: { // scanning plain text
+      // If found backtick or end of line, emit any outstanding text
+      if ((check == '`' || check == 0) && i > plain_text_start)
+        emitText(text + plain_text_start, i - plain_text_start);
+
+      state = FIND_MODIFIER;
+      break;
+    }
+
+    case FIND_MODIFIER: { // inside a backtick section
+      switch (check) {
+      case '`':
+        // switch back to plain text
+        plain_text_start = i + 1;
+        state = FIND_MODSTART;
+        break;
+
+      case '#': // foreground
+        colour = 0;
+        state = READ_COLOUR;
+        break;
+
+      case '/':
+        colour = 0; // background
+        state = READ_BACKGROUND;
+        break;
+
+      case '_':
+        emitSetUnderline(true);
+        break;
+      // TODO some others here
+      default:
+        break; // ignore invalid modifier chars, including spaces
+      }
+      break;
+    }
+
+    case READ_COLOUR:
+    case READ_BACKGROUND: { // both states similar until we hit the end, reading hex
+      if (check >= '0' && check <= '9') {
+        colour = (colour << 4) | check - '0';
+        break;
+      }
+      if (check >= 'a' && check <= 'f') {
+        colour = (colour << 4) | check - 'a';
+        break;
+      }
+      if (check >= 'A' && check <= 'F') {
+        colour = (colour << 4) | check - 'A';
+        break;
+      }
+
+           // any non hex char means colour value is finished so tell display
+      if (state == READ_COLOUR)
+        emitSetColour(colour);
+      else
+        emitSetBackground(colour);
+
+      // back up the loop so we can re-examine the current char
+      i--;
+      state = FIND_MODIFIER;
+      break;
+    }
+    }
+    // end of loop... all output has been sent to an emit function.
+  }
+}
+
+//
+// oned needs to knowin advance that a line can/will be tickered. Theres a similar but 
+// simpler state machine could extract the global nature of the line like whether it has 
+// ticker flags or how long it will be on the display.
+
+// When you know how long the line will be and how wide the display is, you only have to
+// modify the FSM in tyhe FIND_MODSTART case so it can count cols it has emitted and adjust
+// the emit to only send cols within the ticker window.  ... a bit like this
+
+int ticker_offset=0;   // set elsewhere to cause ticker movement 
+  int cols_displayed=0; 
+  auto textLength = strlen(text);
+  for (size_t i = 0; i <= textLength; i++) { // loop includes null byte
+    auto check = text[i];
+    switch (state) {
+    case FIND_MODSTART: { // scanning plain text
+      // If found backtick or end of line, emit any outstanding text
+      if ((check == '`' || check == 0) && i > plain_text_start) {
+          auto outputLength=i - plain_text_start;
+          auto outputStart=text + plain_text_start;
+          if (cols_displayed<ticker_offset) { // output starts before first ticker display
+            outputLength-=ticker_offset-cols_displayed;
+            outputStart+= ticker_offset-cols_displayed;
+          }
+          if (cols_displayed+outputLength > displayWidth) { // output exceeds hardware
+            outputLength=displayWidth-cols_displayed;
+          }
+          if (outputLength>0) {
+            emitText(outputStart,outputLength);
+            cols_displayed+=outputLength;
+      }
+
+      state = FIND_MODIFIER;
+      break;
+    }
+
+
+// earlier I was thinking you need s simple state machine to detect the global aspoects of a 
+// line of text... by which I mean its actual displayed length and things like neverTicker..
+//
+// I think it would look a bit like this:
+
+void detectLineAttributes() {
+
+  stateMachine state = FIND_MODSTART; /** Start by looking for the first backtick */
+  displayLength=0;
+  tickerState=NOTHING; 
+  auto textLength = strlen(text);
+  for (size_t i = 0; i < textLength; i++) { 
+    auto check = text[i];
+    switch (state) {
+     case FIND_MODSTART: { // scanning plain text
+       if (check == '`' ) state = FIND_MODIFIER; 
+       else displayLength++; // count eventual output display length
+      break;
+     }
+  
+    case FIND_MODIFIER: { // inside a backtick section
+      switch (check) {
+      case '`':
+        // switch back to plain text
+        state = FIND_MODSTART;
+        break;
+
+      case '|':
+        ticker_mode=NEVER;   // or whatever.... just handle all the global flags.                               
+        break;
+      case "~":
+         ticketMode=ALWAYS;
+         break;   
+        
+      // and so on 
+
+      default:
+        break; // ignore invalid modifier chars, including colours and spaces
+      }
+      break;
+    } // case FIND_MODIFIER
+     } // switch state
+    }// loop
+  } 
+}
+
+// This could be called as soon as the text arrives as it doesnt change unless the text changes.
+
+// Pete
+// Hmmm, need to refactor the RowAttributes struct and displayFormattedRow() vritual method as that's a bit restrictive at present, and only caters for text colour, not background colour
+
+// Chris
+// The rowAttributes only nees to know the actual display length and whether you want ticker or not. See my second FSM above 🙂
+
